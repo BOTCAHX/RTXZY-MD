@@ -519,7 +519,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
           hydratedTemplate: {
             imageMessage: message.imageMessage, 
             hydratedContentText: text, 
-            hydratedFooterText: wm2, 
+            hydratedFooterText: wm4, 
             hydratedButtons: [{
             urlButton: {
                displayText: 'Website Creator',
