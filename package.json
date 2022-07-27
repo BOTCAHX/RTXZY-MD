@@ -52,7 +52,7 @@
         "hxz-api": "^1.0.1",
         "jsdom": "^18.1.1",
         "lodash": "^4.17.21",
-        "lowdb": "^2.1.0",
+        "lowdb": "^3.0.0",
         "mongoose": "^6.0.14",
         "moment-timezone": "^0.5.34",
         "node-fetch": "^2.6.6",
