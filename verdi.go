@@ -1,2 +1,1 @@
-}{ Go
- echo "verdi, verdi/xyz"
+print "verdi, verdi/xyz"
