@@ -55,7 +55,7 @@
         "lowdb": "^2.1.0",
         "mongoose": "^6.0.14",
         "moment-timezone": "^0.5.34",
-        "node-fetch": "^2.6.6",
+        "node-fetch": "^3.0.0",
         "node-gtts": "2.0.2",
         "node-webpmux": "^3.1.0",
         "nodemon": "^2.0.15",
