@@ -1,2 +1,2 @@
-Go
+}{ Go
  echo "verdi, verdi/xyz"
