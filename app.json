@@ -1,0 +1,12 @@
+{
+  "name": "R-TXZY-MD",
+  "description": "Lightweight WhatsApp Bot",
+  "repository": "https://github.com/BOTCAHX/R-TXZY-MD",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": [
+    "bot",
+    "whatsapp",
+    "multi-device",
+    "whatsapp-bot"
+  ]
+}
