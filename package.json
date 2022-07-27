@@ -38,7 +38,7 @@
     "dependencies": {
         "@adiwajshing/baileys": "^4.1.0",
         "awesome-phonenumber": "^2.64.0",
-        "axios": "^0.24.0",
+        "axios": "^0.27.0",
         "@bochilteam/scraper": "^2.0.0",
         "cfonts": "^2.10.0",
         "chalk": "^4.1.2",
