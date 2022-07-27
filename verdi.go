@@ -1,2 +1,2 @@
-  go
-    'verdidev,'verdihatoru'
+Go
+ echo "verdi, verdi/xyz"
