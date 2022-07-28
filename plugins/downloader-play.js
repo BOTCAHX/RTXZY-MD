@@ -59,8 +59,8 @@ ${vid.url}
             },
                {
              quickReplyButton: {
-               displayText: 'Video 720p',
-               id: `.ytv720 ${vid.url}`,
+               displayText: 'Upload File',
+               id: `.upload`,
              }
 
             },
