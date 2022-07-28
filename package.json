@@ -41,7 +41,7 @@
         "axios": "^0.24.0",
         "@bochilteam/scraper": "^2.0.0",
         "cfonts": "^3.0.0",
-        "chalk": "^4.1.2",
+        "chalk": "^5.0.0",
         "cheerio": "^1.0.0-rc.10",
         "colors": "1.4.0",
         "file-type": "^16.5.3",
