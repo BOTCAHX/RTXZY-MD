@@ -17,15 +17,15 @@
 <a href="#"><img title="mengapi" src="https://img.shields.io/static/v1?label=FREE&message=Apikey&color=blue"></a>
 </p>
   
-<a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/RTXZY-MD?label=Forks&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/RTXZY-MD?label=Watchers&color=green&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/BOTCAHX/RTXZY-MD?label=Stars&color=yellow&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/BOTCAHX/RTXZY-MD?label=Contributors&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/issues"><img title="Issues" src="https://img.shields.io/github/issues/BOTCAHX/RTXZY-MD?label=Issues&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/BOTCAHX/RTXZY-MD?label=Issues&color=red&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/BOTCAHX/RTXZY-MD?label=PullRequest&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/BOTCAHX/RTXZY-MD?label=PullRequest&color=red&style=flat-square"></a>
+<a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/R-TXZY-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/R-TXZY-MD"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/R-TXZY-MD?label=Forks&color=blue&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/R-TXZY-MD?label=Watchers&color=green&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/BOTCAHX/R-TXZY-MD?label=Stars&color=yellow&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/BOTCAHX/R-TXZY-MD?label=Contributors&color=blue&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/issues"><img title="Issues" src="https://img.shields.io/github/issues/BOTCAHX/R-TXZY-MD?label=Issues&color=success&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/BOTCAHX/R-TXZY-MD?label=Issues&color=red&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/BOTCAHX/R-TXZY-MD?label=PullRequest&color=success&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/R-TXZY-MD/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/BOTCAHX/R-TXZY-MD?label=PullRequest&color=red&style=flat-square"></a>
 
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
@@ -41,7 +41,7 @@
 > pkg install bash
 > pkg install ffmpeg
 > pkg install libwebp
-> git clone  https://github.com/BOTCAHX/RTXZY-MD
+> git clone  https://github.com/BOTCAHX/R-TXZY-MD
 > cd RTXZY-MD 
 > npm i
 > node run.js
@@ -58,7 +58,7 @@
 
 Simple WhatsApp Bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/RTXZY-MD)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/R-TXZY-MD)
 
 ## UNTUK PENGGUNA RAILWAY
 
