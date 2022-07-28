@@ -69,7 +69,7 @@
         "translate-google-api": "^1.0.4",
         "url-regex-safe": "^2.1.0",
         "wa-sticker-formatter": "^4.0.14",
-        "xfarr-api": "^1.0.3",
+        "xfarr-api": "^2.0.0",
         "yargs": "^17.2.1",
         "yt-search": "^2.9.0"
     }
