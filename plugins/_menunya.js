@@ -511,51 +511,51 @@
       // readmore: readMore
     // }
     
-//━━━━━━━━[ SETTINGS MENU ]━━━━━━━━//
-    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(fotonya2)).buffer()}, { upload: conn.waUploadToServer }) 
-      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-      templateMessage: {
-          hydratedTemplate: {
-            imageMessage: message.imageMessage, 
-            hydratedContentText: text, 
-            hydratedFooterText: wm4, 
-            hydratedButtons: [{
-            urlButton: {
-               displayText: 'Website Creator',
-               url: web
-             }
+// //━━━━━━━━[ SETTINGS MENU ]━━━━━━━━//
+    // text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+    // let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(fotonya2)).buffer()}, { upload: conn.waUploadToServer }) 
+      // const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+      // templateMessage: {
+          // hydratedTemplate: {
+            // imageMessage: message.imageMessage, 
+            // hydratedContentText: text, 
+            // hydratedFooterText: wm4, 
+            // hydratedButtons: [{
+            // urlButton: {
+               // displayText: 'Website Creator',
+               // url: web
+             // }
 
-           },
-             {
-             urlButton: {
-               displayText: 'Group Bot', 
-               url: gc
-             }
+           // },
+             // {
+             // urlButton: {
+               // displayText: 'Group Bot', 
+               // url: gc
+             // }
 
-           },
-               {
-             quickReplyButton: {
-               displayText: 'Owner',
-               id: '.owner',
-             }
+           // },
+               // {
+             // quickReplyButton: {
+               // displayText: 'Owner',
+               // id: '.owner',
+             // }
 
-           },
-               {
-             quickReplyButton: {
-               displayText: 'Donasi',
-               id: '.donasi',
-             }
+           // },
+               // {
+             // quickReplyButton: {
+               // displayText: 'Donasi',
+               // id: '.donasi',
+             // }
 
-           },
-           {
-             quickReplyButton: {
-               displayText: 'Back',
-               id: '.menu',
-             }
-           }]
-         }
-       }
+           // },
+           // {
+             // quickReplyButton: {
+               // displayText: 'Back',
+               // id: '.menu',
+             // }
+           // }]
+         // }
+       // }
      // }), { userJid: m.sender, quoted: m });
      // //conn.reply(m.chat, text.trim(), m)
     // return await conn.relayMessage(
