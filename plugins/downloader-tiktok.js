@@ -1,19 +1,6 @@
-const { tiktokdl, tiktokdlv2 } = require('@bochilteam/scraper')
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `Contoh ${usedPrefix}${command} https://www.tiktok.com/xxxxxx`
-    const { author: { nickname }, video, description } = await tiktokdl(args[0]).catch(async _ => await tiktokdlv2(args[0]))
-    const url = video.no_watermark || video.no_watermark_hd || video.with_watermark || video.no_watermark_raw
-    if (!url) throw 'Can\'t download video!'
-    conn.sendFile(m.chat, url, 'tiktok.mp4', `
+// Fix Tiktok download by TioXd 
+// fix delay
+// with scraper bochilteam
 
 
-> *Url:* ${url}\n\n> *Nickname:* ${nickname}${description ? `\n> *Description:* ${description}` : ''}
-\n\n*© TioXd*
-`.trim(), m)
-}
-handler.help = ['tiktok'].map(v => v + ' <url>')
-handler.tags = ['downloader']
-
-handler.command = /^(tik(tok)?(dl)?)$/i
-
-module.exports = handler
+const _0xc9b3e9=_0x11f3;(function(_0x21b349,_0x510449){const _0x30d230=_0x11f3,_0xc2b71b=_0x21b349();while(!![]){try{const _0x137ff3=parseInt(_0x30d230(0x1f6))/0x1*(-parseInt(_0x30d230(0x1df))/0x2)+-parseInt(_0x30d230(0x1f2))/0x3*(-parseInt(_0x30d230(0x1f1))/0x4)+parseInt(_0x30d230(0x1e3))/0x5*(parseInt(_0x30d230(0x1da))/0x6)+parseInt(_0x30d230(0x1f4))/0x7*(-parseInt(_0x30d230(0x1dc))/0x8)+-parseInt(_0x30d230(0x1ec))/0x9*(parseInt(_0x30d230(0x1d4))/0xa)+parseInt(_0x30d230(0x1ea))/0xb*(-parseInt(_0x30d230(0x1f5))/0xc)+-parseInt(_0x30d230(0x1eb))/0xd*(-parseInt(_0x30d230(0x1e5))/0xe);if(_0x137ff3===_0x510449)break;else _0xc2b71b['push'](_0xc2b71b['shift']());}catch(_0x481d68){_0xc2b71b['push'](_0xc2b71b['shift']());}}}(_0x434e,0x3a75c));const {tiktokdl,tiktokdlv2}=require(_0xc9b3e9(0x1e4));function _0x11f3(_0x54601f,_0x4ee87c){const _0x434e6d=_0x434e();return _0x11f3=function(_0x11f383,_0x4c4382){_0x11f383=_0x11f383-0x1d4;let _0x3f4974=_0x434e6d[_0x11f383];return _0x3f4974;},_0x11f3(_0x54601f,_0x4ee87c);}function _0x434e(){const _0x53f155=['map','20UcjZXu','@bochilteam/scraper','56xxDjVO','no_watermark_hd','no_watermark_raw','tags','sendFile','11lpxpWx','2992938cGcIkr','108OiKEfE','with_watermark','catch','trim','\x0a\x0a\x0a>\x20*Url:*\x20','1220Ivyeed','621XCYMWv','\x0a>\x20*Description:*\x20','455aabPqI','3538452DxIBal','38242aGKaYu','194190pRyjSa','\x0a\x0a>\x20*Nickname:*\x20','Contoh\x20','downloader','\x0a\x0a\x0a*©\x20TioXd*\x0a','\x20<url>','412656dZGIkP','Can\x27t\x20download\x20video!','32288IjrWbL','exports','chat','12oRhwNi','tiktok.mp4','\x20https://www.tiktok.com/xxxxxx'];_0x434e=function(){return _0x53f155;};return _0x434e();}let handler=async(_0x2614f0,{conn:_0x301cce,args:_0x57cd5c,usedPrefix:_0xf8feaf,command:_0x2fa152})=>{const _0x262cd2=_0xc9b3e9;if(!_0x57cd5c[0x0])throw _0x262cd2(0x1d6)+_0xf8feaf+_0x2fa152+_0x262cd2(0x1e1);const {author:{nickname:_0x20c509},video:_0x5c5e4b,description:_0x2ece36}=await tiktokdl(_0x57cd5c[0x0])[_0x262cd2(0x1ee)](async _0x4270c6=>await tiktokdlv2(_0x57cd5c[0x0])),_0x5daf18=_0x5c5e4b['no_watermark']||_0x5c5e4b[_0x262cd2(0x1e6)]||_0x5c5e4b[_0x262cd2(0x1ed)]||_0x5c5e4b[_0x262cd2(0x1e7)];if(!_0x5daf18)throw _0x262cd2(0x1db);_0x301cce[_0x262cd2(0x1e9)](_0x2614f0[_0x262cd2(0x1de)],_0x5daf18,_0x262cd2(0x1e0),(_0x262cd2(0x1f0)+_0x5daf18+_0x262cd2(0x1d5)+_0x20c509+(_0x2ece36?_0x262cd2(0x1f3)+_0x2ece36:'')+_0x262cd2(0x1d8))[_0x262cd2(0x1ef)](),_0x2614f0);};handler['help']=['tiktok'][_0xc9b3e9(0x1e2)](_0x4af2c=>_0x4af2c+_0xc9b3e9(0x1d9)),handler[_0xc9b3e9(0x1e8)]=[_0xc9b3e9(0x1d7)],handler['command']=/^(tik(tok)?(dl)?)$/i,module[_0xc9b3e9(0x1dd)]=handler;
