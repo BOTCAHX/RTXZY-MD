@@ -915,7 +915,7 @@ const fdoc = {
 
 //BAGIAN MENU KETIKA USER COMMAND/
 if (teks == '404') {
-let menuu = `*© BOTCAHX*\n> Runtime : ${uptime}\n> Tanggal : ${week} ${date}\n> Waktu : ${time}\n> Weton : ${weton}\n> Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
+let menuu = `*© R-TXZY-MD*\n> Runtime : ${uptime}\n> Tanggal : ${week} ${date}\n> Waktu : ${time}\n> Weton : ${weton}\n> Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: `${ucapan()} ${name}`,
