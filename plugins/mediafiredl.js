@@ -1,4 +1,4 @@
-*/let fetch = require('node-fetch')
+//let fetch = require('node-fetch')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
@@ -56,4 +56,4 @@ handler.tags = ['downloader']
 
 handler.command = /^(mediafire|mf)?$/i
 
-module.exports = handler*/
+module.exports = handler//
