@@ -1,59 +1,62 @@
-//let fetch = require('node-fetch')
+//Udah ada🤣
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-  if (!args[0]) throw `Use example ${usedPrefix + command} https://www.mediafire.com/file/*****.docs`
+// let fetch = require('node-fetch')
 
-let res = await fetch(API('xteam', '/dl/mediafire', { url: args[0] }, 'apikey'))
+// let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-    let json = await res.json()
+  // if (!args[0]) throw `Use example ${usedPrefix + command} https://www.mediafire.com/file/*****.docs`
+
+// let res = await fetch(API('xteam', '/dl/mediafire', { url: args[0] }, 'apikey'))
+
+    // let json = await res.json()
 
     
 
-    m.reply(wait)
+    // m.reply(wait)
 
-await conn.reply(m.chat, `Downloading media from MediaFire`, 0, {
+// await conn.reply(m.chat, `Downloading media from MediaFire`, 0, {
 
-  contextInfo: { mentionedJid: [m.sender],
+  // contextInfo: { mentionedJid: [m.sender],
 
-    externalAdReply :{
+    // externalAdReply :{
 
-    mediaUrl: linkig,
+    // mediaUrl: linkig,
 
-    mediaType: 2,
+    // mediaType: 2,
 
-    description: deslink , 
+    // description: deslink , 
 
-    title: titlink,
+    // title: titlink,
 
-    body: wm, //`${fileSizeH}`,
+    // body: wm, //`${fileSizeH}`,
 
-    thumbnail: await(await fetch(img)).buffer(),
+    // thumbnail: await(await fetch(img)).buffer(),
 
-    sourceUrl: linkgc
+    // sourceUrl: linkgc
 
-     }}
+     // }}
 
-  }) 
+  // }) 
 
-let txt = `🔗 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${args[0]}`)).data}
+// let txt = `🔗 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${args[0]}`)).data}
 
-📂 *Size*: ${json.result.size}
+// 📂 *Size*: ${json.result.size}
 
-`.trim()
+// `.trim()
 
-m.reply(txt)
+// m.reply(txt)
 
-   // await conn.sendFile(m.chat, json.result.url, `${json.result.title}`, m , null )
+   // // await conn.sendFile(m.chat, json.result.url, `${json.result.title}`, m , null )
 
-await conn.sendMessage(m.chat, { document: { url: json.result.url}, mimetype: 'document', fileName: `${json.result.title}`}, {quoted: m})
+// await conn.sendMessage(m.chat, { document: { url: json.result.url}, mimetype: 'document', fileName: `${json.result.title}`}, {quoted: m})
 
-}
+// }
 
-handler.help = ['mediafire'].map(v => v + ' <url>')
+// handler.help = ['mediafire'].map(v => v + ' <url>')
 
-handler.tags = ['downloader']
+// handler.tags = ['downloader']
 
-handler.command = /^(mediafire|mf)?$/i
+// handler.command = /^(mediafire|mf)?$/i
 
-module.exports = handler//
+// module.exports = handler
