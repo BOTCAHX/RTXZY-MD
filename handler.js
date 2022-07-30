@@ -696,7 +696,7 @@ module.exports = {
         let fetch = require('node-fetch')
         let text = ''
         switch (action) {
-            case 'add':
+          /*  case 'add':
             case 'remove':
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
@@ -710,6 +710,50 @@ module.exports = {
                                 (chat.sBye || this.bye || conn.bye || 'Selamat tinggal'))
                                 this.sendButtonImg(id, pp, text, "Group Message", "OKE", "Ok", null)
                                 }
+                    }
+                }
+                break */
+            case 'add':
+            case 'remove':
+                if (chat.welcome) {
+                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+                    for (let user of participants) {
+                        let pp = './src/welcome.jpg'
+                        try {
+                            pp = await this.profilePictureUrl(user, 'image')
+                        } catch (e) {
+
+                        } finally {
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+                            let wel = API('hardianto', '/api/welcome3', {
+                                profile: pp,
+                                name: await this.getName(user),
+                                bg: 'https://telegra.ph/file/a7368614c5dcb25081268.jpg',
+                                namegb: await this.getName(id),
+                                member: groupMetadata.participants.length
+                            })
+                            let lea = API('hardianto', '/api/goodbye3', {
+                                profile: pp,
+                                name: await this.getName(user),
+                                bg: 'https://telegra.ph/file/a7368614c5dcb25081268.jpg ',
+                                namegb: await this.getName(id),
+                                member: groupMetadata.participants.length
+                            })
+                            /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')*/
+   await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fkontak,{
+  contextInfo: {mentionedJid: [user],
+    externalAdReply :{
+    mediaUrl: linkig,
+    mediaType: 2,
+    description: deslink , 
+    title: titlink,
+    body: wm,
+    thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
+    sourceUrl: linkgc
+     }}
+  })
+                        }
                     }
                 }
                 break
