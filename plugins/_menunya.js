@@ -618,8 +618,13 @@
 // }
 
 
-// Ubah sendiri ya ada dua menu
 
+
+
+//=============================//
+// Ubah sendiri ya ada dua menu
+// Yang di bawah adalah menu original 
+//=============================//
 
 //DEFAULT SETTINGS //
 let { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
@@ -637,43 +642,24 @@ let moment = require('moment-timezone')
 //TAMPILAN DEPAN//
 const defaultMenu = {
   before:`
-┌────「 *${global.namebot}* 」
-├◇ Hai, %name!
-├◇ Tersisa %limit Limit
-├◇ Role %role
-├◇ Level %level (%exp / %maxexp)
-├◇ [%xp4levelup]
-├◇ %totalexp XP secara Total
-│ 
-├◇ Tanggal: %date
-├◇ Hari : %week %weton
-├◇ Tanggal Islam: %dateIslamic
-├◇ Waktu: %time
+╭─「 *${global.namebot}*」
+│ 👋🏻 Hai, %name!
 │
-├◇ Uptime: %uptime / (%muptime)
-├◇ Database: %rtotalreg dari %totalreg
-├◇ Memory Used : 
-├◇ ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-├◇ Version : %version
-├◇ Lib : Baileys-MD
-├◇ Mode : ${global.opts['self'] ? 'Self' : 'publik'}
-├◇ Upload Server : %uptime Ago 
-├◇ Deskripsi : ${'%npmdesc'} 
-└────       
-┌─「 *USER INFO* 」
-├◇ Pengguna :  %name 
-├◇ Status Ⓛ : %limit / day
-├◇ Status : User
-├◇ Money : %money
-├◇ Exp : %totalexp
-├◇ Level : %level
-├◇ Role : %role
-├◇ Premium : ${global.prem ? 'Ya' : 'Tidak'}
-└───────────
+│ 🧱 Limit : *%limit Limit*
+│ 🦸🏼‍♂️ Role : *%role*
+│ 🔼 Level : *%level (%exp / %maxexp)*
+│ 💫 Total XP : %totalexp ✨
+│ 
+│ 📅 Tanggal: *%week, %date*
+│ 🕰️ Waktu: *%time*
+│
+│ 📈 Uptime: *%uptime (%muptime)*
+│ 📊 Database: %rtotalreg of %totalreg
+╰────
 `.trimStart(), 
-  header: '┌─「 *%category* 」',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n', 
+  header: '╭─「 *%category* 」',
+  body: '│ • %cmd %islimit %isPremium',
+  footer: '╰────\n', 
   after: ``,
 }
 
@@ -915,7 +901,7 @@ const fdoc = {
 
 //BAGIAN MENU KETIKA USER COMMAND/
 if (teks == '404') {
-let menuu = `*© R-TXZY-MD*\n> Runtime : ${uptime}\n> Tanggal : ${week} ${date}\n> Waktu : ${time}\n> Weton : ${weton}\n> Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
+let menuu = `*© BOTCAHX*\n> Runtime : ${uptime}\n> Tanggal : ${week} ${date}\n> Waktu : ${time}\n> Weton : ${weton}\n> Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: `${ucapan()} ${name}`,
@@ -1139,13 +1125,16 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
     
 //SETTING MENU//
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-      let message = await prepareWAMessageMedia({ video: fs.readFileSync('./media/karachi.mp4'), gifPlayback: true }, { upload: conn.waUploadToServer })
-      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-      templateMessage: {
-          hydratedTemplate: {
-            videoMessage: message.videoMessage,
+    let url = `https://database.tioclkp02.repl.co/TextPro.me_162e2aaeb790ae.jpg`.trim()
+    let res = await fetch(url)
+    let buffer = await res.buffer()
+    let message = await prepareWAMessageMedia({ image: buffer }, { upload: conn.waUploadToServer })
+            const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+            templateMessage: {
+            hydratedTemplate: {
+            imageMessage: message.imageMessage,
             hydratedContentText: text, 
-            hydratedFooterText: wm2, 
+            hydratedFooterText: wm4, 
             hydratedButtons: [{
             urlButton: {
                displayText: 'Website',
@@ -1242,7 +1231,4 @@ function ucapan() {
   }
   return res
 }
-
-
-//Boleh menggunakan menu mana saja yg nyaman aja :v
 
