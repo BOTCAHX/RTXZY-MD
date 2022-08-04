@@ -44,15 +44,15 @@
 > pkg install bash
 > pkg install ffmpeg
 > pkg install libwebp
-> git clone  https://github.com/BOTCAHX/R-TXZY-MD
-> cd RTXZY-MD 
+> git clone  https://github.com/BOTCAHX/rtxzy-Md-v2
+> cd rtxzy-Md-v2
 > npm i
 > node run.js
 
 ## untuk Sdcard (File yang Sudah Di Download)
 > cd /sdcard
-> cp -r RTXZY-MD $HOME
-> cd RTXZY-MD 
+> cp -r rtxzy-Md-v2 $HOME
+> cd rtxzy-Md-v2
 > npm i
 > node run.js
 ```
