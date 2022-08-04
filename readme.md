@@ -61,11 +61,11 @@
 
 Simple WhatsApp Bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/R-TXZY-MD)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/rtxzy-Md-v2)
 
 ## UNTUK PENGGUNA RAILWAY
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%BOTCAHX%RTXZY-MD)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%BOTCAHX%rtxzy-Md-v2)
 
 # get Session [seesion.data.json] 
 
@@ -88,8 +88,8 @@ Choose your repo
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/BOTCAHX/R-TXZY-MD
-cd R-TXZY-MD
+git clone https://github.com/BOTCAHX/rtxzy-Md-v2MD
+cd rtxzy-Md-v2
 npm i
 npm start
 ```
