@@ -1,0 +1,3 @@
+Pakai aja apikey gratis ini
+
+https://botcahx-rest-api.herokuapp.com/
