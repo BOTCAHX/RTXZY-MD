@@ -11,7 +11,7 @@
 <a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=RTXZY-MD&color=blue"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/BOTCAHX/rtxzy-MD"><img title="Author" src="https://img.shields.io/badge/Author-Y-team-blue.svg?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/BOTCAHX/rtxzy-Md-v2"><img title="Author" src="https://img.shields.io/badge/Author-BOTCAHX-blue.svg?style=for-the-badge&logo=github" /></a>
 </p>
 <p align="center">
 <a href="#"><img title="mengapi" src="https://img.shields.io/static/v1?label=FREE&message=Apikey&color=blue"></a>
