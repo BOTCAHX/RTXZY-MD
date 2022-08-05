@@ -19,8 +19,8 @@ global.web = 'https://myblogxyz.netlify.app' //ubah jadi website lu, bisa link i
 global.price1 = '1 bulan = 10.000\n2 Minggu 7.000\n1 Minggu 5.000'
 
 //=======『 Tampilan Dan Lainnya 』============//
-global.fotonya1 = 'https://database.tioclkp02.repl.co/TextPro.me_162df9a5371cb2.jpg' //ganti jadi foto bot mu
-global.fotonya2 = 'https://database.tioclkp02.repl.co/TextPro.me_162df9a5371cb2.jpg' //ini juga ganti 
+global.fotonya1 = 'https://database.tioclkp02.repl.co/IMG_20220803_172938.JPG' //ganti jadi foto bot mu
+global.fotonya2 = 'https://database.tioclkp02.repl.co/IMG_20220803_172938.JPG' //ini juga ganti 
 global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
 global.wm = '© R-TXZY-MD'
@@ -30,7 +30,7 @@ global.wm3 = '© R-TXZY-MD'
 global.wm4 = 'Ⓛ = Limit Ⓟ = Premium'
 global.htki = '––––––『' 
 global.htka = '』––––––'
-global.media = 'https://database.tioclkp02.repl.co/TextPro.me_162df9a5371cb2.jpg'
+global.media = 'https://database.tioclkp02.repl.co/IMG_20220803_172938.JPG'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
