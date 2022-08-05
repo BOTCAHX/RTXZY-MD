@@ -4,14 +4,14 @@ let handler = async (m, { conn, command, args }) => {
       conn.reply(m.chat, '*Tobat woy*', m)
       reject
   }
-  if (args[0] === 'Nhentai.net') {
+  if (args[0] === 'xnxx.healt') {
       conn.reply(m.chat, '*Tobat woy*', m)
       reject
   }
   let full = /f$/i.test(command)
   if (!args[0]) return conn.reply(m.chat, 'Tidak ada url', m)
   let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  let ss = await (await fetch('https://hadi-api.herokuapp.com/api/ssweb?url=' + encodeURIComponent(url) + '&device=desktop&full=on')).buffer()
+  let ss = await (await fetch('https://botcahx-rest-api.herokuapp.com/api/tools/ssweb?link=' + encodeURIComponent(url) + '&device=desktop&full=on')).buffer()
   conn.sendFile(m.chat, ss, 'screenshot.png', url, m)
 }
 handler.help = ['sslaptop', 'sspc'].map(v => v + ' <url>')
