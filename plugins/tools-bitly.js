@@ -1,9 +1,9 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
-  if (!text) throw 'url/link nya mana?'
-  let res = await fetch(global.API('xteam', '/shorturl/bitly', { url: text }, 'APIKEY'))
+  if (!text) throw 'Masukan url/link nya mana?\n> .bitly https://botcahx-rest-api.herokuapp.com'
+  let res = await fetch(`https://botcahx-rest-api.herokuapp.com/api/linkshort/bitly?link=${text}`)
   let json = await res.json()
-  if (json.status) m.reply(json.result.link)
+  if (json.status) m.reply(json.result)
   else throw 'Link Invalid!\nPeriksa url anda'
 }
 handler.help = ['bitly'].map(v => v + ' <link>')
