@@ -19,8 +19,8 @@ global.web = 'https://myblogxyz.netlify.app' //ubah jadi website lu, bisa link i
 global.price1 = '1 bulan = 10.000\n2 Minggu 7.000\n1 Minggu 5.000'
 
 //=======『 Tampilan Dan Lainnya 』============//
-global.fotonya1 = 'https://database.tioclkp02.repl.co/IMG_20220803_172938.JPG' //ganti jadi foto bot mu
-global.fotonya2 = 'https://database.tioclkp02.repl.co/IMG_20220803_172938.JPG' //ini juga ganti 
+global.fotonya1 = 'https://botcahx-rest-api.herokuapp.com/api/textpro/marvel-studios?text=List%20&text2=Menu' //ganti jadi foto bot mu
+global.fotonya2 = 'https://botcahx-rest-api.herokuapp.com/api/textpro/marvel-studios?text=List%20&text2=Menu' //ini juga ganti 
 global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
 global.wm = '© R-TXZY-MD'
