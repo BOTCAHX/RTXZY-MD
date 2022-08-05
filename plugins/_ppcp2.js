@@ -8,9 +8,9 @@ conn.sendButtonImg(m.chat, json.result.female,  'PP Cewenya', wm, 'Next', '.ppcp
 conn.sendFile(m.chat, json.result.male,'pria.jpg',  'PP Cowonya', m)
 
 }
-handler.help = ['ppcp2']
+handler.help = ['ppcp']
 handler.tags = ['internet']
-handler.command = /^ppcp2$/i
+handler.command = /^ppcp$/i
 
 
 module.exports = handler
