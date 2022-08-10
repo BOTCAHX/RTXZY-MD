@@ -1,3 +1,16 @@
-//karachi replit base:)
+let handler = async (m, { conn, text, usedPrefix, command }) => {
 
-const _0x5bc831=_0x1527;(function(_0x33fa28,_0x1fcca1){const _0x3a8128=_0x1527,_0x12e6f2=_0x33fa28();while(!![]){try{const _0x310499=-parseInt(_0x3a8128(0xf6))/0x1*(parseInt(_0x3a8128(0x106))/0x2)+parseInt(_0x3a8128(0xf8))/0x3+parseInt(_0x3a8128(0xf2))/0x4*(parseInt(_0x3a8128(0x103))/0x5)+-parseInt(_0x3a8128(0xf4))/0x6+parseInt(_0x3a8128(0xff))/0x7+-parseInt(_0x3a8128(0xfc))/0x8*(-parseInt(_0x3a8128(0xf1))/0x9)+-parseInt(_0x3a8128(0xf3))/0xa*(-parseInt(_0x3a8128(0x101))/0xb);if(_0x310499===_0x1fcca1)break;else _0x12e6f2['push'](_0x12e6f2['shift']());}catch(_0x385d5c){_0x12e6f2['push'](_0x12e6f2['shift']());}}}(_0x578a,0x7791a));function _0x1527(_0x5919cd,_0x160d6c){const _0x578ac1=_0x578a();return _0x1527=function(_0x1527b9,_0x3d8280){_0x1527b9=_0x1527b9-0xee;let _0x44be57=_0x578ac1[_0x1527b9];return _0x44be57;},_0x1527(_0x5919cd,_0x160d6c);}function _0x578a(){const _0x45cdf4=['chat','198AhfSyY','group','13315gWMJil','sendImageAsSticker','customPrefix','49794YLdIwS','botAdmin','command','private','153vkLuii','92LqBNXI','635270oMODkJ','5682066QJEtpd','mods','33VfuSTQ','replit\x20@tioclkp02.repl\x0a=>export\x20data\x20replit>Private\x20data>[Stiker\x20ini\x20di\x20kompres\x20dari\x20web\x20HTML5\x20agak\x20sedikit\x20mirip\x20dgn\x20telegraf]','1998549kTzzma','fail','https://database.tioclkp02.repl.co/IMG-20220725-WA0019.png','owner','93664JlYcKo','admin','premium','1318884lOnIXV'];_0x578a=function(){return _0x45cdf4;};return _0x578a();}let handler=async(_0x56ba33,{conn:_0x509f65,text:_0x4214bc,usedPrefix:_0x4077e3,command:_0x221355})=>{const _0x42e5e0=_0x1527;_0x509f65[_0x42e5e0(0x104)](_0x56ba33[_0x42e5e0(0x100)],_0x42e5e0(0xfa),_0x56ba33,{'packname':'./database','author':_0x42e5e0(0xf7)});};handler[_0x5bc831(0x105)]=/^ass?alam|اَلسَّلاَمُ عَلَيْكُمْ|السلام عليکم$/i,handler[_0x5bc831(0xef)]=new RegExp(),handler[_0x5bc831(0xfb)]=![],handler[_0x5bc831(0xf5)]=![],handler[_0x5bc831(0xfe)]=![],handler[_0x5bc831(0x102)]=![],handler[_0x5bc831(0xf0)]=![],handler[_0x5bc831(0xfd)]=![],handler[_0x5bc831(0xee)]=![],handler[_0x5bc831(0xf9)]=null,module['exports']=handler;
+conn.sendImageAsSticker(m.chat, 'https://database.tioclkp02.repl.co/IMG-20220725-WA0019.png', m, { packname: "./database", author: "replit @tioclkp02.repl\n=>export data replit>Private data>[Stiker ini di kompres dari web HTML5 agak sedikit mirip dgn telegraf]" })
+}
+
+handler.customPrefix = /^ass?alam|اَلسَّلاَمُ عَلَيْكُمْ|السلام عليکم$/i // ketik bot (tanpa prefix)
+handler.command = new RegExp
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
+handler.private = false
+handler.admin = false
+handler.botAdmin = false
+handler.fail = null
+module.exports = handler
