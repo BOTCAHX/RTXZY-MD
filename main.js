@@ -63,7 +63,7 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-global.authFile = `${opts._[0] || 'R-TXZY'}.data.json`
+global.authFile = `${opts._[0] || 'sesiontxzy'}.data.json`
 global.isInit = !fs.existsSync(authFile)
 const { state, saveState } = useSingleFileAuthState(global.authFile)
 
@@ -125,7 +125,7 @@ global.reloadHandler = function (restatConn) {
   }
 
   conn.welcome = 'Hai Selamat Datang\nDi Grup @subject'
-  conn.bye = 'Member Grup Telah Berkurang satu'
+  conn.bye = 'Member Grup Telah Meninggalkan Grup @subject'
   conn.spromote = '@user sekarang admin!'
   conn.sdemote = '@user sekarang bukan admin!'
   conn.handler = handler.handler.bind(conn)
