@@ -1,3 +1,12 @@
-//sticker
+//sticker jangan di ubah nanti eror
 
-const _0x66827b=_0x2a59;function _0x950d(){const _0x5021d5=['1943752vEIqbf','database\x20replit','command','sendImageAsSticker','https://database.tioclkp02.repl.co/IMG-20220724-WA0225.png','9134323cVjUSZ','6MuiXWc','40LnNMVA','454sFRzHD','2971990XKChWd','2719Otkmzl','2303601ihVDlU','1644145nXRsEU','1914656UXjiCi','chat','9VLDjEi'];_0x950d=function(){return _0x5021d5;};return _0x950d();}(function(_0x5c2380,_0x21bd0b){const _0x47406f=_0x2a59,_0x274c38=_0x5c2380();while(!![]){try{const _0x59d14c=-parseInt(_0x47406f(0x177))/0x1*(parseInt(_0x47406f(0x175))/0x2)+-parseInt(_0x47406f(0x178))/0x3+-parseInt(_0x47406f(0x16d))/0x4+-parseInt(_0x47406f(0x169))/0x5*(parseInt(_0x47406f(0x173))/0x6)+-parseInt(_0x47406f(0x176))/0x7+parseInt(_0x47406f(0x16a))/0x8*(-parseInt(_0x47406f(0x16c))/0x9)+-parseInt(_0x47406f(0x174))/0xa*(-parseInt(_0x47406f(0x172))/0xb);if(_0x59d14c===_0x21bd0b)break;else _0x274c38['push'](_0x274c38['shift']());}catch(_0x2e0a2a){_0x274c38['push'](_0x274c38['shift']());}}}(_0x950d,0x6fc5f));let handler=async(_0x40cb51,{conn:_0x6bfb5b,text:_0x488b5c,usedPrefix:_0xfd3617,command:_0x345d7d})=>{const _0x3d7339=_0x2a59;_0x6bfb5b[_0x3d7339(0x170)](_0x40cb51[_0x3d7339(0x16b)],_0x3d7339(0x171),_0x40cb51,{'packname':_0x3d7339(0x16e),'author':'@tioclkp.replit'});};function _0x2a59(_0x382062,_0x43174a){const _0x950d04=_0x950d();return _0x2a59=function(_0x2a592d,_0xac333a){_0x2a592d=_0x2a592d-0x169;let _0x3a634c=_0x950d04[_0x2a592d];return _0x3a634c;},_0x2a59(_0x382062,_0x43174a);}handler['customPrefix']=/^(Bot|p)$/i,handler[_0x66827b(0x16f)]=new RegExp(),module['exports']=handler;
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+
+conn.sendImageAsSticker(m.chat, 'https://database.tioclkp02.repl.co/IMG-20220724-WA0225.png', m, { packname: "database replit", author: "@tioclkp.replit" })
+}
+
+handler.customPrefix = /^(Bot|p)$/i
+handler.command = new RegExp
+
+module.exports = handler
+
