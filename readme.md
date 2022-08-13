@@ -1,4 +1,6 @@
-
+``
+Dikarenakan WhatsApp Sekarang Update Jadi Tidak Ada List Menu Terpaksa Bot Ini Di Ganti Menu Nya Ke All Menu.
+```
 </p>
 <h1 align="center">R-TXZY-MD</h1>
 
