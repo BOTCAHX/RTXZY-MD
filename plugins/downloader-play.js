@@ -1,10 +1,9 @@
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 const { servers, yta, ytv } = require('../lib/y2mate')
-let fs = require('fs')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} california`
+  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} dj tiktok`
+  m.reply(wait)
   let chat = global.db.data.chats[m.chat]
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
@@ -27,59 +26,14 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (yt === false) throw 'semua server gagal'
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-let anu =  `
+  await conn.send2ButtonImg(m.chat, await (await fetch(thumb)).buffer(), `
 *Judul:* ${title}
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
 *Link Sumber:* 
 ${vid.url}
-
-`
-     let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(thumb)).buffer()}, { upload: conn.waUploadToServer }) 
-      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-      templateMessage: {
-          hydratedTemplate: {
-            imageMessage: message.imageMessage, 
-            hydratedContentText: anu,
-            hydratedFooterText: wm, 
-            hydratedButtons: [{
-             urlButton: {
-               displayText: 'Join Here',
-               url: gc
-             }
-
-           },
-               {
-             quickReplyButton: {
-               displayText: 'Video 360p',
-               id: `.ytmp4 ${vid.url}`,
-             }
-
-            },
-               {
-             quickReplyButton: {
-               displayText: 'Upload File',
-               id: `.upload`,
-             }
-
-            },
-               {
-             quickReplyButton: {
-               displayText: 'Audio',
-               id: `.ytmp3 ${vid.url}`,
-             }
-
-           }]
-         }
-       }
-     }), { userJid: m.sender, quoted: m });
-    //conn.reply(m.chat, text.trim(), m)
-    return await conn.relayMessage(
-         m.chat,
-         template.message,
-         { messageId: template.key.id }
-     )
+`.trim(), wm, 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`, m)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
@@ -88,4 +42,3 @@ handler.command = /^(p|play)$/i
 handler.exp = 0
 
 module.exports = handler
-
