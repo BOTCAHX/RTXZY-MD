@@ -3,7 +3,7 @@
 <h1 align="center">R-TXZY-MD</h1>
 <p align="center">
 
-<img src="https://telegra.ph/file/4637101da58e21976363b.jpg " alt="Alya putri" width="500"/>
+<img src="https://telegra.ph/file/4637101da58e21976363b.jpg" alt="Alya putri" width="500"/>
 <h1 align="center">Jangan lupa kasih stars & follow :)</h1>
 
 >
