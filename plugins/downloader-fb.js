@@ -1,29 +1,12 @@
-let fetch = require('node-fetch')
-const {
-    MessageType
-} = require('@adiwajshing/baileys')
-
-let handler = async (m, { conn, args, usedPrefix }) => {
-	if (!args[0]) return m.reply('Putting *URL* Facebook..')
-    if (!args[0].includes("facebook")) return m.reply(`Url is wrong..\n\n*Example:*\n${usedPrefix}fb https://www.facebook.com/juankcortavarriaoficial/videos/218237676749570/`)
-	let res = await fetch(`https://api.lolhuman.xyz/api/facebook?apikey=3bb99b19ba15e6a65ee4f6dd&url=` + args[0])
-	//if (res.status !== 200) throw `Coba Lagi`
-	let json = await res.json()
-	//if (!json.result) throw `Media tidak ditemukan atau postingan mungkin diprivate`
-	let url = json.videoUrl
-	m.reply('Sedang diproses...')
-	if (url) await conn.sendFile(m.chat, url, 'fb.mp4', wm, m)
-	//if (url) await conn.sendMessage(m.chat, url, MessageType.video, {mimetype: 'video/mp4', quoted: m, caption: wm})
-	else m.reply('Link download tidak ditemukan')
-	}
-
-handler.help = ['fb'].map(v => v + ' <url>')
+const { facebookdl, facebookdlv2 } = require('@bochilteam/scraper')
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `Use example / Gunakan ${usedPrefix}${command} https://www.facebook.com/juankcortavarriaoficial/videos/218237676749570/`
+    const { result } = await facebookdl(args[0]).catch(async _ => await facebookdlv2(args[0]))
+    for (const { url, isVideo } of result.reverse()) conn.sendFile(m.chat, url, `facebook.${!isVideo ? 'bin' : 'mp4'}`, `© TioXd`, m)
+}
+handler.help = ['facebook'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^f((b|acebook)(dl|download)?(er)?)$/i
-handler.limit = false
-handler.group = false
-handler.premium = false
+handler.command = /^((facebook|fb)(downloder|dl)?)$/i
 
 module.exports = handler
-
