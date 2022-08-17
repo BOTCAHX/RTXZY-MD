@@ -189,7 +189,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     conn.sendButton(m.chat, text.trim(), wm, url,
 [
 ['Creator', '.owner'],
-['Info', '.info'],
+['Donasi', '.donasi'],
 ['Script', '.sc']
 ], m
 )
