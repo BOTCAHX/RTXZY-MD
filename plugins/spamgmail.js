@@ -1,4 +1,4 @@
-let axios = require("axios");
+/*let axios = require("axios");
 let handler = async(m, { conn, text }) => {
     let [email, pesan] = text.split `|`
 
@@ -26,4 +26,4 @@ handler.botAdmin = false
 handler.fail = null
 handler.limit = true
 
-module.exports = handler
+module.exports = handler*/
