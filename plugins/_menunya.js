@@ -2,6 +2,7 @@
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 process.env.TZ = 'Asia/Jakarta'
 let fs = require('fs')
+let vn = './mp3/menu.opus'
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
@@ -193,6 +194,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 ['Script', '.sc']
 ], m
 )
+await conn.sendFile(m.chat, vn, 'menu.opus', null, m, true, {
+type: 'audioMessage', 
+ptt: true})
     /*let url = `https://database.tioclkp02.repl.co/TextPro.me_162e2a76bb2460.jpg`.trim()
     conn.sendHydrated(m.chat, text.trim(), '⫹⫺ TioXd', null, 'https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL', 'Group', '', '', [
       ['Sewa Bot', '/sewa'],
