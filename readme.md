@@ -1,6 +1,6 @@
 
 </p>
-<h1 align="center">R-TXZY-MD</h1>
+<h1 align="center">rtxzy-Md-v2</h1>
 <p align="center">
 
 <img src="https://telegra.ph/file/4637101da58e21976363b.jpg" alt="Alya putri" width="500"/>
@@ -22,19 +22,19 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 <!--<div>https://botcahx-rest-api.herokuapp.com/</div>-->
 </p>
   
-<a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/R-TXZY-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/R-TXZY-MD"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/R-TXZY-MD?label=Forks&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/R-TXZY-MD?label=Watchers&color=green&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/BOTCAHX/R-TXZY-MD?label=Stars&color=yellow&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/BOTCAHX/R-TXZY-MD?label=Contributors&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/issues"><img title="Issues" src="https://img.shields.io/github/issues/BOTCAHX/R-TXZY-MD?label=Issues&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/BOTCAHX/R-TXZY-MD?label=Issues&color=red&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/BOTCAHX/R-TXZY-MD?label=PullRequest&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/BOTCAHX/R-TXZY-MD?label=PullRequest&color=red&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD"><img title="Open Source" src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103"></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/"><img title="Size" src="https://img.shields.io/github/repo-size/BOTCAHX/R-TXZY-MD?style=flat-square&color=green"></a>
+<a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/rtxzy-Md-v2"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/rtxzy-Md-v2"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/rtxzy-Md-v2?label=Forks&color=blue&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/rtxzy-Md-v2?label=Watchers&color=green&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/BOTCAHX/rtxzy-Md-v2?label=Stars&color=yellow&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/BOTCAHX/rtxzy-Md-v2?label=Contributors&color=blue&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/issues"><img title="Issues" src="https://img.shields.io/github/issues/BOTCAHX/rtxzy-Md-v2?label=Issues&color=success&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/BOTCAHX/rtxzy-Md-v2?label=Issues&color=red&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/BOTCAHX/rtxzy-Md-v2?label=PullRequest&color=success&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/BOTCAHX/rtxzy-Md-v2?label=PullRequest&color=red&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2"><img title="Open Source" src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103"></a>
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/"><img title="Size" src="https://img.shields.io/github/repo-size/BOTCAHX/rtxzy-Md-v2?style=flat-square&color=green"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzeeoneofc%2FAlphabot-Md&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
-<a href="https://github.com/BOTCAHX/R-TXZY-MD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
+<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 
 ## Information
 
