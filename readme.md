@@ -22,7 +22,7 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 <!--<div>https://botcahx-rest-api.herokuapp.com/</div>-->
 </p>
   
-<a href="https://visitor-badge.glitch.me/badge?page_id=https://botcahx-rest-api.herokuapp.com"><img title="Visitor Rest Api" src="https://visitor-badge.glitch.me/badge?page_id=https://botcahx-rest-api.herokuapp.com"></a>
+<a href="https://https://botcahx-rest-api.herokuapp.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbotcahx-rest-api.herokuapp.com%2Fhit-counter&count_bg=%23E20D0D&title_bg=%230C15DB&icon=heroku.svg&icon_color=%23E7E7E7&title=Hits+Today&edge_flat=false"/></a>
 <a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/rtxzy-Md-v2"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/rtxzy-Md-v2"></a>
 <a href="https://github.com/BOTCAHX/rtxzy-Md-v2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/rtxzy-Md-v2?label=Forks&color=blue&style=flat-square"></a>
 <a href="https://github.com/BOTCAHX/rtxzy-Md-v2/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/rtxzy-Md-v2?label=Watchers&color=green&style=flat-square"></a>
