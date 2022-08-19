@@ -1,3 +1,5 @@
+// Kl gamau ada musiknya hapus aja let vn  
+// dan hapus juga await sendfile di bawah 
 
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 process.env.TZ = 'Asia/Jakarta'
