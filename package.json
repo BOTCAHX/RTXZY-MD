@@ -1,7 +1,7 @@
 {
-    "name": "rtxzy-Md",
-    "version": "3.5.4",
-    "description": "WhatsApp Multy Device",
+    "name": "rtxzy",
+    "version": "07.06.98",
+    "description": "Customizable WhatsApp Bot",
     "depecrated": false,
     "main": "index.js",
     "directories": {
@@ -12,7 +12,7 @@
     "scripts": {
         "start": "node index.js",
         "test": "node test.js",
-        "test2": "nodemon index.js"
+        "test2": "nodemon index.js --server --autocleartmp"
     },
     "keywords": [
         "termux-whatsapp-bot",
@@ -20,27 +20,37 @@
         "whatsapp",
         "js-whatsapp",
         "whatsapp",
-        "ShiraoriBOT",
-        "wabot-aq"
+        "Games-wabot",
+        "wabot-aq",
+        "multi-device",
+        "MD",
+        "baileys-md"
     ],
-    "homepage": "https://github.com/BOTCAHX/BOTWA-2022",
+    "homepage": "https://github.com/BOTCAHX/rtxzy-Md-v2",
     "author": {
-        "name": "jangandiubah"
+        "name": "Base Coded By TioXd"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/github.com/BOTCAHX/BOTWA-2022.git"
+        "url": "git+https://github.com/BOTCAHX/rtxzy-Md-v2.git"
     },
     "bugs": {
-        "url": "https://github.com/github.com/BOTCAHX/BOTWA-2022/issues"
+        "url": "https://github.com/BOTCAHX/rtxzy-Md-v2/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "^4.1.0",
+        "@adiwajshing/baileys": "github:adiwajshing/baileys",
+        "@adiwajshing/keyed-db": "^0.2.4",
+        "@bochilteam/scraper": "^3.0.0",
+        "acrcloud": "^1.4.0",
+        "async": "^3.2.3",
         "awesome-phonenumber": "^2.64.0",
         "axios": "^0.24.0",
-        "@bochilteam/scraper": "^3.0.0",
-        "cfonts": "^3.0.0",
+        "base64-to-image": "^1.0.2",
+        "brainly-scraper": "^1.0.3",
+        "brainly-scraper-v2": "^2.0.4-1",
+        "canvacord": "^5.2.3", 
+        "cfonts": "^2.10.0",
         "chalk": "^4.1.2",
         "cheerio": "^1.0.0-rc.10",
         "colors": "1.4.0",
@@ -64,12 +74,17 @@
         "qrcode": "^1.5.0",
         "readline": "^1.3.0",
         "similarity": "^1.2.1",
+        "socket.io": "^4.5.1",
         "syntax-error": "^1.4.0",
         "terminal-image": "^2.0.0",
         "translate-google-api": "^1.0.4",
         "url-regex-safe": "^2.1.0",
         "wa-sticker-formatter": "^4.0.14",
         "xfarr-api": "^1.0.3",
+        "url": "^0.11.0",
+        "url-regex": "^5.0.0",
+        "url-regex-safe": "^2.1.0",
+        "util": "^0.12.4",
         "yargs": "^17.2.1",
         "yt-search": "^2.9.0"
     }
