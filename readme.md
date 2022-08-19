@@ -3,7 +3,7 @@
 <h1 align="center">rtxzy-Md-v2</h1>
 <p align="center">
 
-<img src="https://telegra.ph/file/4637101da58e21976363b.jpg" alt="Alya putri" width="500"/>
+<img src="https://telegra.ph/file/b4d36a17e68e5f9f27cd5.jpg" alt="Br" width="500"/>
 <h1 align="center">Jangan lupa kasih stars & follow :)</h1>
 
 >
