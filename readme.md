@@ -47,6 +47,8 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 ![npm](https://img.shields.io/badge/npm-43853D?style=for-the-badge&logo=npm&logoColor=white)
 ![github](https://img.shields.io/badge/github-43853D?style=for-the-badge&logo=github&logoColor=white)
 ![Apikey](https://img.shields.io/badge/apikey-43853D?style=for-the-badge&logo=apikey&logoColor=white)
+![Wahatsapp](https://img.shields.io/badge/Wahatsapp-43853D?style=for-the-badge&logo=Wahatsapp&logoColor=white)
+
 
 ## Information
 
