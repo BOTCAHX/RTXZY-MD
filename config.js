@@ -66,7 +66,8 @@ global.APIs = { // API Prefix
   erdwepe: 'https://erdwpe-api.herokuapp.com',
   lolhuman: 'https://api.lolhuman.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
-  rey: 'https://server-api-rey.herokuapp.com'
+  rey: 'https://server-api-rey.herokuapp.com',
+  males: 'https://malesin.xyz'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
