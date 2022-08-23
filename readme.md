@@ -36,9 +36,14 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 <a href="https://github.com/BOTCAHX/RTXZY-MD/"><img title="Size" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?style=flat-square&color=green"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzeeoneofc%2FAlphabot-Md&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
 <a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
-![python](https://img.shields.io/badge/python-43853D?style=for-the-badge&logo=python&logoColor=blue)
+
+## Big Thanks
+![Python](https://img.shields.io/badge/python-43853D?style=for-the-badge&logo=python&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Javascript](https://img.shields.io/badge/javascript-43853D?style=for-the-badge&logo=javascript&logoColor=white)
+![Typescript](https://img.shields.io/badge/typescript-43853D?style=for-the-badge&logo=typescript &logoColor=white)
+![mongodb](https://img.shields.io/badge/mongodb-43853D?style=for-the-badge&logo=mongodb&logoColor=white)
+
 
 ## Information
 
