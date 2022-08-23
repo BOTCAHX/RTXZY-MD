@@ -41,8 +41,9 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 ![Python](https://img.shields.io/badge/python-43853D?style=for-the-badge&logo=python&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Javascript](https://img.shields.io/badge/javascript-43853D?style=for-the-badge&logo=javascript&logoColor=white)
-![Typescript](https://img.shields.io/badge/typescript-43853D?style=for-the-badge&logo=typescript &logoColor=white)
+![typescript](https://img.shields.io/badge/typscript-43853D?style=for-the-badge&logo=typescript&logoColor=white)
 ![mongodb](https://img.shields.io/badge/mongodb-43853D?style=for-the-badge&logo=mongodb&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-43853D?style=for-the-badge&logo=heroku&logoColor=white)
 
 
 ## Information
