@@ -1,6 +1,6 @@
 
 </p>
-<h1 align="center">rtxzy-Md-v2</h1>
+<h1 align="center">RTXZY-MD</h1>
 <p align="center">
 
 <img src="https://telegra.ph/file/b4d36a17e68e5f9f27cd5.jpg" alt="Br" width="500"/>
@@ -14,7 +14,7 @@
 <a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=RTXZY-MD&color=blue"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/BOTCAHX/rtxzy-Md-v2"><img title="Author" src="https://img.shields.io/badge/Author-Team-blue.svg?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/BOTCAHX/RTXZY-MD"><img title="Author" src="https://img.shields.io/badge/Author-Team-blue.svg?style=for-the-badge&logo=github" /></a>
 </p>
 <p align="center">
 <a href="https://botcahx-rest-api.herokuapp.com"><img title="mengapi" 
@@ -23,19 +23,19 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 </p>
   
 <a href="https://https://botcahx-rest-api.herokuapp.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbotcahx-rest-api.herokuapp.com%2Fhit-counter&count_bg=%23E20D0D&title_bg=%230C15DB&icon=heroku.svg&icon_color=%23E7E7E7&title=Hits+Today&edge_flat=false"/></a>
-<a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/rtxzy-Md-v2"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/rtxzy-Md-v2"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/rtxzy-Md-v2?label=Forks&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/rtxzy-Md-v2?label=Watchers&color=green&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/BOTCAHX/rtxzy-Md-v2?label=Stars&color=yellow&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/BOTCAHX/rtxzy-Md-v2?label=Contributors&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/issues"><img title="Issues" src="https://img.shields.io/github/issues/BOTCAHX/rtxzy-Md-v2?label=Issues&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/BOTCAHX/rtxzy-Md-v2?label=Issues&color=red&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/BOTCAHX/rtxzy-Md-v2?label=PullRequest&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/BOTCAHX/rtxzy-Md-v2?label=PullRequest&color=red&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2"><img title="Open Source" src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103"></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/"><img title="Size" src="https://img.shields.io/github/repo-size/BOTCAHX/rtxzy-Md-v2?style=flat-square&color=green"></a>
+<a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/RTXZY-MD?label=Forks&color=blue&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/RTXZY-MD?label=Watchers&color=green&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/BOTCAHX/RTXZY-MD?label=Stars&color=yellow&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/BOTCAHX/RTXZY-MD?label=Contributors&color=blue&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/issues"><img title="Issues" src="https://img.shields.io/github/issues/BOTCAHX/RTXZY-MD?label=Issues&color=success&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/BOTCAHX/RTXZY-MD?label=Issues&color=red&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/BOTCAHX/RTXZY-MD?label=PullRequest&color=success&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/BOTCAHX/RTXZY-MD?label=PullRequest&color=red&style=flat-square"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD"><img title="Open Source" src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103"></a>
+<a href="https://github.com/BOTCAHX/RTXZY-MD/"><img title="Size" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?style=flat-square&color=green"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzeeoneofc%2FAlphabot-Md&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
-<a href="https://github.com/BOTCAHX/rtxzy-Md-v2/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
+<a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 
 ## Information
 
@@ -61,15 +61,15 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 > pkg install bash
 > pkg install ffmpeg
 > pkg install libwebp
-> git clone  https://github.com/BOTCAHX/rtxzy-Md-v2
-> cd rtxzy-Md-v2
+> git clone  https://github.com/BOTCAHX/RTXZY-MD
+> cd RTXZY-MD
 > npm i
 > node run.js
 
 ## untuk Sdcard (File yang Sudah Di Download)
 > cd /sdcard
-> cp -r rtxzy-Md-v2 $HOME
-> cd rtxzy-Md-v2
+> cp -r RTXZY-MD $HOME
+> cd RTXZY-MD
 > npm i
 > node run.js
 ```
@@ -78,11 +78,11 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 
 Simple WhatsApp Bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/rtxzy-Md-v2)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/RTXZY-MD)
 
 ## UNTUK PENGGUNA RAILWAY
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%BOTCAHX%rtxzy-Md-v2)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%BOTCAHX%RTXZY-MD)
 
 # get Session [seesion.data.json] 
 
@@ -105,8 +105,8 @@ Choose your repo
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/BOTCAHX/rtxzy-Md-v2MD
-cd rtxzy-Md-v2
+git clone https://github.com/BOTCAHX/RTXZY-MDMD
+cd RTXZY-MD
 npm i
 npm start
 ```
