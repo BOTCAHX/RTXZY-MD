@@ -236,8 +236,9 @@ Creator | Creator |
 [Verdi](https://github.com/verdihatorou)  | [ Radhin](https://github.com/radhin123)
 Creator | Contributors |
 <a href="https://github.com/Natx-C"><img src="https://github.com/Natx-C.png?size=100" width="100" height="100"></a>|
-[Verdi](https://github.com/Natx-C)  |
+[Natx-C](https://github.com/Natx-C) 
 Gretonger |
+
 ##### Special Thanks to
 <!--[![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![BochilGaming](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
