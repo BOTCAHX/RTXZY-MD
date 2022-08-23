@@ -44,7 +44,8 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 ![typescript](https://img.shields.io/badge/typscript-43853D?style=for-the-badge&logo=typescript&logoColor=white)
 ![mongodb](https://img.shields.io/badge/mongodb-43853D?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Heroku](https://img.shields.io/badge/heroku-43853D?style=for-the-badge&logo=heroku&logoColor=white)
-
+![npm](https://img.shields.io/badge/npm-43853D?style=for-the-badge&logo=npm&logoColor=white)
+![github](https://img.shields.io/badge/github-43853D?style=for-the-badge&logo=github&logoColor=white)
 
 ## Information
 
@@ -93,8 +94,8 @@ Simple WhatsApp Bot
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%BOTCAHX%RTXZY-MD)
 
-# get Session [seesion.data.json] 
-
+# get Session 
+> get session with scan qr in this module
 [![Run on Repl.it(for get Sessions )](https://repl.it/badge/github/quiec/whatsAlfa)](https://github.com/BOTCAHX/Session-Md)
 
 ## FOR OKTETO
