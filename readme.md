@@ -46,6 +46,7 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 ![Heroku](https://img.shields.io/badge/heroku-43853D?style=for-the-badge&logo=heroku&logoColor=white)
 ![npm](https://img.shields.io/badge/npm-43853D?style=for-the-badge&logo=npm&logoColor=white)
 ![github](https://img.shields.io/badge/github-43853D?style=for-the-badge&logo=github&logoColor=white)
+![Apikey](https://img.shields.io/badge/apikey-43853D?style=for-the-badge&logo=apikey&logoColor=white)
 
 ## Information
 
@@ -153,13 +154,13 @@ Digunakan untuk [heroku](https://heroku.com/) atau pindai melalui situs web
 
 menggunakan db eksternal alih-alih db lokal, **disarankan** menggunakan mongodb
 
-contoh server dengan mongodb `mongodb+srv://<username>:<password>@name-of-your-db.thhce.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+contoh server dengan mongodb db: node . --db "mongodb+srv://botwa:Jxrt6KiUNOOccDuo@cluster0.dytrn2e.mongodb.net/?retryWrites=true&w=majority" --autocleartmp --restrict
 
-contoh server dengan repl `https://json-server.nurutomo.repl.co/`
+contoh server dengan repl `https://json-server.tioclkp02.repl.co/`
 
-kode: `https://repl.it/@Nurutomo/json-server`
+kode: `https://repl.it/@tioclkp02/json-server`
 
-`node . --db 'https://json-server.nurutomo.repl.co/'`
+`node . --db 'https://json-server.tioclkp02.repl.co/'`
 
 server harus memiliki spesifikasi seperti ini
 
