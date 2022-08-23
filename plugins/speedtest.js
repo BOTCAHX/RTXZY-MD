@@ -1,3 +1,5 @@
+// Jadikan hanya owner bila fitur ini menggangu kinerja bot
+
 let cp = require('child_process')
 let { promisify } = require('util')
 let exec = promisify(cp.exec).bind(cp)
@@ -17,6 +19,6 @@ handler.help = ['speedtest']
 handler.tags = ['info']
 handler.command = /^(speedtest)$/i
 
-handler.owner = true
+handler.owner = false // ubah jadi true bila ingin mengganti
 
 module.exports = handler
