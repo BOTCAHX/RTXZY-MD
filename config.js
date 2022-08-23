@@ -1,26 +1,26 @@
 //Ini untuk setting Bot//
 
 //『 Utama 』 //
-global.owner = ['6282xxxxxx'] 
-global.mods = ['6282xxxxxx'] 
-global.prems = ['6282xxxxxx'] 
+global.owner = ['6282xxxxxx']  // isi jika perlu
+global.mods = ['6282xxxxxx']   // isi jika perlu
+global.prems = ['6282xxxxxx']  // isi jika perlu
 
-//『 Info Owner 』 //
-global.nameowner = '⫹⫺ Owner'
-global.numberowner = '6282xxxxxx'
-global.instagram = 'https://instagram.com/prm2.0'
-global.github = 'https://github.com/BOTCAHX'
-global.dana = '6282xxxxxx'
-global.pulsa = '6282xxxxxx'
+//Isi dengan nama dan nomor lu//
+global.nameowner = '⫹⫺ Owner' // isi nama kalian bebas
+global.numberowner = '6282xxxxxx' // isi nomor kalian dengan awalan seperti di contoh 
+global.instagram = 'https://instagram.com/prm2.0' // isi Instagram kalian harus link
+global.github = 'https://github.com/BOTCAHX' // gausah di isi juga gpp bro
+global.dana = '6282xxxxxx' // isi dengan nomor dana yg kamu punya 
+global.pulsa = '6282xxxxxx' // isi dengan nomor pulsa hp kalian
 global.gopay = ''
 
-//『 Info Bot 』//
+//Name Bot & Grouplink//
 global.namebot = 'R-txzyMd'
 global.gc = 'https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL'
 global.web = 'https://myblogxyz.netlify.app' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
 global.price1 = '1 bulan = 10.000\n2 Minggu 7.000\n1 Minggu 5.000'
 
-//『 Tampilan Dan Lainnya 』//
+//Tanpilan wm Bot ( Sebagian Tidak di fungsi kan)//
 global.fotonya1 = 'https://botcahx-rest-api.herokuapp.com/api/textpro/marvel-studios?text=List%20&text2=Menu' 
 global.fotonya2 = 'https://botcahx-rest-api.herokuapp.com/api/textpro/marvel-studios?text=List%20&text2=Menu' 
 global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
@@ -42,7 +42,7 @@ global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made with'
 global.author = 'Bot WhatsApp\nR-TXZY-MD'
 
-//『 Apikey 』 //
+//Apikey Setting//
 global.APIs = { // API Prefix
   // name: 'https://website'
   amel: 'https://melcanz.com',
@@ -83,8 +83,8 @@ global.APIKeys = { // APIKey Here
   'https://api.lolhuman.xyz': 'Deffbotz',
 }
 
-//『 RPG GAMES 』//
-global.multiplier = 20 // The higher, The harder levelup
+//Setting Rpg//
+global.multiplier = 69 // The higher, The harder levelup
 global.rpg = {
   emoticon(string) {
     string = string.toLowerCase()
@@ -117,7 +117,7 @@ global.rpg = {
   }
 }
 
-//『 Jangan Di Ubah 』 //
+//Jangan merubah bagian ini! //
 let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
