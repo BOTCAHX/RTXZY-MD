@@ -235,7 +235,7 @@ Creator | Creator |
 <a href="https://github.com/verdihatorou"><img src="https://github.com/verdihatorou.png?size=100" width="100" height="100"></a> | [![Radhin](https://github.com/radhin123.png?size=100)](https://github.com/radhin123) 
 [Verdi](https://github.com/verdihatorou)  | [ Radhin](https://github.com/radhin123)
 Creator | Contributors |
-<a href="https://github.com/Natx-C"><img src="https://github.com/Natx-C.png?size=100" width="100" height="100"></a>|
+<a href="https://github.com/Natx-C"><img src="https://github.com/Natx-C.png?size=100" width="100" height="100"></a>
 [Natx-C](https://github.com/Natx-C) 
 Gretonger
 ##### Special Thanks to
