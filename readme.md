@@ -237,8 +237,7 @@ Creator | Creator |
 Creator | Contributors |
 <a href="https://github.com/Natx-C"><img src="https://github.com/Natx-C.png?size=100" width="100" height="100"></a>|
 [Natx-C](https://github.com/Natx-C) 
-Gretonger |
-
+Gretonger
 ##### Special Thanks to
 <!--[![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![BochilGaming](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
