@@ -3,7 +3,7 @@
 <h1 align="center">RTXZY-MD</h1>
 <p align="center">
 
-<img src="https://telegra.ph/file/b4d36a17e68e5f9f27cd5.jpg" alt="Br" width="500"/>
+<img src="https://telegra.ph/file/d8f657384f95a5fc0a742.mp4" alt="Br" width="500"/>
 <h1 align="center">Jangan lupa kasih stars & follow :)</h1>
 
 >
