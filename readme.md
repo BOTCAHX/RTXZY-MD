@@ -77,14 +77,14 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 > git clone  https://github.com/BOTCAHX/RTXZY-MD
 > cd RTXZY-MD
 > npm i
-> node run.js
+> node index.js
 
 ## untuk Sdcard (File yang Sudah Di Download)
 > cd /sdcard
 > cp -r RTXZY-MD $HOME
 > cd RTXZY-MD
 > npm i
-> node run.js
+> node index.js
 ```
 
 ## Run On Heroku
