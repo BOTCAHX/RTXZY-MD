@@ -1,3 +1,5 @@
+// beta list menu ujicoba doang 
+
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
