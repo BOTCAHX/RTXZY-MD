@@ -1,4 +1,6 @@
-//Ini untuk setting Bot//
+//Ini untuk setting Bot
+//Untuk gambar bacrround menu ada -
+//Dalam file _menunya.js
 
 //『 Utama 』 //
 global.owner = ['6282xxxxxx']  // isi jika perlu
