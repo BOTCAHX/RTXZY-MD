@@ -6,7 +6,7 @@ global.mods = ['6282xxxxxx']   // isi jika perlu
 global.prems = ['6282xxxxxx']  // isi jika perlu
 
 //Isi dengan nama dan nomor lu//
-global.nameowner = '⫹⫺ Owner' // isi nama kalian bebas
+global.nameowner = '⫹⫺ OWNER' // isi nama kalian bebas
 global.numberowner = '6282xxxxxx' // isi nomor kalian dengan awalan seperti di contoh 
 global.instagram = 'https://instagram.com/prm2.0' // isi Instagram kalian harus link
 global.github = 'https://github.com/BOTCAHX' // gausah di isi juga gpp bro
