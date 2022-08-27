@@ -3,7 +3,7 @@
 <h1 align="center">RTXZY-MD</h1>
 <p align="center">
 
-<img src="https://avatars.githubusercontent.com/BOTCAHX" width="150" height="150"/>
+<div align="center"><img src="https://raw.githubusercontent.com/BOTCAHX/RTXZY-MD/v3.0/gifs-de-auditoria-23.gif"></div>
 </p>
 <h1 align="center">Jangan lupa kasih stars & follow :)</h1>
 
