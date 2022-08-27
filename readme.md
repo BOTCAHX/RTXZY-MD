@@ -2,7 +2,8 @@
 </p>
 <h1 align="center">RTXZY-MD</h1>
 <p align="center">
-<div class="tenor-gif-embed" data-postid="26571072" data-share-method="host" data-width="100%" data-aspect-ratio="1.3351206434316354"><a href="https://tenor.com/view/gif-26571072">GIF</a> </div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+<img src="https://tenor.com/view/gif-26571072" alt="Br" width="500"/>
 <h1 align="center">Jangan lupa kasih stars & follow :)</h1>
 
 >
