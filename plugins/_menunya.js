@@ -1,5 +1,4 @@
-// Kl gamau ada musiknya pergi me _menunya-musik.js  
-// lalu hapus .bak di sana  dan hapus file ini agar tidak error.
+//ubah sesuai kebutuhan aja takutnya eror
 
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 process.env.TZ = 'Asia/Jakarta'
@@ -83,7 +82,7 @@ const defaultMenu = {
 Base Script : *BOTCAHX*
 Recode Script : *Private*
 
-⫹⫺ TioXd 
+⫹⫺ All Team 
 ${'```WhatsApp Multi Device```'}
 `,
 }
