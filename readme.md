@@ -3,7 +3,8 @@
 <h1 align="center">RTXZY-MD</h1>
 <p align="center">
 
-<img src="https://tenor.com/view/gif-26571072" alt="Br" width="500"/>
+<img src="https://avatars.githubusercontent.com/BOTCAHX" width="150" height="150"/>
+</p>
 <h1 align="center">Jangan lupa kasih stars & follow :)</h1>
 
 >
