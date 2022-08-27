@@ -27,7 +27,7 @@ let handler = (m, { conn, usedPrefix, command, text }) => {
 
 
     if(conn.tembak.musuh.indexOf("🥷") === conn.tembak.tembak.indexOf("🤠")) return conn.sendBut(m.chat, pos, "©LitRHap", "Tembak", `${usedPrefix}${command} tembak`)
-    return conn.send2But(m.chat, pos, "©LitRHap", "←", `${usedPrefix}${command} kiri`, "→", `${usedPrefix}${command} kanan`)
+    return conn.send2But(m.chat, pos, "©Koboy Mode", "←", `${usedPrefix}${command} kiri`, "→", `${usedPrefix}${command} kanan`)
   } else if(/kanan/i.test(text)) {
 
     let kanan = [
@@ -55,7 +55,7 @@ let handler = (m, { conn, usedPrefix, command, text }) => {
 
 
     if(conn.tembak.musuh.indexOf("🥷") === conn.tembak.tembak.indexOf("🤠")) return conn.sendBut(m.chat, pos, "©LitRHap", "Tembak", `${usedPrefix}${command} tembak`)
-    return conn.send2But(m.chat, pos, "©LitRHap", "←", `${usedPrefix}${command} kiri`, "→", `${usedPrefix}${command} kanan`)
+    return conn.send2But(m.chat, pos, "©Koboy Mode", "←", `${usedPrefix}${command} kiri`, "→", `${usedPrefix}${command} kanan`)
   } else if(/tembak/i.test(text)) {
 
     if(conn.tembak.tembak.indexOf("🤠") == conn.tembak.musuh.indexOf("🥷")) {
