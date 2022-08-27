@@ -31,7 +31,7 @@ global.wm = '© R-TXZY-MD'
 global.watermark = wm
 global.wm2 = '⫹⫺ R-TXZY-MD'
 global.wm3 = '© R-TXZY-MD'
-global.wm4 = 'Ⓛ = Limit Ⓟ = Premium'
+global.wm4 = '© 2021/2022'
 global.htki = '––––––『' 
 global.htka = '』––––––'
 global.media = 'https://database.tioclkp02.repl.co/IMG_20220803_172938.JPG'
