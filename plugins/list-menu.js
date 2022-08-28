@@ -9,7 +9,7 @@ let _uptime = process.uptime() * 1000
     let sel = `*© Rtxzy*`
     let rs = `Click Here`
 const sections = [ {
-	title: `☁️ Aktif ${uptime} / ⏲️ Jam ${time} WIB`,
+	title: `☁️ Aktif ${uptime} || ⏲️ Jam ${time} WIB`,
 	rows: [
 	    {title: `Semua Perintah`, rowId: `.a `},//, description: ``},
 	    {title: `Owner`, rowId: `#owner `},//, description: ``},
