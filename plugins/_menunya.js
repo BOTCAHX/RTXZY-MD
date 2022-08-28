@@ -217,7 +217,7 @@ await conn.send2ButtonImg(m.chat, await (await fetch('https://botcahx-rest-a
 }
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(allmenu)$/i
+handler.command = /^(a)$/i
 
 handler.exp = 3
 
