@@ -12,7 +12,7 @@ const sections = [ {
 	title: `☁️ Aktif ${uptime} || ⏲️ Jam ${time} WIB`,
 	rows: [
 	    {title: `Semua Perintah`, rowId: `.a `},//, description: ``},
-            {title: `All CMD Payment`, rowId: `#pay `},//, description: ``},
+            {title: `All CMD Payment`, rowId: `.pay `},//, description: ``},
 	    {title: `Owner`, rowId: `#owner `},//, description: ``},
         {title: `Donasi`, rowId: `#donasi `},//, description: ``},
         {title: `Script`, rowId: `#sc `},//, description: ``},
