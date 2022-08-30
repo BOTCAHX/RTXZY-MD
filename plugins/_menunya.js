@@ -1,7 +1,6 @@
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 process.env.TZ = 'Asia/Jakarta'
 let fs = require('fs')
-let vn = './mp3/sakit.opus'
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
@@ -207,9 +206,6 @@ await conn.send2ButtonImg(m.chat, await (await fetch('https://botcahx-rest-a
           }  
        }  
       })
-//await conn.sendFile(m.chat, vn, 'menu.opus', null, m, true, {
-//type: 'audioMessage', 
-//ptt: true})
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu server sedang error', m)
     throw e
