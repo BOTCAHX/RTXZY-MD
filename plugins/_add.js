@@ -16,8 +16,8 @@ handler.help = ['add 628xx']
 handler.tags = ['group']
 handler.command = /^(add)$/i
 
-handler.admin = false
+handler.admin = true
 handler.group = true
-handler.botAdmin = false
+handler.botAdmin = true
 
 module.exports = handler
