@@ -5,7 +5,7 @@
 
 <div align="center"><img src="https://raw.githubusercontent.com/BOTCAHX/RTXZY-MD/v3.0/gifs-de-auditoria-23.gif"></div>
 </p>
-<h1 align="center">Kasih Start Biar Semangat Recode Nya:v</h1>
+<h1 align="center">Kasih Star Biar Semangat Recode Nya:v</h1>
 
 >
 >
