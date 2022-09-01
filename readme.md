@@ -39,6 +39,7 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 <a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 
 ## Big Thanks
+<p align="center">
 ![Python](https://img.shields.io/badge/python-43853D?style=for-the-badge&logo=python&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Javascript](https://img.shields.io/badge/javascript-43853D?style=for-the-badge&logo=javascript&logoColor=white)
@@ -49,7 +50,7 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 ![github](https://img.shields.io/badge/github-43853D?style=for-the-badge&logo=github&logoColor=white)
 ![Apikey](https://img.shields.io/badge/apikey-43853D?style=for-the-badge&logo=apikey&logoColor=white)
 ![WhatsApp](https://img.shields.io/badge/WhatsApp-43853D?style=for-the-badge&logo=WhatsApp&logoColor=white)
-
+</p>
 
 ## Information
 
