@@ -21,7 +21,7 @@
 <a href="https://botcahx-rest-api.herokuapp.com"><img title="mengapi" 
 src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=orange"></a>
 <!--<div>https://botcahx-rest-api.herokuapp.com/</div>-->
-</p>
+
   
 <a href="https://botcahx-rest-api.herokuapp.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbotcahx-rest-api.herokuapp.com%2Fhit-counter&count_bg=%23E20D0D&title_bg=%230C15DB&icon=heroku.svg&icon_color=%23E7E7E7&title=Hits+Today&edge_flat=false"/></a>
 <a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"></a>
@@ -37,9 +37,9 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 <a href="https://github.com/BOTCAHX/RTXZY-MD/"><img title="Size" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?style=flat-square&color=green"></a>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzeeoneofc%2FAlphabot-Md&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
 <a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
-
+</p>
 ## Big Thanks
-<p align="center">
+
 ![Python](https://img.shields.io/badge/python-43853D?style=for-the-badge&logo=python&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Javascript](https://img.shields.io/badge/javascript-43853D?style=for-the-badge&logo=javascript&logoColor=white)
@@ -50,7 +50,6 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 ![github](https://img.shields.io/badge/github-43853D?style=for-the-badge&logo=github&logoColor=white)
 ![Apikey](https://img.shields.io/badge/apikey-43853D?style=for-the-badge&logo=apikey&logoColor=white)
 ![WhatsApp](https://img.shields.io/badge/WhatsApp-43853D?style=for-the-badge&logo=WhatsApp&logoColor=white)
-</p>
 
 ## Information
 
