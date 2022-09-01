@@ -1,5 +1,5 @@
 //Ini untuk setting Bot
-//Untuk gambar bacrround menu ada -
+//Untuk gambar background menu ada -
 //Dalam file _menunya.js
 
 //『 Utama 』 //
