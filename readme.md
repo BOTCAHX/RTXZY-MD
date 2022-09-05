@@ -125,7 +125,7 @@ Choose your repo
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/BOTCAHX/RTXZY-MDMD
+git clone https://github.com/BOTCAHX/RTXZY-MD
 cd RTXZY-MD
 npm i
 npm start
