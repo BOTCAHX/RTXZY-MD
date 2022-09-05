@@ -1,6 +1,6 @@
 
 </p>
-<h1 align="center">Whatsapp Bot</h1>
+<h1 align="center">Simple WhatsApp Bot</h1>
 <p align="center">
 
 <div align="center"><img src="https://raw.githubusercontent.com/BOTCAHX/RTXZY-MD/v3.0/gifs-de-auditoria-23.gif"></div>
