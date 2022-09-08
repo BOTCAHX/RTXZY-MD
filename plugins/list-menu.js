@@ -1,19 +1,22 @@
 // beta list menu ujicoba doang 
+// Sedang menyelesaikan menu jadi seadanya dlu ya banh:v
+// Dilarang edit edit yg lain nanti errror
+// kalo edit wm boleh aja asal se wajarnya
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-let _uptime = process.uptime() * 1000
+    let handler = async (m, { conn, text, usedPrefix, command }) => {
+    let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
     let time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
-   let ar = ['list', 'menu']
-   let ras = `Hai Kak  @${m.sender.split('@')[0]} 👋`
-    let sel = `*© Rtxzy*`
-    let rs = `Click Here`
-const sections = [ {
-	title: `☁️ Aktif ${uptime} || ⏲️ Jam ${time} WIB`,
-	rows: [
-	    {title: `Semua Perintah`, rowId: `.a `},//, description: ``},
-            {title: `All CMD Payment`, rowId: `.pay `},//, description: ``},
-	    {title: `Owner`, rowId: `#owner `},//, description: ``},
+    let ar = ['list', 'menu']
+    let yo = `Hai @${m.sender.split('@')[0]} 👋`
+    let tio = `*© RTXZY-TEAM*`
+    let liv = `CLICK HERE`
+    const sections = [ {
+      	title: `Aktif ${uptime} || Jam ${time} WIB`,
+        rows: [
+	{title: `All Menu`, rowId: `.a `},//, description: ``},
+        {title: `All Menu V2`, rowId: `.pay `},//, description: ``},
+        {title: `Owner`, rowId: `#owner `},//, description: ``},
         {title: `Donasi`, rowId: `#donasi `},//, description: ``},
         {title: `Script`, rowId: `#sc `},//, description: ``},
         {title: `Group Official`, rowId: `#gcbot `},//, description: ``},
@@ -22,12 +25,12 @@ const sections = [ {
         ]
  } ]
 
-const listMessage = {
-  text: sel,
+  const listMessage = {
+  text: tio,
   mentions: [m.sender],
   footer: 'Jika menemukan bug,error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada owner.',
-  title: ras,
-  buttonText: rs,
+  title: yo,
+  buttonText: liv,
   sections
 }
 
