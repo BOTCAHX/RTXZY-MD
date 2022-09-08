@@ -41,7 +41,6 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-  </>
 ╭─「 *${global.namebot}* 」  
 │ • Username : %name
 │ • Role : %role
@@ -62,7 +61,7 @@ const defaultMenu = {
 ╰────
 ╭─ 「 *USER INFO* 」
 │ • Pengguna :  %name 
-│ • Limit : %limit / day
+│ • Limit : %limit
 │ • Status : User
 │ • Exp : %totalexp
 │ • Level : %level
@@ -185,7 +184,7 @@ const ftroli = {
                             itemCount : 9999999999999,
                             status: 1,
                             surface : 1,
-                            message: 'TioXd Official',
+                            message: '© TioXd Official',
                             orderTitle: 'MENU',
                             thumbnail: await (await fetch('https://telegra.ph/file/3911d7aaaa8733314f70f.png')).buffer(),
                             sellerJid: '0@s.whatsapp.net'
@@ -193,7 +192,7 @@ const ftroli = {
                           }
                         }
                       }
-await conn.send2ButtonImg(m.chat, await (await fetch('https://hadi-api.herokuapp.com/api/walpaperanime')).buffer(),  '*────────[ DASBOARD ]────────*', text, 'INFOBOT', '.info', 'LISTMENU', '.menu', m, {  
+await conn.send2ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/77d411d5a3808b375c232.jpg')).buffer(),  '*────────[ DASBOARD ]────────*', text, 'INFOBOT', '.info', 'LISTMENU', '.menu', m, {  
       quoted: ftroli,  
       contextInfo: { //forwardingScore: 99999, isForwarded: true,  
           externalAdReply: {  showAdAttribution: true, 
