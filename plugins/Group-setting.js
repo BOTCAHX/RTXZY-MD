@@ -25,11 +25,11 @@ Untuk membuka grup!`.trim()
 		'0': 'announcement',
 	}[(args[0] || '')]
 	if (isClose === undefined) {
-		await conn.sendButton(m.chat, `
+		await conn.send2But(m.chat, `
 contoh:
 ${usedPrefix + command} tutup
 ${usedPrefix + command} buka
-	`.trim(), wm, null, [['Buka', '#grup 1'], ['Tutup', '#grup 0']], m)
+	`.trim(), wm2, 'Buka', '#grup 1', 'Tutup', '#grup 0', m)
 		throw false
 	} else if (isClose === 'announcement') {
 	await conn.groupSettingUpdate(m.chat, isClose)
@@ -37,16 +37,16 @@ ${usedPrefix + command} buka
 
 ketik *${usedPrefix}group buka*
 Untuk membuka grup!`.trim()
-	await conn.sendButton(m.chat, teks, wm, null, [['Buka', '.group buka']], m, { mentions: [m.sender] })
+	await conn.sendBut(m.chat, teks, wm, 'Buka', '.group buka', m, { mentions: [m.sender] })
 	} else if (isClose === 'not_announcement') {
 	await conn.groupSettingUpdate(m.chat, isClose)
-	await conn.sendButton(m.chat, bu, wm, null, [['Tutup', '.group tutup']], m, { mentions: [m.sender] })
+	await conn.sendBut(m.chat, bu, wm, 'Tutup', '.group tutup', m, { mentions: [m.sender] })
 	} else if (isClose === undefined) {
-	await conn.sendButton(m.chat, `
+	await conn.send2But(m.chat, `
 contoh:
 ${usedPrefix + command} tutup
 ${usedPrefix + command} buka
-	`.trim(), wm, null, [['Buka', '#grup 1'], ['Tutup', '#grup 0']], m)
+	`.trim(), wm2, 'Buka', '#grup 1', 'Tutup', '#grup 0', m)
 	}
 }
 
@@ -54,7 +54,6 @@ handler.help = ['grup <open/close>']
 handler.tags = ['group']
 handler.command = /^(g(ro?up|c?)?)$/i
 handler.group = true
-handler.botAdmin = true
+handler.botAdmin = false
 
 module.exports = handler
-
