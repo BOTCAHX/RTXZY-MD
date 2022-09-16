@@ -1,4 +1,4 @@
-## Panel Pterodat
+## Panel Pterodaktyl 
 > Daftar panel pterodaktyl agar mendapatkan Runtime 24/7
  [`Link Panel Register`](https://dash.boxmineworld.com/register?ref=79dl1Bqa)
 
