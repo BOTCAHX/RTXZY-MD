@@ -2,7 +2,7 @@
 
 > Daftar panel pterodaktyl agar mendapatkan Runtime 24/7
 
-> [`Link Panel Register`](https://dash.boxmineworld.com/register?ref=79dl1Bqa)
+> [`Link Panel Register`](https://dash.boxmineworld.com)
 
 > [`Panel login`](https://panel.boxmineworld.com)
 
