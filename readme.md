@@ -16,7 +16,7 @@ Wahatsapp (bot)
 > Masuk terlebih dahulu ke panel register
 > Setelah Mendaftar dan mendaftar akun login ke panel
 > Download sc bot mu yg telah di ganti owner & wm
-> Laku ubah Command ke node index.js
+> Lalu ubah Command ke node index.js
 > jika masih bingung bisa masuk ke gc gua
 
 > [`Group Discussion`](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL)
