@@ -1,3 +1,12 @@
+## Panel Pterodat
+> Daftar panel pterodaktyl agar mendapatkan Runtime 24/7
+ [`Link Panel Register`](https://dash.boxmineworld.com/register?ref=79dl1Bqa)
+
+> Register Dapatakan panel nya
+> Gunakan google translate karena menggunakan bahasa spanyol 
+> User free gunakan settingan Wahatsapp bot 
+Wahatsapp (bot)
+> lalu beli server dengan koin referal nya.
 
 </p>
 <h1 align="center">Simple WhatsApp Bot</h1>
