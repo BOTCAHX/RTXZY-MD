@@ -10,8 +10,8 @@
 
 > Gunakan google translate / atau ubah ke english karena bahasa original menggunakan bahasa spanyol 
 
-> User free gunakan settingan Wahatsapp bot 
-Wahatsapp (bot)
+> User free gunakan settingan WhatsApp bot 
+WhatsApp (bot)
 
 > lalu beli server dengan koin referal nya.
 
