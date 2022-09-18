@@ -2,9 +2,6 @@
 
 <div align="center"><img src="https://raw.githubusercontent.com/BOTCAHX/RTXZY-MD/v3.0/gifs-de-auditoria-23.gif"></div>
 </p>
->
->
->
 </div>
 <p align="center">
 <a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=RTXZY-MD&color=blue"></a>
