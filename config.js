@@ -42,7 +42,7 @@ global.author = 'Bot WhatsApp\nR-TXZY-MD'
 global.APIs = { // API Prefix
   // name: 'https://website'
   amel: 'https://melcanz.com',
-    bx: 'https://bx-hunter.herokuapp.com',
+  bx: 'https://bx-hunter.herokuapp.com',
   dhnjing: 'https://dhnjing.xyz',
   hardianto: 'https://hardianto-chan.herokuapp.com',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
