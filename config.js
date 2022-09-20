@@ -2,47 +2,54 @@
 //Untuk gambar background menu ada -
 //Dalam file _menunya.js
 
-//『 Utama 』 //
-global.owner = ['6282xxxxxx']  // isi jika perlu
-global.mods = ['6282xxxxxx']   // isi jika perlu
-global.prems = ['6282xxxxxx']  // isi jika perlu
 
-//Isi dengan nama dan nomor lu//
-global.nameowner = '⫹⫺ OWNER' // isi nama kalian bebas
-global.numberowner = '6282xxxxxx' // isi nomor kalian dengan awalan seperti di contoh 
-global.dana = '6282xxxxxx' // isi dengan nomor dana yg kamu punya 
-global.pulsa = '6282xxxxxx' // isi dengan nomor pulsa hp kalian
-global.gopay = '6282xxxxxx'
+//=============『 Utama 』================== //
+global.owner = ['628222179xxx'] 
+global.mods = ['628222179xxx'] 
+global.prems = ['628222179xxx'] 
 
-//Name Bot & Grouplink//
-global.namebot = 'R-txzyMd'
+//=============『 Info Owner 』============== //
+global.nameowner = '⫹⫺ Creator Bot ~『 Jgn Chat Klo Gk Penting 』'
+global.numberowner = '628222179xxx'
+global.instagram = 'https://instagram.com/prm2.0'
+global.github = 'https://github.com/BOTCAHX'
+global.dana = '628222179xxx'
+global.pulsa = '628222179xxx'
+global.gopay = ''
+
+//=============『 Info Bot 』=================//
+global.namebot = 'BOTCAHX'
 global.gc = 'https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL'
 global.web = 'https://myblogxyz.netlify.app' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
+global.price1 = '1 bulan = 10.000\n2 Minggu 7.000\n1 Minggu 5.000'
 
-//Tanpilan wm Bot //
+//=======『 Tampilan Dan Lainnya 』============//
+global.fotonya1 = 'https://database.tioclkp02.repl.co/TextPro.me_162e2aaeb790ae.jpg' //ganti jadi foto bot mu
+global.fotonya2 = 'https://database.tioclkp02.repl.co/IMG_20220803_172938.JPG' //ini juga ganti 
 global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
-global.wm = '© R-TXZY-MD'
+global.wm = '© TioXd'
 global.watermark = wm
-global.wm2 = '⫹⫺ R-TXZY-MD'
-global.wm3 = '© R-TXZY-MD'
-global.wm4 = '© 2021/2022'
+global.wm2 = '⫹⫺ TioXd'
+global.wm3 = '© TioXd'
+global.wm4 = 'Ⓛ = Limit Ⓟ = Premium'
 global.htki = '––––––『' 
 global.htka = '』––––––'
+global.media = 'https://database.tioclkp02.repl.co/TextPro.me_162e2aaeb790ae.jpg'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
-global.wait = '_*Tunggu sedang di proses...*_'
-global.eror = '_*Server Error*_'
+global.wait = '_*[⏳] Tunggu sedang di proses...*_'
+global.eror = '_*[❌] Server Error*_'
 global.benar = 'Benar ✅\n'
 global.salah = 'Salah ❌\n'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made with'
-global.author = 'Bot WhatsApp\nR-TXZY-MD'
+global.author = 'Bot WhatsApp\nBy TioXd'
 
-//Apikey Setting//
+//=============『 Apikey 』================== //
 global.APIs = { // API Prefix
   // name: 'https://website'
   amel: 'https://melcanz.com',
-  bx: 'https://bx-hunter.herokuapp.com',
+    bx: 'https://bx-hunter.herokuapp.com',
   dhnjing: 'https://dhnjing.xyz',
   hardianto: 'https://hardianto-chan.herokuapp.com',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
@@ -63,6 +70,7 @@ global.APIs = { // API Prefix
   lolhuman: 'https://api.lolhuman.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
   rey: 'https://server-api-rey.herokuapp.com',
+  beta: 'https://betabotz-api.herokuapp.com',
   males: 'https://malesin.xyz'
 }
 global.APIKeys = { // APIKey Here
@@ -78,9 +86,11 @@ global.APIKeys = { // APIKey Here
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
   'https://zekais-api.herokuapp.com': 'apikeymu',
   'https://api.lolhuman.xyz': 'Deffbotz',
+  'https://betabotz-api.herokuapp.com': 'BetaBotz',
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
 }
 
-//Setting Rpg//
+//=============『 RPG GAMES 』================== //
 global.multiplier = 69 // The higher, The harder levelup
 global.rpg = {
   emoticon(string) {
@@ -114,7 +124,7 @@ global.rpg = {
   }
 }
 
-//Jangan merubah bagian ini! //
+//===========『 Jangan Di Ubah 』================ //
 let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
