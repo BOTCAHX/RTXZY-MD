@@ -1,21 +1,3 @@
-<a href="https://botcahx-rest-api.herokuapp.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbotcahx-rest-api.herokuapp.com%2Fhit-counter&count_bg=%23E20D0D&title_bg=%230C15DB&icon=heroku.svg&icon_color=%23E7E7E7&title=Hits+Today&edge_flat=false"/></a>
-<a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/RTXZY-MD?label=Forks&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/BOTCAHX/RTXZY-MD?label=Watchers&color=green&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/BOTCAHX/RTXZY-MD?label=Stars&color=yellow&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/BOTCAHX/RTXZY-MD?label=Contributors&color=blue&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/issues"><img title="Issues" src="https://img.shields.io/github/issues/BOTCAHX/RTXZY-MD?label=Issues&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/BOTCAHX/RTXZY-MD?label=Issues&color=red&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/BOTCAHX/RTXZY-MD?label=PullRequest&color=success&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/BOTCAHX/RTXZY-MD?label=PullRequest&color=red&style=flat-square"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD"><img title="Open Source" src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103"></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/"><img title="Size" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?style=flat-square&color=green"></a>
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzeeoneofc%2FAlphabot-Md&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
-<a href="https://github.com/BOTCAHX/RTXZY-MD/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
-
-</p>
-
-
 ## Platform 
 
 ![Python](https://img.shields.io/badge/python-43853D?style=for-the-badge&logo=python&logoColor=white)
