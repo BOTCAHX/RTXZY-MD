@@ -1,8 +1,6 @@
 
 <p align="center">
 <a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=RTXZY-MD&color=blue"></a>
-</p>
-<p align="center">
   <a href="https://github.com/BOTCAHX/RTXZY-MD"><img title="Author" src="https://img.shields.io/badge/Author-Team-blue.svg?style=for-the-badge&logo=github" /></a>
 <a href="https://botcahx-rest-api.herokuapp.com"><img title="mengapi" 
 src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=orange"></a>
