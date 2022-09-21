@@ -1,12 +1,12 @@
 ## Information
 
-> Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
+> Jika kamu menemukan semacam bug, laporkan kepada creator 
 
 > Telah dilakukan pengoptimalan kinerja bot dengan menghapus button mengganggu berjalan nya bot
 
->  Kalo Erorr apikey nya beli atau ganti sendiri aja ya 
+>  Kalo Erorr apikey nya beli atau ganti sendiri saja
 
-> Masih Tahap Pengembangan v.3.0
+> Version v.3.0
 
 > Untuk file session ada di sessiontxzy.data.json, kalo mau run termux hapus terlebih dahulu file tersebut.
 
