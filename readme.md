@@ -1,12 +1,3 @@
-
-<p align="center">
-<center><a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=RTXZY-MD&color=blue"></a
-<a href="https://github.com/BOTCAHX/RTXZY-MD"><img title="Author" src="https://img.shields.io/badge/Author-Team-blue.svg?style=for-the-badge&logo=github" /></a>
-<a href="https://botcahx-rest-api.herokuapp.com"><img title="mengapi" 
-src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=orange"></a>
-<!--<div>https://botcahx-rest-api.herokuapp.com/</div>-->
-
-  
 <a href="https://botcahx-rest-api.herokuapp.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbotcahx-rest-api.herokuapp.com%2Fhit-counter&count_bg=%23E20D0D&title_bg=%230C15DB&icon=heroku.svg&icon_color=%23E7E7E7&title=Hits+Today&edge_flat=false"/></a>
 <a href="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=BOTCAHX/RTXZY-MD"></a>
 <a href="https://github.com/BOTCAHX/RTXZY-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/BOTCAHX/RTXZY-MD?label=Forks&color=blue&style=flat-square"></a>
