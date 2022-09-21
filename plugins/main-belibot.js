@@ -1,26 +1,30 @@
+let fs = require('fs')
 let handler = async (m, { conn }) => {
-const ftroli = {
-    key : {
-    remoteJid: '6283136505591-1614953337@g.us',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 2022,
-    status: 1,
-    surface : 1,
-    message: 'Get Bot', 
-    orderTitle: `Wabot`,
-    thumbnail: 'https://telegra.ph/file/2a27755364be1b30e45d4.png', 
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-	conn.reply(m.chat, price1, ftroli)
-}
-
-handler.help = ['sewa', 'sewabot']
+let anu = `
+╭─「 Donasi 」
+│ • [ 082221xxxx ] - Dana
+| • [ 082221xxxx ] - TSEL
+| • [ 082221xxxx ] - OVO
+| • [ 082221xxxx ] - GOPAY
+| • [ QRISS ] - PM ME
+╰────
+*_Note_*: jangan pencet button nanti force close._
+`
+await conn.relayMessage(m.chat,  {
+    requestPaymentMessage: {
+      currencyCodeIso4217: 'USD',
+      amount1000: 9999,
+      requestFrom: m.sender,
+      noteMessage: {
+      extendedTextMessage: {
+      text: anu,
+      contextInfo: {
+      externalAdReply: {
+      showAdAttribution: true
+      }}}}}}, {})
+}// Tambah sendiri kalo mau
+handler.help = ['sewa']
 handler.tags = ['info']
-handler.command = /^(sewa|sewabot)?$/i
+handler.command = /^(sewabot|sewa|price|rental|rent)$/i
 
 module.exports = handler
