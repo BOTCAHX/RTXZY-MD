@@ -1,5 +1,5 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Menolak Modar
+# Menolak Modar Single Auth 
  
  <p align="center">
 <img width="" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?color=red&label=Repo%20Size&style=for-the-badge&logo=appveyor">
@@ -50,7 +50,7 @@ Simple WhatsApp Bot
 
 ## UNTUK PENGGUNA RAILWAY
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%BOTCAHX%RTXZY-MD)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/BOTCAHX/RTXZY-MD)
 
 # get Session 
 > get session with scan qr in this module
@@ -86,7 +86,7 @@ npm start
 * https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 
 
-# Hargai Kami Dengan Menambahkan Kredit
+# Hargai Kami Dengan Menambahkan Credit
 
 ---------
 
@@ -170,15 +170,15 @@ conn.logger.level = 'debug'
 
 **All Team Bot Discussion**,
 
-**Yang Suport Buat Recode**,
+**Yang Support Buat Recode Base Ini**,
 
-**Semua Yang Bersangkutan**,
+**Semua Yang Bersangkutan Dalam Berdirinya Script Ini**,
 
-**Untuk Base Original Hyzer**,
+**Untuk Hyzer, Base Original Script Ini**,
 
-**Semua Yang Selalu Mendukung Kami**
+**Untuk Semua Yang Selalu Mendukung Kami.**
 
-### contact person
+### Contact Person
 
  [`AlyaXzy`](https://wa.me/6289505165400)
 
@@ -188,7 +188,7 @@ conn.logger.level = 'debug'
  
  [`Radhin`](https://wa.me/6282373158947)
 
-##### Contributors
+##### All Contributors
 <a href="https://github.com/BOTCAHX"><img src="https://github.com/BOTCAHX.png?size=100" width="100" height="100"></a> | [![Alya Putri](https://github.com/AlyaaXd.png?size=100)](https://github.com/AlyaaXd) 
 ---|---
 [Tio](https://github.com/BOTCAHX)  | [Alya putri](https://github.com/AlyaaXd)
@@ -200,7 +200,7 @@ Creator | Contributors |
 ---|---
 [Natx-C](https://github.com/Natx-C)  | [Zivfurr](https://github.com/Zivfurr)
 Contributor | Contributor |
-##### Special Thanks to
+##### Special Thanks To
 <!--[![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![BochilGaming](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
 [![adiwajshing/Baileys](https://github.com/adiwajshing.png?size=100)](https://github.com/adiwajshing)-->
