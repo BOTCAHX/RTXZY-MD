@@ -17,7 +17,7 @@
 > Untuk file session ada di sessiontxzy.data.json, kalo mau run termux isi file itu terlebih dahulu.
 
 ## Join Group Diskusi
-[![BOT DISCUSSION GROUP(markas bot)](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
+[![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=green)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
 
 ## Install for termux
 
@@ -97,7 +97,7 @@ npm start
 
 menggunakan session dari nama file yang berbeda, default `session.data.json`
 
-contoh nama file `raxcel.json` maka penggunaannya `node . --session 'raxcel'`
+contoh nama file `sessiontxzy.data.json` maka penggunaannya `node . --session 'sessiontxzy'`
 
 ### `--prefix <prefix>`
 
@@ -170,7 +170,13 @@ conn.logger.level = 'debug'
 
 **All Team Bot Discussion**,
 
-**Semua yang selalu mendukung**
+**Yang Suport Buat Recode**,
+
+**Semua Yang Bersangkutan**,
+
+**Untuk Base Original Hyzer**,
+
+**Semua Yang Selalu Mendukung Kami**
 
 ### contact person
 
