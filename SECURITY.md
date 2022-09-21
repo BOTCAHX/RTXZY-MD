@@ -6,8 +6,8 @@ Current projects supported by hosting
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.1.1   | :x:                |
-| 3.0     | white_check_mark:  |         
+| 1.1.1   | :x: EXPIRED        |
+| 3.0     | :✔️:               |         
 | alpha   | :x:                |
 | <3.1    | :x:                |
 
