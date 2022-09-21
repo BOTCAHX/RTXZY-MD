@@ -1,6 +1,6 @@
 
 <p align="center">
-<a href="##"><center><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=RTXZY-MD&color=blue"></a
+<center><a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=RTXZY-MD&color=blue"></a
 <a href="https://github.com/BOTCAHX/RTXZY-MD"><img title="Author" src="https://img.shields.io/badge/Author-Team-blue.svg?style=for-the-badge&logo=github" /></a>
 <a href="https://botcahx-rest-api.herokuapp.com"><img title="mengapi" 
 src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=orange"></a>
@@ -51,8 +51,7 @@ src="https://img.shields.io/static/v1?label=click for&message=FREE Apikey&color=
 > Untuk file session ada di sessiontxzy.data.json, kalo mau run termux hapus terlebih dahulu file tersebut.
 
 ## Join Group Diskusi
-[![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
-**Markas Para Bot**
+[![BOT DISCUSSION GROUP(markas bot)](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
 
 ## Install for termux
 
