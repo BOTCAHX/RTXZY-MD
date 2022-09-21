@@ -7,9 +7,9 @@ Current projects supported by hosting
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.1.1   | :x: EXPIRED        |
-| 3.0     | :✔️:               |         
-| alpha   | :x:                |
-| <3.1    | :x:                |
+| 3.0     | ✔️  WORK           |         
+| alpha   | :x: EXPIRED        |
+| <3.1    | :x: EXPIRED        |
 
 ## Reporting a Vulnerability
 
