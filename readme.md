@@ -1,16 +1,3 @@
-## Platform 
-
-![Python](https://img.shields.io/badge/python-43853D?style=for-the-badge&logo=python&logoColor=white)
-![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Javascript](https://img.shields.io/badge/javascript-43853D?style=for-the-badge&logo=javascript&logoColor=white)
-![typescript](https://img.shields.io/badge/typescript-43853D?style=for-the-badge&logo=typescript&logoColor=white)
-![mongodb](https://img.shields.io/badge/mongodb-43853D?style=for-the-badge&logo=mongodb&logoColor=white)
-![Heroku](https://img.shields.io/badge/heroku-43853D?style=for-the-badge&logo=heroku&logoColor=white)
-![npm](https://img.shields.io/badge/npm-43853D?style=for-the-badge&logo=npm&logoColor=white)
-![github](https://img.shields.io/badge/github-43853D?style=for-the-badge&logo=github&logoColor=white)
-![Apikey](https://img.shields.io/badge/apikey-43853D?style=for-the-badge&logo=apikey&logoColor=white)
-![WhatsApp](https://img.shields.io/badge/WhatsApp-43853D?style=for-the-badge&logo=WhatsApp&logoColor=white)
-
 ## Information
 
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
