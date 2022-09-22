@@ -7,7 +7,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
 if (!args[0]) throw 'Uhm..url nya mana?'
 m.reply('_Tunggu bentar ya tod..._')
-let res = await fetch(`https://botcahx-rest-api.herokuapp.com/api/dowloader/tikok?url=${args[0]}`)
+let res = await fetch(`https://botcahx-rest-api.up.railway.app/api/dowloader/tikok?url=${args[0]}`)
 if (!res.ok) throw await res.text()
 let json = await res.json()
 if (!json.status) throw json
