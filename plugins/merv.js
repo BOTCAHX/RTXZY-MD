@@ -5,7 +5,7 @@ let tio = 'Halo banh:v'
 type: 'audioMessage', 
 ptt: true, contextInfo: {
         externalAdReply: { showAdAttribution: true, title: tio,
- body: wm, sourceUrl: 'https://botcahx-rest-api-herokuapp.com', thumbnail: await (await fetch('https://telegra.ph/file/cfbeb870983c988666691.jpg')).buffer()}} 
+ body: wm, sourceUrl: 'https://botcahx-rest-api.up.railway.app', thumbnail: await (await fetch('https://telegra.ph/file/cfbeb870983c988666691.jpg')).buffer()}} 
      })
 
 }
