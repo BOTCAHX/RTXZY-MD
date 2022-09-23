@@ -6,6 +6,8 @@
 </p>
 
 > **Warning**: 
+> Fork ulang banh soalnya ganti Baileys
+ 
 > Jika kamu menemukan semacam bug, laporkan kepada creator 
 
 > Telah dilakukan pengoptimalan kinerja bot dengan menghapus button mengganggu berjalan nya bot
