@@ -1,6 +1,6 @@
-> Note : Sc ini udah gak akan dapay updatan lagi mulai sekarang
+> Note : Sc ini udah gak akan dapat updatan lagi mulai sekarang
 
-> kalo error atau apikey mari dix sendiri itupun kalo sc nya masi work 
+> kalo error atau apikey mati fix sendiri itupun kalo sc nya masih work 
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
