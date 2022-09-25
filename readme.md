@@ -1,3 +1,8 @@
+> Note : Sc ini udah gak akan dapay updatan lagi mulai sekarang
+
+> kalo error atau apikey mari dix sendiri itupun kalo sc nya masi work 
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 # Menolak Modar Single Auth 
  
