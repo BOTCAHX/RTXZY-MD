@@ -17,6 +17,7 @@ global.numberowner = '6282xxxxxx' // isi nomor kalian dengan awalan seperti di c
 global.dana = '6282xxxxxx' // isi dengan nomor dana yg kamu punya 
 global.pulsa = '6282xxxxxx' // isi dengan nomor pulsa hp kalian
 global.gopay = '6282xxxxxx'
+global.price1 = '1 bulan = 20.0000\n2 Minggu 60.000\n1 Minggu 56.000'
 
 //Name Bot & Grouplink//
 global.namebot = 'R-txzyMd'
