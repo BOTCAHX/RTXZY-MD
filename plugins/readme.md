@@ -1,0 +1,1 @@
+- Kalo masalah sesi lu ambil di Sc sebelah karena sc ini tidak bisa scan session
