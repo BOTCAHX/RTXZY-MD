@@ -16,13 +16,12 @@
 - Berikut link script yg suport kode qr untuk sesi[`Link Script`](https://github.com/BOTCAHX/RT-X-MD)
 
 ## Panel Pterodaktyl
-- Ini Rekomendasi tempat menjalankan bot Whatsapp
+> Deploy bot mudah dan cepat di panel 
 
 - Free 
-
 - Runtime 24/7
-
 - No delay !
+- Server selalu up-to-date 
 
 **Register Here** 
 
@@ -31,7 +30,7 @@
 [`Panel Server 2`](https://bit.ly/3BO4gvS)
 
 > **Warning**: 
-> Masing masing server mempunyai kecepatan Berbeda!
+> Masing masing server panel mempunyai kecepatan berbeda!
 
 
 ## Join Group Diskusi
