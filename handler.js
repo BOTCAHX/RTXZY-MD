@@ -41,7 +41,7 @@ module.exports = {
                     if (!isNumber(user.troopcamp)) user.troopcamp = 0
                     if (!isNumber(user.coin)) user.coin = 0
                     if (!isNumber(user.atm)) user.atm = 0
-                    if (!isNumber(user.limit)) user.limit = 20
+                    if (!isNumber(user.limit)) user.limit = 100
                     if (!isNumber(user.glimit)) user.glimit = 20
                     if (!isNumber(user.tprem)) user.tprem = 0
                     if (!isNumber(user.tigame)) user.tigame = 50
@@ -264,7 +264,7 @@ module.exports = {
                     exp: 0,
                     coin: 0,
                     atm: 0,
-                    limit: 20,
+                    limit: 100,
                     tigame: 50,
                     lastclaim: 0,
                     money: 0,
