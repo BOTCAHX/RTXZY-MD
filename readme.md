@@ -1,21 +1,12 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Bot Wangsaf 
+# Bot Whatsapp Multi Auth 
  
  <p align="center">
 <img width="" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?color=red&label=Repo%20Size&style=for-the-badge&logo=appveyor">
 </p>
 
 > **Warning**: 
-> Fork ulang banh soalnya ganti Baileys
- 
-> Jika kamu menemukan semacam bug, laporkan kepada creator 
-
-> Telah dilakukan pengoptimalan kinerja bot dengan menghapus button mengganggu berjalan nya bot
-
->  Kalo Erorr apikey nya beli atau ganti sendiri saja
-
-> Version v.3.0
-
+> Ini masih dalam perbaikan update ke versi multi auth
 
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
