@@ -9,13 +9,14 @@
 > Ini masih dalam perbaikan update ke versi multi auth
 
 - Sebenernya sc ini gabisa ambil sesi sendiri jadi ambil di Sc sebelah
-- Dengan cara run terlebih dahulu di bisa di termux atau replit (jenis terminal yang bisa save sesi)
-- Save atau download sesi tersebut lalu paste di folder session di sc ini.
+- Dengan cara run terlebih dahulu bisa di termux atau replit (jenis terminal yang bisa save sesi)
+- Save atau download sesi tersebut lalu paste ( upload ) di folder sessions di script ini.
 - Perlu di ingat sesi multi auth bukan session.data.json dan bukan satu file saja!
 
 - Berikut link script yg suport kode qr untuk sesi[`Link Script`](https://github.com/BOTCAHX/RT-X-MD)
 
 ## Panel Pterodaktyl
+> Rekomendasi tempat menjalankan bot 
 **Register Here** 
 
 [`Panel Server 1`](https://bit.ly/3xOyGf2)
