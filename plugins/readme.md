@@ -1,3 +1,0 @@
-- upgrade ke multi auth banh tunggu perbaikan aja.
-- jangan fork dlu lagi perbaikan :v
-- saya turu dlu sekarang males update nya:v
