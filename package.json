@@ -1,8 +1,8 @@
 
 {
     "name": "rtxzy",
-    "version": "07.06.98",
-    "description": "Customizable WhatsApp Bot",
+    "version": "07.06.99",
+    "description": "Bot Whatsapp Multi Auth",
     "depecrated": false,
     "main": "index.js",
     "directories": {
@@ -40,7 +40,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:amiruldev20/baileys",
+        "@adiwajshing/baileys": "github:BOTCAHX/baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "acrcloud": "^1.4.0",
