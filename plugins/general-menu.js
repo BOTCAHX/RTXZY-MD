@@ -1,4 +1,5 @@
 // Menu Untuk Whatsapp Terbaru
+// Konfigurasi dengan button respon 
 
     let handler = async (m, { conn, text, usedPrefix, command }) => {
     let _uptime = process.uptime() * 1000
@@ -8,7 +9,7 @@
     let title = `*© BOTCAHX*`
     let tmb = `CLICK HERE ⎙`
     const sections = [ {
-	title: `📡 Aktif Selama ${uptime} | ⌚ Waktu ${time} WIB`,
+	title: `Aktif Selama ${uptime} || Waktu ${time} WIB`,
 	rows: [
 	{title: `Semua Perintah`, rowId: `.allmenu `},//, description: ``},
         {title: `All CMD Payment`, rowId: `.pay `},//, description: ``},
