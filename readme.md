@@ -1,10 +1,5 @@
-> Note : Sc ini udah gak akan dapat updatan lagi mulai sekarang
-
-> kalo error atau apikey mati fix sendiri itupun kalo sc nya masih work 
-
-
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Menolak Modar Single Auth 
+# Bot Wangsaf 
  
  <p align="center">
 <img width="" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?color=red&label=Repo%20Size&style=for-the-badge&logo=appveyor">
@@ -21,7 +16,6 @@
 
 > Version v.3.0
 
-> Untuk file session ada di sessiontxzy.data.json, kalo mau run termux isi file itu terlebih dahulu.
 
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL) 
