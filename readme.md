@@ -16,7 +16,14 @@
 - Berikut link script yg suport kode qr untuk sesi[`Link Script`](https://github.com/BOTCAHX/RT-X-MD)
 
 ## Panel Pterodaktyl
-> Rekomendasi tempat menjalankan bot 
+- Ini Rekomendasi tempat menjalankan bot Whatsapp
+
+- Free 
+
+- Runtime 24/7
+
+- No delay !
+
 **Register Here** 
 
 [`Panel Server 1`](https://bit.ly/3xOyGf2)
