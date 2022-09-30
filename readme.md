@@ -40,19 +40,6 @@ Simple WhatsApp Bot
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BOTCAHX/RTXZY-MD)
 
-## UNTUK PENGGUNA RAILWAY
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/BOTCAHX/RTXZY-MD)
-
-# get Session 
-> get session with scan qr in this module
-
-> [![Session Wahatsapp.web(for get Sessions )](https://repl.it/badge/github/quiec/whatsAlfa)](https://github.com/BOTCAHX/Session-Md)
-
-## FOR OKTETO
-
-* Okteto [`Click Here go to website`](https://okteto.com)
-
 ```bash
 Login with your github
 Click Launch Dev Environment
