@@ -2,7 +2,7 @@
 //Untuk gambar background menu ada -
 //Dalam file menu 
 //untuk lainya saran jangan di ubah bre nanti eror
-
+//misal gua lupa nambah atau typo benerin aja bre gua pusing njir awokawok 
 
 //Global Owner//
 global.owner = ['6282221792667']  // isi jika perlu
