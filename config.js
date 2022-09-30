@@ -1,29 +1,27 @@
 //Ini untuk setting Bot
 //Untuk gambar background menu ada -
-//Dalam file _menunya.js
+//Dalam file menu 
+//untuk lainya saran jangan di ubah bre nanti eror
 
-//Ini untuk setting Bot
-//Untuk gambar background menu ada -
-//Dalam file _menunya.js
 
-//『 Utama 』 //
+//Global Owner//
 global.owner = ['6282221792667']  // isi jika perlu
 global.mods = ['6282221792667']   // isi jika perlu
 global.prems = ['6282221792667']  // isi jika perlu
 
-//Isi dengan nama dan nomor lu//
+//Nomor Owner & payment//
 global.nameowner = 'TioXd' // isi nama kalian bebas
-global.numberowner = '6282xxxxxx' // isi nomor kalian dengan awalan seperti di contoh 
+global.numberowner = '6282221792667' // isi nomor kalian dengan awalan seperti di contoh 
 global.dana = '6282221792667' // isi dengan nomor dana yg kamu punya 
 global.pulsa = '6282221792667' // isi dengan nomor pulsa hp kalian
 global.gopay = '6282221792667'
 
-//Name Bot & Grouplink//
+//Nama Bot & Grouplink//
 global.namebot = 'RTXZY-MD'
 global.gc = 'https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL'
 global.web = 'https://github.com/BOTCAHX' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
 
-//Tampilan wm Bot //
+//Tampilan wm Bot dan pesan bot//
 global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
 global.wm = '© R-TXZY-MD'
