@@ -14,9 +14,9 @@ let handler = async (m, { conn, command, args }) => {
   let ss = await (await fetch('https://api.popcat.xyz/screenshot?url=' + encodeURIComponent(url) + '&device=desktop&full=on')).buffer()
   conn.sendFile(m.chat, ss, 'screenshot.png', url, m)
 }
-handler.help = ['sslaptop', 'sspc'].map(v => v + ' <url>')
+handler.help = ['sslaptop', 'sspc', 'ssweb', 'sshp'].map(v => v + ' <url>')
 handler.tags = ['internet']
-handler.command = /^ss(laptop)?pc?$/i
+handler.command = /^(sspc|sslaptop|ssweb|sshp)?$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
