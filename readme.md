@@ -182,7 +182,7 @@ conn.logger.level = 'debug'
 
 **Untuk Semua Yang Selalu Mendukung Kami.**
 
-** All Contributors**,
+**All Contributors**,
 
 [`Visit`](https://github.com/BOTCAHX/RTXZY-MD/graphs/contributors)
 
