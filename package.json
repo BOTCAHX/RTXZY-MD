@@ -1,7 +1,7 @@
 
 {
     "name": "rtxzy",
-    "version": "07.06.99",
+    "version": "0.0.3",
     "description": "Bot Whatsapp Multi Auth",
     "depecrated": false,
     "main": "index.js",
@@ -29,7 +29,7 @@
     ],
     "homepage": "https://github.com/BOTCAHX/RTXZY-MD",
     "author": {
-        "name": "Base Coded By TioXd"
+        "name": "RTXZY-MD"
     },
     "repository": {
         "type": "git",
