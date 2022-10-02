@@ -11,7 +11,7 @@
 - Sebenernya sc ini gabisa ambil sesi sendiri jadi ambil di Sc sebelah
 - Dengan cara run terlebih dahulu bisa di termux atau replit (jenis terminal yang bisa save sesi)
 - Save atau download sesi tersebut lalu paste ( upload ) di folder sessions di script ini.
-- Perlu di ingat sesi multi auth bukan session.data.json dan bukan satu file saja!
+- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file!
 
 - Berikut link script yg suport kode qr untuk sesi[`Link Script`](https://github.com/BOTCAHX/RT-X-MD)
 
