@@ -9,7 +9,7 @@
 > Telah update ke multi auth !
 
 - Sc ini gabisa ambil sesi sendiri jadi Harus ambil di replit 
-- [`Scan Di sini`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1#.replit)
+- [`Scan Di sini`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
 - Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
 - Upload tepat di file sessions.
 - Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file json! 
