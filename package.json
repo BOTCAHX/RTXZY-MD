@@ -40,7 +40,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:BOTCAHX/baileys",
+        "@adiwajshing/baileys": "github:BOTCAHX/Baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "acrcloud": "^1.4.0",
