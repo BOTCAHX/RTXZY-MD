@@ -6,14 +6,13 @@
 </p>
 
 > **Warning**: 
-> Ini masih dalam perbaikan update ke versi multi auth
+> Telah update ke multi auth !
 
-- Sebenernya sc ini gabisa ambil sesi sendiri jadi ambil di Sc sebelah
-- Dengan cara run terlebih dahulu bisa di termux atau replit (jenis terminal yang bisa save sesi)
-- Save atau download sesi tersebut lalu paste ( upload ) di folder sessions di script ini.
-- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file!
-
-- Berikut link script yg suport kode qr untuk sesi[`Link Script`](https://github.com/BOTCAHX/RT-X-MD)
+- Sc ini gabisa ambil sesi sendiri jadi Harus ambil di replit 
+- [`Scan Di sini`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1#.replit)
+- Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
+- Upload tepat di file sessions.
+- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file json! 
 
 ## Panel Pterodaktyl
 > Deploy bot mudah dan cepat di panel 
