@@ -25,9 +25,9 @@
 
 **Register Here** 
 
-[`Panel Server 1`](https://bit.ly/3xOyGf2)
+[`Panel Server 1`](https://bit.ly/3BO4gvS)
 
-[`Panel Server 2`](https://bit.ly/3BO4gvS)
+[`Panel Server 2`](https://bit.ly/3xOyGf2)
 
 > **Warning**: 
 > Masing masing server panel mempunyai kecepatan berbeda!
