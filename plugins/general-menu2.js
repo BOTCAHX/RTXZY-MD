@@ -193,7 +193,7 @@ const ftroli = {
                           }
                         }
                       }
-await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/328f69bd3fa43a1aecb20.jpg')).buffer(),  '*Here my Command List *', text, 'List Menu', '.menu', 'Information', '.info', 'Menu Pay', '.pay', m, {  
+await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/328f69bd3fa43a1aecb20.jpg')).buffer(),  '*Here my Command List*', text, 'List Menu', '.menu', 'Information', '.info', 'Menu Pay', '.pay', m, {  
       quoted: ftroli,  
       contextInfo: { //forwardingScore: 99999, isForwarded: true,  
           externalAdReply: {  showAdAttribution: true, 
