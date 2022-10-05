@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	if (!text) throw `*Usage : ${usedPrefix + command} url*\n\nExample: ${usedPrefix + command} https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing`
 	if (!(text.includes('http://') || text.includes('https://'))) throw `url invalid, please input a valid url. Try with add http:// or https://`
 	try {
-		let res = await fetch(`https://botcahx-rest-api.up.railway.app/api/dowloader/soundcloud?url=${text}`)
+		let res = await fetch(`https://botcahx.ddns.net/api/dowloader/soundcloud?url=${text}`)
 		let anu = await res.json()
 		anu = anu.result
 		let ini_txt = `*${anu.title}*\n\n`
