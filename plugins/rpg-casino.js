@@ -45,7 +45,6 @@ handler.command = /^(casino)$/i
 
 handler.fail = null
 
-handler.limit = 1
 
 module.exports = handler
 
