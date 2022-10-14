@@ -16,6 +16,9 @@
 - Upload tepat di file sessions.
 - Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file json! 
 
+- Ubah nomor owner Bot 
+[`Ubah Nomor owner Bot`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
+
 ## Panel Pterodaktyl
 > Deploy bot mudah dan cepat di panel 
 
