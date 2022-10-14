@@ -8,9 +8,10 @@
 > **Warning**: 
 > Telah update ke multi auth !
 
-- Sc ini gabisa ambil sesi sendiri jadi Harus ambil di replit 
+- Sc ini bisa ambil sesi di module di bawah ini
 - [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
 - [`Fork & Get sessions`](https://replit.com/@tioclkp02/Sessions-Multi-Auth)
+- Atau juga bisa dengan mengubah Procfile ke web: node . --server ( scan di open app )
 - Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
 - Upload tepat di file sessions.
 - Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file json! 
