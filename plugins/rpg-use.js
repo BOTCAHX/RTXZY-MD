@@ -39,7 +39,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) =>  {
                     if (global.db.data.users[m.sender].potion >= count * 1) {
                         global.db.data.users[m.sender].potion -= count * 1
                         global.db.data.users[m.sender].healt += usepotion * count
-                        conn.sendButton(m.chat, msgsucces, wm, 'Adventure', `${usedPrefix}mulung`, m)
+                        conn.sendBut(m.chat, msgsucces, wm, 'Adventure', `${usedPrefix}mulung`, m)
                     } else conn.reply(m.chat, msgkurang, m)
                 } else conn.reply(m.chat, msgpenuh, m)
             } catch (e) {
