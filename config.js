@@ -24,6 +24,7 @@ global.gopay = '6282221792667'
 global.namebot = 'RTXZY-MD'
 global.gc = 'https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL'
 global.web = 'https://github.com/BOTCAHX' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
+global.instagram = 'https://instagram.com/prm2.0'
 
 //Tampilan wm Bot dan pesan bot//
 global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
