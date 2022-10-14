@@ -8,6 +8,8 @@
 > **Warning**: 
 > Telah update ke multi auth !
 
+- Ubah nomor owner Bot Du Sini
+[`Ubah Owner`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
 - Sc ini bisa ambil sesi di module di bawah ini
 - [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
 - [`Fork & Get sessions`](https://replit.com/@tioclkp02/Sessions-Multi-Auth)
@@ -15,9 +17,6 @@
 - Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
 - Upload tepat di file sessions.
 - Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file json! 
-
-- Ubah nomor owner Bot 
-[`Ubah Nomor owner Bot`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
 
 ## Panel Pterodaktyl
 > Deploy bot mudah dan cepat di panel 
