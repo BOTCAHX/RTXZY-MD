@@ -22,7 +22,7 @@ global.gopay = '6282221792667'
 
 //Nama Bot & Grouplink//
 global.namebot = 'RTXZY-MD'
-global.gc = 'https://chat.whatsapp.com/JEDQfzMGZan4HA98wtxsNL'
+global.gc = 'https://chat.whatsapp.com/D6BZVRSymWaFU28t2lxaO0'
 global.web = 'https://github.com/BOTCAHX' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
 global.instagram = 'https://instagram.com/prm2.0'
 
