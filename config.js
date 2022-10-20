@@ -15,7 +15,7 @@ global.prems = ['6282221792667']  // isi jika perlu
 
 //Nomor Owner & payment//
 global.nameowner = 'TioXd' // isi nama kalian bebas
-global.numberowner = '6282221792667' // isi nomor kalian dengan awalan seperti di contoh 
+global.numberowner = '6282221792667' // isi ini untuk mengendalikan bot, untuk mengubah tampilan owner ada di plugins 
 global.dana = '6282221792667' // isi dengan nomor dana yg kamu punya 
 global.pulsa = '6282221792667' // isi dengan nomor pulsa hp kalian
 global.gopay = '6282221792667'
