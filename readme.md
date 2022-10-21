@@ -8,7 +8,7 @@
 > **Warning**: 
 > Telah update ke multi auth !
 
-- Ubah nomor owner Bot Du Sini
+- Ubah nomor owner Bot Di Sini
 [`Ubah Owner`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
 - Sc ini bisa ambil sesi di module di bawah ini
 - [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
