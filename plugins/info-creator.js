@@ -1,5 +1,5 @@
 //ubah no lu biar ada owner nya
-//Isi semua yg perlu fi isi tapi jangan ngasal
+//Isi semua yg perlu di isi tapi jangan ngasal
 //error tanggung sendiri 
 //by TioXd 
 const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
