@@ -1,5 +1,5 @@
 console.log("Connecting....");
-let cluster = require('cluster');
+let cluster = require("cluster");
 let { spawn } = require("child_process");
 let path = require("path");
 let fs = require("fs");
