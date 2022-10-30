@@ -25,3 +25,32 @@ db: node . --db "mongodb+srv://botwa:Jxrt6KiUNOOccDuo@cluster0.dytrn2e.mongodb.n
 >dan juga gampang instalasi nya
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
  
+
+## Session Multi auth
+```bash
+(async () => {
+require('./config')
+const {
+  useSingleFileAuthState,
+  useMultiFileAuthState,
+  DisconnectReason
+} = require('@adiwajshing/baileys')
+
+// menggunakan multi auth file
+
+// if (opts['cluster']) {
+//   require('./lib/cluster').Cluster()
+// }
+const authFile = `${opts._[0] || 'sessions'}`
+global.isInit = !fs.existsSync(authFile)
+const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
+
+const connectionOptions = {
+  printQRInTerminal: true,
+  auth: state,
+  logger: P({ level: 'silent'}), // bisa ke debug/trace 
+  version: [2, 2204, 13]
+}
+
+//file sessions ada di folder sessions 
+```
