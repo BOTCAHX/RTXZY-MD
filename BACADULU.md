@@ -54,3 +54,5 @@ const connectionOptions = {
 
 //file sessions ada di folder sessions 
 ```
+> Sessions bukan .data.json jadi pengguna mengharuskan menggunakan sessions terbaru
+> Sessions tidak bersifat satu/single tapi multi/banyak
