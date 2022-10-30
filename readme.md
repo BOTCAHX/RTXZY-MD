@@ -7,6 +7,7 @@
 
 > **Warning**: 
 > Telah update ke multi auth !
+> Penjelasan sesi [`Here`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
 
 - Ubah nomor owner Bot Di Sini
 [`Ubah Owner`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
