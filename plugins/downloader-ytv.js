@@ -1,9 +1,8 @@
 let fetch = require ('node-fetch')
 let { youtubeSearch } = require ('@bochilteam/scraper')
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
-  if (!args[0]) throw 'Url nya mana?'
+let handler = async (m, { conn, text }) => {
+  if (!text) throw 'Url nya mana?'
   m.reply('_Proses..._')
-let text = '${args[0]}'
   let vid = (await youtubeSearch(text)).video[0]
   let { title, description, thumbnail, videoId, durationH, durationS, viewH, publishedTime } = vid
   let url = 'https://www.youtube.com/watch?v=' + videoId
