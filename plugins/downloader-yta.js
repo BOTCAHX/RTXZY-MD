@@ -11,6 +11,6 @@ let ytLink = `https://botcahx2.ddns.net/?url=${url}&filter=audioonly&quality=hig
 }
 handler.help = ['ytv'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(yta|ytaudio)$/i
+handler.command = /^(yta|ytaudio|ytmp3)$/i
 
 module.exports = handler
