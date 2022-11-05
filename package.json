@@ -1,6 +1,6 @@
 {
     "name": "rtxzy",
-    "version": "08.06.10",
+    "version": "3.0",
     "description": "Customizable WhatsApp Bot",
     "depecrated": false,
     "main": "index.js",
@@ -59,7 +59,6 @@
         "g-i-s": "^2.1.6",
         "google-it": "^1.6.3",
         "human-readable": "^0.2.1",
-        "hxz-api": "^1.0.1",
         "jsdom": "^20.0.0",
         "lodash": "^4.17.21",
         "lowdb": "^2.1.0",
@@ -84,7 +83,6 @@
         "url-regex-safe": "^2.1.0",
         "util": "^0.12.4",
         "wa-sticker-formatter": "^4.3.2",
-        "xfarr-api": "^1.0.3",
         "yargs": "^17.5.1",
         "yt-search": "^2.10.3"
     }
