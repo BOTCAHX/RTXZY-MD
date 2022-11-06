@@ -1,5 +1,12 @@
-// Menu Untuk Whatsapp Terbaru
-// Konfigurasi dengan button respon 
+/** Menu Untuk Whatsapp List Ringan 
+ Udah gua buat biar ringan cuma gak manggil semua menu
+
+Note:
+Ini ada menu payment tujuan nya biar kalo lu run panel atau 
+Run di platform yang kecil disk nya ( penyimpanan )
+Agar terap bisa di gunakan dan tidak ada kendala seperti
+[Error: ENOENT: no such file or directory, open ''] 
+**/ 
 
     let handler = async (m, { conn, text, usedPrefix, command }) => {
     let _uptime = process.uptime() * 1000
@@ -12,7 +19,7 @@
 	title: `Aktif Selama ${uptime} || Waktu ${time} WIB`,
 	rows: [
 	{title: `Semua Perintah`, rowId: `.allmenu `},//, description: ``},
-        {title: `All CMD Payment`, rowId: `.pay `},//, description: ``},
+        {title: `MenuV2`, rowId: `.pay `},//, description: ``},
         {title: `Donasi`, rowId: `#donasi `},//, description: ``},
         {title: `Script`, rowId: `#sc `},//, description: ``},
         {title: `Group Official`, rowId: `#gcbot `},//, description: ``},
