@@ -1,3 +1,8 @@
+/**Button DOC by 
+https://github.com/ImYanXiao
+Gua cuma recode biar ada di menu
+**/
+
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 process.env.TZ = 'Asia/Jakarta'
 let fs = require('fs')
@@ -49,7 +54,8 @@ const defaultMenu = {
 │
 │ • Uptime: %uptime : (%muptime)
 │ • Library: Baileys
-│ • Tanggal Islam : %dateIslamic
+│ • Tanggal Islam : 
+│ %dateIslamic
 │ • Hari: %week %weton
 │ • Waktu: %time
 │ • Tanggal: %date
@@ -57,7 +63,7 @@ const defaultMenu = {
 │ • Prefix Used: *[ %p ]*
 │ • Database: %rtotalreg dari %totalreg 
 │ • Memory Used: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-│ • Free Apikey: https://bit.ly/3BCKli6
+│ • Publik Apikey: https://botcahx.ddns.net
 ╰────
 ╭─ 「 *USER INFO* 」
 │ • Pengguna:  %name 
@@ -174,37 +180,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let fetch = require('node-fetch') 
-const ftroli = {
-	key : {
-                          participant : '0@s.whatsapp.net'
-                        },
-       message: {
-                    orderMessage: {
-                            itemCount : 9999999999999,
-                            status: 1,
-                            surface : 1,
-                            message: '© TioXd Official',
-                            orderTitle: 'MENU',
-                            thumbnail: await (await fetch('https://telegra.ph/file/3911d7aaaa8733314f70f.png')).buffer(),
-                            sellerJid: '0@s.whatsapp.net'
-          
-                          }
-                        }
-                      }
-await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/328f69bd3fa43a1aecb20.jpg')).buffer(),  'ʜᴇʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅ ʟɪꜱᴛ', text, 'ʙᴀᴄᴋ', '.menu', 'ɪɴꜰᴏ', '.info', 'ᴀʟʟᴍᴇɴᴜ', '.pay', m, {  
-      quoted: ftroli,  
-      contextInfo: { //forwardingScore: 99999, isForwarded: true,  
-          externalAdReply: {  showAdAttribution: true, 
-              title: 'ʙᴏᴛ ᴡʜᴀᴛꜱᴀᴘᴘ ᴍᴜʟᴛɪ ᴀᴜᴛʜ',  
-              body: '© ᴛɪᴏxᴅ', 
-              description: 'ᴍᴀᴅᴇ ᴡɪᴛʜ ♡ ᴛɪᴏxᴅ', 
-              mediaType: 2,  
-            thumbnail: await (await fetch('https://telegra.ph/file/00faf159ce0349901eaf3.jpg')).buffer(), 
-           mediaUrl: `https://www.facebook.com/tio.permana.50999` 
-          }  
-       }  
-      })
+function _0x365d(){const _0x374eb6=['16464dkkZfS','https://telegra.ph/file/f4063ab3071f5c4af765a.png','Bot\x20WhatsApp\x20Multi\x20Auth','234645UrhyEX','pdf','6070izQBwB','©TioXd','2380rheUOX','sendMessage','4458jTQEFG','buffer','201971JwLlSB','chat','application/vnd.openxmlformats-officedocument.wordprocessingml.document','.menu','136gXQzKi','26qOmAFJ','76752hsKrUW','©\x20BOTCAHX','trim','Donation','61396iNfHvi','https://www.facebook.com/tio.permana.50999'];_0x365d=function(){return _0x374eb6;};return _0x365d();}const _0x25beaa=_0x35e5;function _0x35e5(_0xe8fa57,_0x558327){const _0x365db5=_0x365d();return _0x35e5=function(_0x35e539,_0x505821){_0x35e539=_0x35e539-0x1ea;let _0x5b6172=_0x365db5[_0x35e539];return _0x5b6172;},_0x35e5(_0xe8fa57,_0x558327);}(function(_0x10681f,_0x3fa528){const _0x4abe55=_0x35e5,_0x14c44e=_0x10681f();while(!![]){try{const _0x8c3c0c=parseInt(_0x4abe55(0x1f5))/0x1+-parseInt(_0x4abe55(0x1fa))/0x2*(parseInt(_0x4abe55(0x1ea))/0x3)+-parseInt(_0x4abe55(0x1ff))/0x4+-parseInt(_0x4abe55(0x1ed))/0x5+parseInt(_0x4abe55(0x1f3))/0x6*(parseInt(_0x4abe55(0x1f1))/0x7)+-parseInt(_0x4abe55(0x1f9))/0x8*(parseInt(_0x4abe55(0x1fb))/0x9)+parseInt(_0x4abe55(0x1ef))/0xa;if(_0x8c3c0c===_0x3fa528)break;else _0x14c44e['push'](_0x14c44e['shift']());}catch(_0x1a1298){_0x14c44e['push'](_0x14c44e['shift']());}}}(_0x365d,0x2b1d8));let fetch=require('node-fetch'),gh='https://github.com/BOTCAHX',fb=_0x25beaa(0x200),buttonMessage={'document':{'url':gh},'mimetype':_0x25beaa(0x1f7),'fileName':_0x25beaa(0x1f0),'fileLength':'99999999999999','pageCount':'999','contextInfo':{'externalAdReply':{'showAdAttribution':!![],'mediaUrl':fb,'mediaType':'VIDEO','previewType':_0x25beaa(0x1ee),'title':_0x25beaa(0x1fc),'body':_0x25beaa(0x1ec),'thumbnail':await(await fetch(_0x25beaa(0x1eb)))[_0x25beaa(0x1f4)](),'sourceUrl':fb}},'caption':text[_0x25beaa(0x1fd)](),'footer':wm2,'buttons':[{'buttonId':_0x25beaa(0x1f8),'buttonText':{'displayText':'List\x20Menu'},'type':0x1},{'buttonId':'.sewa','buttonText':{'displayText':'Sewa'},'type':0x1},{'buttonId':'.donasi','buttonText':{'displayText':_0x25beaa(0x1fe)},'type':0x1}],'headerType':0x6};await conn[_0x25beaa(0x1f2)](m[_0x25beaa(0x1f6)],buttonMessage,{'quoted':m});
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu server sedang error', m)
     throw e
