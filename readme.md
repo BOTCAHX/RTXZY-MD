@@ -92,15 +92,6 @@ npm start
 
 ---------
 
-
-## Arguments `node . [--options] [<session name>]` 
-
-### `--session <nama file>`
-
-menggunakan session dari nama file yang berbeda, default `session.data.json`
-
-contoh nama file `sessiontxzy.data.json` maka penggunaannya `node . --session 'sessiontxzy'`
-
 ### `--prefix <prefix>`
 
 * `prefixes` dipisahkan oleh masing-masing karakter
