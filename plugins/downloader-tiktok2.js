@@ -14,7 +14,7 @@ await conn.sendFile(m.chat, video, 'video.mp4', `
 `, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 }
 
-handler.help = ['tiktok <url>']
+handler.help = ['tiktok2 <url>']
 handler.tags = ['downloader']
 
 handler.command = /^(tiktok2)$/i
