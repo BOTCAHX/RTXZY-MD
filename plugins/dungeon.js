@@ -664,7 +664,7 @@ Sedang berperang di dungeon...
 
 handler.help = ['dungeon'].map(v => v + ' [nama room]')
 handler.tags = ['rpg']
-handler.command = /^(du?n?g?e?o?n?)$/i
+handler.command = /^(dungeon)$/i
 
 handler.mods = false
 
