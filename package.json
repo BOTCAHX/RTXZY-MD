@@ -42,6 +42,7 @@
         "@adiwajshing/baileys": "github:BOTCAHX/baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
+        "instagram-url-direct": "^1.0.12",
         "acrcloud": "^1.4.0",
         "async": "^3.2.4",
         "awesome-phonenumber": "^2.64.0",
