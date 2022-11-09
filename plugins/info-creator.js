@@ -1,6 +1,6 @@
 //ubah no lu biar ada owner nya
 //Isi semua yg perlu di isi tapi jangan ngasal
-//error tanggung sendiri 
+//error fik sendiri bg
 //by TioXd 
 const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 let handler = async (m, {conn}) => {
@@ -30,7 +30,8 @@ const sentMsg  = await conn.sendMessage(
         }
     }
 )
-await conn.reply(m.chat, "Itu Adalah nomor Owner / Creator Bot", sentMsg)}
+conn.sendMessage(m.chat, { text: `Hay kak *@${await m.sender.split('@')[0]}*, itu ownerku, jangan spam yah >_<`, mentions: [m.sender] }, { quoted: sentMsg })
+}
 handler.help = ['owner', 'creator']
 handler.tags = ['info']
 
