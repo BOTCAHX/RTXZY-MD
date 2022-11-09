@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, participants }) => {
   let usersLim = sortedLim.map(enumGetKey)
   let usersLevel = sortedLevel.map(enumGetKey)
   console.log(participants)
-  let len = args[0] && args[0].length > 0 ? Math.min(99999999999999999999999999999999999999, Math.max(parseInt(args[0]), 99999999999999999999999999999999999999)) : Math.min(99999999999999999999999999999999999999, sortedExp.length)
+  let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 100)) : Math.min(100, sortedExp.length)
   let text = `
 ┌「 *XP Leaderboard Top ${len}* 」
 ├ Kamu: *${usersExp.indexOf(m.sender) + 1}* dari *${usersExp.length}*
