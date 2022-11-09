@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:BOTCAHX/Baileys",
+        "@adiwajshing/baileys": "github:BOTCAHX/baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "acrcloud": "^1.4.0",
@@ -47,8 +47,6 @@
         "awesome-phonenumber": "^2.64.0",
         "axios": "^0.27.2",
         "base64-to-image": "^1.0.2",
-        "brainly-scraper": "^1.0.3",
-        "brainly-scraper-v2": "^2.0.15",
         "canvacord": "^5.4.7",
         "cfonts": "^2.10.0",
         "chalk": "^4.1.2",
