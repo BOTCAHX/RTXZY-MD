@@ -17,6 +17,6 @@ await conn.sendFile(m.chat, video, 'video.mp4', `
 handler.help = ['tiktok <url>']
 handler.tags = ['downloader']
 
-handler.command = /^(tt|tiktok)$/i
+handler.command = /^(tiktok2)$/i
 handler.limit = true
 module.exports = handler
