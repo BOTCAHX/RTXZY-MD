@@ -15,8 +15,8 @@
 - [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
 - [`Fork & Get sessions`](https://replit.com/@tioclkp02/Sessions-Multi-Auth)
 - Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
-- Upload tepat di file sessions.
-- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file json! 
+- Upload tepat di folder sessions.
+- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file melainkan terdapat banyak file.
 
 ## Panel Pterodaktyl Deploy
 > Deploy bot mudah dan cepat di panel 
