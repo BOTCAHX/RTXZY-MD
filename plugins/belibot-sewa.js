@@ -4,7 +4,7 @@ let gh = 'https://github.com/BOTCAHX'
   let buttonMessage= {
 'document':{'url':gh},
 'mimetype':'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-'fileName':'FILE BOKEP SEMUA BTW',
+'fileName':'Payment Methode',
 'fileLength':'99999999999999',
 'pageCount':'999',
 'contextInfo':{
