@@ -3,10 +3,11 @@
 //Dalam file menu 
 //untuk lainya saran jangan di ubah bre nanti eror
 //misal gua lupa nambah atau typo benerin aja bre gua pusing njir awokawok 
-//====[ Ubah nomor owner di plugins ]======\\
-//======[ Nama file info-creator.js ]=======\\
-// Nomor yang di bawah hanya untuk global owner doang bukan untuk display owner
-// Link Plugins (https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
+
+//Ubah nomor owner di plugins\\
+//Nama file info-creator.js\\
+//Nomor yang di bawah hanya untuk global owner doang bukan untuk display owner
+//Link Plugins (https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
 
 //Global Owner//
 global.owner = ['6282221792667']  // isi jika perlu
