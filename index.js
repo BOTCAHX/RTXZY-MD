@@ -1,4 +1,4 @@
-console.log("Connecting....");
+console.log("Starting...");
 let cluster = require("cluster");
 let { spawn } = require("child_process");
 let path = require("path");
