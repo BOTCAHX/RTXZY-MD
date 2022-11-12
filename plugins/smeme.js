@@ -1,3 +1,5 @@
+/**aneh gak work anjime**/
+
 const uploadImage = require('../lib/uploadImage')
 const { MessageType } = require('@adiwajshing/baileys-md')
 const { sticker } = require('../lib/sticker')
