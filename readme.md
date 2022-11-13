@@ -18,6 +18,9 @@
 - Upload tepat di folder sessions.
 - Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file melainkan terdapat banyak file.
 
+## Logs level
+- Jika ingin mengunah level pino nya maka ubah di line ini [`Logs level`](https://github.com/BOTCAHX/RTXZY-MD/blob/c67a8427d123c4e49d761d34912fb23f169d89a2/main.js#L74)
+- Opsi tersedia : silent , debug , trace
 ## Panel Pterodaktyl Deploy
 > Deploy bot mudah dan cepat di panel 
 
