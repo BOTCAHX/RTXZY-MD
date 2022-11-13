@@ -71,7 +71,7 @@ const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'silent'}),
+  logger: P({ level: 'debug'}),
   version: [2, 2204, 13]
 }
 
