@@ -67,6 +67,7 @@ global.APIs = { // API Prefix
   pencarikode: 'https://pencarikode.xyz', 
   erdwepe: 'https://erdwpe-api.herokuapp.com',
   lolhuman: 'https://api.lolhuman.xyz',
+  tio: 'https://botcahx.ddns.net', 
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
   rey: 'https://sekha.me',
   males: 'https://malesin.xyz'
