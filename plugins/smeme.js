@@ -1,7 +1,7 @@
 /**aneh gak work anjime**/
 
 const uploadImage = require('../lib/uploadImage')
-const { MessageType } = require('@adiwajshing/baileys-md')
+const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
