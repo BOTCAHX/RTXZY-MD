@@ -1,7 +1,5 @@
-//kok cewe gw jadi cuek yahh? daritadi pagi gw chat ga dibales cuman di read doang :) 
-
 const { sticker } = require('../lib/sticker')
-const { MessageType } = require('@adiwajshing/baileys-md')
+const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn }) => {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let marah = global.API('https://some-random-api.ml', '/canvas/triggered', {
