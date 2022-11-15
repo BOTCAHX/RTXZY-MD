@@ -1,5 +1,5 @@
 const { toPTT } = require('../lib/converter')
-const { MessageType } = require('@adiwajshing/baileys-md')
+const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
