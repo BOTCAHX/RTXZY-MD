@@ -1,7 +1,7 @@
 const uploadImage = require('../lib/uploadImage')
 const { sticker } = require('../lib/sticker')
 let fetch = require('node-fetch')
-const { MessageType } = require('@adiwajshing/baileys-md')
+const { MessageType } = require('@adiwajshing/baileys')
 const effects = ['greyscale', 'invert', 'brightness', 'threshold', 'sepia', 'red', 'green', 'blue', 'blurple', 'pixelate', 'blur']
 
 let handler = async (m, { conn, usedPrefix, text, command }) => {
