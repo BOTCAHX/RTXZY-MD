@@ -12,7 +12,7 @@
     "scripts": {
         "start": "node index.js",
         "test": "node test.js",
-        "test2": "nodemon index.js --server --autocleartmp"
+        "test2": "nodemon index.js --autocleartmp"
     },
     "keywords": [
         "termux-whatsapp-bot",
