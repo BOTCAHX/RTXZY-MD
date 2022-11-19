@@ -10,16 +10,16 @@
 //Link Plugins (https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
 
 //Global Owner//
-global.owner = ['6282221792667']  // isi jika perlu
-global.mods = ['6282221792667']   // isi jika perlu
-global.prems = ['6282221792667']  // isi jika perlu
+global.owner = ['6281395861695']  // isi jika perlu
+global.mods = ['6281395861695']   // isi jika perlu
+global.prems = ['6281395861695']  // isi jika perlu
 
 //Nomor Owner & payment//
 global.nameowner = 'TioXd' // isi nama kalian bebas
-global.numberowner = '6282221792667' // isi ini untuk mengendalikan bot, untuk mengubah tampilan owner ada di plugins 
-global.dana = '6282221792667' // isi dengan nomor dana yg kamu punya 
-global.pulsa = '6282221792667' // isi dengan nomor pulsa hp kalian
-global.gopay = '6282221792667'
+global.numberowner = '6281395861695' // isi ini untuk mengendalikan bot, untuk mengubah tampilan owner ada di plugins 
+global.dana = '6281395861695' // isi dengan nomor dana yg kamu punya 
+global.pulsa = '6281395861695' // isi dengan nomor pulsa hp kalian
+global.gopay = '6281395861695'
 
 //Nama Bot & Grouplink//
 global.namebot = 'RTXZY-MD'
