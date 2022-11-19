@@ -1,13 +1,17 @@
-const translate = require('translate-google-api')
-const defaultLang = 'en'
+const { translate } = require('@vitalets/google-translate-api');
+const defaultLang = 'es'
 const tld = 'cn'
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let err = `
-Contoh:
-${usedPrefix + command} <lang> [text]
-${usedPrefix + command} id your messages
-Daftar bahasa yang didukung: https://cloud.google.com/translate/docs/languages
+📌 *Example:*
+
+*${usedPrefix + command}* <lang> [texto]
+*${usedPrefix + command}* id Hello World
+
+≡ *Lista de idiomas admitidos:* 
+
+https://cloud.google.com/translate/docs/languages
 `.trim()
 
     let lang = args[0]
@@ -18,27 +22,14 @@ Daftar bahasa yang didukung: https://cloud.google.com/translate/docs/languages
     }
     if (!text && m.quoted && m.quoted.text) text = m.quoted.text
 
-    let result
-    try {
-        result = await translate(`${text}`, {
-            tld,
-            to: lang,
-        })
-    } catch (e) {
-        result = await translate(`${text}`, {
-            tld,
-            to: defaultLang,
-        })
-        throw err
-    } finally {
-        m.reply(result[0])
-    }
+   
+       let result = await translate(text, { to: lang, autoCorrect: true }).catch(_ => null) 
+       m.reply(result.text)
+
 
 }
-handler.help = ['translate'].map(v => v + ' <lang> <teks>')
+handler.help = ['trad <leng> <text>']
 handler.tags = ['tools']
-handler.command = /^(tr(anslate)?)$/i
-handler.limit = false
-handler.fail = null
-handler.exp = 0
+handler.command = ['translate', 'tl', 'trad', 'tr']
+
 module.exports = handler
