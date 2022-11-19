@@ -44,6 +44,7 @@
         "@bochilteam/scraper": "^3.0.0",
         "instagram-url-direct": "^1.0.12",
         "api-dylux": "^1.2.2",
+        "@vitalets/google-translate-api": "^9.0.0",
         "acrcloud": "^1.4.0",
         "async": "^3.2.4",
         "awesome-phonenumber": "^2.64.0",
