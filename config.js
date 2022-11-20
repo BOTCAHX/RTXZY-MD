@@ -15,14 +15,14 @@ global.mods = ['6281395861695']   // isi jika perlu
 global.prems = ['6281395861695']  // isi jika perlu
 
 //Nomor Owner & payment//
-global.nameowner = 'verdizxz' // isi nama kalian bebas
-global.numberowner = '6285706735450' // isi ini untuk mengendalikan bot, untuk mengubah tampilan owner ada di plugins 
-global.dana = '6285706735450' // isi dengan nomor dana yg kamu punya 
-global.pulsa = '6285706735450' // isi dengan nomor pulsa hp kalian
-global.gopay = '6285706735450'
+global.nameowner = 'nama owner' // isi nama kalian bebas
+global.numberowner = 'nama owner' // isi ini untuk mengendalikan bot, untuk mengubah tampilan owner ada di plugins 
+global.dana = '' // isi dengan nomor dana yg kamu punya 
+global.pulsa = '' // isi dengan nomor pulsa hp kalian
+global.gopay = ''
 
 //Nama Bot & Grouplink//
-global.namebot = 'Xziro id'
+global.namebot = 'nama bot lu'
 global.gc = 'https://chat.whatsapp.com/D6BZVRSymWaFU28t2lxaO0'
 global.web = 'https://github.com/verdihatoru' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
 global.instagram = 'https://instagram.com/verdi_zz'
@@ -32,8 +32,8 @@ global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
 global.wm = '© xziro'
 global.watermark = wm
-global.wm2 = '⫹⫺ xziro'
-global.wm3 = '© xziro'
+global.wm2 = '⫹⫺ wm'
+global.wm3 = '© wm'
 global.wm4 = '© 2021/2022'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
 global.wait = '_*Tunggu sedang di proses...*_'
@@ -42,7 +42,7 @@ global.benar = 'Benar ✅\n'
 global.salah = 'Salah ❌\n'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made with'
-global.author = 'Bot WhatsApp\verdixyz'
+global.author = 'Bot WhatsApp\wm'
 
 //Apikey Setting//
 global.APIs = { // API Prefix
