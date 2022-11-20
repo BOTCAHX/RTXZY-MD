@@ -1,6 +1,7 @@
 (async () => {
 require('./config')
 const {
+  useSingleFileAuthState,
   useMultiFileAuthState,
   DisconnectReason
 } = require('@adiwajshing/baileys')
@@ -71,7 +72,7 @@ const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'trace'}),
+  logger: P({ level: 'silent'}),
   version: [2, 2204, 13]
 }
 
