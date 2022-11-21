@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:FERDI-afk/Baileys",
+        "@adiwajshing/baileys": "github:FERDIZ-afk/Baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "instagram-url-direct": "^1.0.12",
