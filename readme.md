@@ -10,7 +10,6 @@
 > Penjelasan sesi [`Here`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
 
 - Ubah nomor owner Bot Di Sini
-[`Ubah Owner`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
 - Sc ini bisa ambil sesi di module di bawah ini
 - [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
 - [`Fork & Get sessions`](https://replit.com/@tioclkp02/Sessions-Multi-Auth)
@@ -198,10 +197,9 @@ Creator | Creator |
 <a href="https://github.com/verdihatorou"><img src="https://github.com/verdihatorou.png?size=100" width="100" height="100"></a> | [![Radhin](https://github.com/radhin123.png?size=100)](https://github.com/radhin123) 
 [Verdi](https://github.com/verdihatorou)  | [ Radhin](https://github.com/radhin123)
 Creator | Contributors |
-<a href="https://github.com/natxdixie"><img src="https://github.com/natxdixie.png?size=100" width="100" height="100"></a> | [![Ziv San](https://github.com/Zivfurr.png?size=100)](https://github.com/Zivfurr) 
----|---
-[Natx-C](https://github.com/natxdixie)  | [Zivfurr](https://github.com/Zivfurr)
-Contributor | Contributor |
+<a href="https://github.com/natxdixie"><img src="https://github.com/natxdixie.png?size=100" width="100" height="100"></a>
+[Natx-C](https://github.com/natxdixie) 
+Contributor 
 ##### Special Thanks To
 <!--[![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![BochilGaming](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
