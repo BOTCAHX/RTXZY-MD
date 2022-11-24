@@ -8,9 +8,9 @@ let handler = async (m, {conn}) => {
 const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:Sy;Bot;;;
-FN: BOTCAHX /**untuk nama owner nya**/
+FN: Tio 
 item.ORG: Creator Bot
-item1.TEL;waid=6281395861695:6281395861695@s.whatsapp.net /**untuk nomor owner**/
+item1.TEL;waid=6281395861695:6281395861695@s.whatsapp.net
 item1.X-ABLabel:Nomor Creator Bot / Owner Bot
 item2.EMAIL;type=INTERNET:Kalo Chat Gak Penting Gak Akan Di Balas.
 item2.X-ABLabel:Email
