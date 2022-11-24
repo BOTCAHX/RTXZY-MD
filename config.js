@@ -4,11 +4,6 @@
 //untuk lainya saran jangan di ubah bre nanti eror
 //misal gua lupa nambah atau typo benerin aja bre gua pusing njir awokawok 
 
-//Ubah nomor owner di plugins\\
-//Nama file info-creator.js\\
-//Nomor yang di bawah hanya untuk global owner doang bukan untuk display owner
-//Link Plugins (https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/plugins/info-creator.js)
-
 //Global Owner//
 global.owner = ['6281395861695']  // isi jika perlu
 global.mods = ['6281395861695']   // isi jika perlu
@@ -16,7 +11,7 @@ global.prems = ['6281395861695']  // isi jika perlu
 
 //Nomor Owner & payment//
 global.nameowner = 'TioXd' // isi nama kalian bebas
-global.numberowner = '6281395861695' // isi ini untuk mengendalikan bot, untuk mengubah tampilan owner ada di plugins 
+global.numberowner = '6281395861695' // isi ini untuk mengendalikan bot
 global.dana = '6281395861695' // isi dengan nomor dana yg kamu punya 
 global.pulsa = '6281395861695' // isi dengan nomor pulsa hp kalian
 global.gopay = '6281395861695'
