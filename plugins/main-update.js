@@ -1,24 +1,21 @@
-let { execSync } = require('child_process')
-let handler = async (m, { conn, text, isROwner }) => {
-  if (global.conn.user.jid == conn.user.jid) {
-    let stdout = execSync('git remote set-url origin https://github.com/oktetodevblog/WhatsApp-Bot-Last.git && git pull' + (isROwner && text ? ' ' + text : ''))
-    if (isROwner) require('fs').readdirSync('plugins').map(v => global.reload('', v))
-    m.reply(stdout.toString())
-  }
+let cp = require ('child_process')
+let { promisify } = require ('util')
+let exec = promisify(cp.exec).bind(cp)
+let handler = async (m, { conn}) => {
+	await conn.reply(m.chat, `Looking for resources...`, m)
+    let o
+    try {
+        o = await exec('git pull')
+    } catch (e) {
+        o = e
+    } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) conn.sendButton(m.chat, `root@tio`, stdout, null, [["Back", ".menu"],["Command", ".pay"]], m)
+        if (stderr.trim()) m.reply(stderr)
+    }
 }
-handler.help = ['update']
-handler.tags = ['owner']
-handler.command = /^update$/i
-handler.owner = true
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
+handler.help = ['npminfo']
+handler.tags = ['info']
+handler.command = /^(act|updategit|update)$/i
 
 module.exports = handler
