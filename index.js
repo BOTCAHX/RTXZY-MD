@@ -33,7 +33,7 @@ function start(file) {
 		if (code === 0) return;
 		fs.watchFile(args[0], () => {
 			fs.unwatchFile(args[0]);
-			start(file);
+			start('main.js');
 		});
 	});
 	
