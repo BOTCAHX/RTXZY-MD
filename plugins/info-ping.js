@@ -43,11 +43,18 @@ let handler = async (m, { conn }) => {
   m.reply(`
 Merespon dalam ${speed} millidetik
 
+💬 Status : 
+- *${groupsIn.length}* Group Chats
+- *${groupsIn.length}* Groups Joined
+- *${groupsIn.length - groupsIn.length}* Groups Left
+- *${chats.length - groupsIn.length}* Personal Chats
+- *${chats.length}* Total Chats
 
 💻 *Server Info* :
 
-*Disk*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *Ram*: ${format(os.totalmem() - os.freemem())} / ${format(os.totalmem())}
+*Used*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB
+*Remaining*: ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 
 _NodeJS Memory Usage_
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${format(used[key])}`).join('\n') + '```'}
@@ -63,4 +70,4 @@ handler.help = ['ping', 'speed']
 handler.tags = ['info']
 
 handler.command = /^(ping|speed|pong)$/i
-module.exports = handler 
+module.exports = handler
