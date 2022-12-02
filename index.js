@@ -1,4 +1,4 @@
-console.log("Starting...");
+console.log("Starting Bot...");
 let cluster = require("cluster");
 let { spawn } = require("child_process");
 let path = require("path");
@@ -33,10 +33,10 @@ function start(file) {
 		if (code === 0) return;
 		fs.watchFile(args[0], () => {
 			fs.unwatchFile(args[0]);
-			start('main.js');
+			start("main.js");
 		});
 	});
 	
 }
 
-start('main.js');
+start("main.js");
