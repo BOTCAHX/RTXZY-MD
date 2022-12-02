@@ -3,9 +3,9 @@ pkg install git -y
 pkg install nodejs -y
 pkg install ffmpeg -y
 pkg install imagemagick -y
-pkg install yarn
+pkg install npm
 git clone https://github.com/BOTCAHX/RTXZY-MD
 cd RTXZY-MD
-yarn
+npm install
 node .
 
