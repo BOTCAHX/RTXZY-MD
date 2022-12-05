@@ -1,16 +1,12 @@
 let handler = async (m, { conn }) => {
     let wm = global.wm
     let _uptime = process.uptime() * 1000
-    let uptime = clockString(_uptime)
+    let uptimex = clockString(_uptime)
 
     let tio = `
-Mode : ${global.opts['self'] ? 'Self' : 'publik'}\nAktif selama ${uptime}\n${Object.keys(global.db.data.users).length} Pengguna\n${Object.entries(global.db.data.users).filter(user => user[1].banned).length} Pengguna Terbanned\nFitur Sering Digunakan : ${Object.entries(db.data.stats).length}\n\njika Mode Self
-maka bot sedang tidur atau sedang dalam mode maintenance
-
-jika Mode Public
-maka bot sedang online dan bisa di pakai
+Mode: ${global.opts['self'] ? 'Self' : 'publik'}\nAktif: ${uptimex}\nPengguna: ${Object.keys(global.db.data.users).length}\nPengguna Terbanned: ${Object.entries(global.db.data.users).filter(user => user[1].banned).length}\nFitur Sering Digunakan: ${Object.entries(db.data.stats).length}\n\n_Jika bot tidak ada balasan maka bot sedang maintenance._
     `.trim()
-conn.send2But(m.chat, tio, wm, 'Speed', '.speed', 'Back', '.menu',m)
+conn.send2But(m.chat, tio, "_Dashboard Bot WhatsApp_", 'Speed', '.speed', 'Back', '.menu',m)
 conn.reply(tio)
 }
 handler.help = ['mode']
@@ -22,8 +18,12 @@ handler.limit = false
 module.exports = handler
 
 function clockString(ms) {
-    let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-    let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+    let days = Math.floor(ms / (24 * 60 * 60 * 1000));
+    let daysms = ms % (24 * 60 * 60 * 1000);
+    let hours = Math.floor((daysms) / (60 * 60 * 1000));
+    let hoursms = ms % (60 * 60 * 1000);
+    let minutes = Math.floor((hoursms) / (60 * 1000));
+    let minutesms = ms % (60 * 1000);
+    let sec = Math.floor((minutesms) / (1000));
+    return days + " Hari " + hours + " Jam " + minutes + " Menit " + sec + " Detik";
 }
