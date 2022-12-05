@@ -1,4 +1,4 @@
-console.log("Starting Bot...");
+console.log("🌎 Menyabungkan Sesions...");
 let cluster = require("cluster");
 let { spawn } = require("child_process");
 let path = require("path");
