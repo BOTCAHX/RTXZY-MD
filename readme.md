@@ -14,7 +14,7 @@
 - [`Fork & Get sessions`](https://replit.com/@tioclkp02/Sessions-Multi-Auth)
 - Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
 - Upload tepat di folder sessions.
-- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file melainkan terdapat banyak file.
+- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file saja melainkan terdapat banyak file bercampur dengan auth.
 
 ## Logs level
 - Jika ingin mengubah level pino nya maka ubah di line ini [`Logs level`](https://github.com/BOTCAHX/RTXZY-MD/blob/c67a8427d123c4e49d761d34912fb23f169d89a2/main.js#L74)
