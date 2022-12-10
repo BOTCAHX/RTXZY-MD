@@ -39,13 +39,13 @@ let fg = require('api-dylux')
 const { tiktokdl, tiktokdlv2, tiktokdlv3 } = require ('@bochilteam/scraper')
 
 let handler = async (m, { conn, text, args, usedPrefix, command}) => {
-if (!args[0]) throw `✳️ Masukkan tautan Tiktok\n\n 📌 Contoh: ${usedPrefix + command} https://vm.tiktok.com/ZMFV3HA3J`
+if (!args[0]) throw `✳️ Masukkan tautan Tiktok\n\n 📌 Contoh: ${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`
 if (!args[0].match(/tiktok/gi)) throw `❎ Periksa apakah tautannya dari tiktok`
 
 try {
     let p = await fg.tiktok(args[0]) 
     let te = `
-┌─⊷ TIKTOK
+┌─⊷ SERVER 1
 ▢ *Username:* ${p.author}
 ▢ *Descripción:* ${p.title}
 └───────────`
@@ -59,7 +59,7 @@ try {
     const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd
     if (!url) throw '❎ Kesalahan mengunduh video'
     let tex = `
-┌─⊷ TIKTOK
+┌─⊷ SERVER 2 
 ▢ *Nickname:* ${nickname} ${description ? `\n▢ *Descripción:* ${description}` : ''}
 └───────────`
 conn.sendFile(m.chat, url, 'tt.mp4', tex, m)
@@ -70,8 +70,8 @@ conn.sendFile(m.chat, url, 'tt.mp4', tex, m)
     
 }  
 handler.help = ['tiktok']
-handler.tags = ['dl']
-handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm|tt|tiktod)$/i
+handler.tags = ['downloader']
+handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm|tt|tiktod|dltt)$/i
 handler.limit = true
 
 module.exports = handler
