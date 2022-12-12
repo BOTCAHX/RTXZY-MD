@@ -6,11 +6,11 @@
 </p>
 
 > **Warning**: 
-> Telah update ke multi auth !
+> Telah menggunakan baileys multi auth !
 > Penjelasan sesi [`Here`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
 
-## List Menu Problem
-> [`Read`](https://github.com/BOTCAHX/RTXZY-MD/issues/43#issue-1488741056)
+## List Menu Troube Discussion 
+> [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46)
 
 ## Penjelasan 
 - Sc ini bisa ambil sesi di module di bawah ini
@@ -18,7 +18,7 @@
 - [`Fork & Get sessions`](https://replit.com/@tioclkp02/Sessions-Multi-Auth)
 - Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
 - Upload tepat di folder sessions.
-- Perlu di ingat sesi multi auth bukan session.data.json dan bukan dalam satu file saja melainkan terdapat banyak file bercampur dengan auth.
+- Perlu di ingat sesi multi auth bukan session.data.json/sesion.json dan bukan dalam satu file auth, saja melainkan terdapat banyak file bercampur dengan auth & pre-key.
 
 ## Logs level
 - Jika ingin mengubah level pino nya maka ubah di line ini [`Logs level`](https://github.com/BOTCAHX/RTXZY-MD/blob/c67a8427d123c4e49d761d34912fb23f169d89a2/main.js#L74)
@@ -32,7 +32,7 @@
 - Server selalu up-to-date 
 **Register Here** 
 
-[`Panel Server 1`](https://bit.ly/3DwHn0t)
+[`Panel Spanyol`](https://bit.ly/3DwHn0t)
 
 > **Warning**: 
 > Run bot anti banned dan delay cukup pencet button start dan bot otomatis berjalan.
