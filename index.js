@@ -1,4 +1,4 @@
-console.log("🌎 Menyabungkan Sessions...");
+console.log("Menyabungkan Sessions...");
 let cluster = require("cluster");
 let { spawn } = require("child_process");
 let path = require("path");
