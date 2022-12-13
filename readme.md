@@ -23,19 +23,17 @@
 ## Logs level
 - Jika ingin mengubah level pino nya maka ubah di line ini [`Logs level`](https://github.com/BOTCAHX/RTXZY-MD/blob/c67a8427d123c4e49d761d34912fb23f169d89a2/main.js#L74)
 - Opsi tersedia : silent , debug , trace
-## Panel Pterodaktyl Deploy
+## WhatsApp Bot Hosting
 > Deploy bot mudah dan cepat di panel 
-
-- Free 
+ 
 - Runtime 24/7
 - No delay !
 - Server selalu up-to-date 
-**Register Here** 
+**Link** 
 
-[`Panel Spanyol`](https://bit.ly/3DwHn0t)
+[`Panel Server`](https://chat.whatsapp.com/DxpLoatBNjrLPgWyedB1St)
 
 > **Warning**: 
-> Run bot anti banned dan delay cukup pencet button start dan bot otomatis berjalan.
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/D6BZVRSymWaFU28t2lxaO0) 
 
