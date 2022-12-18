@@ -2,7 +2,7 @@
 - Scan qr ada di module readme main baca aja readme nya
 
 - Free apikey
-[Link](https://botcahx.ddns.net)
+[Link](https://api.tiodevhost.my.id)
 
 - Downloader api
-[Link](https://botcahx2.ddns.net)
+[Link](https://ytdl.tiodevhost.my.id)
