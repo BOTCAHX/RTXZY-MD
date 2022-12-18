@@ -2,7 +2,7 @@ let fetch = require ('node-fetch')
 let handler = async (m, { text, usedPrefix, command }) => {
     if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} mabar`
     
-    let json = await fetch(`https://botcahx.ddns.net/api/search/linkgroupwa?text=${text}`)
+    let json = await fetch(`https://api.tiodevhost.my.id/api/search/linkgroupwa?text=${text}`)
         let jsons = await json.json()
         let caption = `*⎔┉━「 ${command} 」━┉⎔*`
         for (let x of jsons.result) {
