@@ -1,6 +1,5 @@
 //Ini untuk setting Bot
-//Untuk gambar background menu ada -
-//Dalam file menu 
+//Untuk gambar background menu ada - di plugins menu
 //untuk lainya saran jangan di ubah bre nanti eror
 
 //Global Owner//
@@ -9,7 +8,7 @@ global.mods = ['6281395861695']   // isi jika perlu
 global.prems = ['6281395861695']  // isi jika perlu
 
 //Nomor Owner & payment//
-global.nameowner = 'TioXd' // isi nama kalian bebas
+global.nameowner = 'BOTCAHX' // isi nama kalian bebas
 global.numberowner = '6281395861695' // isi ini untuk mengendalikan bot
 global.dana = '6281395861695' // isi dengan nomor dana yg kamu punya 
 global.pulsa = '6281395861695' // isi dengan nomor pulsa hp kalian
@@ -28,7 +27,7 @@ global.wm = '© R-TXZY-MD'
 global.watermark = wm
 global.wm2 = '⫹⫺ R-TXZY-MD'
 global.wm3 = '© R-TXZY-MD'
-global.wm4 = '© 2021/2022'
+global.wm4 = '© BOT RTXZY'
 global.fla = 'https://botcahx.ddns.net/api/photooxy/harry-potter?text='
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
@@ -63,7 +62,7 @@ global.APIKeys = { // APIKey Here
 }
 
 //Setting Rpg//
-global.multiplier = 69 // The higher, The harder levelup
+global.multiplier = 45 // The higher, The harder levelup
 global.rpg = {
   emoticon(string) {
     string = string.toLowerCase()
