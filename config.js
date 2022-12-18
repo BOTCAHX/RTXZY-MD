@@ -2,7 +2,6 @@
 //Untuk gambar background menu ada -
 //Dalam file menu 
 //untuk lainya saran jangan di ubah bre nanti eror
-//misal gua lupa nambah atau typo benerin aja bre gua pusing njir awokawok 
 
 //Global Owner//
 global.owner = ['6281395861695']  // isi jika perlu
@@ -64,8 +63,7 @@ global.APIs = { // API Prefix
   lolhuman: 'https://api.lolhuman.xyz',
   tio: 'https://botcahx.ddns.net', 
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
-  rey: 'https://sekha.me',
-  males: 'https://malesin.xyz'
+  rey: 'https://sekha.me'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
