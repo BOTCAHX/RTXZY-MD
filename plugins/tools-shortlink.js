@@ -30,17 +30,17 @@ let tesk = '🚀 *Result link:* '
 let pros = '_*Converting Link. . .*_'
 //Case Tinyurl 
 if (args[1] == "tinyurl") {
-	let tiny = await (await fetch(`https://botcahx.ddns.net/api/linkshort/tinyurl?link=${args[0]}`)).json()
+	let tiny = await (await fetch(`https://api.tiodevhost.my.id/api/linkshort/tinyurl?link=${args[0]}`)).json()
 m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${tiny.result}`,m))
 }
 //Case Cuttly
 if (args[1] == "cuttly") {
-	let cuttly = await (await fetch(`https://botcahx.ddns.net/api/linkshort/cuttly?link=${args[0]}`)).json()
+	let cuttly = await (await fetch(`https://api.tiodevhost.my.id/api/linkshort/cuttly?link=${args[0]}`)).json()
 m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${cuttly.result}`,m))
 }
 //Case Bitly 
 if (args[1] == "bitly") {
-	let bitly = await (await fetch(`https://botcahx.ddns.net/api/linkshort/bitly?link=${args[0]}`)).json()
+	let bitly = await (await fetch(`https://api.tiodevhost.my.id/api/linkshort/bitly?link=${args[0]}`)).json()
 m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${bitly.result}`,m))
   }
 }
