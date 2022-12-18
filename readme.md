@@ -1,4 +1,7 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+
+# Edisi entot mastah
+> Mamam ni ngentot script ampas aja di masalahin blog
 # Bot Whatsapp Multi Auth 
  
  <p align="center">
