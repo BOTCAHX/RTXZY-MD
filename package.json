@@ -1,7 +1,7 @@
 {
     "name": "rtxzy",
     "version": "3.0",
-    "description": "Customizable WhatsApp Bot",
+    "description": "Simple Whatsapp Bot",
     "depecrated": false,
     "main": "index.js",
     "directories": {
