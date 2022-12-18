@@ -2,6 +2,7 @@
 
 # Edisi entot mastah
 > Mamam ni ngentot script ampas aja di masalahin blog
+> Original base[`Link`](https://github.com/HelgaIlham/ZukaBet)
 # Bot Whatsapp Multi Auth 
  
  <p align="center">
