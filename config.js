@@ -28,7 +28,7 @@ global.watermark = wm
 global.wm2 = '⫹⫺ R-TXZY-MD'
 global.wm3 = '© R-TXZY-MD'
 global.wm4 = '© BOT RTXZY'
-global.fla = 'https://botcahx.ddns.net/api/photooxy/harry-potter?text='
+global.fla = 'https://api.tiodevhost.my.id/api/photooxy/harry-potter?text='
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 global.benar = 'Benar ✅\n'
