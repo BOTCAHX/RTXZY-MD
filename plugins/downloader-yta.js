@@ -9,7 +9,7 @@ let handler = async (m, { conn, text }) => {
 let ytLink = `https://ytdl.tiodevhost.my.id/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
   conn.sendMessage(m.chat, { audio: { url: ytLink }, mimetype: 'audio/mpeg' }, { quoted: m })
 }
-handler.help = ['ytv'].map(v => v + ' <url>')
+handler.help = ['yta'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(yta|ytaudio|ytmp3)$/i
 
