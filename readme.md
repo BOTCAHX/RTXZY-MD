@@ -16,6 +16,8 @@
 ## List Menu Troube Discussion 
 > [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46)
 
+## Instalasi Package Error
+> [`Gunakan Backup`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/package.json.bak) 
 ## Penjelasan 
 - Sc ini bisa ambil sesi di module di bawah ini
 - [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
