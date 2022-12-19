@@ -1,6 +1,10 @@
-let handler = async (m, { conn, text }) => {
-  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
-  conn.sendFile(m.chat, global.API('xteam', '/attp', { file: '', text: teks }), 'attp.webp', '', m, false, { asSticker: true })
+let handler = async(m, { conn, text, args, usedPrefix, command }) => {
+if (!text) throw `Contoh\n${usedPrefix + command} Bot`
+let teks = encodeURI(text)
+
+if (command == 'attp') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp?apikey=85faf717d0545d14074659ad&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+
 }
 handler.help = ['attp <teks>']
 handler.tags = ['sticker']
