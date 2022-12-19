@@ -11,7 +11,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
   let capt = `⭔ Title: ${title}\n\n⭔ Published: ${publishedTime}\n⭔ Duration: ${durationH}\n⭔ Views: ${viewH}\n⭔ Description: ${description}\n⭔ Url:  ${url}`
   let buttons = [{ buttonText: { displayText: 'Video' }, buttonId: `${usedPrefix}ytv ${url}` }]
   let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: capt, footer: '_Audio on progress..._', buttons }, { quoted: m })
- if (durationS > 80000) return conn.sendMessage(m.chat, { text: `*Download:* ${await shortUrl(ytLink)}\n\n_Durasi terlalu panjang download manual saja lewat link berikut..._` }, { quoted: msg })
+ if (durationS > 9999999999) return conn.sendMessage(m.chat, { text: `*Download:* ${await shortUrl(url)}\n\n_Durasi terlalu panjang download manual saja lewat link berikut..._` }, { quoted: msg })
   conn.sendMessage(m.chat, { audio: { url: ytLink }, mimetype: 'audio/mpeg' }, { quoted: msg })
 }
 handler.help = ['play']
