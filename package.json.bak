@@ -1,0 +1,90 @@
+{
+    "name": "rtxzy",
+    "version": "3.0",
+    "description": "Simple Whatsapp Bot",
+    "depecrated": false,
+    "main": "index.js",
+    "directories": {
+        "lib": "lib",
+        "src": "src",
+        "plugins": "plugins"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "test": "node test.js",
+        "test2": "nodemon index.js --autocleartmp"
+    },
+    "keywords": [
+        "termux-whatsapp-bot",
+        "whatsapp-bot",
+        "whatsapp",
+        "js-whatsapp",
+        "whatsapp",
+        "Games-wabot",
+        "wabot-aq",
+        "multi-device",
+        "MD",
+        "baileys"
+    ],
+    "homepage": "https://github.com/BOTCAHX/RTXZY-MD",
+    "author": {
+        "name": "Bot by BOTCAHX"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BOTCAHX/RTXZY-MD.git"
+    },
+    "bugs": {
+        "url": "https://github.com/BOTCAHX/RTXZY-MD/issues"
+    },
+    "license": "GPL-3.0-or-later",
+    "dependencies": {
+        "@adiwajshing/baileys": "^4.4.0",
+        "@adiwajshing/keyed-db": "^0.2.4",
+        "@bochilteam/scraper": "^3.0.0",
+        "instagram-url-direct": "^1.0.12",
+        "api-dylux": "^1.2.2",
+        "@vitalets/google-translate-api": "^9.0.0",
+        "acrcloud": "^1.4.0",
+        "async": "^3.2.4",
+        "awesome-phonenumber": "^2.64.0",
+        "axios": "^0.27.2",
+        "base64-to-image": "^1.0.2",
+        "canvacord": "^5.4.7",
+        "chalk": "^4.1.2",
+        "cheerio": "^1.0.0-rc.12",
+        "colors": "1.4.0",
+        "file-type": "^16.5.3",
+        "form-data": "^4.0.0",
+        "g-i-s": "^2.1.6",
+        "google-it": "^1.6.3",
+        "human-readable": "^0.2.1",
+        "jsdom": "^20.0.0",
+        "lodash": "^4.17.21",
+        "lowdb": "^2.1.0",
+        "moment-timezone": "^0.5.37",
+        "mongoose": "^6.0.14",
+        "node-fetch": "3.0.0-beta.9",
+        "node-gtts": "2.0.2",
+        "node-os-utils": "^1.3.6",
+        "node-webpmux": "^3.1.3",
+        "nodemon": "^2.0.20",
+        "os": "^0.1.2",
+        "perf_hooks": "^0.0.1",
+        "qrcode": "^1.5.0",
+        "qrcode-terminal": "^0.12.0",
+        "readline": "^1.3.0",
+        "similarity": "^1.2.1",
+        "socket.io": "^4.5.1",
+        "syntax-error": "^1.4.0",
+        "terminal-image": "^2.0.0",
+        "translate-google-api": "^1.0.4",
+        "url": "^0.11.0",
+        "url-regex": "^5.0.0",
+        "url-regex-safe": "^2.1.0",
+        "util": "^0.12.4",
+        "wa-sticker-formatter": "^4.3.2",
+        "yargs": "^17.5.1",
+        "yt-search": "^2.10.3"
+    }
+}
