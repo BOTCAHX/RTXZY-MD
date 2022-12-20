@@ -20,7 +20,7 @@ await conn.sendFile(m.chat, video, 'tiovid.mp4', `
 *Deskripsi*: ${description}
 \n*Username*: ${username}`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 };
-handler.command = handler.help = ['tiktokdl2'];
+handler.command = handler.help = ['tiktokdl3'];
 handler.tags = ['downloader'];
 handler.limit = true;
 handler.group = false;
