@@ -1,16 +1,17 @@
-let fetch = require ('node-fetch')
-let { youtubeSearch } = require ('@bochilteam/scraper')
-let handler = async (m, { conn, text }) => {
-  if (!text) throw 'Url nya mana?'
-  m.reply('_Proses..._')
-  let vid = (await youtubeSearch(text)).video[0]
-  let { videoId } = vid
-  let url = 'https://www.youtube.com/watch?v=' + videoId
-let ytLink = `https://ytdl.tiodevhost.my.id/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
+
+var { 
+     youtubeSearch } = require ('@bochilteam/scraper');
+var handler = async (m, { 
+                        conn,
+                        text }) => {
+       if (!text) throw 'Url nya mana?'
+       m.reply('_Proses..._')
+      var vid = (await youtubeSearch(text)).video[0]
+var { videoId } = vid
+var url = 'https://www.youtube.com/watch?v=' + videoId
+var ytLink = `https://ytdl.tiodevhost.my.id/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
   conn.sendMessage(m.chat, { audio: { url: ytLink }, mimetype: 'audio/mpeg' }, { quoted: m })
 }
-handler.help = ['yta'].map(v => v + ' <url>')
-handler.tags = ['downloader']
-handler.command = /^(yta|ytaudio|ytmp3)$/i
-
-module.exports = handler
+handler.command = handler.help = ['yta', 'ytaudio', 'ytmp3'];
+handler.tags = ['downloader'];
+module.exports = handler;
