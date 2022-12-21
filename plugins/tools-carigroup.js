@@ -16,11 +16,9 @@ var handler = async (m, {
 `}
         return m.reply(caption)
         
-}
-handler.help = ['carigrup <pencarian>']
-handler.tags = ['tools']
+};
+handler.command = handler.help = ['carigrup'];
+handler.tags = ['tools'];
+handler.limit = true;
 
-handler.command = /^carig(ro?up|c)/i
-handler.limit = true
-
-module.exports = handler
+module.exports = handler;
