@@ -8,7 +8,7 @@ var handler = async (m, {
 if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`
 if (!args[0].match(/tiktok/gi)) throw `URL Tidak Ditemukan!`
 m.reply('*Please wait..*.')
- var tioxd = await nodeF(`https://api.ibengtools.my.id/api/download/tiktok?url=${args[0]}&apikey=ibeng`)
+ var tioxd = await nodeF(`https://api.ibeng.tech/api/download/tiktok2?url=${args[0]}&apikey=ibeng`)
 if (!tioxd.ok) throw await tioxd.text()
 var tiodl = await tioxd.json()
 if (!tiodl.status) throw tiodl
