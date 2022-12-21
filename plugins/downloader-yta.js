@@ -1,9 +1,14 @@
 
-var { 
-     youtubeSearch } = require ('@bochilteam/scraper');
-var handler = async (m, { 
+var {
+	youtubeSearch,
+	youtubedl,
+	youtubedlv2,
+	youtubedlv3
+                } = require('@bochilteam/scraper');
+  var handler = async (m, { 
                         conn,
-                        text }) => {
+                        text 
+                        }) => {
        if (!text) throw 'Url nya mana?'
        m.reply('_Proses..._')
       var vid = (await youtubeSearch(text)).video[0]
