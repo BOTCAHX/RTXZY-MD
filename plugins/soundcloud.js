@@ -1,14 +1,18 @@
-const fetch = require('node-fetch')
-
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+var fetch = require("node-fetch");
+var handler = async (m, { 
+conn,
+text, 
+usedPrefix, 
+command 
+}) => {
 
 	if (!text) throw `*Usage : ${usedPrefix + command} url*\n\nExample: ${usedPrefix + command} https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing`
 	if (!(text.includes('http://') || text.includes('https://'))) throw `url invalid, please input a valid url. Try with add http:// or https://`
 	try {
-		let res = await fetch(`https://api.tiodevhost.my.id/api/dowloader/soundcloud?url=${text}`)
-		let anu = await res.json()
+		var res = await fetch(`https://api.tiodevhost.my.id/api/dowloader/soundcloud?url=${text}`)
+		var anu = await res.json()
 		anu = anu.result
-		let ini_txt = `*${anu.title}*\n\n`
+		var ini_txt = `*${anu.title}*\n\n`
 		ini_txt += `⭔ Duration : ${anu.duration}\n`
 		ini_txt += `⭔ Quality : *${anu.quality}*`
 		await conn.sendFile(m.chat, anu.thumbnail, 'scloud.jpg', ini_txt, m)
@@ -19,8 +23,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	}
 }
 
-handler.help = ['soundcloud <url>']
-handler.tags = ['download']
-handler.command = /^(s(ound)?cloud)$/i
-
-module.exports = handler
+handler.command = handler.help = ['soundcloud'];
+handler.tags = ['download'];
+handler.limit = true;
+module.exports = handler;
