@@ -1,9 +1,4 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-
-# Edisi entot mastah
-> Mamam ni ngentot script ampas aja di masalahin blog
-
-> Original base[`Link`](https://github.com/HelgaIlham/ZukaBet)
 # Bot Whatsapp Multi Auth 
  
  <p align="center">
@@ -12,6 +7,10 @@
 
 > Telah menggunakan baileys multi auth !
 > Penjelasan sesi [`Here`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
+
+
+## Base 
+> Original base[`Link`](https://github.com/HelgaIlham/ZukaBet)
 
 ## List Menu Troube Discussion 
 > [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46)
