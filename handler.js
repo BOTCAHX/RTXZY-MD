@@ -42,9 +42,9 @@ module.exports = {
                     if (!isNumber(user.coin)) user.coin = 0
                     if (!isNumber(user.atm)) user.atm = 0
                     if (!isNumber(user.limit)) user.limit = 100
-                    if (!isNumber(user.glimit)) user.glimit = 20
+                    if (!isNumber(user.glimit)) user.glimit = 100
                     if (!isNumber(user.tprem)) user.tprem = 0
-                    if (!isNumber(user.tigame)) user.tigame = 50
+                    if (!isNumber(user.tigame)) user.tigame = 5
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
                     if (!isNumber(user.money)) user.money = 0
                     if (!isNumber(user.rumahsakit)) user.rumahsakit= 0
@@ -265,7 +265,7 @@ module.exports = {
                     coin: 0,
                     atm: 0,
                     limit: 100,
-                    tigame: 50,
+                    tigame: 999,
                     lastclaim: 0,
                     money: 0,
                     diamond: 0,
@@ -424,7 +424,7 @@ module.exports = {
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('delete' in chat)) chat.delete = true
                     if (!('antiLink' in chat)) chat.antiLink = true
-                    if (!('viewonce' in chat)) chat.viewonce = true
+                    if (!('viewonce' in chat)) chat.viewonce = false
                     if (!('antiToxic' in chat)) chat.antiToxic = false
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
@@ -688,7 +688,7 @@ module.exports = {
             if (opts['queque'] && m.text && quequeIndex !== -1) this.msgqueque.splice(quequeIndex, 1)
         }
     },
-    async participantsUpdate({ id, participants, action }) {
+     async participantsUpdate({ id, participants, action }) {
         if (opts['self']) return
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
@@ -733,7 +733,7 @@ module.exports = {
             case 'demote':
                 if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
                 text = text.replace('@user', '@' + participants[0].split('@')[0])
-                if (chat.detect) this.sendMessage(id, text, MessageType.extendedText, {
+                if (chat.detect) this.sendMessage(id, text, {
                     contextInfo: {
                         mentionedJid: this.parseMention(text)
                     }
@@ -761,7 +761,7 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'Perintah ini hanya dapat digunakan oleh _*Owner!*_',
+        rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
         owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
         mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
         premium: 'Perintah ini hanya untuk member _*Premium*_ !',
@@ -769,7 +769,7 @@ global.dfail = (type, m, conn) => {
         private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
         admin: 'Perintah ini hanya untuk *Admin* grup!',
         botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar mark.20*',
+        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Mansur.16*',
         restrict: 'Fitur ini di *disable*!'
     }[type]
     if (msg) return m.reply(msg)
