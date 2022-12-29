@@ -18,7 +18,7 @@ HD } = tiodl.result
 await conn.sendFile(m.chat, HD, 'tiovid.mp4', `
 *Deskripsi*: ${desc}`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 };
-handler.command = handler.help = ['twitter2'];
+handler.command = handler.help = ['twitter'];
 handler.tags = ['downloader'];
 handler.limit = true;
 handler.group = false;
