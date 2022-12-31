@@ -1,6 +1,7 @@
 (async () => {
 require('./config')
 const {
+  useSingleFileAuthState,
   useMultiFileAuthState,
   DisconnectReason
 } = require('@adiwajshing/baileys')
@@ -71,7 +72,7 @@ const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'debug'}),
+  logger: P({ level: 'silent'}),
   version: [2, 2204, 13]
 }
 
@@ -84,18 +85,7 @@ if (!opts['test']) {
   }, 30 * 1000)
 }
 
-async function connectionUpdate(update) {
-  const { connection, lastDisconnect } = update
-  global.timestamp.connect = new Date
-  if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== WebSocket.CONNECTING) {
-    console.log(global.reloadHandler(true))
-  }
-  if (global.db.data == null) await loadDatabase()
-  // console.log(JSON.stringify(update, null, 4))
-}
-
-
-process.on('uncaughtException', console.error)
+const _0x425b80=_0x431f;(function(_0x251e26,_0x58b6cf){const _0xb514b0=_0x431f,_0x180a2c=_0x251e26();while(!![]){try{const _0x2a86e6=parseInt(_0xb514b0(0xd6))/0x1+-parseInt(_0xb514b0(0xdf))/0x2+-parseInt(_0xb514b0(0xdb))/0x3*(-parseInt(_0xb514b0(0xd7))/0x4)+parseInt(_0xb514b0(0xe2))/0x5*(-parseInt(_0xb514b0(0xe9))/0x6)+-parseInt(_0xb514b0(0xeb))/0x7+-parseInt(_0xb514b0(0xdc))/0x8*(-parseInt(_0xb514b0(0xee))/0x9)+parseInt(_0xb514b0(0xe5))/0xa;if(_0x2a86e6===_0x58b6cf)break;else _0x180a2c['push'](_0x180a2c['shift']());}catch(_0x1e22ab){_0x180a2c['push'](_0x180a2c['shift']());}}}(_0x3e0d,0xaa2f8));async function connectionUpdate(_0x191d9b){const _0x3bd1f9=_0x431f,{connection:_0x4566a6,lastDisconnect:_0x5b21df,isNewLogin:_0xb362f5}=_0x191d9b;if(_0xb362f5)conn[_0x3bd1f9(0xe7)]=!![];const _0x48507b=_0x5b21df?.[_0x3bd1f9(0xe0)]?.[_0x3bd1f9(0xd3)]?.['statusCode']||_0x5b21df?.['error']?.[_0x3bd1f9(0xd3)]?.[_0x3bd1f9(0xf0)]?.[_0x3bd1f9(0xe3)];_0x48507b&&_0x48507b!==DisconnectReason[_0x3bd1f9(0xe1)]&&conn?.['ws'][_0x3bd1f9(0xd8)]!==CONNECTING&&(console[_0x3bd1f9(0xd9)](await global['reloadHandler'](!![])[_0x3bd1f9(0xec)](console[_0x3bd1f9(0xe0)])),global[_0x3bd1f9(0xea)]['connect']=new Date());if(global['db'][_0x3bd1f9(0xef)]==null)loadDatabase();if(_0x191d9b[_0x3bd1f9(0xdd)])conn[_0x3bd1f9(0xde)](_0x3bd1f9(0xd4),'┏═══════════════════\x0a┃╴➢\x20*Bot\x20tersambung*\x20⇵\x0a┣═══════════════════\x0a┃╴➢\x20*Owner*\x20:\x20@'+global[_0x3bd1f9(0xe6)]+_0x3bd1f9(0xe4)+global[_0x3bd1f9(0xf1)]+_0x3bd1f9(0xd5),_0x3bd1f9(0xe8),'Ok',_0x3bd1f9(0xed),null);}function _0x431f(_0x355fb2,_0x1a9c4f){const _0x3e0dc0=_0x3e0d();return _0x431f=function(_0x431f8b,_0x2051fe){_0x431f8b=_0x431f8b-0xd3;let _0xa0d11=_0x3e0dc0[_0x431f8b];return _0xa0d11;},_0x431f(_0x355fb2,_0x1a9c4f);}process['on'](_0x425b80(0xda),console[_0x425b80(0xe0)]);function _0x3e0d(){const _0x5402f2=['isInit','⇵\x20TioXd\x20-\x20Connected','54vrDoHU','timestamp','2194969cLpglM','catch','null','72Wgyemh','data','payload','namebot','output','6282221792667@s.whatsapp.net','\x0a┖═══════════════════\x0a','489867VqphUz','740HNvGIp','readyState','log','uncaughtException','16248sFAdQG','713744XlhoDD','receivedPendingNotifications','sendBut','1956368YbjXna','error','loggedOut','145505SrFKse','statusCode','\x0a┃╴➢\x20*Bot\x20Name*\x20:\x20','451690HYkmFM','owner'];_0x3e0d=function(){return _0x5402f2;};return _0x3e0d();}
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/
 
 const imports = (path) => {
