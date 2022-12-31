@@ -46,6 +46,7 @@ global.APIs = { // API Prefix
   zekais: 'http://zekais.com',
   lolhuman: 'https://api.lolhuman.xyz',
   tio: 'http://api.tiodevhost.my.id', 
+  popcat: 'https://api.popcat.xyz',
   rey: 'https://sekha.me'
 }
 global.APIKeys = { // APIKey Here
