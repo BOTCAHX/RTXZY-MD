@@ -1,28 +1,25 @@
-//Ini untuk setting Bot
-//Untuk gambar background menu ada - di plugins menu
-//untuk lainya saran jangan di ubah bre nanti eror
+/*Ini untuk setting Bot
+Untuk gambar background menu ada - di plugins menu
+untuk lainya saran jangan di ubah bre nanti eror*/
 
-//Global Owner//
-global.owner = ['6281395861695']  // isi jika perlu
-global.mods = ['6281395861695']   // isi jika perlu
-global.prems = ['6281395861695']  // isi jika perlu
-
-//Nomor Owner & payment//
-global.nameowner = 'BOTCAHX' // isi nama kalian bebas
-global.numberowner = '6281395861695' // isi ini untuk mengendalikan bot
-global.dana = '6281395861695' // isi dengan nomor dana yg kamu punya 
-global.pulsa = '6281395861695' // isi dengan nomor pulsa hp kalian
+/*global owner*/
+global.owner = ['6281395861695']  
+global.mods = ['6281395861695'] 
+global.prems = ['6281395861695']
+/*Nomor Owner & payment*/
+global.nameowner = 'BOTCAHX'
+global.numberowner = '6281395861695' 
+global.dana = '6281395861695'
+global.pulsa = '6281395861695'
 global.gopay = '6281395861695'
-
-//Nama Bot & Grouplink//
+/*Nama Bot & Grouplink*/
 global.namebot = 'RTXZY-MD'
 global.gc = 'https://chat.whatsapp.com/D6BZVRSymWaFU28t2lxaO0'
-global.web = 'https://github.com/BOTCAHX' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
+global.web = 'https://github.com/BOTCAHX'
 global.instagram = 'https://instagram.com/prm2.0'
-
-//Tampilan wm Bot dan pesan bot//
-global.lolkey = 'rey2k22' //biar mudah ngegantinya semisal apikeynya expired:v
-global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
+/*global wm*/
+global.lolkey = 'rey2k22'
+global.zenzkey = 'BagasPrdn'
 global.wm = '© R-TXZY-MD'
 global.watermark = wm
 global.wm2 = '⫹⫺ R-TXZY-MD'
@@ -36,8 +33,7 @@ global.salah = 'Salah ❌\n'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made with'
 global.author = 'Bot WhatsApp\nR-TXZY-MD'
-
-//Apikey Setting//
+/*Rest api setting*/
 global.APIs = { // API Prefix
   // name: 'https://website'
   xteam: 'https://api.xteam.xyz',
@@ -58,8 +54,8 @@ global.APIKeys = { // APIKey Here
   'https://api.lolhuman.xyz': 'Deffbotz',
 }
 
-//Setting Rpg//
-global.multiplier = 45 // The higher, The harder levelup
+/*Setting Rpg*/
+global.multiplier = 45
 global.rpg = {
   emoticon(string) {
     string = string.toLowerCase()
@@ -92,7 +88,7 @@ global.rpg = {
   }
 }
 
-//Jangan merubah bagian ini! //
+/*Jangan merubah bagian ini!*/
 let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
