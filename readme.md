@@ -53,7 +53,7 @@ Gunakan Backup [`Link Backup`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/pac
 - Server selalu up-to-date 
 **Link** 
 
-[`Panel Server`](https://chat.whatsapp.com/DxpLoatBNjrLPgWyedB1St)
+[`Panel Server`](https://chat.whatsapp.com/CmzVZLZl7xL2TNtd9dUvPc)
 
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/D6BZVRSymWaFU28t2lxaO0) 
