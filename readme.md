@@ -1,12 +1,29 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Bot Whatsapp Multi Auth 
- 
+
+
+
+  <p align="center"><a href="https://github.com/BOTCAHX/RTXZY-MD/network/members">
+    <img title="Whatsapp-Bot-Multi-Device-Forks" src="https://img.shields.io/github/forks/BOTCAHX/RTXZY-MD?label=Forks&color=%23ffdac1&style=flat-square">
+  </a>
+  <a href="https://github.com/BOTCAHX/RYXZY-MD/watchers">
+    <img title="Whatsapp-Bot-Multi-Auth" src="https://img.shields.io/github/watchers/BOTCAHX/RTXZY-MD?label=Watchers&color=%23e2f0cb&style=flat-square">
+  </a>
+  <a href="https://github.com/BOTCAHX/RTXZY-MD/blob/master/LICENSE">
+    <img title="Whatsapp-Bot-Multi-Auth" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?color=%23b5ead7&style=flat-square"/>
+  </a>
+  <a href="https://hits.seeyoufarm.com">
+    <img title="Whatsapp-Bot-Multi-Device-Hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBOTCAX%2FRTXZY-MD&count_bg=%23c7ceea&title_bg=%23555555&icon=probot.svg&icon_color=%23c7ceea&title=Hits&edge_flat=true"/>
+  </a>
+</div>
  <p align="center">
 <img width="" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?color=red&label=Repo%20Size&style=for-the-badge&logo=appveyor">
 </p>
 
 > Telah menggunakan baileys multi auth !
 > Penjelasan sesi [`Here`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
+
+## Codefactor Rate
+[![CodeFactor](https://www.codefactor.io/repository/github/botcahx/rtxzy-md/badge)](https://www.codefactor.io/repository/github/botcahx/rtxzy-md)
 
 
 ## Base 
