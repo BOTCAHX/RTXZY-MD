@@ -5,6 +5,7 @@
   <p align="center"><a href="https://github.com/BOTCAHX/RTXZY-MD/network/members">
     <img title="Whatsapp-Bot-Multi-Device-Forks" src="https://img.shields.io/github/forks/BOTCAHX/RTXZY-MD?label=Forks&color=%23ffdac1&style=flat-square">
   </a>
+<a href="https://www.codefactor.io/repository/github/botcahx/rtxzy-md"><img src="https://www.codefactor.io/repository/github/botcahx/rtxzy-md/badge" alt="CodeFactor" /></a>
   <a href="https://github.com/BOTCAHX/RYXZY-MD/watchers">
     <img title="Whatsapp-Bot-Multi-Auth" src="https://img.shields.io/github/watchers/BOTCAHX/RTXZY-MD?label=Watchers&color=%23e2f0cb&style=flat-square">
   </a>
@@ -19,27 +20,26 @@
 <img width="" src="https://img.shields.io/github/repo-size/BOTCAHX/RTXZY-MD?color=red&label=Repo%20Size&style=for-the-badge&logo=appveyor">
 </p>
 
-> Telah menggunakan baileys multi auth !
-> Penjelasan sesi [`Here`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
+## Notes 
+- Telah menggunakan baileys multi auth !
 
-## Codefactor Rate
-[![CodeFactor](https://www.codefactor.io/repository/github/botcahx/rtxzy-md/badge)](https://www.codefactor.io/repository/github/botcahx/rtxzy-md)
-
+- Panduan [`Link`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
 
 ## Base 
-> Original base[`Link`](https://github.com/HelgaIlham/ZukaBet)
+Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 
 ## List Menu Troube Discussion 
-> [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46)
+Bergabung [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46)
 
 ## Instalasi Package Error
-> [`Gunakan Backup`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/package.json.bak) 
+Gunakan Backup [`Link Backup`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/package.json.bak) 
 ## Penjelasan 
-- Sc ini bisa ambil sesi di module di bawah ini
+- Sript ini hanya bisa mengambil sesi di module di bawah ini
 - [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
-- [`Fork & Get sessions`](https://replit.com/@tioclkp02/Sessions-Multi-Auth)
-- Setelah scan download sessions yg sudah terkoneksi tersebut lalu upload ke github
+- Fork terlebih dahulu lalu pindai QR yang di berikan 
+- Setelah memdindai download sessions yg sudah terkoneksi tersebut, lalu upload ke github / panel run
 - Upload tepat di folder sessions.
+
 - Perlu di ingat sesi multi auth bukan session.data.json/sesion.json dan bukan dalam satu file auth, saja melainkan terdapat banyak file bercampur dengan auth & pre-key.
 
 ## Logs level
@@ -55,7 +55,6 @@
 
 [`Panel Server`](https://chat.whatsapp.com/DxpLoatBNjrLPgWyedB1St)
 
-> **Warning**: 
 ## Join Group Diskusi
 [![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/D6BZVRSymWaFU28t2lxaO0) 
 
