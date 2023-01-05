@@ -1,4 +1,6 @@
-let handler  = async (m, { conn }) => {
+var handler  = async (m, { 
+conn 
+}) => {
 	
 	await m.reply('[❗] WAIT, Tunggu Sebentar:v.')
   conn.reply(m.chat,`${pickRandom(global.bokep)}`, m)
