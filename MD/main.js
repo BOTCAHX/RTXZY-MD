@@ -66,14 +66,14 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-global.authFile = `${opts._[0] || 'hyzer'}.data.json`
+global.authFile = `${opts._[0] || 'session'}.data.json`
 global.isInit = !fs.existsSync(authFile)
 const { state, saveState } = useSingleFileAuthState(global.authFile)
 
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'trace' }),
+  logger: P({ level: 'silent' }),
   version: [2, 2204, 13]
 }
 
