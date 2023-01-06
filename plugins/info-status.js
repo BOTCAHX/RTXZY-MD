@@ -1,24 +1,31 @@
-let { performance } = require('perf_hooks')
-let osu = require('node-os-utils')
-let handler = async(m, { conn, command, usedPrefix, DevMode }) => {
+var {
+performance
+} = require('perf_hooks')
+var osu = require('node-os-utils')
+var handler = async(m, { 
+ conn,
+ command,
+ usedPrefix,
+ DevMode
+ }) => {
     try {
-        let NotDetect = 'Not Detect'
-        let old = performance.now()
-        let cpu = osu.cpu
-        let cpuCore = cpu.count()
-        let drive = osu.drive
-        let mem = osu.mem
-        let netstat = osu.netstat
-        let OS = osu.os.platform()
-        let cpuModel = cpu.model()
-        let cpuPer
-        let p1 = cpu.usage().then(cpuPercentage => {
+        var NotDetect = 'Not Detect'
+        var old = performance.now()
+        var cpu = osu.cpu
+        var cpuCore = cpu.count()
+        var drive = osu.drive
+        var mem = osu.mem
+        var netstat = osu.netstat
+        var OS = osu.os.platform()
+        var cpuModel = cpu.model()
+        var cpuPer
+        var p1 = cpu.usage().then(cpuPercentage => {
             cpuPer = cpuPercentage
         }).catch(() => {
             cpuPer = NotDetect
         })
-        let driveTotal, driveUsed, drivePer
-        let p2 = drive.info().then(info => {
+        var driveTotal, driveUsed, drivePer
+        var p2 = drive.info().then(info => {
             driveTotal = (info.totalGb + ' GB'),
                 driveUsed = info.usedGb,
                 drivePer = (info.usedPercentage + '%')
@@ -27,16 +34,16 @@ let handler = async(m, { conn, command, usedPrefix, DevMode }) => {
                 driveUsed = NotDetect,
                 drivePer = NotDetect
         })
-        let ramTotal, ramUsed
-        let p3 = mem.info().then(info => {
+        var ramTotal, ramUsed
+        var p3 = mem.info().then(info => {
             ramTotal = info.totalMemMb,
                 ramUsed = info.usedMemMb
         }).catch(() => {
             ramTotal = NotDetect,
                 ramUsed = NotDetect
         })
-        let netsIn, netsOut
-        let p4 = netstat.inOut().then(info => {
+        var netsIn, netsOut
+        var p4 = netstat.inOut().then(info => {
             netsIn = (info.total.inputMb + ' MB'),
                 netsOut = (info.total.outputMb + ' MB')
         }).catch(() => {
@@ -45,8 +52,8 @@ let handler = async(m, { conn, command, usedPrefix, DevMode }) => {
         })
         await Promise.all([p1, p2, p3, p4])
         await conn.reply(m.chat, `_Testing ${command }..._`, m)
-        let _ramTotal = (ramTotal + ' MB')
-        let neww = performance.now()
+        var _ramTotal = (ramTotal + ' MB')
+        var neww = performance.now()
         conn.sendButtonImg(m.chat,  await(await require('node-fetch')(fla + `Status`)).buffer(), `
 *「 Status 」*
 OS : *${OS}*
@@ -71,11 +78,9 @@ Internet OUT : *${netsOut}*
     }
 }
 handler.help = ['', 'bot'].map(v => 'status' + v)
-handler.tags = ['info']
+handler.tags = ['info'];
 handler.command = /^(bot)?stat(us)?(bot)?$/i
-
-module.exports = handler
-
+module.exports = handler;
 function clockString(ms) {
     let h = Math.floor(ms / 3600000)
     let m = Math.floor(ms / 60000) % 60
