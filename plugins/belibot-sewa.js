@@ -1,6 +1,11 @@
-let fetch = require('node-fetch') 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-let gh = 'https://github.com/BOTCAHX'
+var fetch = require("node-fetch");
+var handler = async (m, { 
+ conn,
+ text,
+ usedPrefix,
+ command
+ }) => {
+var gh = 'https://github.com/BOTCAHX'
   let buttonMessage= {
 'document':{'url':gh},
 'mimetype':'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -27,8 +32,7 @@ let gh = 'https://github.com/BOTCAHX'
     await conn.sendMessage(m.chat,buttonMessage, { quoted:m})
 }
 
-handler.help = ['sewa']
-handler.tags = ['main']
-handler.command = /^(sewa|sewabot|belibot)$/i
-
-module.exports = handler
+handler.help = ['sewa'];
+handler.tags = ['main'];
+handler.command = ['sewa', 'sewabot', 'belibot'];
+module.exports = handler;
