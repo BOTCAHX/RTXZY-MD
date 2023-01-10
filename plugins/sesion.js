@@ -1,17 +1,13 @@
-// jika menggunakan single sessions
-Maka bisa menggunakan fitur ini //
-
-var fs = require("fs");
+var fs = require('fs')
 var handler = async (m, {
  conn,
- text 
+ text
  }) => {
-    m.reply('Tunggu Sebentar, Proses Getting File wamd.data.json')
-    var sesi = await fs.readFileSync('./session.data.json')
-    return await conn.sendMessage(m.chat, { document: sesi, mimetype: 'application/json', fileName: 'wamd.data.json' }, { quoted: m })
-};
-handler.help = ['getsessi'];
+    m.reply('Tunggu Sebentar, Proses Getting File creds.json')
+    let sesi = await fs.readFileSync('./sessions/creds.json')
+    return await conn.sendMessage(m.chat, { document: sesi, mimetype: 'application/json', fileName: 'creds.json' }, { quoted: m })
+}
+handler.command = handler.help = ['getsesi', 'getcreds', 'getsessions'];
 handler.tags = ['internet'];
-handler.command = /^(g(et)?ses?si(on)?(data.json)?)$/i
 handler.rowner = true;
 module.exports = handler;
