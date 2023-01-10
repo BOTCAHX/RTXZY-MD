@@ -38,7 +38,7 @@ Bergabung [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46
 Gunakan Backup [`Link Backup`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/package.json.bak) 
 ## Penjelasan 
 - Sript ini hanya bisa mengambil sesi di module di bawah ini
-- [`Visite Module`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
+- [`GET SESI LINK`](https://replit.com/@tioclkp02/sessions?lite=1&outputonly=1)
 - Fork terlebih dahulu lalu pindai QR yang di berikan 
 - Setelah memdindai download sessions yg sudah terkoneksi tersebut, lalu upload ke github / panel run
 - Upload tepat di folder sessions.
