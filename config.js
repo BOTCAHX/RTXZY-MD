@@ -1,14 +1,18 @@
-/*Ini untuk setting Bot
-Untuk gambar background menu ada - di plugins menu
-untuk lainya saran jangan di ubah bre nanti eror*/
+/*[[Ini untuk setting Bot
+Untuk gambar background menu 
+ada 
+di plugins menu
+untuk lainya saran jangan 
+di ubah bre nanti eror]]*/
 
 /*global owner*/
 global.owner = ['6281395861695']  
 global.mods = ['6281395861695'] 
 global.prems = ['6281395861695']
 /*Nomor Owner & payment*/
-global.nameowner = 'BOTCAHX'
+global.nameowner = 'Tio'
 global.numberowner = '6281395861695' 
+global.mail = 'tioclkp02@gmail.com' //enter your email 🗿
 global.dana = '6281395861695'
 global.pulsa = '6281395861695'
 global.gopay = '6281395861695'
