@@ -23,8 +23,17 @@
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD?ref=badge_large)
 
+## Penjelasan Instalasi 
+- Sript ini hanya bisa mengambil sesi di module di bawah ini
+- [`GET SESI LINK`](https://replit.com/@tioclkp02/sessions?lite=1&outputonly=1)
+- Setelah memdindai upload sessions yang dikirim bot ke github / panel 
+- Upload tepat di folder sessions jangan di luar folder tersebut.
+- nama global session  ya biasanya creds.json
+- Perlu di ingat sesi multi auth bukan session.data.json/sesion.json dan bercampur dengan pre-key dan auth-key
+
+
 ## Notes 
-- Telah menggunakan baileys multi auth !
+- Telah menggunakan Baileys MD multi auth !
 
 - Panduan [`Link`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
 
@@ -36,15 +45,6 @@ Bergabung [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46
 
 ## Instalasi Package Error
 Gunakan Backup [`Link Backup`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/package.json.bak) 
-## Penjelasan 
-- Sript ini hanya bisa mengambil sesi di module di bawah ini
-- [`GET SESI LINK`](https://replit.com/@tioclkp02/sessions?lite=1&outputonly=1)
-- Fork terlebih dahulu lalu pindai QR yang di berikan 
-- Setelah memdindai download sessions yg sudah terkoneksi tersebut, lalu upload ke github / panel run
-- Upload tepat di folder sessions.
-
-- Perlu di ingat sesi multi auth bukan session.data.json/sesion.json dan bukan dalam satu file auth, saja melainkan terdapat banyak file bercampur dengan auth & pre-key.
-
 ## Logs level
 - Jika ingin mengubah level pino nya maka ubah di line ini [`Logs level`](https://github.com/BOTCAHX/RTXZY-MD/blob/c67a8427d123c4e49d761d34912fb23f169d89a2/main.js#L74)
 - Opsi tersedia : silent , debug , trace
