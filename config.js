@@ -29,7 +29,7 @@ global.watermark = wm
 global.wm2 = '⫹⫺ R-TXZY-MD'
 global.wm3 = '© R-TXZY-MD'
 global.wm4 = '© BOT RTXZY'
-global.fla = 'https://api.tiodevhost.my.id/api/textpro/glitch?text='
+global.fla = 'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text='
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 global.benar = 'Benar ✅\n'
