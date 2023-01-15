@@ -25,7 +25,7 @@
 
 ## Penjelasan Instalasi 
 - Sript ini hanya bisa mengambil sesi di module di bawah ini
-- [`GET SESI LINK`](https://replit.com/@tioclkp02/sessions?lite=1&outputonly=1)
+- [`GET SESI LINK`](https://replit.com/@dapitt/sessions?lite=1&outputonly=1)
 - Setelah memdindai upload sessions yang dikirim bot ke github / panel 
 - Upload tepat di folder sessions jangan di luar folder tersebut.
 - nama global session  ya biasanya creds.json
