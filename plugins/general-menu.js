@@ -8,53 +8,81 @@ Agar terap bisa di gunakan dan tidak ada kendala seperti
 [Error: ENOENT: no such file or directory, open ''] 
 **/ 
 
-    let handler = async (m, { conn, text, usedPrefix, command }) => {
-    let _uptime = process.uptime() * 1000
-    let uptime = clockString(_uptime)
-    let time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
-    let ar = ['list', 'menu']
-    let title = `*© BOTCAHX*`
-    let tmb = `CLICK HERE ⎙`
+    var fetch = require("node-fetch");
+var handler = async (m, { 
+ conn,
+ text, 
+ usedPrefix, 
+ command 
+ }) => {
+var link = await fetch(`https://api.tiodevhost.my.id/statistic`)
+ hasil = await link.json()
+   var _uptime = process.uptime() * 1000
+    var tio = clockString(_uptime)
+    var time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
+    var ar = ['list', 'menu']
+    var title = `𝑳𝒊𝒔𝒕 𝑴𝒆𝒏𝒖 𝑩𝒐𝒕\n\n│█║▌║▌║║▌║▌║█│▌`
+    var tmb = `‎Hits ${hasil.visitor}`
     const sections = [ {
-	title: `Aktif Selama ${uptime} || Waktu ${time} WIB`,
+	title: `Uptime: ${tio} : Time: ${time}`,
 	rows: [
-	{title: `Semua Perintah`, rowId: `.allmenu `},//, description: ``},
-        {title: `MenuV2`, rowId: `.pay `},//, description: ``},
-        {title: `Donasi`, rowId: `#donasi `},//, description: ``},
-        {title: `Script`, rowId: `#sc `},//, description: ``},
-        {title: `Group Official`, rowId: `#gcbot `},//, description: ``},
-        {title: `Website Official`, rowId: `#web `},//, description: ``},
-        {title: `Speed`, rowId: `#speed `},//, description: ``},
-        {title: `List Texpro Maker`, rowId: `#textpro `},//, description: ``},
-        {title: `Info`, rowId: `#info `},//, description: ``},
-        {title: `Creator`, rowId: `#owner `},//, description: ``},
+	    {title: "Semua Perintah", rowId: '.allmenu', description: 'Menampilkan semua perintah bot' },
+		]
+}, {
+	title: `Uptime Website ${hasil.runtime}`,
+	rows: [
+	    {title: "Perintah 2", rowId: '.pay', description: 'Gunaka  jika perintah utama error' },
+	     {title: "Donasi", rowId: '.donasj', description: 'Belikan Owner Kopi' },
+	      {title: "Dashboard", rowId: '.dash', description: 'Menampilkan Dashboard' },
+	      	]
+}, {
+	title: `Status Web ${hasil.status}`,
+	rows: [
+	     {title: "Website Official", rowId: '.web', description: 'Menampilkan website' },
+         {title: "Group", rowId: '.gcbot', description: 'Group Official Bot' },
+         	]
+}, {
+	title: `Shortcut List`,
+	rows: [
+	    {title: "Script", rowId: '.sc', description: 'Script yang digunakan Bot' },
+        {title: "Speed", rowId: '.speed', description: 'Test kecepatan Bot' },
+        {title: "List Textpro", rowId: '.texpto', description: 'Menu maker tambahan' },
+         {title: "Info", rowId: '.info', description: 'Informasi lainya' },
+         	]
+}, {
+	title: `Creator Bot`,
+	rows: [
+        {title: "Owner", rowId: '.owner', description: 'Contact Owner' },
+        	]
+}, {
+	title: `Waening!`,
+	rows: [
+        {title: "Warning", rowId: 'null', description: 'Jangan pernah memperjual belikan sc ini!' },
         ]
  } ]
 
 const listMessage = {
   text: title,
   mentions: [m.sender],
-  footer: '📮 *Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner',
+  footer: '',
   buttonText: tmb,
   sections
 }
-
   if(!text) return conn.sendMessage(m.chat, listMessage, { quoted: m })
-  if (!ar.includes(text)) throw conn.sendMessage(m.chat, listMessage, { quoted: m })
-  if (!res.ok) throw `${res.status} ${res.statusText}`
-  let json = await res.json()
-  if (!json.image) throw json
 }
 
-handler.help = ['Menu'].map((v) => v + ' <List>')
-handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
-handler.register = false
-
-module.exports = handler
+handler.help = ['menu'];
+handler.tags = ['main'];
+handler.command = /^(tod|menu|help|\?)$/i
+handler.register = false;
+module.exports = handler;
 function clockString(ms) {
-    let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-    let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+    var days = Math.floor(ms / (24 * 60 * 60 * 1000));
+    var daysms = ms % (24 * 60 * 60 * 1000);
+    var hours = Math.floor((daysms) / (60 * 60 * 1000));
+    var hoursms = ms % (60 * 60 * 1000);
+    var minutes = Math.floor((hoursms) / (60 * 1000));
+    var minutesms = ms % (60 * 1000);
+    var sec = Math.floor((minutesms) / (1000));
+    return days + " D " + hours + " H " + minutes + " M " + sec + " S ";
 }
