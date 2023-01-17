@@ -55,7 +55,7 @@ var link = await fetch(`https://api.tiodevhost.my.id/statistic`)
         {title: "Owner", rowId: '.owner', description: 'Contact Owner' },
         	]
 }, {
-	title: `Waening!`,
+	title: `Warning!`,
 	rows: [
         {title: "Warning", rowId: 'null', description: 'Jangan pernah memperjual belikan sc ini!' },
         ]
