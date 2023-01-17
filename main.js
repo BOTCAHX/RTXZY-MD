@@ -1,7 +1,6 @@
 (async () => {
 require('./config')
 const {
-  useSingleFileAuthState,
   useMultiFileAuthState,
   DisconnectReason
 } = require('@adiwajshing/baileys')
