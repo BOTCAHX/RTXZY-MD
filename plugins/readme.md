@@ -1,4 +1,4 @@
-- Kalo masalah sesi lu ambil di Sc sebelah karena sc ini tidak bisa scan session
+- Cara dapatin sesi cukup vaca readme
 - Scan qr ada di module readme main baca aja readme nya
 
 - Free apikey
