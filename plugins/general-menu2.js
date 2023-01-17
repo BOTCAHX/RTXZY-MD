@@ -58,7 +58,7 @@ const defaultMenu = {
 │ • Prefix Used: *[ %p ]*
 │ • Database: %rtotalreg dari %totalreg 
 │ • Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-│ • Free Api: https://api.tiodevhost.my.id
+│ • RestApi's: https://bit.ly/3HLJaS3
 ╰────
 ╭─ 「 *USER INFO* 」
 │ • Pengguna:  %name 
@@ -192,7 +192,7 @@ const ftroli = {
                           }
                         }
                       }
-await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/328f69bd3fa43a1aecb20.jpg')).buffer(),  'ʜᴇʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅ ʟɪꜱᴛ', text, 'ʙᴀᴄᴋ', '.menu', 'ɪɴꜰᴏ', '.info', 'ᴀʟʟᴍᴇɴᴜ', '.pay', m, {  
+await conn.sendButtonImg(m.chat, await (await fetch('https://telegra.ph/file/9017b72bb209a0dadb9f5.png')).buffer(),  '•━━━━ ❮❮ *𝙱𝙾𝚃 𝙼𝙴𝙽𝚄* ❯❯ ━━━━━•', text, 'ʙᴀᴄᴋ', '.menu', m, {  
       quoted: ftroli,  
       contextInfo: { //forwardingScore: 99999, isForwarded: true,  
           externalAdReply: {  showAdAttribution: true, 
@@ -200,7 +200,7 @@ await conn.send3ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/32
               body: '© ᴛɪᴏxᴅ', 
               description: 'ᴍᴀᴅᴇ ᴡɪᴛʜ ♡ ᴛɪᴏxᴅ', 
               mediaType: 2,  
-            thumbnail: await (await fetch('https://telegra.ph/file/00faf159ce0349901eaf3.jpg')).buffer(), 
+            thumbnail: await (await fetch('https://telegra.ph/file/dc5a67d724b016574129b.jpg')).buffer(), 
            mediaUrl: `https://www.facebook.com/tio.permana.50999` 
           }  
        }  
