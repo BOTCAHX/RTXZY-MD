@@ -1,3 +1,174 @@
-/*ada user nyuri sc, jadi mamam nih sc*/
+/*Apasi kontol cuma nyuri fitur doang*/
 
-function _0x1d26(){var _0x5e1d38=['sys','130144LJAiHP','totalmem','user','Downloader','length','irq','command','\x20/\x20','chat','178425fgJNRF','152742RKcGNd','tags','toFixed','MB\x20/\x20','human-readable','join','total','speed','\x20MHZ)\x0a','*\x20Groups\x20Left\x0a-\x20*','reduce','70dMDgtH','MB\x0a\x0a_NodeJS\x20Memory\x20Usage_\x0a','10928ZNuqAi','ping','Rest\x20Api','@g.us','isChats','_Total\x20CPU\x20Usage_\x0a','Merespon\x20dalam\x20','213937wIILWi','entries','reply','endsWith','now','perf_hooks','freemem','nice','-\x20*','JEDEC','memoryUsage','times','_Testing\x20speed..._','trim','padEnd','150410mWuQux','sendMessage','keys','idle','114130qOvGqR','21ZENBpr','heapUsed','\x0a\x0a_CPU\x20Core(s)\x20Usage\x20(','369ZtDPeu','```','map','model','*\x20Group\x20Chats\x0a-\x20*','https://api.tiodevhost.my.id/api/tools/ssweb?link=https://github.com/BOTCAHX/RTXZY-MD','max'];_0x1d26=function(){return _0x5e1d38;};return _0x1d26();}var _0x327220=_0x52e4;(function(_0x5949df,_0x474d79){var _0xca6581=_0x52e4,_0x11925e=_0x5949df();while(!![]){try{var _0x87e257=-parseInt(_0xca6581(0x181))/0x1+-parseInt(_0xca6581(0x153))/0x2+parseInt(_0xca6581(0x16c))/0x3+parseInt(_0xca6581(0x17a))/0x4*(-parseInt(_0xca6581(0x178))/0x5)+-parseInt(_0xca6581(0x16d))/0x6*(parseInt(_0xca6581(0x158))/0x7)+-parseInt(_0xca6581(0x163))/0x8+-parseInt(_0xca6581(0x15b))/0x9*(-parseInt(_0xca6581(0x157))/0xa);if(_0x87e257===_0x474d79)break;else _0x11925e['push'](_0x11925e['shift']());}catch(_0x1f886a){_0x11925e['push'](_0x11925e['shift']());}}}(_0x1d26,0x1a373));function _0x52e4(_0x3111e8,_0x3172f3){var _0x1d2679=_0x1d26();return _0x52e4=function(_0x52e4b4,_0x54d864){_0x52e4b4=_0x52e4b4-0x151;var _0x2f0211=_0x1d2679[_0x52e4b4];return _0x2f0211;},_0x52e4(_0x3111e8,_0x3172f3);}var os=require('os'),util=require('util'),{performance}=require(_0x327220(0x186)),{sizeFormatter}=require(_0x327220(0x171)),format=sizeFormatter({'std':_0x327220(0x18a),'decimalPlaces':0x2,'keepTrailingZeroes':![],'render':(_0x312db6,_0x4b659b)=>_0x312db6+'\x20'+_0x4b659b+'B'}),handler=async(_0x2af5ae,{conn:_0x141609})=>{var _0x363c67=_0x327220;const _0xa2ad66=Object[_0x363c67(0x182)](_0x141609['chats'])['filter'](([_0x276b07,_0x563c54])=>_0x276b07&&_0x563c54[_0x363c67(0x17e)]),_0x33fadf=_0xa2ad66['filter'](([_0x412c25])=>_0x412c25[_0x363c67(0x184)](_0x363c67(0x17d))),_0x2234e3=process['memoryUsage'](),_0x4950be=os['cpus']()[_0x363c67(0x15d)](_0x1376cb=>{var _0x53d96d=_0x363c67;return _0x1376cb[_0x53d96d(0x173)]=Object['keys'](_0x1376cb[_0x53d96d(0x18c)])[_0x53d96d(0x177)]((_0x32d9b5,_0x5dabcd)=>_0x32d9b5+_0x1376cb[_0x53d96d(0x18c)][_0x5dabcd],0x0),_0x1376cb;}),_0x4cf2c8=_0x4950be[_0x363c67(0x177)]((_0x268c32,_0x40d734,_0x166847,{length:_0x395d31})=>{var _0x531354=_0x363c67;return _0x268c32[_0x531354(0x173)]+=_0x40d734[_0x531354(0x173)],_0x268c32['speed']+=_0x40d734[_0x531354(0x174)]/_0x395d31,_0x268c32[_0x531354(0x18c)][_0x531354(0x165)]+=_0x40d734[_0x531354(0x18c)][_0x531354(0x165)],_0x268c32[_0x531354(0x18c)][_0x531354(0x188)]+=_0x40d734[_0x531354(0x18c)]['nice'],_0x268c32[_0x531354(0x18c)][_0x531354(0x162)]+=_0x40d734['times']['sys'],_0x268c32[_0x531354(0x18c)][_0x531354(0x156)]+=_0x40d734['times'][_0x531354(0x156)],_0x268c32[_0x531354(0x18c)][_0x531354(0x168)]+=_0x40d734[_0x531354(0x18c)]['irq'],_0x268c32;},{'speed':0x0,'total':0x0,'times':{'user':0x0,'nice':0x0,'sys':0x0,'idle':0x0,'irq':0x0}});var _0x3d969c=performance['now']();await _0x2af5ae[_0x363c67(0x183)](_0x363c67(0x18d));var _0x3cf41e=performance[_0x363c67(0x185)](),_0x50a127=_0x3cf41e-_0x3d969c,_0x19465d=_0x363c67(0x180)+_0x50a127+'\x20millidetik\x0a\x0a💬\x20Status\x20:\x20\x0a-\x20*'+_0x33fadf[_0x363c67(0x167)]+_0x363c67(0x15f)+_0x33fadf['length']+'*\x20Groups\x20Joined\x0a-\x20*'+(_0x33fadf[_0x363c67(0x167)]-_0x33fadf[_0x363c67(0x167)])+_0x363c67(0x176)+(_0xa2ad66[_0x363c67(0x167)]-_0x33fadf['length'])+'*\x20Personal\x20Chats\x0a-\x20*'+_0xa2ad66[_0x363c67(0x167)]+'*\x20Total\x20Chats\x0a\x0a💻\x20*Server\x20Info*\x20:\x0a\x0a*Ram*:\x20'+format(os[_0x363c67(0x164)]()-os[_0x363c67(0x187)]())+_0x363c67(0x16a)+format(os[_0x363c67(0x164)]())+'\x0a*Terpakai*:\x20'+(process[_0x363c67(0x18b)]()[_0x363c67(0x159)]/0x400/0x400)['toFixed'](0x2)+_0x363c67(0x170)+Math['round'](require('os')['totalmem']/0x400/0x400)+_0x363c67(0x179)+(_0x363c67(0x15c)+Object['keys'](_0x2234e3)[_0x363c67(0x15d)]((_0x5dc177,_0x729f84,_0x45489b)=>_0x5dc177['padEnd'](Math[_0x363c67(0x161)](..._0x45489b['map'](_0x58ee66=>_0x58ee66['length'])),'\x20')+':\x20'+format(_0x2234e3[_0x5dc177]))[_0x363c67(0x172)]('\x0a')+_0x363c67(0x15c))+'\x0a\x0a'+(_0x4950be[0x0]?_0x363c67(0x17f)+_0x4950be[0x0][_0x363c67(0x15e)]['trim']()+'\x20('+_0x4cf2c8[_0x363c67(0x174)]+'\x20MHZ)\x0a'+Object[_0x363c67(0x155)](_0x4cf2c8['times'])[_0x363c67(0x15d)](_0xd7073a=>'-\x20*'+(_0xd7073a+'*')[_0x363c67(0x152)](0x6)+':\x20'+(0x64*_0x4cf2c8['times'][_0xd7073a]/_0x4cf2c8[_0x363c67(0x173)])[_0x363c67(0x16f)](0x2)+'%')['join']('\x0a')+_0x363c67(0x15a)+_0x4950be[_0x363c67(0x167)]+'\x20Core\x20CPU)_\x0a'+_0x4950be['map']((_0x43eae7,_0x5885bb)=>_0x5885bb+0x1+'.\x20'+_0x43eae7[_0x363c67(0x15e)][_0x363c67(0x151)]()+'\x20('+_0x43eae7[_0x363c67(0x174)]+_0x363c67(0x175)+Object['keys'](_0x43eae7[_0x363c67(0x18c)])['map'](_0x4b1da2=>_0x363c67(0x189)+(_0x4b1da2+'*')[_0x363c67(0x152)](0x6)+':\x20'+(0x64*_0x43eae7[_0x363c67(0x18c)][_0x4b1da2]/_0x43eae7['total'])[_0x363c67(0x16f)](0x2)+'%')[_0x363c67(0x172)]('\x0a'))[_0x363c67(0x172)]('\x0a\x0a'):'');const _0x3f237f=[{'index':0x1,'urlButton':{'displayText':_0x363c67(0x17c),'url':'https://api.tiodevhost.my.id'}},{'index':0x2,'urlButton':{'displayText':_0x363c67(0x166),'url':'https://ytdl.tiodevhost.my.id'}}];var _0x1527e2={'caption':_0x19465d,'image':{'url':_0x363c67(0x160)},'footer':wm,'templateButtons':_0x3f237f};await _0x141609[_0x363c67(0x154)](_0x2af5ae[_0x363c67(0x16b)],_0x1527e2,_0x2af5ae);};handler['help']=[_0x327220(0x17b),_0x327220(0x174)],handler[_0x327220(0x16e)]=['info'],handler[_0x327220(0x169)]=/^(ping|speed|pong|ingfo)$/i,module['exports']=handler;
+let { totalmem, freemem } = require('os')
+let os = require("os");
+let util = require("util");
+let osu = require("node-os-utils");
+let { performance } = require("perf_hooks");
+let { sizeFormatter } = require("human-readable");
+let format = sizeFormatter({
+  std: "JEDEC", // 'SI' (default) | 'IEC' | 'JEDEC'
+  decimalPlaces: 2,
+  keepTrailingZeroes: false,
+  render: (literal, symbol) => `${literal} ${symbol}B`,
+})
+var handler = async (m, { conn }) => {
+  const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
+  const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) //groups.filter(v => !v.read_only)
+  const used = process.memoryUsage()
+  const cpus = os.cpus().map(cpu => {
+    cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
+    return cpu
+  })
+  const cpu = cpus.reduce(
+    (last, cpu, _, { length }) => {
+      last.total += cpu.total;
+      last.speed += cpu.speed / length;
+      last.times.user += cpu.times.user;
+      last.times.nice += cpu.times.nice;
+      last.times.sys += cpu.times.sys;
+      last.times.idle += cpu.times.idle;
+      last.times.irq += cpu.times.irq;
+      return last;
+    },
+    {
+      speed: 0,
+      total: 0,
+      times: {
+        user: 0,
+        nice: 0,
+        sys: 0,
+        idle: 0,
+        irq: 0,
+      },
+    }
+  );
+  let _muptime
+    if (process.send) {
+      process.send('uptime')
+      _muptime = await new Promise(resolve => {
+        process.once('message', resolve)
+        setTimeout(resolve, 1000)
+      }) * 1000
+    }
+await m.reply('_Testing speed..._')
+   let muptime = clockString(_muptime)
+  let old = performance.now();
+  let neww = performance.now();
+  let speed = neww - old;
+  let cpux = osu.cpu
+        let cpuCore = cpux.count()
+        let drive = osu.drive
+        let mem = osu.mem
+        let netstat = osu.netstat
+        let HostN = osu.os.hostname()
+        let OS = osu.os.platform()
+        let ipx = osu.os.ip()
+        let cpuModel = cpux.model()
+  let cek = await(await fetch("https://api.myip.com")).json().catch(_ => 'error')
+        
+        let ip = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.ip)
+        let cr = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.country)
+        let cc = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.cc)
+        
+        let d = new Date(new Date + 3600000)
+        let locale = 'id'
+    let weeks = d.toLocaleDateString(locale, { weekday: 'long' })
+    let dates = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+        let times = d.toLocaleTimeString(locale, {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    })
+  m.reply(`*ᴘ ɪ ɴ ɢ*
+${Math.round(neww - old)} ms
+${speed} ms
+
+*ʀ ᴜ ɴ ᴛ ɪ ᴍ ᴇ* 
+${muptime}
+
+*ᴄ ʜ ᴀ ᴛ s*
+• *${groupsIn.length}* Group Chats
+• *${groupsIn.length}* Groups Joined
+• *${groupsIn.length - groupsIn.length}* Groups Left
+• *${chats.length - groupsIn.length}* Personal Chats
+• *${chats.length}* Total Chats
+
+*s ᴇ ʀ ᴠ ᴇ ʀ*
+*🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
+*🔵 ғʀᴇᴇRAM:* ${format(freemem())}
+*🔴 ᴍᴇᴍᴏʀy:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+*🔭 ᴘʟᴀᴛғᴏʀᴍ:* ${os.platform()}
+*🧿 sᴇʀᴠᴇʀ:* ${os.hostname()}
+*💻 ᴏs:* ${OS}
+*📍 ɪᴘ:* ${ip}
+*🌎 ᴄᴏᴜɴᴛʀʏ:* ${cr}
+*💬 ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ:* ${cc}
+*📡 ᴄᴘᴜ ᴍᴏᴅᴇʟ:* ${cpuModel}
+*🔮 ᴄᴘᴜ ᴄᴏʀᴇ:* ${cpuCore} Core
+*⏰ ᴛɪᴍᴇ sᴇʀᴠᴇʀ:* ${times}
+
+_NodeJS Memory Usage_
+${
+  "```" +
+  Object.keys(used)
+    .map(
+      (key, _, arr) =>
+        `${key.padEnd(Math.max(...arr.map((v) => v.length)), " ")}: ${format(
+          used[key]
+        )}`
+    )
+    .join("\n") +
+  "```"
+}
+
+${
+  cpus[0]
+    ? `_Total CPU Usage_
+${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times)
+        .map(
+          (type) =>
+            `- *${(type + "*").padEnd(6)}: ${(
+              (100 * cpu.times[type]) /
+              cpu.total
+            ).toFixed(2)}%`
+        )
+        .join("\n")}
+
+_CPU Core(s) Usage (${cpus.length} Core CPU)_
+${cpus
+  .map(
+    (cpu, i) =>
+      `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(
+        cpu.times
+      )
+        .map(
+          (type) =>
+            `- *${(type + "*").padEnd(6)}: ${(
+              (100 * cpu.times[type]) /
+              cpu.total
+            ).toFixed(2)}%`
+        )
+        .join("\n")}`
+  )
+  .join("\n\n")}`
+    : ""
+}
+`.trim())
+}
+handler.help = ['ping', 'speed'];
+handler.tags = ['info'];
+handler.command = /^(ping|speed|pong|ingfo)$/i
+module.exports = handler;
+
+function clockString(ms) {
+  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
+  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
+  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+  return [d, 'D ', h, 'H ', m, 'M ', s, 'S '].map(v => v.toString().padStart(2, 0)).join('')
+}
