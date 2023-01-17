@@ -17,7 +17,7 @@ var handler = async (m, {
  }) => {
 var link = await fetch(`https://api.tiodevhost.my.id/statistic`)
  hasil = await link.json()
-   var _uptime = process.uptime() * 1000
+    var _uptime = process.uptime() * 1000
     var tio = clockString(_uptime)
     var time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
     var ar = ['list', 'menu']
@@ -31,8 +31,8 @@ var link = await fetch(`https://api.tiodevhost.my.id/statistic`)
 }, {
 	title: `Uptime Website ${hasil.runtime}`,
 	rows: [
-	    {title: "Perintah 2", rowId: '.pay', description: 'Gunaka  jika perintah utama error' },
-	     {title: "Donasi", rowId: '.donasj', description: 'Belikan Owner Kopi' },
+	      {title: "Perintah 2", rowId: '.pay', description: 'Gunakan jika perintah utama error' },
+	      {title: "Donasi", rowId: '.donasj', description: 'Belikan Owner Kopi' },
 	      {title: "Dashboard", rowId: '.dash', description: 'Menampilkan Dashboard' },
 	      	]
 }, {
@@ -47,7 +47,7 @@ var link = await fetch(`https://api.tiodevhost.my.id/statistic`)
 	    {title: "Script", rowId: '.sc', description: 'Script yang digunakan Bot' },
         {title: "Speed", rowId: '.speed', description: 'Test kecepatan Bot' },
         {title: "List Textpro", rowId: '.texpto', description: 'Menu maker tambahan' },
-         {title: "Info", rowId: '.info', description: 'Informasi lainya' },
+        {title: "Info", rowId: '.info', description: 'Informasi lainya' },
          	]
 }, {
 	title: `Creator Bot`,
