@@ -32,7 +32,7 @@ var link = await fetch(`https://api.tiodevhost.my.id/statistic`)
 	title: `Uptime Website ${hasil.runtime}`,
 	rows: [
 	      {title: "Perintah 2", rowId: '.pay', description: 'Gunakan jika perintah utama error' },
-	      {title: "Donasi", rowId: '.donasj', description: 'Belikan Owner Kopi' },
+	      {title: "Donasi", rowId: '.donasi', description: 'Belikan Owner Kopi' },
 	      {title: "Dashboard", rowId: '.dash', description: 'Menampilkan Dashboard' },
 	      	]
 }, {
