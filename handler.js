@@ -700,8 +700,6 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                        let welc = 'Selamat Datang'
-                        let outss = 'Selamat Tinggal'
                         let pp = 'https://i.ibb.co/sQTkHLD/ppkosong.png'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
@@ -710,19 +708,21 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
-                            let wel = API('popcat', '/welcomecard', {
-                                background: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
-                                text1: welc,
-                                text2: await this.getName(user),
-                                text3: groupMetadata.participants.length, 
-                                avatar: pp,
+                            let wel = API('tio', '/api/maker/welcome1', {
+                                name: await this.getName(user),
+                                gpname: await this.getName(id),
+                                member: groupMetadata.participants.length, 
+                                pp: pp, 
+                                bg: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
+                                apikey: '88cc745d'
                             })
-                            let lea = API('popcat', '/welcomecard', {
-                                background: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
-                                text1: outss,
-                                text2: await this.getName(user),
-                                text3: groupMetadata.participants.length, 
-                                avatar: pp,
+                            let lea = API('tio', '/api/maker/goodbye1', {
+                                name: await this.getName(user),
+                                gpname: await this.getName(id),
+                                member: groupMetadata.participants.length, 
+                                pp: pp,
+                                bg: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
+                                apikey: '88cc745d'
                             })
                             await this.sendButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Welcome' : 'Good Bye', action === 'add' ? '.intro' : '-') 
                         }
