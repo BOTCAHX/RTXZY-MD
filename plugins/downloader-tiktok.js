@@ -1,24 +1,3 @@
-
-
-//let tio = require('node-fetch')
-//let handler = async (m, { conn, args }) => {
-//if (!args[0]) throw 'Contoh:\n.tiktok https://vm.tiktok.com/ZGJAmhSrp/'
-//m.reply('Fetching data from node-fetch...')
-//let tioxd = await tio(`https://api.ibengtools.my.id/api/download/tiktok?url=${args[0]}&apikey=ibeng`)
-//if (!tioxd.ok) throw await tioxd.text()
-//let tiodl = await tioxd.json()
-//if (!tiodl.status) throw tiodl
-//let { video, description, username } = tiodl.result
-//await conn.sendFile(m.chat, video, 'tiovid.mp4', `
-//*Deskripsi*: ${description}
-//\n*Username*: ${username}`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
-//}
-//handler.help = ['tiktok <url>']
-//handler.tags = ['downloader']
-//handler.command = /^(tiktok|tt|ttdl|tiktoknowm|ttvid|tiktod)$/i
-//handler.limit = true
-//module.exports = handler
-
 let fg = require('api-dylux')
 const { tiktokdl, tiktokdlv2, tiktokdlv3 } = require ('@bochilteam/scraper')
 
@@ -53,9 +32,9 @@ conn.sendFile(m.chat, url, 'tt.mp4', tex, m)
 } 
     
 }  
-handler.help = ['tiktok']
+handler.help = ['tiktok2']
 handler.tags = ['downloader']
-handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm|tt|tiktod|dltt)$/i
+handler.command = /^(tiktok2)$/i
 handler.limit = true
 
 module.exports = handler
