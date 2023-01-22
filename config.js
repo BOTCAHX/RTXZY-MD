@@ -56,7 +56,7 @@ global.APIKeys = { // APIKey Here
   'https://api.xteam.xyz': 'd37372311698ed1d',
   'https://pencarikode.xyz': 'pais', 
   'https://zekais.com': 'apikeymu',
-  'https://api.botcahx.biz.id': 'f70453e8' //daftar sendiri kalo abis
+  'https://api.botcahx.biz.id': 'f70453e8', //daftar sendiri kalo abis
   'https://api.lolhuman.xyz': 'Deffbotz',
 }
 
