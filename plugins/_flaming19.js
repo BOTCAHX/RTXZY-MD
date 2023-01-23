@@ -1,9 +1,9 @@
-let fetch = require('node-fetch')
-let handler = async (m, { conn, args }) => {
+var fetch = require('node-fetch')
+var handler = async (m, { conn, args }) => {
    response = args.join(' ').split('|')
   if (!args[0]) throw 'Masukkan Text\nContoh : .flaming4 BOTCAHX'
   m.reply('_Proses..._')
-  let res = `https://api.tiodevhost.my.id/api/photooxy/illuminated-metallic?text=${response[0]}`
+  var res = `https://api.botcahx.biz.id/api/photooxy/illuminated-metallic?text=${response[0]}&apikey=Admin`
   conn.sendFile(m.chat, res, 'botcahx.jpg', `© BOTCAHX`, m, false)
 }
 handler.help = ['iluminated'].map(v => v + ' <text>')
