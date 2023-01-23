@@ -714,7 +714,7 @@ module.exports = {
                                 member: groupMetadata.participants.length, 
                                 pp: pp, 
                                 bg: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
-                                apikey: 'f70453e8'
+                                apikey: 'Admin'
                             })
                             let lea = API('tio', '/api/maker/goodbye1', {
                                 name: await this.getName(user),
@@ -722,7 +722,7 @@ module.exports = {
                                 member: groupMetadata.participants.length, 
                                 pp: pp,
                                 bg: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
-                                apikey: 'f70453e8'
+                                apikey: 'Admin'
                             })
                             await this.sendButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Welcome' : 'Good Bye', action === 'add' ? '.intro' : '-') 
                         }
