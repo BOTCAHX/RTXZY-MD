@@ -26,10 +26,12 @@
 ## Penjelasan Instalasi 
 - Sript ini hanya bisa mengambil sesi di module di bawah ini
 - [`GET SESI LINK`](https://replit.com/@tioclkp02/sessions?lite=1&outputonly=1)
-- Setelah memindai upload sessions yang dikirim bot ke github / panel 
+- Sessions akan di kirim ke nomor anda sendiri ( nomor yang anda gunakan untuk scan)
+- Setelah memindai upload sessions yang dikirim tadi ke github / panel 
 - Upload tepat di folder sessions jangan di luar folder tersebut.
 - nama global session  ya biasanya creds.json
 - Perlu di ingat sesi multi auth bukan session.data.json/sesion.json dan bercampur dengan pre-key dan auth-key
+- Jika module pertama tidak menampilkan sessions atau QR gunakan link ini dan download semua file [`GET`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
 
 
 ## Notes 
