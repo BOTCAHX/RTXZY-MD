@@ -46,7 +46,6 @@ global.APIs = { // API Prefix
   zekais: 'http://zekais.com',
   lolhuman: 'https://api.lolhuman.xyz',
   tio: 'https://api.botcahx.biz.id',
-  tio2: 'http://api.tiodevhost.my.id', 
   popcat: 'https://api.popcat.xyz',
   rey: 'https://sekha.me'
 }
@@ -56,7 +55,7 @@ global.APIKeys = { // APIKey Here
   'https://api.xteam.xyz': 'd37372311698ed1d',
   'https://pencarikode.xyz': 'pais', 
   'https://zekais.com': 'apikeymu',
-  'https://api.botcahx.biz.id': 'f70453e8', //daftar sendiri kalo abis
+  'https://api.botcahx.biz.id': 'Admin', //daftar sendiri kalo abis
   'https://api.lolhuman.xyz': 'Deffbotz',
 }
 
