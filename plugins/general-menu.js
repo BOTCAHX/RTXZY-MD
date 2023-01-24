@@ -8,56 +8,54 @@ Agar terap bisa di gunakan dan tidak ada kendala seperti
 [Error: ENOENT: no such file or directory, open ''] 
 **/ 
 
-    var fetch = require("node-fetch");
+var fetch = require("node-fetch");
 var handler = async (m, { 
  conn,
  text, 
  usedPrefix, 
  command 
  }) => {
-var link = await fetch(`https://api.tiodevhost.my.id/statistic`)
- hasil = await link.json()
     var _uptime = process.uptime() * 1000
     var tio = clockString(_uptime)
     var time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
     var ar = ['list', 'menu']
     var title = `𝑳𝒊𝒔𝒕 𝑴𝒆𝒏𝒖 𝑩𝒐𝒕\n\n│█║▌║▌║║▌║▌║█│▌`
-    var tmb = `‎Hits ${hasil.visitor}`
+    var tmb = `‎ ‎`
     const sections = [ {
 	title: `Uptime: ${tio} : Time: ${time}`,
 	rows: [
 	    {title: "Semua Perintah", rowId: '.allmenu', description: 'Menampilkan semua perintah bot' },
 		]
 }, {
-	title: `Uptime Website ${hasil.runtime}`,
+	title: `Menu Utama`,
 	rows: [
-	      {title: "Perintah 2", rowId: '.pay', description: 'Gunakan jika perintah utama error' },
+	      {title: "Perintah 2", rowId: '.pay', description: 'Gunakan  jika perintah utama error' },
 	      {title: "Donasi", rowId: '.donasi', description: 'Belikan Owner Kopi' },
 	      {title: "Dashboard", rowId: '.dash', description: 'Menampilkan Dashboard' },
 	      	]
 }, {
-	title: `Status Web ${hasil.status}`,
+	title: `Menu Informasi`,
 	rows: [
 	     {title: "Website Official", rowId: '.web', description: 'Menampilkan website' },
-         {title: "Group", rowId: '.gcbot', description: 'Group Official Bot' },
+             {title: "Group", rowId: '.gcbot', description: 'Group Official Bot' },
          	]
 }, {
 	title: `Shortcut List`,
 	rows: [
 	    {title: "Script", rowId: '.sc', description: 'Script yang digunakan Bot' },
-        {title: "Speed", rowId: '.speed', description: 'Test kecepatan Bot' },
-        {title: "List Textpro", rowId: '.texpto', description: 'Menu maker tambahan' },
-        {title: "Info", rowId: '.info', description: 'Informasi lainya' },
+            {title: "Speed", rowId: '.speed', description: 'Test kecepatan Bot' },
+            {title: "List Textpro", rowId: '.textpro', description: 'Menu maker tambahan' },
+            {title: "Info", rowId: '.info', description: 'Informasi lainya' },
          	]
 }, {
 	title: `Creator Bot`,
 	rows: [
-        {title: "Owner", rowId: '.owner', description: 'Contact Owner' },
+           {title: "Owner", rowId: '.owner', description: 'Contact Owner' },
         	]
 }, {
-	title: `Warning!`,
+	   title: `Warning!`,
 	rows: [
-        {title: "Warning", rowId: 'null', description: 'Jangan pernah memperjual belikan sc ini!' },
+           {title: "Warning", rowId: 'null', description: 'Jangan pernah memperjual belikan sc ini!' },
         ]
  } ]
 
