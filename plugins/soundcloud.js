@@ -9,7 +9,7 @@ command
 	if (!text) throw `*Usage : ${usedPrefix + command} url*\n\nExample: ${usedPrefix + command} https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing`
 	if (!(text.includes('http://') || text.includes('https://'))) throw `url invalid, please input a valid url. Try with add http:// or https://`
 	try {
-		var res = await fetch(`https://api.tiodevhost.my.id/api/dowloader/soundcloud?url=${text}`)
+		var res = await fetch(`https://api.botcahx.biz.id/api/dowloader/soundcloud?url=${text}&apikey=Admin`)
 		var anu = await res.json()
 		anu = anu.result
 		var ini_txt = `*${anu.title}*\n\n`
