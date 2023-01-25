@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     	try {
 			let img = await q.download?.()
 			let out = await uploadImage(img)
-			const res = `https://api.tiodevhost.my.id/api/maker/rainbow?url=${out}`
+			const res = `https://api.botcahx.biz.id/api/maker/rainbow?url=${out}&apikey=Admin`
 			const stiker = await sticker(false, res, global.packname, global.author)
 	        await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
     	} catch (e) {
