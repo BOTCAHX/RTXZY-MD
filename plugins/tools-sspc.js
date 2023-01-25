@@ -1,31 +1,56 @@
-let fetch = require('node-fetch')
-let handler = async (m, { conn, command, args }) => {
-  if (args[0] === 'Nekopoi.care') {
-      conn.reply(m.chat, '*Tobat woy*', m)
-      reject
-  }
-  if (args[0] === 'xnxx.healt') {
-      conn.reply(m.chat, '*Tobat woy*', m)
-      reject
-  }
-  let full = /f$/i.test(command)
-  if (!args[0]) return conn.reply(m.chat, 'Tidak ada url', m)
-  let url = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-  let ss = await (await fetch('https://api.tiodevhost.my.id/api/tools/ssweb?link=' + encodeURIComponent(url) + '&device=desktop&full=on')).buffer()
-  conn.sendFile(m.chat, ss, 'screenshot.png', url, m)
+var fetch = require('node-fetch')
+
+var handler = async (m, { 
+conn, 
+command, 
+args 
+}) => {
+   if (!args[0]) return conn.reply(m.chat, 'Input URL', m)
+
+  await m.reply('_Ｌｏａｄｉｎｇ．．._')
+  
+   var img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${args[0]}&apikey=Admin`)).buffer
+
+  
+   conn.sendMessage(m.chat, { image: img, caption: 'Here' }, { quoted: m })
 }
-handler.help = ['sslaptop', 'sspc', 'ssweb', 'sshp'].map(v => v + ' <url>')
-handler.tags = ['internet']
-handler.command = /^(sspc|sslaptop|ssweb|sshp)?$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
+handler.help = ['ssweb', 'sshp', 'sspc']
+handler.tags = ['tools']
+handler.command = /^(ssweb|sshp|sspc)?f?$/i
 
-handler.admin = false
-handler.botAdmin = false
-
+handler.limit = true
 handler.fail = null
 
 module.exports = handler
+
+const fetchJson = (url, options) => new Promise(async (resolve, reject) => {
+    fetch(url, options)
+        .then(response => response.json())
+        .then(json => {
+            resolve(json)
+        })
+        .catch((err) => {
+            reject(err)
+        })
+})
+
+
+const getBuffer = async (url, options) => {
+	try {
+		options ? options : {}
+		const res = await axios({
+			method: "get",
+			url,
+			headers: {
+				'DNT': 1,
+                    'User-Agent': 'GoogleBot',
+				'Upgrade-Insecure-Request': 1
+			},
+			...options,
+			responseType: 'arraybuffer'
+		})
+		return res.data
+	} catch (e) {
+		console.log(`Error : ${e}`)
+	}
+}
