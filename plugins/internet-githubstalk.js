@@ -5,7 +5,7 @@ text
 }) => {
   if (!text) return conn.reply(m.chat, 'Harap Masukan Username', m)
   await m.reply('Searching...')
-    var res = await fetch(`https://api.tiodevhost.my.id/api/info/githubstalk?user=${text}`)
+    var res = await fetch(`https://api.botcahx.biz.id/api/info/githubstalk?user=${text}&apikey=Admin`)
     let json = await res.json()
     if (res.status !== 200) throw await res.text()
     if (!json.status) throw json
