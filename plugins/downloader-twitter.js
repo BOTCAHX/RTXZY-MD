@@ -8,7 +8,7 @@ var handler = async (m, {
 if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`
 if (!args[0].match(/twitter/gi)) throw `URL Tidak Ditemukan!`
 m.reply('*Please wait..*.')
- var tioxd = await nodeF(`https://api.tiodevhost.my.id/api/dowloader/twitter?url=${args[0]}`)
+ var tioxd = await nodeF(`https://api.botcahx.biz.id/api/dowloader/twitter?url=${args[0]}&apikey=Admin`)
 if (!tioxd.ok) throw await tioxd.text()
 var tiodl = await tioxd.json()
 if (!tiodl.status) throw tiodl
