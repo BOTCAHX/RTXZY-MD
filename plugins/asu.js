@@ -5,7 +5,7 @@ let tio = 'Halo Kontol :v'
 type: 'audioMessage', 
 ptt: true, contextInfo: {
         externalAdReply: { showAdAttribution: true, title: tio,
- body: wm, sourceUrl: 'https://api.tiodevhost.my.id', thumbnail: await (await fetch('https://telegra.ph/file/cfbeb870983c988666691.jpg')).buffer()}} 
+ body: wm, sourceUrl: 'https://tiodevhost.my.id', thumbnail: await (await fetch('https://telegra.ph/file/cfbeb870983c988666691.jpg')).buffer()}} 
      })
 
 }
