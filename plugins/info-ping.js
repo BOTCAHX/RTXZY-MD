@@ -1,5 +1,4 @@
 /*Apasi kontol cuma nyuri fitur doang*/
-
 let { totalmem, freemem } = require('os')
 let os = require("os");
 let util = require("util");
@@ -101,7 +100,6 @@ ${muptime}
 *s ᴇ ʀ ᴠ ᴇ ʀ*
 *🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
 *🔵 ғʀᴇᴇRAM:* ${format(freemem())}
-*🔴 ᴍᴇᴍᴏʀy:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *🔭 ᴘʟᴀᴛғᴏʀᴍ:* ${os.platform()}
 *🧿 sᴇʀᴠᴇʀ:* ${os.hostname()}
 *💻 ᴏs:* ${OS}
