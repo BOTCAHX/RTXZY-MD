@@ -9,14 +9,14 @@ args
 
   await m.reply('_Ｌｏａｄｉｎｇ．．._')
   
-   var img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${args[0]}&apikey=Admin`)).buffer
+   var img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${args[0]}&apikey=Admin`)
 
   
    conn.sendMessage(m.chat, { image: img, caption: 'Here' }, { quoted: m })
 }
 handler.help = ['ssweb', 'sshp', 'sspc']
 handler.tags = ['tools']
-handler.command = /^(ssweb|sshp|sspc)?f?$/i
+handler.command = /^(ssweb|ss|sshp|sspc)?f?$/i
 
 handler.limit = true
 handler.fail = null
