@@ -45,8 +45,6 @@ Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 ## List Menu Troube Discussion 
 Bergabung [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46)
 
-## Instalasi Package Error
-Gunakan Backup [`Link Backup`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/package.json.bak) 
 ## Logs level
 - Jika ingin mengubah level pino nya maka ubah di line ini [`Logs level`](https://github.com/BOTCAHX/RTXZY-MD/blob/c67a8427d123c4e49d761d34912fb23f169d89a2/main.js#L74)
 - Opsi tersedia : silent , debug , trace
