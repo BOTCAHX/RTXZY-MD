@@ -1,17 +1,19 @@
 console.log("Connecting sessions...");
-let cluster = require("cluster");
-let { spawn } = require("child_process");
-let path = require("path");
-let fs = require("fs");
-let package = require("./package.json");
+var cluster = require("cluster");
+var { 
+spawn
+ } = require("child_process");
+var path = require("path");
+var fs = require("fs");
+var package = require("./package.json");
 
 var isRunning = false;
 
 function start(file) {
 	if (isRunning) return;
 	isRunning = true;
-	let args = [path.join(__dirname, file), ...process.argv.slice(2)];
-	let p = spawn(process.argv[0], args, {
+	var args = [path.join(__dirname, file), ...process.argv.slice(2)];
+	var p = spawn(process.argv[0], args, {
 		stdio: ["inherit", "inherit", "inherit", "ipc"],
 	});
 	p.on("message", (data) => {
@@ -33,7 +35,7 @@ function start(file) {
 		if (code === 0) return;
 		fs.watchFile(args[0], () => {
 			fs.unwatchFile(args[0]);
-			start("main.js");
+			start(file);
 		});
 	});
 	
