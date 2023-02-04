@@ -19,6 +19,14 @@
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD?ref=badge_large)
 
+## Note
+- Mulai saat ini script RTXZY-MD berhenti update dikarenakan banyak hal yang tidak di inginkan Creator 
+- Jika mendapatkan error atau ada fitur yang mati di fix sendiri saja.
+- Fitur di sini segini adanya jika ingin menambahkan juga silahkan 
+- Atau jika ingi  karya nya di masukin ke sc ini boleh, pull request saja
+- Lebih bagus jika elu punya tapi orang lain gapunya (gak pasaran)
+- By BOTCAHX | 2020-2023
+
 ## Penjelasan Instalasi 
 - Sript ini hanya bisa mengambil sesi di module di bawah ini
 - [`GET SESI LINK`](https://replit.com/@tioclkp02/sessions?lite=1&outputonly=1)
