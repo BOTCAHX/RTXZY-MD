@@ -1,21 +1,18 @@
-var {
-	youtubeSearch,
-	youtubedl,
-	youtubedlv2,
-	youtubedlv3
-                } = require('@bochilteam/scraper');
-  var handler = async (m, { 
-                        conn,
-                        text 
-                        }) => {
-  if (!text) throw 'Url nya mana?'
-  m.reply('_Proses..._')
-  var vid = (await youtubeSearch(text)).video[0]
-  var { videoId } = vid
-  var url = 'https://www.youtube.com/watch?v=' + videoId
-var ytLink = `https://ytdl.tiodevhost.my.id/?url=${url}&filter=audioandvideo&quality=highestvideo&contenttype=video/mp4`
-  conn.sendMessage(m.chat, { video: { url: ytLink }, mimetype: 'video/mp4' }, { quoted: m })
+let fetch = require('node-fetch')
+let handler = async (m, { conn, args }) => {
+if (!args[0]) throw 'Example:\n.ytv https://youtu.be/qaJUdvtozUM'
+m.reply(wait)
+let res = await fetch(`https://api.onee.eu.org/api/ytmp4?url=${args[0]}&apikey=Q2HefoTR`)
+if (!res.ok) throw await res.text()
+let json = await res.json()
+if (!json.status) throw json
+let video  = json.result.result
+await conn.sendFile(m.chat, video, 'video.mp4', `Title: *${json.result.title}*\nViews: *${json.result.views}*\nUploaded: *${json.result.uploadDate}*\n_Jika Video Berbentuk File BIN, Silahkan Unduh Dengan Link Berikut_\n*${json.result.result}*`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 }
-handler.command = handler.help = ['ytv', 'ytvideo', 'ytmp4'];
-handler.tags = ['downloader'];
-module.exports = handler;
+
+handler.help = ['ytmp4']
+handler.tags = ['downloader']
+handler.command = /^(ytv|ytmp4|ytvideo)$/i
+handler.limit = true
+
+module.exports = handler
