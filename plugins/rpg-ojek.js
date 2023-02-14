@@ -4,7 +4,8 @@ let handler = async (m, { conn }) => {
     let _timers = (300000 - __timers)
     let order = global.db.data.users[m.sender].ojekk
     let timers = clockString(_timers) 
-let name = m.fromMe ? conn.user : conn.contacts[m.sender]
+//let name = m.fromMe ? conn.user : conn.contacts[m.sender]
+let name = m.sender
     let user = global.db.data.users[m.sender]
     let buttons = [
 {buttonId: '.inv', buttonText: {displayText: 'Inventory'}, type: 1}, 
@@ -88,7 +89,8 @@ hsl = `
 
 ${wm}
 `
-
+
+
 global.db.data.users[m.sender].money += rbrb4
 global.db.data.users[m.sender].exp += rbrb5
 global.db.data.users[m.sender].ojekk += 1
