@@ -19,6 +19,8 @@
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD?ref=badge_large)
 
+## Panel Hosting
+- Hosting gratis menggunakan panel register [`Disini`](https://billing.botcahx.biz.id)
 ## Note
 - Mulai saat ini script RTXZY-MD berhenti update dikarenakan banyak hal yang tidak di inginkan Creator 
 - Jika mendapatkan error atau ada fitur yang mati di fix sendiri saja.
