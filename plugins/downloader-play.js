@@ -32,5 +32,6 @@ var parse = con.download
 conn.sendFile(m.chat, parse, 'playbot.mp3', '', fdoc)
     };  
 handler.command = handler.help = ['play', 'song', 'lagu', 'ddsong'];
-handler.tags = ['internet'];
+handler.tags = ['downloader'];
+handler.limit= true;
 module.exports = handler;
