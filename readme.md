@@ -22,12 +22,7 @@
 ## Panel Hosting
 - Hosting gratis menggunakan panel register [`Disini`](https://billing.botcahx.biz.id)
 ## Note
-- Mulai saat ini script RTXZY-MD berhenti update dikarenakan banyak hal yang tidak di inginkan Creator 
-- Jika mendapatkan error atau ada fitur yang mati di fix sendiri saja.
-- Fitur di sini segini adanya jika ingin menambahkan juga silahkan 
-- Atau jika ingi  karya nya di masukin ke sc ini boleh, pull request saja
-- Lebih bagus jika elu punya tapi orang lain gapunya (gak pasaran)
-- By BOTCAHX | 2020-2023
+- Script ini dilanjutkan bila gua gabut aja:v
 
 ## Penjelasan Instalasi 
 - Sript ini hanya bisa mengambil sesi di module di bawah ini
