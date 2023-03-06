@@ -1,7 +1,3 @@
-/**apikey ini punya orang jadi nanti
- kalo abis kalian beli aja sendiri 
-atau cari**/
-
 var tiodev = require("node-fetch")
 var handler = async (m, {
  text, 
@@ -10,9 +6,9 @@ var handler = async (m, {
  }) => {
     if (!text) throw `Contoh:\n${usedPrefix + command} berikan contoh kode html`
 
-var tiores = await tiodev(`https://api.lolhuman.xyz/api/openai?apikey=SGWN&text=${text}&user=user-unique-id`)
- hasil = await tiores.json()
- m.reply(`${hasil.result}`.trim())
+var tiores = await tiodev(`https://api.ibeng.tech/api/info/openai?text=${text}&apikey=tamvan`)
+ let hasil = await tiores.json()
+ m.reply(`${hasil.data.data}`.trim())
     };  
 handler.command = handler.help = ['ai'];
 handler.tags = ['internet'];
