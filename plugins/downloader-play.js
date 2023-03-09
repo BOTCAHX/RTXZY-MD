@@ -1,37 +1,43 @@
-var fetch = require("node-fetch");
-var { youtubeSearch } = require ("@bochilteam/scraper");
-var handler = async (m, { 
-usedPrefix, 
-text,
-command
- }) => { 
-if (!text) throw `Contoh:\n${usedPrefix + command} dj tiktok`
-m.reply(wait)
-var vid = (await youtubeSearch(text)).video[0]
-if (!vid) throw `Video tidak ditemukan!`
-var { videoId } = vid
-var uyt = `https://www.youtube.com/watch?v=` + videoId
-
-var anu = await fetch(`https://api.botcahx.xyz/api/download/ytmp3?url=${uyt}&apikey=Admin`)
-var con = await anu.json()
-var capt = `• Title : ${con.title}\n• Size: ${con.size}\n• ID: ${con.id}\n• URL: ${uyt}
-`
-fdoc = {
-  key : {
-  remoteJid: 'status@broadcast',
-  participant : '0@s.whatsapp.net'
-  },
-  message: {
-  documentMessage: {
-  title: "© BOTCAHX", 
-                            }
-                          }
-                        }
-conn.sendButtonImg(m.chat, con.thumbnail, capt, `Media sedang dikirim...`, `Video`, `${usedPrefix}ytmp4 ${text}`, fdoc)
-var parse = con.download
-conn.sendFile(m.chat, parse, 'playbot.mp3', '', fdoc)
-    };  
-handler.command = handler.help = ['play', 'song', 'lagu', 'ddsong'];
+var {
+	youtubeSearch,
+	youtubedl,
+	youtubedlv2,
+	youtubedlv3
+                } = require('@bochilteam/scraper');
+   var handler = async (m, { 
+    conn,
+    text, 
+    usedPrefix
+               }) => {
+  if (!text) throw 'Enter Title'
+  var vid = (await youtubeSearch(text)).video[0]
+  if (!vid) throw 'Video/Audio Tidak Ditemukan'
+  var { title, 
+        description, 
+        thumbnail, 
+        videoId, 
+        durationH, 
+        durationS,
+        viewH,
+        publishedTime
+                       } = vid
+  var url = 'https://www.youtube.com/watch?v=' + videoId
+  let web = `https://ytdl.tiodevhost.my.id/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
+  var captionvid = `⭔ Title: ${title}\n⭔ Published: ${publishedTime}\n⭔ Duration: ${durationH}\n⭔ Views: ${viewH}\n⭔ Description: ${description}\n⭔ Url:  ${url}\nID: ${videoId}`
+  var pesan = await conn.sendButtonImg(m.chat, thumbnail,  captionvid, '_Audio on progress..._', 'Video', '.ytv ${url}', m, {  
+      quoted: m})
+ if (durationS > 18000000) return conn.sendMessage(m.chat, { text: `*Link Original:* ${await cut(url)}\n\n_Durasi terlalu panjang_` }, { quoted: pesan })
+  conn.sendMessage(m.chat, { audio: { url: web }, mimetype: 'audio/mpeg' }, { quoted: pesan })
+}
+handler.command = handler.help = ['play','song'];
 handler.tags = ['downloader'];
-handler.limit= true;
+handler.exp = 0;
+handler.limit = true;
+handler.premium = false;
 module.exports = handler;
+async function cut(url) {
+  url = encodeURIComponent(url)
+  let res = await fetch(`https://api.botcahx.biz.id/api/linkshort/cuttly?link=${url}&apikey=Admin`)
+  if (!res.ok) throw false
+  return await res.text()
+}
