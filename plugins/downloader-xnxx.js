@@ -21,5 +21,5 @@ let teks = '*XNXX RESULTS* '+text+'\n\n'
                                   conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/d16784c059f7a3da28e07.jpg' },  caption: teks }, { quoted: m })
   }                                                    
 handler.command = handler.help = ['xnxxsearch','sxnxx'];
-handler.tags = ['internet'];
+handler.tags = ['downloader'];
 module.exports = handler;
