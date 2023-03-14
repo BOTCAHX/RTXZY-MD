@@ -616,6 +616,7 @@ module.exports = {
                         isPrems,
                         chatUpdate,
                     }
+                    try {}                          
                     try {
                         await plugin.call(this, m, extra)
                         if (!isPrems) m.limit = m.limit || plugin.limit || false
@@ -625,8 +626,14 @@ module.exports = {
                         console.error(e)
                         if (e) {
                             let text = util.format(e)
-                            for (let key of Object.values(global.APIKeys))
+                            for (let key of Object.values(APIKeys))
                                 text = text.replace(new RegExp(key, 'g'), '#HIDDEN#')
+                            if (e.name)
+                            for (let jid of owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != this.user.jid)) {
+                                let data = (await this.onWhatsApp(jid))[0] || {}
+                                if (data.exists)
+                                    m.reply(`*🚥Plugin:* ${m.plugin}\n*🙎‍♂️Sender:* @${m.sender.split`@`[0]}\n*✉️Chat:* ${m.chat}\n*📞Chat Name:* ${await this.getName(m.chat)}\n*🤖Command:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\``.trim(), data.jid, { mentions: [m.sender] })
+                            }
                             m.reply(text)
                         }
                     } finally {
@@ -639,13 +646,14 @@ module.exports = {
                             }
                         }
                         if (m.limit) m.reply(+ m.limit + ' Limit terpakai')
-                    }
+                   }
                     break
                 }
             }
         } catch (e) {
             console.error(e)
         } finally {
+             conn.sendPresenceUpdate('composing', m.chat)
             //console.log(global.db.data.users[m.sender])
             let user, stats = global.db.data.stats
             if (m) {
