@@ -615,8 +615,7 @@ module.exports = {
                         isBotAdmin,
                         isPrems,
                         chatUpdate,
-                    }
-                    try {}                          
+                    }                          
                     try {
                         await plugin.call(this, m, extra)
                         if (!isPrems) m.limit = m.limit || plugin.limit || false
