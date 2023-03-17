@@ -1,6 +1,6 @@
 {
     "name": "rtxzy",
-    "version": "3.0",
+    "version": "0.3.9",
     "description": "Customizable WhatsApp Bot",
     "depecrated": false,
     "main": "index.js",
@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:hostinger-bot/baileys",
+        "@adiwajshing/baileys": "npm:@ferdiz-afk/baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "@vitalets/google-translate-api": "^9.0.0",
