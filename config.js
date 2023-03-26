@@ -18,7 +18,7 @@ global.pulsa = '6281395861695'
 global.gopay = '6281395861695'
 /*Nama Bot & Grouplink*/
 global.namebot = 'RTXZY-MD'
-global.gc = 'https://chat.whatsapp.com/D6BZVRSymWaFU28t2lxaO0'
+global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
 global.web = 'https://github.com/BOTCAHX'
 global.instagram = 'https://instagram.com/prm2.0'
 /*global wm*/
