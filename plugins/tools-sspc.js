@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var fetch = require('node-fetch');
+
 var handler = async (m, { conn, command, args }) => {
   if (!args[0]) return conn.reply(m.chat, 'Input URL!', m);
   if (args[0].match(/xnxx\.com|hamster\.com|nekopoi\.care/i)) {
@@ -8,19 +9,18 @@ var handler = async (m, { conn, command, args }) => {
   }
   await m.reply('_Ｌｏａｄｉｎｇ．．._');
   var url = args[0].startsWith('http') ? args[0] : 'https://' + args[0]
-
   try {
-    var img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${url}&apikey=Admin`);
+    var img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=desktop&responsetype=image`);
     if (!img) {
       await m.reply('Gagal saat percobaan pertama. Memulai percobaan kedua...');
-      img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${url}&apikey=Admin`);
+      img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=desktop&responsetype=image`);
       if (!img) return conn.reply(m.chat, 'Gambar tidak tersedia', m);
     }
     var filepath = path.join(__dirname, '../ssresult/') + (+new Date) + '.jpeg';
     if (!fs.existsSync(path.join(__dirname, '../ssresult/'))) fs.mkdirSync(path.join(__dirname, '../ssresult/'));
     const dest = fs.createWriteStream(filepath);
     dest.on('finish', () => {
-      conn.sendFile(m.chat, filepath, 'screenshot.jpeg', 'Nih gambarnya.', m)
+      conn.sendFile(m.chat, filepath, 'screenshot.jpeg', 'Nih gambar SS nya:v.', m)
         .then(() => {
         })
         .catch(() => { });
@@ -34,7 +34,7 @@ var handler = async (m, { conn, command, args }) => {
 }
 handler.help = ['ssweb', 'sshp', 'sspc'];
 handler.tags = ['tools'];
-handler.command = /^(ssweb|ss|sshp|sspc)?f?$/i;
+handler.command = ['ssweb', 'sspc', 'ss',]
 
 handler.limit = true;
 handler.fail = null;
