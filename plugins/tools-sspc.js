@@ -1,56 +1,42 @@
-var fetch = require('node-fetch')
+var fs = require('fs');
+var path = require('path');
+var fetch = require('node-fetch');
+var handler = async (m, { conn, command, args }) => {
+  if (!args[0]) return conn.reply(m.chat, 'Input URL!', m);
+  if (args[0].match(/xnxx\.com|hamster\.com|nekopoi\.care/i)) {
+    return conn.reply(m.chat, 'Link tersebut dilarang!', m);
+  }
+  await m.reply('_Ｌｏａｄｉｎｇ．．._');
+  var url = args[0].startsWith('http') ? args[0] : 'https://' + args[0]
 
-var handler = async (m, { 
-conn, 
-command, 
-args 
-}) => {
-   if (!args[0]) return conn.reply(m.chat, 'Input URL', m)
-
-  await m.reply('_Ｌｏａｄｉｎｇ．．._')
-  
-   var img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${args[0]}&apikey=Admin`)
-
-  
-   conn.sendMessage(m.chat, { image: img, caption: 'Here' }, { quoted: m })
-}
-handler.help = ['ssweb', 'sshp', 'sspc']
-handler.tags = ['tools']
-handler.command = /^(ssweb|ss|sshp|sspc)?f?$/i
-
-handler.limit = true
-handler.fail = null
-
-module.exports = handler
-
-const fetchJson = (url, options) => new Promise(async (resolve, reject) => {
-    fetch(url, options)
-        .then(response => response.json())
-        .then(json => {
-            resolve(json)
+  try {
+    var img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${url}&apikey=Admin`);
+    if (!img) {
+      await m.reply('Gagal saat percobaan pertama. Memulai percobaan kedua...');
+      img = await fetch(`https://api.botcahx.biz.id/api/tools/ssweb?link=${url}&apikey=Admin`);
+      if (!img) return conn.reply(m.chat, 'Gambar tidak tersedia', m);
+    }
+    var filepath = path.join(__dirname, '../ssresult/') + (+new Date) + '.jpeg';
+    if (!fs.existsSync(path.join(__dirname, '../ssresult/'))) fs.mkdirSync(path.join(__dirname, '../ssresult/'));
+    const dest = fs.createWriteStream(filepath);
+    dest.on('finish', () => {
+      conn.sendFile(m.chat, filepath, 'screenshot.jpeg', 'Nih gambarnya.', m)
+        .then(() => {
         })
-        .catch((err) => {
-            reject(err)
-        })
-})
-
-
-const getBuffer = async (url, options) => {
-	try {
-		options ? options : {}
-		const res = await axios({
-			method: "get",
-			url,
-			headers: {
-				'DNT': 1,
-                    'User-Agent': 'GoogleBot',
-				'Upgrade-Insecure-Request': 1
-			},
-			...options,
-			responseType: 'arraybuffer'
-		})
-		return res.data
-	} catch (e) {
-		console.log(`Error : ${e}`)
-	}
+        .catch(() => { });
+    });
+    img.body.pipe(dest);
+    img.body.pipe(fs.createWriteStream(filepath));
+  } catch (e) {
+    console.log(e);
+    conn.reply(m.chat, `Terjadi error!`, m);
+  }
 }
+handler.help = ['ssweb', 'sshp', 'sspc'];
+handler.tags = ['tools'];
+handler.command = /^(ssweb|ss|sshp|sspc)?f?$/i;
+
+handler.limit = true;
+handler.fail = null;
+
+module.exports = handler;
