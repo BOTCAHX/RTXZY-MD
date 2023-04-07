@@ -1,24 +1,15 @@
-let fg = require('api-dylux') 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
- 
- if (!args[0]) throw `✳️ Ingrese un link de un video de Facebook\n\n📌 Ejemplo:\n*${usedPrefix + command}* https://fb.watch/d7nB8-L-gR/`
-    
-   try {
-   let res = await fg.fbdl(args[0])
-    for (let result of res.download) {
-    	  let tex = `
-┌─⊷ *FBDL*
-▢ *Calidad:* ${result.quality}
-└───────────`
-    conn.sendFile(m.chat, result.url, 'fb.mp4', tex, m)
-     } 
-   
- } catch {
- 	m.reply('Error: Intenta con otro link')
- 	} 
+var api = require('hxz-api')
+var handler = async (m, { conn, text, usedPrefix, command }) => {
+if (!text) throw `Gunakan link Facebook!\n\n📌 Example:\n*${usedPrefix + command}* https://fb.watch/7B5KBCgdO3`
+  try {  
+    var response = await api.fbdown(text) 
+    conn.sendFile(m.chat, response.Normal_video, 'fb.mp4', wm, m)
+  } catch (e) { 
+    console.log(e) 
+    conn.reply(m.chat, `Terjadi kesalahan! Mohon coba lagi atau gunakan format yang benar.`, m)
+  }
 }
 handler.help = ['facebook'].map(v => v + ' <url>')
-handler.tags = ['dl']
+handler.tags = ['downloader']
 handler.command = /^((facebook|fb)(downloder|dl)?)$/i
-
 module.exports = handler
