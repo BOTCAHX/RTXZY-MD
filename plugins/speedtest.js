@@ -10,12 +10,23 @@ let handler = async (m, { conn}) => {
         o = e
     } finally {
         let { stdout, stderr } = o
-        if (stdout.trim()) conn.sendButton(m.chat, `SPEEDTEST.NET`, stdout, null, [["MENU", ".menu"],["PING", ".ping"]], m)
+        if (stdout.trim()) 
+conn.sendMessage(m.chat, {
+text: stdout,
+contextInfo: {
+externalAdReply: {
+title: "",
+body: "",
+thumbnailUrl: "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg",
+sourceUrl: "",
+mediaType: 1,
+renderLargerThumbnail: true
+}}})
         if (stderr.trim()) m.reply(stderr)
     }
 }
 handler.help = ['speedtest']
 handler.tags = ['info']
 handler.command = /^(speedtest|ookla)$/i
-
+handler.premium = false
 module.exports = handler
