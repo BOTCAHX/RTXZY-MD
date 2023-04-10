@@ -17,7 +17,7 @@ function start(file) {
 		stdio: ["inherit", "inherit", "inherit", "ipc"],
 	});
 	p.on("message", (data) => {
-		console.log("[RECEIVED]", data);
+		console.log("[✔️RECEIVED]", data);
 		switch (data) {
 			case "reset":
 				p.kill();
@@ -35,7 +35,7 @@ function start(file) {
 		if (code === 0) return;
 		fs.watchFile(args[0], () => {
 			fs.unwatchFile(args[0]);
-			start(file);
+			start("main.js");
 		});
 	});
 	
