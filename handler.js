@@ -709,7 +709,6 @@ module.exports = {
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
-
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
@@ -729,12 +728,11 @@ module.exports = {
                                 bg: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
                                 apikey: 'Admin'
                             })
-                            await this.sendButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Welcome' : 'Good Bye', action === 'add' ? '.intro' : '-') 
+                             this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                         }
                     }
                 }
-                break
-
+                break                          
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
