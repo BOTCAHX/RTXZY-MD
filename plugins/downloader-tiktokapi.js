@@ -1,32 +1,37 @@
-var nodeF = require("node-fetch");
-var handler = async (m, {
-	conn,
-	args,
-	usedPrefix,
-	command
-}) => {
-if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`
-if (!args[0].match(/tiktok/gi)) throw `URL Tidak Ditemukan!`
-m.reply('*Please wait..*.')
- var tioxd = await nodeF(`https://api.botcahx.biz.id/api/dowloader/tikok?url=${args[0]}&apikey=Admin`)
-if (!tioxd.ok) throw await tioxd.text()
-var tiodl = await tioxd.json()
-if (!tiodl.status) throw tiodl
-var { 
-video, 
-video2, 
-username,
-description 
-} = tiodl.result
-await conn.sendFile(m.chat, video, 'tiovid.mp4', `
-*Deskripsi*: ${description}
-\n*Username*: ${username}`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
-
-conn.sendFile(m.chat, video2, 'tok2.mp4', 'hasil 2', m)
+var fetch = require("node-fetch");
+var handler = async (m, { conn, args, usedPrefix, command }) => {
+if (!args[0])
+      throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`;
+    if (!args[0].match(/tiktok/gi))
+      throw `URL Tidak Ditemukan!`;
+  try {
+    m.reply('*Please wait..*');
+    var get = await fetch(
+      `https://api.botcahx.biz.id/api/dowloader/tikok?url=${
+        args[0]
+      }&apikey=Admin`
+    );
+    if (!get.ok) throw await get.text();
+    var convert = await get.json();
+    if (!convert.status) throw convert;
+    var { video, video2, username, description, audio } = convert.result;
+    conn.sendFile(
+      m.chat,
+      video,
+      'tiktok.mp4',
+      `*Deskripsi*: ${description}\n*Username*: ${username}`,
+      m
+    );
+  } catch (e) {
+    console.log(e);
+    if (m.sender) {
+      conn.reply(m.chat, `_*Terjadi kesalahan!*_`, m);
+    }
+  }
 };
 handler.help = ['tiktok'];
+handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm|tt|tiktod|dltt)$/i;
 handler.tags = ['downloader'];
-handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm|tt|tiktod|dltt)$/i
 handler.limit = true;
 handler.group = false;
 handler.premium = false;
