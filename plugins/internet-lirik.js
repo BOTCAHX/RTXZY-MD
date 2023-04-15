@@ -1,7 +1,4 @@
-var {
-	lyrics,
-	lyricsv2
-} = require('@bochilteam/scraper');
+var hxz = require('hxz-api')
 
 var handler = async (m, {
 	conn,
@@ -9,18 +6,20 @@ var handler = async (m, {
 	usedPrefix,
 	command
 }) => {
-	var teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : ''
-	if (!teks) throw `Use example ${usedPrefix}${command} hallo`
-	var result = await lyricsv2(teks).catch(async _ => await lyrics(teks))
-	m.reply(`
-Lyrics *${result.title}*
-Author ${result.author}
-${result.lyrics}
-Url ${result.link}
-`.trim())
-};
+		var teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : ''
+		if (!teks) throw `Use example ${usedPrefix}${command} hallo`
+	try {
+		var result = await hxz.lirik(text)
+		conn.sendFile(m.chat, result.thumb, 'thumb.jpg', result.lirik, m)
+
+	} catch (e) {
+		console.log(e)
+		m.reply('Terjadi kesalahan, silahkan coba lagi nanti')
+	}
+}
 
 handler.help = ['lirik'].map(v => v + ' <Apa>')
-handler.tags = ['internet'];
+handler.tags = ['internet']
 handler.command = /^(lirik|lyrics|lyric)$/i
-module.exports = handler;
+
+module.exports = handler
