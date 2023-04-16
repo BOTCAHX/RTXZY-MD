@@ -45,6 +45,7 @@
         "@vitalets/google-translate-api": "^9.0.0",
         "acrcloud": "^1.4.0",
         "api-dylux": "^1.2.2",
+        "javascript-obfuscator": "^4.0.2",
         "async": "^3.2.4",
         "awesome-phonenumber": "^2.64.0",
         "axios": "^0.27.2",
