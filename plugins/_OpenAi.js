@@ -19,6 +19,6 @@ const openai = new OpenAIApi(configuration);
           m.reply(`${response.data.choices[0].message.content}`);        
         }
           
-handler.command = handler.help = ['ai'];
+handler.command = handler.help = ['openai'];
 handler.tags = ['internet'];
 module.exports = handler;
