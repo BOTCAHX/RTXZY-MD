@@ -20,7 +20,7 @@ try {
   }
 }
 }      
-handler.command = handler.help = ['ai' 'chatgpt'];
+handler.command = handler.help = ['ai', 'chatgpt'];
 handler.tags = ['internet'];
 handler.premium = false
 module.exports = handler;
