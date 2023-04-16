@@ -1,15 +1,27 @@
-var api = require('hxz-api')
-var handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `Gunakan link Facebook!\n\n📌 Example:\n*${usedPrefix + command}* https://fb.watch/7B5KBCgdO3`
-  try {  
-    var response = await api.fbdown(text) 
-    conn.sendFile(m.chat, response.Normal_video, 'fb.mp4', wm, m)
-  } catch (e) { 
-    console.log(e) 
-    conn.reply(m.chat, `Terjadi kesalahan! Mohon coba lagi atau gunakan format yang benar.`, m)
+var fetch = require("node-fetch");
+var handler = async (m, { conn, args, usedPrefix, command }) => {
+if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://www.facebook.com/100084756252836/videos/3391018171153874/?idorvanity=2765173437119338&mibextid=rS40aB7S9Ucbxw6v`;
+  try {
+    m.reply('*Please wait..*');
+    var get = await fetch(`https://api.botcahx.biz.id/api/dowloader/fbdown?url=${args[0]}&apikey=Admin`);
+var js = await get.json()   
+conn.sendFile(m.chat, js.result.HD, 'fb.mp4', '', m);
+  } catch (e) {
+    console.log(e);
+    if (m.sender) {
+      conn.reply(m.chat, `_*Terjadi kesalahan!*_`, m);
+    }
   }
-}
-handler.help = ['facebook'].map(v => v + ' <url>')
-handler.tags = ['downloader']
-handler.command = /^((facebook|fb)(downloder|dl)?)$/i
-module.exports = handler
+};
+handler.help = ['facebook'];
+handler.command = /^(fb|facebook|facebookdl|fbdl|fbdown|dlfb)$/i;
+handler.tags = ['downloader'];
+handler.limit = true;
+handler.group = false;
+handler.premium = false;
+handler.owner = false;
+handler.admin = false;
+handler.botAdmin = false;
+handler.fail = null;
+handler.private = false;
+module.exports = handler;
