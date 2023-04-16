@@ -652,7 +652,7 @@ module.exports = {
         } catch (e) {
             console.error(e)
         } finally {
-             conn.sendPresenceUpdate('composing', m.chat)
+             //conn.sendPresenceUpdate('composing', m.chat) // kalo pengen auto vn hapus // di baris dekat conn
             //console.log(global.db.data.users[m.sender])
             let user, stats = global.db.data.stats
             if (m) {
