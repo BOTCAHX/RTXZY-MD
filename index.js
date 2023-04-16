@@ -1,4 +1,4 @@
-console.log("Connecting sessions...");
+console.log('✅ㅤConnecting Sessions...');
 var cluster = require("cluster");
 var { 
 spawn
@@ -17,7 +17,7 @@ function start(file) {
 		stdio: ["inherit", "inherit", "inherit", "ipc"],
 	});
 	p.on("message", (data) => {
-		console.log("[✔️RECEIVED]", data);
+		console.log("✅ㅤRECEIVED", data);
 		switch (data) {
 			case "reset":
 				p.kill();
