@@ -20,7 +20,7 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD?ref=badge_large)
 
 ## Panel Hosting
-- Hosting gratis menggunakan panel register [`Disini`](https://billing.botcahx.biz.id)
+- Hosting gratis menggunakan panel register [`Disini`](http://dash.botcahx.tech)
 ## Note
 - Script ini dilanjutkan bila gua gabut aja:v
 
