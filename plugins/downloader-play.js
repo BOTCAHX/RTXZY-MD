@@ -1,9 +1,4 @@
-var {
-    youtubeSearch,
-    youtubedl,
-    youtubedlv2,
-    youtubedlv3
-} = require('@bochilteam/scraper');
+var { youtubeSearch } = require('@bochilteam/scraper');
 var hxz = require('hxz-api');
 var handler = async (m, {
     conn,
