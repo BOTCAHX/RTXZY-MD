@@ -2,18 +2,18 @@ let fg = require('api-dylux')
 const { tiktokdl, tiktokdlv2, tiktokdlv3 } = require ('@bochilteam/scraper')
 
 let handler = async (m, { conn, text, args, usedPrefix, command}) => {
-if (!args[0]) throw `✳️ Masukkan tautan Tiktok\n\n 📌 Contoh: ${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`
+if (!args[0]) throw `✳️ Masukkan tautan Tiktok\n\n 📌 Contoh: ${usedPrefix + command} https://vt.tiktok.com/ZS8cvNSJX/`
 if (!args[0].match(/tiktok/gi)) throw `❎ Periksa apakah tautannya dari tiktok`
 
 try {
     let p = await fg.tiktok(args[0]) 
     let te = `
 ┌─⊷ SERVER 1
-▢ *Username:* ${p.author}
-▢ *Descripción:* ${p.title}
+▢ *Username:* ${p.nickname}
+▢ *Descripción:* ${p.description}
 └───────────`
     
-    conn.sendFile(m.chat, p.nowm, 'tt.mp4', te, m)
+    conn.sendFile(m.chat, p.play, 'tt.mp4', te, m)
     } catch {  	
     try { 
 	const { author: { nickname }, video, description } = await tiktokdl(args[0])
