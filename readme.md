@@ -7,7 +7,7 @@
 - Fix QR code di terminal
 - Fix delay Messages
 + + Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
-
++ + + Rest Api gratis [`Link`](https://api.botcahx.live)
 
 ## Base 
 Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
