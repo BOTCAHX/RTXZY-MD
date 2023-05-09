@@ -2,53 +2,16 @@
 
 
 
-  <p align="center"><a href="https://github.com/BOTCAHX/RTXZY-MD/network/members">
-    <img title="Whatsapp-Bot-Multi-Device-Forks" src="https://img.shields.io/github/forks/BOTCAHX/RTXZY-MD?label=Forks&color=%23ffdac1&style=flat-square">
-  </a>
-<a href="https://www.codefactor.io/repository/github/botcahx/rtxzy-md"><img src="https://www.codefactor.io/repository/github/botcahx/rtxzy-md/badge" alt="CodeFactor" /></a>
-  <a href="https://github.com/BOTCAHX/RYXZY-MD/watchers">
-    <img title="Whatsapp-Bot-Multi-Auth" src="https://img.shields.io/github/watchers/BOTCAHX/RTXZY-MD?label=Watchers&color=%23e2f0cb&style=flat-square">
-  </a>
-  <a href="https://github.com/BOTCAHX/RTXZY-MD/blob/master/LICENSE">
-    <img title="Whatsapp-Bot-Multi-Auth" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?color=%23b5ead7&style=flat-square"/>
-  </a>
-  <a href="https://hits.seeyoufarm.com">
-    <img title="Whatsapp-Bot-Multi-Device-Hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FBOTCAX%2FRTXZY-MD&count_bg=%23c7ceea&title_bg=%23555555&icon=probot.svg&icon_color=%23c7ceea&title=Hits&edge_flat=true"/>
-  </a>
-</div>
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD?ref=badge_large)
-
-## Panel Hosting
-- Hosting gratis menggunakan panel register [`Disini`](http://panel.botcahx.live)
-## Note
-- Script ini dilanjutkan bila gua gabut aja:v
-
-## Penjelasan Instalasi 
-- Sript ini hanya bisa mengambil sesi di module di bawah ini
-- [`GET SESI LINK`](https://replit.com/@tioclkp02/sessions?lite=1&outputonly=1)
-- Sessions akan di kirim ke nomor anda sendiri ( nomor yang anda gunakan untuk scan)
-- Setelah memindai upload sessions yang dikirim tadi ke github / panel 
-- Upload tepat di folder sessions jangan di luar folder tersebut.
-- nama global session  ya biasanya creds.json
-- Perlu di ingat sesi multi auth bukan session.data.json/sesion.json dan bercampur dengan pre-key dan auth-key
-- Jika module pertama tidak menampilkan sessions atau QR gunakan link ini dan download semua file [`GET`](https://replit.com/@tioclkp02/Sessions-Multi-Auth?lite=1&outputonly=1)
-
-
-## Notes 
+## Pembaruan 
 - Telah menggunakan Baileys MD multi auth !
+- Fix QR code do terminal
+- Fix delay message
++ Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
 
-- Panduan [`Link`](https://github.com/BOTCAHX/RTXZY-MD/blob/v3.0/BACADULU.md#session-multi-auth)
 
 ## Base 
 Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 
-## List Menu Troube Discussion 
-Bergabung [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46)
-
-## Logs level
-- Jika ingin mengubah level pino nya maka ubah di line ini [`Logs level`](https://github.com/BOTCAHX/RTXZY-MD/blob/c67a8427d123c4e49d761d34912fb23f169d89a2/main.js#L74)
-- Opsi tersedia : silent , debug , trace
 ## WhatsApp Bot Hosting
 > Deploy bot mudah dan cepat di panel 
  
@@ -57,13 +20,11 @@ Bergabung [`Read Discussion`](https://github.com/BOTCAHX/RTXZY-MD/discussions/46
 - Server selalu up-to-date 
 **Link** 
 
-[`Panel Server`](https://chat.whatsapp.com/CmzVZLZl7xL2TNtd9dUvPc)
+[`Panel Server`](https://dash.botcahx.live)
 
 ## Join Group Diskusi
-[![BOT DISCUSSION GROUP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FBOTCAHX%2FRTXZY-MD?ref=badge_shield)
 
-
-[![ALL BOT WHATSAPP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/KTmU4Hoj437BX4fWpXTnpF)
+[![ALL BOT WHATSAPP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r)
 
 ## Install for termux
 
