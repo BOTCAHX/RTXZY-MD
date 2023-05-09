@@ -4,9 +4,9 @@
 
 ## Pembaruan 
 - Telah menggunakan Baileys MD multi auth !
-- Fix QR code do terminal
-- Fix delay message
-+ Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
+- Fix QR code di terminal
+- Fix delay Messages
++ + Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
 
 
 ## Base 
@@ -75,14 +75,12 @@ npm start
 ```
 # Heroku Buildpack
 ### Instal Buildpack
+```bash
 * heroku/nodejs
 * https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 * https://github.com/clhuang/heroku-buildpack-webp-binaries.git
+```
 
-
-# Hargai Kami Dengan Menambahkan Credit
-
----------
 
 ### `--prefix <prefix>`
 
