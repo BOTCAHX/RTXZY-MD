@@ -7,5 +7,5 @@ pkg install npm
 git clone https://github.com/BOTCAHX/RTXZY-MD
 cd RTXZY-MD
 npm install
-node .
+npm start
 
