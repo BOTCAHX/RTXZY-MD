@@ -705,7 +705,7 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                        let pp = 'https://i.ibb.co/sQTkHLD/ppkosong.png'
+                        let pp = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9mFzSckd12spppS8gAJ2KB2ER-ccZd4pBbw&usqp=CAU'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
@@ -717,7 +717,7 @@ module.exports = {
                                 gpname: await this.getName(id),
                                 member: groupMetadata.participants.length, 
                                 pp: pp, 
-                                bg: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
+                                bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg,
                                 apikey: 'QaepQXxR'
                             })
                             let lea = API('tio', '/api/maker/goodbye1', {
@@ -725,7 +725,7 @@ module.exports = {
                                 gpname: await this.getName(id),
                                 member: groupMetadata.participants.length, 
                                 pp: pp,
-                                bg: 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png',
+                                bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
                                 apikey: 'QaepQXxR'
                             })
                              this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
