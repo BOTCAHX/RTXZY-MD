@@ -6,8 +6,8 @@ var handler = async (m, { text, usedPrefix, command }) => {
   }
   
   const search = await axios.get(
-    `https://api.botcahx.live/api/search/xvideos?query=${text}&apikey=QaepQXxR`
-  );
+    `https://api.botcahx.live/api/search/xvideos?query=${text}&apikey=${btc}`)
+
   const hasil = search.data.result;
   
   let teks = `*XVIDEOS RESULTS* \n\n🔍 *KEYWORDS*: *${text}*\n\n`;
