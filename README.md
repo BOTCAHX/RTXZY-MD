@@ -2,7 +2,7 @@
 
 
 
-## Pembaruan 
+## Pembaruan / Update
 - Telah menggunakan Baileys MD multi auth !
 - Fix QR code di terminal
 - Fix logs 
