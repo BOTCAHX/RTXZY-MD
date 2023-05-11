@@ -9,7 +9,8 @@
 - Fix menunggu pesan
 - Fix delay Messages
 + + Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
-+ + + Rest Api gratis [`Link`](https://api.botcahx.live)
+- Menggunakan Apikey untuk downloader nya
++ + + Register sendiri apikey di sini [`Link`](https://api.botcahx.live)
 
 ## Base 
 Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
