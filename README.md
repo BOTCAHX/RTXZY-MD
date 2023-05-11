@@ -2,7 +2,7 @@
 
 
 
-## Pembaruan / Update
+## Pembaruan 
 - Telah menggunakan Baileys MD multi auth !
 - Fix QR code di terminal
 - Fix logs 
@@ -10,7 +10,7 @@
 - Fix delay Messages
 - -  Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
 
-- Menggunakan Apikey untuk downloader nya
+- Free apikey di config 100/day jika ingi membeli limit silahkan registrasi terlebih  
 
 + Register sendiri apikey di sini [`Link`](https://api.botcahx.live)
 
