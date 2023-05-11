@@ -11,7 +11,7 @@ await m.reply(wait)
   var js = await apii.json()
   await m.reply(js.hasil)
 }      
-handler.command = handler.help = ['ai3'];
+handler.command = handler.help = ['ai','openai','chatgpt'];
 handler.tags = ['internet'];
 handler.premium = false
 module.exports = handler;
