@@ -18,7 +18,7 @@ HD } = jsons.result
 await conn.sendFile(m.chat, HD, 'tiovid.mp4', `
 *Deskripsi*: ${desc}`, m)
 };
-handler.command = handler.help = ['tiwtter','twitdl','twitterdl'];
+handler.command = handler.help = ['twitter','twitdl','twitterdl'];
 handler.tags = ['downloader'];
 handler.limit = true;
 handler.group = false;
