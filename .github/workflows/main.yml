@@ -1,3 +1,4 @@
+
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -35,7 +36,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: second commit
         run: |
-          git add .
           git config user.name 'BOTCAHX'
           git config user.email 'tioclkp02@gmail.com'
           git commit -m "Jangan Lupa Follow @BOTCAHX"
@@ -46,7 +46,6 @@ jobs:
         
       - name: finishing
         run: |
-          git add .
           git config user.name 'BOTCAHX'
           git config user.email 'tioclkp02@gmail.com
           git commit -m "Jangan Lupa Follow @BOTCAHX"
