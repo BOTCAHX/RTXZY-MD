@@ -717,7 +717,7 @@ module.exports = {
                                 gpname: await this.getName(id),
                                 member: groupMetadata.participants.length, 
                                 pp: pp, 
-                                bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg,
+                                bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
                                 apikey: 'QaepQXxR'
                             })
                             let lea = API('tio', '/api/maker/goodbye1', {
