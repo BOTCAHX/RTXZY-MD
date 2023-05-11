@@ -8,7 +8,7 @@
 - Fix logs 
 - Fix menunggu pesan
 - Fix delay Messages
-- -  Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
+- -  Selebihnya tambah sendiri fitur nya karena ini cuma base.
 
 - Free apikey yang ada di config hanya 100 limit per day jika ingin membeli limit silahkan registrasi terlebih dahulu, lalu buy premium. 
 
