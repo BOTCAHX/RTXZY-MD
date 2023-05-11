@@ -1,7 +1,10 @@
 /**
-Ubah semua nomor dan wm di file ini
-Jika apikey habis silahkan daftar sendiri di website yang du sediakan
-+ Free Rest Api https://api.botcahx.live
++ Ubah nomor ownwr dan wm di sini.
++ Jika apikey habis silahkan daftar terlebih dahulu di website yang di sediakan link di bawah ini
++ Link https://api.botcahx.live
++ Lalu salin apikey paste di global.btc
+- Contoh global.btc = 'xzRhejka'
++ Jika sudah maka lanjutkan untuk mengubah nomor owner dan wm.
 - Sisanya kalian tambah sendiri sesuai keperluan.
 **/
 
@@ -20,7 +23,7 @@ global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
 global.web = 'https://github.com/BOTCAHX'
 global.instagram = 'https://instagram.com/prm2.0'
 global.lolkey = 'yourkey'
-global.btc = 'QaepQXxR' //daftar di https://api.botcahx.live jika key habis
+global.btc = 'QaepQXxR' //daftar di https://api.botcahx.live jika apikey ini expired!
 global.wm = '© Tio'
 global.watermark = wm
 global.wm2 = '⫹⫺ Tio'
