@@ -1,5 +1,5 @@
 /**
-+ Ubah nomor ownwr dan wm di sini.
++ Ubah nomor owner dan wm di sini.
 + Jika apikey habis silahkan daftar terlebih dahulu di website yang di sediakan link di bawah ini
 + Link https://api.botcahx.live
 + Lalu salin apikey paste di global.btc
