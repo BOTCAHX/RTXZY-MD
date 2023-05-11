@@ -6,7 +6,7 @@ var handler = async (m, { text, usedPrefix, command }) => {
   }
   
   const search = await fetch(
-    `https://api.botcahx.live/api/search/xnxx?query=${text}&apikey=QaepQXxR`
+    `https://api.botcahx.live/api/search/xnxx?query=${text}&apikey=${btc}`
   );
   const hasil = await search.json();
   
