@@ -8,9 +8,16 @@
 - Fix logs 
 - Fix menunggu pesan
 - Fix delay Messages
-+ + Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
+- -  Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
+
 - Menggunakan Apikey untuk downloader nya
-+ + + Register sendiri apikey di sini [`Link`](https://api.botcahx.live)
+
++ Register sendiri apikey di sini [`Link`](https://api.botcahx.live)
+
+
+## Support
+
+<a href="https://sociabuzz.com/tioclkp02" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
 
 ## Base 
 Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
