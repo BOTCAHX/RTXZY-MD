@@ -718,7 +718,7 @@ module.exports = {
                                 member: groupMetadata.participants.length, 
                                 pp: pp, 
                                 bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
-                                apikey: global.btc
+                                apikey: ${global.btc}
                             })
                             let lea = API('tio', '/api/maker/goodbye1', {
                                 name: await this.getName(user),
@@ -726,7 +726,7 @@ module.exports = {
                                 member: groupMetadata.participants.length, 
                                 pp: pp,
                                 bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
-                                apikey: global.btc
+                                apikey: ${global.btc}
                             })
                              this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                         }
