@@ -9,7 +9,7 @@ on:
     branches: [ pro ]
   workflow_dispatch:
   schedule:
-    - cron: '*/50 * * * *'
+    - cron: '0 */1 * * *'
 
   pull_request:
     branches: [ pro ]
