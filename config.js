@@ -1,11 +1,10 @@
 /**
 + Ubah nomor owner dan wm di sini.
-+ Jika apikey habis silahkan daftar terlebih dahulu di website yang di sediakan link di bawah ini
++ Free apikey hanya memiliki 100 limit per day jika ingin upgrade silahkan daftar di link bawah ini
 + Link https://api.botcahx.live
-+ Lalu salin apikey paste di global.btc
++ Jika sudah mendaftar salin key yang ada di profie dan paste di global.btc
 - Contoh global.btc = 'xzRhejka'
 + Jika sudah maka lanjutkan untuk mengubah nomor owner dan wm.
-- Sisanya kalian tambah sendiri sesuai keperluan.
 **/
 
 
@@ -23,7 +22,7 @@ global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
 global.web = 'https://github.com/BOTCAHX'
 global.instagram = 'https://instagram.com/prm2.0'
 global.lolkey = 'yourkey'
-global.btc = 'QaepQXxR' //daftar di https://api.botcahx.live jika apikey ini expired!
+global.btc = 'QaepQXxR' // Daftar di https://api.botcahx.live untuk menggunakan key mu sendiri karena ini hanya 100 limit perhari nya
 global.wm = '© Tio'
 global.watermark = wm
 global.wm2 = '⫹⫺ Tio'
