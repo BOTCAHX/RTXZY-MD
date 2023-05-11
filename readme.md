@@ -22,7 +22,7 @@ Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 - Server selalu up-to-date 
 **Link** 
 
-[`Panel Server`](https://dash.botcahx.live)
+[`Panel Server`](https://www.botcahx.live)
 
 ## Join Group Diskusi
 
