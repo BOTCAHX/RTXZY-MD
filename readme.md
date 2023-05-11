@@ -5,6 +5,8 @@
 ## Pembaruan 
 - Telah menggunakan Baileys MD multi auth !
 - Fix QR code di terminal
+- Fix logs 
+- Fix menunggu pesan
 - Fix delay Messages
 + + Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
 + + + Rest Api gratis [`Link`](https://api.botcahx.live)
