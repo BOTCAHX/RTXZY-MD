@@ -6,13 +6,13 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ pro ]
   workflow_dispatch:
   schedule:
     - cron: '0 */1 * * *'
 
   pull_request:
-    branches: [ main ]
+    branches: [ pro ]
 
   # Allows you to run this workflow manually from the Actions tab
 
