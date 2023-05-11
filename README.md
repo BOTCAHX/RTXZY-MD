@@ -12,7 +12,7 @@
 
 - Free apikey yang ada di config hanya 100 limit per day jika ingin membeli limit silahkan registrasi terlebih dahulu lalu buy premium. 
 
-+ Register sendiri apikey di sini [`Link`](https://api.botcahx.live)
++ Register Here [`Link`](https://api.botcahx.live)
 
 
 ## Support
