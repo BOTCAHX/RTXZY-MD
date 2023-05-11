@@ -6,7 +6,7 @@ var handler = async (m, {
  }) => {
 if (!text) throw 'Masukkan Query Link!'
  
-let anu = await fetch(`https://api.botcahx.live/api/download/xvideosdl?url=${text}&apikey=QaepQXxR`)
+let anu = await fetch(`https://api.botcahx.live/api/download/xvideosdl?url=${text}&apikey=${btc}`)
 let hasil = await anu.json() 
 
 conn.sendMessage(m.chat, { video: { url: hasil.result.url }, fileName: 'xnxx.mp4', mimetype: 'video/mp4' }, { quoted: m })
