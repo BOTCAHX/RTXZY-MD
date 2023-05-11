@@ -10,7 +10,7 @@
 - Fix delay Messages
 - -  Selebihnya fix sendiri untuk fitur lainya karena ini cuma base.
 
-- Free apikey yang ada di config hanya 100 limit per day jika ingin membeli limit silahkan registrasi terlebih dahulu lalu buy premium. 
+- Free apikey yang ada di config hanya 100 limit per day jika ingin membeli limit silahkan registrasi terlebih dahulu, lalu buy premium. 
 
 + Register Here [`Link`](https://api.botcahx.live)
 
