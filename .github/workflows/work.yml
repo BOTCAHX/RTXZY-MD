@@ -38,7 +38,7 @@ jobs:
           git add -A
           git config user.name 'BOTCAHX'
           git config user.email 'tioclkp02@gmail.com'
-          git commit -m "Daftar apikey sendiri agar lebih awet"
+          git commit -m "Jangan Lupa Follow @BOTCAHX"
           git push 
           
       - name: third commit
