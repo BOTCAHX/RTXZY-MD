@@ -11,7 +11,7 @@
 
 - -  Selebihnya tambah sendiri fitur nya karena ini cuma base.
 
-- Free apikey hanya 100 limit per day jika ingin membeli limit lebih silahkan registrasi terlebih dahulu, lalu chat bot kami [wa.me/6281395861695](http://wa.me/62813958616951?text=.claimtrial )
+- Free apikey hanya 100 limit per day jika ingin memiliki limit lebih silahkan registrasi terlebih dahulu, lalu chat bot saya [wa.me/6281395861695](http://wa.me/62813958616951?text=.claimtrial )
 
 + Register Here [`Link`](https://api.botcahx.live)
 
