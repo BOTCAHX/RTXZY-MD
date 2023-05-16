@@ -2,8 +2,10 @@
 // - Ubah nomor owner dan wm di sini.
 // + Daftar apikey terlebih dahulu sebelum menggunakan svript ini link
   // https://api.botcahx.live
+//https://api.lannn.me
 // - Jika sudah mendaftar salin key yang ada di profie dan paste di global.btc
 // - Contoh global.btc = 'xzRhejka'
+// global.lann = 'trial'
 // - Jika sudah maka lanjutkan untuk mengubah nomor owner dan wm.
 
 global.owner = ['6281395861695']  
