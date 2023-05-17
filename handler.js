@@ -712,21 +712,21 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
                                 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
-                            let wel = API('tio', '/api/maker/welcome1', {
+                            let wel = API('alpis', '/api/maker/welcome1', {
                                 name: await this.getName(user),
                                 gpname: await this.getName(id),
                                 member: groupMetadata.participants.length, 
                                 pp: pp, 
                                 bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
-                                apikey: btc
+                                apikey: alpiskey
                             })
-                            let lea = API('tio', '/api/maker/goodbye1', {
+                            let lea = API('alpis', '/api/maker/goodbye1', {
                                 name: await this.getName(user),
                                 gpname: await this.getName(id),
                                 member: groupMetadata.participants.length, 
                                 pp: pp,
                                 bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
-                                apikey: btc
+                                apikey: alpiskey
                             })
                              this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                         }
