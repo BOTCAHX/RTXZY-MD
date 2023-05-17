@@ -33,7 +33,7 @@ global.salah = 'Salah ❌\n'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made with'
 global.author = 'Bot WhatsApp'
-
+global.alpiskey = '8ecfc216' //daftar sendiri jika key habis https://alpis.eu.org
 
 global.btc = 'YOURKEY' //Daftar terlebih dahulu https://api.botcahx.live
 global.lann = 'trial' //Note Key Ini Hanya Bertahan Selama 4 Day Sejak Config.js update! lebih baik register di https://api.lannn.me
