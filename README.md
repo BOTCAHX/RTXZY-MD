@@ -219,4 +219,3 @@ For Help
 [Adiwajshing](https://github.com/adiwajshing) | [caf](https://github.com/CAF-ID)
 Owner of Baileys | Sepuh |
 
-Wed May 17 13:18:49 UTC 2023
