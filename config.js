@@ -38,7 +38,8 @@ global.author = 'Bot WhatsApp'
 global.btc = 'YOURKEY' //Daftar terlebih dahulu https://api.botcahx.live
 global.lann = 'trial' //Note Key Ini Hanya Bertahan Selama 4 Day Sejak Config.js update! lebih baik register di https://api.lannn.me
 global.APIs = { 
-  tio: 'https://api.botcahx.live'
+  tio: 'https://api.botcahx.live',
+  alpis: 'https://alpis.eu.org'
 }
 global.APIKeys = { 
   'https://api.botcahx.live': 'YOURKEY' //isi apikey mu https://api.botcahx.live
