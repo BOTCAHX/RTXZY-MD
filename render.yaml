@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: rtxzy-md
+    env: docker
+    region: Singapore 
+    plan: free
