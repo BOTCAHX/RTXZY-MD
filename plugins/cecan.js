@@ -4,5 +4,5 @@ let buffer = await fetch(`https://api.betabotz.me/api/cecan/${command}?apikey=${
 conn.sendFile(m.chat, buffer, 'hasil.jpg', "Random " + command, m)
 }
 handler.command = handler.help = ['china', 'indonesia', 'japan', 'vietnam', 'thailand', 'korea', 'malaysia']
-handler.tags = ['cecan']
+handler.tags = ['internet']
 module.exports = handler
