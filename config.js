@@ -8,23 +8,23 @@
 // global.lann = 'trial'
 // - Jika sudah maka lanjutkan untuk mengubah nomor owner dan wm.
 
-global.owner = ['6281395861695']  
-global.mods = ['6281395861695'] 
-global.prems = ['6281395861695']
-global.nameowner = 'Tio'
-global.numberowner = '6281395861695' 
+global.owner = ['628992559803']  
+global.mods = ['628992559803'] 
+global.prems = ['628992559803']
+global.nameowner = 'Deva Wahyu'
+global.numberowner = '628992559803' 
 global.mail = 'support@tioprm.my.id' 
-global.dana = '6281395861695'
-global.pulsa = '6281395861695'
-global.gopay = '6281395861695'
-global.namebot = 'BOTCAHX'
+global.dana = '628992559803'
+global.pulsa = '628992559803'
+global.gopay = '628992559803'
+global.namebot = 'DepoBotz'
 global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
 global.web = 'https://github.com/BOTCAHX'
 global.instagram = 'https://instagram.com/prm2.0'
-global.wm = '© Tio'
+global.wm = '© Deva Wahyu'
 global.watermark = wm
-global.wm2 = '⫹⫺ Tio'
-global.wm3 = '© Tio'
+global.wm2 = '⫹⫺ Deva Wahyu'
+global.wm3 = '© Deva Wahyu'
 global.wm4 = '© BotWa'
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
