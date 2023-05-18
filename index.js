@@ -5,6 +5,21 @@ const server = http.createServer();
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
 
+server.on('request', (req, res) => {
+  if (req.url === '/') {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    const data = {
+      status: 'true',
+      message: 'Welcome User👋',
+      author: 'BOTCAHX'
+    };
+    const result = {
+      response: data
+    };
+    res.end(JSON.stringify(result, null, 2));
+  }
+});
+
 server.listen(port);
 
 cluster = require("cluster");
@@ -40,9 +55,9 @@ function start(file) {
   p.on("exit", (code) => {
     isRunning = false;
     console.error('\x1b[31m%s\x1b[0m', `Exited with code: ${code}`);
-    
+
     if (code === 0) return;
-    
+
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0]);
       start("main.js");
