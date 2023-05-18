@@ -38,7 +38,7 @@ jobs:
           git add -A
           git config user.name 'BOTCAHX'
           git config user.email 'tioclkp02@gmail.com'
-          git commit -m "Jangan Lupa Follow @BOTCAHX"
+          git commit -m "Jangan Lupa Register Api terlebih dahulu!"
           git push 
           
       - name: third commit
@@ -49,5 +49,5 @@ jobs:
           git add -A
           git config user.name 'BOTCAHX'
           git config user.email 'tioclkp02@gmail.com'
-          git commit -m "Jangan Lupa Follow @BOTCAHX"
+          git commit -m "Jangan Lupa Register Api terlebih dahulu!"
           git push
