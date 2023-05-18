@@ -8,7 +8,7 @@
 - Fix logs 
 - Fix menunggu pesan
 - Fix delay Messages
-
+- Bisa di deploy di replit dan render
 - -  Selebihnya tambah sendiri fitur nya karena ini cuma base.
 
 - Free apikey hanya 100 limit per day jika ingin memiliki limit lebih silahkan registrasi terlebih dahulu, lalu chat bot saya [wa.me/6281395861695](http://wa.me/62813958616951?text=.claimtrial )
@@ -23,6 +23,18 @@
 ## Support
 
 <a href="https://sociabuzz.com/tioclkp02" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
+
+### `Replit`
+
+[![Run on Repl.it](https://repl.it/badge/github/BOTCAHX/RTXZY-MD)](https://repl.it/github/BOTCAHX/RTXZY-MD) 
+
+  
+
+### `Render`
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2FBOTCAHX%2FRTXZY-MD)
+
+
 
 ## Base 
 Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
