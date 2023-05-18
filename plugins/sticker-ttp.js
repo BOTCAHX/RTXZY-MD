@@ -11,7 +11,7 @@ var handler = async (m, {
  }) => {
     text = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.quoted && m.quoted.caption ? m.quoted.caption : m.quoted && m.quoted.description ? m.quoted.description : ''
     if (!text) throw `Example : ${usedPrefix + command} Lagi Ruwet`
-    const res = `https://api.botcahx.live/api/maker/ttp?text=${encodeURIComponent(text.substring(0, 151))}&apikey=KmJeDgvG`
+    const res = `https://api.botcahx.live/api/maker/ttp?text=${encodeURIComponent(text.substring(0, 151))}&apikey=${btc}`
     var error = fs.readFileSync(`./media/sticker/emror.webp`)
     try {
         if (command == 'ttp' || command == 'ttp') {
