@@ -16,7 +16,7 @@
 [LINK](https://chat.whatsapp.com/InL8Xpf1thN7AK45ZCI060)
 
 + Register Here [`Link`](https://api.botcahx.live)
-+ And Register Here [`Link`](https://api.lannn.me)
++ And Register Here [`Link`](https://api.betabotz.me)
 
 - Setelah mendapat key paste di config.js di baris global.btc dan global.lann
 
