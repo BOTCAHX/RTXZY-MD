@@ -6,9 +6,9 @@ var handler = async (m, {
  }) => {
 if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* Siapa presiden Indonesia? `
 await m.reply(wait)
-  var apii = await fetch(`https://botcahx.cyclic.app/openai?text=${text}`)
+  var apii = await fetch(`https://api.botcahx.live/api/search/openai-chat?text=${text}&apikey=${btc}`)
   var js = await apii.json()
-  await m.reply(js.result)
+  await m.reply(js.message)
 }      
 handler.command = handler.help = ['ai','openai','chatgpt'];
 handler.tags = ['internet'];
