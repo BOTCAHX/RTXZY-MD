@@ -165,13 +165,13 @@ conn.logger.level = 'trace'
 conn.logger.level = 'debug'
 ```
 #### Thanks To 
-**Allah SWT**,
+- Allah SWT 
 
-**Orang Tua**
+- Orang Tua
 
 
 
-**Semua Yang dilibatkan dalam pembuatan Script Ini**,
+- Semua orang dilibatkan dalam pembuatan Script Ini
 
 
 
