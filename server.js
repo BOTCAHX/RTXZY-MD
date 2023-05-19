@@ -19,8 +19,8 @@ function connect(conn, PORT) {
         res.end(await qrcode.toBuffer(_qr))
     })
 
-    let server = app.listen(PORT, () => {
-      console.log('App listened on port', PORT)
+    let server = app.listen(8080, () => {
+      console.log('App listened on port 8080')
       if (opts['keepalive']) keepAlive()
     })
     let io = SocketIO(server)
