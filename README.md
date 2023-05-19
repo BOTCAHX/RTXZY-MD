@@ -11,7 +11,7 @@
 - Bisa di deploy di replit dan render
 - -  Selebihnya tambah sendiri fitur nya karena ini cuma base.
 
-- Free apikey hanya 100 limit per day jika ingin memiliki limit lebih silahkan registrasi terlebih dahulu, lalu chat bot saya [wa.me/6281395861695](http://wa.me/62813958616951?text=.claimtrial )
+- Free apikey hanya 100 limit per day jika ingin memiliki limit lebih silahkan registrasi terlebih dahulu, lalu chat bot saya [wa.me/62813958616959](http://wa.me/62813958616959?text=.claimtrial )
 - Untuk Apikey Dari Rest Api Lann Silahkan Join Group Untuk Mendapat Trial Apikey nya
 [LINK](https://chat.whatsapp.com/InL8Xpf1thN7AK45ZCI060)
 
