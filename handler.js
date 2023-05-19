@@ -728,11 +728,17 @@ module.exports = {
                                 bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
                                 apikey: alpiskey
                             })
-                             this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
+                             /*this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                         }
                     }
                 }
-                break                          
+                break*/
+                
+                           this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+                        }
+                    }
+                }
+                break                     
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
