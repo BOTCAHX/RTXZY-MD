@@ -2,7 +2,7 @@
 
 
 
-## Pembaruan 
+### Pembaruan / Update
 - Telah menggunakan multi auth sessions 
 - Fix QR code di terminal
 - Fix logs 
@@ -177,7 +177,7 @@ conn.logger.level = 'debug'
 
 
 
-**All Contributors**,
+### All Contributors
 
 [`Visit`](https://github.com/BOTCAHX/RTXZY-MD/graphs/contributors)
 
