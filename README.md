@@ -3,7 +3,7 @@
 
 
 ## Pembaruan 
-- Telah menggunakan Baileys MD multi auth !
+- Telah menggunakan multi auth sessions 
 - Fix QR code di terminal
 - Fix logs 
 - Fix menunggu pesan
@@ -36,18 +36,9 @@
 
 
 
-## Base 
+## Base Ori
 Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 
-## WhatsApp Bot Hosting
-> Deploy bot mudah dan cepat di panel 
- 
-- Runtime 24/7
-- No delay !
-- Server selalu up-to-date 
-**Link** 
-
-[`Panel Server`](https://www.botcahx.live)
 
 ## Join Group Diskusi
 
@@ -176,58 +167,33 @@ conn.logger.level = 'debug'
 #### Thanks To 
 **Allah SWT**,
 
-**Orang Tua**,
+**Orang Tua**
 
-**All Team Bot Discussion**,
 
-**Yang Support Buat Recode Base Ini**,
 
-**Semua Yang Bersangkutan Dalam Berdirinya Script Ini**,
+**Semua Yang dilibatkan dalam pembuatan Script Ini**,
 
-**Untuk Hyzer, Base Original Script Ini**,
 
-**Untuk Semua Yang Selalu Mendukung Kami.**
+
+
 
 **All Contributors**,
 
 [`Visit`](https://github.com/BOTCAHX/RTXZY-MD/graphs/contributors)
 
-### Contact Person
 
- [`AlyaXzy`](https://wa.me/6289505165400)
-
- [`BOTCAHX`](https://wa.me/6282221792667)
  
- [`Verdi`](https://wa.me/6285706735450)
- 
- [`Radhin`](https://wa.me/6282373158947)
-
 ##### All Contributors
-<a href="https://github.com/BOTCAHX"><img src="https://github.com/BOTCAHX.png?size=100" width="100" height="100"></a> | [![Alya Putri](https://github.com/AlyaaXd.png?size=100)](https://github.com/AlyaaXd) 
+<a href="https://github.com/BOTCAHX"><img src="https://github.com/BOTCAHX.png?size=100" width="100" height="100"></a> | [![Erlan](https://github.com/ERLANRAHMAT.png?size=100)](https://github.com/ERLANRAHMAT) 
 ---|---
-[Tio](https://github.com/BOTCAHX)  | [Alya putri](https://github.com/AlyaaXd)
-Creator | Creator |
-<a href="https://github.com/verdihatorou"><img src="https://github.com/verdihatorou.png?size=100" width="100" height="100"></a> | [![Radhin](https://github.com/radhin123.png?size=100)](https://github.com/radhin123) 
-[Verdi](https://github.com/verdihatorou)  | [ Radhin](https://github.com/radhin123)
-Creator | Contributors |
-<a href="https://github.com/natxdixie"><img src="https://github.com/natxdixie.png?size=100" width="100" height="100"></a>
-[Natx-C](https://github.com/natxdixie) 
-Contributor 
+[Tio](https://github.com/BOTCAHX)  | [Erlan](https://github/ERLANRAHMAT)
+Recode | Contributor |
+
 ##### Special Thanks To
 <!--[![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![BochilGaming](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
 [![adiwajshing/Baileys](https://github.com/adiwajshing.png?size=100)](https://github.com/adiwajshing)-->
 <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=100" width="100" height="100"></a> | [![NURUTOMO](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) 
 ---|---
-[bocil](https://github.com/BochilGaming)  | [Nurutomo](https://github.com/Nurutomo)
+[Bochilgaming](https://github.com/BochilGaming)  | [Nurutomo](https://github.com/Nurutomo)
 sepuh | sepuh |
-<a href="https://github.com/MhankBarBar"><img src="https://github.com/MhankBarBar.png?size=100" width="100" height="100"></a> | [![FATIH](https://github.com/fatiharridho.png?size=100)](https://github.com/fatiharridho) 
-[Mhankbarbar](https://github.com/MhankBarBar)  | [Fatih A.](https://github.com/fatiharridho)
-sepuh | sepuh |
-<a href="https://github.com/FERDIZ-afk"><img src="https://github.com/FERDIZ-afk.png?size=100" width="100" height="100"></a> 
-[Ferdiz](https://github.com/FERDIZ-afk) 
-For Help
-<a href="https://github.com/adiwajshing"><img src="https://github.com/adiwajshing.png?size=100" width="100" height="100"></a> | [![caf](http://github.com/CAF-ID.png?size=100)](http://github.comCAF-ID) 
-[Adiwajshing](https://github.com/adiwajshing) | [caf](https://github.com/CAF-ID)
-Owner of Baileys | Sepuh |
-
