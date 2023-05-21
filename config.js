@@ -2,7 +2,7 @@
 // - Ubah nomor owner dan wm di sini.
 // + Daftar apikey terlebih dahulu sebelum menggunakan svript ini link
   // https://api.botcahx.live
-//https://api.lannn.me
+//https://api.betabotz.me
 // - Jika sudah mendaftar salin key yang ada di profie dan paste di global.btc
 // - Contoh global.btc = 'xzRhejka'
 // global.lann = 'trial'
@@ -36,7 +36,7 @@ global.author = 'Bot WhatsApp'
 global.alpiskey = '8ecfc216' //daftar sendiri jika key habis https://alpis.eu.org
 
 global.btc = 'YOURKEY' //Daftar terlebih dahulu https://api.botcahx.live
-global.lann = 'trial' //Note Key Ini Hanya Bertahan Selama 4 Day Sejak Config.js update! lebih baik register di https://api.lannn.me
+global.lann = 'trial' //Note Key Ini Hanya Bertahan Selama 4 Day Sejak Config.js update! lebih baik register di https://api.betabotz.me
 global.APIs = { 
   tio: 'https://api.botcahx.live',
   alpis: 'https://alpis.eu.org'
