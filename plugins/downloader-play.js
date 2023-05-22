@@ -1,10 +1,10 @@
-var { youtubeSearch} = require('@bochilteam/scraper');
+var { youtubeSearch } = require('@bochilteam/scraper');
    var handler = async (m, { 
     conn,
     text, 
     usedPrefix
                }) => {
-  if (!text) throw 'Enter Title'
+  if (!text) throw 'Enter Title / link'
   try {
     var vid = (await youtubeSearch(text)).video[0]
     if (!vid) throw 'Video/Audio Tidak Ditemukan'
