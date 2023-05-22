@@ -54,13 +54,12 @@ var { youtubeSearch} = require('@bochilteam/scraper');
     showAdAttribution: true,
     renderLargerThumbnail: true
     }}} , { quoted: pesan })
-    await delay(10000);
-    conn.sendMessage(m.chat, { video: { url: vide }, mimetype: 'video/mp4' }, { quoted: pesan })
+
   } catch (e) {
     throw 'Video/Audio Tidak Ditemukan'
   }
 }
-handler.command = handler.help = ['play','song','youtube','ytmp3','ds','downloadyt'];
+handler.command = handler.help = ['play','song','youtube','ytmp3','ds','downloadyt','yta'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
