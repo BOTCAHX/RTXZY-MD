@@ -15,7 +15,7 @@
         "test2": "nodemon index.js --server --autocleartmp"
     },
     "keywords": [
-        "termux-whatsapp-bot",
+        "whatsapp-bot-md",
         "whatsapp-bot",
         "whatsapp",
         "js-whatsapp",
@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "git+https://github.com/hostinger-bot/Baileyss.git",
+        "@adiwajshing/baileys": "npm:baileys@6.0.8",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "@vitalets/google-translate-api": "^9.0.0",
