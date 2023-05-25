@@ -8,23 +8,23 @@
 // global.lann = 'trial'
 // - Jika sudah maka lanjutkan untuk mengubah nomor owner dan wm.
 
-global.owner = ['6281395861695']  
-global.mods = ['6281395861695'] 
+global.owner = ['6283173000169']  
+global.mods = ['6283179956449'] 
 global.prems = ['6281395861695']
-global.nameowner = 'Tio'
-global.numberowner = '6281395861695' 
+global.nameowner = 'samsul'
+global.numberowner = '6283173000169' 
 global.mail = 'support@tioprm.my.id' 
 global.dana = '6281395861695'
 global.pulsa = '6281395861695'
 global.gopay = '6281395861695'
 global.namebot = 'BOTCAHX'
-global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
-global.web = 'https://github.com/BOTCAHX'
-global.instagram = 'https://instagram.com/prm2.0'
-global.wm = '© Tio'
+global.gc = 'beta'
+global.web = 'beta'
+global.instagram = 'beta'
+global.wm = '© samsul'
 global.watermark = wm
-global.wm2 = '⫹⫺ Tio'
-global.wm3 = '© Tio'
+global.wm2 = '⫹⫺ samsul'
+global.wm3 = '© samshk'
 global.wm4 = '© BotWa'
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
@@ -42,7 +42,7 @@ global.APIs = {
   alpis: 'https://alpis.eu.org'
 }
 global.APIKeys = { 
-  'https://api.botcahx.live': 'YOURKEY' //isi apikey mu https://api.botcahx.live
+  'https://api.botcahx.live': '2vtXtrcA' //isi apikey mu https://api.botcahx.live
 }
 
 global.multiplier = 45
