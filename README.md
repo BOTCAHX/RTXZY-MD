@@ -42,28 +42,7 @@ Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 
 [![ALL BOT WHATSAPP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=red)](https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r)
 
-## Install for termux
 
-```bash
-> termux-setup-storage
-> pkg update && pkg upgrade
-> pkg install git
-> pkg install nodejs
-> pkg install bash
-> pkg install ffmpeg
-> pkg install libwebp
-> git clone  https://github.com/BOTCAHX/RTXZY-MD
-> cd RTXZY-MD
-> npm i
-> node index.js
-
-## untuk Sdcard (File yang Sudah Di Download)
-> cd /sdcard
-> cp -r RTXZY-MD $HOME
-> cd RTXZY-MD
-> npm i
-> node index.js
-```
 
 ## Run On Heroku
 
