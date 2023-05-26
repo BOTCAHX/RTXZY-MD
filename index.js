@@ -1,6 +1,6 @@
 const http = require('http');
 const os = require('os');
-const port = 3000;
+const port = 3000; //custom ports here
 const server = http.createServer();
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
