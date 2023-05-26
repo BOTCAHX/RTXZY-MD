@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "npm:baileys@6.0.8",
+        "@adiwajshing/baileys": "npm:baileys-md@5.0.5",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "@vitalets/google-translate-api": "^9.0.0",
@@ -65,6 +65,7 @@
         "jsdom": "^20.0.0",
         "lodash": "^4.17.21",
         "lowdb": "^2.1.0",
+        "link-preview-js": "^3.0.4",
         "moment-timezone": "^0.5.37",
         "mongoose": "^6.0.14",
         "node-fetch": "3.0.0-beta.9",
