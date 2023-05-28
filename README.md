@@ -18,6 +18,9 @@
 
 - Setelah mendapat key paste di config.js di baris global.btc dan global.lann
 
+## English
+[`EN`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/ENGLISH.md)
+
 ## Support
 
 <a href="https://sociabuzz.com/tioclkp02" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
