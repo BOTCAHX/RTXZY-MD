@@ -19,6 +19,10 @@
 
 - After getting the key paste it in config.js on line global.btc and global.lann
 
+## LANGUAGE 
+[`ID /`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/README.md)[`EN`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/ENGLISH.md)
+- Change the language using the direct link above.
+
 ## Support
 
 <a href="https://sociabuzz.com/tioclkp02" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
