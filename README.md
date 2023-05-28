@@ -11,7 +11,7 @@
 - Bisa di deploy di replit dan render
 - -  Selebihnya tambah sendiri fitur nya karena ini cuma base.
 
-- Free apikey hanya 10 limit per day jika ingin memiliki limit lebih silahkan registrasi terlebih dahulu, lalu chat bot saya [wa.me/62813958616959](http://wa.me/62813958616959?text=.claimtrial )
+- Free apikey hanya 100 limit per day jika ingin memiliki limit lebih silahkan registrasi terlebih dahulu, lalu chat bot saya [wa.me/62813958616959](http://wa.me/62813958616959?text=.claimtrial )
 
 + Register Key [`botcahx`](https://api.botcahx.live)
 + And Register Here [`lann`](https://api.betabotz.org)
