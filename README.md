@@ -18,8 +18,11 @@
 
 - Setelah mendapat key paste di config.js di baris global.btc dan global.lann
 
-## English
-[`EN`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/ENGLISH.md)
+# LANGUAGE 
+
+[`ID/`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/README.md)[`EN`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/ENGLISH.md)
+- Change the language using the direct link above.
+
 
 ## Support
 
