@@ -8,7 +8,7 @@ let handler = async (m, { text, command, conn }) => {
   conn.sendFile(m.chat, image, 'aiimg.jpg',  wm, m)
 
 }
-handler.command = handler.help = ['aiimg','aiimage','ai-image']
-handler.tags = ['internet']
+handler.command = handler.help = ['dalle','aiimg','aiimage','ai-image']
+handler.tags = ['info']
 
 module.exports = handler
