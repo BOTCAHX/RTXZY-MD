@@ -22,6 +22,6 @@ var dataGempa = [];
 };
 handler.command = handler.help = ['infogempa', 'gempa'];
 handler.tags = ['info'];
-handler.premium = true;
+handler.premium = false;
 handler.limit = true;
 module.exports = handler ;
