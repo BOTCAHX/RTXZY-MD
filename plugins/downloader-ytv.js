@@ -1,5 +1,9 @@
+
+
+
+
 var { youtubeSearch } = require('@bochilteam/scraper');
-const key = global.btc;
+const fetch = require('node-fetch')
 var handler = async (m, { conn, text, usedPrefix }) => {
   if (!text) throw 'Enter Title / link'
   try {
@@ -8,7 +12,7 @@ var handler = async (m, { conn, text, usedPrefix }) => {
     var { title, description, thumbnail, videoId, durationH, durationS, viewH, publishedTime } = vid
     var url = 'https://www.youtube.com/watch?v=' + videoId
 
-    const web = `https://api.botcahx.live/api/dowloader/yt?url=${url}&apikey=${key}`;
+    const web = `https://api.botcahx.live/api/dowloader/yt?url=${url}&apikey=${btc}`;
     const response = await fetch(web);
     const r = await response.json();
     const res = r.result.mp4.result;
@@ -38,7 +42,7 @@ var handler = async (m, { conn, text, usedPrefix }) => {
 
     conn.sendMessage(m.chat, {
       video: {
-        url: vide,
+        url: res,
         mimetype: 'video/mp4',
         attributes: [
           {
