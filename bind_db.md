@@ -1,27 +1,21 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Penjelasan 
+## DATABASE
  
-> **Warning**:Jika ingin database terkoneksi ke MongoDb 
-maka di haruskan daftar terlebih dahulu 
-akun mongodb anda, Namun sc ini ada akun
-Mongo gratis :
+### 1. LocalDB
+
+Untuk menggunakan LocalDB kamu tidak perlu mengisi variable global.mongo, biarkan kosong saja maka data akan otomatis tersimpan kedalam file database.json
+
+### 2. MongoDB
+
+Kamu bisa mendapatkan layanan database MongoDB gratis di MongoDB Atlas, buat kamu yang belum tau cara mendapatkan URL mongo bisa dilihat tutorialnya [`Disini`](https://m.youtube.com/watch?v=4-fRVd1yzr0)
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
+
+## Contoh
 ```bash
-web: node . --server
-db: node . --db "mongodb+srv://botwa:Jxrt6KiUNOOccDuo@cluster0.dytrn2e.mongodb.net/?retryWrites=true&w=majority" --autocleartmp --restrict
+global.mongo = 'mongodb+srv://mybot:example@cluster0.example.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
 ```
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-
-
->Salin Semua text di atas lalu paste kedalam file 
->Bernama Procfile
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-
->Sc ini cocok bagi pemula / yang baru memulai 
->Membuat bot karena fitur nya mudah di mengerti
->dan juga gampang instalasi nya
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
  
+
