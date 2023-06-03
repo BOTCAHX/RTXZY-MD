@@ -179,7 +179,7 @@ showAdAttribution: true
 }
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(allmenu|menu|help|tod|menunya)$/i
+handler.command = /^(allmenu|menu|help|bot)$/i
 
 handler.exp = 3
 
