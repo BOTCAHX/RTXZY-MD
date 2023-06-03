@@ -18,6 +18,9 @@
 - Lann [`Register`](https://api.betabotz.org)
 - Setelah mendapatkan ApiKey dari kedua website tersebut silahkan paste di config.js pada line global.btc dan global.lann
 
+## MongoDB
+[`Documentation`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/bind_db.md)
+ 
 
 ## Support
 
