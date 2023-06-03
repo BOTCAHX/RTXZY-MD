@@ -1,6 +1,6 @@
 const http = require('http');
 const os = require('os');
-const port = 3000; //custom ports here
+const port = 3306; //custom ports here, sample: (8080,3000,5000) and others
 const server = http.createServer();
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
@@ -10,7 +10,7 @@ server.on('request', (req, res) => {
     res.writeHead(200, {'Content-Type': 'application/json'});
     const data = {
       status: 'true',
-      message: 'Welcome User👋',
+      message: 'Bot Successfully Activated!',
       author: 'BOTCAHX'
     };
     const result = {
