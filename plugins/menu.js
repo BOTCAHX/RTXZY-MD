@@ -40,9 +40,9 @@ let tags = {
   'stalk': 'MENU STALK',
   'shortlink': 'SHORT LINK',
   'tools': 'MENU TOOLS',
-  'vote': 'MENU VOTING',
-  'nsfw': 'NSFW MENU', 
-  'asupan': 'ASUPAN MENU', 
+  'anonymous': 'ANONYMOUS CHAT',
+  'admin': 'ADMIN', 
+  'bokep': 'FILE', 
   '': 'No Category',
 }
 const defaultMenu = {
