@@ -1,4 +1,5 @@
 var { youtubeSearch } = require('@bochilteam/scraper');
+const key = global.btc;
 var handler = async (m, { conn, text, usedPrefix }) => {
   if (!text) throw 'Enter Title / link'
   try {
@@ -7,7 +8,10 @@ var handler = async (m, { conn, text, usedPrefix }) => {
     var { title, description, thumbnail, videoId, durationH, durationS, viewH, publishedTime } = vid
     var url = 'https://www.youtube.com/watch?v=' + videoId
 
-    let vide = `https://yt.btch.bz/download?URL=${url}&videoName=video`
+    const web = `https://api.botcahx.live/api/dowloader/yt?url=${url}&apikey=${key}`;
+    const response = await fetch(web);
+    const r = await response.json();
+    const res = r.result.mp4.result;
     var tmb = thumbnail
     var captionvid = `  ∘ Title: ${title}
   ∘ Published: ${publishedTime}
@@ -23,7 +27,7 @@ var handler = async (m, { conn, text, usedPrefix }) => {
           title: "",
           body: "Powered by",
           thumbnailUrl: tmb ,
-          sourceUrl: vide,
+          sourceUrl: web,
           mediaType: 1,
           showAdAttribution: true,
           renderLargerThumbnail: true
@@ -35,7 +39,7 @@ var handler = async (m, { conn, text, usedPrefix }) => {
     conn.sendMessage(m.chat, {
       video: {
         url: vide,
-        mimetype: 'video/webm',
+        mimetype: 'video/mp4',
         attributes: [
           {
             name: 'controls',
