@@ -24,7 +24,7 @@
         "wabot-aq",
         "multi-device",
         "BOTCAHX",
-        "baileyss"
+        "baileys"
     ],
     "homepage": "https://github.com/BOTCAHX/RTXZY-MD",
     "author": {
@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:hostinger-bot/baileyss",
+        "@adiwajshing/baileys": "npm:baileys-md@5.0.5",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "@vitalets/google-translate-api": "^9.0.0",
