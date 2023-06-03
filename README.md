@@ -6,7 +6,7 @@
 - Fix console logs pesan masuk 
 - Fix Downloader 
 - Penambahan sistem database local dan mongodb
-- Penambah outpu agar bisa di jalankan di replit/render
+- Penambah output url agar bisa di jalankan di replit/render
 - Menghubungkan RestApi sebagai media downloader
 
 **Apikey :**
