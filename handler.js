@@ -691,9 +691,9 @@ module.exports = {
                  console.log(m, m.quoted, e)
              }
            if (global.read === true) {
-  this.readMessages([m.key]);
+  console.log(chalk.bold.green("Auto-read is true. The message will be read automatically."));
 } else {
-  console.log("Autoread is false, not reading message.");
+  console.log(chalk.bold.red("Auto-read is false. The message will not be read automatically."));
 }
         }
     },
