@@ -145,14 +145,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       global.opts['nyimak'] = isEnable
       break
-    case 'autoread':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['autoread'] = isEnable
-      break
     case 'pconly':
     case 'privateonly':
       isAll = true
@@ -205,7 +197,6 @@ List option:
 | whitelistmycontacts
 | restrict
 | nyimak
-| autoread
 | pconly
 | gconly
 | swonly
@@ -220,7 +211,8 @@ ${usedPrefix}disable welcome
 `.trim())
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['group', 'owner']
+handler.tags = ['owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
 module.exports = handler
+
