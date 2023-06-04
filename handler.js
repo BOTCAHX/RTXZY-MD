@@ -690,7 +690,11 @@ module.exports = {
              } catch (e) {
                  console.log(m, m.quoted, e)
              }
-            if (opts['autoread']) await this.readMessages([m.key]) //this.chatRead(m.chat, m.isGroup ? m.sender : undefined, m.id || m.key.id).catch(() => { })
+           if (global.read === true) {
+  this.readMessages([m.key]);
+} else {
+  console.log("Autoread is false, not reading message.");
+}
         }
     },
      async participantsUpdate({ id, participants, action }) {
