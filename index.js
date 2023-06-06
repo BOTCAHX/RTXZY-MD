@@ -1,26 +1,28 @@
 const http = require('http');
 const os = require('os');
 const port = 3306; //custom ports here, sample: (8080,3000,5000) and others
-const server = http.createServer();
+const express = require('express');
+const app = express();
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
 
-server.on('request', (req, res) => {
-  if (req.url === '/') {
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    const data = {
-      status: 'true',
-      message: 'Bot Successfully Activated!',
-      author: 'BOTCAHX'
-    };
-    const result = {
-      response: data
-    };
-    res.end(JSON.stringify(result, null, 2));
-  }
+app.get('/', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  const data = {
+    status: 'true',
+    message: 'Bot Successfully Activated!',
+    author: 'BOTCAHX'
+  };
+  const result = {
+    response: data
+  };
+  res.send(JSON.stringify(result, null, 2));
 });
 
-server.listen(port);
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
 
 cluster = require("cluster");
 const { spawn } = require("child_process");
