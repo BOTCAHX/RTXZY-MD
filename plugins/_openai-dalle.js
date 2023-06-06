@@ -3,7 +3,7 @@ let handler = async (m, { text, command, conn }) => {
 
   if (!text) throw 'Masukan teks untuk diubah menjadi gambar'
 
-  let response = await fetch(`https://botcahx.cyclic.app/dalle?text=${encodeURIComponent(text)}`)
+  let response = await fetch(`https://botcahx.vercel.app/dalle?text=${encodeURIComponent(text)}`)
   let image = await response.buffer()
   conn.sendFile(m.chat, image, 'aiimg.jpg',  wm, m)
 
