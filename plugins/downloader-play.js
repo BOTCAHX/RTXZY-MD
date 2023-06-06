@@ -18,10 +18,10 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       publishedTime,
     } = vid;
     const url = `https://www.youtube.com/watch?v=${videoId}`;
-    const web = `https://api.botcahx.live/api/dowloader/yt?url=${url}&apikey=${key}`;
+    const web = `https://yt.nxr.my.id/yt2?url=${url}&type=audio`;
     const response = await fetch(web);
     const r = await response.json();
-    const res = r.result.mp3.result;
+    const res = r.data.url;
     const tmb = thumbnail;
     const captionvid = `  ∘ Title: ${title}
   ∘ Published: ${publishedTime}
@@ -37,7 +37,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
           title: "",
           body: "Powered by",
           thumbnailUrl: tmb,
-          sourceUrl: web,
+          sourceUrl: url,
           mediaType: 1,
           showAdAttribution: true,
           renderLargerThumbnail: true,
@@ -46,7 +46,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
     });
     if (durationS > 18000)
       return conn.sendMessage(m.chat, {
-        text: `*Link Original:* ${await cut(url)}\n\n_Durasi terlalu panjang..._\n*Duration Limit!*`,
+        text: `*Source Video:* ${await cut(url)}\n\n_Durasi terlalu panjang..._`,
       }, {
         quoted: pesan,
       });
@@ -60,7 +60,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
           title: title,
           body: "",
           thumbnailUrl: tmb,
-          sourceUrl: web,
+          sourceUrl: url,
           mediaType: 1,
           showAdAttribution: true,
           renderLargerThumbnail: true,
@@ -86,8 +86,4 @@ async function cut(url) {
   const response = await fetch(`https://api.botcahx.live/api/linkshort/bitly?link=${url}&apikey=${key}`);
   if (!response.ok) throw false;
   return await response.text();
-}
-
-async function delay(ms) {
-  await new Promise((resolve) => setTimeout(resolve, ms));
-}
+}  
