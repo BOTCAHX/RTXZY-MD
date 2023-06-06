@@ -6,7 +6,7 @@ var handler = async (m, {
  }) => {
 if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* Siapa presiden Indonesia? `
 await m.reply(wait)
-  var apii = await fetch(`https://botcahx.cyclic.app/openai?text=${text}`)
+  var apii = await fetch(`https://botcahx.vercel.app/openai?text=${text}`)
   var js = await apii.json()
   await m.reply(js.result)
 }      
