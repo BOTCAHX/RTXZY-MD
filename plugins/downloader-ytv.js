@@ -1,69 +1,59 @@
-
-
-
-
-var { youtubeSearch } = require('@bochilteam/scraper');
 const fetch = require('node-fetch')
-var handler = async (m, { conn, text, usedPrefix }) => {
-  if (!text) throw 'Enter Title / link'
-  try {
-    var vid = (await youtubeSearch(text)).video[0]
-    if (!vid) throw 'Video/Audio Tidak Ditemukan'
-    var { title, description, thumbnail, videoId, durationH, durationS, viewH, publishedTime } = vid
-    var url = 'https://www.youtube.com/watch?v=' + videoId
+const { servers, ytv } = require('../scraper/youtube')
+const limit = 30
 
-    const web = `https://api.botcahx.live/api/dowloader/yt?url=${url}&apikey=${btc}`;
-    const response = await fetch(web);
-    const r = await response.json();
-    const res = r.result.mp4.result;
-    var tmb = thumbnail
-    var captionvid = `  ∘ Title: ${title}
-  ∘ Published: ${publishedTime}
-  ∘ Duration: ${durationH}
-  ∘ Second: ${durationS}
-  ∘ Views: ${viewH}  
-  ∘ Url:  ${url}
-  ∘ Description: ${description}`
-    var pesan = await conn.sendMessage(m.chat, {
-      text: captionvid,
-      contextInfo: {
-        externalAdReply: {
-          title: "",
-          body: "Powered by",
-          thumbnailUrl: tmb ,
-          sourceUrl: web,
-          mediaType: 1,
-          showAdAttribution: true,
-          renderLargerThumbnail: true
-        }
-      }
-    })
-    if (durationS > 18000) return conn.sendMessage(m.chat, { text: `*Link Original:* ${await cut(url)}\n\n_Durasi terlalu panjang..._\n*Duration Limit!*` }, { quoted: pesan })
+async function shortlink(url) {
+  const isUrl = /https?:\/\//.test(url)
+  return isUrl ? (await require('axios').get('https://tinyurl.com/api-create.php?url=' + encodeURIComponent(url))).data : ''
+}
 
-    conn.sendMessage(m.chat, {
-      video: {
-        url: res,
-        mimetype: 'video/mp4',
-        attributes: [
-          {
-            name: 'controls',
-            value: 'true'
-          },
-          {
-            name: 'autoplay',
-            value: 'true'
-          }
-        ]
+async function handler(m, { conn, args, isPrems, isOwner }) {
+  if (!args || !args[0]) {
+    throw 'Uhm... urlnya mana?'
+  }
+
+  const chat = db.data.chats[m.chat]
+  const server = (args[1] || servers[0]).toLowerCase()
+  const { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
+  
+  const isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
+  
+  conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
+*Title:* ${title}
+*${isLimit ? 'Pakai ' : ''}Link:* ${await shortlink(dl_link)}
+`.trim(), m)
+  
+  let _thumb = {}
+  try { 
+    _thumb = { thumbnail: await (await fetch(thumb)).buffer() } 
+  } catch (e) { }
+  
+  if (!isLimit) {
+    conn.sendFile(
+      m.chat, 
+      dl_link, 
+      title + '.mp4', 
+      `*Title:* ${title}`.trim(), 
+      m, 
+      false, 
+      {
+        ..._thumb,
+        asDocument: chat.useDocument
       }
-    }, { quoted: pesan })
-  } catch (e) {
-    throw 'Video/Audio Tidak Ditemukan'
+    )
   }
 }
 
-handler.command = handler.help = ['ytmp4', 'ytv']
+handler.help = ['ytv <url> [server: ' + servers.join(', ') + ']']
 handler.tags = ['downloader']
+handler.command = /^ytv?$/i
+
+
+handler.fail = null
 handler.exp = 0
 handler.limit = true
-handler.premium = false
+
 module.exports = handler
+
+
+
