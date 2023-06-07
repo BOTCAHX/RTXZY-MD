@@ -1,4 +1,5 @@
 const { youtubeSearch } = require('@bochilteam/scraper');
+const { ytmp3 } = require('../scrape/yt')
 const key = global.btc;
 const fetch = require('node-fetch');
 
@@ -18,10 +19,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       publishedTime,
     } = vid;
     const url = `https://www.youtube.com/watch?v=${videoId}`;
-    const web = `https://yt.nxr.my.id/yt2?url=${url}&type=audio`;
-    const response = await fetch(web);
-    const r = await response.json();
-    const res = r.data.url;
+    const _  = await ytmp3(url)
     const tmb = thumbnail;
     const captionvid = `  ∘ Title: ${title}
   ∘ Published: ${publishedTime}
@@ -52,7 +50,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       });
     conn.sendMessage(m.chat, {
       audio: {
-        url: res,
+        url: _.url,
       },
       mimetype: 'audio/mpeg',
       contextInfo: {
@@ -86,4 +84,5 @@ async function cut(url) {
   const response = await fetch(`https://api.botcahx.live/api/linkshort/bitly?link=${url}&apikey=${key}`);
   if (!response.ok) throw false;
   return await response.text();
-}  
+}
+          
