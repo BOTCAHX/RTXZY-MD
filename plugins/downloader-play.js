@@ -1,5 +1,5 @@
 const { youtubeSearch } = require('@bochilteam/scraper');
-const { ytmp3 } = require('../scrape/yt')
+const { ytmp3 } = require('../scraper/yt')
 const key = global.btc;
 const fetch = require('node-fetch');
 
