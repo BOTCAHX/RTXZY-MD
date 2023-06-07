@@ -690,11 +690,7 @@ module.exports = {
              } catch (e) {
                  console.log(m, m.quoted, e)
              }
-           if (global.read === true) {
-  console.log(chalk.bold.green("Auto-read is true. The message will be read automatically."));
-} else {
-  console.log(chalk.bold.red("Auto-read is false. The message will not be read automatically."));
-}
+            if (opts['autoread']) await this.readMessages([m.key])
         }
     },
      async participantsUpdate({ id, participants, action }) {
