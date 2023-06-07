@@ -8,7 +8,7 @@ let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, con
      else limit = 100
      if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
      if (!args[0].match(/mediafire/gi)) throw `url salah`
-     const sentMsg = await m.reply('wait')
+     const sentMsg = await m.reply(wait)
      let full = /f$/i.test(command)
      let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
      let ss = await fetch(`https://api.botcahx.live/api/tools/sstablet?url={u}&apikey=${btc}`).buffer()
