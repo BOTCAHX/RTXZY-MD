@@ -5,9 +5,10 @@
 - Fix QR code di terminal
 - Fix console logs pesan masuk 
 - Fix Downloader 
-- Penambahan sistem database local dan mongodb
 - Penambah output url agar bisa di jalankan di replit/render
+
 - Menghubungkan RestApi sebagai media downloader
+
 
 **Apikey :**
 - [✓] Free ApiKey 100 Request (/day)
@@ -18,8 +19,7 @@
 - Lann [`Register`](https://api.betabotz.org)
 - Setelah mendapatkan ApiKey dari kedua website tersebut silahkan paste di config.js pada line global.btc dan global.lann
 
-## MongoDB
-[`Documentation`](https://github.com/BOTCAHX/RTXZY-MD/blob/pro/bind_db.md)
+
  
 
 ## Support
