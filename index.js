@@ -1,13 +1,12 @@
 const http = require('http');
 const os = require('os');
-const port = 3306; //custom ports here, sample: (8080,3000,5000) and others
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3306;
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
-
 app.get('/', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
+res.setHeader('Content-Type', 'application/json');
   const data = {
     status: 'true',
     message: 'Bot Successfully Activated!',
@@ -16,15 +15,14 @@ app.get('/', (req, res) => {
   const result = {
     response: data
   };
-  res.send(JSON.stringify(result, null, 2));
+res.send(JSON.stringify(result, null, 2));
 });
-
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
 
-cluster = require("cluster");
+const cluster = require("cluster");
 const { spawn } = require("child_process");
 const path = require("path");
 const fs = require("fs");
