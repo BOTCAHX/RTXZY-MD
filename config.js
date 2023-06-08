@@ -4,9 +4,7 @@ Penjelasan selanjutnya adalah untuk mengisi variabel global.mongo, yang merupaka
 **/
 
 
-
 global.owner = ['6281395861695']  
-global.mongo = '' //isi dengan link mongodb kamu jika tidak punya biarkan saja kosong
 global.mods = ['6281395861695'] 
 global.prems = ['6281395861695']
 global.nameowner = 'Tio'
