@@ -3,24 +3,12 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let tio = clockString(_uptime)
     let time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
 
-var reply = `
+var ct = `
 *───「 RUNTIME BOT 」───*
 
 Runtime : ${tio}
     `
-
-conn.sendMessage(m.chat, {
-text: reply,
-contextInfo: {
-externalAdReply: {
-title: "",
-body: time,
-thumbnailUrl: "https://telegra.ph/file/dc5a67d724b016574129b.jpg",
-sourceUrl: "",
-mediaType: 1,
-renderLargerThumbnail: true
-}}})
-
+m.reply(ct)
 }
 handler.help = ['runtime']
 handler.tags = ['info']
