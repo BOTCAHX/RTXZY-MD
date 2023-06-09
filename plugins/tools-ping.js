@@ -1,17 +1,20 @@
-/*Apasi kontol cuma nyuri fitur doang*/
-let { totalmem, freemem } = require('os')
-let os = require("os");
-let util = require("util");
-let osu = require("node-os-utils");
-let { performance } = require("perf_hooks");
-let { sizeFormatter } = require("human-readable");
-let format = sizeFormatter({
+var { totalmem,
+freemem
+ } = require('os')
+var os = require("os");
+var util = require("util");
+var osu = require("node-os-utils");
+var { performance } = require("perf_hooks");
+var { sizeFormatter } = require("human-readable");
+var format = sizeFormatter({
   std: "JEDEC", // 'SI' (default) | 'IEC' | 'JEDEC'
   decimalPlaces: 2,
   keepTrailingZeroes: false,
   render: (literal, symbol) => `${literal} ${symbol}B`,
 })
-var handler = async (m, { conn }) => {
+var handler = async (m, { 
+conn 
+}) => {
   const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
   const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) //groups.filter(v => !v.read_only)
   const used = process.memoryUsage()
@@ -42,7 +45,7 @@ var handler = async (m, { conn }) => {
       },
     }
   );
-  let _muptime
+  var _muptime
     if (process.send) {
       process.send('uptime')
       _muptime = await new Promise(resolve => {
@@ -50,40 +53,34 @@ var handler = async (m, { conn }) => {
         setTimeout(resolve, 1000)
       }) * 1000
     }
-await m.reply('_Testing speed..._')
-   let muptime = clockString(_muptime)
-  let old = performance.now();
-  let neww = performance.now();
-  let speed = neww - old;
-  let cpux = osu.cpu
-        let cpuCore = cpux.count()
-        let drive = osu.drive
-        let mem = osu.mem
-        let netstat = osu.netstat
-        let HostN = osu.os.hostname()
-        let OS = osu.os.platform()
-        let ipx = osu.os.ip()
-        let cpuModel = cpux.model()
-  let cek = await(await fetch("https://api.myip.com")).json().catch(_ => 'error')
+   var muptime = clockString(_muptime)
+  var old = performance.now();
+  var neww = performance.now();
+  var speed = neww - old;
+  var cpux = osu.cpu
+        var cpuCore = cpux.count()
+        var drive = osu.drive
+        var mem = osu.mem
+        var netstat = osu.netstat
+        var HostN = osu.os.hostname()
+        var OS = osu.os.platform()
+        var cpuModel = cpux.model()
         
-        let ip = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.ip)
-        let cr = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.country)
-        let cc = (cek == 'error' ? 'ɴᴏᴛ ᴅᴇᴛᴇᴄᴛ' : cek.cc)
-        
-        let d = new Date(new Date + 3600000)
-        let locale = 'id'
-    let weeks = d.toLocaleDateString(locale, { weekday: 'long' })
-    let dates = d.toLocaleDateString(locale, {
+        var d = new Date(new Date + 3600000)
+        var locale = 'id'
+    var weeks = d.toLocaleDateString(locale, { weekday: 'long' })
+    var dates = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
       year: 'numeric'
     })
-        let times = d.toLocaleTimeString(locale, {
+        var times = d.toLocaleTimeString(locale, {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric'
     })
-  m.reply(`*ᴘ ɪ ɴ ɢ*
+await m.reply('_Testing speed..._')
+  var txt = `*ᴘ ɪ ɴ ɢ*
 ${Math.round(neww - old)} ms
 ${speed} ms
 
@@ -100,14 +97,10 @@ ${muptime}
 *s ᴇ ʀ ᴠ ᴇ ʀ*
 *🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
 *🔵 ғʀᴇᴇRAM:* ${format(freemem())}
+*🔴 ᴍᴇᴍᴏʀy:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *🔭 ᴘʟᴀᴛғᴏʀᴍ:* ${os.platform()}
 *🧿 sᴇʀᴠᴇʀ:* ${os.hostname()}
 *💻 ᴏs:* ${OS}
-*📍 ɪᴘ:* ${ip}
-*🌎 ᴄᴏᴜɴᴛʀʏ:* ${cr}
-*💬 ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ:* ${cc}
-*📡 ᴄᴘᴜ ᴍᴏᴅᴇʟ:* ${cpuModel}
-*🔮 ᴄᴘᴜ ᴄᴏʀᴇ:* ${cpuCore} Core
 *⏰ ᴛɪᴍᴇ sᴇʀᴠᴇʀ:* ${times}
 
 _NodeJS Memory Usage_
@@ -156,7 +149,9 @@ ${cpus
   .join("\n\n")}`
     : ""
 }
-`.trim())
+`
+conn.sendFile(m.chat, `https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg`, null, txt, m)  
+
 }
 handler.help = ['ping', 'speed'];
 handler.tags = ['info'];
@@ -164,9 +159,13 @@ handler.command = /^(ping|speed|pong|ingfo)$/i
 module.exports = handler;
 
 function clockString(ms) {
-  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+  var d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
+  var h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
+  var m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  var s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [d, 'D ', h, 'H ', m, 'M ', s, 'S '].map(v => v.toString().padStart(2, 0)).join('')
 }
+
+        
+       
+
