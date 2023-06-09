@@ -61,7 +61,7 @@ Ping : *${Math.round(neww - old)} ms*
 Internet IN : *${netsIn}*
 Internet OUT : *${netsOut}*
 `
- conn.sendMessage(m.chat, {
+ /*conn.sendMessage(m.chat, {
 text: txt,
 contextInfo: {
 externalAdReply: {
@@ -71,7 +71,8 @@ thumbnailUrl: "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg",
 sourceUrl: "",
 mediaType: 1,
 renderLargerThumbnail: true
-}}})
+}}})*/
+conn.reply(m.chat, txt, m)
         console.log(OS)
     } catch (e) {
         console.log(e)
