@@ -1,3 +1,6 @@
+/*
+Untuk pengguna fitur ini memerlukan puppeteer jadi silahkan install puppeteer terlebih dahulu 
+
 const carbon = require('carbon-now-scraper');
 const fs = require('fs');
 let handler = async (m, { conn, text, command}) => {
