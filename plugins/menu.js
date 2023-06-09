@@ -160,19 +160,7 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
       level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-/*conn.sendMessage(m.chat, {
-text: text,
-contextInfo: {
-externalAdReply: {
-title: date,
-body: '',
-thumbnailUrl: "https://telegra.ph/file/dc5a67d724b016574129b.jpg",
-sourceUrl: "https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r",
-mediaType: 1,
-renderLargerThumbnail: true,
-showAdAttribution: true
-}}}, { quoted: m })*/
-conn.reply(m.chat, text, m)    
+  conn.sendFile(m.chat, `https://telegra.ph/file/dc5a67d724b016574129b.jpg`, null, text, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
