@@ -28,20 +28,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
   ∘ Views: ${viewH}  
   ∘ Url:  ${url}
   ∘ Description: ${description}`;
-    const pesan = await conn.sendMessage(m.chat, {
-      text: captionvid,
-      contextInfo: {
-        externalAdReply: {
-          title: "",
-          body: "Powered by",
-          thumbnailUrl: tmb,
-          sourceUrl: url,
-          mediaType: 1,
-          showAdAttribution: true,
-          renderLargerThumbnail: true,
-        },
-      },
-    });
+    const pesan = await conn.sendFile(m.chat, tmb, null, captionvid, m)
     if (durationS > 18000)
       return conn.sendMessage(m.chat, {
         text: `*Source Video:* ${await cut(url)}\n\n_Durasi terlalu panjang..._`,
