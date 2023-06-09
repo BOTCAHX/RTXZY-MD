@@ -33,7 +33,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       return conn.sendMessage(m.chat, {
         text: `*Source Video:* ${await cut(url)}\n\n_Durasi terlalu panjang..._`,
       }, {
-        quoted: pesan,
+        quoted: m,
       });
     conn.sendMessage(m.chat, {
       audio: {
