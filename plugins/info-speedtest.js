@@ -11,17 +11,7 @@ let handler = async (m, { conn}) => {
     } finally {
         let { stdout, stderr } = o
         if (stdout.trim()) 
-conn.sendMessage(m.chat, {
-text: stdout,
-contextInfo: {
-externalAdReply: {
-title: "",
-body: "",
-thumbnailUrl: "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg",
-sourceUrl: "",
-mediaType: 1,
-renderLargerThumbnail: true
-}}})
+        conn.sendFile(m.chat, `https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg`, null, stdout, m)
         if (stderr.trim()) m.reply(stderr)
     }
 }
