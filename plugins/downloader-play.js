@@ -28,7 +28,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
   ∘ Views: ${viewH}  
   ∘ Url:  ${url}
   ∘ Description: ${description}`;
-    const pesan = await conn.sendFile(m.chat, tmb, null, captionvid, m)
+    const pesan = conn.sendMessage(m.chat,{ image :{ url : tmb } , caption : captionvid }, { quoted: m })
     if (durationS > 18000)
       return conn.sendMessage(m.chat, {
         text: `*Source Video:* ${await cut(url)}\n\n_Durasi terlalu panjang..._`,
@@ -52,7 +52,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
         },
       },
     }, {
-      quoted: pesan,
+      quoted: m,
     });
   } catch (e) {
     throw 'Video/Audio Tidak Ditemukan';
@@ -72,4 +72,3 @@ async function cut(url) {
   if (!response.ok) throw false;
   return await response.text();
 }
-          
