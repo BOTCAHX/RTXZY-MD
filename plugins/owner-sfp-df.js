@@ -2,7 +2,7 @@ let fs = require('fs');
 let handler = async (m, { text, usedPrefix, command }) => {
   if (!text) throw `uhm.. teksnya mana?\n\npenggunaan:\n${usedPrefix + command} <teks>\n\ncontoh:\n${usedPrefix + command} menu`;
 
-  if (command === 'sf') {
+  if (command === 'sfp') {
     if (!m.quoted.text) throw `balas pesan nya!`;
     let path = `plugins/${text}.js`;
     await fs.writeFileSync(path, m.quoted.text);
@@ -15,7 +15,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
   }
 };
 
-handler.help = ['sf', 'df'].map(v => v + ' <teks>');
+handler.help = ['sfp', 'df'].map(v => v + ' <teks>');
 handler.tags = ['owner'];
 handler.command = /^(sf|df)$/i;
 handler.rowner = true;
