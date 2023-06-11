@@ -1,23 +1,19 @@
-let fs = require('fs');
-let handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) throw `uhm.. teksnya mana?\n\npenggunaan:\n${usedPrefix + command} <teks>\n\ncontoh:\n${usedPrefix + command} menu`;
+const fs = require('fs')
+const path = require('path')
+let handler = async (m, { usedPrefix, command, text }) => {
+    if (!text) throw `where is the text?\n\nexempel: ${usedPrefix + command} menu`
+    const filename = path.join(__dirname, `./${text}${!/\.js$/i.test(text) ? '.js' : ''}`)
+    const listPlugins = fs.readdirSync(path.join(__dirname)).map(v => v.replace(/\.js/, ''))
+    if (!fs.existsSync(filename)) return m.reply(`
+'${filename}' not found!
+${listPlugins.map(v => v).join('\n').trim()}
+`.trim())
+    m.reply(fs.readFileSync(filename, 'utf8'))
+}
+handler.help = ['getplugin'].map(v => v + ' [filename]')
+handler.tags = ['owner']
+handler.command = /^(getplugin|get ?plugin|gp)$/i
 
-  if (command === 'sf') {
-    if (!m.quoted.text) throw `balas pesan nya!`;
-    let path = `plugins/${text}.js`;
-    await fs.writeFileSync(path, m.quoted.text);
-    m.reply(`tersimpan di ${path}`);
-  } else if (command === 'df') {
-    let path = `plugins/${text}.js`;
-    if (!fs.existsSync(path)) throw `file plugin ${text}.js tidak ditemukan`;
-    fs.unlinkSync(path);
-    m.reply(`file plugin ${text}.js berhasil dihapus`);
-  }
-};
+handler.rowner = true
 
-handler.help = ['sf', 'df'].map(v => v + ' <teks>');
-handler.tags = ['owner'];
-handler.command = /^(sf|df)$/i;
-handler.rowner = true;
-
-module.exports = handler;
+module.exports = handler
