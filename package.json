@@ -1,6 +1,6 @@
 {
     "name": "rtxzy",
-    "version": "5.0.7",
+    "version": "6.2.1",
     "description": "Customizable WhatsApp Bot",
     "depecrated": false,
     "main": "index.js",
@@ -22,7 +22,7 @@
         "whatsapp",
         "Games-wabot",
         "wabot-aq",
-        "multi-device",
+        "whiskeysockets",
         "BOTCAHX",
         "baileys"
     ],
