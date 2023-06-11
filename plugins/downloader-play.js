@@ -1,74 +1,70 @@
-const { youtubeSearch } = require('@bochilteam/scraper');
-const { ytmp3 } = require('../scraper/yt')
-const key = global.btc;
-const fetch = require('node-fetch');
-
-const handler = async (m, { conn, text, usedPrefix }) => {
-  if (!text) throw 'Enter Title / link';
-  try {
-    const vid = (await youtubeSearch(text)).video[0];
-    if (!vid) throw 'Video/Audio Tidak Ditemukan';
-    const {
-      title,
-      description,
-      thumbnail,
-      videoId,
-      durationH,
-      durationS,
-      viewH,
-      publishedTime,
-    } = vid;
-    const url = `https://www.youtube.com/watch?v=${videoId}`;
-    const _  = await ytmp3(url)
-    const tmb = thumbnail;
-    const captionvid = `  ∘ Title: ${title}
-  ∘ Published: ${publishedTime}
-  ∘ Duration: ${durationH}
-  ∘ Second: ${durationS}
-  ∘ Views: ${viewH}  
-  ∘ Url:  ${url}
-  ∘ Description: ${description}`;
-    const pesan = conn.sendMessage(m.chat,{ image :{ url : tmb } , caption : captionvid }, { quoted: m })
-    if (durationS > 18000)
-      return conn.sendMessage(m.chat, {
-        text: `*Source Video:* ${await cut(url)}\n\n_Durasi terlalu panjang..._`,
-      }, {
-        quoted: m,
-      });
-    conn.sendMessage(m.chat, {
-      audio: {
-        url: _.url,
-      },
-      mimetype: 'audio/mpeg',
-      contextInfo: {
-        externalAdReply: {
-          title: title,
-          body: "",
-          thumbnailUrl: tmb,
-          sourceUrl: url,
-          mediaType: 1,
-          showAdAttribution: true,
-          renderLargerThumbnail: true,
-        },
-      },
-    }, {
-      quoted: m,
-    });
-  } catch (e) {
-    throw 'Video/Audio Tidak Ditemukan';
-  }
-};
-
-handler.command = handler.help = ['play', 'song', 'youtube', 'ytmp3', 'ds', 'downloadyt', 'yta'];
+var { youtubeSearch } = require('@bochilteam/scraper');
+var hxz = require('hxz-api');
+var handler = async (m, {
+    conn,
+    text,
+    usedPrefix
+}) => {
+    if (!text) throw 'Enter Title / Link From YouTube!'
+    try {
+        var vid = (await youtubeSearch(text)).video[0]
+        if (!vid) throw 'Video/Audio Tidak Ditemukan'
+        var {
+            title,
+            description,
+            thumbnail,
+            videoId,
+            durationH,
+            durationS,
+            viewH,
+            publishedTime
+        } = vid
+        if (durationS >= 3600) { 
+            m.reply('Video is longer than 1 hour!')
+        } else {
+            var url = 'https://www.youtube.com/watch?v=' + videoId
+            var cvr
+            try {
+                cvr = await hxz.youtube(url)
+            } catch (e) {
+                conn.reply(m.chat, wait, m)
+                cvr = await hxz.youtube(url) 
+            }
+            var sce = cvr.mp3
+            var tmb = thumbnail
+            var captionvid = `∘ Title: ${title}\n∘ Published: ${publishedTime}\n∘ Duration: ${durationH}\n∘ Second: ${durationS}\n∘ Views: ${viewH}\n∘ Url:  ${url}\n∘ Description: ${description}`
+            var pesan = conn.sendMessage(m.chat,{ image :{ url : tmb } , caption : captionvid }, { quoted: m })
+ conn.sendMessage(m.chat, {
+                audio: {
+                    url: sce
+                },
+                mimetype: 'audio/mpeg',
+                contextInfo: {
+                    externalAdReply: {
+                        title: title,
+                        body: "",
+                        thumbnailUrl: tmb,
+                        sourceUrl: url,
+                        mediaType: 1,
+                        showAdAttribution: true,
+                        renderLargerThumbnail: true
+                    }
+                }
+            }, {
+                quoted: m
+            })
+        }
+    } catch (e) {
+       //m.reply('Error: ' + e)
+       //var eror = e.toString() 
+       conn.reply(m.chat, `*Error:* ` + eror, m)
+    }
+}
+handler.command = handler.help = ['play', 'song', 'ds', 'ydl'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
 handler.premium = false;
 module.exports = handler;
 
-async function cut(url) {
-  url = encodeURIComponent(url);
-  const response = await fetch(`https://api.botcahx.live/api/linkshort/bitly?link=${url}&apikey=${key}`);
-  if (!response.ok) throw false;
-  return await response.text();
-}
+    
