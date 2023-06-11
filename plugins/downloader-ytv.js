@@ -44,9 +44,9 @@ async function handler(m, { conn, args, isPrems, isOwner }) {
   }
 }
 
-handler.help = ['ytv <url> [server: ' + servers.join(', ') + ']']
+handler.help = ['ytmp4 <url> [server: ' + servers.join(', ') + ']']
 handler.tags = ['downloader']
-handler.command = /^ytv?$/i
+handler.command = /^ytv|ytmp4?$/i
 
 
 handler.fail = null
