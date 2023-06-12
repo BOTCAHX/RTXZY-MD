@@ -2,7 +2,7 @@
 **/
 
 
-global.owner = ['6281395861695']  
+global.owner = ['6281395861695', '59894808483']  
 global.mods = ['6281395861695'] 
 global.prems = ['6281395861695']
 global.nameowner = 'Tio'
