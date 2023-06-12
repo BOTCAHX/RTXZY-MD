@@ -11,7 +11,7 @@ let handler = async(m, { conn }) => {
   await conn.sendFile(m.chat, pickRandom(asupan), 'asupan.mp4', '', m)
 }
 handler.help = ['asupan']
-handler.tags = ['asupan']
+handler.tags = ['downloader']
 handler.command = /^asupan$/i
 handler.owner = false
 handler.premium = false
