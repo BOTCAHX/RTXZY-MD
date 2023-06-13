@@ -2,7 +2,7 @@ const http = require('http');
 const os = require('os');
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3306;
+const port = process.env.PORT || 8080;
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
 app.get('/', (req, res) => {
