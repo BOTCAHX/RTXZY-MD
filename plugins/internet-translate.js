@@ -15,7 +15,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
     if (!result) throw 'Terjemahan gagal.'
     m.reply(result.text.toString())
 }
-handler.help = ['trad <leng> <text>']
+handler.help = ['tr <leng> <text>']
 handler.tags = ['tools']
 handler.command = ['translate', 'tl', 'trid', 'tr']
 module.exports = handler
