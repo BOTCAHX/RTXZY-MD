@@ -7,7 +7,7 @@
 - Fix Downloader 
 - Penambah output url agar bisa di jalankan di replit/render
 
-- Menghubungkan RestApi sebagai media downloader
+- Menggunakan 60% fitur dari [`RestApi`](https://api.botcahx.live) sebagai media downloader
 
 
 **Apikey :**
