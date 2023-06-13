@@ -30,9 +30,9 @@ var handler = async (m, { conn, command, args }) => {
     conn.reply(m.chat, `Terjadi error!`, m);
   }
 }
-handler.help = ['ssweb', 'sshp', 'sspc'];
+handler.help = ['ssweb', 'sslaptop', 'sspc','ss'];
 handler.tags = ['tools'];
-handler.command = ['ssweb', 'sspc', 'ss',]
+handler.command = ['ssweb', 'sspc', 'ss','sslaptop']
 
 handler.limit = true;
 handler.fail = null;
