@@ -1,4 +1,4 @@
-const { tiktok } = require('../scraper/tiktok');
+const { ttdl } = require('btch-downloader');
 let handler = async (m, { conn, text, args, usedPrefix, command}) => {
     if (!args[0]) throw `*Masukan link Tiktok*\n\n*Example :* ${usedPrefix + command} https://vm.tiktok.com/ZMYG92bUh/`
     if (!args[0].match(/tiktok/gi)) throw `Bukan tautan dari tiktok!`
