@@ -1,12 +1,11 @@
 var { 
 sticker5 
 } = require('../lib/sticker')
-var fs = require('fs')
 var handler = async (m, {
  conn, 
  command
  }) => {
-    var error = fs.readFileSync(`./media/sticker/emror.webp`)
+    var error = (`https://telegra.ph/file/12141dd462ecabeed1347.png`)
     try {
         if (command == 'dinokuning' || command == 'sdino') {
         const res = `https://api.botcahx.live/api/sticker/dinokuning?apikey=${btc}`
