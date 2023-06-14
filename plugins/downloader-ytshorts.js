@@ -9,7 +9,7 @@ var handler = async (m, {conn, text, usedPrefix}) => {
     throw 'Video/Audio Tidak Ditemukan'
   }
 }
-handler.command = handler.help =['ytshorts','youtubeshorts','shorts'];
+handler.command = handler.help =['ytshorts','youtubeshorts','shorts','short'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
