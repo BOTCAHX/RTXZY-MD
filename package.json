@@ -52,7 +52,7 @@
         "axios": "^0.27.2",
         "base64-to-image": "^1.0.2",
         "brainly-scraper-v2": "^2.0.15",
-        "btch-downloader": "^1.0.0", 
+        "btch-downloader": "^1.0.1", 
         "chalk": "^4.1.2",
         "carbon-now-scraper": "^1.0.1",
         "cheerio": "^1.0.0-rc.12",
