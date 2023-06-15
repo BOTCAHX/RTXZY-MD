@@ -3,7 +3,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command}) => {
     if (!args[0]) throw `*Masukan link Tiktok*\n\n*Example :* ${usedPrefix + command} https://vm.tiktok.com/ZMYG92bUh/`
     if (!args[0].match(/tiktok/gi)) throw `Bukan tautan dari tiktok!`
     try {
-        const res = await tiktok(args[0]);
+        const res = await ttdl(args[0]);
         const { video, title, title_audio } = res;
         conn.sendFile(m.chat, video[0], 'tiktok.mp4', `
 ┌─⊷ *TIKTOK DL*
