@@ -3,12 +3,12 @@ let handler = async (m, { text, command, conn }) => {
 
   if (!text) throw 'Masukan teks untuk diubah menjadi gambar'
 
-  let response = await fetch(`https://botcahx.vercel.app/dalle?text=${encodeURIComponent(text)}`)
+  let response = await fetch(`https://api.botcahx.live/api/search/openai-image?text=${encodeURIComponent(text)}&apikey=${btc}`)
   let image = await response.buffer()
   conn.sendFile(m.chat, image, 'aiimg.jpg',  wm, m)
 
 }
-handler.command = handler.help = ['dalle','aiimg','aiimage','ai-image']
-handler.tags = ['info']
+handler.command = handler.help = ['aiimg','aiimage','ai-image']
+handler.tags = ['tools']
 
 module.exports = handler
