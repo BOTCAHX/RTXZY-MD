@@ -150,7 +150,7 @@ ${cpus
     : ""
 }
 `
-conn.sendFile(m.chat, `https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg`, null, txt, m)  
+conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg" } , caption : txt }, { quoted: m })
 
 }
 handler.help = ['ping', 'speed'];
