@@ -11,7 +11,7 @@ let handler = async (m, { conn}) => {
     } finally {
         let { stdout, stderr } = o
         if (stdout.trim()) 
-        conn.sendFile(m.chat, `https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg`, null, stdout, m)
+        conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg" } , caption : stdout }, { quoted: m })
         if (stderr.trim()) m.reply(stderr)
     }
 }
