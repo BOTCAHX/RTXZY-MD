@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
     let tio = `
 Mode: ${global.opts['self'] ? 'Self' : 'publik'}\nAktif: ${uptimex}\nPengguna: ${Object.keys(global.db.data.users).length}\nPengguna Terbanned: ${Object.entries(global.db.data.users).filter(user => user[1].banned).length}\nFitur Sering Digunakan: ${Object.entries(db.data.stats).length}\n\nJika bot tidak ada balasan maka bot sedang maintenance.
     `.trim()
-conn.sendFile(m.chat, `https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg`, null, tio, m)
+conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg" } , caption : tio }, { quoted: m })
 }
 handler.help = ['mode']
 handler.tags = ['main']
