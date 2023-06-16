@@ -9,10 +9,10 @@ var handler = async (m, { conn, command, args }) => {
   await m.reply('_Ｌｏａｄｉｎｇ．．._');
   var url = args[0].startsWith('http') ? args[0] : 'https://' + args[0]
   try {
-    var img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=handphone&fullpage=true&responsetype=image`);
+    var img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=desktop&fullpage=true&responsetype=image`);
     if (!img) {
       await m.reply('Gagal saat percobaan pertama. Memulai percobaan kedua...');
-      img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=handphone&fullpage=true&responsetype=image`);
+      img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=desktop&fullpage=true&responsetype=image`);
       if (!img) return conn.reply(m.chat, 'Gambar tidak tersedia', m);
     }
     var filepath = path.join(__dirname, '../tmp/') + (+new Date) + '.jpeg'; // Ubah ke tmp folder
@@ -30,9 +30,9 @@ var handler = async (m, { conn, command, args }) => {
     conn.reply(m.chat, `Terjadi error!`, m);
   }
 }
-handler.help = ['ssweb', 'sslaptop', 'sspc','ss'];
+handler.help = ['ssweb','sspc'];
 handler.tags = ['tools'];
-handler.command = ['ssweb', 'sspc', 'ss','sslaptop']
+handler.command = ['ssweb', 'sspc', 'ss',]
 
 handler.limit = true;
 handler.fail = null;
