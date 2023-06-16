@@ -15,7 +15,7 @@ var handler = async (m, {
     return `乂 *Command* : *${name}*\n• *Global HIT* : ${total}`
   }).join`\n\n`
 
- conn.sendFile(m.chat, `https://telegra.ph/file/c43ee155efc11b774bee3.jpg`, null, handlers, m)
+conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/c43ee155efc11b774bee3.jpg" } , caption : handlers }, { quoted: m })
 };
 handler.command = handler.help = ['dashboard', 'dash', 'views']
 handler.tags = ['main']
