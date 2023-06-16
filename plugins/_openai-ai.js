@@ -6,11 +6,11 @@ var handler = async (m, {
  }) => {
 if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* Siapa presiden Indonesia? `
 await m.reply(wait)
-  var apii = await fetch(`https://botcahx.vercel.app/openai?text=${text}`)
-  var js = await apii.json()
-  await m.reply(js.result)
+  var apii = await fetch(`https://api.botcahx.live/api/search/openai-chat?text=${text}&apikey=${btc}`)
+  var res = await apii.json()
+  await m.reply(res.message)
 }      
 handler.command = handler.help = ['ai','openai','chatgpt'];
-handler.tags = ['info'];
+handler.tags = ['tools'];
 handler.premium = false
 module.exports = handler;
