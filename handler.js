@@ -631,7 +631,7 @@ module.exports = {
                             for (let jid of owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != this.user.jid)) {
                                 let data = (await this.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`*🚥Plugin:* ${m.plugin}\n*🙎‍♂️Sender:* @${m.sender.split`@`[0]}\n*✉️Chat:* ${m.chat}\n*📞Chat Name:* ${await this.getName(m.chat)}\n*🤖Command:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\``.trim(), data.jid, { mentions: [m.sender] })
+                                    m.reply(`*Plugin:* ${m.plugin}\n*Sender:* @${m.sender.split`@`[0]}\n*Chat:* ${m.chat}\n*Chat Name:* ${await this.getName(m.chat)}\n*Command:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\``.trim(), data.jid, { mentions: [m.sender] })
                             }
                             m.reply(text)
                         }
@@ -693,52 +693,33 @@ module.exports = {
             if (opts['autoread']) await this.readMessages([m.key])
         }
     },
-     async participantsUpdate({ id, participants, action }) {
+   async participantsUpdate({ id, participants, action }) {
         if (opts['self']) return
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
-        let chat = global.db.data.chats[id] || {}
+        let chat = db.data.chats[id] || {}
         let text = ''
         switch (action) {
-            case 'add':
-            case 'remove':
+        case 'add':
+        case 'remove':
+		case 'leave':
+		case 'invite':
+		case 'invite_v4':
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
                         let pp = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9mFzSckd12spppS8gAJ2KB2ER-ccZd4pBbw&usqp=CAU'
                         try {
-                            pp = await this.profilePictureUrl(user, 'image')
+                            pp = await this.profilePictureUrl(user)
                         } catch (e) {
                         } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
-                            let wel = API('alpis', '/api/maker/welcome1', {
-                                name: await this.getName(user),
-                                gpname: await this.getName(id),
-                                member: groupMetadata.participants.length, 
-                                pp: pp, 
-                                bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
-                                apikey: alpiskey
-                            })
-                            let lea = API('alpis', '/api/maker/goodbye1', {
-                                name: await this.getName(user),
-                                gpname: await this.getName(id),
-                                member: groupMetadata.participants.length, 
-                                pp: pp,
-                                bg: 'https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg',
-                                apikey: alpiskey
-                            })
-                             /*this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                            this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
                         }
                     }
                 }
-                break*/
-                
-                           this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-                        }
-                    }
-                }
-                break                     
+                break                        
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
