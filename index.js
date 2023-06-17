@@ -1,4 +1,3 @@
-const http = require('http');
 const os = require('os');
 const express = require('express');
 const app = express();
