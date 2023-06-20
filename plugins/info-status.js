@@ -62,7 +62,20 @@ Internet IN : *${netsIn}*
 Internet OUT : *${netsOut}*
 `
 
-conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg" } , caption : txt }, { quoted: m })
+conn.relayMessage(m.chat, {
+extendedTextMessage:{
+                text: txt, 
+                contextInfo: {
+                     externalAdReply: {
+                        title: "",
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: 'https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg',
+                        sourceUrl: ''
+                    }
+                }, mentions: [m.sender]
+}}, {})
         console.log(OS)
     } catch (e) {
         console.log(e)
