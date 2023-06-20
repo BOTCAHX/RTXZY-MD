@@ -33,7 +33,20 @@ var handler = async (m, {
             var sce = cvr.mp3
             var tmb = thumbnail
             var captionvid = `∘ Title: ${title}\n∘ Published: ${publishedTime}\n∘ Duration: ${durationH}\n∘ Second: ${durationS}\n∘ Views: ${viewH}\n∘ Url:  ${url}\n∘ Description: ${description}`
-            var pesan = conn.sendMessage(m.chat,{ image :{ url : tmb } , caption : captionvid }, { quoted: m })
+            var pesan = conn.relayMessage(m.chat, {
+                extendedTextMessage:{
+                text: captionvid, 
+                contextInfo: {
+                     externalAdReply: {
+                        title: "Powered by",
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: tmb,
+                        sourceUrl: sce
+                    }
+                }, mentions: [m.sender]
+}}, {})
  conn.sendMessage(m.chat, {
                 audio: {
                     url: sce
@@ -60,11 +73,9 @@ var handler = async (m, {
        conn.reply(m.chat, `*Error:* ` + eror, m)
     }
 }
-handler.command = handler.help = ['play', 'song', 'ds', 'ydl'];
+handler.command = handler.help = ['play', 'song', 'ds', 'ytmp3','yta'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
 handler.premium = false;
 module.exports = handler;
-
-    
