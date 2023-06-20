@@ -14,8 +14,21 @@ var handler = async (m, {
  }) => {
     return `乂 *Command* : *${name}*\n• *Global HIT* : ${total}`
   }).join`\n\n`
+conn.relayMessage(m.chat, {
+extendedTextMessage:{
+                text: handlers, 
+                contextInfo: {
+                     externalAdReply: {
+                        title: "",
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: 'https://telegra.ph/file/c43ee155efc11b774bee3.jpg',
+                        sourceUrl: ''
+                    }
+                }, mentions: [m.sender]
+}}, {})
 
-conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/c43ee155efc11b774bee3.jpg" } , caption : handlers }, { quoted: m })
 };
 handler.command = handler.help = ['dashboard', 'dash', 'views']
 handler.tags = ['main']
