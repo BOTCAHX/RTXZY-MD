@@ -28,7 +28,20 @@ usedPrefix
   ∘ Views: ${viewH}  
   ∘ Url:  ${url}
   ∘ Description: ${description}`
-    var pesan = await conn.sendMessage(m.chat,{ image :{ url : tmb } , caption : captionvid }, { quoted: m })
+    var pesan = conn.relayMessage(m.chat, {
+              extendedTextMessage:{
+                text: captionvid, 
+                contextInfo: {
+                     externalAdReply: {
+                        title: "Powered by",
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: tmb,
+                        sourceUrl: web
+                    }
+                }, mentions: [m.sender]
+}}, {})
     if (durationS > 18000) return conn.sendMessage(m.chat, { text: `*Link Original:* ${await cut(url)}\n\n_Durasi terlalu panjang..._\n*Duration Limit!*` }, { quoted: m })
     conn.sendMessage(m.chat, { audio: { url: web }, mimetype: 'audio/mpeg', contextInfo: {
     externalAdReply: {
