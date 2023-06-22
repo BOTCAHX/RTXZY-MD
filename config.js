@@ -33,8 +33,7 @@ global.btc = 'YOUR_APIKEY_HERE' //Daftar terlebih dahulu https://api.botcahx.liv
 global.lann = 'YOUR_APIKEY_HERE' //Note Key Ini Hanya Bertahan Selama 4 Day Sejak Config.js update! lebih baik register di https://api.betabotz.me
 
 global.APIs = { 
-  tio: 'https://api.botcahx.live',
-  alpis: 'https://alpis.eu.org'
+  tio: 'https://api.botcahx.live'
 }
 global.APIKeys = { 
   'https://api.botcahx.live': 'YOUR_APIKEY_HERE' //isi apikey mu https://api.botcahx.live
