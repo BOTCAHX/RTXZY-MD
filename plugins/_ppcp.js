@@ -12,5 +12,4 @@ handler.help = ['ppcp']
 handler.tags = ['internet']
 handler.command = /^ppcp$/i
 
-
 module.exports = handler
