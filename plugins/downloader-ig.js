@@ -3,8 +3,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         if (!args[0]) throw `*Contoh:* ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`
 try {
         const res = await igdl(args[0])
-        for (let i of res.url) {
-            conn.sendFile(m.chat, i, null, `*Instagram Downloader*`, m)
+        for (let i of res) {
+            conn.sendFile(m.chat, i.url, null, `*Instagram Downloader*`, m)
         }
     } catch (e) {
         throw `*Server Down!*`
