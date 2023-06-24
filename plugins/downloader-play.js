@@ -1,5 +1,5 @@
 var { youtubeSearch } = require('@bochilteam/scraper');
-var hxz = require('hxz-api');
+var { youtube } = require('btch-downloader');
 var handler = async (m, {
     conn,
     text,
@@ -25,10 +25,10 @@ var handler = async (m, {
             var url = 'https://www.youtube.com/watch?v=' + videoId
             var cvr
             try {
-                cvr = await hxz.youtube(url)
+                cvr = await youtube(url)
             } catch (e) {
                 conn.reply(m.chat, wait, m)
-                cvr = await hxz.youtube(url) 
+                cvr = await youtube(url)
             }
             var sce = cvr.mp3
             var tmb = thumbnail
