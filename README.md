@@ -21,8 +21,10 @@
 - Setelah mendapatkan ApiKey dari kedua website tersebut silahkan paste di config.js pada line global.btc dan global.lann
 
 
- 
+## Group Bot
+- Group Bot [`Join`](https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r)
 
+- Group Bebas [`Join`](https://chat.whatsapp.com/JAi5AMaxdFLH0s2pH2RcUJ)
 ## Support
 
 <a href="https://sociabuzz.com/tioclkp02" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
