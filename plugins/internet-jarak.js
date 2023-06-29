@@ -15,8 +15,8 @@ conn,
 	if (data.img) return conn.sendMessage(m.chat, { image: data.img, caption: data.desc }, { quoted: m })
 	else m.reply(data.desc)
 }
-handler.command = ['jarak']
-
+handler.command = handler.help = ['jarak']
+handler.tags = ['internet']
 module.exports = handler
 async function jarak(dari, ke) {
 	var html = (await axios(`https://www.google.com/search?q=${encodeURIComponent('jarak ' + dari + ' ke ' + ke)}&hl=id`)).data
