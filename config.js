@@ -13,7 +13,6 @@ global.pulsa = '6281395861695'
 global.gopay = '6281395861695'
 global.namebot = 'BOTCAHX'
 global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
-global.web = 'https://github.com/BOTCAHX'
 global.instagram = 'https://instagram.com/prm2.0'
 global.wm = '© Tio'
 global.watermark = wm
