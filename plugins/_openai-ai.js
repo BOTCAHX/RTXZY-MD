@@ -16,6 +16,6 @@ try {
 }
 }
 handler.command = handler.help = ['ai','openai','chatgpt'];
-handler.tags = ['info'];
+handler.tags = ['tools'];
 handler.premium = false
 module.exports = handler;
