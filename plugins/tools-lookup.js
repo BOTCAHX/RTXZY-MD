@@ -36,7 +36,7 @@ const handler = async (m, { text, usedPrefix, command }) => {
 
 handler.command = ['dnslookup', 'hackertarget', 'lookup','dns'];
 handler.help = ['dnslookup', 'hackertarget', 'lookup','dns'];
-handler.tags = ['internet'];
+handler.tags = ['tools'];
 handler.premium = false;
 
 module.exports = handler;
