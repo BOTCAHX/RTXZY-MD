@@ -14,14 +14,14 @@ var handler = async (m, { conn, command, args }) => {
   var url = args[0].startsWith('http') ? args[0] : 'https://' + args[0]
 
   try {
-    var img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=handphone&fullpage=true&responsetype=image`);
+    var img = await fetch(`https://api.botcahx.live/api/tools/sshp?url=${url}&apikey=${btc}`);
     if (!img) {
       await m.reply('Gagal saat percobaan pertama. Memulai percobaan kedua...');
-      img = await fetch(`https://ss.tioo.eu.org/api/webscreen?url=${url}&mediatype=handphone&fullpage=true&responsetype=image`);
+      img = await fetch(`https://api.botcahx.live/api/tools/sshp?url=${url}&apikey=${btc}`);
       if (!img) return conn.reply(m.chat, 'Gambar tidak tersedia', m);
     }
-    var filepath = path.join(__dirname, '../ssresult/') + (+new Date) + '.jpeg';
-    if (!fs.existsSync(path.join(__dirname, '../ssresult/'))) fs.mkdirSync(path.join(__dirname, '../ssresult/'));
+    var filepath = path.join(__dirname, '../tmp/') + (+new Date) + '.jpeg';
+    if (!fs.existsSync(path.join(__dirname, '../tmp/'))) fs.mkdirSync(path.join(__dirname, '../tmp/'));
     const dest = fs.createWriteStream(filepath);
     dest.on('finish', () => {
       conn.sendFile(m.chat, filepath, 'screenshot.jpeg', 'Nih gambarnya.', m)
