@@ -5,7 +5,7 @@
 - Fix QR code di terminal
 - Fix console logs pesan masuk 
 - Fix Downloader 
-- Penambah output url agar bisa di jalankan di replit/render
+- Penambah output url agar bisa di jalankan di render dsb.
 
 - Menggunakan 60% fitur dari [`RestApi`](https://api.botcahx.live) sebagai media downloader
 
