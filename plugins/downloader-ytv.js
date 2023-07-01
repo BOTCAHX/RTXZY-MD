@@ -1,59 +1,77 @@
-const fetch = require('node-fetch')
-const { servers, ytv } = require('../scraper/youtube')
-const limit = 30
-
-async function shortlink(url) {
-  const isUrl = /https?:\/\//.test(url)
-  return isUrl ? (await require('axios').get('https://tinyurl.com/api-create.php?url=' + encodeURIComponent(url))).data : ''
-}
-
-async function handler(m, { conn, args, isPrems, isOwner }) {
-  if (!args || !args[0]) {
-    throw 'Uhm... urlnya mana?'
-  }
-
-  const chat = db.data.chats[m.chat]
-  const server = (args[1] || servers[0]).toLowerCase()
-  const { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
-  
-  const isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  
-  conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*${isLimit ? 'Pakai ' : ''}Link:* ${await shortlink(dl_link)}
-`.trim(), m)
-  
-  let _thumb = {}
-  try { 
-    _thumb = { thumbnail: await (await fetch(thumb)).buffer() } 
-  } catch (e) { }
-  
-  if (!isLimit) {
-    conn.sendFile(
-      m.chat, 
-      dl_link, 
-      title + '.mp4', 
-      `*Title:* ${title}`.trim(), 
-      m, 
-      false, 
-      {
-        ..._thumb,
-        asDocument: chat.useDocument
+var { youtubeSearch } = require('@bochilteam/scraper');
+var fetch = require('node-fetch')
+var handler = async (m, {
+    conn,
+    text,
+    usedPrefix
+}) => {
+    if (!text) throw 'Enter Title / Link From YouTube!'
+    try {
+        var vid = (await youtubeSearch(text)).video[0]
+        if (!vid) throw 'Video/Audio Tidak Ditemukan'
+        var {
+            title,
+            description,
+            thumbnail,
+            videoId,
+            durationH,
+            durationS,
+            viewH,
+            publishedTime
+        } = vid
+        if (durationS >= 3600) { 
+            m.reply('Video is longer than 1 hour!')
+        } else {
+            var url = 'https://www.youtube.com/watch?v=' + videoId
+            var cvr
+            try {
+                cvr = await fetch(`https://yt.nxr.my.id/yt2?url=${url}&type=video`)
+            } catch (e) {
+                conn.reply(m.chat, wait, m)
+                cvr = await fetch(`https://yt.nxr.my.id/yt2?url=${url}&type=video`)
+            }
+            var sce = await cvr.json()
+            var mcs = sce.data.url
+            var tmb = thumbnail
+            var captionvid = `∘ Title: ${title}\n∘ Published: ${publishedTime}\n∘ Duration: ${durationH}\n∘ Second: ${durationS}\n∘ Views: ${viewH}\n∘ Url:  ${url}\n∘ Description: ${description}`
+            var pesan = conn.relayMessage(m.chat, {
+                extendedTextMessage:{
+                text: captionvid, 
+                contextInfo: {
+                     externalAdReply: {
+                        title: "Powered by",
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: tmb,
+                        sourceUrl: mcs
+                    }
+                }, mentions: [m.sender]
+}}, {})
+ conn.sendMessage(m.chat, {
+      video: {
+        url: mcs,
+        mimetype: 'video/webm',
+        attributes: [
+          {
+            name: 'controls',
+            value: 'true'
+          },
+          {
+            name: 'autoplay',
+            value: 'true'
+          }
+        ]
       }
-    )
-  }
+    }, { quoted: m })
+        }
+    } catch (e) { 
+       conn.reply(m.chat, `*Error:* ` + eror, m)
+    }
 }
-
-handler.help = ['ytmp4 <url> [server: ' + servers.join(', ') + ']']
-handler.tags = ['downloader']
-handler.command = /^ytv|ytmp4?$/i
-
-
-handler.fail = null
-handler.exp = 0
-handler.limit = true
-
-module.exports = handler
-
-
-
+handler.command = handler.help = ['ytv','ytmp4'];
+handler.tags = ['downloader'];
+handler.exp = 0;
+handler.limit = true;
+handler.premium = false;
+module.exports = handler;
