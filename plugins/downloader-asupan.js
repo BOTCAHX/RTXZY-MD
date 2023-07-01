@@ -5,11 +5,18 @@ let handler = async(m, { conn }) => {
     `https://api.botcahx.live/api/asupan/ukhty?apikey=${btc}`,
     `https://api.botcahx.live/api/asupan/bocil?apikey=${btc}`,
     `https://api.botcahx.live/api/asupan/gheayubi?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/gheayubi?apikey=${btc}`,
+    `https://api.botcahx.live/api/asupan/natajadeh?apikey=${btc}`,
     `https://api.botcahx.live/api/asupan/euni?apikey=${btc}`
   ]
-  await conn.sendFile(m.chat, pickRandom(asupan), 'asupan.mp4', '', m)
+  try {
+    const url = pickRandom(asupan);
+    await conn.sendFile(m.chat, url, 'asupan.mp4', '', m);
+  } catch (e) {
+    console.log(e);
+    m.reply('Maaf, video asupan tidak ditemukan');
+  }
 }
+
 handler.help = ['asupan']
 handler.tags = ['downloader']
 handler.command = /^asupan$/i
