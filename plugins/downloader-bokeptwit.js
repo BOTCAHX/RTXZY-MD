@@ -2,7 +2,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 let handler = async(m, { conn }) => {
 m.reply(wait)
-axios.get('https://www.sotwe.com/MS_MEANCREATURE')
+axios.get('https://www.sotwe.com/sayacewek18')
   .then((response) => {
     const $ = cheerio.load(response.data);
     const videoSrcArray = $('video > source').map(function() {
