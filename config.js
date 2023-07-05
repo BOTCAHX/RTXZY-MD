@@ -13,9 +13,6 @@ global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
 global.instagram = 'https://instagram.com/prm2.0'
 global.wm = '© Tio'
 global.watermark = wm
-global.wm2 = '⫹⫺ Tio'
-global.wm3 = '© Tio'
-global.wm4 = '© BotWa'
 global.wait = '_*Tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 global.benar = 'Benar ✅\n'
@@ -24,16 +21,13 @@ global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made with'
 global.author = 'Bot WhatsApp'
 
-//WAJIB DI ISI!!//
-global.btc = 'YOUR_APIKEY_HERE' //Daftar terlebih dahulu https://api.botcahx.live
-global.lann = 'YOUR_APIKEY_HERE' //Daftar terlebih dahulu https://api.betabotz.org 
+//INI WAJIB DI ISI!//
+global.btc = 'YOUR_APIKEY_HERE' 
+//Daftar terlebih dahulu https://api.botcahx.live
 
-global.APIs = { 
-  tio: 'https://api.botcahx.live'
-}
-global.APIKeys = { 
-  'https://api.botcahx.live': 'YOUR_APIKEY_HERE' //isi apikey mu https://api.botcahx.live
-}
+global.lann = 'YOUR_APIKEY_HERE'
+//Daftar terlebih dahulu https://api.betabotz.org 
+
 
 let fs = require('fs')
 let chalk = require('chalk')
