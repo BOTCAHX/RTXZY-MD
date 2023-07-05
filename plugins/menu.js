@@ -167,7 +167,7 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: 'https://telegra.ph/file/93cc9fbd431f63a83aabd.jpg',
-                        sourceUrl: ''
+                        sourceUrl: 'https://api.botcahx.live'
                     }
                 }, mentions: [m.sender]
 }}, {})
