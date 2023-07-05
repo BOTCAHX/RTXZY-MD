@@ -20,6 +20,9 @@ global.btc = 'YOUR_APIKEY_HERE'
 global.lann = 'YOUR_APIKEY_HERE'
 //Daftar terlebih dahulu https://api.betabotz.org 
 
+global.APIKeys = { 
+  'https://api.botcahx.live': 'YOUR_APIKEY_HERE'
+    }
 
 let fs = require('fs')
 let chalk = require('chalk')
