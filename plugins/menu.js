@@ -36,7 +36,6 @@ let tags = {
   'Pengubah Suara': 'PENGUBAH SUARA',
   'premium': 'PREMIUM MENU',
   'quotes' : 'MENU QUOTES',
-  'rpg': 'MENU RPG',
   'stalk': 'MENU STALK',
   'shortlink': 'SHORT LINK',
   'tools': 'MENU TOOLS',
