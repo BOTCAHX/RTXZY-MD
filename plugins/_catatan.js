@@ -1,5 +1,5 @@
 let handler = async(m, {conn, command, usedPrefix, text}) => {
-  let fail = 'format salah, example: ' +usedPrefix+command+ ' Arietube|1. Masak'
+  let fail = 'format salah, example: ' +usedPrefix+command+ ' Bot|1. Masak'
   global.db.data.users[m.sender].catatan = global.db.data.users[m.sender].catatan || []
   let catatan = global.db.data.users[m.sender].catatan
   let split = text.split('|')
