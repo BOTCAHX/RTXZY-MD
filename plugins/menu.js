@@ -17,7 +17,6 @@ let levelling = require('../lib/levelling')
 let tags = {
   'main': 'MENU UTAMA',
   'downloader': 'MENU DOWNLOADER',
-  'download': 'SOUNDCLOUD',
   'sticker': 'MENU CONVERT',
   'advanced': 'ADVANCED',
   'xp': 'MENU EXP',
@@ -41,7 +40,7 @@ let tags = {
   'anonymous': 'ANONYMOUS CHAT',
   'admin': 'ADMIN', 
   'bokep': 'FILE', 
-  '': 'No Category',
+  '': 'NO CATEGORY',
 }
 const defaultMenu = {
   before: `
