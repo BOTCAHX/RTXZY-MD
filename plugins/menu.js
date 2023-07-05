@@ -20,7 +20,6 @@ let tags = {
   'download': 'SOUNDCLOUD',
   'sticker': 'MENU CONVERT',
   'advanced': 'ADVANCED',
-  'anime': 'MENU ANIME',
   'xp': 'MENU EXP',
   'fun': 'MENU FUN',
   'game': 'MENU GAME',
