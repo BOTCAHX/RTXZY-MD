@@ -2,15 +2,12 @@
 **/
 
 
-global.owner = ['6281395861695', '59894808483']  
+global.owner = ['6281395861695']  
 global.mods = ['6281395861695'] 
 global.prems = ['6281395861695']
 global.nameowner = 'Tio'
 global.numberowner = '6281395861695' 
 global.mail = 'support@tioprm.my.id' 
-global.dana = '6281395861695'
-global.pulsa = '6281395861695'
-global.gopay = '6281395861695'
 global.namebot = 'BOTCAHX'
 global.gc = 'https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r'
 global.instagram = 'https://instagram.com/prm2.0'
@@ -27,7 +24,7 @@ global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made with'
 global.author = 'Bot WhatsApp'
 
-
+//WAJIB DI ISI!!//
 global.btc = 'YOUR_APIKEY_HERE' //Daftar terlebih dahulu https://api.botcahx.live
 global.lann = 'YOUR_APIKEY_HERE' //Daftar terlebih dahulu https://api.betabotz.org 
 
