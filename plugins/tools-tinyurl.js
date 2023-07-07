@@ -1,20 +1,13 @@
-let axios = require('axios')
-
 let fetch = require('node-fetch')
-
-let handler = async (m, { text, conn:fur, args }) => {
-  if (!text) throw 'url/link nya mana?\n\n*CONTOH:*\n.tinyurl https://instagram.com'
-
-fur.reply(m.chat, await shortlink(text), m)
- 
+let handler = async (m, { text }) => {
+  if (!text) throw 'Masukan url/link nya mana?\n> .tinyurl https://google.com'
+  let res = await fetch(`https://api.botcahx.live/api/linkshort/tinyurl?link=${text}&apikey=${btc}`)
+  let json = await res.json()
+  if (json.status) m.reply(json.result)
+  else throw 'Link Invalid!\nPeriksa url anda'
 }
-
 handler.help = ['tinyurl'].map(v => v + ' <link>')
 handler.tags = ['shortlink']
 handler.command = /^tinyurl$/i
 
 module.exports = handler
-
-async function shortlink(url){
-isurl = /https?:\/\//.test(url)
-return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''}
