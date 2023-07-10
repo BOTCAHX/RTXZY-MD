@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
   else conn.hartatahta[m.chat] = true
   m.reply('_Sedang membuat..._\n*Mohon tunggu*')
   try {
-    let img = await ht(text ? text : ':v')
+    let img = await ht(text ? text : 'your title')
     conn.sendFile(m.chat, img, 'Harta Tahta.png', '*Nih*', m)
     setTimeout(() => {
       fs.unlinkSync(img)
