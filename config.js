@@ -24,7 +24,7 @@ global.APIs = {
   btc: 'https://api.botcahx.live'
 }
 global.APIKeys = { 
-  'https://api.botcahx.live': 'Your_Key' 
+  'https://api.botcahx.live': 'Apikey' 
 }
 
 let fs = require('fs')
