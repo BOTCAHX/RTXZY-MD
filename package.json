@@ -1,6 +1,6 @@
 {
     "name": "rtxzy",
-    "version": "6.2.1",
+    "version": "6.3.1",
     "description": "Customizable WhatsApp Bot",
     "depecrated": false,
     "main": "index.js",
