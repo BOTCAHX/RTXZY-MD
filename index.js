@@ -72,6 +72,7 @@ function start(file) {
 
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0]);
+	  console.error('\x1b[31m%s\x1b[0m', `File ${args[0]} has been modified. Script will restart...`);
       start("main.js");
     });
   });
@@ -80,6 +81,7 @@ function start(file) {
     console.error('\x1b[31m%s\x1b[0m', `Error: ${err}`);
     p.kill();
     isRunning = false;
+    console.error('\x1b[31m%s\x1b[0m', `Error occurred. Script will restart...`);
     start("main.js");
   });
 
@@ -111,7 +113,8 @@ function start(file) {
 
 start("main.js");
 
-process.on('unhandledRejection', () => {
+process.on('unhandledRejection', (reason) => {
+  console.error('\x1b[31m%s\x1b[0m', `Unhandled promise rejection: ${reason}`);
   console.error('\x1b[31m%s\x1b[0m', 'Unhandled promise rejection. Script will restart...');
   start('main.js');
 });
