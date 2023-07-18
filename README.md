@@ -7,6 +7,11 @@
 - Fix Downloader 
 - Penambah output url agar bisa di jalankan di render dsb.
 
+  ## Note!
+  **Important :**
+  
+- Untuk menggunakan bot ini, kamu diwajibkan mengisi ApiKey terlebih dahulu. Jika tidak mengisinya, bot tidak akan berfungsi dengan baik.
+
 - Menggunakan 60% fitur dari [`RestApi`](https://api.botcahx.live) sebagai media downloader
 
 
