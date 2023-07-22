@@ -18,12 +18,11 @@ try {
         const res = JSON.parse(data);
         var { 
           video, 
-          video2, 
-          username,
-          description,
+          title, 
+          title_audio,
           audio
         } = res.result
-        conn.sendFile(m.chat, video, null, `Username: ${username}\nDeskripsi: ${description}\nAudio: ${audio}`, m);
+        conn.sendFile(m.chat, video, null, `Title: ${title}\nDeskripsi: ${title_audio}\nAudio: ${audio}`, m);
       });
     }).on('error', error => {
       console.log(error);
