@@ -6,7 +6,8 @@ let handler = async(m, { conn }) => {
     `https://api.botcahx.live/api/asupan/bocil?apikey=${btc}`,
     `https://api.botcahx.live/api/asupan/gheayubi?apikey=${btc}`,
     `https://api.botcahx.live/api/asupan/natajadeh?apikey=${btc}`,
-    `https://api.botcahx.live/api/asupan/euni?apikey=${btc}`
+    `https://api.botcahx.live/api/asupan/euni?apikey=${btc}`,
+    `https://api.botcahx.live/api/asupan/douyin?apikey=${btc}`
   ]
   try {
     const url = pickRandom(asupan);
