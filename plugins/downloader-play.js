@@ -27,7 +27,7 @@ var handler = async (m, {
                 cvr = `https://yt.tioo.eu.org/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mp3`
             } catch (e) {
                 conn.reply(m.chat, wait, m)
-                cvr = `https://yt.tioo.eu.org/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mp3`
+                cvr = `https://yt.btch.bz/downloadAudio?URL=${url}&videoName=music`
             }
             var tmb = thumbnail
             var captionvid = `∘ Title: ${title}\n∘ Published: ${publishedTime}\n∘ Duration: ${durationH}\n∘ Second: ${durationS}\n∘ Views: ${viewH}\n∘ Url:  ${url}\n∘ Description: ${description}`
