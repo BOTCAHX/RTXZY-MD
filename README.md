@@ -11,7 +11,8 @@
   **Important :**
   
 - Untuk menggunakan bot ini, kamu diwajibkan mengisi ApiKey terlebih dahulu. Jika tidak mengisinya, bot tidak akan berfungsi dengan baik.
-
+- Tidak disarankan menginstal bot ini di termux atau panel yang tidak mempunyai kelengkapan express, puppeteer, ffmpeg, imagemagick, webp.
+  
 - Menggunakan 60% fitur dari [`RestApi`](https://api.botcahx.live) sebagai media downloader
 
 
