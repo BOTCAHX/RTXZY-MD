@@ -1,5 +1,4 @@
 var { youtubeSearch } = require('@bochilteam/scraper');
-var fetch = require('node-fetch')
 var handler = async (m, {
     conn,
     text,
@@ -25,13 +24,11 @@ var handler = async (m, {
             var url = 'https://www.youtube.com/watch?v=' + videoId
             var cvr
             try {
-                cvr = await fetch(`https://yt.nxr.my.id/yt2?url=${url}&type=audio`)
+                cvr = `https://yt.tioo.eu.org/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mp3`
             } catch (e) {
                 conn.reply(m.chat, wait, m)
-                cvr = await fetch(`https://yt.nxr.my.id/yt2?url=${url}&type=audio`)
+                cvr = `https://yt.tioo.eu.org/?url=${url}&filter=audioonly&quality=highestaudio&contenttype=audio/mp3`
             }
-            var sce = await cvr.json()
-            var mcs = sce.data.url
             var tmb = thumbnail
             var captionvid = `∘ Title: ${title}\n∘ Published: ${publishedTime}\n∘ Duration: ${durationH}\n∘ Second: ${durationS}\n∘ Views: ${viewH}\n∘ Url:  ${url}\n∘ Description: ${description}`
             var pesan = conn.relayMessage(m.chat, {
@@ -44,13 +41,13 @@ var handler = async (m, {
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: tmb,
-                        sourceUrl: mcs
+                        sourceUrl: cvr
                     }
                 }, mentions: [m.sender]
 }}, {})
  conn.sendMessage(m.chat, {
                 audio: {
-                    url: mcs
+                    url: cvr
                 },
                 mimetype: 'audio/mpeg',
                 contextInfo: {
