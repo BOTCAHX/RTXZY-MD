@@ -12,7 +12,7 @@ var handler = async (m, {
     try {
         var search = await youtube(text);
         var convert = search.videos[0];
-        if (!search) throw 'Video/Audio Tidak Ditemukan';
+        if (!convert) throw 'Video/Audio Tidak Ditemukan';
         if (convert.seconds >= 3600) {
             return conn.reply(m.chat, 'Video is longer than 1 hour!', m);
         } else {
@@ -62,7 +62,7 @@ var handler = async (m, {
             });
         }
     } catch (e) {
-        conn.reply(m.chat, `*Error:* ` + e, m);
+        conn.reply(m.chat, `*Error:* ` + eror, m);
     }
 };
 
