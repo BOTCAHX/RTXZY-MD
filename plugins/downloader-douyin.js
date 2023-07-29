@@ -3,11 +3,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
     throw `Masukkan URL!\n\ncontoh:\n${usedPrefix + command} https://v.douyin.com/ikq8axJ/`;
   }
-  try {
     if (!args[0].match(/douyin/gi)) {
       throw `URL Tidak Ditemukan!`;
     }
     m.reply('*Mohon tunggu...*');
+    try {
     const api = await fetch(`https://api.botcahx.live/api/download/douyin?url=${args[0]}&apikey=${btc}`);
     const res = await api.json();
     var {
