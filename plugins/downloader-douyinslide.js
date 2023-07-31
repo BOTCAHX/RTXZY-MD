@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    throw `Masukkan URL!\n\ncontoh:\n${usedPrefix + command} https://v.douyin.com/iKe5ju9/`;
+    throw `Masukkan URL!\n\ncontoh:\n${usedPrefix + command} https://v.douyin.com/io3TNGK`;
   }
     if (!args[0].match(/douyin/gi)) {
       throw `URL Tidak Ditemukan!`;
