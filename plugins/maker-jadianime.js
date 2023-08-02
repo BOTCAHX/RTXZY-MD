@@ -9,6 +9,7 @@ command
 	var q = m.quoted ? m.quoted : m
 	var mime = (q.msg || q).mimetype || q.mediaType || ''
 	if (/image/g.test(mime) && !/webp/g.test(mime)) {
+		await conn.reply(m.chat, wait, m)
 		try {
 			const img = await q.download?.()
 			let out = await uploader(img)
