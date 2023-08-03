@@ -5,10 +5,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const res = await googleImage(text)
     let image = pickRandom(res)
     let link = image
-    conn.sendFile(m.chat, link, 'google.jpg', `*Google Image*
- *Result:* ${text}
- *Source:* google.com
-`,m)
+    conn.sendFile(m.chat, link, 'google.jpg', `*G O O G L E*\n*Result:* ${text}\n*Source:* https://google.com`, m)
 }
 handler.help = ['gimage <query>', 'image <query>']
 handler.tags = ['internet']
