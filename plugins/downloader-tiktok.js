@@ -22,7 +22,7 @@ try {
           title_audio,
           audio
         } = res.result
-        conn.sendFile(m.chat, video, null, `Title: ${title}\nDeskripsi: ${title_audio}\nAudio: ${audio}`, m);
+        conn.sendFile(m.chat, video, null, `Title: ${title}\nDeskripsi: ${title_audio}\nAudio: ${audio[1]}`, m);
       });
     }).on('error', error => {
       console.log(error);
