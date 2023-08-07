@@ -18,10 +18,10 @@ var handler = async (m, {
         } else {
             var audioUrl
             try {
-                audioUrl = `https://yt.btch.bz/downloadAudio?URL=${convert.url}&videoName=mp3`
+                audioUrl = `https://yt.tioo.eu.org/?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
             } catch (e) {
                 conn.reply(m.chat, wait, m)
-                audioUrl = `https://yt.tioo.eu.org/?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mp3`
+                audioUrl = `https://yt.tioo.eu.org/?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
             } 
             var build = await fetch(convert.image);
             var buffer = await build.buffer();
