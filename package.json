@@ -43,7 +43,6 @@
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
         "@vitalets/google-translate-api": "^9.0.0",
-        "@xct007/frieren-scraper": "^0.0.2",
         "acrcloud": "^1.4.0",
         "javascript-obfuscator": "^4.0.2",
         "async": "^3.2.4",
