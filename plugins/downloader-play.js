@@ -1,7 +1,6 @@
+const uploadImage = require('../lib/uploadImage')
+const fetch = require('node-fetch')
 const youtube = require("yt-search");
-const fetch = require('node-fetch');
-const FormData = require('form-data');
-const { fromBuffer } = require('file-type');
 
 var handler = async (m, {
     conn,
@@ -25,7 +24,7 @@ var handler = async (m, {
             } 
             var build = await fetch(convert.image);
             var buffer = await build.buffer();
-            var image = await uploader(buffer);
+            var image = await uploadImage(buffer);
             var caption = `∘ Title : ${convert.title}\n∘ Ext : Search\n∘ ID : ${convert.videoId}\n∘ Duration : ${convert.timestamp}\n∘ Viewers : ${convert.views}\n∘ Upload At : ${convert.ago}\n∘ Author : ${convert.author.name}\n∘ Channel : ${convert.author.url}\n∘ Url : ${convert.url}\n∘ Description : ${convert.description}\n∘ Thumbnail : ${image}`;
             var pesan = conn.relayMessage(m.chat, {
                 extendedTextMessage:{
@@ -62,7 +61,7 @@ var handler = async (m, {
             });
         }
     } catch (e) {
-        conn.reply(m.chat, `*Error:* ` + eror, m);
+        conn.reply(m.chat, `*Error:* ` + e, m);
     }
 };
 
@@ -72,16 +71,3 @@ handler.exp = 0;
 handler.limit = true;
 handler.premium = false;
 module.exports = handler;
-
-async function uploader(buffer) {
-  const { ext } = await fromBuffer(buffer);
-  let form = new FormData();
-  form.append('file', buffer, 'tmp.' + ext);
-  let res = await fetch('https://cdn.btch.bz/upload', {
-    method: 'POST',
-    body: form
-  });
-  let img = await res.json();
-  if (img.error) throw img.error;
-  return 'https://cdn.btch.bz' + img[0].src;
-}
