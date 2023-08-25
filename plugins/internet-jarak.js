@@ -1,28 +1,21 @@
-// thnks to kyouno :v
-
-var axios = require('axios');
-var cheerio = require('cheerio');
-
-var handler = async (m, { 
-conn,
+const fetch = require('node-fetch');
+let handler = async (m, { 
+ conn,
  text,
  usedPrefix,
  command
  }) => {
 	var [from, to] = text.split`|`
 	if (!(from && to)) throw `Ex: ${usedPrefix + command} jakarta|bandung`
-	var data = await jarak(from, to)
-	if (data.img) return conn.sendMessage(m.chat, { image: data.img, caption: data.desc }, { quoted: m })
-	else m.reply(data.desc)
+	try {
+	let data = await fetch(`https://api.botcahx.live/api/search/jarak?from=${from}&to=${to}&apikey=${btc}`)
+	let json = await data.json()
+	await conn.sendFile(m.chat, json.message.data, 'jarak.png', json.message.desc, m)
+	  } catch (error) {
+    throw `🚩 *Jarak Tidak Ditemukan*`
+    }
 }
 handler.command = handler.help = ['jarak']
 handler.tags = ['internet']
+handler.limit = true
 module.exports = handler
-async function jarak(dari, ke) {
-	var html = (await axios(`https://www.google.com/search?q=${encodeURIComponent('jarak ' + dari + ' ke ' + ke)}&hl=id`)).data
-	var $ = cheerio.load(html), obj = {}
-	var img = html.split("var s=\'")?.[1]?.split("\'")?.[0]
-	obj.img = /^data:.*?\/.*?;base64,/i.test(img) ? Buffer.from(img.split`,` [1], 'base64') : ''
-	obj.desc = $('div.BNeawe.deIvCb.AP7Wnd').text()?.trim()
-	return obj
-}
