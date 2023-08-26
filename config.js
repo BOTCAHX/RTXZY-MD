@@ -17,14 +17,15 @@ global.author = 'Bot WhatsApp'
 global.btc = 'YOUR_APIKEY_HERE' 
 //Daftar terlebih dahulu https://api.botcahx.live
 
+//INI OPTIONAL BOLEH DI ISI BOLEH JUGA ENGGA//
 global.lann = 'YOUR_APIKEY_HERE'
-//Daftar terlebih dahulu https://api.betabotz.org 
+//Daftar https://api.betabotz.org 
 
 global.APIs = {   
   btc: 'https://api.botcahx.live'
 }
 global.APIKeys = { 
-  'https://api.botcahx.live': 'Apikey' 
+  'https://api.botcahx.live': 'APIKEY' 
 }
 
 let fs = require('fs')
