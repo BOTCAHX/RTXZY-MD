@@ -11,9 +11,7 @@ m.reply(wait)
 try {
         const api = await fetch(`https://api.botcahx.live/api/dowloader/twitter?url=${args[0]}&apikey=${btc}`)
         const res = await api.json()
-        for (let i of res.result.url) {
-            conn.sendFile(m.chat, i.hd, null, `*Twitter Downloader*`, m)
-        }
+        conn.sendFile(m.chat, res.result.url[0].hd, null, `*Twitter Downloader*`, m)
     } catch (e) {
         throw `*Server Down!*`
     }
