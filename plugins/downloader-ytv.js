@@ -12,13 +12,8 @@ let handler = async (m, {
         if (convert.seconds >= 3600) {
             return conn.reply(m.chat, 'Video is longer than 1 hour!', m);
         } else {
-            var videoUrl
-            try {
-                videoUrl = `https://yt.tioo.eu.org/?url=${convert.url}&filter=audioandvideo&quality=highestvideo&contenttype=video/mp4`
-            } catch (e) {
-                conn.reply(m.chat, wait, m)
-                videoUrl = `https://yt.tioo.eu.org/?url=${convert.url}&filter=audioandvideo&quality=highestvideo&contenttype=video/mp4`
-            }             
+            let api = await fetch(`https://api.botcahx.live/api/dowloader/yt?url=${convert.url}&apikey=${btc}`);
+            let json = await api.json();
             var caption = `∘ Title : ${convert.title}\n∘ Ext : Search\n∘ ID : ${convert.videoId}\n∘ Duration : ${convert.timestamp}\n∘ Viewers : ${convert.views}\n∘ Upload At : ${convert.ago}\n∘ Author : ${convert.author.name}\n∘ Channel : ${convert.author.url}\n∘ Url : ${convert.url}\n∘ Description : ${convert.description}\n∘ Thumbnail : ${convert.image}`;
             var pesan = conn.relayMessage(m.chat, {
                 extendedTextMessage:{
@@ -30,11 +25,11 @@ let handler = async (m, {
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: convert.image,
-                        sourceUrl: videoUrl
+                        sourceUrl: convert.url
                     }
                 }, mentions: [m.sender]
                 }}, {})
-                conn.sendMessage(m.chat, { video: { url: videoUrl }, mimetype: 'video/mp4' }, { quoted: m })
+                conn.sendMessage(m.chat, { video: { url: json.result.mp4.result }, mimetype: 'video/mp4' }, { quoted: m })
         }
     } catch (e) {
         conn.reply(m.chat, `*Error:* ` + e, m);
