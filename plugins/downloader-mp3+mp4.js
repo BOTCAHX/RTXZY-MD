@@ -1,7 +1,7 @@
 const youtube = require("yt-search");
 const btch = require("btch-downloader");
 
-var handler = async (m, {
+let handler = async (m, {
     conn,
     text,
     command
@@ -15,25 +15,31 @@ var handler = async (m, {
         if (convert.seconds >= 3600) {
             return conn.reply(m.chat, 'Video is longer than 1 hour!', m);
         } else {
-            var audioUrl
+            var video
             try {
-                audioUrl = await btch.youtube(convert.url)
+                video = await btch.youtube(convert.url)
             } catch (e) {
                 conn.reply(m.chat, wait, m)
-                audioUrl = await btch.youtube(convert.url)
+                video = await btch.youtube(convert.url)
             } 
+            try {
+                audio = `https://yt.tioo.eu.org/youtube?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
+             } catch (e) {
+                conn.reply(m.chat, wait, m)
+                audio = `https://yt.tioo.eu.org/youtube?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
+            }    
             if (command == 'mp3') {
                 return conn.sendMessage(m.chat, {
                     audio: {
-                        url: audioUrl.mp3
+                        url: audio
                     },
                     mimetype: 'audio/mpeg',
                     contextInfo: {
                         externalAdReply: {
                             title: convert.title,
                             body: "",
-                            thumbnailUrl: audioUrl.thumb,
-                            sourceUrl: convert.url,
+                            thumbnailUrl: convert.thumbnail,
+                            sourceUrl: audio,
                             mediaType: 1,
                             showAdAttribution: true,
                             renderLargerThumbnail: true
@@ -46,7 +52,7 @@ var handler = async (m, {
             if (command == 'mp4') {
                 return conn.sendMessage(m.chat, { 
                     video: { 
-                        url: audioUrl.link
+                        url: video.medias[2]?.url
                     }, 
                     mimetype: 'video/mp4' 
                 }, { 
