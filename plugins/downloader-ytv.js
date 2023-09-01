@@ -1,20 +1,16 @@
-const youtube = require("yt-search");
+const { youtube } = require("btch-downloader");
 let handler = async (m, {
     conn,
     text,
     usedPrefix
 }) => {
-    if (!text) throw 'Enter Title / Link From YouTube!';
+    if (!text) throw 'Link From YouTube!';
     try {
-        var search = await youtube(text);
-        var convert = search.videos[0];
+        var convert = await youtube(text);
         if (!convert) throw 'Video/Audio Tidak Ditemukan';
-        if (convert.seconds >= 3600) {
-            return conn.reply(m.chat, 'Video is longer than 1 hour!', m);
-        } else {
-            let api = await fetch(`https://api.botcahx.live/api/dowloader/yt?url=${convert.url}&apikey=${btc}`);
+            let api = await fetch(`https://api.botcahx.live/api/dowloader/yt?url=${text}&apikey=${btc}`);
             let json = await api.json();
-            var caption = `∘ Title : ${convert.title}\n∘ Ext : Search\n∘ ID : ${convert.videoId}\n∘ Duration : ${convert.timestamp}\n∘ Viewers : ${convert.views}\n∘ Upload At : ${convert.ago}\n∘ Author : ${convert.author.name}\n∘ Channel : ${convert.author.url}\n∘ Url : ${convert.url}\n∘ Description : ${convert.description}\n∘ Thumbnail : ${convert.image}`;
+            var caption = `∘ Title : ${convert.title}\n∘ Size : ${convert.size}\n∘ Quality : ${convert.quality}`;
             var pesan = conn.relayMessage(m.chat, {
                 extendedTextMessage:{
                 text: caption, 
@@ -24,13 +20,12 @@ let handler = async (m, {
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: convert.image,
-                        sourceUrl: convert.url
+                        thumbnailUrl: convert.thumb,
+                        sourceUrl: text
                     }
                 }, mentions: [m.sender]
                 }}, {})
                 conn.sendMessage(m.chat, { video: { url: json.result.mp4.result }, mimetype: 'video/mp4' }, { quoted: m })
-        }
     } catch (e) {
         conn.reply(m.chat, `*Error:* ` + e, m);
     }
