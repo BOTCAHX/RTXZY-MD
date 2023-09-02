@@ -59,7 +59,7 @@ var handler = async (m, {
     }
 };
 
-handler.command = handler.help = ['play', 'song', 'ds', 'ytmp3', 'yta'];
+handler.command = handler.help = ['play2'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
