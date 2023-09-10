@@ -3,7 +3,6 @@ const uploadImage = require('../lib/uploadImage')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
   try {
-    const scale = '3'
     const q = m.quoted ? m.quoted : m;
     const mime = (q.msg || q).mimetype || q.mediaType || '';
     if (/^image/.test(mime) && !/webp/.test(mime)) {
@@ -36,6 +35,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         const image = await api.json();
         const url = image.url.url;
         conn.sendFile(m.chat, url, null, wm, m);
+       } else if (command === 'removebg' || command === 'nobg') {
+        const api = await fetch(`https://api.botcahx.live/api/tools/removebg?url=${out}&apikey=${btc}`);
+        const image = await api.json();
+        const url = image.url.result;
+        conn.sendFile(m.chat, url, null, wm, m);
       }
     } else {
       m.reply(`Kirim gambar dengan caption *${usedPrefix + command}* atau tag gambar yang sudah dikirim.`);
@@ -46,7 +50,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   }
 }
 
-handler.command = handler.help = ['hd', 'hd2', 'hd3'];
+handler.command = handler.help = ['hd', 'hd2', 'hd3','removebg','nobg'];
 handler.tags = ['tools'];
 handler.premium = false;
 handler.limit = false;
