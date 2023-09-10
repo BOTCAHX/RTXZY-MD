@@ -23,7 +23,7 @@ let handler = async (m, {
                 video = await btch.youtube(convert.url)
             } 
             try {
-                audio = `https://yt.tioo.eu.org/youtube?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
+                audio = `https://aemt.me/downloadAudio?URL=${convert.url}&videoName=ytdl`
              } catch (e) {
                 conn.reply(m.chat, wait, m)
                 audio = `https://yt.tioo.eu.org/youtube?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
