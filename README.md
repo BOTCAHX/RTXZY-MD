@@ -2,7 +2,7 @@
 
 **Pembaruan :**
 - Telah menggunakan multi auth sessions 
-- Fix QR code di terminal
+- Fix QR code di terminal & pairing code 
 - Fix console logs pesan masuk 
 - Fix Downloader 
 - Penambah output url agar bisa di jalankan di render dsb.
@@ -60,11 +60,17 @@ Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 * Unduh & Instal FFmpeg [`Klik Disini`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 
-```bash
+```javascript
 git clone https://github.com/BOTCAHX/RTXZY-MD
 cd RTXZY-MD
 npm i
 npm start
+```
+```javascript
+// to get pairing code //
+
+node index.js --pairing
+
 ```
 
 
