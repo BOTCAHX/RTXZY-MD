@@ -17,7 +17,7 @@ let handler = async (m) => {
 }
 
 handler.help = ['tourl <reply image>']
-handler.tags = ['sticker']
+handler.tags = ['tools']
 handler.command = /^(upload|tourl)$/i
 
 module.exports = handler
