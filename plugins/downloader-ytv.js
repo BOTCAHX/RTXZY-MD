@@ -11,7 +11,7 @@ let handler = async (m, {
         if (!convert) throw 'Video/Audio Tidak Ditemukan';
             let api = await fetch(`https://api.botcahx.live/api/dowloader/yt?url=${text}&apikey=${btc}`);
             let json = await api.json();
-            var caption = `∘ Title : ${convert.title}\n∘ Size : ${convert.size}\n∘ Quality : ${convert.quality}`;
+            var caption = `∘ Title : ${convert.data.title}\n∘ Size : ${convert.data.medias[3].formattedSize}\n∘ Duration : ${convert.data.duration}\n`;
             var pesan = conn.relayMessage(m.chat, {
                 extendedTextMessage:{
                 text: caption, 
@@ -21,7 +21,7 @@ let handler = async (m, {
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: convert.thumb,
+                        thumbnailUrl: convert.data.thumbnail,
                         sourceUrl: text
                     }
                 }, mentions: [m.sender]
@@ -37,4 +37,4 @@ handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
 handler.premium = false;
-module.exports = handler;
+module.exports = handler
