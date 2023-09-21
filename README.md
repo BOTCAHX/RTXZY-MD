@@ -2,7 +2,8 @@
 
 **Pembaruan :**
 - Telah menggunakan multi auth sessions 
-- Fix QR code di terminal & pairing code 
+- Fix QR code di terminal & pairing code
+- ```node . --pairing```
 - Fix console logs pesan masuk 
 - Fix Downloader 
 - Penambah output url agar bisa di jalankan di render dsb.
