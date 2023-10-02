@@ -89,6 +89,6 @@
         "xfarr-api": "^1.0.3",
         "yargs": "^17.5.1",
         "ytdl-core": "4.10.0",
-        "yt-search": "^2.10.3"
+        "yt-search": "^4.11.5"
     }
 }
