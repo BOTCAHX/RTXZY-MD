@@ -52,7 +52,7 @@ let handler = async (m, {
             if (command == 'mp4') {
                 return conn.sendMessage(m.chat, { 
                     video: { 
-                        url: video.data.medias[1].url
+                        url: video.link
                     }, 
                     mimetype: 'video/mp4' 
                 }, { 
