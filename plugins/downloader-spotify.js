@@ -4,12 +4,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) throw `Masukkan URL!\n\nContoh:\n${usedPrefix + command} https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt`;
   if (!args[0].match(/spotify/gi)) throw `URL Tidak Ditemukan!`;
   m.reply("Tunggu sebentar...");
-  try {  
 		const urll = args[0];
-		const res = await fetch(`https://api.botcahx.live/api/download/spotify?url=${args[0]}&apikey=${btc}`)
-		if (!res.ok) throw await res.text()
+		try {  
+		const res = await fetch(`https://api.botcahx.live/api/download/spotify?url=${args[0]}&apikey=${btc}`)		
 let jsons = await res.json()
-if (!jsons.status) throw jsons
 const { 
 thumbnail, 
 title,
