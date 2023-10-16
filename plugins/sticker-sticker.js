@@ -1,45 +1,27 @@
-const { sticker1, sticker5 } = require('../lib/sticker')
+const fs = require('fs')
 
-let handler = async (m, { conn }) => {
-    let stiker = false
-    try {
-        let q = m.quoted ? m.quoted : m
-        let mime = (q.msg || q).mimetype || ''
-        if (/webp/.test(mime)) {
-            let img = await q.download()
-            if (!img) throw `reply sticker with command s`
-            stiker = await sticker5(img, false, packname, author)
-        } else if (/image/.test(mime)) {
-            let img = await q.download()
-            if (!img) throw `reply image with command s`
-            stiker = await sticker5(img, false, packname, author)
-        } else if (/video/.test(mime)) {
-            if ((q.msg || q).seconds > 11) return m.reply('maksimal 10 detik!')
-            let img = await q.download()
-            if (!img) throw `reply video with command s`
-            stiker = await sticker5(img, false, packname, author)
-        } else if (m.quoted.text) {
-            if (isUrl(m.quoted.text)) stiker = await sticker(false, m.quoted.text, packname, author)
-            else throw 'URL is not valid! end with jpg/gif/png'
-        }
-    } catch (e) {
-        throw e
+let handler = async (m, { conn, command, usedPrefix }) => {
+let q = m.quoted ? m.quoted : m
+let mime = (q.msg || q).mimetype || ''
+if (/image/.test(mime)) {
+  let media = await q.download()
+  m.reply(stiker_wait)
+  let encmedia = await conn.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+  await fs.unlinkSync(encmedia)
+  } else if (/video/.test(mime)) {
+  if ((q.msg || q).seconds > 11) return m.reply('maksimal 10 detik!')
+  let media = await q.download()
+  m.reply(stiker_wait)
+  let encmedia = await conn.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+  await fs.unlinkSync(encmedia)
+  } else {
+  throw `Kirim Gambar/Video Dengan Caption ${usedPrefix + command}\nDurasi Video 1-9 Detik`
+  }
     }
-    finally {
-        if (stiker) {
-            m.reply(stiker_wait)
-            await conn.sendFile(m.chat, stiker, '', '', m)
-        }
-        else {
-
-            throw 0
-        }
-    }
-}
 handler.help = ['sticker']
 handler.tags = ['sticker']
 handler.command = /^(stiker|s|sticker)$/i
-handler.limit = 10
+handler.limit = true
 module.exports = handler
 
 const isUrl = (text) => {
