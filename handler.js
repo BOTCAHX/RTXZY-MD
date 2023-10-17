@@ -718,6 +718,7 @@ module.exports = {
                             this.sendMessage(id, {
                             text: text,
                             contextInfo: {
+			    mentionedJid: [user],
                             externalAdReply: {  
                             title: action === 'add' ? 'Selamat Datang' : 'Selamat tinggal',
                             body: global.wm,
