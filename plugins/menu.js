@@ -162,7 +162,7 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
   extendedTextMessage:{
                 text: text, 
                 contextInfo: {
-                mentionedJid: [m.chat],
+                mentionedJid: [m.sender],
                      externalAdReply: {
                         title: date,
                         mediaType: 1,
