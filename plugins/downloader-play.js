@@ -65,7 +65,7 @@ let handler = async (m, { conn, text }) => {
   }
 };
 
-handler.command = handler.help = ['play', 'song', 'ds', 'ytmp3', 'yta'];
+handler.command = handler.help = ['play', 'song', 'ds'];
 handler.tags = ['downloader'];
 handler.premium = false;
 handler.limit = false;
