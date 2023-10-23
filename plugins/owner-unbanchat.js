@@ -1,10 +1,7 @@
-let handler = async (m, { conn, isOwner, text, isAdmin }) => {
+let handler = async (m, { conn, isOwner, text }) => {
+	if (!text) throw 'Masukkan user yang ingin di unban\n\nExample: .unban 6282361160044'
   let who
   if (m.isGroup) {
-    if (!(isAdmin || isOwner)) {
-      global.dfail('admin', m, conn)
-      throw false
-    }
     if (isOwner) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
     else who = m.chat
   } else {
@@ -16,7 +13,7 @@ let handler = async (m, { conn, isOwner, text, isAdmin }) => {
   }
 
   try {
-    if (who.endsWith('g.us')) global.db.data.chats[who].isBanned = false
+    if (text.endsWith('g.us')) global.db.data.chats[text].isBanned = false
     else global.db.data.users[who].banned = false
     m.reply(`Berhasil unban! ${await conn.user.name} aktif dichat ${await conn.getName(who) == undefined ? 'ini' : await conn.getName(who)}.`)
   } catch (e) {
@@ -24,7 +21,8 @@ let handler = async (m, { conn, isOwner, text, isAdmin }) => {
   }
 }
 handler.help = ['unban']
-handler.tags = ['owner', 'group']
+handler.tags = ['owner']
 handler.command = /^unban(chat)?$/i
 
+handler.owner = true
 module.exports = handler
