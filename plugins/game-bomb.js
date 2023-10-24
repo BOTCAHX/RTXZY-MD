@@ -15,17 +15,17 @@ state: false
 }));
 let teks = `乂  *B O M B*\n\nKirim angka *1* - *9* untuk membuka *9* kotak nomor di bawah ini :\n\n`;
 for (let i = 0; i < array.length; i += 3) teks += array.slice(i, i + 3).map(v => v.state ? v.emot : v.number).join('') + '\n';
-teks += `\nTimeout : [ *${((timeout / 1000) / 60)} menit* ]\nApabila mendapat kotak yang berisi bom maka point akan di kurangi.`;
+teks += `\nTimeout : [ *${((timeout / 1000) / 60)} menit* ]\nApabila mendapat kotak yang berisi bom maka point akan di kurangi. Ketik suren untuk menyerah.`;
 let msg = await conn.sendMessage(m.chat, {
 text: teks,
 contextInfo: {
 externalAdReply: {
 title: "",
 body: 'Bomb',
-thumbnailUrl: "https://telegra.ph/file/dc5a67d724b016574129b.jpg",
+thumbnailUrl: "https://telegra.ph/file/b3138928493e78b55526f.jpg",
 sourceUrl: "",
 mediaType: 1,
-renderLargerThumbnail: false
+renderLargerThumbnail: true
 }}},
 { quoted: m })
 let { key } = msg
