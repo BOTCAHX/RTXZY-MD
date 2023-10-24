@@ -7,7 +7,7 @@ handler.all = async function (m) {
 	if (!mf) return !0
 	console.log({ text: m.text })
 	if ((m.text === 'BALAS PESAN' || m.text === '') && m.quoted.mtype == 'buttonMessage') return m.reply("Silahkan Ketik Pesan Balasan Mu");
-	let txt = `Hai kak @${mf.dari.split('@')[0]}, Kamu Menerima Pesan Balasan\n\nPesan Kamu: ⤵️\n${mf.pesan}\n\nPesan Balasannya: ⤵️\n${m.text}\n`.trim();
+	let txt = `Hai kak @${mf.dari.split('@')[0]}, Kamu Menerima Pesan Balasan\n\nPesan Kamu: \n${mf.pesan}\n\nPesan Balasannya: \n${m.text}\n`.trim();
 	await this.reply(mf.dari, txt, null).then(() => {
 		m.reply('Berhasil mengirim balasan!')
 		delay(2000)
