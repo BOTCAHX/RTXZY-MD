@@ -1,4 +1,4 @@
-// Thamks To Kasan
+// Thanks To Kasan
 
 const util = require('util');
 
@@ -12,7 +12,7 @@ let users = global.db.data.users[m.sender];
 let body = (typeof m.text == 'string' ? m.text : '');
 conn.bomb = conn.bomb ? conn.bomb : {};
 
-let isSurrender = /^((me)?nyerah|surr?en)$/i.test(body);
+let isSurrender = /^(suren)$/i.test(body);
 if (isSurrender) {
 await conn.reply(m.chat, `🚩 Menyerah`, m);
 clearTimeout(conn.bomb[id][2]);
