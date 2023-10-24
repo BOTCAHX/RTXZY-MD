@@ -10,10 +10,22 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let mf = Object.values(conn.menfess).find(mf => mf.status === true)
     if (mf) return !0
     	let id = + new Date
-        let tek = `Hai @${data.jid.split("@")[0]}, kamu menerima pesan Menfess nih.\n\nDari: *${name}*\nPesan: \n${pesan}\n\nMau balas pesan ini kak? bisa kok kak. tinggal ketik pesan kakak lalu kirim, nanti saya sampaikan ke *${name}*.`.trim();
-        let imgr = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIeUfhqk1WnwbXuTh1ePJ-2aERPaxEMJCg5A&usqp=CAU'
-        await conn.sendFile(data.jid, imgr, 'menfess.jpg', `${tek}`, m)
-        .then(() => {
+        let teks = `Hai @${data.jid.split("@")[0]}, kamu menerima pesan Menfess nih.\n\nDari: *${name}*\nPesan: \n${pesan}\n\nMau balas pesan ini kak? bisa kok kak. tinggal ketik pesan kakak lalu kirim, nanti saya sampaikan ke *${name}*.`.trim();
+        await conn.relayMessage(data.jid, {
+                extendedTextMessage:{
+                text: teks, 
+                contextInfo: {
+                mentionedJid: [data.jid],
+                     externalAdReply: {
+                        title: 'M E N F E S S',
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyz1dMPkZuNleUyfXPMsltHwKKdVddTf4-A&usqp=CAU',
+                        sourceUrl: ''
+                    }
+                }
+          }}, {}).then(() => {
             m.reply('Berhasil mengirim pesan menfess.')
             conn.menfess[id] = {
                 id,
