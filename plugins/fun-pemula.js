@@ -14,12 +14,10 @@ let handler = async (m, { conn }) => {
       ptt: false,
       seconds: 9000,
       contextInfo: {
-        forwardingScore: fsizedoc,
         externalAdReply: {
           body: null,
           containsAutoReply: true,
           mediaType: 1,
-          mediaUrl: sig,
           renderLargerThumbnail: true,
           showAdAttribution: true,
           sourceId: null,
@@ -27,8 +25,8 @@ let handler = async (m, { conn }) => {
           previewType: "PDF",
           sourceUrl: null,
           thumbnailUrl:
-            "https://telegra.ph/file/234426607fe35722c53c8.jpg",
-          title: "AkuMahPemula"
+            "https://i.pinimg.com/originals/b1/d3/e3/b1d3e366fe50e07a7fed1de14d500611.jpg",
+          title: "Aku Mah Masih Pemula"
         }
       }
     }
