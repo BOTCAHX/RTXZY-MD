@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let audio = await toAudio(media, 'mp4')
     if (!audio.data) throw 'Gagal melakukan konversi.'
     conn.sendMessage(m.chat, {document: audio.data, mimetype: 'audio/mpeg', fileName: `audio.mp3`}, { quoted : m })
-    
+  }
   if (/vn|ptt$/i.test(command)) {
     if (!/video|audio/.test(mime)) throw `Balas video/audio dengan perintah *${usedPrefix + command}*`
     let media = await q.download()
