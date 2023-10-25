@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (!audio.data) throw 'Gagal melakukan konversi.'
     conn.sendMessage(m.chat, { audio: audio.data, mimetype: 'audio/mpeg' }, { quoted: m })
 }
-handler.help = ['tomp3 (reply)']
+handler.help = ['toaudio (reply)']
 handler.tags = ['tools']
 handler.command = /^to(a(udio)?)$/i
 
