@@ -12,6 +12,7 @@ global.eror = '_*Server Error*_'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made With'
 global.author = 'Bot WhatsApp'
+global.maxwarn = '2' // Peringatan maksimum
 
 //INI WAJIB DI ISI!//
 global.btc = 'YOUR_APIKEY_HERE' 
