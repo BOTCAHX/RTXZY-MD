@@ -7,9 +7,8 @@ let handler = m => m
 
 handler.before = function (m, { match, usedPrefix, text, args }) {
 	if ((usedPrefix = (match[0] || '')[0])) {
-		let noPrefix = m.text.replace(usedPrefix, '')
+		let noPrefix = m.text.replace(usedPrefix, '').trim()
 		let args = noPrefix.trim().split` `.slice(1)
-		let text = args.join` `
 		let alias = Object.values(global.plugins).filter(v => v.help && !v.disabled).map(v => v.help).flat(1)
 		if (alias.includes(noPrefix)) return
 		let mean = didyoumean(noPrefix, alias)
@@ -22,7 +21,6 @@ handler.before = function (m, { match, usedPrefix, text, args }) {
 	 if (mean) this.relayMessage(m.chat,  {
     requestPaymentMessage: {
       currencyCodeIso4217: 'IDR',
-      amount30: fsizedoc,
       requestFrom: '0@s.whatsapp.net',
       noteMessage: {
       extendedTextMessage: {
