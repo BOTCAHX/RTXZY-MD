@@ -4,9 +4,9 @@ let handler = async (m, { conn, participants }) => {
     m.reply('Berhasil membanned chat, Bot tidak akan respon di chat ini.')
   // } else m.reply('Ada nomor host disini...')
 }
-handler.help = ['banchat']
+handler.help = ['mute']
 handler.tags = ['owner']
-handler.command = /^banchat|bnc$/i
+handler.command = ['mute']
 handler.owner = true
 
 module.exports = handler
