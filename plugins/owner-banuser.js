@@ -1,5 +1,5 @@
 let handler = async (m, { conn, isOwner, text }) => {
-	if (!text) throw 'Masukkan user yang ingin di ban\n\nExample: .ban 6282361160044'
+	if (!text) throw 'Masukkan user/id group yang ingin di ban\n\nExample: .ban 6282361160044 atau .ban 2837372829@g.us'
   let who
   if (m.isGroup) {
     if (isOwner) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
