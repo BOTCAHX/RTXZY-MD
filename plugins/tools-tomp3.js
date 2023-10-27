@@ -1,4 +1,4 @@
-const { toPTT } = require('../lib/converter')
+const { toPTT, toAudio } = require('../lib/converter')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
