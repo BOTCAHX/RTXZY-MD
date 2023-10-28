@@ -1,22 +1,24 @@
-var fetch = require("node-fetch");
-var handler = async (m, {
+let fetch = require("node-fetch");
+let handler = async (m, {
 	conn,
 	args,
 	usedPrefix,
 	command
 }) => {
 if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`
-if (!args[0].match(/twitter/gi)) throw `URL Tidak Ditemukan!`
+if (!args[0].match(/https?:\/\/(www\.)?(twitter\.com|x\.com)/gi)) throw "URL Tidak Ditemukan!";
 m.reply(wait)
-try {
-        const api = await fetch(`https://api.botcahx.live/api/dowloader/twitter?url=${args[0]}&apikey=${btc}`)
+  try {
+       const api = await fetch(`https://api.botcahx.live/api/download/twitter2?url=${args[0]}&apikey=${btc}`)
         const res = await api.json()
-        conn.sendFile(m.chat, res.result.url[0].hd, null, `*Twitter Downloader*`, m)
-    } catch (e) {
+        for (let i of res.result.urls) {
+        conn.sendFile(m.chat, i.url, null, `*Twitter Downloader*`, m)
+        }
+     } catch (e) {
         throw `*Server Down!*`
     }
 };
-handler.command = handler.help = ['twitter','twitdl','twitterdl'];
+handler.command = handler.help = ['twitter','twitdl','twitterdl','xcom'];
 handler.tags = ['downloader'];
 handler.limit = true;
 handler.group = false;
