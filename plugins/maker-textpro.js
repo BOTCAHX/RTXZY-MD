@@ -1,6 +1,13 @@
 let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `🚩 *Contoh:* ${usedPrefix + command} botcahx`
-  await conn.reply(m.chat, wait, m)
+    const dates = new Date(); 
+    const timestamp = dates.getTime();     
+    const date = new Date(timestamp);
+    const hour = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    const seconds = date.getSeconds().toString().padStart(2, "0");
+    const formattedTime = hour + ":" + minutes + ":" + seconds;
+ await conn.reply(m.chat, wait, m)
   try {
     if (command == 'giraffe') {
       const res = `https://api.botcahx.live/api/textpro/giraffe?text=${encodeURIComponent(text)}&apikey=${btc}`;
@@ -107,7 +114,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'toxic') {
-      const res = `https://api.botcahx.live/api/textpro/toxic-bokeh?text=Beta&apikey=ct${encodeURIComponent(text)}&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/toxic-bokeh?text=${encodeURIComponent(text)}&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'strawberry') {
@@ -167,7 +174,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'wolflogo') {
-      const res = `https://api.botcahx.live/api/textpro/logo-wolf?text=2023&text2=${encodeURIComponent(text)}&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/logo-wolf?text=${formattedTime}&text2=${encodeURIComponent(text)}&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'naturalleaves') {
@@ -175,7 +182,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'harrypotter') {
-      const res = `https://api.botcahx.live/api/textpro/logo-wolf2?text=2023&text2=${encodeURIComponent(text)}&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/logo-wolf2?text=${formattedTime}&text2=${encodeURIComponent(text)}&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == '3dstone') {
@@ -191,7 +198,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'space') {
-      const res = `https://api.botcahx.live/api/textpro/space?text=${encodeURIComponent(text)}&text2=2023&&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/space?text=${encodeURIComponent(text)}&text2=${formattedTime}&&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'hallowen2') {
@@ -215,11 +222,11 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'glitch') {
-      const res = `https://api.botcahx.live/api/textpro/glitch?text=${encodeURIComponent(text)}&text2=2023&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/glitch?text=${encodeURIComponent(text)}&text2=${formattedTime}&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'glitch2') {
-      const res = `https://api.botcahx.live/api/textpro/glitch2?text=${encodeURIComponent(text)}&text2=2023&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/glitch2?text=${encodeURIComponent(text)}&text2=${formattedTime}&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'glitch3') {
@@ -227,7 +234,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'ninjalogo') {
-      const res = `https://api.botcahx.live/api/textpro/ninja-logo?text=${encodeURIComponent(text)}&text2=2023&apikey=${btc}`;
+      const res = `https://api.botcahx.live/api/textpro/ninja-logo?text=${encodeURIComponent(text)}&text2=${formattedTime}&apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'textpro.jpeg', '', m);
     }
     if (command == 'avengers') {
