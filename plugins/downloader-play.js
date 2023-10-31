@@ -47,7 +47,7 @@ let handler = async (m, { conn, text }) => {
         .on('end', async () => {
           let thumbnailData = await conn.getFile(thumbnailUrl);
           let buffer = fs.readFileSync(outputFilePath);
-          conn.sendFile(m.chat, buffer, `${title}.mp3`, '', m);
+          conn.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mpeg', fileName:`${title}.mp3` }, { quoted: m });
           fs.unlinkSync(inputFilePath);
           fs.unlinkSync(outputFilePath);
         })
