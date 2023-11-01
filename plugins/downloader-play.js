@@ -4,7 +4,7 @@ let ffmpeg = require('fluent-ffmpeg');
 let search = require ('yt-search');
 
 let handler = async (m, { conn, text }) => {
-  if (!text) return m.reply('*example*: .play eula song');
+  if (!text) return m.reply('*example*: .play Lathi');
   try {
     let results = await search(text);
     let videoId = results.videos[0].videoId;
@@ -20,10 +20,10 @@ let handler = async (m, { conn, text }) => {
     let seconds = duration % 60;
     let durationText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;       
     let audio = ytdl(videoId, { quality: 'highestaudio' });
-    let inputFilePath = 'tmp/' + title + '.webm';
-    let outputFilePath = 'tmp/' + title + '.mp3';
+    let inputFilePath = './tmp/' + title + '.webm';
+    let outputFilePath = './tmp/' + title + '.mp3';
     let viewsFormatted = formatViews(views);
-    let infoText = `◦ *Title*: ${title}\n◦ *Duration*: ${durationText}\n◦ *Upload*: ${uploadDate}\n◦ *Views*: ${viewsFormatted}\n◦ *ID*: ${videoId}\n◦ *Description*: ${description}
+    let infoText = `◦ *Title*: ${title}\n◦ *Duration*: ${durationText}\n◦ *Upload*: ${uploadDate}\n◦ *Views*: ${viewsFormatted}\n◦ *ID*: ${videoId}\n◦ *Description*: ${description}\n◦ *URL*: ${url}
   `;
     const pesan = conn.relayMessage(m.chat, {
                 extendedTextMessage:{
@@ -36,7 +36,7 @@ let handler = async (m, { conn, text }) => {
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: thumbnailUrl,
-                        sourceUrl: "https://youtube.com"
+                        sourceUrl: url
                     }
                 }, mentions: [m.sender]
 }}, {});
@@ -45,9 +45,24 @@ let handler = async (m, { conn, text }) => {
       ffmpeg(inputFilePath)
         .toFormat('mp3')
         .on('end', async () => {
-          let thumbnailData = await conn.getFile(thumbnailUrl);
-          let buffer = fs.readFileSync(outputFilePath);
-          conn.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mpeg', fileName:`${title}.mp3` }, { quoted: m });
+          let buffer = fs.readFileSync(outputFilePath);                    
+          conn.sendMessage(m.chat, {         
+                audio: buffer,
+                mimetype: 'audio/mpeg',
+                contextInfo: {
+                    externalAdReply: {
+                        title: title,
+                        body: "",
+                        thumbnailUrl: thumbnailUrl,
+                        sourceUrl: url,
+                        mediaType: 1,
+                        showAdAttribution: true,
+                        renderLargerThumbnail: true
+                    }
+                }
+            }, {
+                quoted: m
+            });
           fs.unlinkSync(inputFilePath);
           fs.unlinkSync(outputFilePath);
         })
