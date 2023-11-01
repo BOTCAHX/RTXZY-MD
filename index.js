@@ -67,6 +67,7 @@ function start(file) {
   p.on("exit", (code) => {
     isRunning = false;
     console.error('\x1b[31m%s\x1b[0m', `Exited with code: ${code}`);
+    start('main.js');
 
     if (code === 0) return;
 
