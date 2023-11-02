@@ -11,16 +11,12 @@ async function handler(m, { conn, usedPrefix, command, args, text }) {
       const out = await uploadImage(img);
       if (/^video/.test(mime)) {
       conn.sendMessage(m.chat, {
-    video: {
-      url: out,
-    },
+    video: img,
     gifPlayback: false,
     seconds: angka})
    } else if (/^audio/.test(mime)) {
     	conn.sendMessage(m.chat, {
-    audio: {
-      url: out,
-    },
+    audio: img,
     seconds: angka})
     } else {
       m.reply(`Kirim audio/video dengan caption *${usedPrefix + command}* <angka> atau tag audio/video yang sudah dikirim.`);
