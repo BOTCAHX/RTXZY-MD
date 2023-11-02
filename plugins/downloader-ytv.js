@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         return;
     }
     if (!args[0]) {
-        return m.reply(`Example: *${usedPrefix + command}* https://www.youtube.com/watch?v=IolEgdwvjEU`);
+        return m.reply(`Example: *${usedPrefix + command}* https://www.youtube.com/watch?v=Z28dtg_QmFw`);
     }
     const isValid = await ytdl.validateURL(args[0]);
     if (!isValid) {
