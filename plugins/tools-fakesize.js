@@ -11,23 +11,17 @@ async function handler(m, { conn, usedPrefix, command, args, text }) {
       const out = await uploadImage(img);
 	if (/^audio/.test(mime)) {
       conn.sendMessage(m.chat, {
-    audio: {
-      url: out,
-    },
+    audio: img,
     mimetype: 'audio/mpeg',
     fileLength: angka})
    } else if (/^video/.test(mime)) {
       conn.sendMessage(m.chat, {
-    video: {
-      url: out,
-    },
+    video: img,
     gifPlayback: false,
     fileLength: angka})
    } else if (/^image/.test(mime)) {
     	conn.sendMessage(m.chat, {
-    image: {
-      url: out,
-    },
+    image: img,
     fileLength: angka})
     } else {
       m.reply(`Kirim gambar/video/audio dengan caption *${usedPrefix + command}* <angka> atau tag gambar/video/audio yang sudah dikirim.`);
