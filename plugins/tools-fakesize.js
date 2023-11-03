@@ -9,6 +9,10 @@ async function handler(m, { conn, usedPrefix, command, args, text }) {
     if (!mime) throw 'Reply video/image/audio'
       const img = await q.download();
       const out = await uploadImage(img);
+	let fileSizeLimit = 15 * 1024 * 1024 // 15MB ðŸ—¿
+  if (img.length > fileSizeLimit) {
+    throw 'Ukuran media tidak boleh melebihi 15MB'
+  }
 	if (/^audio/.test(mime)) {
       conn.sendMessage(m.chat, {
     audio: img,
