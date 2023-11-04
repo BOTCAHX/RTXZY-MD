@@ -70,6 +70,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ["ytmp4"].map((v) => v + ' url');
 handler.tags = ["downloader"];
 handler.command = /^yt(v|mp4)?$/i;
-handler.register = true;
+handler.register = false;
 
 module.exports = handler;
