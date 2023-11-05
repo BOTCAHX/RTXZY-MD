@@ -5,12 +5,9 @@ let handler = async (m, { text, usedPrefix, command }) => {
   try {
     conn.reply(m.chat, wait, m)
     const res = await fetch(`https://api.botcahx.live/api/maker/text2img?text=${text}&apikey=${btc}`).then(res => res.buffer());
-    const textResult = res.toString();
-    const prompt = textResult.split('Negative prompt: ')[1].split('Steps:')[0].trim();
-    const additionalText = textResult.split('Lora hashes:')[1].split('Version:')[0].trim();
-    conn.sendFile(m.chat, res, 'image.jpg', `Negative prompt: ${prompt}\n${additionalText}`, m);
+    conn.sendFile(m.chat, res, 'image.jpg', `Result: ${text}`, m);
   } catch (error) {
-    m.reply(`Error: ${error.message}`);
+    m.reply(`Error: ${eror}`);
   }
 };
 
