@@ -11,7 +11,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
   }
 };
 
-handler.command = handler.help = ['text2img'];
+handler.command = handler.help = ['text2img', 'diffusion', 'stablediffusion', 'diff'];
 handler.tags = ['tools'];
 handler.limit = true;
 module.exports = handler;
