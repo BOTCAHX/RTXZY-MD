@@ -1,4 +1,3 @@
-
 let { mediafiredl } = require('@bochilteam/scraper')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
@@ -11,7 +10,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 *📨 Uploaded:* ${aploud}
 `.trim()
     m.reply(caption)
-    await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true })
+     conn.sendMessage(m.chat, { document: { url: url }, mimetype: ext, fileName: filename }, { quoted: m })
 }
 handler.help = ['mediafire'].map(v => v + ' <url>')
 handler.tags = ['downloader']
