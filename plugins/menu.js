@@ -38,8 +38,7 @@ let tags = {
   'stalk': 'MENU STALK',
   'shortlink': 'SHORT LINK',
   'tools': 'MENU TOOLS',
-  'anonymous': 'ANONYMOUS CHAT',
-  'admin': 'ADMIN', 
+  'anonymous': 'ANONYMOUS CHAT', 
   'bokep': 'FILE', 
   '': 'NO CATEGORY',
 }
