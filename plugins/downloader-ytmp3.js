@@ -7,7 +7,7 @@ let handler = async (m, {conn, text, usedPrefix}) => {
     throw 'Video/Audio Tidak Ditemukan'
   }
 }
-handler.command = handler.help = ['ytmp3','yta'];
+handler.command = handler.help = ['ytaudio'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
