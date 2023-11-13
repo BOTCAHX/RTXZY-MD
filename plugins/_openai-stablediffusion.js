@@ -7,7 +7,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   const prompt = text.split(',').join(', ');
   const response = await fetch(`https://api.botcahx.live/api/search/stablediffusion?text=${text}&apikey=${btc}`);
   const buffer = await response.buffer();
-  const saveFilename = path.join(__dirname, './tmp/stablediffusion.png');
+  const saveFilename = path.join(__dirname, '../tmp/stablediffusion.jpg');
   writeFileSync(saveFilename, buffer);
   conn.sendFile(m.chat, saveFilename, null, `*Result For:* _${prompt}_`, m);
 };
