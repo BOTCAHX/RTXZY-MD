@@ -4,7 +4,7 @@ var handler = async (m, {
  usedPrefix, 
  command
  }) => {
-if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* buatkan saya code html dino run`
+if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* buatkan saya code express.js`
 try {
   await m.reply(wait)
   var apii = await fetch(`https://api.botcahx.live/api/search/blackbox-chat?text=${text}&apikey=${btc}`)
