@@ -9,7 +9,7 @@ let text
         text = m.quoted.text
     } else throw "Input teks atau reply teks yang ingin di jadikan quote!"
    if (!text) return m.reply('masukan text')
-   if (text.length > 50) return m.reply('Maksimal 50 Teks!')
+   if (text.length > 100) return m.reply('Maksimal 100 Teks!')
 
 let randomColor = ['#ef1a11', '#89cff0', '#660000', '#87a96b', '#e9f6ff', '#ffe7f7', '#ca86b0', '#83a3ee', '#abcc88', '#80bd76', '#6a84bd', '#5d8d7f', '#530101', '#863434', '#013337', '#133700', '#2f3641', '#cc4291', '#7c4848', '#8a496b', '#722f37', '#0fc163', '#2f3641', '#e7a6cb', '#64c987', '#e6e6fa', '#ffa500'];
 
@@ -38,7 +38,7 @@ const apiColor = randomColor[Math.floor(Math.random() * randomColor.length)];
          "replyMessage": {}
       }]
    }
-   const json = await axios.post('https://bot.lyo.su/quote/generate', obj, {
+   const json = await axios.post('https://quote-api.neoxr.eu/generate', obj, {
       headers: {
          'Content-Type': 'application/json'
       }
