@@ -33,7 +33,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       } else if (command === 'hd3') {
         const api = await fetch(`https://api.botcahx.live/api/tools/remini-v3?url=${out}&resolusi=4&apikey=${btc}`);
         const image = await api.json();
-        const url = image.url.url;
+        const url = image.url;
         conn.sendFile(m.chat, url, null, wm, m);
        } else if (command === 'removebg' || command === 'nobg') {
         const api = await fetch(`https://api.botcahx.live/api/tools/removebg?url=${out}&apikey=${btc}`);
