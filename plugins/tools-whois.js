@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const handler = async (m, { text, usedPrefix, command }) => {
+let handler = async (m, { text, usedPrefix, command }) => {
   if (!text) throw `Masukkan Domain!\n\n*Contoh:* botcahx.live`;
   if (text.includes('https://') || text.includes('http://')) throw `Tolong masukkan tanpa domain *https/http!*. Contoh: botcahx.live`;  
   try {
@@ -24,4 +24,5 @@ handler.command = ['whois', 'whoislookup'];
 handler.help = ['whois', 'whoislookup'];
 handler.tags = ['tools'];
 handler.premium = false;
+handler.limit = true
 module.exports = handler;
