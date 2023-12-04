@@ -22,6 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   const pickuser = username[Math.floor(Math.random() * username.length)];
   const query = args[0] ? args[0] : pickuser;
   try {
+    conn.reply(m.chat, wait, m);
     const res = await fetch(`https://api.botcahx.live/api/asupan/tiktok?query=${query}&apikey=${btc}`);
     const api = await res.json();
     let capt = `乂 *T I K T O K*\n\n`;
@@ -40,7 +41,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 }
 handler.help = ['asupantiktok'].map(v => v + ' <username>');
 handler.tags = ['downloader'];
-handler.command = /^(asupantiktok)$/i;
+handler.command = /^(asupantiktok|asupantiktol)$/i;
 handler.limit = true;
 
 module.exports = handler;

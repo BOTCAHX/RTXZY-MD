@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         const image = await api.json();
         const { url } = image;
         conn.sendFile(m.chat, url, null, wm, m);
-      } else if (command === 'hd2') {       
+      } else if (command === 'hd2') {
         try {
           const api = await fetch(`https://api.botcahx.live/api/tools/remini-v2?url=${out}&apikey=${btc}`);
           const response = await api.text();

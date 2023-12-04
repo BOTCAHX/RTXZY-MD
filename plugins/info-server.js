@@ -14,14 +14,14 @@ let format = await fetch('https://ip-json.vercel.app/')
         caption += `└  ◦  Processor : ${os.cpus()[0].model}\n\n`;
       conn.relayMessage(m.chat, {
       extendedTextMessage: {
-      text: caption, 
+      text: caption,
       contextInfo: {
         externalAdReply: {
           title: `${toTime(os.uptime() * 1000)}`,
           mediaType: 1,
           previewType: 0,
           renderLargerThumbnail: true,
-          thumbnailUrl: 'https://telegra.ph/file/cf4f28ed3b9ebdfb30adc.png',
+          thumbnailUrl: 'https://img001.prntscr.com/file/img001/knUlLxJTQKGBhBgqeu5AmQ.png',
           sourceUrl: ''
         }
       },
@@ -41,7 +41,7 @@ handler.tags = ['info']
 module.exports = handler;
 
 function deleteMessage() {
-//chaunima😁   
+//chaunima😁
 }
 
 function formatSize(bytes) {

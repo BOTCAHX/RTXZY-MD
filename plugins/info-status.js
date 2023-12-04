@@ -47,7 +47,6 @@ let handler = async(m, { conn, command, usedPrefix, DevMode }) => {
         await conn.reply(m.chat, `_Testing ${command }..._`, m)
         let _ramTotal = (ramTotal + ' MB')
         let neww = performance.now()
-        
 
 var txt = `
 *「 Status 」*
@@ -64,14 +63,14 @@ Internet OUT : *${netsOut}*
 
 conn.relayMessage(m.chat, {
 extendedTextMessage:{
-                text: txt, 
+                text: txt,
                 contextInfo: {
                      externalAdReply: {
                         title: "",
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg',
+                        thumbnailUrl: 'https://img001.prntscr.com/file/img001/knUlLxJTQKGBhBgqeu5AmQ.png',
                         sourceUrl: ''
                     }
                 }, mentions: [m.sender]

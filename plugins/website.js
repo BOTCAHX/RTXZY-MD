@@ -2,10 +2,9 @@ let handler = async m => {
 
 let krtu = `web`
 m.reply(`
-> https://api.botcahx.live
-> https://tiodevhost.my.id
+> https://api.farrax.my.id
 
-`.trim()) 
+`.trim())
 }
 handler.command = /^(web)$/i
 

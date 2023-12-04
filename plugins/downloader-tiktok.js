@@ -9,21 +9,20 @@ try {
       throw `URL Tidak Ditemukan!`
     }
     m.reply('*Mohon tunggu..*')
-    const api = await https.get(`https://api.botcahx.live/api/dowloader/tiktok?url=${args[0]}&apikey=${btc}`, response => {
+    const api = await https.get(`https://aemt.me/download/ttdl?url=${args[0]}}`, response => {
       let data = '';
       response.on('data', chunk => {
         data += chunk;
       });
       response.on('end', async () => {
         const res = JSON.parse(data);
-        var { 
-          video, 
-          title, 
+        var {
+          title,
           title_audio,
           audio
         } = res.result
-        await conn.sendFile(m.chat, video, null, `Title: ${title}\nDeskripsi: ${title_audio}\nAudio: ${audio[1]}`, m);
-          conn.sendMessage(m.chat, { audio: { url: audio[1] }, mimetype: 'audio/mpeg' }, { quoted: m });
+
+        await conn.sendMessage(m.chat, { audio: { url: audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });
       });
     }).on('error', error => {
       console.log(error);
@@ -35,8 +34,8 @@ try {
   }
 };
 
-handler.help = ['tiktok'];
-handler.command = /^(tiktok|tt|tiktokdl|tiktoknowm)$/i
+handler.help = ['ttmp3'];
+handler.command = /^(ttmp3)$/i
 handler.tags = ['downloader'];
 handler.limit = true;
 handler.group = false;

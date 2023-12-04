@@ -1,10 +1,14 @@
 const fetch = require('node-fetch')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `*Contoh:* ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`
+    if (!args[0]) {
 
+        throw `*Contoh:* ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`
+    }
     try {
-        const api = await fetch(`https://api.botcahx.live/api/dowloader/igdowloader?url=${args[0]}&apikey=${btc}`)
+
+        conn.reply(m.chat, wait, m);
+        const api = await fetch(`https://aemt.me/download/igdl?url=${args[0]}`)
         const res = await api.json()
 
         for (let i of res.result) {

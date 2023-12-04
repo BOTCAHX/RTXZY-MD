@@ -11,14 +11,15 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.reply(m.chat, wait, m);
     const response = await tiktokdl(args[0]);
     const { video } = response;
-    await conn.sendFile(m.chat, video, 'tiktok.mp4', '*TikTok Downloader*');
+    await conn.sendFile(m.chat, video, 'tiktok.mp4', '*TikTok Downloader* \njika ingin mendownload mp3 ketik ini .ttmp3 <url>');
   } catch (e) {
     throw `Error: ${eror}`;
   }
 };
 
 handler.help = ['tikdl'];
-handler.command = /^(tikdl)$/i;
+handler.command = /^(tikdl|tt)$/i;
+
 handler.tags = ['downloader'];
 handler.limit = true;
 handler.group = false;

@@ -1,3 +1,4 @@
+/*
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, command }) => {
@@ -8,3 +9,5 @@ let handler = async (m, { conn, command }) => {
 handler.help = handler.command = ['donasi','donate','sewa','sewabot','belibot']
 handler.tags = ['main']
 module.exports = handler
+
+*/
