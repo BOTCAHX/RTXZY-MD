@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: rtxzy-bot
+    env: docker
+    region: Singapore 
+    plan: free
