@@ -4,7 +4,7 @@
 - Fix upload file ke server cdn 
 - Menggunakan QR dan pairing code 
 - Penggunaan pairing ```node . --pairing```
-- Fitur 80% implementasi dari website api
+- Fitur 90% implementasi dari website api
 - Penambah output url expres.js agar bisa di jalankan di render dsb.
 - Informasi api [WhatsApp](https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q)
   ## Note!
