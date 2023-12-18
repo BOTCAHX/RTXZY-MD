@@ -7,9 +7,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         const api = await fetch(`https://api.botcahx.eu.org/api/dowloader/igdowloader?url=${args[0]}&apikey=${btc}`)
         const res = await api.json()
 
-        for (let i of res.result) {
-          await sleep(5000)
-            conn.sendFile(m.chat, i.url, null, `*Instagram Downloader*`, m)
+        const limitnya = 10; // ini jumlah foto yang ingin di kirim ke user (default 10 foto)
+
+        for (let i = 0; i < Math.min(limitnya, res.result.length); i++) {
+            await sleep(3000)
+            conn.sendFile(m.chat, res.result[i].url, null, `*Instagram Downloader*`, m)
         }
     } catch (e) {
         throw `*Server Down!*`
@@ -24,5 +26,5 @@ handler.limit = true
 module.exports = handler
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
