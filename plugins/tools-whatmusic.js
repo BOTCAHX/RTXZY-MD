@@ -7,10 +7,14 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 	if (/video|audio/.test(mime)) {
 		let buffer = await q.download()
 		await m.reply(wait)
+		try {
 		let media = await uploader(buffer)
 		let json = await (await fetch(`https://api.botcahx.eu.org/api/tools/whatmusic?url=${media}&apikey=${btc}`)).json()		
         conn.sendMessage(m.chat, { text: json.result }, { quoted: m })
-	} else throw `Reply audio/video with command ${usedPrefix + command}`
+        } catch (err) {
+      throw `${eror}`
+    }
+ } else throw `Reply audio/video with command ${usedPrefix + command}`
 }
 handler.help = ['whatmusic']
 handler.tags = ['tools']
