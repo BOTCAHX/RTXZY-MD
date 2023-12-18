@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
     }
   } catch (e) {
     console.error(e);
-    throw `${error}`
+    throw `${eror}`
   }
 };
 handler.help = ['bardimg'];
