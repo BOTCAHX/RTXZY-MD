@@ -8,6 +8,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         const res = await api.json()
 
         for (let i of res.result) {
+          await sleep(5000)
             conn.sendFile(m.chat, i.url, null, `*Instagram Downloader*`, m)
         }
     } catch (e) {
@@ -21,3 +22,7 @@ handler.command = /^(ig|instagram|igdl|instagramdl|igstroy)$/i
 handler.limit = true
 
 module.exports = handler
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
