@@ -10,8 +10,8 @@ let handler = async (m, { conn }) => {
   }
 };
 
-handler.help = ['anime'];
-handler.tags = ['storyanime'];
+handler.help = ['storyanime'];
+handler.tags = ['anime'];
 handler.command = /^(storyanime)$/i;
 handler.limir = true 
 module.exports = handler;
