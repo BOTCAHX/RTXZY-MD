@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 let handler = async (m, { conn }) => {
-const res = await fetch(`https://api.botcahx.eu.org/api/random/katasenja&apikey=${btc}`).then(result => result.json())
+const res = await fetch(`https://api.botcahx.eu.org/api/random/katasenja?apikey=${btc}`).then(result => result.json())
 let anu =`─────〔 *Galau* 〕─────
 
 ${res.senja}
