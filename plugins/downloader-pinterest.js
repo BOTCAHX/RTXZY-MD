@@ -9,7 +9,7 @@ let handler = async (m, { usedPrefix, command, conn, args }) => {
     let limit = Math.min(5, data.result.length);
     for(let i = 1; i < limit; i++) { 
       await sleep(3000);
-      conn.sendFile(m.sender, data.result[i], 'pin.jpg', `🍟 *Fetching* : ${((new Date - old) * 1)} ms`, m);
+      conn.sendFile(m.chat, data.result[i], 'pin.jpg', `🍟 *Fetching* : ${((new Date - old) * 1)} ms`, m);
     }
   } catch (e) {
     throw `${eror}`;
