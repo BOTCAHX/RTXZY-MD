@@ -1,13 +1,22 @@
-let handler = function (m) {
-  if (!m.quoted) throw false
- let { chat, fromMe, id, isBaileys } = m.quoted
- if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
- conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
-}
-handler.help = ['delete']
-handler.tags = ['main']
+let handler = async (m, { conn, command }) => {
+    if (!m.quoted) throw 'Reply pesan yang ingin dihapus';
+    try {
+        let res = m.message.extendedTextMessage.contextInfo;
+        let deleteMsg = { delete: { remoteJid: m.chat, fromMe: false } };
+        if (res.participant) {
+            deleteMsg.delete.id = res.stanzaId;
+            deleteMsg.delete.participant = res.participant;
+        } else {
+            deleteMsg.delete.id = res.stanzaId;
+        }
+        return conn.sendMessage(m.chat, deleteMsg);
+    } catch {
+        return conn.sendMessage(m.chat, { delete: m.quoted.vM.key });
+    }
+};
+handler.help = ['del', 'delete'];
+handler.tags = ['tools'];
+handler.botaadmin = true;
+handler.command = ['del', 'delete', 'unsend'];
 
-handler.command = /^del|delete|unsend?$/i
-handler.register = false
-
-module.exports = handler
+module.exports = handler;
