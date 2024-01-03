@@ -12,7 +12,7 @@ let handler = async (m, { conn, args }) => {
    let img = await fetch(`https://api.botcahx.eu.org/api/maker/carbon?text=${text}&apikey=${btc}`).then(res => res.json());
    await conn.sendFile(m.chat, img.result, 'img.jpeg', '', m)
    } catch (e) {
-   throw `✖️ *Server sedang error!`
+   throw `${eror}`
    }
 }
 
