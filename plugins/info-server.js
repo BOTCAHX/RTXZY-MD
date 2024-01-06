@@ -1,4 +1,4 @@
-const os = require('node:os');
+const os = require('os');
 const fetch = require('node-fetch');
 
 let handler = async (m, { conn }) => {
