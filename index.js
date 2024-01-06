@@ -2,7 +2,7 @@ const cluster = require('cluster');
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
-const os = require('node:os');
+const os = require('os');
 const express = require('express');
 const app = express();
 
