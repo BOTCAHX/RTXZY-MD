@@ -3,22 +3,14 @@ let handler = async (m, { text, usedPrefix, command }) => {
     if (!text) throw `contoh:\n${usedPrefix + command} prm2.0`
     try {
         let api = await fetch(`https://api.botcahx.eu.org/api/stalk/ig?username=${text}&apikey=${btc}`)
-        let x = await api.json()
-        let caption = `▢ *Username*: ${x.result.username}
-▢ *Full Name*: ${x.result.full_name}
-▢ *Followers*: ${x.result.followers}
-▢ *Followings*: ${x.result.followings}
-▢ *Biography*: ${x.result.biography}
-▢ *External URL*: ${x.result.external_url}
-▢ *Business Account*: ${x.result.is_business_account ? 'Yes' : 'No'}
-▢ *Professional Account*: ${x.result.is_professional_account ? 'Yes' : 'No'}
-▢ *Private Account*: ${x.result.is_private ? 'Yes' : 'No'}
-▢ *Verified Account*: ${x.result.is_verified ? 'Yes' : 'No'}
-▢ *Verified by MV4B*: ${x.result.is_verified_by_mv4b ? 'Yes' : 'No'}
-▢ *Pronouns*: ${x.result.pronouns.join(', ')}
-▢ *Post Count*: ${x.result.post_count}
-▢ *EIMU ID*: ${x.result.eimu_id}`
-        return conn.sendFile(m.chat, x.result.profile_pic_url_hd, 'pp.png', caption, m)
+        let response = await api.json()
+        if (response.status) {
+            let userInfo = response.result.user_info
+            let caption = `▢ *Username*: ${userInfo.username}\n▢ *Full Name*: ${userInfo.full_name}\n▢ *Biography*: ${userInfo.biography}\n▢ *Posts*: ${userInfo.posts}\n▢ *Followers*: ${userInfo.followers}\n▢ *Following*: ${userInfo.following}`
+            return conn.sendFile(m.chat, userInfo.profile_pic_url, 'pp.png', caption, m)
+        } else {
+            throw 'Sistem Sedang Bermasalah!'
+        }
     } catch (e) {
         m.reply('Sistem Sedang Bermasalah!')
     }
