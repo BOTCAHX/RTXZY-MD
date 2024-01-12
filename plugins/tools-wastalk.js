@@ -26,7 +26,7 @@ let handler = async (m, {
         image: {
             url: img
         },
-        caption: wea,
+        caption: res,
         mentions: [num]
     }, {
         quoted: m
