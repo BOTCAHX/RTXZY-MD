@@ -19,12 +19,12 @@
 **Apikey :**
 - [✓] Free ApiKey 15 Request (/day)
 - [✓] Premium ApiKey 5000 Request (for 1 month)
-- Jika ingin membeli ApiKey Premium silahkan hubungi saya [`Nomor`](https://wa.me/6282221792667?text=permisi+mau+beli+premium+apikey)
+- Jika ingin membeli ApiKey Premium silahkan register lalu pilih paket yang di inginkan [`Pilih`](https://api.botcahx.eu.org/price)
 
 **Website Api :**
 - BOTCAHX [`Register`](https://api.botcahx.eu.org)
 - Lann [`Register`](https://api.betabotz.eu.org)
-- Setelah mendapatkan ApiKey dari kedua website tersebut silahkan paste di config.js pada line global.btc dan global.lann
+- Setelah mendapatkan apikey silahkan paste di config.js pada bagian ```global.btc``` dan ```global.lann```
 
 
 ## Group Bot
