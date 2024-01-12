@@ -28,9 +28,8 @@
 
 
 ## Group Bot
-- Group Bot [`Join`](https://chat.whatsapp.com/Ln2vHjRrRayAbzalRMB56r)
-
-- Group Bebas [`Join`](https://chat.whatsapp.com/JAi5AMaxdFLH0s2pH2RcUJ)
+- Group Bot [`Join`](https://chat.whatsapp.com/CP5mV2D9IO730HpBgmkuyi)
+- Group Bebas [`Join`](https://chat.whatsapp.com/KrxlrTjuZ1o3gbL4fyXTnL)
 ## Support
 
 <a href="https://sociabuzz.com/tioclkp02" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Sociabuzz"></a>
