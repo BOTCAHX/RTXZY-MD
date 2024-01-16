@@ -2,14 +2,19 @@ let fetch = require('node-fetch')
 let handler = async (m, { text, usedPrefix, command }) => {
     if (!text) throw `contoh:\n${usedPrefix + command} botcahx`
     
-    let json = await fetch(`https://api.botcahx.eu.org/api/tools/styletext?text=${text}&apikey=${btc}`)
-    let data = await json.json()
-    let caption = ""
-    for (let x of data.result) {
-        caption += `
+    try {
+        let json = await fetch(`https://api.botcahx.eu.org/api/tools/styletext?text=${text}&apikey=${btc}`)
+        let data = await json.json()
+        let caption = ""
+        for (let x of data.result) {
+            caption += `
 ${x.result}\n`
+        }
+        return m.reply(caption)
+    } catch (e) {
+        console.log(e)
+        throw `${eror}`
     }
-    return m.reply(caption)
 }
 
 handler.help = ['font','styletext'].map(v => v + ' <text>')
