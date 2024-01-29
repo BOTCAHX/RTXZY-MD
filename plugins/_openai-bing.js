@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+/*const fetch = require('node-fetch');
 
 let handler = async (m, {
   conn,
@@ -64,3 +64,4 @@ module.exports = handler
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+*/
