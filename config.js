@@ -12,7 +12,7 @@ global.eror = '_*Server Error*_'
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made With'
 global.author = 'Bot WhatsApp'
-global.autobio = true //set false untuk mematikan autobio
+global.autobio = true // Set false untuk mematikan autobio
 global.maxwarn = '2' // Peringatan maksimum
 
 //INI WAJIB DI ISI!//
