@@ -10,21 +10,21 @@
   ## Note!
   **Important :**
   
-- Untuk menggunakan bot ini, kamu diwajibkan mengisi ApiKey terlebih dahulu. Jika tidak mengisinya, bot tidak akan berfungsi dengan baik.
-- Tidak disarankan menginstal bot ini di termux atau panel yang tidak mempunyai kelengkapan express, ffmpeg, imagemagick, webp.
+- Untuk menggunakan bot ini, kamu diwajibkan mengisi ```Apikey``` terlebih dahulu, Jika tidak mengisinya maka bot tidak akan berfungsi dengan baik.
+- Tidak disarankan menginstal bot ini di termux atau panel yang tidak mempunyai kelengkapan ffmpeg, imagemagick, webp atau panel yang tidak support express.js
   
-- Menggunakan 60% fitur dari [`RestApi`](https://api.botcahx.eu.org) sebagai media downloader
+- Menggunakan 60% fitur dari [`RestApi`](https://api.botcahx.eu.org)  
 
 
 **Apikey :**
 - [✓] Free ApiKey 15 Request (/day)
 - [✓] Premium ApiKey 5000 Request (for 1 month)
-- Jika ingin membeli ApiKey Premium silahkan register lalu pilih paket yang di inginkan [`Pilih`](https://api.botcahx.eu.org/price)
+- Jika ingin membeli ``Apikey``` Premium silahkan register lalu pilih paket yang di inginkan [`Pilih`](https://api.botcahx.eu.org/price)
 
 **Website Api :**
 - BOTCAHX [`Register`](https://api.botcahx.eu.org)
 - Lann [`Register`](https://api.betabotz.eu.org)
-- Setelah mendapatkan apikey silahkan paste di config.js pada bagian ```global.btc``` dan ```global.lann```
+- Setelah mendapatkan apikey silahkan paste di config.js pada bagian ```global.btc``` dan sebagai optional kamu bisa juga mengisi ```global.lann```
 
 
 ## Group Bot
@@ -86,4 +86,4 @@ Recode | Contributor |
 <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=100" width="100" height="100"></a> | [![NURUTOMO](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) 
 ---|---
 [Bochilgaming](https://github.com/BochilGaming)  | [Nurutomo](https://github.com/Nurutomo)
-sepuh | sepuh |
+Sepuh | Sepuh |
