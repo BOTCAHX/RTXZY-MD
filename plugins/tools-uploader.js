@@ -14,7 +14,7 @@ let handler = async (m) => {
   let link = await (isTele ? uploadImage : uploadFile)(media)
   m.reply(`${link}
 ${media.length} Byte(s)
-${isTele ? '(Tidak Ada Tanggal Kedaluwarsa)' : '(Tidak diketahui)'}`)
+${isTele ? '(Tidak Ada Tanggal Kedaluwarsa)' : '(Expired 24 hours)'}`)
 }
 handler.help = ['tourl <reply image>']
 handler.tags = ['sticker']
