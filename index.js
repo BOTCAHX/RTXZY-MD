@@ -6,7 +6,7 @@ const os = require('os');
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 3000; // ex: 8000, 5000, 4444
+const port = process.env.PORT || 3000 || 5000 || 8000;
 
 console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
 app.get('/', (req, res) => {
