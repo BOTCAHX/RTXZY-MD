@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: botaa
+    name: bot-wa
     env: docker
     region: Singapore 
     plan: free
