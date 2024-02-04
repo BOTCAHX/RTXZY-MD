@@ -19,7 +19,7 @@
 **Apikey :**
 - [✓] Free ApiKey 15 Request (/day)
 - [✓] Premium ApiKey 5000 Request (for 1 month)
-- Jika ingin membeli ``Apikey``` Premium silahkan register lalu pilih paket yang di inginkan [`Pilih`](https://api.botcahx.eu.org/price)
+- Jika ingin membeli ```Apikey``` Premium silahkan register lalu pilih paket yang di inginkan [`Pilih`](https://api.botcahx.eu.org/price)
 
 **Website Api :**
 - BOTCAHX [`Register`](https://api.botcahx.eu.org)
