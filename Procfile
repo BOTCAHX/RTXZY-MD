@@ -1,1 +1,1 @@
-worker: node . --autocleartmp 
+worker: node index.js --autocleartmp --autoread
