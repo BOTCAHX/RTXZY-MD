@@ -1,4 +1,4 @@
-/*const fetch = require('node-fetch');
+const fetch = require('node-fetch');
 
 let handler = async (m, {
   conn,
@@ -6,7 +6,7 @@ let handler = async (m, {
   usedPrefix,
   command
 }) => {
-  if (command == 'bing') {
+  /*if (command == 'bing') {
     if (!text) throw `Example : ${usedPrefix + command} siapa presiden Indonesia?`;
     try {
       m.reply(wait)
@@ -27,7 +27,7 @@ let handler = async (m, {
       console.log(e);
       throw `*Error:* ${eror}`;
     }
-  }
+  }*/
   if (command == 'bingimg') {
     if (!text) throw `Contoh: ${usedPrefix + command} anak berlari menggunakan pakaian merah 3d animation`;
     try {
@@ -50,7 +50,7 @@ let handler = async (m, {
         await conn.sendFile(m.chat, img, 'bing_img.png', `*PROMPT:* ${text}`, m)
       }
     } catch (error) {
-      throw `Error: ${eror}`
+      throw `${eror}`
     }
   }
 }
@@ -64,4 +64,3 @@ module.exports = handler
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-*/
