@@ -6,7 +6,7 @@ let handler = async (m, {
   usedPrefix,
   command
 }) => {
-  /*if (command == 'bing') {
+  if (command == 'bing') {
     if (!text) throw `Example : ${usedPrefix + command} siapa presiden Indonesia?`;
     try {
       m.reply(wait)
@@ -27,7 +27,7 @@ let handler = async (m, {
       console.log(e);
       throw `*Error:* ${eror}`;
     }
-  }*/
+  }
   if (command == 'bingimg') {
     if (!text) throw `Contoh: ${usedPrefix + command} anak berlari menggunakan pakaian merah 3d animation`;
     try {
