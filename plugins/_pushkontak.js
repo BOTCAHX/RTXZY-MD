@@ -28,7 +28,7 @@ if (!text && !m.quoted) return m.reply("Input text\nReply pesan")
             if (count === 0) {
                 m.reply(`Berhasil Push Kontak:\nJumlah Pesan Terkirim: *${sentCount}*`);
             }
-        }, i * 1000); // delay setiap pengiriman selama 1 detik
+        }, i * 5000); // delay setiap pengiriman selama 5 menit
     }
 }
 handler.command = handler.help = ['pushkontak']
