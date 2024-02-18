@@ -1,7 +1,7 @@
 ## New Update
 
 **Pembaruan :**
-- Fix upload file ke server cdn 
+- Fix upload file ke server [`cdn`](https://btch.pages.dev), dan temporary [`File Hosting`](https://file.botcahx.eu.org)
 - Menggunakan QR dan pairing code 
 - Use pairing ```node . --pairing``` 
 - Fitur 90% implementasi dari website api
