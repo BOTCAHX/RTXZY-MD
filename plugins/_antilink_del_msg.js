@@ -1,4 +1,4 @@
-/** // Untuk delete pesan link Group
+/** // Untuk delete pesan link Groupp
 
 let handler = async (m, { conn, command, text }) => {
   await conn.sendMessage(m.chat, { delete: m.key})
