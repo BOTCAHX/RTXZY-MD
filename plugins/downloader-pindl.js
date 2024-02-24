@@ -1,8 +1,11 @@
-const fetch = require('node-fetch');
+let fetch = require('node-fetch');
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
     throw `Masukkan URL!\n\ncontoh:\n${usedPrefix}${command} https://pin.it/4CVodSq`;
+  }
+  if (!args[0].startsWith('https://')) {
+    throw `Harus memasukkan URL yang valid dengan format *https://*\n\nEx: https://pin.it/4CVodSq`;
   }
   try {
     m.reply(wait);
