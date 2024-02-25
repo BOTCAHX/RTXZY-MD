@@ -97,7 +97,7 @@ ${muptime}
 *s ᴇ ʀ ᴠ ᴇ ʀ*
 *🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
 *🔵 ғʀᴇᴇRAM:* ${format(freemem())}
-*🔴 ᴍᴇᴍᴏʀy:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+*🔴 ᴄᴘᴜ ᴛʏᴘᴇ:* ${require('os').cpus()[0].model}
 *🔭 ᴘʟᴀᴛғᴏʀᴍ:* ${os.platform()}
 *🧿 sᴇʀᴠᴇʀ:* ${os.hostname()}
 *💻 ᴏs:* ${OS}
@@ -155,7 +155,7 @@ extendedTextMessage:{
                 text: txt, 
                 contextInfo: {
                      externalAdReply: {
-                        title: "",
+                        title: `${require('os').cpus()[0].model}`,
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
@@ -177,7 +177,3 @@ function clockString(ms) {
   var s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [d, 'D ', h, 'H ', m, 'M ', s, 'S '].map(v => v.toString().padStart(2, 0)).join('')
 }
-
-        
-       
-
