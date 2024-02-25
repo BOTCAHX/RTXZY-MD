@@ -67,7 +67,7 @@ extendedTextMessage:{
                 text: txt, 
                 contextInfo: {
                      externalAdReply: {
-                        title: "",
+                        title: `${ramUsed} / ${_ramTotal}(${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : NotDetect})`,
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
