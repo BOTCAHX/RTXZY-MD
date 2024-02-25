@@ -16,7 +16,7 @@ extendedTextMessage:{
                 text: stdout, 
                 contextInfo: {
                      externalAdReply: {
-                        title: "",
+                        title: wm,
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
