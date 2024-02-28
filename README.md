@@ -3,7 +3,7 @@
 **Pembaruan :**
 - Fix upload file ke server [`cdn`](https://btch.pages.dev), dan temporary [`File Hosting`](https://file.botcahx.eu.org)
 - Menggunakan QR dan pairing code 
-- Use pairing ```node . --pairing``` 
+- Use pairing ```node index.js --pairing``` 
 - Fitur 90% implementasi dari website api
 - Penambah output url expres.js agar bisa di jalankan di render dsb.
 - Informasi api [WhatsApp](https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q)
@@ -63,7 +63,7 @@ Original base [`Link`](https://github.com/HelgaIlham/ZukaBet)
 git clone https://github.com/BOTCAHX/RTXZY-MD
 cd RTXZY-MD
 npm i
-npm start
+node index.js
 ```
 ```javascript
 // to get pairing code //
