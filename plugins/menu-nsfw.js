@@ -22,7 +22,7 @@ let handler = async (m, { conn, command }) => {
       await conn.sendFile(m.chat, res, 'nsfw.jpg', '', m);
     }
      if (command == 'cuckold') {
-      const res = `https://api.botcahx.eu.org/api/nsfw/cuckold?apikey=ct${btc}`;
+      const res = `https://api.botcahx.eu.org/api/nsfw/cuckold?apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'nsfw.jpg', '', m);
     }
     if (command == 'cum') {
