@@ -58,7 +58,6 @@
         "form-data": "^4.0.0",
         "google-it": "^1.6.3",
         "human-readable": "^0.2.1",
-        "hxz-api": "^1.0.1",
         "jsdom": "^20.0.0",
         "lodash": "^4.17.21",
         "lowdb": "^2.1.0",
