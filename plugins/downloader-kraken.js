@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     await m.reply(wait)
     let data = await (await fetch(`https://api.botcahx.eu.org/api/download/kraken?url=${text}&apikey=${btc}`)).json()
     let msg = `乂 *K R A K E N  D O W N L O A D E R*\n\n`
-    msg += ` ◦ *Name :* ${data.result.fileName}`
+    msg += ` ◦ *Name :* ${data.result.fileName}\n`
     msg += ` ◦ *View :* ${data.result.views}\n`
     msg += ` ◦ *Size :* ${data.result.fileSize}\n`
     msg += ` ◦ *Type :* ${data.result.fileType}\n`
