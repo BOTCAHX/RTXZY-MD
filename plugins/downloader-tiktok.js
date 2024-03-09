@@ -1,40 +1,24 @@
-const https = require('https');
+const axios = require('axios');
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) {
-      throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    if (!text) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`;    
+    try {
+        if (!text.match(/tiktok/gi)) throw `URL Tidak Ditemukan!`;        
+        m.reply(wait);      
+        const response = await axios.get(`https://api.botcahx.eu.org/api/dowloader/tiktok?url=${text}&apikey=${btc}`);        
+        const res = response.data.result;      
+        var { video, title, title_audio, audio } = res;
+        let capt = `乂 *T I K T O K*\n\n`;
+        capt += `◦ *Title* : ${title}\n`;
+        capt += `◦ *Audio* : ${title_audio}\n`;
+        capt += `\n`;        
+        await conn.sendFile(m.chat, video, null, capt, m);
+        conn.sendMessage(m.chat, { audio: { url: audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });         
+    } catch (e) {
+        console.log(e);
+        throw `🚩 ${eror}`;
     }
-try {
-    if (!args[0].match(/tiktok/gi)) {
-      throw `URL Tidak Ditemukan!`
-    }
-    m.reply('*Mohon tunggu..*')
-    const api = await https.get(`https://api.botcahx.eu.org/api/dowloader/tiktok?url=${args[0]}&apikey=${btc}`, response => {
-      let data = '';
-      response.on('data', chunk => {
-        data += chunk;
-      });
-      response.on('end', async () => {
-        const res = JSON.parse(data);
-        var { 
-          video, 
-          title, 
-          title_audio,
-          audio
-        } = res.result
-        await conn.sendFile(m.chat, video, null, `Title: ${title}\nDeskripsi: ${title_audio}\nAudio: ${audio[0]}`, m);
-          conn.sendMessage(m.chat, { audio: { url: audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });
-      });
-    }).on('error', error => {
-      console.log(error);
-      throw error.message
-    });
-  } catch (e) {
-    console.log(e)
-    throw `Terjadi Kesalahan!`
-  }
 };
-
 handler.help = ['tiktok'];
 handler.command = /^(tiktok|tt|tiktokdl|tiktoknowm)$/i
 handler.tags = ['downloader'];
