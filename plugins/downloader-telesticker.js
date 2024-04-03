@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `🚩*Example:* ${usedPrefix + command} https://t.me/addstickers/fuwayonimaa_by_fStikBot`;
-    if (!text.match(/(https:\/\/t.me\/addstickers\/)/gi)) throw `🚩*Example:* ${usedPrefix + command} https://t.me/addstickers/fuwayonimaa_by_fStikBot`;
+    if (!text) throw `🚩 *Example:* ${usedPrefix + command} https://t.me/addstickers/fuwayonimaa_by_fStikBot`;
+    if (!text.match(/(https:\/\/t.me\/addstickers\/)/gi)) throw `🚩 *Example:* ${usedPrefix + command} https://t.me/addstickers/fuwayonimaa_by_fStikBot`;
     m.reply(wait)
     try {
         let res = await (await fetch(`https://api.botcahx.eu.org/api/download/telesticker?url=${text}&apikey=${btc}`)).json()
