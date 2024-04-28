@@ -2,18 +2,17 @@
 
 **Pembaruan :**
 - Fix upload file [`File Hosting`](https://file.botcahx.eu.org)
-- Menggunakan QR dan pairing code 
+- Telah support QR dan Pairing Code 
 - Use pairing ```node index.js --pairing``` 
-- Fitur 90% implementasi dari website api
-- Penambah output url expres.js agar bisa di jalankan di render dsb.
-- Informasi api [WhatsApp](https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q)
+- Fitur 95% implementasi dari website api
+- Informasi api & update script [WhatsApp](https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q)
   ## Note!
   **Important :**
   
 - Untuk menggunakan bot ini, kamu diwajibkan mengisi ```Apikey``` terlebih dahulu, Jika tidak mengisinya maka bot tidak akan berfungsi dengan baik.
 - Tidak disarankan menginstal bot ini di termux atau panel yang tidak mempunyai kelengkapan ffmpeg, imagemagick, webp atau panel yang tidak support express.js
   
-- Menggunakan 60% fitur dari [`RestApi`](https://api.botcahx.eu.org)  
+- Menggunakan 95% fitur dari [`RestApi`](https://api.botcahx.eu.org)  
 
 
 **Apikey :**
