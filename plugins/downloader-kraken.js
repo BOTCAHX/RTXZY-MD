@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `*🚩 Example:* ${usedPrefix}${command} https://krakenfiles.com/view/HG9WxZaL08/file.html`
+    if (!text) throw `*🚩 Example:* ${usedPrefix}${command} https://krakenfiles.com/view/neTIvR1wIz/file.html&apikey=GwFGx4gp`
     await m.reply(wait)
     let data = await (await fetch(`https://api.botcahx.eu.org/api/download/kraken?url=${text}&apikey=${btc}`)).json()
     let msg = `乂 *K R A K E N  D O W N L O A D E R*\n\n`
