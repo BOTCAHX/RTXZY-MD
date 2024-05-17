@@ -19,7 +19,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         throw `🚩 ${eror}`;
     }
 };
-handler.help = ['tiktok'];
+handler.help = ['douyin'];
 handler.command = /^(douyin)$/i;
 handler.tags = ['downloader'];
 handler.limit = true;
