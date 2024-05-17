@@ -1,36 +1,25 @@
-const fetch = require('node-fetch');
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) {
-    throw `Masukkan URL!\n\ncontoh:\n${usedPrefix + command} https://v.douyin.com/ikq8axJ/`;
-  }
-    if (!args[0].match(/douyin/gi)) {
-      throw `URL Tidak Ditemukan!`;
-    }
-    m.reply('*Mohon tunggu...*');
+const axios = require('axios');
+
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    if (!text) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://v.douyin.com/ikq8axJ/`;    
     try {
-    const api = await fetch(`https://api.botcahx.eu.org/api/download/douyin?url=${args[0]}&apikey=${btc}`);
-    const res = await api.json();
-    var {
-      title, 
-      duration, 
-      total_share,
-      total_download,
-      total_play,
-      total_comment
-    } = res.result.info_video
-    const { 
-    nowm,
-    wm, 
-    audio 
-    } = res.result.url
-     
-  conn.sendFile(m.chat, nowm, null, `*Deskripsi:* ${title}\n*Durasi:* ${duration}\n*Total Share*: ${total_share}\n*Total Download:* ${total_download}\n*Total Play:* ${total_play}\n*Total Komentar:* ${total_comment}\n*Audio:* ${audio}`, m);
-  } catch (e) {
-    console.log(e);
-    throw `Terjadi kesalahan!`;
-  }
+        if (!text.match(/douyin/gi)) throw `URL Tidak Ditemukan!`;        
+        m.reply(wait);      
+        const response = await axios.get(`https://api.botcahx.eu.org/api/dowloader/douyin?url=${text}&apikey=${btc}`);        
+        const res = response.data.result;      
+        var { video, title, title_audio, audio } = res;
+        let capt = `乂 *D O U Y I N*\n\n`;
+        capt += `◦ *Title* : ${title}\n`;
+        capt += `◦ *Audio* : ${title_audio}\n`;
+        capt += `\n`;        
+        await conn.sendFile(m.chat, video, null, capt, m);
+        conn.sendMessage(m.chat, { audio: { url: audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });         
+    } catch (e) {
+        console.log(e);
+        throw `🚩 ${eror}`;
+    }
 };
-handler.help = ['douyin'];
+handler.help = ['tiktok'];
 handler.command = /^(douyin)$/i;
 handler.tags = ['downloader'];
 handler.limit = true;
