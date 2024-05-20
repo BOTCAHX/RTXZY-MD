@@ -1,4 +1,4 @@
- const fetch = require('node-fetch');
+const fetch = require('node-fetch');
 
 let handler = async (m, {
   conn,
@@ -13,10 +13,9 @@ let handler = async (m, {
       const res = await api.json();
       for (let i of res.result.images) {
         await sleep(3000);
-        conn.sendMessage(m.chat,{ image :{ url : i } , caption : `*Title*: ${res.result.title}` }, { quoted: m });
-        await sleep(5000);
-        conn.sendMessage(m.chat, { audio: { url: res.result.audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });         
+        conn.sendMessage(m.chat,{ image :{ url : i } , caption : `*Title*: ${res.result.title}` }, { quoted: m });         
       }
+        conn.sendMessage(m.chat, { audio: { url: res.result.audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });
     } catch (e) {
       console.log(e);
       throw `🚩 *Terjadi kesalahan!*`;
@@ -29,10 +28,9 @@ let handler = async (m, {
       const res = await api.json();
       for (let i of res.result.images) {
         await sleep(3000);
-        conn.sendMessage(m.chat,{ image :{ url : i } , caption : `*Title*: ${res.result.title}` }, { quoted: m });
-        await sleep(5000);
-        conn.sendMessage(m.chat, { audio: { url: res.result.audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });         
+        conn.sendMessage(m.chat,{ image :{ url : i } , caption : `*Title*: ${res.result.title}` }, { quoted: m });         
       }
+        conn.sendMessage(m.chat, { audio: { url: res.result.audio[0] }, mimetype: 'audio/mpeg' }, { quoted: m });
     } catch (e) {
       console.log(e);
       throw `🚩 *Terjadi kesalahan!*`;
