@@ -38,7 +38,7 @@ const apiColor = randomColor[Math.floor(Math.random() * randomColor.length)];
          "replyMessage": {}
       }]
    }
-   const json = await axios.post('https://quote.btch.bz/generate', obj, {
+   const json = await axios.post('https://qc.botcahx.eu.org/generate', obj, {
       headers: {
          'Content-Type': 'application/json'
       }
