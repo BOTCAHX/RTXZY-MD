@@ -39,9 +39,9 @@ extendedTextMessage:{
     }
 }
 
-handler.help = ['ytstalk <username>']
+handler.help = ['ytstalk']
 handler.tags = ['stalk']
-handler.command = /^(yotubestalk|ytstalk)$/i
+handler.command = /^(youtubestalk|ytstalk)$/i
 handler.limit = true
 
 module.exports = handler
