@@ -65,7 +65,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name =  await conn.getName(m.sender)
+    let name =  `@${m.sender.split`@`[0]}`
     let d = new Date(new Date + 3600000)
     let locale = 'id'
     const wib = moment.tz('Asia/Jakarta').format("HH:mm:ss")
@@ -154,48 +154,21 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
       level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    
-    let media = await prepareWAMessageMedia({ image: { url: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg' } }, { upload: conn.waUploadToServer });
-  let msg = generateWAMessageFromContent(m.chat, {
-  viewOnceMessage: {
-    message: {
-      "messageContextInfo": {
-        "deviceListMetadata": {},
-        "deviceListMetadataVersion": 2
-      },
-      interactiveMessage: proto.Message.InteractiveMessage.create({
-        body: proto.Message.InteractiveMessage.Body.create({
-          text: text
-        }),
-        footer: proto.Message.InteractiveMessage.Footer.create({
-          text: ""
-        }),
-        header: proto.Message.InteractiveMessage.Header.create({
-          ...media,
-          title: "",
-          subtitle: "",
-          hasMediaAttachment: false
-        }),
-        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-          buttons: [
-            {
-              "name": "cta_url",
-              "buttonParamsJson": JSON.stringify({
-                display_text: "Instagram",
-                url: instagram,
-                merchant_url: instagram
-              })
-            },
-          ],
-        })
-      })
-    }
-  }
-}, {})
-
-return await conn.relayMessage(msg.key.remoteJid, msg.message, {
-  messageId: msg.key.id
-});
+      conn.relayMessage(m.chat, {
+      extendedTextMessage:{
+                text: text, 
+                contextInfo: {
+                mentionedJid: [m.sender],
+                     externalAdReply: {
+                        title: date,
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
+                        sourceUrl: 'https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q'
+                    }
+                }, mentions: [m.sender]
+}}, {})  
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
