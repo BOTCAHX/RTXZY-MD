@@ -1,32 +1,30 @@
-let axios = require('axios')
+let fetch = require("node-fetch");
 let handler = async (m, {
     conn,
     text,
     usedPrefix,
     command
 }) => {
-    var teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : ''
-    if (!teks) throw `Ex: ${usedPrefix}${command} Jiwa yang bersedih`
+    if (!text) throw `Ex: ${usedPrefix}${command} Jiwa yang bersedih`
     try {
-        let result = await lirik(text)
+        let data = await (await fetch(`https://api.botcahx.eu.org/api/search/lirik?lirik=${text}&apikey=${btc}`)).json()
         let caption = `
-${result.lyrics}
+${data.result.lyrics}
 
 ℹ️ More info:
-🔗 ${result.url}
-🎤 Artist: ${result.artistName}
-📅 Released: ${result.releasedAt}`
+🔗 ${data.result.image}
+🎤 Artist: ${data.result.artist}`
         await conn.relayMessage(m.chat, {
             extendedTextMessage:{
                 text: caption, 
                 contextInfo: {
                      externalAdReply: {
-                        title: `🎵 ${result.title} - ${result.artist} 🎵`,
+                        title: `🎵 ${data.result.title} - ${data.result.artist} 🎵`,
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: result.thumbnail,
-                        sourceUrl: 'https://aemt.me'
+                        thumbnailUrl: data.result.image,
+                        sourceUrl: ''
                     }
                 }, mentions: [m.sender]
 }}, {})
@@ -41,34 +39,3 @@ handler.tags = ['internet']
 handler.command = /^(lirik|lyrics|lyric)$/i
 
 module.exports = handler
-
-async function lirik(q) {
-    try {
-        const searches = await axios.get(`https://aemt.me/lirik?text=${q}`)
-     
-        let result = searches.data.result
-        let data = {
-            lyrics: result.lyrics,
-            thumbnail: result.thumbnail,
-            title: result.title,
-            artist: result.artist,
-            image: result.image,
-            fullTitle: result.fullTitle,
-            featuredTitle: result.featuredTitle,
-            url: result.url,
-            artistName: result.artistName,
-            artistUrl: result.artistUrl,
-            artistThumbnail: result.artistThumbnail,
-            artistImage: result.artistImage,
-            releasedAt: result.releasedAt,
-            instrumental: result.instrumental,
-            iq: result.iq,
-            stats: result.stats,
-            releaseDateForDisplay: result.releaseDateForDisplay,
-            releaseDateWithAbbreviatedMonthForDisplay: result.releaseDateWithAbbreviatedMonthForDisplay
-        }
-        return data
-    } catch (error) {     
-        return { error: 'Internal server error!' }
-    }
-}
