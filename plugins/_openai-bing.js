@@ -28,7 +28,7 @@ let handler = async (m, {
       throw `*Error:* ${eror}`;
     }
   }
-  /*if (command == 'bingimg') {
+  if (command == 'bingimg') {
     if (!text) throw `Contoh: ${usedPrefix + command} anak berlari menggunakan pakaian merah 3d animation`;
     try {
       m.reply(wait)
@@ -52,12 +52,12 @@ let handler = async (m, {
     } catch (error) {
       throw `${eror}`
     }
-  }*/
+  }
 }
 
-/*handler.command = handler.help = ['bing', 'bingimg']*/
+handler.command = handler.help = ['bing', 'bingimg']
 
-handler.command = handler.help = ['bing']
+//handler.command = handler.help = ['bing']
 handler.tags = ['tools']
 handler.limit = true
 
