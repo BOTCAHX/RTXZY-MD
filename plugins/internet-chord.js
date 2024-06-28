@@ -17,7 +17,7 @@ module.exports = handler
 const chord = async (query) => {
     try {
         let data = "";
-        await fetch(`https://aemt.me/chord?query=${query}`).then((res) => {
+        await fetch(`https://widipe.com/chord?query=${query}`).then((res) => {
             data = res;
         });       
         let jsonData = "";
