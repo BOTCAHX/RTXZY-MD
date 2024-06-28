@@ -24,16 +24,21 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     const res = await fetch(`https://api.botcahx.eu.org/api/asupan/tiktok?query=${query}&apikey=${btc}`);
     const api = await res.json();
+    
+    const video = api.result.data[0];
+    const author = video.author;
+    const music = video.music_info;
+    
     let capt = `乂 *T I K T O K*\n\n`;
-    capt += `  ◦ *Author* : ${api.result.data.author.nickname} (@${api.result.data.author.username})\n`;
-    capt += `  ◦ *Views* : ${api.result.data.stats.play_count}\n`;
-    capt += `  ◦ *Likes* : ${api.result.data.stats.digg_count}\n`;
-    capt += `  ◦ *Shares* : ${api.result.data.stats.share_count}\n`;
-    capt += `  ◦ *Comments* : ${api.result.data.stats.comment_count}\n`;
-    capt += `  ◦ *Duration* : ${Math.floor(api.result.data.duration / 60)} menit ${Math.floor(api.result.data.duration % 60)} detik\n`;
-    capt += `  ◦ *Sound* : ${api.result.data.music.title} - ${api.result.data.music.author}\n`;
-    capt += `  ◦ *Caption* : ${api.result.data.caption || '-'}\n\n`;
-    conn.sendFile(m.chat, api.result.data.video, null, capt, m);
+    capt += `  ◦ *Author* : ${author.nickname} (@${author.unique_id})\n`;
+    capt += `  ◦ *Views* : ${video.play_count}\n`;
+    capt += `  ◦ *Likes* : ${video.digg_count}\n`;
+    capt += `  ◦ *Shares* : ${video.share_count}\n`;
+    capt += `  ◦ *Comments* : ${video.comment_count}\n`;
+    capt += `  ◦ *Duration* : ${Math.floor(video.duration / 60)} menit ${Math.floor(video.duration % 60)} detik\n`;
+    capt += `  ◦ *Sound* : ${music.title} - ${music.author}\n`;
+    capt += `  ◦ *Caption* : ${video.title || '-'}\n\n`;
+    conn.sendFile(m.chat, video.play, null, capt, m);
   } catch (error) {
     throw `🚩 *Username Tidak Ditemukan*`
   }
