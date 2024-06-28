@@ -14,10 +14,10 @@ var handler = async (m, {
         } else {
             var audioUrl
             try {
-                audioUrl = `https://aemt.me/downloadAudio?URL=${convert.url}&videoName=ytdl`
+                audioUrl = `https://widipe.com/downloadAudio?URL=${convert.url}&videoName=ytdl`
             } catch (e) {
                 conn.reply(m.chat, wait, m)
-                audioUrl = `https://aemt.me/youtube?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
+                audioUrl = `https://widipe.com/youtube?url=${convert.url}&filter=audioonly&quality=highestaudio&contenttype=audio/mpeg`
             } 
             var caption = `∘ Title : ${convert.title}\n∘ Ext : Search\n∘ ID : ${convert.videoId}\n∘ Duration : ${convert.timestamp}\n∘ Viewers : ${convert.views}\n∘ Upload At : ${convert.ago}\n∘ Author : ${convert.author.name}\n∘ Channel : ${convert.author.url}\n∘ Url : ${convert.url}\n∘ Description : ${convert.description}\n∘ Thumbnail : ${convert.image}`;
             var pesan = conn.relayMessage(m.chat, {
