@@ -38,7 +38,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     'irenefennn',
     'mellyllyyy',
     'xsta_xstar',
-    'mellyllyyy',
     'n0_0ella',
     'kutubuku6690',
     'cesiann',
