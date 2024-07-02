@@ -1,4 +1,4 @@
-let handler = async (m, { conn, command, text, usedPrefix }) => {
+/** let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `🚩 *Contoh:* ${usedPrefix + command} botcahx`
     const dates = new Date(); 
     const timestamp = dates.getTime();     
@@ -262,3 +262,4 @@ handler.command = handler.help = ['giraffe','magma','batman','marvelstudio2','ma
 handler.tags = ['maker'];
 handler.limit = true;
 module.exports = handler;
+**/
