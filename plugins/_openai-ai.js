@@ -1,5 +1,5 @@
-var fetch = require('node-fetch');
-var handler = async (m, {
+let fetch = require('node-fetch');
+let handler = async (m, {
  text, 
  usedPrefix, 
  command
@@ -7,12 +7,10 @@ var handler = async (m, {
 if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* Siapa presiden Indonesia? `
 try {
   await m.reply(wait)
-  var apii = await fetch(`https://api.botcahx.eu.org/api/search/openai-chat?text=${text}&apikey=${btc}`)
-  var res = await apii.json()
+  let res = await (await fetch(`https://api.botcahx.eu.org/api/search/openai-chat?text=${text}&apikey=${btc}`)).json()
   await m.reply(res.message)
 } catch (err) {
-  console.error(err)
-  throw "Terjadi kesalahan dalam menjawab pertanyaan"
+  throw eror
 }
 }
 handler.command = handler.help = ['ai','openai','chatgpt'];
