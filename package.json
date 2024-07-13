@@ -87,7 +87,7 @@
         "util": "^0.12.4",
         "wa-sticker-formatter": "^4.3.2",
         "yargs": "^17.5.1",
-        "ytdl-core": "npm:@distube/ytdl-core@^4.13.3",
+        "ytdl-core": "github:soya-daizu/ytdl-core#sig-patch",
         "yt-search": "^2.10.3"
     }
 }
