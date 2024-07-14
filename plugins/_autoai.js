@@ -21,8 +21,7 @@ handler.before = async (m, { conn }) => {
     if (!conn.sessionAI[m.sender]) return;
     if ([".", "#", "!", "/", "\\"].some(prefix => m.text.startsWith(prefix))) return;
 
-    if (conn.sessionAI[m.sender] && m.text) {
-        const name = conn.getName(m.sender);
+    if (conn.sessionAI[m.sender] && m.text) {    
         const messages = [...conn.sessionAI[m.sender].pesan, `p`, m.text];
         try {                      
             const encodedText = encodeURIComponent(m.text);
