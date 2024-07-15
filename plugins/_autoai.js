@@ -22,7 +22,7 @@ handler.before = async (m, { conn }) => {
     if ([".", "#", "!", "/", "\\"].some(prefix => m.text.startsWith(prefix))) return;
 
     if (conn.sessionAI[m.sender] && m.text) {    
-        const messages = [...conn.sessionAI[m.sender].pesan, `${m.name}`, m.text];
+        const messages = [...conn.sessionAI[m.sender].pesan, m.text];
         try {                      
             const encodedText = encodeURIComponent(m.text);
             const data = await (await fetch(`https://api.botcahx.eu.org/api/search/openai-chat?text=${encodedText}&apikey=${btc}`)).json();
