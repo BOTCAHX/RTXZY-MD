@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `🚩 ${usedPrefix + command} *enable/disable*`;
 
     if (text === "enable") {
-        conn.sessionAI[m.sender] = { pesan: [] };
+        conn.sessionAI[m.sender] = { sessionChat: [] };
         m.reply("Success create sessions chat!");
     } else if (text === "disable") {
         delete conn.sessionAI[m.sender];
@@ -22,12 +22,12 @@ handler.before = async (m, { conn }) => {
     if ([".", "#", "!", "/", "\\"].some(prefix => m.text.startsWith(prefix))) return;
 
     if (conn.sessionAI[m.sender] && m.text) {    
-        const messages = [...conn.sessionAI[m.sender].pesan, m.text];
+        const messages = [...conn.sessionAI[m.sender].sessionChat, m.text];
         try {                      
             const encodedText = encodeURIComponent(m.text);
             const data = await (await fetch(`https://api.botcahx.eu.org/api/search/openai-chat?text=${encodedText}&apikey=${btc}`)).json();
             await conn.sendMessage(m.chat, { text: data.message }, { quoted: m });
-            conn.sessionAI[m.sender].pesan = messages;
+            conn.sessionAI[m.sender].sessionChat = messages;
         } catch (e) {
             throw eror;
         }
