@@ -11,7 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             delete conn.btch[m.sender];
         }, 300000);
 
-        m.reply(`Halo \`${m.name}\`👋, Saya siap membantu anda`);
+        m.reply(`Halo \`${m.name}\`👋, Saya siap membantu anda!`);
     } else {
         clearTimeout(conn.btch[m.sender].timeout);
         conn.btch[m.sender].timeout = setTimeout(() => {
@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     - Usahakan berikan logic yang masuk akal dan mudah di pahami!
 **/
     const messages = [
-        { role: "system", content: "kamu adalah BTCH, Seorang Asisten pribadi yang di buat oleh BOTCAHX yang siap membantu sensei kapan pun! 🍄✨" },
+        { role: "system", content: "kamu adalah BTCH, Seorang Asisten pribadi yang di buat oleh BOTCAHX yang siap membantu kapan pun!" },
         { role: "assistant", content: `Kamu adalah BTCH, asisten bot dari BOTCAHX, jangan gunakan kata saya, aku, gua gunakan nama BTCH untuk memanggil dirimu, ekspresi kan sikap kamu seolah kamu adalah asisten pribadi serba tau, jangan gunakan GPT 4 panggil dirimu dengan BTCH, Kamu berbicara dengan ${name} panggil dengan sensei, saat berbicara dengannya gunakan emoji yang lucu, Pembuatmu adalah BOTCAHX pembuat mu adalah 6282221792667` },
         ...previousMessages.map((msg, i) => ({ role: i % 2 === 0 ? 'user' : 'assistant', content: msg })),
         { role: "user", content: text }
