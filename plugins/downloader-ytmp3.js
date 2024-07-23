@@ -1,3 +1,35 @@
+const { youtube } = require('btch-downloader');
+
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+  if (!text) throw `*Example:* ${usedPrefix + command} https://www.youtube.com/watch?v=Z28dtg_QmFw` 
+  try {
+    const data = await youtube(text);
+    await conn.sendMessage(m.chat, { 
+      video: { url: data.mp4 }, 
+      mimetype: 'video/mp4' 
+    }, { quoted: m });
+  } catch (error) {
+    console.error(error);
+    throw eror
+  }
+};
+
+handler.help = handler.command = ['ytmp3','yta'];
+handler.tags = ['downloader'];
+handler.exp = 0;
+handler.limit = true;
+handler.premium = false;
+
+module.exports = handler;
+
+
+
+/**
+Jika ingin menggunakan ytdl-core maka matikan komentar ini!
+
+/**
+
+/**
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
@@ -44,3 +76,5 @@ handler.premium = false;
 handler.limit = false;
 
 module.exports = handler;
+
+**/
