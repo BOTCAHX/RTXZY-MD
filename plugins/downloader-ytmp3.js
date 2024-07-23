@@ -5,8 +5,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     const data = await youtube(text);
     await conn.sendMessage(m.chat, { 
-      video: { url: data.mp4 }, 
-      mimetype: 'video/mp4' 
+      audio: { url: data.mp3 }, 
+      mimetype: 'audio/mpeg' 
     }, { quoted: m });
   } catch (error) {
     console.error(error);
@@ -14,14 +14,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 };
 
-handler.help = handler.command = ['ytmp3','yta'];
+handler.help = handler.command = ['ytmp3','ytv'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
 handler.premium = false;
 
 module.exports = handler;
-
 
 
 /**
