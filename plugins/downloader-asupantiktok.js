@@ -60,6 +60,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     'shiraishi.ito',
     'itsceceh',
     'senpai_cj7',
+    'miawwchu',
+    'sinclareee',
+    'yyourcandle',
+    'sukamatchaa255',
+    'tilalaamisyu',
+    'cricezie',
+    'nabilakhoeruniza5'    
   ];
   const pickuser = username[Math.floor(Math.random() * username.length)];
   const query = args[0] ? args[0] : pickuser;
