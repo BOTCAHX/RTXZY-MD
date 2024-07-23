@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 };
 
-handler.help = handler.command = ['ytshorts', 'shorts', 'short', 'ytmp4'];
+handler.help = handler.command = ['ytshorts', 'shorts', 'short', 'ytmp4','ytv'];
 handler.tags = ['downloader'];
 handler.limit = true;
 handler.premium = false;
