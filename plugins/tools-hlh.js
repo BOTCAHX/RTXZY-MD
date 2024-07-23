@@ -1,11 +1,12 @@
-/*let handler = async (m, { command, text }) => {
-  let ter = command[1].toLowerCase()
-  let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
-  await m.reply(txt.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
+let handler = async (m, { command, text, usedPrefix }) => {
+  if (!text) throw `*Example:* ${usedPrefix + command} halo`;
+  let ter = command[1].toLowerCase();
+  let txt = text;
+  let transformedText = txt.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase());
+  await m.reply(transformedText);
 }
-handler.help = [...'aiueo'].map(v => `h${v}l${v}h <teks>`)
-handler.tags = ['tools']
-handler.command = /^h([aiueo])l\1h/i
+handler.help = [...'aiueo'].map(v => `h${v}l${v}h <teks>`);
+handler.tags = ['tools'];
+handler.command = /^h([aiueo])l\1h/i;
 
-module.exports = handler
-*/
+module.exports = handler;
