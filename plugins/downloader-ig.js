@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         const api = await fetch(`https://api.botcahx.eu.org/api/dowloader/igdowloader?url=${args[0]}&apikey=${btc}`)
         const res = await api.json()
 
-        const limitnya = 10; // ini jumlah foto yang ingin di kirim ke user (default 10 foto)
+        const limitnya = 3; // ini jumlah foto yang ingin di kirim ke user (default 3 foto)
 
         for (let i = 0; i < Math.min(limitnya, res.result.length); i++) {
             await sleep(3000)
