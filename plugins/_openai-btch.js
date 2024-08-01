@@ -19,7 +19,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         }, 300000);
     }
 
-    let name = conn.getName(m.sender);
     const previousMessages = conn.btch[m.sender].pesan;
   
 /** - Ubah prompt ini sesuaikan dengan keinginan mu 
