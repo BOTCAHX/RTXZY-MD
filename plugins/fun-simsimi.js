@@ -6,11 +6,11 @@ try {
   let json = await res.json()
   m.reply(json.result)
 } catch (e) {
-throw `Internal server eror!`
+throw eror
   }
 }
 handler.help = ['simi', 'simsimi', 'simih'].map(v => v + ' <teks>')
 handler.tags = ['fun']
 handler.command = /^((sim)?simi|simih)$/i
-
+handler.limit = true;
 module.exports = handler
