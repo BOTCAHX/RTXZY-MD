@@ -64,5 +64,5 @@ if (!text) throw `*Example:* ${usedPrefix + command} 172720204487`
   };
 handler.command = handler.help = ['cekbillpln','tagihanpln','pln'];
 handler.tags = ['tools'];
-handler.premium = false
+handler.limit = true
 module.exports = handler;
