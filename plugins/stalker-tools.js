@@ -14,7 +14,7 @@ let handler = async (m, {
       await conn.reply(m.chat, ff.result.userNameGame, m);
     } catch (e) {
       console.log(e);
-      throw `*Error:* ${eror}`;
+      throw eror
     }
   }
     if (command == 'mlstalk') {
@@ -25,7 +25,7 @@ let handler = async (m, {
       await conn.reply(m.chat, ml.result.userName, m);
     } catch (e) {
       console.log(e);
-      throw `*Error:* ${eror}`;
+      throw eror
     }
   }
   if (command == 'supersusstalk') {
@@ -48,7 +48,7 @@ let handler = async (m, {
       await conn.reply(m.chat, caption, m);
     } catch (e) {
       console.log(e);
-      throw `*Error:* ${eror}`;
+      throw eror
     }
   }
   if (command == 'npmstalk') {
@@ -79,7 +79,7 @@ let handler = async (m, {
         }
         await conn.reply(m.chat, caption, m);
       } catch (e) {
-      throw `*Error:* ${eror}`
+      throw eror
     }
  }
  if (command == 'repostalk') {
