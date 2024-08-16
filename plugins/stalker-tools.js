@@ -116,7 +116,7 @@ let handler = async (m, {
       caption += `*Is Site Admin:* ${repo.result.items[0].author.isSiteAdmin}\n`;
       await conn.reply(m.chat, caption, m);
     } catch (error) {
-      throw `Error: ${eror}`
+      throw eror
     }
   }
 }
