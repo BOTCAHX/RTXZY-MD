@@ -1,9 +1,9 @@
-const { googleImage } = require('@bochilteam/scraper')
+const fetch = require('node-fetch')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
-    const res = await googleImage(text)
-    let image = pickRandom(res)
+    const res = await (await fetch(`https://widipe.com/googleimage?query=${text}`)).json()
+    let image = pickRandom(res.result)
     let link = image
     conn.sendFile(m.chat, link, 'google.jpg', `*G O O G L E*\n*Result:* ${text}\n*Source:* https://google.com`, m)
 }
