@@ -1,9 +1,9 @@
 ## New Update
 
 **Pembaruan :**
-- Fix upload file [`File Hosting`](https://file.botcahx.eu.org)
+- Fix upload file [`Temporary File Hosting`](https://file.btch.rf.gd/)
 - Telah support QR dan Pairing Code 
-- Use pairing ```node index.js --pairing``` 
+- Use pairing, *Command* ```node index.js --pairing``` 
 - Fitur 95% implementasi dari website api
 - Informasi api & update script [WhatsApp](https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q)
   ## Note!
