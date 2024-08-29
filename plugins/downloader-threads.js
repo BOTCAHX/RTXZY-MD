@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    throw `Masukkan URL!\n\ncontoh:\n${usedPrefix + command} https://www.threads.net/@cicididnteat/post/CytDET4R8S2/?igshid=NTc4MTIwNjQ2YQ==`;
+    throw `Masukkan URL!\n\ncontoh:\n${usedPrefix + command} https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q`;
   }
   if (!args[0].match(/threads/gi)) {
     throw `URL Tidak Ditemukan!`;
@@ -27,8 +27,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       throw `Konten tidak ditemukan!`;
     }
   } catch (e) {
-    console.log(e);
-    throw `✖️ *Server down*` 
+    throw eror
   }
 };
 handler.command = handler.help = ['threads', 'threadsdl'];
