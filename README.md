@@ -1,7 +1,7 @@
 ## New Update
 
 **Pembaruan :**
-- Fix upload file [`Temporary File Hosting`](https://file.btch.rf.gd/)
+- Fix upload file [`File Hosting`](https://cdn.meitang.xyz)
 - Telah support QR dan Pairing Code 
 - Use pairing, *Command* ```node index.js --pairing``` 
 - Fitur 95% implementasi dari website api
