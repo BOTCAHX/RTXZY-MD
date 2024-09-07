@@ -1,7 +1,7 @@
 ## New Update
 
 **Pembaruan :**
-- Fix upload file [`File Hosting`](https://cdn.meitang.xyz)
+- Fix uploader file [`File Hosting`](https://catbox.moe/)
 - Telah support QR dan Pairing Code 
 - Use pairing, *Command* ```node index.js --pairing``` 
 - Fitur 95% implementasi dari website api
