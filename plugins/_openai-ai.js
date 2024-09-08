@@ -7,7 +7,7 @@ let handler = async (m, {
 if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* Siapa presiden Indonesia? `
 try {
   await m.reply(wait)
-  let res = await (await fetch(`https://api.botcahx.eu.org/api/search/openai-chat?text=${text}&apikey=${btc}`)).json()
+  let res = await (await fetch(`https://api.botcahx.eu.org/api/search/openai-chat?apikey=${btc}&text=${text}`)).json()
   await m.reply(res.message)
 } catch (err) {
   throw eror
