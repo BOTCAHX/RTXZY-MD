@@ -8,22 +8,26 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         let buffer = await q.download();
         await m.reply(wait);
         try {
+            let fileSizeLimit = 5 * 1024 * 1024;
+            if (buffer.length > fileSizeLimit) {
+                throw 'Ukuran media tidak boleh melebihi 5MB';
+            }
             let media = await uploader(buffer);
-            let fileSizeLimit = 10 * 1024 * 1024 
-              if (media.length > fileSizeLimit) {
-                throw 'Ukuran media tidak boleh melebihi 10MB'
-              }
-            let res = await (await fetch(`https://api.botcahx.eu.org/api/tools/voiceremover?url=${media}&apikey=${btc}`)).json();
+            let response = await fetch(`https://api.botcahx.eu.org/api/tools/voiceremover?url=${media}&apikey=${btc}`);
+            let res = await response.json();
+            if (!res.status) {
+                throw null
+            }
             if (command === 'vocalremover') {
                 await conn.sendMessage(m.chat, { audio: { url: res.result.instrumental_path }, mimetype: 'audio/mpeg' }, { quoted: m });
             } else if (command === 'instrumenremover') {
                 await conn.sendMessage(m.chat, { audio: { url: res.result.vocal_path }, mimetype: 'audio/mpeg' }, { quoted: m });
             }
-        } catch (err) {
-            throw eror;
+        } catch (e) {
+            throw '*[INTERNAL SERVER ERROR!]*'
         }
     } else {
-        throw `Reply *audio* with command ${usedPrefix + command}`;
+        await m.reply(`Reply *audio* with command ${usedPrefix + command}`);
     }
 }
 
