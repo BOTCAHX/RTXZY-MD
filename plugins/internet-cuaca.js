@@ -1,29 +1,21 @@
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 
 let handler = async (m, { text, usedPrefix, command }) => {
-    if (!text) throw `Pengunaan:\n${usedPrefix + command} <teks>\n\nContoh:\n${usedPrefix + command} Jakarta`
-    let res = await fetch(API('https://api.openweathermap.org', '/data/2.5/weather', {
-        q: text,
-        units: 'metric',
-        appid: '060a6bcfa19809c2cd4d97a212b19273'
-    }))
-    if (!res.ok) throw 'lokasi tidak ditemukan'
-    let json = await res.json()
-    if (json.cod != 200) throw json
-    m.reply(`
-Lokasi: ${json.name}
-Negara: ${json.sys.country}
-Cuaca: ${json.weather[0].description}
-Suhu saat ini: ${json.main.temp} °C
-Suhu tertinggi: ${json.main.temp_max} °C
-Suhu terendah: ${json.main.temp_min} °C
-Kelembapan: ${json.main.humidity} %
-Angin: ${json.wind.speed} km/jam
-    `.trim())
-}
+    if (!text) throw `Penggunaan:\n${usedPrefix + command} <teks>\n\nContoh:\n${usedPrefix + command} Jakarta`;
+    try {
+        let res = await fetch(`https://api.botcahx.eu.org/api/tools/cuaca?query=${encodeURIComponent(text)}&apikey=${btc}`);
+        if (!res.ok) throw 'Lokasi tidak ditemukan';
+        let json = await res.json();
+        if (!json.status || json.code !== 200) throw eror;
+        let result = json.result;
+        m.reply(`Lokasi: ${result.location}\nNegara: ${result.country}\nCuaca: ${result.weather}\nSuhu saat ini: ${result.currentTemp}\nSuhu tertinggi: ${result.maxTemp}\nSuhu terendah: ${result.minTemp}\nKelembapan: ${result.humidity}\nAngin: ${result.windSpeed}`);
+    } catch (error) {
+        m.reply('Terjadi error saat mencari informasi cuaca, silakan coba lagi nanti');
+    }
+};
 
-handler.help = ['cuaca']
-handler.tags = ['internet']
-handler.command = /^(cuaca|weather)$/i
+handler.help = ['cuaca'];
+handler.tags = ['internet'];
+handler.command = /^(cuaca|weather)$/i;
 
-module.exports = handler
+module.exports = handler;
