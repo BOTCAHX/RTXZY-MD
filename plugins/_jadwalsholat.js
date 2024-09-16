@@ -4,9 +4,9 @@ let handler = async (m, { text, usedPrefix, command }) => {
     if (!text) throw `Gunakan contoh: ${usedPrefix}${command} semarang`;
     
     try {
-        const res = await (await fetch(`https://widipe.com/jadwalsholat?text=${text}`)).json();
+        const res = await (await fetch(`https://api.botcahx.eu.org/api/tools/jadwalshalat?kota=${text}&apikey=${btc}`)).json();
         
-        if (!res.status || !res.result || res.result.code !== 200) {
+        if (!res.status || res.result.code !== 200) {
             throw eror
         }
         
@@ -22,8 +22,7 @@ ${jadwalSholat}
         
         m.reply(message);
     } catch (error) {
-        console.error(error);
-        m.reply('Terjadi kesalahan saat mengambil data jadwal sholat.');
+        throw eror
     }
 };
 
