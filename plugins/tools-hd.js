@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
-const uploadImage = require('../lib/uploadImage')
+let fetch = require('node-fetch');
+let uploadImage = require('../lib/uploadImage')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
   try {
@@ -53,6 +53,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.command = handler.help = ['hd', 'hd2', 'hd3','removebg','nobg'];
 handler.tags = ['tools'];
 handler.premium = false;
-handler.limit = false;
+handler.limit = true;
 
 module.exports = handler;
