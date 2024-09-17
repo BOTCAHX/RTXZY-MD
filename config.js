@@ -13,7 +13,7 @@ global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
 global.packname = 'Made With'
 global.author = 'Bot WhatsApp'
 global.autobio = false // Set true untuk mengaktifkan autobio
-global.maxwarn = '2' // Peringatan maksimum
+global.maxwarn = '5' // Peringatan maksimum
 
 //INI WAJIB DI ISI!//
 global.btc = 'YOUR_APIKEY_HERE' 
