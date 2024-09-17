@@ -16,4 +16,5 @@ handler.help = ['ava <@tag/reply>']
 handler.tags = ['group']
 handler.command = /^(avatar|ava)$/i
 handler.group = true
+handler.limit = true
 module.exports = handler
