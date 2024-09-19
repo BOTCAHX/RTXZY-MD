@@ -24,7 +24,8 @@ global.lann = 'YOUR_APIKEY_HERE'
 //Daftar https://api.betabotz.eu.org 
 
 global.APIs = {   
-  btc: 'https://api.botcahx.eu.org'
+  btc: 'https://api.botcahx.eu.org',
+  widipe: 'https://widipe.com'
 }
 global.APIKeys = { 
   'https://api.botcahx.eu.org': 'APIKEY' 
