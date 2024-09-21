@@ -1,24 +1,40 @@
-let fetch = require('node-fetch')
-let googleIt = require('google-it')
-let handler = async (m, { conn, command, args }) => {
-  let full = /f$/i.test(command)
-  let text = args.join` `
-  if (!text) return conn.reply(m.chat, 'Tidak ada teks untuk di cari', m)
-  let url = 'https://google.com/search?q=' + encodeURIComponent(text)
-  let search = await googleIt({ query: text })
-  let msg = search.map(({ title, link, snippet}) => {
-    return `*${title}*\n_${link}_\n_${snippet}_`
-  }).join`\n\n`
-  try {
-    var logos = 'https://telegra.ph/file/cf62f2b8648a352548978.jpg'
-	conn.sendFile(m.chat, logos, 'logos.jpg', url + '\n\n' + msg, m)
-  } catch (e) {
-    m.reply(msg)
-  }
-}
-handler.help = ['google', 'googlef'].map(v => v + ' <pencarian>')
-handler.tags = ['internet']
-handler.command = /^googlef?$/i
-handler.fail = null
+let fetch = require('node-fetch');
 
-module.exports = handler
+let handler = async (m, { conn, command, args }) => {
+  let text = args[0];
+  if (!text) return conn.reply(m.chat, 'Tidak ada teks untuk dicari', m);
+
+  try {
+    let response = await fetch(`https://api.botcahx.eu.org/api/search/google?text1=${encodeURIComponent(text)}&apikey=${btc}`);
+    let data = await response.json();
+
+    if (!data.status) throw eror
+
+    let msg = data.result.map(({ title, url, description }) => {
+      return `*${title}*\n_${url}_\n_${description}_`;
+    }).join('\n\n');
+    conn.relayMessage(m.chat, {
+     extendedTextMessage:{
+                text: msg, 
+                contextInfo: {
+                     externalAdReply: {
+                        title: wm,
+                        mediaType: 1,
+                        previewType: 0,
+                        renderLargerThumbnail: true,
+                        thumbnailUrl: 'https://telegra.ph/file/d7b761ea856b5ba7b0713.jpg',
+                        sourceUrl: ''
+                    }
+                }, mentions: [m.sender]
+}}, {})
+  } catch (e) {
+    throw eror
+  }
+};
+
+handler.help = ['google'].map(v => v + ' <pencarian>');
+handler.tags = ['internet'];
+handler.command = /^google$/i;
+handler.limit = true;
+
+module.exports = handler;
