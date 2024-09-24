@@ -14,7 +14,8 @@ try {
   throw eror
 }
 }
-handler.command = handler.help = ['bard','bardai'];
+handler.command = handler.help = ['bard','bardai','gemini'];
 handler.tags = ['tools'];
 handler.premium = false
+handler.limit = true;
 module.exports = handler;
