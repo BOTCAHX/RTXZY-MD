@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   const username = [
     'natajadeh',
@@ -75,6 +76,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     'strangerfr0mhell',
     'deboraballtes22',
     'nabilakhoeruniza5',
+    'natasya_aya22',
   ];
   const pickuser = username[Math.floor(Math.random() * username.length)];
   const query = args[0] ? args[0] : pickuser;
