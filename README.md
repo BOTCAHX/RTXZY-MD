@@ -86,3 +86,7 @@ Recode | Contributor |
 ---|---
 [Bochilgaming](https://github.com/BochilGaming)  | [Nurutomo](https://github.com/Nurutomo)
 Sepuh | Sepuh |
+
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/BOTCAHX/RTXZY-MD.svg?background=%23FFFFFF&axis=%23333333&line=%23e76060)](https://starchart.cc/BOTCAHX/RTXZY-MD)
