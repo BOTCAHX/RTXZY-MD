@@ -17,7 +17,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 			}
 			await conn.sendFile(m.chat, json.result, null, "*DONE*", m)
 		} catch (err) {
-			throw err
+			throw eror
 		}
 	} else {
 		throw `Reply sticker with command ${usedPrefix + command}`
