@@ -1,8 +1,8 @@
 ## New Update
 
 **Pembaruan :**
-- Fix uploader file [`File Hosting`](https://catbox.moe/)
-- Telah support QR dan Pairing Code 
+
+- Telah support *QR* dan *Pairing* Code 
 - Use pairing, *Command* ```node index.js --pairing``` 
 - Fitur 95% implementasi dari website api
 - Informasi api & update script [WhatsApp](https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q)
