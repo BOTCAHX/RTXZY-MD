@@ -2,7 +2,7 @@ let fetch = require('node-fetch');
 
 let handler = async (m, { conn }) => {
   try {
-    conn.reply(wait)
+    await m.reply(wait)
     let api = await fetch(`https://api.botcahx.eu.org/api/checkkey?apikey=${btc}`);
     let body = await api.json();
     let { 
