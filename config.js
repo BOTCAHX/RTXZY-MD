@@ -23,10 +23,13 @@ global.btc = 'YOUR_APIKEY_HERE'
 global.lann = 'YOUR_APIKEY_HERE'
 //Daftar https://api.betabotz.eu.org 
 
+//Jangan diganti!
 global.APIs = {   
   btc: 'https://api.botcahx.eu.org',
   widipe: 'https://widipe.com'
 }
+
+// ini tidak di isi juga tidak apa-apa
 global.APIKeys = { 
   'https://api.botcahx.eu.org': 'APIKEY' 
 }
