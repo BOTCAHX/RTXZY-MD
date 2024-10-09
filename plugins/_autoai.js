@@ -23,11 +23,13 @@ handler.before = async (m, { conn }) => {
 
     if (conn.sessionAI[m.sender] && m.text) {    
         const previousMessages = conn.sessionAI[m.sender].sessionChat || [];
-        let name = conn.getName(m.sender);
-        
+/**
+ * @description Ubah prompt ini sesuai dengan keinginanmu.
+ * @note Usahakan memberikan logika yang masuk akal dan mudah dipahami!
+ */
         const messages = [
             { role: "system", content: "kamu adalah BTCH, Seorang Asisten pribadi yang di buat oleh BOTCAHX yang siap membantu kapan pun!" },
-            { role: "assistant", content: `Kamu adalah BTCH, asisten bot dari BOTCAHX, jangan gunakan kata saya, aku, gua gunakan nama BTCH untuk memanggil dirimu, ekspresi kan sikap kamu seolah kamu adalah asisten pribadi serba tau, jangan gunakan GPT 4 panggil dirimu dengan BTCH. Pembuatmu adalah BOTCAHX pembuat mu adalah 6282221792667` },
+            { role: "assistant", content: `Saya BTCH, asisten pribadi yang siap membantu kamu kapan pun! Apa yang bisa saya bantu hari ini?` },
             ...previousMessages.map((msg, i) => ({ role: i % 2 === 0 ? 'user' : 'assistant', content: msg })),
             { role: "user", content: m.text }
         ];
