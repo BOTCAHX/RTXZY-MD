@@ -1,6 +1,6 @@
-let search = require("yt-search");
-let { youtube } = require("btch-downloader");
-
+let search = require('yt-search');
+let fetch = require('node-fetch');
+ 
 let handler = async (m, { conn, text, usedPrefix }) => {
     if (!text) throw 'Enter Title / Link From YouTube!';
     try {
@@ -12,12 +12,18 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         } else {
             let audioUrl;
             try {
-                audioUrl = await youtube(convert.url);
+                const res = await fetch(`https://api.botcahx.eu.org/api/dowloader/yt?url=${convert.url}&apikey=${btc}`);
+                try {
+                    audioUrl = await res.json();
+                } catch (e) {
+                    conn.reply(m.chat, eror, m)
+                }
+                
             } catch (e) {
-                conn.reply(m.chat, 'Please wait...', m);
-                audioUrl = await youtube(convert.url);
+                conn.reply(m.chat, eror, m)
+                return;
             }
-
+ 
             let caption = '';
             caption += `∘ Title : ${convert.title}\n`;
             caption += `∘ Ext : Search\n`;
@@ -30,7 +36,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
             caption += `∘ Url : ${convert.url}\n`;
             caption += `∘ Description : ${convert.description}\n`;
             caption += `∘ Thumbnail : ${convert.image}`;
-
+ 
             await conn.relayMessage(m.chat, {
                 extendedTextMessage: {
                     text: caption,
@@ -41,16 +47,16 @@ let handler = async (m, { conn, text, usedPrefix }) => {
                             previewType: 0,
                             renderLargerThumbnail: true,
                             thumbnailUrl: convert.image,
-                            sourceUrl: audioUrl.mp3
+                            sourceUrl: audioUrl.result.mp3
                         }
                     },
                     mentions: [m.sender]
                 }
             }, {});
-
+ 
             await conn.sendMessage(m.chat, {
                 audio: {
-                    url: audioUrl.mp3
+                    url: audioUrl.result.mp3
                 },
                 mimetype: 'audio/mpeg',
                 contextInfo: {
@@ -58,7 +64,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
                         title: convert.title,
                         body: "",
                         thumbnailUrl: convert.image,
-                        sourceUrl: audioUrl.mp3,
+                        sourceUrl: audioUrl.result.mp3,
                         mediaType: 1,
                         showAdAttribution: true,
                         renderLargerThumbnail: true
@@ -69,14 +75,14 @@ let handler = async (m, { conn, text, usedPrefix }) => {
             });
         }
     } catch (e) {
-        conn.reply(m.chat, `*Error:* ` + e.message, m);
+        conn.reply(m.chat, eror, m)
     }
 };
-
+ 
 handler.command = handler.help = ['play', 'song', 'ds'];
 handler.tags = ['downloader'];
 handler.exp = 0;
 handler.limit = true;
 handler.premium = false;
-
+ 
 module.exports = handler;
