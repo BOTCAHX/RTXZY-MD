@@ -8,7 +8,7 @@ let handler = async (m, {
 if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* buatkan saya code express.js`
 try {
   await m.reply(wait)
-  let res = await (await fetch(`https://api.botcahx.eu.org/api/search/blackbox-chat?text=${text}&apikey=${btc}`)).json()
+  let res = await (await fetch(`https://api.botcahx.eu.org/api/search/blackbox-chat?apikey=${btc}&text=${text}`)).json()
   await m.reply(res.message)
 } catch (e) {
   throw eror
