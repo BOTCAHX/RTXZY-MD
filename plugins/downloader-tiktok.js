@@ -3,7 +3,9 @@ let axios = require('axios');
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://vm.tiktok.com/ZGJAmhSrp/`;    
     try {
-        if (!text.match(/tiktok/gi)) throw `URL Tidak Ditemukan!`;        
+        if (!text.match(/tiktok/gi) && !text.match(/douyin/gi)) {
+          throw `URL Tidak Ditemukan!`;
+        }
         m.reply(wait);      
 
         try {
