@@ -13,7 +13,7 @@ let text
 
 let randomColor = ['#ef1a11', '#89cff0', '#660000', '#87a96b', '#e9f6ff', '#ffe7f7', '#ca86b0', '#83a3ee', '#abcc88', '#80bd76', '#6a84bd', '#5d8d7f', '#530101', '#863434', '#013337', '#133700', '#2f3641', '#cc4291', '#7c4848', '#8a496b', '#722f37', '#0fc163', '#2f3641', '#e7a6cb', '#64c987', '#e6e6fa', '#ffa500'];
 
-const apiColor = randomColor[Math.floor(Math.random() * randomColor.length)];
+let apiColor = randomColor[Math.floor(Math.random() * randomColor.length)];
 
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/320b066dc81928b782c7b.png')
 
@@ -48,8 +48,9 @@ const apiColor = randomColor[Math.floor(Math.random() * randomColor.length)];
     if (stiker) return conn.sendFile(m.chat, stiker, 'Quotly.webp', '', m)
 }
 
-handler.help = ['qc']
-handler.tags = ['sticker']
+handler.help = ['qc'];
+handler.tags = ['sticker'];
 handler.command = /^(qc|quotely)$/i
+handler.limit = true;
 
 module.exports = handler
