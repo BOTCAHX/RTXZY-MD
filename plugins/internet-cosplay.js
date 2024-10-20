@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
 }
 
 handler.help = handler.command = ['cosplay'];
-handler.tags = ['downloader'];
+handler.tags = ['internet'];
 handler.limit = true;
 
 module.exports = handler;
