@@ -87,6 +87,7 @@ function msToDate(ms) {
 		return days+" Hari "+hours+" Jam "+ minutes + " Menit";
 		// +minutes+":"+sec;
   }
+  //1
   
   const getBuffer = async (url, options) => {
 	try {
