@@ -18,6 +18,7 @@ let tags = {
   'main': 'MENU UTAMA',
   'downloader': 'MENU DOWNLOADER',
   'rpg': 'MENU RPG',
+  'rpgG' 'MENU RPG GUILD',
   'sticker': 'MENU CONVERT',
   'advanced': 'ADVANCED',
   'xp': 'MENU EXP',
