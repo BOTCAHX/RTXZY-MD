@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, text }) => {
   m.reply(`Selamat Kamu Mendapatkan Bonus : \n+${money} Money`)
 }
 handler.help = ['bonus']
-handler.tags = ['rpg', 'prem']
+handler.tags = ['rpg']
 handler.command = /^(bonus)/i
 handler.register = true
 handler.premium = true
