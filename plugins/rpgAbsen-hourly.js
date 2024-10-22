@@ -15,7 +15,7 @@ let handler = async (m, { conn, isPrems }) => {
         global.db.data.users[m.sender].lasthourly = new Date * 1
     }
 handler.help = ['hourly']
-handler.tags = ['rpgabsen']
+handler.tags = ['rpg']
 handler.command = /^(hourly)$/i
 handler.owner = false
 handler.mods = false
