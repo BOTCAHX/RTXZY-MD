@@ -14,7 +14,7 @@ let handler = async (m, { conn, command, args }) => {
   } else conn.reply(m.chat, `❎ Maaf, Anda tidak memiliki cukup *XP* untuk membeli *${count}* Berlian 1.000.000 xp\n\nAnda bisa mendapatkan *XP* dengan .daily bermain game atau cek di *.balance* \n\nAtau anda bisa top up ke *.DONATE* dan mengirimkan bukti ke *.OWNER*`, m)
 }
 handler.help = ['buydm', 'buyalldm']
-handler.tags = ['econ']
+handler.tags = ['rpg']
 handler.command = ['buydm', 'buyalldm'] 
 handler.group = true
 
