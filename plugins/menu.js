@@ -17,6 +17,7 @@ let levelling = require('../lib/levelling')
 let tags = {
   'main': 'MENU UTAMA',
   'downloader': 'MENU DOWNLOADER',
+  'rpg': 'MENU RPG',
   'sticker': 'MENU CONVERT',
   'advanced': 'ADVANCED',
   'xp': 'MENU EXP',
