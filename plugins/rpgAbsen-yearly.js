@@ -17,7 +17,7 @@ let handler = async (m, { isPrems }) => {
         global.db.data.users[m.sender].lastyearly = new Date * 1
     }
 handler.help = ['yearly']
-handler.tags = ['rpgabsen']
+handler.tags = ['rpg']
 handler.command = /^(yearly)$/i
 handler.limit = true
 
