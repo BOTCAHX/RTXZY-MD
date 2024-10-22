@@ -18,7 +18,7 @@ let handler = async (m, { isPrems }) => {
     }
     
 handler.help = ['weekly']
-handler.tags = ['rpgabsen']
+handler.tags = ['rpg']
 handler.command = /^(weekly)$/i
 handler.limit = true
 handler.fail = null
