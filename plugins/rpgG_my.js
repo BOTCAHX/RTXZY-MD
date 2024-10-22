@@ -28,6 +28,6 @@ Dibuat Pada: ${guild.createdAt}`;
 };
 
 handler.help = ['myguild'];
-handler.tags = ['rpgG'];
+handler.tags = ['rpg'];
 handler.command = /^(myguild)$/i;
 module.exports = handler;
