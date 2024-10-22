@@ -18,7 +18,7 @@ Anda dapat membeli 💎 berlian menggunakan perintah
 ❏ *${usedPrefix}buyalldm*`, m, { mentions: [who] })
 }
 handler.help = ['balance']
-handler.tags = ['econ']
+handler.tags = ['rpg']
 handler.command = ['bal', 'balance'] 
 
 module.exports = handler;
