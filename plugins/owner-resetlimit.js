@@ -1,6 +1,6 @@
 let handler = async (m, { conn, args }) => {
 	let list = Object.entries(global.db.data.users)
-	let lim = !args || !args[0] ? 999 : isNumber(args[0]) ? parseInt(args[0]) : 10
+	let lim = !args || !args[0] ? 100 : isNumber(args[0]) ? parseInt(args[0]) : 10
 	lim = Math.max(1, lim)
 	list.map(([user, data], i) => (Number(data.limit = lim)))
 		conn.reply(m.chat, `*Limit berhasil direset ${lim} / user*`, m)
