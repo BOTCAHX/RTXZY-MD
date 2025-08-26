@@ -7,7 +7,7 @@ let handler = async (m, {
   command
 }) => {
   if (command == 'tiktokslide' || command == 'ttslide') {
-    if (!text) throw `Masukkan URL!\n\ncontoh: ${usedPrefix + command} https://vt.tiktok.com/ZS2qsMU1W/`;
+    if (!text) throw `Masukkan URL!\n\ncontoh: ${usedPrefix + command} https://vt.tiktok.com/ZSHGno9d2L4w1-thgJL/`;
     try {
       const api = await fetch(`https://api.botcahx.eu.org/api/download/tiktokslide?url=${text}&apikey=${btc}`);
       const res = await api.json();
