@@ -57,6 +57,7 @@
         "form-data": "^4.0.0",
         "human-readable": "^0.2.1",
         "jsdom": "^20.0.0",
+        "jimp": "0.16.13",
         "lodash": "^4.17.21",
         "lowdb": "^2.1.0",
         "link-preview-js": "^3.0.4",
@@ -87,5 +88,8 @@
         "wa-sticker-formatter": "^4.3.2",
         "yargs": "^17.5.1",
         "yt-search": "^2.10.3"
+    },
+    "overrides": {
+        "jimp": "0.16.13"
     }
 }
