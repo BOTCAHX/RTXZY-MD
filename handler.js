@@ -942,7 +942,7 @@ module.exports = {
             const detectwhat = m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net';
             const ownerNumbers = global.owner.map(v => v.replace(/[^0-9]/g, '')); 
             const mappedOwners = ownerNumbers.map(v => v + detectwhat); 
-            console.log('DEBUG: mappedOwners (JID format for comparison):', mappedOwners);
+            //console.log('DEBUG: mappedOwners (JID format for comparison):', mappedOwners);
             const isROwner = mappedOwners.includes(m.sender);
             const isOwner = isROwner || m.fromMe
             const isMods = isROwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
