@@ -187,7 +187,49 @@ node index.js
 ```  
 
 
----  
+## ```Arguments node . [--options] [<session name>]```
+
+## `--pconly`
+* If that chat not from private bot, bot will ignore
+
+## `--gconly`
+* If that chat not from group, bot will ignore
+
+## `--swonly`
+* If that chat not from status, bot will ignore
+
+## `--prefix <prefixes>`
+* `prefixes` are seperated by each character
+Set prefix
+
+### `--db <your mongodb url>`
+
+Open the package.json file and fill in your mongodb url in the `mongodb: --db mongodb url` section!
+
+## `--server`
+* Used for [heroku](https://heroku.com/) or scan through website
+
+## `--restrict`
+* Enables restricted plugins (which can lead your number to be **banned** if used too often)
+* Group Administration `add, kick`
+
+## `--img`
+* Enable image inspector through terminal
+
+## `--autoread`
+* If enabled, all incoming messages will be marked as read
+
+## `--nyimak`
+* No bot, just print received messages and add users to database
+
+## `--test`
+* **Development** Testing Mode 
+
+## `--self`
+* **Only Owner & Bot** 
+
+---------
+
 
 ## **All Contributors**  
 <a href="https://github.com/BOTCAHX"><img src="https://github.com/BOTCAHX.png?size=100" width="100" height="100"></a> | [![Erlan](https://github.com/ERLANRAHMAT.png?size=100)](https://github.com/ERLANRAHMAT)  
