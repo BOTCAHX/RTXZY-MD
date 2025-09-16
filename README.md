@@ -74,7 +74,7 @@ Jika kamu mengalami salah satu dari masalah di atas, silakan ikuti langkah-langk
 - ✅ **Tambah Game** RPG dan lainnya  
 - ✅ **Menggunakan Baileys Latest**  [Baileys](https://github.com/WhiskeySockets/Baileys)
 - ✅ **Delete QR Code** Jadi Alternatif Nya Memakai Pairing Code
-- ✅ **Wajib Menggunakan Node.js 20+**
+- ✅ **Wajib Menggunakan Node.js 21+**
 - **Fix issues @lid** [Read](https://github.com/BOTCAHX/RTXZY-MD#langkah-langkah-Perbaikan)
 
 
@@ -175,7 +175,7 @@ apt update && apt upgrade -y
 apt install nodejs imagemagick ffmpeg -y
 node -v
 if the version is still under 17, use this step
-curl -s https://deb.nodesource.com/setup_20.x | sudo bash
+curl -s https://deb.nodesource.com/setup_21.x | sudo bash
 apt-get install -y nodejs
 ```
 
