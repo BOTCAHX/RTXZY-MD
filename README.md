@@ -120,10 +120,7 @@ node index.js
 
 ### **Website API:**  
 - BOTCAHX [`Register`](https://api.botcahx.eu.org)  
-- Lann [`Optional Register`](https://api.betabotz.eu.org)  
 - Setelah mendapatkan apikey, paste di **config.js** pada bagian **`global.btc`**.  
-
-- **`global.lann`** hanya sebagai opsional. Jika ingin menggunakan dua API sekaligus, isi bagian tersebut.  
 
 > **Catatan:** Pastikan fitur yang digunakan juga disesuaikan.  
 
