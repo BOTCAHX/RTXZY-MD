@@ -26,11 +26,6 @@ global.aksesKey = 'YOUR_AKSESKEY_HERE'
 // Daftar terlebih dahulu https://api.botcahx.eu.org
 
 
-// OPSIONAL 
-// Jika ingin menggunakan api BETABOTZ sekaligus buat fitur dan juga daftar dan isi apikey di bawah ini. 
-// global.lann = 'YOUR_APIKEY_HERE'
-// Daftar https://api.betabotz.eu.org 
-
 // Tidak boleh diganti atau di ubah
 global.APIs = {   
   btc: 'https://api.botcahx.eu.org'
