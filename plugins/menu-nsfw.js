@@ -93,7 +93,7 @@ let handler = async (m, { conn, command }) => {
       const res = `https://api.botcahx.eu.org/api/nsfw/tentacles?apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'nsfw.jpg', '', m);
     }
-    if (command == 'yuri') {
+    if (command == 'yuri2') {
       const res = `https://api.botcahx.eu.org/api/nsfw/yuri?apikey=${btc}`;
       await conn.sendFile(m.chat, res, 'nsfw.jpg', '', m);
     }
@@ -110,7 +110,7 @@ let handler = async (m, { conn, command }) => {
   throw "🚩 Terjadi kesalahan"
    };
 };
-handler.command = handler.help = ['gay','ahegao','ass','bdsm','blowjob','cuckold','cum','ero','femdom','foot','gangbang','glasses','hentai','gifs','jahy','manga','masturbation','neko','neko2','orgy','tentacles','pussy','panties','thighs','yuri','zettai']
+handler.command = handler.help = ['gay','ahegao','ass','bdsm','blowjob','cuckold','cum','ero','femdom','foot','gangbang','glasses','hentai','gifs','jahy','manga','masturbation','neko','neko2','orgy','tentacles','pussy','panties','thighs','yuri2','zettai']
 handler.tags = ['nsfw']
 handler.limit = true;
 handler.premium = true;
