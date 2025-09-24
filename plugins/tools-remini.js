@@ -6,6 +6,7 @@ let handler = async (m, { conn, usedPrefix, command }) {
     const q = m.quoted ? m.quoted : m;
     const mime = (q.msg || q).mimetype || q.mediaType || '';
     if (/^image/.test(mime) && !/webp/.test(mime)) {
+      await conn.reply(m.chat, wait, m);
       const img = await q.download();
       const out = await uploadImage(img);
       const api = await fetch(`https://api.botcahx.eu.org/api/tools/remini?url=${out}&apikey=${btc}`);
