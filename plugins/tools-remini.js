@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const uploadImage = require('../lib/uploadImage.js');
 
-async function handler(m, { conn, usedPrefix, command }) {
+let handler = async (m, { conn, usedPrefix, command }) {
   try {
     const q = m.quoted ? m.quoted : m;
     const mime = (q.msg || q).mimetype || q.mediaType || '';
