@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `Masukkan URL!\n\nContoh:\n${usedPrefix + command} http://xhslink.com/a/1N9OyfeL9EFab`;
+    if (!text) throw `Masukkan URL!\n\nContoh:\n${usedPrefix + command} https://xhslink.com/o/588P0GrGwWf`;
     if (!text.match(/xhslink|xiaohongshu/gi)) throw `URL Tidak Valid!`;
 
     m.reply(wait);
