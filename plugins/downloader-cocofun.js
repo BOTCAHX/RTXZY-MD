@@ -4,7 +4,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) throw `Gunakan contoh ${usedPrefix}${command} https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link`;
     try {
         await m.reply(wait);
-        const res = await fetch(`https://api.botcahx.eu.org/api/download/cocofun?url=${encodeURIComponent(args[0])}&apikey=your_api_key_here`);
+        const res = await fetch(`https://api.botcahx.eu.org/api/download/cocofun?url=${encodeURIComponent(args[0])}&apikey=${btc}`);
         const json = await res.json();
 
         if (!json.status || !json.result) {
