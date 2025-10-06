@@ -172,7 +172,7 @@ let handler = async (m, { conn, usedPrefix: _p, args = [], command }) => {
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
-                        sourceUrl: 'https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q'
+                        sourceUrl: 'https://whatsapp.com/channel/0029VbAI9JCBKfi5qXq9yJ01'
                     }
                 }, 
                 mentions: [m.sender]
@@ -245,7 +245,7 @@ let handler = async (m, { conn, usedPrefix: _p, args = [], command }) => {
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
-                        sourceUrl: 'https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q'
+                        sourceUrl: 'https://whatsapp.com/channel/0029VbAI9JCBKfi5qXq9yJ01'
                     }
                 }, 
                 mentions: [m.sender]
