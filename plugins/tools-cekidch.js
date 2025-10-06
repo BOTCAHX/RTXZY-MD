@@ -1,5 +1,5 @@
 let handler = async (m, { conn, text, command, usedPrefix }) => {
-  if (!text) throw `Silakan masukkan link channel WhatsApp.\nContoh:\n${usedPrefix + command} https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q`
+  if (!text) throw `Silakan masukkan link channel WhatsApp.\nContoh:\n${usedPrefix + command} https://whatsapp.com/channel/0029VbAI9JCBKfi5qXq9yJ01`
   try {
     let channelId;
     
