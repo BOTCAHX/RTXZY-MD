@@ -94,7 +94,7 @@ node index.js
 
 - **Fitur Bot 97%** implementasi dari Rest API, jadi **wajib daftar terlebih dahulu** agar bot bekerja dengan baik.  
 
-📢 **Informasi API & Update Script:** [WhatsApp Channel](https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q)  
+📢 **Informasi API & Update Script:** [WhatsApp Channel](https://whatsapp.com/channel/0029VbAI9JCBKfi5qXq9yJ01)  
 
 ----  
 
