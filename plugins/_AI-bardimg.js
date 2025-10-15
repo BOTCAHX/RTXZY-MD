@@ -39,7 +39,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
     
   } catch (err) {
     console.error(err);
-    throw '[ ! ] Terjadi kesalahan saat memproses media.';
+    throw `[ ! ] Terjadi kesalahan saat memproses media.\n\nKirim media dengan caption *${usedPrefix + command} pertanyaan* atau tag media yang sudah dikirim.`;
   }
 }
 
