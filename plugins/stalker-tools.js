@@ -213,9 +213,53 @@ let handler = async (m, {
       throw eror;
     }
   }
+  if (command == 'robloxstalk') {
+    if (!text) throw `Example: ${usedPrefix + command} betabotzz`;
+    m.reply(wait);
+    try {
+      let roblox = await fetch(`https://api.botcahx.eu.org/api/stalk/roblox?username=${text}&apikey=${btc}`).then(res => res.json());
+      if (!roblox.result) throw 'Failed to fetch Roblox data';
+      let result = roblox.result;
+      let caption = `*R O B L O X  S T A L K*\n\n`;
+      caption += `*Username:* ${result.account.username}\n`;
+      caption += `*Display Name:* ${result.account.displayName}\n`;
+      caption += `*Description:* ${result.account.description}\n`;
+      caption += `*Created:* ${result.account.created}\n`;
+      caption += `*Is Banned:* ${result.account.isBanned}\n`;
+      caption += `*Has Verified Badge:* ${result.account.hasVerifiedBadge}\n`;
+      caption += `*Presence:*\n`;
+      caption += `- Is Online: ${result.presence.isOnline}\n`;
+      caption += `- Last Online: ${result.presence.lastOnline}\n`;
+      caption += `- Recent Game: ${result.presence.recentGame}\n\n`;
+      caption += `*Stats:*\n`;
+      caption += `- Friend Count: ${result.stats.friendCount}\n`;
+      caption += `- Followers: ${result.stats.followers}\n`;
+      caption += `- Following: ${result.stats.following}\n\n`;
+      caption += `*Badges:*\n`;
+      if (result.badges.length === 0) {
+        caption += `- No badges available\n`;
+      } else {
+        result.badges.forEach(badge => {
+          caption += `- ${badge.name}: ${badge.description} (Icon ID: ${badge.iconImageId})\n`;
+        });
+      }
+      caption += `\n*Friend List:*\n`;
+      if (result.friendList.length === 0) {
+        caption += `- No friends available\n`;
+      } else {
+        result.friendList.forEach(friend => {
+          caption += `- ${friend.name} (${friend.displayName}): ID ${friend.id}\n`;
+        });
+      }
+      await conn.sendFile(m.chat, result.account.profilePicture, "profile.png", caption, m);
+    } catch (e) {
+      console.log(e);
+      throw eror;
+    }
+  }
 }
 
-handler.command = handler.help = ['ffstalk', 'mlstalk', 'mlstalk2', 'supersusstalk', 'npmstalk', 'repostalk', 'genshinstalk', 'stalkgenshin', 'hokstalk'];
+handler.command = handler.help = ['ffstalk', 'mlstalk', 'mlstalk2', 'supersusstalk', 'npmstalk', 'repostalk', 'genshinstalk', 'stalkgenshin', 'hokstalk', 'robloxstalk'];
 handler.tags = ['stalk'];
 handler.limit = true;
 
