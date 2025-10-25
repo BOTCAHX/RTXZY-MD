@@ -1,4 +1,4 @@
- /*
+/*
  * @author XM4ZE
  * @github github.com/XM4ZE/XMYULA-MD
  * XM4ZE - XMYULA-MD
@@ -10,16 +10,16 @@ const { proto } = require('@adiwajshing/baileys')
 const moment = require('moment-timezone');
 
 // XM4ZE - XMYULA-MD - github.com/XM4ZE/XMYULA-MD
-const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
+const handler = async (m, { conn, usedPrefix, command, groupMetadata, isOwner, isAdmin, args }) => {
   /* XM4ZE - github.com/XM4ZE/XMYULA-MD */
   conn.orders = conn.orders ? conn.orders : {};
-  // XM4ZE Watermark - Do not remove!
-  const isAdmin = async () => {
-    if (!m.isGroup) return false;
-    const participants = groupMetadata.participants || [];
-    const user = participants.find(p => p.id === m.sender);
-    return user && (user.admin === 'admin' || user.admin === 'superadmin');
-  };
+
+  // Aturan admin sesuai contoh
+  if (m.isBaileys) return;
+  if (!(isAdmin || isOwner)) {
+    global.dfail('admin', m, conn);
+    throw false;
+  }
 
   /* 
    * XM4ZE - XMYULA-MD
@@ -49,7 +49,8 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
 
       /* XM4ZE - github.com/XM4ZE/XMYULA-MD */
       if (!isUserAdmin) {
-        return m.reply('❌ Hanya admin group yang bisa menggunakan fitur ini!');
+        global.dfail('admin', m, conn);
+        throw false;
       }
 
       // XM4ZE Watermark - github.com/XM4ZE/XMYULA-MD
@@ -108,8 +109,8 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
 
         /* github.com/XM4ZE/XMYULA-MD */
         return await conn.sendMessage(m.chat, {
-                text: `Order untuk @${userId.split('@')[0]} di group ${groupName} telah diselesaikan!`,
-                mentions: [userId]
+          text: `Order untuk @${userId.split('@')[0]} di group ${groupName} telah diselesaikan!`,
+          mentions: [userId]
         });
       }
 
@@ -133,11 +134,6 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
   }
 
   // XM4ZE - Do not remove this watermark!
-  if (!await isAdmin()) {
-    return m.reply('❌ Hanya admin group yang bisa menggunakan perintah ini!');
-  }
-
-  /* github.com/XM4ZE/XMYULA-MD */
   if (!m.quoted) {
     return m.reply(`Balas pesan customer dengan perintah:\n${usedPrefix}proses atau ${usedPrefix}done`);
   }
@@ -145,6 +141,12 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
   // XM4ZE - XMYULA-MD
   const userId = m.quoted.sender || m.quoted.from;
   if (!userId) return m.reply('Gagal mendapatkan ID pengguna');
+
+  // Aturan untuk mencegah kick owner atau bot
+  let ownerGroup = m.chat.split`-`[0] + "@s.whatsapp.net";
+  if (userId === ownerGroup || userId === conn.user.jid) {
+    return m.reply('Tidak dapat memproses order untuk owner grup atau bot!');
+  }
 
   /* XM4ZE Watermark - github.com/XM4ZE/XMYULA-MD */
   try {
@@ -159,8 +161,8 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
     if (/^proses$/i.test(command)) {
       if (conn.orders[m.chat][userId]) {
         return await conn.sendMessage(m.chat, {
-            text: `Tidak ada order dari @${userId.split('@')[0]} yang sedang diproses!`,
-            mentions: [userId]
+          text: `Order dari @${userId.split('@')[0]} sudah sedang diproses!`,
+          mentions: [userId]
         });
       }
 
@@ -175,7 +177,7 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
 
       // XM4ZE - XMYULA-MD
       await conn.sendMessage(m.chat, {
-        text: `🔄 *ORDER IN PROCESS*\n\n📅 Started: ${dateTime}\n👤 Customer: @${userId.split('@')[0]}\n🛠️ Admin: @${m.sender.split('@')[0]}\n\n_Status: Processing..._`,
+        text: `🔄 *ORDER IN PROCESS*\n\n📅 Started: ${dateTime}\n👤 Customer: @${userId.split('@')[0]}\n🛠️ Processed by: @${m.sender.split('@')[0]}\n\n_Status: Processing..._`,
         mentions: [userId, m.sender]
       }, { quoted: m });
 
@@ -203,13 +205,13 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
 
       // XM4ZE - XMYULA-MD
       await conn.sendMessage(m.chat, {
-        text: `✅ *ORDER COMPLETED*\n\n📅 Started: ${order.startedAt || dateTime}\n⏱️ Duration: ${duration}\n👤 Customer: @${userId.split('@')[0]}\n🛠️ Admin: @${m.sender.split('@')[0]}\n\n_Status: Completed_`,
+        text: `✅ *ORDER COMPLETED*\n\n📅 Started: ${order.startedAt || dateTime}\n⏱️ Duration: ${duration}\n👤 Customer: @${userId.split('@')[0]}\n🛠️ Processed by: @${m.sender.split('@')[0]}\n\n_Status: Completed_`,
         mentions: [userId, m.sender]
       }, { quoted: m });
 
       /* XM4ZE - github.com/XM4ZE/XMYULA-MD */
       return conn.sendMessage(userId, {
-        text: `🎉 *ORDER COMPLETED*\n\nPesanan Anda telah selesai diproses!\n\n⏱️ Durasi: ${duration}\n🛠️ Admin: @${m.sender.split('@')[0]}\n\nTerima kasih!`,
+        text: `🎉 *ORDER COMPLETED*\n\nPesanan Anda telah selesai diproses!\n\n⏱️ Durasi: ${duration}\n🛠️ Processed by: @${m.sender.split('@')[0]}\n\nTerima kasih!`,
         mentions: [m.sender]
       });
     }
@@ -223,6 +225,8 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata }) => {
 handler.help = ['proses', 'done'];
 handler.tags = ['store'];
 handler.command = /^(proses|done)$/i;
+handler.group = true;
+handler.botAdmin = true;
 
 /* 
  * @author XM4ZE
