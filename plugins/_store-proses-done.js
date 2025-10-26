@@ -225,7 +225,7 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata, isOwner, i
 handler.help = ['proses', 'done'];
 handler.tags = ['store'];
 handler.command = /^(proses|done)$/i;
-handler.group = true;
+handler.group = false;
 handler.botAdmin = true;
 
 /* 
