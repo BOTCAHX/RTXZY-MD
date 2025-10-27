@@ -1,28 +1,28 @@
-global.owner = ['62895331520602', '275664439611636'] // wajib di isi tidak boleh kosong
-global.mods  = ['62895331520602', '275664439611636'] // wajib di isi tidak boleh kosong
-global.prems = ['62895331520602', '275664439611636'] // wajib di isi tidak boleh kosong
-global.nameowner = 'Tio' // wajib di isi tidak boleh kosong
-global.numberowner = '62895331520602' // wajib di isi tidak boleh kosong
-global.mail = 'support@tioprm.eu.org' // wajib di isi tidak boleh kosong
-global.gc = 'https://chat.whatsapp.com/I5RpePh2b5u37OyFjzCNTr' // wajib di isi tidak boleh kosong
-global.instagram = 'https://instagram.com/prm2.0' // wajib di isi tidak boleh kosong
-global.wm = '© BOTCAHX' // isi nama bot atau nama kalian
+global.owner = ['628974152000','6285855030554', '130850859573389'] // wajib di isi tidak boleh kosong
+global.mods  = ['628974152000','6285855030554', '130850859573389'] // wajib di isi tidak boleh kosong
+global.prems = ['628974152000', '130850859573389'] // wajib di isi tidak boleh kosong
+global.nameowner = 'farhanxcode' // wajib di isi tidak boleh kosong
+global.numberowner = '6285855030554' // wajib di isi tidak boleh kosong
+global.mail = 'kasirdboss02@gmail.com' // wajib di isi tidak boleh kosong
+global.gc = 'https://whatsapp.com/channel/0029VaGpjVw002TG5u8KXd1k/271' // wajib di isi tidak boleh kosong
+global.instagram = 'https://www.instagram.com/farhanxcode' // wajib di isi tidak boleh kosong
+global.wm = '©farhanxcode' // isi nama bot atau nama kalian
 global.wait = '_*Tunggu sedang di proses...*_' // ini pesan simulasi loading
 global.eror = '_*Server Error*_' // ini pesan saat terjadi kesalahan
 global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*' // ini pesan simulasi saat loading pembuatan sticker
 global.packname = 'Made With' // watermark stikcker packname
-global.author = 'Bot WhatsApp' // watermark stikcker author
+global.author = 'Irene WhatsApp Bot' // watermark stikcker author
 global.maxwarn = '5' // Peringatan maksimum Warn
 
 global.autobio = false // Set true/false untuk mengaktifkan atau mematikan autobio (default: false)
-global.antiporn = false // Set true/false untuk Auto delete pesan porno (bot harus admin) (default: false)
-global.spam = false // Set true/false untuk anti spam (default: false)
-global.gcspam = false // Set true/false untuk menutup grup ketika spam (default: false)
+global.antiporn = true // Set true/false untuk Auto delete pesan porno (bot harus admin) (default: false)
+global.spam = true // Set true/false untuk anti spam (default: false)
+global.gcspam = true // Set true/false untuk menutup grup ketika spam (default: false)
     
 
 // APIKEY INI WAJIB DI ISI! //
-global.btc = 'YOUR_APIKEY_HERE'
-global.aksesKey = 'YOUR_AKSESKEY_HERE'
+global.btc = 'hansalrl'
+global.aksesKey = 'hansalrl'
 // Daftar terlebih dahulu https://api.botcahx.eu.org
 
 
