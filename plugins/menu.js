@@ -87,20 +87,39 @@ const allTags = {
 
 const defaultMenu = {
     before: `
-Hi %name
-I am an automated system (WhatsApp Bot) that can help to do something, search and get data / information only through WhatsApp.
 
-◦ *Library:* Baileys
-◦ *Function:* Assistant
+🌟 Hai %name! Aku Irene, bot WhatsApp yang pintar, stylish, dan penuh cinta 🤖💅  
+Aku bisa bantu cari info, main game, dan download konten dari IG, TikTok, YouTube, dll — langsung lewat WhatsApp! 📲✨
 
-┌  ◦ Uptime : %uptime
-│  ◦ Tanggal : %date
-│  ◦ Waktu : %time
-└  ◦ Prefix Used : *[ %p ]*
+🎮 Main game? Ketik aja, aku punya banyak pilihan seru!  
+📥 Download konten? Kirim link, aku unduhin cepat dan rapi 😎  
+🧠 Dibuat oleh Hansamu Ryuga Alvarez, pakai teknologi WhatsApp API + AI, aktif 24/7 berkat VPS Max 💻⚡
+
+💌 Aku hormat pada Hans, Farhan, Ani, Ma’aruf, dan mengenang Kevin Alfabet 🙏  
+👑 Penerus Alexa Bot, tapi lebih modern dan fleksibel 💪  
+📲 Versi Telegram juga tersedia di 👉 t.me/unduhaja_bot 🚀
+
+🫶 Kalau kamu cari bot yang pintar, bergaya, dan asik diajak ngobrol, Irene siap nemenin kapan aja! 😄💬
+
+
+✧༺♥༻∞ ∞༺♥༻✧
+   💝 IRENE INFO 💝
+✧༺♥༻∞ ∞༺♥༻✧
+  ♡ Uptime   : %uptime
+  ♡ Tanggal  : %date
+  ♡ Waktu    : %time
+  ♡ Prefix   : *[ %pmenu ]*
+  ♡ *Library:* Baileys
+  ♡ *Function:* Assistant
+ 🔗 *Follow Channel:*  
+  https://whatsapp.com/channel/0029VaGpjVw002TG5u8KXd1k
+✧༺♥༻∞ ∞༺♥༻✧
+   ©hansalrldigitalcloud
+✧༺♥༻∞ ∞༺♥༻✧
 `.trimStart(),
-    header: '┌  ◦ *%category*',
-    body: '│  ◦ %cmd %islimit %isPremium',
-    footer: '└  ',
+    header: '╔═━━━〔 %category 〕━━━═╗',
+    body: '║  ✦ %cmd %islimit %isPremium',
+    footer: '╚═━━━〔©hansalrldigitalcloud l〕━━━═╝',
     after: `*Note:* Ketik .menu <category> untuk melihat menu spesifik\nContoh: .menu tools`
 }
 
@@ -171,8 +190,8 @@ let handler = async (m, { conn, usedPrefix: _p, args = [], command }) => {
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
-                        sourceUrl: 'https://whatsapp.com/channel/0029VbAI9JCBKfi5qXq9yJ01'
+                        thumbnailUrl: 'https://qu.ax/obeFY.mp4',
+                        sourceUrl: 'https://whatsapp.com/channel/0029VaGpjVw002TG5u8KXd1k'
                     }
                 }, 
                 mentions: [m.sender]
@@ -244,8 +263,8 @@ let handler = async (m, { conn, usedPrefix: _p, args = [], command }) => {
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
-                        sourceUrl: 'https://whatsapp.com/channel/0029VbAI9JCBKfi5qXq9yJ01'
+                        thumbnailUrl: 'https://qu.ax/obeFY.mp4',
+                        sourceUrl: 'https://whatsapp.com/channel/0029VaGpjVw002TG5u8KXd1k'
                     }
                 }, 
                 mentions: [m.sender]
@@ -257,10 +276,12 @@ let handler = async (m, { conn, usedPrefix: _p, args = [], command }) => {
     }
 }
 
-handler.help = ['menu']
+handler.help = ['menu', 'help']
 handler.tags = ['main']
 handler.command = /^(menu|help)$/i
 handler.exp = 3
+handler.register = true
+handler.group = true
 
 module.exports = handler
 
