@@ -21,6 +21,8 @@ handler.before = async function (m, { conn, isPrems }) {
     const capcutRegex = /^https:\/\/www\.capcut\.com\/(t\/[A-Za-z0-9_-]+\/?|template-detail\/\d+\?(?:[^=]+=[^&]+&?)+)$/;
     const snackvideoRegex = /^(https?:\/\/)?s\.snackvideo\.com\/p\/[a-zA-Z0-9]+$/i;
     const xiaohongshuRegex = /^(https?:\/\/)?(www\.)?(xiaohongshu\.com\/discovery\/item\/[a-zA-Z0-9]+|xhslink\.com\/[a-zA-Z0-9/]+)(\?.*)?$/i;
+    const soundcloudRegex = /^(https?:\/\/)?(www\.)?soundcloud\.com\/[a-zA-Z0-9-]+\/[a-zA-Z0-9-]+(\?.*)?$/i;
+    const cocofunRegex = /^(https?:\/\/)?(www\.)?icocofun\.com\/share\/post\/\d+(\?.*)?$/i;
     if (text.match(tiktokRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -117,7 +119,23 @@ handler.before = async function (m, { conn, isPrems }) {
         },
     });
     await _xiaohongshu(text.match(xiaohongshuRegex)[0], m);
-  }
+   } else if (text.match(soundcloudRegex)) {
+    conn.sendMessage(m.chat, {
+        react: {
+            text: "🕒",
+            key: m.key,
+        },
+    });
+    await _soundcloud(text.match(soundcloudRegex)[0], m);
+  } else if (text.match(cocofunRegex)) {
+    conn.sendMessage(m.chat, {
+        react: {
+            text: "🕒",
+            key: m.key,
+        },
+    });
+    await _cocofun(text.match(cocofunRegex)[0], m);
+  } 
     return true;
 };
 module.exports = handler;
@@ -474,6 +492,59 @@ async function _xiaohongshu(url, m) {
                     );               
                 }
             }
+        } else {
+            conn.reply(m.chat, "Limit kamu habis!", m);
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+async function _soundcloud(url, m) {
+    try {
+        if (global.db.data.users[m.sender].limit > 0) {
+            const res = await fetch(`https://api.botcahx.eu.org/api/download/soundcloud?url=${url}&apikey=${btc}`);
+            let anu = await res.json();
+            await conn.sendMessage(
+                    m.chat,
+                    {
+                        audio: {
+                            url: anu.result.url,
+                        },
+                        mimetype: "audio/mpeg",
+                    },
+                    {
+                        quoted: m,
+                    }
+                );
+            global.db.data.users[m.sender].limit -= 1;
+        } else {
+            conn.reply(m.chat, "Limit kamu habis!", m);
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+async function _cocofun(url, m) {
+    try {
+        if (global.db.data.users[m.sender].limit > 0) {
+            const res = await fetch(`https://api.botcahx.eu.org/api/download/cocofun?url=${encodeURIComponent(url)}&apikey=${btc}`);
+           const json = await res.json();
+           const videoUrl = json.result.no_watermark || json.result.watermark;
+            await conn.sendMessage(
+                    m.chat,
+                    {
+                        video: {
+                            url: videoUrl,
+                        },
+                        caption: `🍟 *Fetching* : ${(new Date() - old) * 1} ms`,
+                    },
+                    {
+                        mention: m,
+                    }
+                );
+            global.db.data.users[m.sender].limit -= 1;
         } else {
             conn.reply(m.chat, "Limit kamu habis!", m);
         }
