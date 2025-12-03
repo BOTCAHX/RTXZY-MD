@@ -9,7 +9,7 @@ handler.before = async function (m) {
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/TEKA TEKI/i.test(m.quoted.text)) return !0
     this.tekateki = this.tekateki ? this.tekateki : {}
     if (!(id in this.tekateki)) return m.reply('Soal itu telah berakhir')
-    // if (m.quoted.id == this.tekateki[id][0].id) {
+    // if (m.quoted.id == this.tekateki[id][0].key.id) {
     let json = JSON.parse(JSON.stringify(this.tekateki[id][1]))
     if (/^(.tete|bantuan|^$)/i.test(m.text)) return !0
     if (m.text.toLowerCase() == json.data.jawaban.toLowerCase().trim()) {

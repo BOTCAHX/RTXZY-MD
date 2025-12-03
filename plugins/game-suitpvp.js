@@ -1,40 +1,55 @@
-/* 
-    Made by https://github.com/syahrularranger 
-    Jangan di hapus credit nya :)
-*/
 let timeout = 60000
 let poin = 500
 let poin_lose = -100
+
 let handler = async (m, { conn, usedPrefix }) => {
-  conn.suit = conn.suit ? conn.suit : {}
-  if (Object.values(conn.suit).find(room => room.id.startsWith('suit') && [room.p, room.p2].includes(m.sender))) throw 'Selesaikan suit mu yang sebelumnya'
-  if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya.. Contoh\n\n${usedPrefix}suit @${owner[1]}`, m.chat, { contextInfo: { mentionedJid: [owner[1] + '@s.whatsapp.net'] } })
-  if (Object.values(conn.suit).find(room => room.id.startsWith('suit') && [room.p, room.p2].includes(m.mentionedJid[0]))) throw `Orang yang kamu tantang sedang bermain suit bersama orang lain :(`
-  let id = 'suit_' + new Date() * 1
-  let caption = `
-_*SUIT PvP*_
+  conn.suit = conn.suit || {}
 
-@${m.sender.split`@`[0]} menantang @${m.mentionedJid[0].split`@`[0]} untuk bermain suit
-
-Silahkan @${m.mentionedJid[0].split`@`[0]} 
-`.trim()
-  let footer = `Ketik "terima/ok/gas" untuk memulai suit\nKetik "tolak/gabisa/nanti" untuk menolak`
-  conn.suit[id] = {
-    chat: await conn.send2But(m.chat, caption, footer, 'Terima', 'ok', 'Tolak', 'tolak', m, { contextInfo: { mentionedJid: conn.parseMention(caption) } }),
-    id: id,
-    p: m.sender,
-    p2: m.mentionedJid[0],
-    status: 'wait',
-    waktu: setTimeout(() => {
-      if (conn.suit[id]) conn.reply(m.chat, `_Waktu suit habis_`, m)
-      delete conn.suit[id]
-    }, timeout), poin, poin_lose, timeout
+  if (Object.values(conn.suit).find(room => room.id.startsWith('suit') && [room.p, room.p2].includes(m.sender))) {
+    throw 'Selesaikan suit kamu yang sebelumnya!'
   }
+
+  if (!m.mentionedJid?.[0]) {
+    return m.reply(`Tag orang yang mau kamu tantang!\nContoh: ${usedPrefix}suit @tag`)
+  }
+
+  let target = m.mentionedJid[0]
+
+  if (Object.values(conn.suit).find(room => room.id.startsWith('suit') && [room.p, room.p2].includes(target))) {
+    throw 'Orang itu sedang bermain suit dengan orang lain!'
+  }
+
+  let id = 'suit_' + Date.now()
+
+  const text = `*SUIT PvP*
+
+@${m.sender.split('@')[0]} menantangmu @${target.split('@')[0]} untuk bermain Suit!
+
+Ketik *terima* / *gas* / *ok* untuk mulai
+Ketik *tolak* / *gabisa* untuk menolak`
+
+  conn.suit[id] = {
+    id,
+    p: m.sender,
+    p2: target,
+    status: 'wait',
+    poin,
+    poin_lose,
+    timeout,
+    waktu: setTimeout(() => {
+      if (conn.suit[id]) {
+        conn.reply(m.chat, `Tantangan ditarik, @${target.split('@')[0]} tidak merespon`, m, { mentions: [target] })
+        delete conn.suit[id]
+      }
+    }, timeout)
+  }
+
+  await conn.reply(m.chat, text, m, { mentions: [m.sender, target] })
 }
+
+handler.help = ['suit @tag', 'suitpvp @tag']
 handler.tags = ['game']
-handler.help = ['suitpvp', 'suit2'].map(v => v + ' @tag')
-handler.command = /^suit(pvp|2)$/i
-handler.limit = false
+handler.command = /^suit(pvp|2)?$/i
 handler.group = true
 
 module.exports = handler

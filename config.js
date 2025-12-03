@@ -1,6 +1,6 @@
-global.owner = ['62895331520602', '275664439611636'] // wajib di isi tidak boleh kosong
-global.mods  = ['62895331520602', '275664439611636'] // wajib di isi tidak boleh kosong
-global.prems = ['62895331520602', '275664439611636'] // wajib di isi tidak boleh kosong
+global.owner = ['62895331520602'] // wajib di isi tidak boleh kosong
+global.mods  = ['62895331520602'] // wajib di isi tidak boleh kosong
+global.prems = ['62895331520602'] // wajib di isi tidak boleh kosong
 global.nameowner = 'Tio' // wajib di isi tidak boleh kosong
 global.numberowner = '62895331520602' // wajib di isi tidak boleh kosong
 global.mail = 'support@tioprm.eu.org' // wajib di isi tidak boleh kosong

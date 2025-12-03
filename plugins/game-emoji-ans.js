@@ -10,7 +10,7 @@ handler.before = async function (m) {
     this.tebakemoji = this.tebakemoji ? this.tebakemoji : {}
     if (!(id in this.tebakemoji))
         return this.reply(m.chat, 'Soal itu telah berakhir', m)
-    if (m.quoted.id == this.tebakemoji[id][0].id) {
+    if (m.quoted.id == this.tebakemoji[id][0].key.id) {
         let isSurrender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
         if (isSurrender) {
             clearTimeout(this.tebakemoji[id][3])

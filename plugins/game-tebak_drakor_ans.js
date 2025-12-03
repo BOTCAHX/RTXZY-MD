@@ -8,7 +8,7 @@ handler.before = async function (m) {
   if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik .tdkt/i.test(m.quoted.text)) return !0
   this.tebakdrakor = this.tebakdrakor ? this.tebakdrakor : {}
   if (!(id in this.tebakdrakor)) return m.reply('Soal itu telah berakhir')
-  if (m.quoted.id == this.tebakdrakor[id][0].id) {
+  if (m.quoted.id == this.tebakdrakor[id][0].key.id) {
     let json = JSON.parse(JSON.stringify(this.tebakdrakor[id][1]))
     if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
       global.db.data.users[m.sender].exp += this.tebakdrakor[id][2]

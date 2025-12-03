@@ -1,33 +1,23 @@
 let handler = async (m, { conn }) => {
-  ayg = global.db.data.users[m.sender]
+  let user = global.db.data.users[m.sender]
 
-  if(ayg.pasangan == ""){
-    return conn.reply(m.chat,`Anda tidak memiliki pasangan.`,m)
-  }
-  
-  beb = global.db.data.users[global.db.data.users[m.sender].pasangan]
-
-  if (typeof beb == "undefined"){
-    conn.reply(m.chat,`Berhasil putus hubungan dengan @${global.db.data.users[m.sender].pasangan.split('@')[0]}`,m,{contextInfo: {
-      mentionedJid: [global.db.data.users[m.sender].pasangan]
-    }})
-    ayg.pasangan = ""
+  if (!user.pasangan || user.pasangan === "") {
+    return conn.reply(m.chat, "Kamu sedang jomblo, gak ada yang perlu diputusin", m)
   }
 
-  if (m.sender == beb.pasangan){
-    conn.reply(m.chat,`Berhasil putus hubungan dengan @${global.db.data.users[m.sender].pasangan.split('@')[0]}`,m,{contextInfo: {
-      mentionedJid: [global.db.data.users[m.sender].pasangan]
-    }})
-    ayg.pasangan = ""
-    beb.pasangan = ""
-  }else {
-    conn.reply(m.chat,`Anda tidak memiliki pasangan.`,m)
-  }
+  let ex = user.pasangan
+  let pasangan = global.db.data.users[ex]
+
+  user.pasangan = ""
+  if (pasangan) pasangan.pasangan = ""
+
+  conn.reply(m.chat, `Berhasil putus dengan @${ex.split('@')[0]}\n\nSemoga cepat move on ya`, m, {
+    mentions: [ex]
+  })
 }
+
 handler.help = ['putus']
 handler.tags = ['fun']
 handler.command = /^(putus)$/i
 handler.group = true
-handler.limit = true
-handler.fail = null
 module.exports = handler

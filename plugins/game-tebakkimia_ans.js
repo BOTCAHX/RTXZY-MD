@@ -9,7 +9,7 @@ handler.before = async function (m) {
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik.*kmi/i.test(m.quoted.text)) return !0
     this.kimia = this.kimia ? this.kimia : {}
     if (!(id in this.kimia)) return m.reply('Soal itu telah berakhir')
-    if (m.quoted.id == this.kimia[id][0].id) {
+    if (m.quoted.id == this.kimia[id][0].key.id) {
         let json = JSON.parse(JSON.stringify(this.kimia[id][1]))
         if (m.text.toLowerCase() == json.lambang.toLowerCase().trim()) {
             users.money += poin

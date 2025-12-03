@@ -9,7 +9,7 @@ handler.before = async function (m) {
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik.*tpc/i.test(m.quoted.text)) return !0
     this.tebaktempat = this.tebaktempat ? this.tebaktempat : {}
     if (!(id in this.tebaktempat)) return m.reply('Soal itu telah berakhir')
-    if (m.quoted.id == this.tebaktempat[id][0].id) {
+    if (m.quoted.id == this.tebaktempat[id][0].key.id) {
         let json = JSON.parse(JSON.stringify(this.tebaktempat[id][1]))
         let answerIndex = ['a', 'b', 'c', 'd'].indexOf(m.text.toLowerCase())
         if (json.pilihan[answerIndex] && json.pilihan[answerIndex].toLowerCase() == json.jawaban.toLowerCase().trim()) {

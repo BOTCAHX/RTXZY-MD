@@ -11,7 +11,7 @@ handler.before = async function (m) {
     return m.reply('Soal itu telah berakhir atau kadaluwarsa.');
   }
   
-  if (m.quoted.id == this.math[id][0].id) {
+  if (m.quoted.id == this.math[id][0].key.id) {
     let math = JSON.parse(JSON.stringify(this.math[id][1]));
     
     if (m.text == math.jawaban) {

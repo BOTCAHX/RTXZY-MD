@@ -11,7 +11,7 @@ handler.before = async function (m) {
     this.tebaklagu = this.tebaklagu ? this.tebaklagu : {}
     if (!(id in this.tebaklagu))
         return this.reply(m.chat, 'Soal itu telah berakhir', m)
-    if (m.quoted.id == this.tebaklagu[id][0].id) {
+    if (m.quoted.id == this.tebaklagu[id][0].key.id) {
         let json = JSON.parse(JSON.stringify(this.tebaklagu[id][1]))
         // m.reply(JSON.stringify(json, null, '\t'))
         if (m.text.toLowerCase() == json.judul.toLowerCase().trim()) {

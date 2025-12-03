@@ -8,7 +8,7 @@ handler.before = async function (m) {
   if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik.*lgo/i.test(m.quoted.text)) return !0
   this.tebaklogo = this.tebaklogo ? this.tebaklogo : {}
   if (!(id in this.tebaklogo)) return m.reply('Soal itu telah berakhir')
-  if (m.quoted.id == this.tebaklogo[id][0].id) {
+  if (m.quoted.id == this.tebaklogo[id][0].key.id) {
     let json = JSON.parse(JSON.stringify(this.tebaklogo[id][1]))
     // m.reply(JSON.stringify(json, null, '\t'))
     if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
