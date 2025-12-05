@@ -1184,36 +1184,53 @@ module.exports = {
         switch (action) {
         case 'add':
         case 'remove':
-		case 'leave':
-		case 'invite':
-		case 'invite_v4':
-                if (chat.welcome) {
-                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-                    for (let user of participants) {
-                        let pp = 'https://telegra.ph/file/70e8de9b1879568954f09.jpg'
-                        try {
-                             pp = await this.profilePictureUrl(user, 'image')
-                        } catch (e) {
-                        } finally {
-                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? groupMetadata.desc.toString() : '') :
-                         (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                            await this.sendMessage(id, { text: text, contextInfo: { mentionedJid: [user] }}, { quoted: null })
-			    /**this.sendMessage(id, {
-                            text: text,
-                            contextInfo: {
-			    mentionedJid: [user],
-                            externalAdReply: {  
-                            title: action === 'add' ? 'Selamat Datang' : 'Selamat tinggal',
-                            body: global.wm,
-                            thumbnailUrl: pp,
-                            sourceUrl: 'https://api.botcahx.eu.org',
-                            mediaType: 1,
-                            renderLargerThumbnail: true 
-                            }}}, { quoted: null })**/
+        case 'leave':
+        case 'invite':
+        case 'invite_v4':
+            if (chat.welcome) {
+                let groupMetadata = await this.groupMetadata(id)
+                if (!groupMetadata) break
+
+                for (let user of participants) {
+                    let jid = user?.phoneNumber || user?.jid || user?.id || user
+                    if (!jid || !jid.includes('@s.whatsapp.net')) continue
+
+                    let pp = 'https://telegra.ph/file/70e8de9b1879568954f09.jpg'
+                    try {
+                        pp = await this.profilePictureUrl(jid, 'image')
+                    } catch (e) {}
+
+                    const isAdd = ['add', 'invite', 'invite_v4'].includes(action)
+
+                    let text = (isAdd
+                        ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!')
+                        : (chat.sBye || this.bye || conn.bye || 'Bye, @user!'))
+                        .replace('@subject', groupMetadata.subject || 'this group')
+                        .replace('@desc', groupMetadata.desc?.toString() || '')
+                        .replace('@user', '@' + jid.split('@')[0])
+                    await this.sendMessage(id, {
+                        text: text,
+                        mentions: [jid]
+                    })
+                    /*
+                    await this.sendMessage(id, {
+                        text: text,
+                        mentions: [jid],
+                        contextInfo: {
+                            externalAdReply: {
+                                title: isAdd ? 'Selamat Datang' : 'Selamat Tinggal',
+                                body: global.wm || 'Bot WhatsApp',
+                                thumbnailUrl: pp,
+                                sourceUrl: 'https://api.botcahx.eu.org',
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
                         }
-                    }
-		}
-                break                    
+                    })
+ */
+                }
+            }
+            break            
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
