@@ -1176,43 +1176,46 @@ module.exports = {
     },
 	
   async participantsUpdate({ id, participants, action }) {
-        if (opts['self']) return
-        // if (id in conn.chats) return // First login will spam
-        if (global.isInit) return
-        let chat = db.data.chats[id] || {}
-        let text = ''
-        switch (action) {
+    if (opts['self']) return
+    if (global.isInit) return
+
+    let chat = db.data.chats[id] || {}
+    let text = ''
+
+    switch (action) {
         case 'add':
         case 'remove':
         case 'leave':
         case 'invite':
         case 'invite_v4':
             if (chat.welcome) {
-                let groupMetadata = await this.groupMetadata(id)
+                let groupMetadata = await this.groupMetadata(id).catch(() => null)
                 if (!groupMetadata) break
 
                 for (let user of participants) {
-                    let jid = user?.phoneNumber || user?.jid || user?.id || user
-                    if (!jid || !jid.includes('@s.whatsapp.net')) continue
+                    let jid = user
+                    if (typeof user === 'object') {
+                        jid = user.phoneNumber || user.id || user.jid || user
+                    }
+                    if (!jid || (!jid.includes('@s.whatsapp.net') && !jid.includes('@lid'))) continue
 
                     let pp = 'https://telegra.ph/file/70e8de9b1879568954f09.jpg'
-                    try {
-                        pp = await this.profilePictureUrl(jid, 'image')
-                    } catch (e) {}
+                    try { pp = await this.profilePictureUrl(jid, 'image') } catch {}
 
                     const isAdd = ['add', 'invite', 'invite_v4'].includes(action)
 
-                    let text = (isAdd
+                    text = (isAdd
                         ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!')
                         : (chat.sBye || this.bye || conn.bye || 'Bye, @user!'))
                         .replace('@subject', groupMetadata.subject || 'this group')
                         .replace('@desc', groupMetadata.desc?.toString() || '')
                         .replace('@user', '@' + jid.split('@')[0])
+
                     await this.sendMessage(id, {
-                        text: text,
+                        text,
                         mentions: [jid]
                     })
-                    /*
+					/*
                     await this.sendMessage(id, {
                         text: text,
                         mentions: [jid],
@@ -1232,18 +1235,14 @@ module.exports = {
             }
             break            
             case 'promote':
-                text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
-                if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
-                text = text.replace('@user', '@' + participants[0].split('@')[0])
-                if (chat.detect) this.sendMessage(id, text, {
-                    contextInfo: {
-                        mentionedJid: this.parseMention(text)
-                    }
-                })
-                break
-        }
-    },
+            if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+            text = text.replace('@user', '@' + participants[0].split('@')[0])
+            if (chat.detect) this.sendMessage(id, { text }, { mentions: [participants[0]] })
+            break
+    }
+},
     async delete({ remoteJid, fromMe, id, participant }) {
         if (fromMe) return
         let chats = Object.entries(conn.chats).find(([user, data]) => data.messages && data.messages[id])
