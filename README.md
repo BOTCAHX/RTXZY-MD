@@ -3,7 +3,7 @@
 - ✅ **Update  Lid resolver**  Penanganan lid jadi terbaru
 - ✅ **Menggunakan Baileys Latest**  [Baileys](https://github.com/WhiskeySockets/Baileys)
 - ✅ **Delete QR Code** Jadi Alternatif Nya Memakai Pairing Code
-- ✅ **Wajib Menggunakan Node.js 21+**
+- ✅ **Wajib Menggunakan Node.js 20++**
 
 
 ### Contact Admin
