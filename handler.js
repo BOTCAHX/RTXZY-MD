@@ -806,7 +806,7 @@ module.exports = {
                 if (!('isBanned' in chat)) chat.isBanned = false
                 if (!('welcome' in chat)) chat.welcome = true
                 if (!isNumber(chat.welcometype)) chat.welcometype = 1
-                if (!('detect' in chat)) chat.detect = true
+                if (!('detect' in chat)) chat.detect = false
                 if (!('isBannedTime' in chat)) chat.isBannedTime = false
                 if (!('mute' in chat)) chat.mute = false
                 if (!('listStr' in chat)) chat.listStr = {}
@@ -1235,26 +1235,15 @@ module.exports = {
                 }
             }
             break            
-     case 'promote':
-    case 'demote':
-    if (!chat.detect) break
-
-    let text = action === 'promote'
-        ? (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
-        : (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
-
-    let participant = participants[0]
-    let jid = participant?.phoneNumber || participant?.id || participant?.jid || participant
-
-    if (!jid || !jid.includes('@s.whatsapp.net')) break
-
-    text = text.replace('@user', '@' + jid.split('@')[0])
-
-    this.sendMessage(id, { text, mentions: [jid] }).catch(() => {})
-
-    break
+            case 'promote':
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+            case 'demote':
+            if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+            text = text.replace('@user', '@' + participants[0].split('@')[0])
+            if (chat.detect) this.sendMessage(id, { text }, { mentions: [participants[0]] })
+            break
     }
- },
+},
     async delete({ remoteJid, fromMe, id, participant }) {
         if (fromMe) return
         let chats = Object.entries(conn.chats).find(([user, data]) => data.messages && data.messages[id])
