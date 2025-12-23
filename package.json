@@ -60,6 +60,7 @@
         "jimp": "0.16.13",
         "lodash": "^4.17.21",
         "lowdb": "^2.1.0",
+        "lru-cache": "^11.2.4",
         "link-preview-js": "^3.0.4",
         "moment-timezone": "^0.5.37",
         "mongoose": "^6.0.14",
