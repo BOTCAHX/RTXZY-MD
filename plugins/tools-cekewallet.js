@@ -5,7 +5,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 
     if (!text) {
         let list = ewalletList.map(e => `• ${e}`).join('\n');
-        throw `*Format Penggunaan:*\n${usedPrefix + command} nomor|ewallet\n${usedPrefix + command} ewallet|nomor\n\n*Contoh:*\n${usedPrefix + command} 082221792667|dana\n${usedPrefix + command} ovo|08123456789\n\nE-Wallet tersedia:\n${list}`;
+        throw `*Format Penggunaan:*\n${usedPrefix + command} nomor|ewallet\n${usedPrefix + command} ewallet|nomor\n\n*Contoh:*\n${usedPrefix + command} 08123456789|dana\n${usedPrefix + command} ovo|08123456789\n\nE-Wallet tersedia:\n${list}`;
     }
 
     let [part1, part2] = text.split('|').map(v => v.trim());
