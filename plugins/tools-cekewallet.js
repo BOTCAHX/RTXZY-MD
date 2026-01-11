@@ -23,7 +23,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
         throw `E-wallet tidak dikenali!\nTersedia: ${ewalletList.join(', ')}\n\nPastikan format: nomor|ewallet`;
     }
 
-    if (!nomor || nomor.length < 8) throw `Nomor tidak valid!\nContoh: 082221792667`;
+    if (!nomor || nomor.length < 8) throw `Nomor tidak valid!\nContoh: 08123456789`;
 
     m.reply(wait);
 
