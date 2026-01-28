@@ -69,6 +69,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       global.opts['self'] = !isEnable
       break
+      case 'antifoto':
+      if (m.isGroup) {
+      if (!(isAdmin || isOwner)) {
+        global.dfail('admin', m, conn)
+        throw false
+      }
+    }
+      chat.antiFoto = isEnable
+      break
     case 'antilink':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -201,6 +210,7 @@ List option:
 | antisticker
 | autosticker
 | autolevelup
+| antifoto
 | detect
 | document
 | whitelistmycontacts
