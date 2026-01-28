@@ -8,8 +8,6 @@ let handler = async (m, { conn, command }) => {
       let api = await fetch(`https://api.botcahx.eu.org/api/checkkey?apikey=${btc}`);
       let body = await api.json();
       let { 
-        email, 
-        username, 
         limit, 
         premium, 
         expired, 
@@ -18,8 +16,6 @@ let handler = async (m, { conn, command }) => {
       } = body.result;
       
       let capt = `乂 *C H E C K   A P I K E Y*\n\n`;
-      capt += `◦ *Email*: ${email}\n`;
-      capt += `◦ *Username*: ${username}\n`;
       capt += `◦ *Limit*: ${limit}\n`;
       capt += `◦ *Premium*: ${premium}\n`;
       capt += `◦ *Expired*: ${expired}\n`;
