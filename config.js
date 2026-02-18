@@ -1,8 +1,8 @@
-global.owner = ['62895331520602'] // wajib di isi tidak boleh kosong
-global.mods  = ['62895331520602'] // wajib di isi tidak boleh kosong
-global.prems = ['62895331520602'] // wajib di isi tidak boleh kosong
+global.owner = ['6281289694906'] // wajib di isi tidak boleh kosong
+global.mods = ["6281289694906"]; // wajib di isi tidak boleh kosong
+global.prems = ["6281289694906"]; // wajib di isi tidak boleh kosong
 global.nameowner = 'Tio' // wajib di isi tidak boleh kosong
-global.numberowner = '62895331520602' // wajib di isi tidak boleh kosong
+global.numberowner = "6281289694906"; // wajib di isi tidak boleh kosong
 global.mail = 'support@tioprm.eu.org' // wajib di isi tidak boleh kosong
 global.gc = 'https://chat.whatsapp.com/I5RpePh2b5u37OyFjzCNTr' // wajib di isi tidak boleh kosong
 global.instagram = 'https://instagram.com/prm2.0' // wajib di isi tidak boleh kosong
@@ -21,11 +21,11 @@ global.gcspam = false // Set true/false untuk menutup grup ketika spam (default:
     
 
 // APIKEY INI WAJIB DI ISI! //
-global.btc = 'YOUR_APIKEY_HERE'
+global.btc = "5NpvCHPf";
 // Daftar terlebih dahulu https://api.botcahx.eu.org
     
 // AKSESKEY INI DI ISI JIKA DIPERLUKAN (e.g suno ai (ai music ) & fitur prem lainnya//
-global.aksesKey = 'YOUR_AKSESKEY_HERE'
+global.aksesKey = 'minatoaqua'
 // Daftar terlebih dahulu https://api.botcahx.eu.org
 
 
