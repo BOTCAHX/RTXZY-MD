@@ -140,7 +140,7 @@ _Example_ :
                         contextInfo: {
                             externalAdReply: {
                                 mediaType: 1,
-                                title: 'BETABOTZ RPG',
+                                title: wm,
                                 thumbnailUrl: 'https://telegra.ph/file/f329ce46c24b0d7e0837e.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''
