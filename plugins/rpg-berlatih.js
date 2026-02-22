@@ -20,7 +20,7 @@ let handler = async (m, { conn, text }) => {
             contextInfo: {
                 externalAdReply: {
                     mediaType: 1,
-                    title: 'BETABOTZ RPG',
+                    title: wm,
                     thumbnailUrl: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg',
                     renderLargerThumbnail: true,
                     sourceUrl: ''
@@ -55,7 +55,7 @@ let handler = async (m, { conn, text }) => {
             contextInfo: {
                 externalAdReply: {
                     mediaType: 1,
-                    title: 'BETABOTZ RPG',
+                    title: wm,
                     thumbnailUrl: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg',
                     renderLargerThumbnail: true,
                     sourceUrl: ''
