@@ -28,8 +28,8 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         contextInfo: {
 isForwarded: true,
 forwardedNewsletterMessageInfo: {
-newsletterJid: '120363248530706545@newsletter', 
-newsletterName: '>>BETABOTZ RPG<<', 
+newsletterJid: '', 
+newsletterName: wm, 
 serverMessageId: -1
 },
           externalAdReply: {
