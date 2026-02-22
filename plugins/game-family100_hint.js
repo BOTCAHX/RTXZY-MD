@@ -60,7 +60,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             setTimeout(() => {
                 this.sendMessage(m.chat, { delete: conn.family[id].msg.key }).catch(e => e)
                 delete conn.family[id]
-            }, 10000)
+            }, 5000) // ganti ke 5 detik 10d etik kelamaan
         }
         return !0
     }

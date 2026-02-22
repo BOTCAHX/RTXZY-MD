@@ -1,32 +1,32 @@
-let poin = 10000
-
-let similarity = require('similarity')
+const similarity = require('similarity')
 const threshold = 0.72
+
 let handler = m => m
+
 handler.before = async function (m) {
     let id = m.chat
-    let users = global.db.data.users[m.sender]
-    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/Ketik.*lag/i.test(m.quoted.text) || /.*lag/i.test(m.text))
-        return !0
+    if (!m.quoted) return !0
     this.tebaklagu = this.tebaklagu ? this.tebaklagu : {}
-    if (!(id in this.tebaklagu))
-        return this.reply(m.chat, 'Soal itu telah berakhir', m)
-    if (m.quoted.id == this.tebaklagu[id][0].key.id) {
-        let json = JSON.parse(JSON.stringify(this.tebaklagu[id][1]))
-        // m.reply(JSON.stringify(json, null, '\t'))
-        if (m.text.toLowerCase() == json.judul.toLowerCase().trim()) {
-            global.db.data.users[m.sender].exp += this.tebaklagu[id][2]
-            users.money += poin
-            this.reply(m.chat, `*Benar!*\n+${this.tebaklagu[id][2]} money`, m)
-            clearTimeout(this.tebaklagu[id][3])
-            delete this.tebaklagu[id]
-        } else if (similarity(m.text.toLowerCase(), json.judul.toLowerCase().trim()) >= threshold)
-            m.reply(`*Dikit Lagi!*`)
-        else
-            this.reply(m.chat, `*Salah!*`, m)
+    if (!(id in this.tebaklagu)) return !0
+    if (m.quoted.id !== this.tebaklagu[id][0].key.id) return !0
+    let json = this.tebaklagu[id][1]
+    let judul = json.judul.toLowerCase().trim()
+    let teksUser = (m.text || '').toLowerCase().trim()
+    if (!teksUser) return !0
+    if (teksUser === judul) {
+        global.db.data.users[m.sender].exp += this.tebaklagu[id][2]
+        m.reply(`*Benar!*\n+${this.tebaklagu[id][2]} Kredit sosial`)
+        clearTimeout(this.tebaklagu[id][3])
+        delete this.tebaklagu[id]
+    } 
+    else if (similarity(teksUser, judul) >= threshold) {
+        m.reply(`*Dikit Lagi!*`)
+    } 
+    else {
+        m.reply(`*Salah!*`)
     }
     return !0
 }
-handler.exp = 0
 
-module.exports = handler;
+handler.exp = 0
+module.exports = handler
