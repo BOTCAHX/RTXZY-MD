@@ -2,4 +2,3 @@ node_modules
 sessions 
 package-lock.json
 database.json
-config.js
