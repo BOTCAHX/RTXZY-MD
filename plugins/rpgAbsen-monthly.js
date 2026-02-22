@@ -17,10 +17,10 @@ let handler = async (m, { isPrems }) => {
         global.db.data.users[m.sender].lastmonthly = new Date * 1
     }
 handler.help = ['monthly']
-handler.tags = ['rpg']
+handler.tags = ['rpgabsen']
 handler.command = /^(monthly)$/i
 handler.limit = true
-
+handler.rpg = true
 handler.fail = null
 
 module.exports = handler

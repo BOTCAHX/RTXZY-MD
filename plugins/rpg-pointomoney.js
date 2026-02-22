@@ -32,5 +32,5 @@ handler.tags = ['rpg']
 handler.command = /^pointomoney$/i
 handler.register = true
 handler.limit = true
-
+handler.rpg = true
 module.exports = handler

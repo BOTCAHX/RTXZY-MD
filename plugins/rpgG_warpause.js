@@ -18,4 +18,5 @@ let handler = async (m, { conn }) => {
 handler.help = ['guildwarpause'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildwarpause)$/i;
+handler.rpg = true;
 module.exports = handler;

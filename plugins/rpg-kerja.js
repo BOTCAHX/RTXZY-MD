@@ -156,6 +156,7 @@ handler.command = /^kerja$/i
 
 handler.register = true
 handler.group = true
+handler.rpg = true
 
 module.exports = handler
 

@@ -150,7 +150,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                         contextInfo: {
                             externalAdReply: {
                                 mediaType: 1,
-                                title: wm,
+                                title: 'BETABOTZ RPG',
                                 thumbnailUrl: 'https://telegra.ph/file/ed878d04e7842407c2b89.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''
@@ -179,5 +179,6 @@ handler.tags = ['rpg'];
 handler.command = /^(craft|crafting|chant|blacksmith)/i;
 handler.register = true;
 handler.group = true;
+handler.rpg = true
 
 module.exports = handler;

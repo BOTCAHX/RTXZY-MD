@@ -8,11 +8,11 @@ let handler = async (m, { conn, usedPrefix, text }) => {
   m.reply(`Selamat Kamu Mendapatkan Bonus : \n+${money} Money`)
 }
 handler.help = ['bonus']
-handler.tags = ['rpg']
+handler.tags = ['rpg', 'prem']
 handler.command = /^(bonus)/i
 handler.register = true
-handler.premium = false
-handler.rpg = false
+handler.premium = true
+handler.rpg = true
 module.exports = handler
 
 function msToTime(duration) {

@@ -11,6 +11,8 @@ let handler = async (m, { conn, usedPrefix }) => {
          let udang = global.db.data.users[m.sender].udang
          let ikan = global.db.data.users[m.sender].ikan 
          let orca = global.db.data.users[m.sender].orca 
+         let pancingan = global.db.data.users[m.sender].pancingan
+         let _pancingan = global.db.data.users[m.sender].anakpancingan 
          let dann = `
 *Fish Pond*
 Hiu: ${hiu}
@@ -34,4 +36,5 @@ handler.help = ['kolam']
 handler.tags = ['rpg']
 handler.command = /^(kolam)$/i
 handler.group = true
+handler.rpg = true
 module.exports = handler

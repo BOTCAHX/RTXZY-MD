@@ -33,6 +33,7 @@ handler.tags = ['rpg']
 handler.command = /^(judipvp)$/i
 handler.register = true
 handler.group = true
+handler.rpg = true
 module.exports = handler
 
 function number(x = 0) {

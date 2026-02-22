@@ -18,5 +18,6 @@ handler.tags = ['rpg']
 handler.command = /^bebaskan$/i
 handler.owner = false
 handler.admin = false
+handler.rpg = true
 
 module.exports = handler

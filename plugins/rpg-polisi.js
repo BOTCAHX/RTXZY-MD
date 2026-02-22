@@ -30,7 +30,7 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         contextInfo: {
           externalAdReply: {
             mediaType: 1,
-            title: '',
+            title: 'BETABOTZ RPG',
             thumbnailUrl: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg',
             renderLargerThumbnail: true,
             sourceUrl: ''
@@ -169,5 +169,5 @@ handler.help = ["polisi", "polisi cari", "polisi status", "polisi item <item>", 
 handler.tags = ["rpg"];
 handler.group = true;
 handler.command = ["polisi"];
-//handler.rpg = true
+handler.rpg = true
 module.exports = handler;

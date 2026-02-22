@@ -148,7 +148,7 @@ handler.help = ['gunshop'].map(v => v + '');
 handler.tags = ['rpg'];
 handler.command = /^(gunshop|buygun|sellgun)$/i;
 handler.cooldown = cooldown;
-
+handler.rpg = true;
 module.exports = handler;
 
 function isNumber(number) {

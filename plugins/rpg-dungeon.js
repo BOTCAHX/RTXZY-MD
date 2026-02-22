@@ -694,7 +694,7 @@ return
 handler.help = ['dungeon'].map(v => v + ' *[nama room]*')
 handler.tags = ['rpg']
 handler.command = /^(dungeon)$/i
-
+handler.rpg = true
 handler.mods = false
 
 module.exports = handler

@@ -24,6 +24,7 @@ cek .balance jumlah xp mu!
 
 handler.help = handler.command = ['daily'];
 handler.tags = ['rpg'];
+handler.rpg = true
 
 module.exports = handler;
 

@@ -25,5 +25,6 @@ Gunakan *${usedPrefix}pasar* untuk dijual atau *${usedPrefix}cook* untuk dijadik
 handler.help = ['kandang']
 handler.tags = ['rpg']
 handler.command = /^(kandang)$/i
+handler.rpg = true
 
 module.exports = handler

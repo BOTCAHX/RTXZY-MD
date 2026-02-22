@@ -39,4 +39,5 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['guildstaff <tambah/hapus> <@user>'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildstaff)$/i;
+handler.rpg = true;   
 module.exports = handler;

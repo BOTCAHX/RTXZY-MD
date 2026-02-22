@@ -49,6 +49,7 @@ handler.tags = ['rpg']
 handler.command = /^berdagang$/
 handler.register = true
 handler.group = true
+handler.rpg = true
 
 module.exports = handler
 

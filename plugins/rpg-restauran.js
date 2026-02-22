@@ -720,4 +720,5 @@ handler.help = ['resto *<beli> <args>*']
 handler.tags = ['rpg']    
 
 handler.command = /^(resto|beli)$/i
+handler.rpg = true
 module.exports = handler

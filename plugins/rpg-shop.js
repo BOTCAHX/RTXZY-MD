@@ -152,6 +152,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, owner }) => {
 📦Kardus:      ${Bkardus}
 🪵Kayu:        ${Bkayu}
 🪨Batu:        ${Bbatu}
+⚔️Sword:       ${Bsword}
 
 > Makanan
 🍌Pisang:        ${Bpisang}
@@ -196,6 +197,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, owner }) => {
 🪵Kayu:          ${Bkayu}
 💎Berlian:       ${Sberlian}
 🔫Weapon:        ${SWeap}
+⚔️Sword:         ${Ssword}
 
 > Makanan
 🍌Pisang:        ${Bpisang}
@@ -1502,4 +1504,5 @@ handler.tags = ['rpg']
 handler.command = /^(shop|toko|buy|beli|sell|jual)$/i
 handler.limit = true
 handler.group = true
+handler.rpg = true
 module.exports = handler

@@ -840,6 +840,8 @@ module.exports = {
                 if (!('antilinktt' in chat)) chat.antilinktt = false
                 if (!('antilinkttnokick' in chat)) chat.antilinkttnokick = false
                 if (!('antibot' in chat)) chat.antibot = false
+                if (!("rpg" in chat)) chat.rpg = false;
+                if (!("nsfw" in chat)) chat.nsfw = false;
             } else global.db.data.chats[m.chat] = {
                 isBanned: false,
                 welcome: true,
@@ -858,7 +860,7 @@ module.exports = {
                 antiSticker: false, 
                 antiStickernokick: false, 
                 viewonce: false,
-                antiToxic: true,
+                antiToxic: false,
                 antilinkig: false, 
                 antilinkignokick: false, 
                 antilinkyt: false, 
@@ -876,7 +878,8 @@ module.exports = {
                 antilinktt: false, 
                 antilinkttnokick: false, 
                 antibot: false, 
-                rpg: false, 
+                rpg: false,
+                
             }
             let memgc = global.db.data.chats[m.chat]?.memgc?.[m.sender];
             if (typeof memgc !== 'object' || memgc === null) {
@@ -1085,6 +1088,16 @@ module.exports = {
                         fail('unreg', m, this)
                         continue
                     }
+                    if (plugin.rpg && !global.db.data.chats[m.chat].rpg) {
+                        // rpg
+                        fail("rpg", m, this);
+                        continue;
+                    }
+                    if (plugin.nsfw && !global.db.data.chats[m.chat].nsfw) {
+                        // nsfw
+                        fail("nsfw", m, this);
+                        continue;
+                    }
                     m.isCommand = true
                     let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
                     if (xp > 200) m.reply('Ngecit -_-') // Hehehe
@@ -1287,6 +1300,8 @@ global.dfail = (type, m, conn) => {
         rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
         owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
         mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
+        rpg: "Fitur RPG Dimatikan Oleh Admin\n\n> ketik *.enable rpg* agar dapat akses fitur rpg",
+        nsfw: "Fitur NSFW Dimatikan Oleh Admin\n\n> ketik *.enable nsfw* agar dapat akses fitur NSFW",
         premium: 'Perintah ini hanya untuk member _*Premium*_ !',
         group: 'Perintah ini hanya dapat digunakan di grup!',
         private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',

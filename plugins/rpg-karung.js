@@ -17,5 +17,6 @@ Gunakan *${usedPrefix}sell* untuk dijual`
 handler.help = ['karung']
 handler.tags = ['rpg']
 handler.command = /^(karung)$/i
+handler.rpg = true
 
 module.exports = handler

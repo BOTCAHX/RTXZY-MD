@@ -7,5 +7,6 @@ handler.help = ['cekpoin']
 handler.tags = ['rpg']
 handler.command = /^cekpoin$/i
 handler.register = true
+handler.rpg = true
 
 module.exports = handler

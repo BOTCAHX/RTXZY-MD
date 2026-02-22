@@ -31,8 +31,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIiXrZfzbrdryj4p1M69g0gLTVE7RR00k6kXSu4vPz12R5MhFQ-vhHjKE&s',
-                        sourceUrl: ''
+                        thumbnailUrl: 'https://api.betabotz.eu.org/api/tools/get-upload?id=f/106ebnd3.jpg',
+                        sourceUrl: 'https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q'
                     }
                 }, 
                 mentions: [m.sender]
@@ -43,5 +43,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['bank']
 handler.tags = ['rpg']
 handler.command = /^bank$/
+handler.rpg = true
 
 module.exports = handler

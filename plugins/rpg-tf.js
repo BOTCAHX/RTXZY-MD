@@ -302,7 +302,7 @@ handler.mods = false
 handler.premium = false
 handler.group = true
 handler.private = false
-
+handler.rpg = true
 handler.admin = false
 handler.botAdmin = false
 

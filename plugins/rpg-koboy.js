@@ -128,6 +128,7 @@ handler.help = ['koboy'];
 handler.tags = ['rpg'];
 handler.command = /^(koboy)$/i;
 handler.group = true;
+handler.rpg = true;
 
 module.exports = handler;
 

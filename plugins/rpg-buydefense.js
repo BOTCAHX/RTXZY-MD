@@ -30,5 +30,6 @@ handler.help = ['buydefense <jumlah>'];
 handler.tags = ['rpg'];
 handler.command = /^buydefense$/i;
 handler.register = true;
+handler.rpg = true
 
 module.exports = handler;

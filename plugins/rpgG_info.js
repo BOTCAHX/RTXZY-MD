@@ -30,4 +30,5 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['guildinfo [@user]'];
 handler.tags = ['rpgG'];
 handler.command = /^(guildinfo)$/i;
+handler.rpg = true
 module.exports = handler;

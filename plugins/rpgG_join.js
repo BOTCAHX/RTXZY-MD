@@ -20,4 +20,5 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['joinguild <nomor_guild>'];
 handler.tags = ['rpgG'];
 handler.command = /^(joinguild)$/i;
+handler.rpg = true;
 module.exports = handler;

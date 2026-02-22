@@ -119,6 +119,7 @@ handler.command = /^(ngentot)$/i;
 handler.register = true;
 handler.group = true;
 handler.level = 70;
+handler.rpg = true;
 module.exports = handler;
 
 function clockString(ms) {

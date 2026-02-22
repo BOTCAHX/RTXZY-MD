@@ -41,6 +41,7 @@ handler.help = ['judi']
 handler.tags = ['rpg']
 handler.command = /^(judi)$/i
 handler.group = true
+handler.rpg = true
 
 handler.fail = null
 

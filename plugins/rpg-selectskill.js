@@ -69,5 +69,5 @@ handler.tags = ['rpg']
 handler.command = /^(selectskill)$/i
 handler.register = true
 handler.group = true
-
+handler.rpg = true
 module.exports = handler

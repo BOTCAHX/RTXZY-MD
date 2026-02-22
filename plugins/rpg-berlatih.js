@@ -20,7 +20,7 @@ let handler = async (m, { conn, text }) => {
             contextInfo: {
                 externalAdReply: {
                     mediaType: 1,
-                    title: wm,
+                    title: 'BETABOTZ RPG',
                     thumbnailUrl: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg',
                     renderLargerThumbnail: true,
                     sourceUrl: ''
@@ -55,7 +55,7 @@ let handler = async (m, { conn, text }) => {
             contextInfo: {
                 externalAdReply: {
                     mediaType: 1,
-                    title: wm,
+                    title: 'BETABOTZ RPG',
                     thumbnailUrl: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg',
                     renderLargerThumbnail: true,
                     sourceUrl: ''
@@ -73,6 +73,7 @@ handler.tags = ['rpg'];
 handler.command = /^berlatih$/i;
 handler.limit = true;
 handler.group = true;
+handler.rpg = true
 handler.fail = null;
 
 module.exports = handler;

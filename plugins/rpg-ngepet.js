@@ -73,9 +73,9 @@ let handler = async (m, { conn, args, usedPrefix }) => {
 handler.help = ['ngepet']
 handler.tags = ['rpg']
 handler.command = /^(ngepet|ngefet)$/i
-handler.premium = false
+handler.premium = true
 handler.group = true
-
+handler.rpg = true
 handler.fail = null
 
 module.exports = handler

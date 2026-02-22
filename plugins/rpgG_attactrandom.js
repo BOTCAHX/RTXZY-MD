@@ -88,5 +88,5 @@ function sleep(ms) {
 handler.help = ['attackguild'];
 handler.tags = ['rpgG'];
 handler.command = /^attackguild$/i;
-
+handler.rpg = true
 module.exports = handler;

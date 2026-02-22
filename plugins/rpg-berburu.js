@@ -89,6 +89,7 @@ let handler = async (m, { conn }) => {
 handler.help = ['berburu']
 handler.tags = ['rpg']
 handler.command = /^(berburu|hunt)$/i
+handler.rpg = true
 
 module.exports = handler
 
