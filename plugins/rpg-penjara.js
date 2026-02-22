@@ -24,5 +24,6 @@ handler.help = ['penjara']
 handler.tags = ['rpg']
 handler.command = /^penjara$/i
 handler.register = true
+handler.rpg = true
 
 module.exports = handler

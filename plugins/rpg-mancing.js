@@ -22,7 +22,7 @@ let handler = async (m, {
 				let paus = Math.floor(Math.random() * 2);
 				let kepiting = Math.floor(Math.random() * 27);
 
-				let imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJHYMaM4vVzvHstniD2n_oL7L-gjfka6NSQ&s';
+				let imageUrl = 'https://api.betabotz.eu.org/api/tools/get-upload?id=f/arit56zv.jpg';
 				let totalCatch = nila + bawal + ikan + lele + udang + paus + kepiting;
 
 				let mcng = `•  *Hasil Mancing:*
@@ -72,7 +72,7 @@ let handler = async (m, {
 handler.help = ['mancing'];
 handler.tags = ['rpg'];
 handler.command = /^(mancing|memancing)$/i;
-
+handler.rpg = true
 module.exports = handler;
 
 function formatTime(ms) {

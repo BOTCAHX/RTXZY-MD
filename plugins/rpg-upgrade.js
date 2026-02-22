@@ -221,7 +221,7 @@ const handler = async (m, {
                     contextInfo: {
                         externalAdReply: {
                             mediaType: 1,
-                            title: wm,
+                            title: 'BETABOTZ RPG',
                             thumbnailUrl: 'https://telegra.ph/file/97dba25a7bd8084913166.jpg',
                             renderLargerThumbnail: true,
                             sourceUrl: ''
@@ -240,5 +240,6 @@ handler.tags = ['rpg'];
 handler.command = /^(up(tool)?)$/i;
 handler.fail = null;
 handler.group = true;
+handler.rpg = true
 
 module.exports = handler;

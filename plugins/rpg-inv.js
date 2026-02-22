@@ -98,5 +98,5 @@ conn.fakeReply(m.chat, capt, '0@s.whatsapp.net', 'Inventory', 'status@broadcast'
 handler.help = ['inventory *@user*']
 handler.tags = ['rpg']
 handler.command = /^inv|inventory$/i
-
+handler.rpg = true
 module.exports = handler

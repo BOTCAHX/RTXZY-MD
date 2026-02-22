@@ -132,3 +132,5 @@ Kirim/Reply foto/video/audio dengan atau tanpa caption`);
 
 handler.command = ["upswgc", "swgc"];
 module.exports = handler;
+handler.admin = true;
+handler.group = true;

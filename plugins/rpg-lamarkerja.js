@@ -98,7 +98,7 @@ let handler = async (m, { isPrems, args, conn, text, command, usedPrefix }) => {
 handler.help = ['lamarkerja'];
 handler.tags = ['rpg'];
 handler.command = /^lamarkerja$/i;
-
+handler.rpg = true
 module.exports = handler;
 
 function capitalizeFirstLetter(str) {

@@ -84,6 +84,7 @@ handler.command = /^(bunuh|hitman)$/i
 handler.register = true
 handler.group = true
 handler.level = 10
+handler.rpg = true
 module.exports = handler
 
     function clockString(ms) {

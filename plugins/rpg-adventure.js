@@ -117,7 +117,7 @@ setTimeout(() => {
         contextInfo: {
             externalAdReply: {
                 mediaType: 1,
-                title: wm,
+                title: 'BETABOTZ RPG',
                 thumbnailUrl: 'https://telegra.ph/file/221ec27b2997f203569eb.jpg',
                 renderLargerThumbnail: true,
                 sourceUrl: ''
@@ -173,6 +173,7 @@ handler.tags = ['rpg']
 handler.command = /^(adventure)$/i
 handler.limit = true
 handler.group = true
+handler.rpg = true
 handler.fail = null
 
 module.exports = handler

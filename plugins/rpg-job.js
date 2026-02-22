@@ -100,7 +100,7 @@ Tingkat kerja keras akan meningkat setiap 1% melalui perintah *.jobkerja*. Dan c
 handler.help = ['job'];
 handler.tags = ['rpg'];
 handler.command = /^(job)$/i;
-
+handler.rpg = true
 module.exports = handler;
 
 function capitalizeFirstLetter(str) {

@@ -13,6 +13,7 @@ handler.help = ['nomorseri']
 handler.tags = ['xp', 'rpg']
 handler.command = ['nomorseri'] 
 handler.group = true
+handler.rpg = true
 
 
 module.exports = handler

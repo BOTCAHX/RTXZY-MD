@@ -64,7 +64,7 @@ handler.help = ['ojek']
 handler.tags = ['rpg']
 handler.command = /^(ojek|ngojek|gojek)$/i
 handler.register = true
-//handler.rpg = true
+handler.rpg = true
 module.exports = handler
 
 function clockString(ms) {

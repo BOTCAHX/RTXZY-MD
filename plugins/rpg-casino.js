@@ -90,6 +90,7 @@ handler.tags = ["rpg"];
 handler.command = /^(casino)$/i;
 handler.register = true;
 handler.group = true;
+handler.rpg = true
 handler.limit = 10;
 module.exports = handler;
 

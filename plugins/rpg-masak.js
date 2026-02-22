@@ -195,5 +195,5 @@ handler.help = ['masak <masakan> <args>', 'cook <masakan> <args>']
 handler.tags = ['rpg']
 handler.group = true
 handler.command = /^(masak|cook)$/i
-
+handler.rpg = true
 module.exports = handler

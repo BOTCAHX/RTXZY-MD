@@ -61,5 +61,5 @@ let handler = async (m, { conn, usedPrefix }) => {
 handler.help = ['tutorguild'];
 handler.tags = ['rpgG'];
 handler.command = /^tutorguild$/i;
-
+handler.rpg = true; 
 module.exports = handler;

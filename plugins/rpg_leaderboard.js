@@ -59,6 +59,7 @@ let handler = async (m, { conn, args, participants }) => {
   
   handler.admin = false
   handler.botAdmin = false
+  handler.rpg = true
   
   handler.fail = null
   handler.exp = 0

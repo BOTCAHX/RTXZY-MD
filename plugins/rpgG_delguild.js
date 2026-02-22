@@ -45,5 +45,5 @@ handler.help = ['delguild <nomor_guild>'];
 handler.tags = ['rpgG'];
 handler.command = /^(delguild)$/i;
 handler.owner = false;
-
+handler.rpg = true
 module.exports = handler;

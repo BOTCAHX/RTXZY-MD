@@ -574,4 +574,5 @@ handler.help = ['pasar *<sell>|<args>*']
 handler.tags = ['rpg']
     
 handler.command = /^(pasar|jual)$/i
+handler.rpg = true
 module.exports = handler

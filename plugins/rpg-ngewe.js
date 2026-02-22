@@ -62,7 +62,7 @@ handler.tags = ['rpg']
 handler.command = /^(ngewe|anu)$/i
 handler.register = true
 handler.premium = false
-
+handler.rpg = true
 module.exports = handler
 
 

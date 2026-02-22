@@ -66,10 +66,8 @@ let handler = async (m, { conn }) => {
   await conn.reply(m.chat, "Kamu adalah: " + user.role, m)
 }
 handler.help = ['role']
-handler.tags = ['rpg']
-handler.command = /^(role|levelrole|checkrole)$/i
+handler.tags = ['info']
+handler.command = /^(role|levelrole)$/i
 handler.register = true
 handler.rpg = true
-module.exports = handler
-
-//dana
+module.exports = handler

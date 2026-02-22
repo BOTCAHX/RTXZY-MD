@@ -71,6 +71,7 @@ handler.help = ['bertarung *@user*', 'fight *@user*']
 handler.tags = ['rpg']
 handler.command = /^(fight|bertarung)$/i
 handler.group = true
+handler.rpg = true
 
 module.exports = handler
 

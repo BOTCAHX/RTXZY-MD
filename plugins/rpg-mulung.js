@@ -21,7 +21,7 @@ handler.fail = null
 handler.limit = true
 handler.exp = 0
 handler.money = 0
-
+handler.rpg = true
 module.exports = handler
 
 function msToTime(duration) {

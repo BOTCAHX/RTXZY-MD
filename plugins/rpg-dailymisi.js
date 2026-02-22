@@ -44,6 +44,7 @@ handler.help = ['dailymisi']
 handler.tags = ['rpg']
 handler.limit = true
 handler.command = /^dailymisi$/i
+handler.rpg = true
 
 module.exports = handler
 

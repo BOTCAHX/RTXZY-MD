@@ -27,5 +27,5 @@ handler.tags = ['rpg']
 handler.command = /^moneytopoin$/i
 handler.register = true
 handler.limit = true
-
+handler.rpg = true
 module.exports = handler

@@ -25,7 +25,7 @@ handler.tags = ['rpg']
 handler.command = /^merampok$/
 handler.limit = true
 handler.group = true
-
+handler.rpg = true
 module.exports = handler
 
 function pickRandom(list) {

@@ -18,11 +18,11 @@ let handler = async (m, { isPrems }) => {
     }
     
 handler.help = ['weekly']
-handler.tags = ['rpg']
+handler.tags = ['rpgabsen']
 handler.command = /^(weekly)$/i
 handler.limit = true
 handler.fail = null
-
+handler.rpg = true
 module.exports = handler
 
 function msToTime(duration) {

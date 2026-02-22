@@ -140,7 +140,7 @@ _Example_ :
                         contextInfo: {
                             externalAdReply: {
                                 mediaType: 1,
-                                title: wm,
+                                title: 'BETABOTZ RPG',
                                 thumbnailUrl: 'https://telegra.ph/file/f329ce46c24b0d7e0837e.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''
@@ -168,5 +168,5 @@ handler.help = ['repair', 'perbaiki']
 handler.tags = ['rpg']
 handler.group = true
 handler.command = /^(repair|perbaiki)/i
-
+handler.rpg = true
 module.exports = handler

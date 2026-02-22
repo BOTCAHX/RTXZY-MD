@@ -108,7 +108,7 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                         contextInfo: {
                             externalAdReply: {
                                 mediaType: 1,
-                                title: wm,
+                                title: 'BETABOTZ RPG',
                                 thumbnailUrl: 'https://telegra.ph/file/e615e0a6000ff647b4314.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''
@@ -161,6 +161,7 @@ handler.tags = ['rpg']
 handler.command = /^(attacktitan)$/i
 handler.limit = true
 handler.group = true
+handler.rpg = true
 handler.fail = null
 
 module.exports = handler

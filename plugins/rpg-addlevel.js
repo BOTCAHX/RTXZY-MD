@@ -44,5 +44,6 @@ handler.help = ['addlevel @user <jumlah level>'];
 handler.tags = ['rpg'];
 handler.command = /^addlevel$/i;
 handler.owner = true;
+handler.rpg = true;
 
 module.exports = handler;

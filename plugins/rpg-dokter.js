@@ -28,13 +28,13 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         contextInfo: {
 isForwarded: true,
 forwardedNewsletterMessageInfo: {
-newsletterJid: '', 
-newsletterName: '', 
+newsletterJid: '120363248530706545@newsletter', 
+newsletterName: '>>BETABOTZ RPG<<', 
 serverMessageId: -1
 },
           externalAdReply: {
             mediaType: 1,
-            title: '',
+            title: 'BETABOTZ RPG',
             thumbnailUrl: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg',
             renderLargerThumbnail: true,
             sourceUrl: ''
@@ -173,6 +173,6 @@ handler.help = ["dokter", "dokter cari", "dokter status", "dokter item <item>", 
 handler.tags = ["rpg"];
 handler.group = true;
 handler.command = ["dokter"];
-//handler.rpg = true
+handler.rpg = true
 
 module.exports = handler;

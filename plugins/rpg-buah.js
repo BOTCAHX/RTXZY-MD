@@ -14,5 +14,6 @@ conn.reply(m.chat, buah, m)
 handler.help = ['buah']
 handler.tags = ['rpg']
 handler.command = /^(buah|listbuah)$/i
+handler.rpg = true
 
 module.exports = handler

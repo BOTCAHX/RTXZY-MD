@@ -21,7 +21,7 @@ handler.help = ['nebang']
 handler.tags = ['rpg']
 handler.command = /^(nebang)/i
 handler.group = true
-
+handler.rpg = true
 handler.fail = null
 handler.limit = true
 handler.exp = 0

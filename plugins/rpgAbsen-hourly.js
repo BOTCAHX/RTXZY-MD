@@ -15,14 +15,14 @@ let handler = async (m, { conn, isPrems }) => {
         global.db.data.users[m.sender].lasthourly = new Date * 1
     }
 handler.help = ['hourly']
-handler.tags = ['rpg']
+handler.tags = ['rpgabsen']
 handler.command = /^(hourly)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-
+handler.rpg = true
 handler.admin = false
 handler.botAdmin = false
 

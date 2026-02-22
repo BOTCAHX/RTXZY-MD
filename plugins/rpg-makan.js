@@ -250,4 +250,5 @@ handler.help = ['eat', 'makan']
 handler.tags = ['rpg']
 handler.register = true
 handler.command = /^(eat|makan)$/i
+handler.rpg = true
 module.exports = handler

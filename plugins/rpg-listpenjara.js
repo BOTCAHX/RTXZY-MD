@@ -16,4 +16,5 @@ let handler = async (m, { conn, usedPrefix }) => {
 handler.help = ['listpenjara']
 handler.tags = ['rpg']
 handler.command = /^penjaralist|listpenjara$/i
+handler.rpg = true
 module.exports = handler

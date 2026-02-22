@@ -45,5 +45,5 @@ handler.tags = ['rpg'];
 handler.command = /^(createakunyt|deleteakun)$/i; // Modify to include deleteakun command
 handler.register = true;
 handler.group = true;
-
+handler.rpg = true;
 module.exports = handler;

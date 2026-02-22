@@ -31,5 +31,6 @@ let handler = async (m, { isPrems, conn, text, usedPrefix, command }) => {
 handler.help = ['checkjail', 'cj', 'statuspenjara', 'jailstatus']
 handler.tags = ['rpg']
 handler.command = /^(checkjail|cj|statuspenjara|jailstatus)$/i
+handler.rpg = true
 
 module.exports = handler

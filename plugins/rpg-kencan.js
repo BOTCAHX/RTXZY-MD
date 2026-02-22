@@ -47,6 +47,7 @@ handler.tags = ['rpg'];
 handler.command = /^kencan$/i;
 handler.register = true;
 handler.group = true;
+handler.rpg = true
 
 module.exports = handler;
 

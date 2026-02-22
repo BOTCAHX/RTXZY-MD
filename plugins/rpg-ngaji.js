@@ -77,7 +77,7 @@ handler.help = ['mengaji', 'ngaji']
 handler.tags = ['rpg']
 handler.command = /^(mengajikeliling|mengaji|ngaji|ustad|ustadz|ustaz)$/i
 handler.register = true
-
+handler.rpg = true
 module.exports = handler 
 
 function clockString(ms) {
