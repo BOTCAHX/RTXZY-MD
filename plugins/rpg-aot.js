@@ -108,7 +108,7 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                         contextInfo: {
                             externalAdReply: {
                                 mediaType: 1,
-                                title: 'BETABOTZ RPG',
+                                title: wm,
                                 thumbnailUrl: 'https://telegra.ph/file/e615e0a6000ff647b4314.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''
