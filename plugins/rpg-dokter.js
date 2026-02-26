@@ -30,11 +30,14 @@ isForwarded: true,
 forwardedNewsletterMessageInfo: {
 newsletterJid: '120363248530706545@newsletter', 
 newsletterName: '>>BOTCAHX RPG<<', 
+newsletterJid: '', 
+newsletterName: wm, 
 serverMessageId: -1
 },
           externalAdReply: {
             mediaType: 1,
             title: 'BOTCAHX RPG',
+            title: wm,
             thumbnailUrl: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg',
             renderLargerThumbnail: true,
             sourceUrl: ''

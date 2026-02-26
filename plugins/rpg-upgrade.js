@@ -222,6 +222,7 @@ const handler = async (m, {
                         externalAdReply: {
                             mediaType: 1,
                             title: 'BOTCAHX RPG',
+                            title: wm,
                             thumbnailUrl: 'https://telegra.ph/file/97dba25a7bd8084913166.jpg',
                             renderLargerThumbnail: true,
                             sourceUrl: ''

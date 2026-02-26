@@ -109,6 +109,7 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                             externalAdReply: {
                                 mediaType: 1,
                                 title: 'BOTCAHX RPG',
+                                title: wm,
                                 thumbnailUrl: 'https://telegra.ph/file/e615e0a6000ff647b4314.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''

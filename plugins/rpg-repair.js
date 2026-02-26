@@ -141,6 +141,7 @@ _Example_ :
                             externalAdReply: {
                                 mediaType: 1,
                                 title: 'BOTCAHX RPG',
+                                title: wm,
                                 thumbnailUrl: 'https://telegra.ph/file/f329ce46c24b0d7e0837e.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''

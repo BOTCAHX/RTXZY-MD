@@ -964,13 +964,10 @@ module.exports = {
             
             const groupMetadata = (m.isGroup ? (conn.chats[m.chat] || {}).metadata || (await this.groupMetadata(m.chat).catch((_) => null)) : {}) || {};
             const participants = (m.isGroup ? groupMetadata.participants : []) || [];
-            
-            const user = participants.find((u) => u.id === m.sender) ||
-                         participants.find((u) => u.phoneNumber === m.sender) || {};
-            
-            const bot = participants.find((u) => u.id === this.user.jid) ||
-                        participants.find((u) => u.phoneNumber === this.user.jid) || {};
-            
+
+            const user = participants.find((u) => (u.jid || u.phoneNumber || u.id) === m.sender) || {};
+            const bot  = participants.find((u) => (u.jid || u.phoneNumber || u.id) === this.user.jid) || {};
+
             const isRAdmin    = user?.admin === 'superadmin' || false;
             const isAdmin     = isRAdmin || user?.admin === 'admin' || false;
             const isBotAdmin  = bot?.admin === 'admin' || bot?.admin === 'superadmin' || false;

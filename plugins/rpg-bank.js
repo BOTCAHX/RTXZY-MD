@@ -32,7 +32,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: 'https://api.betabotz.eu.org/api/tools/get-upload?id=f/106ebnd3.jpg',
-                        sourceUrl: 'https://whatsapp.com/channel/0029Va8ZH8fFXUuc69TGVw1q'
+                        sourceUrl: ''
                     }
                 }, 
                 mentions: [m.sender]
