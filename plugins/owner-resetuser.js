@@ -1,51 +1,63 @@
 let handler = async (m, { conn, text }) => {
-	function no(number){
-    return number.replace(/\s/g,'').replace(/([@+-])/g,'')
-  }
+    function no(number) {
+        return number.replace(/\s/g, '').replace(/([@+-])/g, '')
+    }
 
-	text = no(text)
+    if (!text && !m.quoted && !m.mentionedJid?.[0]) {
+        return conn.reply(m.chat, `*❏ DELETE USER*\n\nTag user, tulis nomor, atau balas member yang ingin di RESET`, m)
+    }
 
-  if(isNaN(text)) {
-		var number = text.split`@`[1]
-  } else if(!isNaN(text)) {
-		var number = text
-  }
+    let userJid
 
-  if(!text && !m.quoted) return conn.reply(m.chat, `*❏ DELETE USER*\n\nTag user, tulis nomor, atau balas member yang ingin di RESET`, m)
-  //let exists = await conn.isOnWhatsApp(number)
-  // if (exists) return conn.reply(m.chat, `*Nomor target tidak terdaftar di WhatsApp*`, m)
-  if(isNaN(number)) return conn.reply(m.chat, `*❏ DELETE USER*\n\nNomor yang kamu masukkan tidak valid !`, m)
-  if(number.length > 15) return conn.reply(m.chat, `*❏ DELETE USER*\n\nNomor yang kamu masukkan tidak valid !`, m)
-  try {
-		if(text) {
-			var user = number + '@s.whatsapp.net'
-		} else if(m.quoted.sender) {
-			var user = m.quoted.sender
-		} else if(m.mentionedJid) {
-  		  var user = number + '@s.whatsapp.net'
-			}  
-		} catch (e) {
-  } finally {
-  
-	let groupMetadata = m.isGroup ? await conn.groupMetadata(m.chat) : {}
-  let participants = m.isGroup ? groupMetadata.participants : []
-	let users = m.isGroup ? participants.find(u => u.jid == user) : {}
-	let number = user.split('@')[0]
-  
-	delete global.db.data.users[user]
- 	
- 	conn.reply(m.chat, `*❏ DELETE USER*\n\nBerhasil menghapus @${number} dari *DATABASE*`, null, {contextInfo: {
-    mentionedJid: [user]
- 	}})
+    if (m.mentionedJid?.[0]) {
+        userJid = m.mentionedJid[0]
+    } else if (m.quoted?.sender) {
+        userJid = m.quoted.sender
+    } else {
+        text = no(text)
+        if (isNaN(text)) return conn.reply(m.chat, `*❏ DELETE USER*\n\nNomor yang kamu masukkan tidak valid !`, m)
+        if (text.length < 10 || text.length > 15) return conn.reply(m.chat, `*❏ DELETE USER*\n\nNomor yang kamu masukkan tidak valid !`, m)
+        userJid = text + '@s.whatsapp.net'
+    }
 
- 
- }
+    if (userJid.endsWith('@lid') && m.isGroup) {
+        try {
+            const groupMeta = await conn.groupMetadata(m.chat)
+            const participant = groupMeta.participants.find(p => 
+                p.id === userJid || 
+                p.jid === userJid ||
+                (p.id && p.id.includes(userJid.split('@')[0]))
+            )
+            if (participant) {
+                userJid = participant.id || participant.jid
+            } else {
+                return conn.reply(m.chat, `*❏ DELETE USER*\n\nTidak dapat menemukan mapping nomor dari LID ini`, m)
+            }
+        } catch {
+            return conn.reply(m.chat, `*❏ DELETE USER*\n\nGagal mendapatkan metadata grup`, m)
+        }
+    }
+
+    if (!userJid.endsWith('@s.whatsapp.net')) {
+        return conn.reply(m.chat, `*❏ DELETE USER*\n\nGagal mendapatkan JID yang valid`, m)
+    }
+
+    const number = userJid.split('@')[0]
+
+    delete global.db.data.users[userJid]
+
+    conn.reply(m.chat, `*❏ DELETE USER*\n\nBerhasil menghapus @${number} dari *DATABASE*`, null, {
+        contextInfo: {
+            mentionedJid: [userJid]
+        }
+    })
 }
+
 handler.help = ['reset']
 handler.tags = ['owner']
 handler.command = /^reset$/i
-handler.admin = false
 handler.owner = true
 handler.group = false
 handler.botAdmin = false
+
 module.exports = handler
