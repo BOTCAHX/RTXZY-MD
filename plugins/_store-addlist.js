@@ -1,7 +1,14 @@
-const baileys = require('@adiwajshing/baileys');
-const { proto } = baileys;
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
 
 let handler = async (m, { conn, text, command, usedPrefix }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { proto } = baileys;
+  
 	let M = proto.WebMessageInfo;
 	if (!m.quoted) throw `balas pesan dengan perintah *${usedPrefix + command}*`;
 	if (!text) throw `penggunaan: ${usedPrefix + command} <teks>\n\ncontoh:\n${usedPrefix + command} tes`;

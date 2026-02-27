@@ -1,4 +1,7 @@
-let { MessageType } = require('@adiwajshing/baileys')
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
+
 const Hab = 20000
 const Hag = 15000
 const Hr = 15000
@@ -20,6 +23,12 @@ const Hub = 15000
 const Hpb = 200000
 const Hkb = 20000
 let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { MessageType } = baileys;
+  
     const _armor = global.db.data.users[m.sender].armor
     const armor = (_armor == 0 ? 20000 : '' || _armor == 1 ? 49999 : '' || _armor == 2 ? 99999 : '' || _armor == 3 ? 149999 : '' || _armor == 4 ? 299999 : '')
     let type = (args[0] || '').toLowerCase()

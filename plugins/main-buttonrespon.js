@@ -1,69 +1,103 @@
-const { proto, generateWAMessage,  areJidsSameUser } = require('@adiwajshing/baileys')
-//const util = require('util')
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileysCache = null;
+
+async function getBaileys() {
+  if (!baileysCache) {
+    baileysCache = await loadBaileys();
+  }
+  return baileysCache;
+}
 
 module.exports = {
-    async all(m, chatUpdate) {
-        if (m.isBaileys) return
-        if (!m.message) return 
-        if (!(m.message.buttonsResponseMessage || m.message.templateButtonReplyMessage || m.message.listResponseMessage)) return
-        let id = m.message.buttonsResponseMessage?.selectedButtonId || m.message.templateButtonReplyMessage?.selectedId || m.message.listResponseMessage?.singleSelectReply.selectedRowId
-        let text = m.message.buttonsResponseMessage?.selectedDisplayText || m.message.templateButtonReplyMessage?.selectedDisplayText || m.message.listResponseMessage?.description
-        let isIdMessage = false, usedPrefix
-        for (let name in global.plugins) {
-            let plugin = global.plugins[name]
-            if (!plugin) continue
-            if (plugin.disabled) continue
-            if (!opts['restrict']) if (plugin.tags && plugin.tags.includes('admin')) continue
-            if (typeof plugin !== 'function') continue
-            if (!plugin.command) continue
-            const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
-            let _prefix = plugin.customPrefix ? plugin.customPrefix : this.prefix ? this.prefix : global.prefix
-            let match = (_prefix instanceof RegExp ? // RegExp Mode?
-                [[_prefix.exec(id), _prefix]] :
-                Array.isArray(_prefix) ? // Array?
-                    _prefix.map(p => {
-                        let re = p instanceof RegExp ? // RegExp in Array?
-                            p :
-                            new RegExp(str2Regex(p))
-                        return [re.exec(id), re]
-                    }) :
-                    typeof _prefix === 'string' ? // String?
-                        [[new RegExp(str2Regex(_prefix)).exec(id), new RegExp(str2Regex(_prefix))]] :
-                        [[[], new RegExp]]
-            ).find(p => p[1])
-            if ((usedPrefix = (match[0] || '')[0])) {
-                let noPrefix = id.replace(usedPrefix, '')
-                let [command, ...args] = noPrefix.trim().split` `.filter(v => v)
-                command = (command || '').toLowerCase()
-                let isId = plugin.command instanceof RegExp ? // RegExp Mode?
-                    plugin.command.test(command) :
-                    Array.isArray(plugin.command) ? // Array?
-                        plugin.command.some(cmd => cmd instanceof RegExp ? // RegExp in Array?
-                            cmd.test(command) :
-                            cmd === command
-                        ) :
-                        typeof plugin.command === 'string' ? // String?
-                            plugin.command === command :
-                            false
-                if (!isId) continue
-                console.log({ name, command: plugin.command, text: id })
-                isIdMessage = true
-            }
+  async all(m, chatUpdate) {
+    if (m.isBaileys) return;
+    if (!m.message) return;
 
+    const interactiveMsg =
+      m.message.buttonsResponseMessage ||
+      m.message.templateButtonReplyMessage ||
+      m.message.listResponseMessage;
+
+    if (!interactiveMsg) return;
+
+    const id =
+      interactiveMsg.selectedButtonId ||
+      interactiveMsg.selectedId ||
+      interactiveMsg.singleSelectReply?.selectedRowId;
+
+    const text =
+      interactiveMsg.selectedDisplayText ||
+      interactiveMsg.description ||
+      '';
+
+    if (!id) return;
+
+    const baileys = await getBaileys();
+    const { proto, generateWAMessage, areJidsSameUser } = baileys;
+
+    let isIdMessage = false;
+    let usedPrefix;
+
+    for (let name in global.plugins) {
+      let plugin = global.plugins[name];
+      if (!plugin || plugin.disabled) continue;
+      if (!opts['restrict'] && plugin.tags?.includes('admin')) continue;
+      if (typeof plugin !== 'function' || !plugin.command) continue;
+
+      let _prefix = plugin.customPrefix || this.prefix || global.prefix || /^[.\/!#]/;
+
+      let match;
+      if (_prefix instanceof RegExp) {
+        match = _prefix.exec(id);
+      } else if (Array.isArray(_prefix)) {
+        match = _prefix.map(p => (p instanceof RegExp ? p : new RegExp(p.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')))).find(re => re.exec(id));
+      } else if (typeof _prefix === 'string') {
+        match = new RegExp(_prefix.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')).exec(id);
+      }
+
+      if (match?.[0]) {
+        usedPrefix = match[0];
+        const noPrefix = id.replace(usedPrefix, '').trim();
+        const [command, ...args] = noPrefix.split(/\s+/);
+        const cmdLower = (command || '').toLowerCase();
+
+        let isMatch = false;
+        if (plugin.command instanceof RegExp) {
+          isMatch = plugin.command.test(cmdLower);
+        } else if (Array.isArray(plugin.command)) {
+          isMatch = plugin.command.some(c => (c instanceof RegExp ? c.test(cmdLower) : c === cmdLower));
+        } else if (typeof plugin.command === 'string') {
+          isMatch = plugin.command === cmdLower;
         }
-        let messages = await generateWAMessage(m.chat, { text: isIdMessage ? id : text, mentions: m.mentionedJid }, {
-            userJid: this.user.id,
-            quoted: m.quoted && m.quoted.fakeObj
-        })
-        messages.key.fromMe = areJidsSameUser(m.sender, this.user.id)
-        messages.key.id = m.key.id
-        messages.pushName = m.name
-        if (m.isGroup) messages.participant = m.sender
-        let msg = {
-            ...chatUpdate,
-            messages: [proto.WebMessageInfo.fromObject(messages)],
-            type: 'append'
+
+        if (isMatch) {
+          console.log({ plugin: name, matched: cmdLower, originalId: id });
+          isIdMessage = true;
+          break;
         }
-        this.ev.emit('messages.upsert', msg)
+      }
     }
-}
+
+    const fakeContent = { text: isIdMessage ? id : text, mentions: m.mentionedJid || [] };
+
+    const fakeMsg = await generateWAMessage(m.chat, fakeContent, {
+      userJid: this.user?.id,
+      quoted: m.quoted?.fakeObj || m.quoted
+    });
+
+    fakeMsg.key.fromMe = areJidsSameUser(m.sender, this.user?.id);
+    fakeMsg.key.id = m.key.id;
+    fakeMsg.pushName = m.pushName || m.name;
+
+    if (m.isGroup) fakeMsg.participant = m.sender;
+
+    const upsertEvent = {
+      ...chatUpdate,
+      messages: [proto.WebMessageInfo.fromObject(fakeMsg)],
+      type: 'append'
+    };
+
+    this.ev.emit('messages.upsert', upsertEvent);
+  }
+};

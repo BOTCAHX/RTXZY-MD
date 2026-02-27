@@ -1,6 +1,6 @@
-let {
-	MessageType
-} = require('@adiwajshing/baileys');
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
 
 let wm = global.wm;
 let handler = async (m, {
@@ -8,6 +8,12 @@ let handler = async (m, {
 	usedPrefix,
 	owner
 }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { MessageType } = baileys;
+  
 		let lastFishingTime = global.db.data.users[m.sender].lastmancing || 0;
 		let timeDiff = Date.now() - lastFishingTime;
 		let remainingTime = 180000 - timeDiff; 

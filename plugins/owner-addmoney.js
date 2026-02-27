@@ -1,7 +1,14 @@
+const { loadBaileys } = require('../baileys-loader.mjs');
 
-const { MessageType } = require('@adiwajshing/baileys');
+let baileys;
 
 let handler = async (m, { conn, text }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { MessageType } = baileys;
+  
   if (!text) {
     throw 'Masukkan jumlah money yang ingin ditambahkan pada pengguna. Contoh: .addmoney @user 10';
   }

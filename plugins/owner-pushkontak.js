@@ -1,8 +1,3 @@
-const { 
-    makeWASocket,
-    proto
-} = require("@adiwajshing/baileys");    
-
 let handler = async (m, {
     conn,
     groupMetadata,

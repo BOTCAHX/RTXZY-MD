@@ -1,19 +1,6 @@
 var name = global.nameowner
 var numberowner = global.numberowner
 var gmail = global.mail
-const { 
-default: 
-makeWASocket,
-BufferJSON,
-WA_DEFAULT_EPHEMERAL, 
-generateWAMessageFromContent, 
-downloadContentFromMessage, 
-downloadHistory, 
-proto,
-getMessage, 
-generateWAMessageContent, 
-prepareWAMessageMedia 
-} = require("@adiwajshing/baileys");
 var handler = async (m, {
 conn
 }) => {

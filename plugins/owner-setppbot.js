@@ -1,7 +1,16 @@
-const { S_WHATSAPP_NET } = require('@adiwajshing/baileys');
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
+
 const jimp = require('jimp');
 
 let handler = async (m, { conn, command, usedPrefix }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { S_WHATSAPP_NET } = baileys;
+  
     let q = m.quoted ? m.quoted : m;
     let mime = (q.msg || q).mimetype || q.mediaType || '';
     if (/image/g.test(mime) && !/webp/g.test(mime)) {

@@ -1,6 +1,14 @@
-const { MessageType } = require('@adiwajshing/baileys').default;
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
 
 let handler = async (m, { conn, text, usedPrefix }) => {
+    if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { MessageType } = baileys;
+  
   function no(number){
     return number.replace(/\s/g, '').replace(/([@+-])/g, '');
   }

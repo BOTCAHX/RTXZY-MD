@@ -1,6 +1,14 @@
-const { generateWAMessageFromContent } = require('@adiwajshing/baileys')
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
 
 let handler = async (m, { conn, text, usedPrefix, command, participants }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { generateWAMessageFromContent } = baileys;
+  
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || q.mediaType || ''
     text = text || (q.text || q.caption || q.description || '')

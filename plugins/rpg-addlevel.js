@@ -1,17 +1,24 @@
-const { MessageType } = require('@adiwajshing/baileys');
+const { loadBaileys } = require('../baileys-loader.mjs');
 
-let handler = async (m, { conn, text }) => {
+let baileys;
+
+const handler = async (m, { conn, text }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { MessageType } = baileys;
+
   if (!text) {
     throw 'Masukkan jumlah level yang ingin ditambahkan pada pengguna. Contoh: .addlevel @user 10';
   }
     
-  conn.chatRead(m.chat)
-  conn.sendMessage(m.chat, {
+  await conn.sendMessage(m.chat, {
     react: {
       text: '🕒',
       key: m.key,
     }
-  })
+  });
 
   let mentionedJid = m.mentionedJid[0];
   if (!mentionedJid) {
@@ -32,10 +39,9 @@ let handler = async (m, { conn, text }) => {
     };
   }
 
-  // Add level to user
   users[mentionedJid].level += levelToAdd;
 
-  conn.reply(m.chat, `Berhasil menambahkan ${levelToAdd} level untuk @${mentionedJid.split('@')[0]}.`, m, {
+  await conn.reply(m.chat, `Berhasil menambahkan ${levelToAdd} level untuk @${mentionedJid.split('@')[0]}.`, m, {
     mentions: [mentionedJid]
   });
 };

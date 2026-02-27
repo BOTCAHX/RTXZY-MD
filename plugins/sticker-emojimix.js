@@ -1,9 +1,18 @@
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
+
 const fetch = require('node-fetch')
 let fs = require("fs")
-const { MessageType } = require('@adiwajshing/baileys')
+
 const { sticker5 } = require('../lib/sticker')
 
 let handler = async (m, { conn, text, args }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+  const { MessageType } = baileys
+  
   if (!args[0]) throw 'Contoh penggunaan:\n\n*.emojimix 🤨+😣*'
   try {
     let [emoji1, emoji2] = text.split`+`

@@ -6,11 +6,20 @@
  * Do not remove this watermark!
  */
 
-const { proto } = require('@adiwajshing/baileys')
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
+
 const moment = require('moment-timezone');
 
 // XM4ZE - XMYULA-MD - github.com/XM4ZE/XMYULA-MD
 const handler = async (m, { conn, usedPrefix, command, groupMetadata, isOwner, isAdmin, args }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+  
+  const { proto } = baileys;
+  
   /* XM4ZE - github.com/XM4ZE/XMYULA-MD */
   conn.orders = conn.orders ? conn.orders : {};
 

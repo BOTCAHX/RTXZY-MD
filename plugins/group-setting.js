@@ -1,4 +1,3 @@
-let { groupsSettingUpdate } = require('@adiwajshing/baileys')
 let handler = async (m, { isAdmin, isOwner, isBotAdmin, conn, args, usedPrefix, command }) => {
 	if (!(isAdmin || isOwner)) {
 		global.dfail('admin', m, conn)

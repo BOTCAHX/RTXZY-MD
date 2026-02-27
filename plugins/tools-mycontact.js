@@ -1,4 +1,3 @@
-let { MessageType } = require('@adiwajshing/baileys')
 let PhoneNumber = require('awesome-phonenumber')
 let handler  = async (m, { conn, text }) => {
   var name

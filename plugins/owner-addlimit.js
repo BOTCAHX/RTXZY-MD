@@ -8,10 +8,18 @@ Buy Script?
   � Github: github.com/ReellyXD
 */
 
+const { loadBaileys } = require('../baileys-loader.mjs');
 
-const { MessageType } = require('@adiwajshing/baileys');
+let baileys;
+
 
 let handler = async (m, { conn, text }) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+
+  const { MessageType } = baileys;
+  
   if (!text) {
     throw 'Masukkan jumlah limit yang ingin ditambahkan pada pengguna. Contoh: .addlimit @user 10';
   }

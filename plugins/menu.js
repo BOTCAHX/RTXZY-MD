@@ -1,15 +1,3 @@
-const { 
-    BufferJSON, 
-    WA_DEFAULT_EPHEMERAL, 
-    generateWAMessageFromContent, 
-    proto, 
-    generateWAMessageContent, 
-    generateWAMessage, 
-    prepareWAMessageMedia, 
-    areJidsSameUser, 
-    getContentType 
-} = require('@adiwajshing/baileys')
-
 process.env.TZ = 'Asia/Jakarta'
 let fs = require('fs')
 let path = require('path')

@@ -1,13 +1,22 @@
 const crypto = require("crypto");
-const {
-  generateWAMessageContent,
-  generateWAMessageFromContent,
-} = require("@adiwajshing/baileys");
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileys;
+
 
 const handler = async (
   m,
   { conn, text, command, prefix, isOwner, isSewa, isBotAdmin },
 ) => {
+  if (!baileys) {
+    baileys = await loadBaileys();
+  }
+  
+  const {
+  generateWAMessageContent,
+  generateWAMessageFromContent,
+} = baileys
+
   async function groupStatus(jid, content) {
     const inside = await generateWAMessageContent(content, {
       upload: conn.waUploadToServer,

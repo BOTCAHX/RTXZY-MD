@@ -1,31 +1,49 @@
-const {
-    proto,
-    generateWAMessage,
-    areJidsSameUser
-} = require('@adiwajshing/baileys')
+const { loadBaileys } = require('../baileys-loader.mjs');
+
+let baileysCache = null;
+
+async function getBaileys() {
+  if (!baileysCache) {
+    baileysCache = await loadBaileys();
+  }
+  return baileysCache;
+}
 
 module.exports = {
-    async all(m, chatUpdate) {
-        if (m.isBaileys) return
-        if (!m.message) return
-        if (!m.msg.fileSha256) return
-        if (!(m.msg.fileSha256.toString('hex') in global.db.data.sticker)) return
+  async all(m, chatUpdate) {
+    if (m.isBaileys) return;
+    if (!m.message) return;
+    if (!m.msg?.fileSha256) return;
 
-        let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
-        let { text, mentionedJid } = hash
-        let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {
-            userJid: this.user.id,
-            quoted: m.quoted && m.quoted.fakeObj
-        })
-        messages.key.fromMe = areJidsSameUser(m.sender, this.user.id)
-        messages.key.id = m.key.id
-        messages.pushName = m.pushName
-        if (m.isGroup) messages.participant = m.sender
-        let msg = {
-            ...chatUpdate,
-            messages: [proto.WebMessageInfo.fromObject(messages)],
-            type: 'append'
-        }
-        this.ev.emit('messages.upsert', msg)
-    }
-}
+    const hashHex = m.msg.fileSha256.toString('hex');
+    if (!(hashHex in global.db.data.sticker)) return;
+
+    const hash = global.db.data.sticker[hashHex];
+    const { text, mentionedJid } = hash;
+
+    const baileys = await getBaileys();
+    const { proto, generateWAMessage, areJidsSameUser } = baileys;
+
+    const fakeMsg = await generateWAMessage(m.chat, {
+      text: text,
+      mentions: mentionedJid || []
+    }, {
+      userJid: this.user?.id,
+      quoted: m.quoted?.fakeObj || m.quoted
+    });
+
+    fakeMsg.key.fromMe = areJidsSameUser(m.sender, this.user?.id);
+    fakeMsg.key.id = m.key.id;
+    fakeMsg.pushName = m.pushName || m.name || '';
+
+    if (m.isGroup) fakeMsg.participant = m.sender;
+
+    const upsertEvent = {
+      ...chatUpdate,
+      messages: [proto.WebMessageInfo.fromObject(fakeMsg)],
+      type: 'append'  
+    };
+
+    this.ev.emit('messages.upsert', upsertEvent);
+  }
+};
