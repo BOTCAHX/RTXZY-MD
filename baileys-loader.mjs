@@ -1,0 +1,26 @@
+export const loadBaileys = async () => {
+    const baileys = await import('@adiwajshing/baileys');
+    return {
+        useMultiFileAuthState: baileys.useMultiFileAuthState,
+        DisconnectReason: baileys.DisconnectReason,
+        generateForwardMessageContent: baileys.generateForwardMessageContent,
+        prepareWAMessageMedia: baileys.prepareWAMessageMedia,
+        generateWAMessageFromContent: baileys.generateWAMessageFromContent,
+        generateMessageID: baileys.generateMessageID,
+        downloadContentFromMessage: baileys.downloadContentFromMessage,
+        makeCacheableSignalKeyStore: baileys.makeCacheableSignalKeyStore,
+        makeInMemoryStore: baileys.makeInMemoryStore,
+        jidDecode: baileys.jidDecode,
+        fetchLatestBaileysVersion: baileys.fetchLatestBaileysVersion,
+        WAMessageStubType: baileys.fetchLatestBaileysVersion,
+        proto: baileys.proto,
+        Browsers: baileys.Browsers,
+        makeWASocket: baileys.default || baileys.makeWASocket,
+        makeWALegacySocket: baileys.makeWALegacySocket,
+        extractMessageContent: baileys.extractMessageContent,
+        getBinaryNodeChild: baileys.getBinaryNodeChild,
+        areJidsSameUser: baileys.areJidsSameUser,
+        WAMessageStubType: baileys.WAMessageStubType,
+        WA_DEFAULT_EPHEMERAL: baileys.WA_DEFAULT_EPHEMERAL
+    };
+};

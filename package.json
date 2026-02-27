@@ -39,7 +39,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@adiwajshing/baileys": "npm:baileys@6.7.21",
+        "@adiwajshing/baileys": "github:WhiskeySockets/Baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@vitalets/google-translate-api": "^9.0.0",
         "async": "^3.2.4",
