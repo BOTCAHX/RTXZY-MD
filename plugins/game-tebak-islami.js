@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     }
     // di sini dia ngambil data dari file JSON
     let data = await (await fetch(`https://api.botcahx.eu.org/api/game/kuisislami?apikey=${btc}`)).json()
-    let json = data[Math.floor(Math.random() * data.length)]
+    let json = data
     // buat caption buat di tampilin di wa
     let options = json.pilihan.map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join('\n')
     let caption = `

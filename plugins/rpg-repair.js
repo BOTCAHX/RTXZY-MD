@@ -140,7 +140,7 @@ _Example_ :
                         contextInfo: {
                             externalAdReply: {
                                 mediaType: 1,
-                                title: wm,
+                                title: 'BOTCAHX RPG',
                                 thumbnailUrl: 'https://telegra.ph/file/f329ce46c24b0d7e0837e.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''

@@ -13,7 +13,7 @@ async function handler(m) {
     }
     conn.family[id] = {}
     let src = await (await fetch(`https://api.botcahx.eu.org/api/game/family100-2?apikey=${btc}`)).json()
-    let json = src[Math.floor(Math.random() * src.length)]
+    let json = src
 
     let caption = `
 

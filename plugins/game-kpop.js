@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     throw false
   }
   if (!src) src = await (await fetch(`https://api.botcahx.eu.org/api/game/tebakpop?apikey=${btc}`)).json()
-  let json = src[Math.floor(Math.random() * src.length)]
+  let json = src
   if (!json) throw "Terjadi kesalahan, ulangi lagi perintah!"
   let caption = `
 ≡ _GAME TEBAK KPOP_

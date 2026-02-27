@@ -28,13 +28,13 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         contextInfo: {
 isForwarded: true,
 forwardedNewsletterMessageInfo: {
-newsletterJid: '', 
-newsletterName: wm, 
+newsletterJid: '120363248530706545@newsletter', 
+newsletterName: '>>BOTCAHX RPG<<', 
 serverMessageId: -1
 },
           externalAdReply: {
             mediaType: 1,
-            title: wm,
+            title: 'BOTCAHX RPG',
             thumbnailUrl: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg',
             renderLargerThumbnail: true,
             sourceUrl: ''
