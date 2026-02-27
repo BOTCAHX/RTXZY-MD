@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         let res = await fetch(`https://api.botcahx.eu.org/api/game/tebaktempat?apikey=${btc}`)
         if (!res.ok) throw new Error('Gagal mengambil data dari API')
         let result = await res.json()
-        json = result[Math.floor(Math.random() * result.length)] // Pilih soal secara acak
+        json = result
     } catch (e) {
         return conn.reply(m.chat, '❌ Gagal mengambil data soal. Coba lagi nanti.', m)
     }

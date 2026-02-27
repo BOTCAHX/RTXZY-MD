@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     }
     // di sini dia ngambil data dari api
     let src = await (await fetch(`https://api.botcahx.eu.org/api/game/tebakwallet?apikey=${btc}`)).json()
-    let json = src[Math.floor(Math.random() * src.length)]
+    let json = src
     // buat caption buat di tampilin di wa
     let caption = `
 ${json.soal}

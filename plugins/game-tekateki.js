@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     }
     conn.tekateki[id] = []
     let src = await (await fetch(`https://api.botcahx.eu.org/api/game/tekateki?apikey=${btc}`)).json()
-    let json = src[Math.floor(Math.random() * src.length)]
+    let json = src
 
     let caption = `
 *TEKA TEKI*
