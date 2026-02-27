@@ -108,11 +108,8 @@ let handler = async (m, { conn, usedPrefix, owner }) => {
                         contextInfo: {
                             externalAdReply: {
                                 mediaType: 1,
-<<<<<<< HEAD
                                 title: 'BOTCAHX RPG',
-=======
                                 title: wm,
->>>>>>> origin
                                 thumbnailUrl: 'https://telegra.ph/file/e615e0a6000ff647b4314.jpg',
                                 renderLargerThumbnail: true,
                                 sourceUrl: ''
