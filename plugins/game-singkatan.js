@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         throw false
     }
     // di sini dia ngambil data dari api
-    let src = await (await fetch(`https://api.betabotz.eu.org/api/game/singkatan?apikey=${btc}`)).json()
+    let src = await (await fetch(`https://api.botcahx.eu.org/api/game/singkatan?apikey=${btc}`)).json()
     let json = src
     // buat caption buat di tampilin di wa
     let caption = `
