@@ -31,7 +31,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://api.betabotz.eu.org/api/tools/get-upload?id=f/106ebnd3.jpg',
+                        thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIiXrZfzbrdryj4p1M69g0gLTVE7RR00k6kXSu4vPz12R5MhFQ-vhHjKE&s',
                         sourceUrl: ''
                     }
                 }, 
