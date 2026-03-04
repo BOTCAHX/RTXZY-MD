@@ -15,7 +15,7 @@
         let teksUser = (m.text || '').toLowerCase().trim()
         if (!teksUser) return !0
         if (teksUser === jawaban) {
-            global.db.data.users[m.sender].exp +=  this.tebaknegara[id][2]
+            global.db.data.users[m.sender].money += this.tebaknegara[id][2];
             m.reply(`*Benar!*\n+${ this.tebaknegara[id][2]} Kredit sosial`)
             clearTimeout( this.tebaknegara[id][3])
             delete  this.tebaknegara[id]

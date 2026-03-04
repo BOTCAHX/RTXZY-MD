@@ -6,18 +6,18 @@ let handler = m => m
 handler.before = async function (m) {
     let id = m.chat
     if (!m.quoted) return !0
-    this.tebaklogo = this.tebaklogo ? this.tebaklogo : {}
-    if (!(id in this.tebaklogo)) return !0
-    if (m.quoted.id !== this.tebaklogo[id][0].key.id) return !0
-    let json = this.tebaklogo[id][1]
-    let jawaban = json.jawaban.toLowerCase().trim()
+    this.tebakchara = this.tebakchara ? this.tebakchara : {}
+    if (!(id in this.tebakchara)) return !0
+    if (m.quoted.id !== this.tebakchara[id][0].key.id) return !0
+    let json = this.tebakchara[id][1]
+    let jawaban = json.result.name.toLowerCase().trim()
     let teksUser = (m.text || '').toLowerCase().trim()
     if (!teksUser) return !0
     if (teksUser === jawaban) {
-        global.db.data.users[m.sender].money += this.tebaklogo[id][2];
-        m.reply(`*Benar!*\n+${this.tebaklogo[id][2]} Kredit sosial`)
-        clearTimeout(this.tebaklogo[id][3])
-        delete this.tebaklogo[id]
+        global.db.data.users[m.sender].money += this.tebakchara[id][2]
+        m.reply(`*Benar!*\n+${this.tebakchara[id][2]} Kredit sosial`)
+        clearTimeout(this.tebakchara[id][3])
+        delete this.tebakchara[id]
     } 
     else if (similarity(teksUser, jawaban) >= threshold) {
         m.reply(`*Dikit Lagi!*`)
