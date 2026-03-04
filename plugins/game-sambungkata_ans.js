@@ -39,7 +39,7 @@ handler.before = async function (m, { conn }) {
             room.player = room.player.filter(p => p !== room.curr)
             room.curr = room.player.length ? room.player[0] : null
             if (room.player.length == 1) {
-                users[room.player[0]].exp += room.win_point
+                users[room.player[0]].money += room.win_point
                 delete this.skata[id]
                 return this.reply(m.chat, `@${room.player[0].split('@')[0]} Berhasil bertahan\n+${room.win_point}XP`, room.chat, { contextInfo: { mentionedJid: room.player } })
             }

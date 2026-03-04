@@ -15,7 +15,7 @@
         let teksUser = (m.text || '').toLowerCase().trim()
         if (!teksUser) return !0
         if (teksUser === kepanjangan) {
-            global.db.data.users[m.sender].exp +=  this.singkatan[id][2]
+            global.db.data.users[m.sender].money +=  this.singkatan[id][2]
             m.reply(`*Benar!*\n+${ this.singkatan[id][2]} Kredit sosial`)
             clearTimeout( this.singkatan[id][3])
             delete  this.singkatan[id]

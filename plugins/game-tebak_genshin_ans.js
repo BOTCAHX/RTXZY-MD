@@ -14,7 +14,7 @@ handler.before = async function (m) {
     let teksUser = (m.text || '').toLowerCase().trim()
     if (!teksUser) return !0
     if (teksUser === jawaban) {
-        global.db.data.users[m.sender].exp += this.tebakgenshin[id][2]
+        global.db.data.users[m.sender].money += this.tebakgenshin[id][2];
         m.reply(`*Benar!*\n+${this.tebakgenshin[id][2]} Kredit sosial`)
         clearTimeout(this.tebakgenshin[id][3])
         delete this.tebakgenshin[id]
