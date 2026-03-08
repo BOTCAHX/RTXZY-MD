@@ -1,6 +1,6 @@
 let timeout = 100000
 let poin = 10000
-let src
+let fetch = require("node-fetch");
 let handler = async (m, { conn, usedPrefix }) => {
   conn.tebakkpop = conn.tebakkpop ? conn.tebakkpop : {}
   let id = m.chat
@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tebakkpop[id][0])
     throw false
   }
-  if (!src) src = await (await fetch(`https://api.botcahx.eu.org/api/game/tebakpop?apikey=${btc}`)).json()
+  let src = await (await fetch(`https://api.botcahx.eu.org/api/game/tebakpop?apikey=${btc}`)).json()
   let json = src
   if (!json) throw "Terjadi kesalahan, ulangi lagi perintah!"
   let caption = `
