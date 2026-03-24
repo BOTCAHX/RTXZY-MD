@@ -92,21 +92,23 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     const res = await fetch(`https://api.botcahx.eu.org/api/asupan/tiktok?query=${query}&apikey=${btc}`);
     const api = await res.json();
-    
-    const video = api.result.data[0];
+
+    const video = api.result.data;
     const author = video.author;
-    const music = video.music_info;
-    
+    const music = video.music;
+    const stats = video.stats;
+
     let capt = `乂 *T I K T O K*\n\n`;
     capt += `  ◦ *Author* : ${author.nickname} (@${author.unique_id})\n`;
-    capt += `  ◦ *Views* : ${video.play_count}\n`;
-    capt += `  ◦ *Likes* : ${video.digg_count}\n`;
-    capt += `  ◦ *Shares* : ${video.share_count}\n`;
-    capt += `  ◦ *Comments* : ${video.comment_count}\n`;
+    capt += `  ◦ *Views* : ${stats.play_count}\n`;
+    capt += `  ◦ *Likes* : ${stats.digg_count}\n`;
+    capt += `  ◦ *Shares* : ${stats.share_count}\n`;
+    capt += `  ◦ *Comments* : ${stats.comment_count}\n`;
     capt += `  ◦ *Duration* : ${Math.floor(video.duration / 60)} menit ${Math.floor(video.duration % 60)} detik\n`;
     capt += `  ◦ *Sound* : ${music.title} - ${music.author}\n`;
-    capt += `  ◦ *Caption* : ${video.title || '-'}\n\n`;
-    conn.sendFile(m.chat, video.play, null, capt, m);
+    capt += `  ◦ *Caption* : ${video.caption || '-'}\n\n`;
+
+    conn.sendFile(m.chat, video.video, null, capt, m);
   } catch (error) {
     throw `🚩 *Username Tidak Ditemukan*`
   }
