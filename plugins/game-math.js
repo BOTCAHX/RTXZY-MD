@@ -20,20 +20,15 @@ let handler = async (m, { conn, args, usedPrefix }) => {
   if (args.length < 1) {
     throw `
 Silakan pilih tingkat kesulitan.
-Mode yang tersedia: ${modeList.join(' | ')}
+${modeList.join(" | ")}
 
 Contoh penggunaan: ${usedPrefix}math medium
-    `.trim();
+`.trim();
   }
 
   let mode = args[0].toLowerCase();
   if (!(mode in modes)) {
-    throw `
-Mode "${mode}" tidak ditemukan.
-Mode yang tersedia: ${modeList.join(' | ')}
-
-Contoh penggunaan: ${usedPrefix}math medium
-    `.trim();
+    throw `Mode tidak ditemukan!\n${modeList.join(' | ')}`;
   }
 
   let id = m.chat;
@@ -46,43 +41,58 @@ Contoh penggunaan: ${usedPrefix}math medium
     const res = await fetch(url);
     const json = await res.json();
     const soalDitemukan = json.filter(q => q.level && q.level.toLowerCase() === mode);
-
-    if (soalDitemukan.length < 1) {
-        throw new Error(`Maaf, soal untuk level "${mode}" tidak tersedia di API.`);
-    }
     const data = soalDitemukan[Math.floor(Math.random() * soalDitemukan.length)];
 
-
-
-    if (!data || !data.soal || !data.jawaban) {
-        throw new Error('Format API tidak sesuai atau soal tidak ditemukan.');
+    if (!data || !data.soal || !data.jawaban || !data.jawabanGanda) {
+      throw new Error('Format API tidak sesuai.');
     }
-    
-    const { bonus, time, money } = modes[mode];
 
-    let math = {
-      soal: data.soal,
-      jawaban: data.jawaban,
-      mode: mode,
-      bonus: bonus,
-      money: money,
-      time: time,
-    };
-    
+    const { bonus, time, money } = modes[mode];
+    let pilihan = data.jawabanGanda;
+    let options = pilihan.map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join('\n');
+    let indexJawaban = pilihan.indexOf(data.jawaban);
+    let hurufJawaban = String.fromCharCode(65 + indexJawaban);
+
+    let caption = `
+Berapa jawaban dari *${data.soal}*?
+
+${options}
+
+┌─⊷ *SOAL*
+▢ Level: *${data.level}*
+▢ Timeout: ${(time / 1000).toFixed(2)} detik
+▢ Bonus: +${bonus} XP & +${money} Money
+▢ *Balas/ replay soal ini untuk menjawab dengan a, b, c, atau d*
+└──────────────
+
+`.trim();
+
     conn.math[id] = [
-      await conn.reply(m.chat, `Berapa jawaban dari *${math.soal}*?\n\nTimeout: ${(math.time / 1000).toFixed(2)} detik\nBonus: +${math.bonus} XP & +${math.money} Money`, m),
-      math, 
-      4, 
+      await conn.reply(m.chat, caption, m),
+      {
+        jawaban: hurufJawaban, 
+        jawabanAsli: data.jawaban, 
+        pilihan: pilihan,
+        bonus,
+        money,
+        time
+      },
+      4,
       setTimeout(() => {
         if (conn.math[id]) {
-          conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${math.jawaban}*`, conn.math[id][0]);
+          conn.reply(
+            m.chat,
+            `Waktu habis!\nJawaban: *${hurufJawaban} (${data.jawaban})*`,
+            conn.math[id][0]
+          );
           delete conn.math[id];
         }
-      }, math.time)
+      }, time)
     ];
+
   } catch (e) {
     console.error(e);
-    m.reply(e.message || 'Maaf, terjadi kesalahan saat mengambil soal dari API. Coba lagi nanti.');
+    m.reply('Error ambil soal.');
   }
 };
 
