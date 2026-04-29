@@ -2,6 +2,8 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 
 const handler = async (m, { conn, args, text, usedPrefix, command }) => {
+    await m.reply(wait);
+
     text = text 
         ? text 
         : m.quoted && m.quoted.text 
