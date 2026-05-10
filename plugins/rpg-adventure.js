@@ -113,17 +113,7 @@ let str = `
 `.trim()
 
 setTimeout(() => {
-    conn.reply(m.chat, str, m, {
-        contextInfo: {
-            externalAdReply: {
-                mediaType: 1,
-                title: wm,
-                thumbnailUrl: 'https://telegra.ph/file/221ec27b2997f203569eb.jpg',
-                renderLargerThumbnail: true,
-                sourceUrl: ''
-            }
-        }
-    })
+    conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/221ec27b2997f203569eb.jpg' }, caption: str, mentions: [m.sender] }, { quoted: m });
 }, 0)
 setTimeout(() => {
     conn.reply(m.chat, rendem, m)

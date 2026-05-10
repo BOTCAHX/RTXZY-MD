@@ -19,39 +19,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         type
       } = jsons.result.data.artist;
       let captionvid = ` ∘ Title: ${title}\n∘ Id: ${id}\n∘ Duration: ${duration}\n∘ Type: ${type}`;
-      let pesan = await conn.sendMessage(m.chat, {
-        text: captionvid,
-        contextInfo: {
-          externalAdReply: {
-            title: "Spotify Downloader",
-            body: "",
-            thumbnailUrl: thumbnail,
-            sourceUrl: args[0],
-            mediaType: 1,
-            showAdAttribution: false,
-            renderLargerThumbnail: true
-          }
-        }
-      });
-      await conn.sendMessage(m.chat, {
-        audio: {
-          url: url
-        },
-        mimetype: 'audio/mpeg',
-        contextInfo: {
-          externalAdReply: {
-            title: title,
-            body: "",
-            thumbnailUrl: thumbnail,
-            sourceUrl: args[0],
-            mediaType: 1,
-            showAdAttribution: false,
-            renderLargerThumbnail: true
-          }
-        }
-      }, {
-        quoted: m
-      });
+      let pesan = await conn.reply(m.chat, captionvid, m)
+      await conn.sendMessage(m.chat, { audio: { url: url }, mimetype: 'audio/mpeg' }, { quoted: m });
     } catch (e) {
       throw `🚩 ${eror}`;
     }
@@ -69,23 +38,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         teks += `*Popularity:* ${res[i].popularity}\n`;
         teks += `*Link:* ${res[i].url}\n\n`;
       }
-      await conn.relayMessage(m.chat, {
-        extendedTextMessage: {
-          text: teks,
-          contextInfo: {
-            externalAdReply: {
-              title: `🔍 Search : ${text}`,
-              mediaType: 1,
-              previewType: 0,
-              showAdAttribution: false,
-              renderLargerThumbnail: true,
-              thumbnailUrl: 'https://www.scdn.co/i/_global/open-graph-default.png',
-              sourceUrl: ''
-            }
-          },
-          mentions: [m.sender]
-        }
-      }, {});
+      await conn.reply(m.chat, teks, m)
     } catch (e) {
       throw `🚩 ${eror}`;
     }

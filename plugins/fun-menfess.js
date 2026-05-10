@@ -11,21 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (mf) return !0
     	let id = + new Date
         let teks = `Hai @${data.jid.split("@")[0]}, kamu menerima pesan Menfess nih.\n\nDari: *${name}*\nPesan: \n${pesan}\n\nMau balas pesan ini kak? bisa kok kak. tinggal ketik pesan kakak lalu kirim, nanti saya sampaikan ke *${name}*.`.trim();
-        await conn.relayMessage(data.jid, {
-                extendedTextMessage:{
-                text: teks, 
-                contextInfo: {
-                mentionedJid: [data.jid],
-                     externalAdReply: {
-                        title: 'M E N F E S S',
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyz1dMPkZuNleUyfXPMsltHwKKdVddTf4-A&usqp=CAU',
-                        sourceUrl: ''
-                    }
-                }
-          }}, {}).then(() => {
+        await conn.sendMessage(data.jid, { image: { url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyz1dMPkZuNleUyfXPMsltHwKKdVddTf4-A&usqp=CAU' }, caption: teks, mentions: [data.jid] }, { quoted: null }).then(() => {
             m.reply('Berhasil mengirim pesan menfess.')
             conn.menfess[id] = {
                 id,

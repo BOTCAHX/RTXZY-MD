@@ -14,22 +14,7 @@ let name = Array.isArray(plugins[key]?.help) ? plugins[key]?.help?.join(' , ') :
  }, i) => {
     return `*${i + 1}.* *${name}*\n   • *Hits* : ${total}\n   • *Success* : ${success}\n   • *Last Used* : ${getTime(last)}\n   • *Last Success* : ${formatTime(lastSuccess)}`;
 }).join('\n\n');
-  conn.relayMessage(m.chat, {
-    extendedTextMessage: {
-      text: handlers, 
-      contextInfo: {
-        externalAdReply: {
-          title: wm,
-          mediaType: 1,
-          previewType: 0,
-          renderLargerThumbnail: true,
-          thumbnailUrl: 'https://telegra.ph/file/cf4f28ed3b9ebdfb30adc.png',
-          sourceUrl: ''
-        }
-      },
-      mentions: [m.sender]
-    }
-  }, {})
+await conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/cf4f28ed3b9ebdfb30adc.png' }, caption: handlers, mentions: [m.sender] }, { quoted: m });
 };
 
 handler.command = handler.help = ['dashboard','totalhits']

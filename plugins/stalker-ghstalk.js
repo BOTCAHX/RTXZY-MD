@@ -18,21 +18,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
         caption += `	◦  *Create At* : ${json.result.user.createdAt}\n`
         caption += `	◦  *Update At* : ${json.result.user.updatedAt}\n`
         caption += `	◦  *Url* : ${json.result.user.githubUrl}\n`    
-        conn.relayMessage(m.chat, {
-            extendedTextMessage: {
-                text: caption,
-                contextInfo: {
-                    externalAdReply: {
-                        title: wm,
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: json.result.user.avatarUrl,
-                        sourceUrl: ''
-                    }
-                }, mentions: [m.sender]
-            }
-        }, {})
+        conn.sendMessage(m.chat, { image: { url: json.result.user.avatarUrl }, caption: caption, mentions: [m.sender] }, { quoted: m });
     } catch (e) {     
         throw `Error: ${eror}`
     }

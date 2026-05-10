@@ -24,19 +24,8 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
             return `- *${s}* *[ ${stars} ]*\n_Difficulty_ : ${difficulty}`
         }).join('\n')
 
-        // Context info for available skills with externalAdReply
         const availableSkillsMessage = `乂 *C L A S S*\n\nPilih *Class* yang anda sukai atau sesuai dengan skill atau talent mu :\n\n${skillList}\n\n_How To Use_ :\n${usedPrefix + command} *nameskill*\n\n_Example_ :\n${usedPrefix + command} *wizard*`.trim();
-        await conn.reply(m.chat, availableSkillsMessage, m, {
-            contextInfo: {
-                externalAdReply: {
-                    mediaType: 1,
-                    title: 'AXELLDX',
-                    thumbnailUrl: 'https://telegra.ph/file/a0e0fd6b16e109e36e455.jpg',
-                    renderLargerThumbnail: true,
-                    sourceUrl: ''
-                }
-            }
-        });
+        await conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/a0e0fd6b16e109e36e455.jpg' }, caption: availableSkillsMessage, mentions: [m.sender] }, { quoted: m });
         return;
     }
 

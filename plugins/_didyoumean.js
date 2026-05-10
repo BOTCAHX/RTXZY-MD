@@ -14,23 +14,9 @@ handler.before = function (m, { match, usedPrefix, text, args }) {
 		let mean = didyoumean(noPrefix, alias)
 		let sim = similarity(noPrefix, mean)
 		let som = sim * 100
-		let tio = `• Halo Kak @${m.sender.split`@`[0]}  Apakah Anda sedang mencari ${usedPrefix + mean} ? 
-
- ◦ Nama menu: *${usedPrefix + mean}* 
- ◦ Kempiripan: *${parseInt(som)}%*`
-	 if (mean) this.relayMessage(m.chat,  {
-    requestPaymentMessage: {
-      currencyCodeIso4217: 'IDR',
-      requestFrom: '0@s.whatsapp.net',
-      noteMessage: {
-      extendedTextMessage: {
-      text: tio,
-      contextInfo: {
-      mentionedJid: [m.sender],
-      externalAdReply: {
-      showAdAttribution: false
-      }}}}}}, {})
+		let tio = `• Halo Kak @${m.sender.split('@')[0]} Apakah Anda sedang mencari ${usedPrefix + mean} ? \n\n ◦ Nama menu: *${usedPrefix + mean}* \n ◦ Kemiripan: *${parseInt(som)}%*`
+		if (mean) m.reply(tio)
 	}
-  }
+}
 
 module.exports = handler

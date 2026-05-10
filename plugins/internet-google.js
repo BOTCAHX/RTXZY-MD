@@ -16,22 +16,9 @@ const handler = async (m, { conn, command, text }) => {
       )
       .join('\n\n');
 
-    await conn.relayMessage(m.chat, {
-      extendedTextMessage: {
-        text: `🔍 *Hasil Pencarian: ${text}*\n\n${msg}`,
-        contextInfo: {
-          externalAdReply: {
-            title: 'Google Search',
-            mediaType: 1,
-            previewType: 0,
-            renderLargerThumbnail: true,
-            thumbnailUrl: 'https://telegra.ph/file/d7b761ea856b5ba7b0713.jpg',
-            sourceUrl: ''
-          }
-        },
-        mentions: [m.sender]
-      }
-    }, {});
+    
+    conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/d7b761ea856b5ba7b0713.jpg' }, caption: `🔍 *Hasil Pencarian: ${text}*\n\n${msg}`, mentions: [m.sender] }, { quoted: m });
+    
   } catch (e) {
     await conn.reply(m.chat, eror, m);
   }

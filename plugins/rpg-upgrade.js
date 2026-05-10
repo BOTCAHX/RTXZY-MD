@@ -217,17 +217,7 @@ const handler = async (m, {
                 }
                 break;
             default:
-                await conn.reply(m.chat, lmao1, m, {
-                    contextInfo: {
-                        externalAdReply: {
-                            mediaType: 1,
-                            title: 'BOTCAHX RPG',
-                            thumbnailUrl: 'https://telegra.ph/file/97dba25a7bd8084913166.jpg',
-                            renderLargerThumbnail: true,
-                            sourceUrl: ''
-                        }
-                    }
-                });
+                await conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/97dba25a7bd8084913166.jpg' }, caption: text, lmao1: [m.sender] }, { quoted: m });
         }
     } catch (e) {
         console.log(e);

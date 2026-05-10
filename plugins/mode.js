@@ -6,20 +6,7 @@ let handler = async (m, { conn }) => {
     let tio = `
 Mode: ${global.opts['self'] ? 'Self' : 'publik'}\nAktif: ${uptimex}\nPengguna: ${Object.keys(global.db.data.users).length}\nPengguna Terbanned: ${Object.entries(global.db.data.users).filter(user => user[1].banned).length}\nFitur Sering Digunakan: ${Object.entries(db.data.stats).length}\n\nJika bot tidak ada balasan maka bot sedang maintenance.
     `.trim()
-conn.relayMessage(m.chat, {
-extendedTextMessage:{
-                text: tio, 
-                contextInfo: {
-                     externalAdReply: {
-                        title: uptimex,
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/dc5a67d724b016574129b.jpg',
-                        sourceUrl: ''
-                    }
-                }, mentions: [m.sender]
-}}, {})
+conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/dc5a67d724b016574129b.jpg' }, caption: tio, mentions: [m.sender] }, { quoted: m });
 }
 handler.help = ['mode']
 handler.tags = ['main']

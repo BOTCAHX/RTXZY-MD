@@ -118,24 +118,7 @@ let handler = async (m, {
             player.push(ww[chat].player[i].id);
         }
         text += "\nJumlah player minimal adalah 5 dan maximal 15";
-        conn.sendMessage(
-            m.chat, {
-                text: text.trim(),
-                contextInfo: {
-                    externalAdReply: {
-                        title: "W E R E W O L F",
-                        mediaType: 1,
-                        renderLargerThumbnail: true,
-                        thumbnail: await resize(thumb, 300, 175),
-                        sourceUrl: "",
-                        mediaUrl: thumb,
-                    },
-                    mentionedJid: player,
-                },
-            }, {
-                quoted: m
-            }
-        );
+        conn.sendMessage(m.chat, { image: { url: thumb }, caption: text.trim(), mentions: [m.sender] }, { quoted: m });
 
         // [ Game Play ]
     } else if (value === "start") {
@@ -264,20 +247,7 @@ let handler = async (m, {
                 }
             }
         }
-        await conn.sendMessage(m.chat, {
-            text: "*⌂ W E R E W O L F - G A M E*\n\nGame telah dimulai, para player akan memerankan perannya masing masing, silahkan cek chat pribadi untuk melihat role kalian. Berhati-hatilah para warga, mungkin malam ini adalah malah terakhir untukmu",
-            contextInfo: {
-                externalAdReply: {
-                    title: "W E R E W O L F",
-                    mediaType: 1,
-                    renderLargerThumbnail: true,
-                    thumbnail: await resize(thumb, 300, 175),
-                    sourceUrl: "",
-                    mediaUrl: thumb,
-                },
-                mentionedJid: player,
-            },
-        });
+        conn.sendMessage(m.chat, { image: { url: thumb }, caption: "*⌂ W E R E W O L F - G A M E*\n\nGame telah dimulai, para player akan memerankan perannya masing masing, silahkan cek chat pribadi untuk melihat role kalian. Berhati-hatilah para warga, mungkin malam ini adalah malah terakhir untukmu", mentions: [m.sender] }, { quoted: m });
         await run(conn, chat, ww);
     } else if (value === "vote") {
         if (!ww[chat]) return m.reply("Belum ada sesi permainan");
@@ -348,24 +318,7 @@ let handler = async (m, {
         }\n`;
             player.push(ww[chat].player[i].id);
         }
-        conn.sendMessage(
-            m.chat, {
-                text: text,
-                contextInfo: {
-                    externalAdReply: {
-                        title: "W E R E W O L F",
-                        mediaType: 1,
-                        renderLargerThumbnail: true,
-                        thumbnail: await resize(thumb, 300, 175),
-                        sourceUrl: "",
-                        mediaUrl: thumb,
-                    },
-                    mentionedJid: player,
-                },
-            }, {
-                quoted: m
-            }
-        );
+        conn.sendMessage(m.chat, { image: { url: thumb }, caption: text, mentions: [m.sender] }, { quoted: m });
     } else {
         let text = `\n*⌂ W E R E W O L F - G A M E*\n\nPermainan Sosial Yang Berlangsung Dalam Beberapa Putaran/ronde. Para Pemain Dituntut Untuk Mencari Seorang Penjahat Yang Ada Dipermainan. Para Pemain Diberi Waktu, Peran, Serta Kemampuannya Masing-masing Untuk Bermain Permainan Ini\n\n*⌂ C O M M A N D*\n`;
         text += ` • ww create\n`;
@@ -375,23 +328,7 @@ let handler = async (m, {
         text += ` • ww delete\n`;
         text += ` • ww player\n`;
         text += `\nPermainan ini dapat dimainkan oleh 5 sampai 15 orang.`;
-        conn.sendMessage(
-            m.chat, {
-                text: text.trim(),
-                contextInfo: {
-                    externalAdReply: {
-                        title: "W E R E W O L F",
-                        mediaType: 1,
-                        renderLargerThumbnail: true,
-                        thumbnail: await resize(thumb, 300, 175),
-                        sourceUrl: "",
-                        mediaUrl: thumb,
-                    },
-                },
-            }, {
-                quoted: m
-            }
-        );
+        conn.sendMessage(m.chat, { image: { url: thumb }, caption: text.trim(), mentions: [m.sender] }, { quoted: m });
     }
 }
 handler.help = ['werewolf'];

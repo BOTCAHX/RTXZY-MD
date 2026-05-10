@@ -17,54 +17,18 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     let user = global.db.data.users[m.sender]
     if (new Date - global.db.data.users[m.sender].lastngepet > 18000000) { // Changed to 5 hours
       if (Aku > Kamu) {
-        conn.sendMessage(m.chat, {
-          text: `Kamu lengah Saat Ngepet, Dan Kamu Mines -10 juta`,
-          contextInfo: {
-            externalAdReply: {
-              title: 'Nooo, Kamu sekarang memiliki hutang 10JT 😞',
-              body: wm,
-              thumbnailUrl: 'https://telegra.ph/file/c6c4a6946a354317fe970.jpg',
-              mediaType: 1,
-              showAdAttribution: false,
-              renderLargerThumbnail: true
-            }
-          }
-        })
+        conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c6c4a6946a354317fe970.jpg' }, caption: `Kamu lengah Saat Ngepet, Dan Kamu Mines -10 juta`, mentions: [m.sender] }, { quoted: m });
         user.money -= 10000000 // Penalty for failed robbery is -20 million
         global.db.data.users[m.sender].lastngepet = new Date * 1
       } else if (Aku < Kamu) {
         user.money += 5000000 // Reward for successful robbery is 10 million
-        conn.sendMessage(m.chat, {
-          text: `Kamu berhasil Ngepet, Dan kamu mendapatkan 5 Juta rupiah`,
-          contextInfo: {
-            externalAdReply: {
-              title: 'Selamat Telah Mendapatkan 5JT',
-              body: wm,
-              thumbnailUrl: 'https://telegra.ph/file/6a6a440d7f123bed78263.jpg',
-              mediaType: 1,
-              showAdAttribution: false,
-              renderLargerThumbnail: true
-            }
-          }
-        })
+        conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/6a6a440d7f123bed78263.jpg' }, caption: `Kamu berhasil Ngepet, Dan kamu mendapatkan 5 Juta rupiah`, mentions: [m.sender] }, { quoted: m });
         global.db.data.users[m.sender].lastngepet = new Date * 1
       } else {
         conn.sendMessage(m.chat, `Maaf kamu tidak mendapatkan *Duit* dan kamu tidak masuk Dunia Lain karna melarikan diri\n${botol}`, m)
         global.db.data.users[m.sender].lastngepet = new Date * 1
       }
-    } else conn.sendMessage(m.chat, {
-      text: `Kamu sudah melakukan *ngepet*\nDan kamu harus menunggu selama agar bisa ngepet kembali ${timers}`,
-      contextInfo: {
-        externalAdReply: {
-          title: 'C O O L D O W N',
-          body: `${timers}`,
-          thumbnailUrl: 'https://telegra.ph/file/295949ff5494f3038f48c.jpg',
-          mediaType: 1,
-          showAdAttribution: false,
-          renderLargerThumbnail: true
-        }
-      }
-    })
+    } else conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/295949ff5494f3038f48c.jpg' }, caption: `Kamu sudah melakukan *ngepet*\nDan kamu harus menunggu selama agar bisa ngepet kembali ${timers}`, mentions: [m.sender] }, { quoted: m });
   } catch (e) {
     throw `${e}`
   }

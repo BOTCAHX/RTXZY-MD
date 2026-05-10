@@ -2,6 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Contoh:\n${usedPrefix + command} jokowi`
+    await m.reply(wait)
     try {
         let res = await (await fetch(`https://api.botcahx.eu.org/api/stalk/snackvideo?username=${text}&apikey=${btc}`)).json()
         
@@ -17,21 +18,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             capt += `◦ *Posts* : ${posts}\n`;
             capt += `◦ *URL* : ${profile_url}\n`;
             
-            return conn.relayMessage(m.chat, {
-                extendedTextMessage: {
-                    text: capt, 
-                    contextInfo: {
-                        externalAdReply: {
-                            title: ('Profile ' + username).toUpperCase(),
-                            mediaType: 1,
-                            previewType: 0,
-                            renderLargerThumbnail: true,
-                            thumbnailUrl: profile_picture,
-                            sourceUrl: profile_url
-                        }
-                    }, mentions: [m.sender]
-                }
-            }, {})
+            return conn.sendMessage(m.chat, { image: { url: profile_picture }, caption: capt, mentions: [m.sender] }, { quoted: m });
         } else {
             throw 'Profile tidak ditemukan!'
         }

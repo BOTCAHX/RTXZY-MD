@@ -136,17 +136,7 @@ _Example_ :
             m.reply("Sukses Memperbaiki Axe")
             break
           default:
-                    await conn.reply(m.chat, caption, m, {
-                        contextInfo: {
-                            externalAdReply: {
-                                mediaType: 1,
-                                title: 'BOTCAHX RPG',
-                                thumbnailUrl: 'https://telegra.ph/file/f329ce46c24b0d7e0837e.jpg',
-                                renderLargerThumbnail: true,
-                                sourceUrl: ''
-                            }
-                        }
-                    });
+                    await conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/f329ce46c24b0d7e0837e.jpg' }, caption: caption, mentions: [m.sender] }, { quoted: m });
             }
         } else if (/enchant|enchan/i.test(command)) {
             const count = args[2] && args[2].length > 0 ? Math.min(99999999, Math.max(parseInt(args[2]), 1)) : !args[2] || args.length < 4 ? 1 : Math.min(1, count);

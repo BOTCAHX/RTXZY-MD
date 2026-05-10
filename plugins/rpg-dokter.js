@@ -24,23 +24,7 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         "🔍 Gunakan perintah *.dokter <tindakan>* untuk merawat dan menyembuhkan pasien.\n" +
         "🔎 Anda dapat membeli obat super *.dokter item obat-super* untuk meningkatkan peluang menyembuhkan pasien.\n" +
         "🏆 Cek peringkat Anda dengan perintah *.dokter leaderboard*.\n" +
-        "ℹ️ Gunakan perintah *.dokter status* untuk melihat status Anda saat ini.", m, {
-        contextInfo: {
-isForwarded: true,
-forwardedNewsletterMessageInfo: {
-newsletterJid: '120363248530706545@newsletter', 
-newsletterName: '>>BOTCAHX RPG<<', 
-serverMessageId: -1
-},
-          externalAdReply: {
-            mediaType: 1,
-            title: 'BOTCAHX RPG',
-            thumbnailUrl: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg',
-            renderLargerThumbnail: true,
-            sourceUrl: ''
-          }
-        }
-      });
+        "ℹ️ Gunakan perintah *.dokter status* untuk melihat status Anda saat ini.", m);
       return;
     }
 
@@ -66,7 +50,7 @@ serverMessageId: -1
       };
       const thiefAction = thiefActions[level];
 
-      conn.reply(m.chat, `*🔍 Anda menemukan pasien level ${level}!* Untuk menyembuhkan pasien, lakukan tindakan: *${thiefAction.toUpperCase()}*.`, m);
+      conn.reply(m.chat, `*🔍 Anda menemukan pasien level ${level}!* Untuk menyembuhkan pasien, lakukan tindakan: *.dokter ${thiefAction.toUpperCase()}*.`, m);
 
       player.ThiefAction = thiefAction;
     } else if (subCommand === "status") {

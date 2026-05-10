@@ -16,17 +16,7 @@ let handler = async (m, { conn, text }) => {
     // Cek apakah atribut yang diminta valid
     let attribute = text.toLowerCase().trim();
     if (!attributes.includes(attribute)) {
-      conn.reply(m.chat, `乂 *B E R L A T I H*\n\nSilahkan pilih *Attribute* yang kamu ingin latih :\n\n- Attack\n- Speed\n- Strenght\n- Health\n- Defense\n\n_Example_ :\n.berlatih defense`, m, {
-            contextInfo: {
-                externalAdReply: {
-                    mediaType: 1,
-                    title: wm,
-                    thumbnailUrl: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg',
-                    renderLargerThumbnail: true,
-                    sourceUrl: ''
-                }
-            }
-        })
+        conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg' }, caption: `乂 *B E R L A T I H*\n\nSilahkan pilih *Attribute* yang kamu ingin latih :\n\n- Attack\n- Speed\n- Strenght\n- Health\n- Defense\n\n_Example_ :\n.berlatih defense`, mentions: [m.sender] }, { quoted: m });
       return;
     }
 
@@ -51,17 +41,7 @@ let handler = async (m, { conn, text }) => {
     message += `✨ Peningkatan yang dihasilkan: ${increase}\n`;
     message += `⚡ Sisa stamina: ${user.stamina}\n`;
 
-    conn.reply(m.chat, message, m, {
-            contextInfo: {
-                externalAdReply: {
-                    mediaType: 1,
-                    title: wm,
-                    thumbnailUrl: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg',
-                    renderLargerThumbnail: true,
-                    sourceUrl: ''
-                }
-            }
-        })
+        conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/05daab7b42157c06636b3.jpg' }, caption: message, mentions: [m.sender] }, { quoted: m });
   } catch (e) {
     console.log(e);
     conn.reply(m.chat, 'Error', m);

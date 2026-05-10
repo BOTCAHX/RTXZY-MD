@@ -21,22 +21,7 @@ let handler = async (m, { conn }) => {
     }
     caption += `│  ◦  Uptime: ${toTime(os.uptime() * 1000)}\n`;
     caption += `└  ◦  Processor: ${os.cpus()[0].model}\n\n`;
-    conn.relayMessage(m.chat, {
-      extendedTextMessage: {
-        text: caption,
-        contextInfo: {
-          externalAdReply: {
-            title: `${toTime(os.uptime() * 1000)}`,
-            mediaType: 1,
-            previewType: 0,
-            renderLargerThumbnail: true,
-            thumbnailUrl: 'https://telegra.ph/file/cf4f28ed3b9ebdfb30adc.png',
-            sourceUrl: ''
-          }
-        },
-        mentions: [m.sender]
-      }
-    }, {});
+    conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/cf4f28ed3b9ebdfb30adc.png' }, caption: caption, mentions: [m.sender] }, { quoted: m });
   } catch (error) {
     console.log(error);
   } finally {

@@ -11,44 +11,12 @@ async function handler(m, { conn, usedPrefix, command, text }) {
       let kemii = `${prefix}shop buy armor\n\nUntuk membeli armor kamu!`
       let anjy = `${prefix}shop buy sword\n\nUntuk membeli pedang kamu!`
       let kemii1 = `${prefix} heal\n\nUntuk menambah darah kamu!`
-      if (SWORD) return conn.sendMessage(m.chat, {
-        text: anjy,
-        contextInfo: {
-        externalAdReply: {
-        title: 'D u n g e o n',
-        thumbnailUrl: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg',
-        mediaType: 1,
-        renderLargerThumbnail: true
-        }}})
-      if (ARMOR) return conn.sendMessage(m.chat, {
-        text: kemii,
-        contextInfo: {
-        externalAdReply: {
-        title: 'D u n g e o n',
-        thumbnailUrl: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg',
-        mediaType: 1,
-        renderLargerThumbnail: true
-        }}})
-      if (HEALT) return conn.sendMessage(m.chat, {
-        text: kemii1,
-        contextInfo: {
-        externalAdReply: {
-        title: 'D u n g e o n',
-        thumbnailUrl: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg',
-        mediaType: 1,
-        renderLargerThumbnail: true
-        }}})
+      if (SWORD) return conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg' }, caption: anjy, mentions: [m.sender] }, { quoted: m });
+      if (ARMOR) return conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg' }, caption: kemii, mentions: [m.sender] }, { quoted: m });
+      if (HEALT) return conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg' }, caption: kemii1, mentions: [m.sender] }, { quoted: m });
       
       let lmao = item(user.sword * 1, user.armor * 1, user.healt * 1, usedPrefix)
-      if (danzz.length == 0) return conn.sendMessage(m.chat, {
-        text: lmao,
-        contextInfo: {
-        externalAdReply: {
-        title: 'D u n g e o n',
-        thumbnailUrl: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg',
-        mediaType: 1,
-        renderLargerThumbnail: true
-        }}})
+      if (danzz.length == 0) return conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg' }, caption: lmao, mentions: [m.sender] }, { quoted: m });
   }
   global.dungeon = global.dungeon ? global.dungeon : {}
   if (Object.values(global.dungeon).find(room => room.id.startsWith('dungeon') && [room.game.player1, room.game.player2, room.game.player3, room.game.player4].includes(m.sender))) return conn.reply(m.chat, 'Kamu masih di dalam Dungeon', m)// nek iseh neng njero dungeon
@@ -85,15 +53,7 @@ async function handler(m, { conn, usedPrefix, command, text }) {
      ]
       
       let lmao = `${!room.game.player4 ? `Menunggu ${!room.game.player3 && !room.game.player4 ? '2' : '1'} Partner lagi... ${room.name ? `mengetik command dibawah ini *${usedPrefix}${command} ${room.name}*` : ''}` : 'Semua partner telah lengkap...'}`
-      conn.sendMessage(m.chat, {
-        text: lmao,
-        contextInfo: {
-        externalAdReply: {
-        title: 'D u n g e o n',
-        thumbnailUrl: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg',
-        mediaType: 1,
-        renderLargerThumbnail: true
-        }}})
+      conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg' }, caption: lmao, mentions: [m.sender] }, { quoted: m });
       
       if (room.game.player1 && room.game.player2 && room.game.player3 && room.game.player4) {
 
@@ -355,15 +315,7 @@ Nyawa *${M(p1)}*, *${M(p2)}*, *${M(p3)}* dan *${M(p4)}* masing masing berkurang 
       
       let lmao = 'Menunggu partner ' + (text ? `mengetik command dibawah ini
 ${usedPrefix}${command} ${text}` : '') + '\natau ketik *sendiri* untuk bermain sendiri'
-conn.sendMessage(m.chat, {
-  text: lmao,
-  contextInfo: {
-  externalAdReply: {
-  title: 'D u n g e o n',
-  thumbnailUrl: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg',
-  mediaType: 1,
-  renderLargerThumbnail: true
-  }}})
+conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg' }, caption: lmao, mentions: [m.sender] }, { quoted: m });
       global.dungeon[room.id] = room
     }
 }
@@ -389,16 +341,7 @@ if (room) {
   let P = data(PLAYER)
   if (/^(sendiri|dewean|solo)$/i.test(m.text.toLowerCase())) {
       let lmao = 'Kamu tidak bisa bermain sendiri karena memiliki partner. Silahkan ketik *gass* untuk bermain dengan partner lainnya...'
-      conn.sendMessage(m.chat, {
-        text: lmao,
-        contextInfo: {
-        externalAdReply: {
-        title: 'D u n g e o n',
-        thumbnailUrl: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg',
-        mediaType: 1,
-        renderLargerThumbnail: true
-        }}})
-
+      conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/750e79e2764d529aea52e.jpg' }, caption: lmao, mentions: [m.sender] }, { quoted: m });
     if (room.player2 || room.player3 || room.player4) return this.sendMessage(m.chat, lmao, { quoted: m })
     room.state = 'PLAYING'
     let str = `

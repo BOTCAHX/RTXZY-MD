@@ -19,24 +19,7 @@ wa.me/${numberowner}
 - Run via Panel (Always ON)`;
 
     try {
-        await conn.relayMessage(m.chat, {
-            requestPaymentMessage: {
-                currencyCodeIso4217: 'IDR',
-                amount1000: 25000 * 1000,
-                requestFrom: '0@s.whatsapp.net',
-                noteMessage: {
-                    extendedTextMessage: {
-                        text: txt,
-                        contextInfo: {
-                            mentionedJid: [m.sender],
-                            externalAdReply: {
-                                showAdAttribution: false
-                            }
-                        }
-                    }
-                }
-            }
-        }, {});
+        await m.reply(txt)
     } catch (error) {
         console.error(error);
     }

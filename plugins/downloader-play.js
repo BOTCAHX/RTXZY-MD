@@ -38,39 +38,13 @@ let handler = async (m, { conn, text, usedPrefix }) => {
             caption += `∘ Description : ${convert.description}\n`;
             caption += `∘ Thumbnail : ${convert.image}`;
  
-            await conn.relayMessage(m.chat, {
-                extendedTextMessage: {
-                    text: caption,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: convert.title,
-                            mediaType: 1,
-                            previewType: 0,
-                            renderLargerThumbnail: true,
-                            thumbnailUrl: convert.image,
-                            sourceUrl: convert.url
-                        }
-                    },
-                    mentions: [m.sender]
-                }
-            }, {});
+            await conn.sendMessage(m.chat, { image: { url: convert.image }, caption: caption, mentions: [m.sender] }, { quoted: m });
  
             await conn.sendMessage(m.chat, {
                 audio: {
                     url: audioUrl.result.mp3
                 },
                 mimetype: 'audio/mpeg',
-                contextInfo: {
-                    externalAdReply: {
-                        title: convert.title,
-                        body: "",
-                        thumbnailUrl: convert.image,
-                        sourceUrl: convert.url,
-                        mediaType: 1,
-                        showAdAttribution: false,
-                        renderLargerThumbnail: true
-                    }
-                }
             }, {
                 quoted: m
             });

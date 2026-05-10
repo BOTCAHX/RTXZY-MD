@@ -150,20 +150,8 @@ ${cpus
     : ""
 }
 `
-conn.relayMessage(m.chat, {
-extendedTextMessage:{
-                text: txt, 
-                contextInfo: {
-                     externalAdReply: {
-                        title: `${require('os').cpus()[0].model}`,
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg',
-                        sourceUrl: ''
-                    }
-                }, mentions: [m.sender]
-}}, {})
+conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg' }, caption: txt, mentions: [m.sender] }, { quoted: m });
+
 }
 handler.help = ['ping', 'speed'];
 handler.tags = ['info'];

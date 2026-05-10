@@ -18,7 +18,7 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
 
   if (command === "polisi") {
     if (args.length === 0) {
-      conn.reply(m.chat, "*👮‍♂️ Cara Bermain Game Polisi dan Pencuri 👮‍♂️*\n\n" +
+      conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg' }, caption: "*👮‍♂️ Cara Bermain Game Polisi dan Pencuri 👮‍♂️*\n\n" +
         "🔍 Gunakan perintah *.polisi cari* untuk mencari pencuri secara acak.\n" +
         "🚓 Anda akan menemukan jejak pencuri dan harus melakukan tindakan tertentu untuk menangkapnya.\n" +
         "💰 Anda akan mendapatkan imbalan jika berhasil menangkap pencuri.\n" +
@@ -26,17 +26,7 @@ const handler = async (m, { conn, usedPrefix, command, args }) => {
         "🔍 Gunakan perintah *.polisi <tindakan>* untuk melawan dan menangkap pencuri.\n" +
         "🔎 Anda dapat membeli kaca pembesar *.polisi item kaca-pembesar* untuk meningkatkan peluang menangkap pencuri.\n" +
         "🏆 Cek peringkat Anda dengan perintah *.polisi leaderboard*.\n" +
-        "ℹ️ Gunakan perintah *.polisi status* untuk melihat status Anda saat ini.", m, {
-        contextInfo: {
-          externalAdReply: {
-            mediaType: 1,
-            title: wm,
-            thumbnailUrl: 'https://telegra.ph/file/505b8d95fd7ee7b9481e3.jpg',
-            renderLargerThumbnail: true,
-            sourceUrl: ''
-          }
-        }
-      });
+        "ℹ️ Gunakan perintah *.polisi status* untuk melihat status Anda saat ini.", mentions: [m.sender] }, { quoted: m });
       return;
     }
 

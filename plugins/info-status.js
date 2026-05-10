@@ -61,21 +61,7 @@ Ping : *${Math.round(neww - old)} ms*
 Internet IN : *${netsIn}*
 Internet OUT : *${netsOut}*
 `
-
-conn.relayMessage(m.chat, {
-extendedTextMessage:{
-                text: txt, 
-                contextInfo: {
-                     externalAdReply: {
-                        title: `${ramUsed} / ${_ramTotal}(${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : NotDetect})`,
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg',
-                        sourceUrl: ''
-                    }
-                }, mentions: [m.sender]
-}}, {})
+conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg' }, caption: txt, mentions: [m.sender] }, { quoted: m });
         console.log(OS)
     } catch (e) {
         console.log(e)

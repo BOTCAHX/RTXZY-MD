@@ -3,47 +3,57 @@ const { loadBaileys } = require('../baileys-loader.mjs');
 let baileysCache = null;
 
 async function getBaileys() {
-  if (!baileysCache) {
-    baileysCache = await loadBaileys();
-  }
-  return baileysCache;
+    if (!baileysCache) {
+        baileysCache = await loadBaileys();
+    }
+    return baileysCache;
 }
 
 module.exports = {
-  async all(m, chatUpdate) {
-    if (m.isBaileys) return;
-    if (!m.message) return;
-    if (!m.msg?.fileSha256) return;
+    async all(m, chatUpdate) {
+        if (m.isBaileys) return;
+        if (!m.message) return;
 
-    const hashHex = m.msg.fileSha256.toString('hex');
-    if (!(hashHex in global.db.data.sticker)) return;
+        if (!m.msg?.fileSha256) return;
 
-    const hash = global.db.data.sticker[hashHex];
-    const { text, mentionedJid } = hash;
+        const hashHex = m.msg.fileSha256.toString('hex');
 
-    const baileys = await getBaileys();
-    const { proto, generateWAMessage, areJidsSameUser } = baileys;
+        if (!(hashHex in global.db.data?.sticker)) return;
 
-    const fakeMsg = await generateWAMessage(m.chat, {
-      text: text,
-      mentions: mentionedJid || []
-    }, {
-      userJid: this.user?.id,
-      quoted: m.quoted?.fakeObj || m.quoted
-    });
+        const cmdData = global.db.data.sticker[hashHex];
+        const { text, mentionedJid } = cmdData;
 
-    fakeMsg.key.fromMe = areJidsSameUser(m.sender, this.user?.id);
-    fakeMsg.key.id = m.key.id;
-    fakeMsg.pushName = m.pushName || m.name || '';
+        const baileys = await getBaileys();
+        const { proto, generateWAMessage, areJidsSameUser } = baileys;
 
-    if (m.isGroup) fakeMsg.participant = m.sender;
+        try {
+            const fakeMsg = await generateWAMessage(m.chat, {
+                text: text,
+                mentions: mentionedJid || [],
+            }, {
+                userJid: this.user?.id,
+                quoted: m.quoted?.fakeObj || m.quoted || null,
+            });
 
-    const upsertEvent = {
-      ...chatUpdate,
-      messages: [proto.WebMessageInfo.fromObject(fakeMsg)],
-      type: 'append'  
-    };
+            fakeMsg.key = {
+                ...fakeMsg.key,
+                fromMe: areJidsSameUser(m.sender, this.user?.id),
+                id: m.key.id,
+                participant: m.isGroup ? m.sender : undefined,
+            };
 
-    this.ev.emit('messages.upsert', upsertEvent);
-  }
+            fakeMsg.messageContextInfo = m.messageContextInfo;
+
+            const upsertEvent = {
+                ...chatUpdate,
+                messages: [proto.WebMessageInfo.fromObject(fakeMsg)],
+                type: 'append'
+            };
+
+            this.ev.emit('messages.upsert', upsertEvent);
+
+        } catch (e) {
+            console.error('Error Media:', e);
+        }
+    }
 };

@@ -6,6 +6,7 @@ let handler = async (m, {
     command
 }) => {
     if (!text) throw `Ex: ${usedPrefix}${command} Jiwa yang bersedih`
+    await m.reply(wait)
     try {
         let data = await (await fetch(`https://api.botcahx.eu.org/api/search/lirik?lirik=${text}&apikey=${btc}`)).json()
         let caption = `
@@ -14,20 +15,7 @@ ${data.result.lyrics}
 ℹ️ More info:
 🔗 ${data.result.image}
 🎤 Artist: ${data.result.artist}`
-        await conn.relayMessage(m.chat, {
-            extendedTextMessage:{
-                text: caption, 
-                contextInfo: {
-                     externalAdReply: {
-                        title: `🎵 ${data.result.title} - ${data.result.artist} 🎵`,
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: data.result.image,
-                        sourceUrl: ''
-                    }
-                }, mentions: [m.sender]
-}}, {})
+await conn.sendMessage(m.chat, { image: { url: data.result.image }, caption: caption, mentions: [m.sender] }, { quoted: m });
     } catch (e) {
         console.log(e)
         m.reply('Terjadi kesalahan, silahkan coba lagi nanti')
