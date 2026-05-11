@@ -155,7 +155,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   if (pasangan) mentionedJid.push(pasangan)
 
 
-  conn.sendMessage(m.chat, { image: { url: pp }, caption: str, mentions: mentionedJid }, { quoted: m });
+  conn.sendMessage(m.chat, { image: { url: pp }, caption: str, mentions: [m.sender] }, { quoted: m });
 }
 }
 
