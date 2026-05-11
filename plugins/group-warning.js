@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, args, groupMetadata, usedPrefix, command }
         else who = m.chat
         if (!who) throw `✳️ Memberi label atau menyebut seseorang\n\n📌 Contoh : ${usedPrefix + command} @user`
         if (!(who in global.db.data.users)) throw `✳️ Pengguna hilang dari database saya`
-        let name = conn.getName(m.sender)
+        let name = await conn.getName(m.sender)
         let warn = global.db.data.users[who].warn
         if (warn < war) {
             global.db.data.users[who].warn += 1
