@@ -176,7 +176,7 @@ let handler = async (m, {
             // [ Werewolf ]
             if (ww[chat].player[i].role === "werewolf") {
                 if (ww[chat].player[i].isdead != true) {
-                    var text = `Hai ${conn.getName(
+                    var text = `Hai ${await conn.getName(
               ww[chat].player[i].id
             )}, Kamu telah dipilih untuk memerankan *Werewolf* ${emoji_role(
               "werewolf"
@@ -190,7 +190,7 @@ let handler = async (m, {
                 // [ villager ]
             } else if (ww[chat].player[i].role === "warga") {
                 if (ww[chat].player[i].isdead != true) {
-                    let text = `*⌂ W E R E W O L F - G A M E*\n\nHai ${conn.getName(
+                    let text = `*⌂ W E R E W O L F - G A M E*\n\nHai ${await conn.getName(
               ww[chat].player[i].id
             )} Peran kamu adalah *Warga Desa* ${emoji_role(
               "warga"
@@ -204,7 +204,7 @@ let handler = async (m, {
                 // [ Penerawangan ]
             } else if (ww[chat].player[i].role === "seer") {
                 if (ww[chat].player[i].isdead != true) {
-                    let text = `Hai ${conn.getName(
+                    let text = `Hai ${await conn.getName(
               ww[chat].player[i].id
             )} Kamu telah terpilih  untuk menjadi *Penerawang* ${emoji_role(
               "seer"
@@ -219,7 +219,7 @@ let handler = async (m, {
                 // [ Guardian ]
             } else if (ww[chat].player[i].role === "guardian") {
                 if (ww[chat].player[i].isdead != true) {
-                    let text = `Hai ${conn.getName(
+                    let text = `Hai ${await conn.getName(
               ww[chat].player[i].id
             )} Kamu terpilih untuk memerankan *Malaikat Pelindung* ${emoji_role(
               "guardian"
@@ -234,7 +234,7 @@ let handler = async (m, {
                 // [ Sorcerer ]
             } else if (ww[chat].player[i].role === "sorcerer") {
                 if (ww[chat].player[i].isdead != true) {
-                    let text = `Hai ${conn.getName(
+                    let text = `Hai ${await conn.getName(
               ww[chat].player[i].id
             )} Kamu terpilih sebagai Penyihir ${emoji_role(
               "sorcerer"

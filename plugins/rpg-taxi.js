@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => {
     let _timers = (3600000 - __timers)
     let order = global.db.data.users[m.sender].taxi
     let timers = clockString(_timers)
-    let name = conn.getName(m.sender)
+    let name = await conn.getName(m.sender)
     let user = global.db.data.users[m.sender]
     let id = m.sender
     let kerja = 'taxi'

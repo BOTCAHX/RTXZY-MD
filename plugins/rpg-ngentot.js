@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   let order = global.db.data.users[m.sender].ngewe
   let user = global.db.data.users[m.sender];
   let timers = clockString(_timers);
-  let name = user.registered ? user.name : conn.getName(m.sender);
+  let name = user.registered ? user.name : await conn.getName(m.sender);
   let id = m.sender;
   let kerja = "openbo";
   conn.misi = conn.misi ? conn.misi : {};

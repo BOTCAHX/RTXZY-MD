@@ -30,7 +30,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
             const goldButton = targetUser.playButton >= 2 ? '✅' : '❎';
             const diamondButton = targetUser.playButton >= 3 ? '✅' : '❎';
             return conn.sendMessage(m.chat, { text: `📈 Akun YouTube ${targetTag} 📉\n
-🧑🏻‍💻 *Streamer:* ${targetUser.registered ? targetTag : conn.getName(targetNumber)}
+🧑🏻‍💻 *Streamer:* ${targetUser.registered ? targetTag : await conn.getName(targetNumber)}
 🌐 *Channel:* ${targetUser.youtube_account}
 👥 *Subscribers:* ${formattedSubscribers}
 🪬 *Viewers:* ${formattedViewers}

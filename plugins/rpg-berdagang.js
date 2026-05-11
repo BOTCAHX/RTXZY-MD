@@ -10,7 +10,7 @@ let dapat = (Math.floor(Math.random() * 5000))
   let _timers = (28800000 - __timers) 
   let timers = clockString(_timers)
   let users = global.db.data.users
-  let username = conn.getName(who)
+  let username = await conn.getName(who)
   if (new Date - global.db.data.users[m.sender].lastdagang > 28800000){
   if (4999 > users[who].money) throw 'Target tidak memiliki modal harap masukkan modal 5000'
   if (4999 > users[m.sender].money) throw 'kamu tidak memiliki modal harap masukkan modal 5000'

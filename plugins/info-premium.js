@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
   if (!global.db.data.users[who]) {
     global.db.data.users[who] = {
-      exp: 0, limit: 10, lastclaim: 0, registered: false, name: conn.getName(who),
+      exp: 0, limit: 10, lastclaim: 0, registered: false, name: await conn.getName(who),
       age: -1, regTime: -1, premium: false, premiumTime: 0, banned: false,
       level: 0, money: 0, pasangan: '', role: 'Newbie'
     }

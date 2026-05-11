@@ -17,7 +17,7 @@ let handler = async (m, { conn, text: txt, usedPrefix, participants }) => {
         lawan = users[Math.floor(users.length * Math.random())]
     }
 
-    m.reply(`*Kamu* (${text} level ${user[text]}) menantang *'@' +${conn.getName(lawan)}* (${text} level ${global.db.data.users[lawan][text]}) dan sedang dalam pertarungan.\n\nTunggu 5 menit lagi dan lihat siapa yg menang.`)
+    m.reply(`*Kamu* (${text} level ${user[text]}) menantang *'@' +${await conn.getName(lawan)}* (${text} level ${global.db.data.users[lawan][text]}) dan sedang dalam pertarungan.\n\nTunggu 5 menit lagi dan lihat siapa yg menang.`)
     conn.battlepet[id] = true
 
     await delay(300000)
@@ -38,14 +38,14 @@ let handler = async (m, { conn, text: txt, usedPrefix, participants }) => {
         let hadiah = (pointPemain - pointLawan) * 10000
         user.money += hadiah
         user.limit += 1
-        m.reply(`*${conn.getName(m.sender)}* [${pointPemain * 10}] - [${pointLawan * 10}] *${conn.getName(lawan)}*\n\n*Kamu* (${text} level ${user[text]}) menang melawan *${conn.getName(lawan)}* (${text} level ${global.db.data.users[lawan][text]}) karena kamu ${alasanMenang[getRandom(0, alasanMenang.length - 1)]}\n\nHadiah . ${hadiah.toLocaleString()}\n+1 Limit`)
+        m.reply(`*${await conn.getName(m.sender)}* [${pointPemain * 10}] - [${pointLawan * 10}] *${await conn.getName(lawan)}*\n\n*Kamu* (${text} level ${user[text]}) menang melawan *${await conn.getName(lawan)}* (${text} level ${global.db.data.users[lawan][text]}) karena kamu ${alasanMenang[getRandom(0, alasanMenang.length - 1)]}\n\nHadiah . ${hadiah.toLocaleString()}\n+1 Limit`)
     } else if (pointPemain < pointLawan) {
         let denda = (pointLawan - pointPemain) * 100000
         user.money -= denda
         user.limit += 1
-        m.reply(`*${conn.getName(m.sender)}* [${pointPemain * 10}] - [${pointLawan * 10}] *${conn.getName(lawan)}*\n\n*Kamu* (${text} level ${user[text]}) kalah melawan *${conn.getName(lawan)}* (${text} level ${global.db.data.users[lawan][text]}) karena kamu ${alasanKalah[getRandom(0, alasanKalah.length - 1)]}\n\nMoney kamu berkurang ${denda.toLocaleString()}\n+1 Limit`)
+        m.reply(`*${await conn.getName(m.sender)}* [${pointPemain * 10}] - [${pointLawan * 10}] *${await conn.getName(lawan)}*\n\n*Kamu* (${text} level ${user[text]}) kalah melawan *${await conn.getName(lawan)}* (${text} level ${global.db.data.users[lawan][text]}) karena kamu ${alasanKalah[getRandom(0, alasanKalah.length - 1)]}\n\nMoney kamu berkurang ${denda.toLocaleString()}\n+1 Limit`)
     } else {
-        m.reply(`*${conn.getName(m.sender)}* [${pointPemain * 10}] - [${pointLawan * 10}] *${conn.getName(lawan)}*\n\nHasil imbang kak, ga dapet apa apa`)
+        m.reply(`*${await conn.getName(m.sender)}* [${pointPemain * 10}] - [${pointLawan * 10}] *${await conn.getName(lawan)}*\n\nHasil imbang kak, ga dapet apa apa`)
     }
 
     delete conn.battlepet[id]

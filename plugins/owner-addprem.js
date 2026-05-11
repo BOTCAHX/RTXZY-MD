@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
       limit: 10,
       lastclaim: 0,
       registered: false,
-      name: conn.getName(who),
+      name: await conn.getName(who),
       age: -1,
       regTime: -1,
       premium: false,

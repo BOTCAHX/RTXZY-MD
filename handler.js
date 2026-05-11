@@ -365,7 +365,7 @@ module.exports = {
                       if (!isNumber(user.lastrampok)) user.lastrampok = 0
                       if (!('registered' in user)) user.registered = false
                       if (!user.registered) {
-                      if (!('name' in user)) user.name = this.getName(m.sender)
+                      if (!('name' in user)) user.name = await this.getName(m.sender)
           
                       if (!isNumber(user.apel)) user.apel = 0
                       if (!isNumber(user.anggur)) user.anggur = 0
@@ -750,7 +750,7 @@ module.exports = {
                       semangka: 0,
                       jeruk: 0,
                       semangka: 0,
-                      name: this.getName(m.sender),
+                      name: await this.getName(m.sender),
                       age: -1,
                       regTime: -1,
                       premiumDate: -1, 
@@ -767,7 +767,7 @@ module.exports = {
                       lbars: '[▒▒▒▒▒▒▒▒▒]', 
                       role: 'Newbie ㋡', 
                       registered: false,
-                      name: this.getName(m.sender),
+                      name: await this.getName(m.sender),
                       age: -1,
                       regTime: -1,
                       autolevelup: true,

@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => {
     let _timers = (300000 - __timers)
     let order = global.db.data.users[m.sender].ngewe
     let timers = clockString(_timers) 
-let name = conn.getName(m.sender)
+let name = await conn.getName(m.sender)
     let user = global.db.data.users[m.sender]
     
      if (new Date - global.db.data.users[m.sender].lastngewe > 300000) {
