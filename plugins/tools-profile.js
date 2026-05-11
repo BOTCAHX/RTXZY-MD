@@ -154,11 +154,9 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   let mentionedJid = [who]
   if (pasangan) mentionedJid.push(pasangan)
 
-  await conn.sendFile(m.chat, pp, 'profile.jpg', str, m, false, {
-    contextInfo: {
-      mentionedJid
-    }
-  })
+
+  conn.sendMessage(m.chat, { image: { url: pp }, caption: str, mentions: mentionedJid }, { quoted: m });
+}
 }
 
 handler.help = ['profile', 'profil [@user]']
