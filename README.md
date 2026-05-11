@@ -54,7 +54,7 @@ node index.js
 
 ---  
 
-## **Support Me On Sociabuzz**  
+## **Support Me**  
 
 <a href="https://qris.zone.id/qviqy41iq" target="_blank"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" height="32px" alt="Donate"></a>  
 
