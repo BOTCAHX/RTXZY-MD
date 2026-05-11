@@ -6,12 +6,12 @@ let handler = async (m, { conn, text }) => {
     return conn.reply(m.chat, '• *Example :* .bertarung @user', m)
   }
     
-	conn.sendMessage(m.chat, {
-		react: {
-			text: '🕒',
-			key: m.key,
-		}
-	})
+  conn.sendMessage(m.chat, {
+    react: {
+      text: '🕒',
+      key: m.key,
+    }
+  })
   
   let alasanKalah = `${pickRandom(['bodoh gitu doang aja kalah tolol lu di denda','lemah lu kontol mending lu di rumah aja dah lu di denda dek','Jangan beratem kalo cupu dek wkwkwk kamu di denda','Dasar tolol lawan itu doang aja ga bisa lu di denda','Hadehh sono lu mending di rumah aja deh lu di denda'])}`
   let alasanMenang = `${pickRandom(['kamu berhasil menggunakan kekuatan elemental untuk menghancurkan pertahanan lawan dan mendapatkan','kamu berhasil melancarkan serangan mematikan dengan gerakan akrobatik yang membingungkan lawan, dan mendapatkan','Kamu berhasil menang karena baru selesai coli dan mendapatkan','Kamu berhasil menang karena menyogok lawan dan mendapatkan','Kamu berhasil menang karena bot merasa kasihan sama kamu dan mendapatkan','Kamu berhasil menang karena kamu melawan orang cupu dan mendapatkan'])}`
@@ -29,20 +29,20 @@ let handler = async (m, { conn, text }) => {
   
   conn.reply(m.chat, 'Mempersiapkan arena...', m)
   
-  setTimeout(() => {
+  setTimeout(async () => {
     conn.reply(m.chat, 'Mendapatkan arena...', m)
     
-    setTimeout(() => {
+    setTimeout(async () => {
       conn.reply(m.chat, 'Bertarung...', m)
       
-      setTimeout(() => {
+      setTimeout(async () => {
         let result = Math.random() >= 0.5 
         let wonAmount = result ? betAmount : -betAmount 
         
         user.money += wonAmount
         global.db.data.users[opponent].money -= wonAmount
         
-        let opponentName = conn.getName(opponent) 
+        let opponentName = await conn.getName(opponent)
         
         let caption = `❏  *F I G H T*\n\n`
         caption += `Lawan Anda Adalah: ${opponentName}\nLevel: [${global.db.data.users[m.sender].level}]\n\n`
@@ -61,7 +61,7 @@ let handler = async (m, { conn, text }) => {
         
         setTimeout(() => {
           conn.reply(m.chat, `Anda dapat bertarung lagi setelah 5 detik`, m)
-        }, 5000) // https://github.com/SazumiVicky/MakeMeow-Games
+        }, 5000)
       }, 2000)
     }, 2000) 
   }, 2000) 
