@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
     let lastngaji = global.db.data.users[m.sender]?.lastngaji || 0
     let timers = 300000 - (Date.now() - lastngaji)
-    let name = conn.getName(m.sender)
+    let name = await conn.getName(m.sender)
     let user = global.db.data.users[m.sender]
     
     if (timers <= 0) {
