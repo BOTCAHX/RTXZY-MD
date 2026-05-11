@@ -3,23 +3,22 @@ let levelling = require('../lib/levelling')
 const { createHash } = require('crypto')
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
-  let who
+  let who = m.sender
+
   if (m.quoted) {
     who = m.quoted.sender
-  }
-  else if (m.mentionedJid && m.mentionedJid[0]) {
+  } else if (m.mentionedJid && m.mentionedJid[0]) {
     who = m.mentionedJid[0]
-  }
-  else if (text) {
-    let input = text.replace(/[^0-9]/g, '')
+  } else if (text) {
+    let input = text.replace(/[^0-9]/g, '').trim()
     if (input.length > 5 && input.length < 20) {
       who = input + '@s.whatsapp.net'
     }
   }
 
-  if (!who) who = m.sender
-
-  if (!who.includes('@')) who += '@s.whatsapp.net'
+  if (!who.includes('@s.whatsapp.net')) {
+    who = who.replace('@', '') + '@s.whatsapp.net'
+  }
 
   if (!global.db.data.users[who]) {
     global.db.data.users[who] = {
@@ -43,18 +42,13 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   let user = global.db.data.users[who]
   let { name, limit, exp, money, lastclaim, premiumDate, premium, registered, regTime, age, level, pasangan } = user
 
-  let pp = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXIdvC1Q4WL7_zA6cJm3yileyBT2OsWhBb9Q&usqp=CAU'
-  try {
-    pp = await conn.profilePictureUrl(who, 'image')
-  } catch (e) {}
-
   let about = ''
   try {
     let status = await conn.fetchStatus(who)
     about = status.status || ''
   } catch {}
 
-  let username = conn.getName(who)
+  let username = await conn.getName(who) || 'User'
   let number = who.split('@')[0]
 
   let role = (level <= 2) ? 'Newbie'
@@ -154,11 +148,10 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   let mentionedJid = [who]
   if (pasangan) mentionedJid.push(pasangan)
 
-  await conn.sendFile(m.chat, pp, 'profile.jpg', str, m, false, {
-    contextInfo: {
-      mentionedJid
-    }
-  })
+  await conn.sendMessage(m.chat, { 
+    text: str,
+    mentions: mentionedJid 
+  }, { quoted: m })
 }
 
 handler.help = ['profile', 'profil [@user]']
