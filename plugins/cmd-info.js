@@ -8,20 +8,30 @@ module.exports = Object.assign(async function handler(m, { conn, text }) {
     let sticker = global.db.data.sticker[hash]
     if (!sticker) return m.reply('Sticker Not in the database')
 
-    let creatorJid = sticker.creator
-    let creatorName = await conn.getName(creatorJid) || 'Unknown'
-    let creatorNumber = creatorJid.split('@')[0]
+    let creatorJid = sticker.creator || ''
+    let finalJid = creatorJid
+    try {
+        finalJid = await conn.getJid(creatorJid)
+    } catch (e) {}
+
+    let creatorName = await conn.getName(finalJid) || await conn.getName(creatorJid) || 'Unknown'
+    let creatorNumber = finalJid.split('@')[0]
 
     let mentionedInfo = ''
     if (sticker.mentionedJid && sticker.mentionedJid.length > 0) {
         let mentions = []
         for (let jid of sticker.mentionedJid) {
-            let name = await conn.getName(jid) || 'Unknown'
-            let number = jid.split('@')[0]
+            let resolvedJid = jid
+            try {
+                resolvedJid = await conn.getJid(jid)
+            } catch (e) {}
+            
+            let name = await conn.getName(resolvedJid) || await conn.getName(jid) || 'Unknown'
+            let number = resolvedJid.split('@')[0]
             mentions.push(`No. *${mentions.length + 1}*
 *Mention Name:* ${name}
 *Mention Number:* ${number}
-*Mention Jid:* ${jid}`)
+*Mention Jid:* ${resolvedJid}`)
         }
         mentionedInfo = `*Cmd Mention:*\n\n${mentions.join('\n\n')}`
     }
@@ -34,7 +44,7 @@ module.exports = Object.assign(async function handler(m, { conn, text }) {
 
 *Creator Name:* ${creatorName}
 *Creator Number:* ${creatorNumber}
-*Creator Jid:* ${creatorJid}
+*Creator Jid:* ${finalJid}
 ${mentionedInfo}
 `.trim()
 
