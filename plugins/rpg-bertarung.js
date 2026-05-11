@@ -42,7 +42,7 @@ let handler = async (m, { conn, text }) => {
         user.money += wonAmount
         global.db.data.users[opponent].money -= wonAmount
         
-        let opponentName = conn.getName(opponent) 
+        let opponentName = await conn.getName(opponent) 
         
         let caption = `❏  *F I G H T*\n\n`
         caption += `Lawan Anda Adalah: ${opponentName}\nLevel: [${global.db.data.users[m.sender].level}]\n\n`
