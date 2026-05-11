@@ -20,27 +20,27 @@ let handler = async (m, { conn, args, participants }) => {
   • *XP Leaderboard Top ${len}* •
   Kamu: *${usersExp.indexOf(m.name) + 1}* dari *${usersExp.length}*
   
-  ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${await conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} Exp*`).join`\n`}
+  ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} Exp*`).join`\n`}
   
   • *Limit Leaderboard Top ${len}* •
   Kamu: *${usersLim.indexOf(m.name) + 1}* dari *${usersLim.length}*
   
-  ${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${await conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} Limit*`).join`\n`}
+  ${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} Limit*`).join`\n`}
   
   • *Level Leaderboard Top ${len}* •
   Kamu: *${usersLevel.indexOf(m.name) + 1}* dari *${usersLevel.length}*
   
-  ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${await conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Level ${level}*`).join`\n`}
+  ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Level ${level}*`).join`\n`}
   
   • *Money Leaderboard Top ${len}* •
   Kamu: *${usersMoney.indexOf(m.name) + 1}* dari *${usersMoney.length}*
   
-  ${sortedMoney.slice(0, len).map(({ jid, money }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${await conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Money ${money}*`).join`\n`}
+  ${sortedMoney.slice(0, len).map(({ jid, money }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Money ${money}*`).join`\n`}
   
   • *Bank Leaderboard Top ${len}* •
   Kamu: *${usersBank.indexOf(m.name) + 1}* dari *${usersBank.length}*
   
-  ${sortedBank.slice(0, len).map(({ jid, bank }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${await conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Bank ${bank}*`).join`\n`}
+  ${sortedBank.slice(0, len).map(({ jid, bank }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Bank ${bank}*`).join`\n`}
   `.trim()
     conn.reply(m.chat, text, m, {
       contextInfo: {
