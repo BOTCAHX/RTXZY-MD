@@ -1206,7 +1206,7 @@ module.exports = {
         }
     },
 	
-  async participantsUpdate({ id, participants, action }) {
+   async participantsUpdate({ id, participants, action }) {
     if (opts['self']) return
     if (global.isInit) return
 
@@ -1230,15 +1230,12 @@ module.exports = {
                     }
                     if (!jid || (!jid.includes('@s.whatsapp.net') && !jid.includes('@lid'))) continue
 
-                    let pp = 'https://telegra.ph/file/70e8de9b1879568954f09.jpg'
-                    try { pp = await this.profilePictureUrl(jid, 'image') } catch {}
-
                     const isAdd = ['add', 'invite', 'invite_v4'].includes(action)
 
                     text = (isAdd
-                        ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!')
-                        : (chat.sBye || this.bye || conn.bye || 'Bye, @user!'))
-                        .replace('@subject', groupMetadata.subject || 'this group')
+                        ? (chat.sWelcome || this.welcome || 'Selamat datang @user 👋')
+                        : (chat.sBye || this.bye || 'Selamat tinggal @user 👋'))
+                        .replace('@subject', groupMetadata.subject || 'Group')
                         .replace('@desc', groupMetadata.desc?.toString() || '')
                         .replace('@user', '@' + jid.split('@')[0])
 
@@ -1246,25 +1243,9 @@ module.exports = {
                         text,
                         mentions: [jid]
                     })
-					/*
-                    await this.sendMessage(id, {
-                        text: text,
-                        mentions: [jid],
-                        contextInfo: {
-                            externalAdReply: {
-                                title: isAdd ? 'Selamat Datang' : 'Selamat Tinggal',
-                                body: global.wm || 'Bot WhatsApp',
-                                thumbnailUrl: pp,
-                                sourceUrl: 'https://api.botcahx.eu.org',
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    })
- */
                 }
             }
-            break            
+            break           
             /**case 'promote':
             text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
