@@ -8,7 +8,7 @@ module.exports = Object.assign(async function handler(m, { conn, text }) {
 *Text:* ${sticker.text}
 *Time Create:* ${sticker.at}
 *Locked:* ${sticker.locked ? 'Yes' : 'No'}
-*Creator Name:* ${conn.getName(sticker.creator)}
+*Creator Name:* ${await conn.getName(sticker.creator)}
 *Creator Number:* ${splitM(sticker.creator)}
 *Creator Jid:* ${sticker.creator}
 ${sticker.mentionedJid.length > 0 ? `*Cmd Mention:*
