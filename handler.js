@@ -943,13 +943,21 @@ module.exports = {
             let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
 
             //let isROwner = [global.conn.user.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-            let isROwner = [global.conn.user.jid, ...global.owner]
+            /**let isROwner = [global.conn.user.jid, ...global.owner]
               .map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net')
               .includes(
                 m.sender.endsWith('@lid') 
                   ? conn.getJid(m.sender)?.replace(/[^0-9]/g, '') + '@s.whatsapp.net' 
                   : m.sender.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-              );
+              );**/
+		 let isROwner = [global.conn.user.jid, ...(global.owner || [])]
+    .filter(v => v != null)
+    .map(v => String(v).replace(/[^0-9]/g, '') + '@s.whatsapp.net')
+    .includes(
+        m.sender.endsWith('@lid') 
+            ? (conn.getJid(m.sender) || m.sender).replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+            : m.sender.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+    );
             let isOwner = isROwner || m.fromMe
             let isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
             let isPrems = isROwner || (db.data.users[m.sender].premiumTime > 0 || db.data.users[m.sender].premium)
