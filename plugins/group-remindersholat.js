@@ -11,29 +11,18 @@ async function getPrayerTimesAndSetReminders() {
 
         let data = response.data;
         if (!data || data.result.code !== 200) {
-            console.log(`[❗] Jadwal shalat untuk kota ${city.toUpperCase()} tidak ditemukan atau tidak tersedia.`);
             return;
         }
+
         const prayerTimes = getPrayerTimes(data);
         
         if (prayerTimes) {
             let jadwal = prayerTimes.timings;
-            console.log(`
-┌「 ${city.toUpperCase()} 」  
-├ Subuh: ${jadwal.Fajr}
-├ Dzuhur: ${jadwal.Dhuhr}
-├ Ashar: ${jadwal.Asr}
-├ Maghrib: ${jadwal.Maghrib}
-├ Isya: ${jadwal.Isha}
-└──────────`);
-
             setPrayerTimers(jadwal);
-        } else {
-            console.log(`[❗] Tidak ada data jadwal sholat untuk tanggal hari ini.`);
         }
 
     } catch (error) {
-        console.error(`[❗] Terjadi kesalahan saat mengambil data.`);
+        // diam adalah emas 😭😂
     }
 }
 
@@ -100,10 +89,8 @@ function startDailyPrayerReminder() {
     getPrayerTimesAndSetReminders();
 
     setInterval(() => {
-        let now = new Date();
-        console.log(`Mengambil jadwal sholat untuk hari ini (${now.toLocaleDateString()})`);
         getPrayerTimesAndSetReminders();
-    }, 6 * 60 * 60 * 1000); // setiap 6 jam seklai get data dari api
+    }, 6 * 60 * 60 * 1000); // setiap 6 jam
 }
 
 startDailyPrayerReminder();
