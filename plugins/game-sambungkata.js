@@ -52,20 +52,18 @@ let handler = async (m, { conn, text, isPrems, isROwner, usedPrefix, command }) 
                     room.eliminated.push(room.curr);
                     let index = member.indexOf(room.curr);
                     member.splice(index, 1);
-                    room.curr = member[0];
-                    if (room.player.length == 1 && room.status == 'play') {
+                    if (member.length == 1 && room.status == 'play') {
                         db.data.users[member[0]].exp += room.win_point;
                         conn.reply(m.chat, `@${member[0].split`@`[0]} Menang\n+${room.win_point}XP`, room.chat, { contextInfo: { mentionedJid: member } }).then(_ => {
                             delete conn.skata[id];
                             return !0;
                         });
+                    } else {
+                        room.curr = member[index % member.length];
+                        room.diam = true;
+                        room.new = true;
+                        conn.reply(m.chat, `Ketik *nextkata* untuk lanjut ke @${room.curr.split('@')[0]}`, 0, { contextInfo: { mentionedJid: [room.curr] } });
                     }
-                    room.diam = true;
-                    room.new = true;
-                    let who = room.curr;
-                    conn.preSudo('nextkata', who, m).then(async _ => {
-                        conn.ev.emit('messages.upsert', _);
-                    });
                 });
             }, 45000);
 

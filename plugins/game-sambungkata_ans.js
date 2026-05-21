@@ -8,7 +8,7 @@ handler.before = async function (m, { conn }) {
     if (!(id in this.skata)) return true
     let room = this.skata[id]
     let users = db.data.users
-    let _kata = await genKata()
+    let _kata = room.new ? await genKata() : ''
     let member = room.player
     let bonus = rwd(500, 600)
     
@@ -27,24 +27,54 @@ handler.before = async function (m, { conn }) {
         room.killer = false
         room.kata = _kata
         room.chat = await this.reply(m.chat, `Saatnya @${room.curr.split('@')[0]}\nMulai : *${_kata.toUpperCase()}*\n*${room.filter(_kata).toUpperCase()}... ?*\nJawab dengan mengetik langsung!\n"nyerah" untuk menyerah`, 0, { contextInfo: { mentionedJid: member } })
+        
+        clearTimeout(room.waktu)
+        room.waktu = setTimeout(async () => {
+            if (this.skata[id] && this.skata[id].curr === room.curr) {
+                this.reply(m.chat, `Waktu jawab habis\n@${room.curr.split('@')[0]} tereliminasi`, room.chat, { contextInfo: { mentionedJid: room.player } }).then(_ => {
+                    room.eliminated.push(room.curr)
+                    let index = room.player.indexOf(room.curr)
+                    room.player.splice(index, 1)
+                    if (room.player.length == 1) {
+                        users[room.player[0]].exp += room.win_point
+                        this.reply(m.chat, `@${room.player[0].split('@')[0]} Menang\n+${room.win_point}XP`, room.chat, { contextInfo: { mentionedJid: room.player } })
+                        delete this.skata[id]
+                        return
+                    }
+                    room.curr = room.player[index % room.player.length]
+                    room.new = true
+                    this.reply(m.chat, `Ketik *nextkata* untuk lanjut ke @${room.curr.split('@')[0]}`, 0, { contextInfo: { mentionedJid: [room.curr] } })
+                })
+            }
+        }, 45000)
     }
 
     if (room.curr == m.sender) {
         if (/nyerah/i.test(m.text)) {
+            clearTimeout(room.waktu)
             let lose_skata = mmr('lose', room.curr)
             let win_skata = room.killer ? mmr('win', room.killer) : 0
             users[room.curr].skata -= lose_skata
             if (room.killer) users[room.killer].skata += win_skata
             room.eliminated.push(room.curr)
-            room.player = room.player.filter(p => p !== room.curr)
-            room.curr = room.player.length ? room.player[0] : null
+            let index = room.player.indexOf(room.curr)
+            room.player.splice(index, 1)
+            
             if (room.player.length == 1) {
-                users[room.player[0]].money += room.win_point
+                users[room.player[0]].exp += room.win_point
+                this.reply(m.chat, `@${m.sender.split('@')[0]} menyerah!\n@${room.player[0].split('@')[0]} Berhasil bertahan\n+${room.win_point}XP`, room.chat, { contextInfo: { mentionedJid: [m.sender, room.player[0]] } })
                 delete this.skata[id]
-                return this.reply(m.chat, `@${room.player[0].split('@')[0]} Berhasil bertahan\n+${room.win_point}XP`, room.chat, { contextInfo: { mentionedJid: room.player } })
+                return true
             }
+            
+            room.curr = room.player[index % room.player.length]
+            await this.reply(m.chat, `@${m.sender.split('@')[0]} menyerah!`, m, { contextInfo: { mentionedJid: [m.sender] } })
+            
             room.new = true
-            return this.reply(m.chat, `@${m.sender.split('@')[0]} menyerah!`, m, { contextInfo: { mentionedJid: [m.sender] } })
+            // Trigger nextkata automatically
+            let who = room.curr
+            this.reply(m.chat, `Ketik *nextkata* untuk lanjut ke @${room.curr.split('@')[0]}`, 0, { contextInfo: { mentionedJid: [room.curr] } })
+            return true
         }
         
         let answerF = m.text.toLowerCase().trim().replace(/[^a-z]/gi, '')
@@ -62,6 +92,26 @@ Jawaban tidak valid atau sudah digunakan!`)
         let nextIndex = (room.player.indexOf(room.curr) + 1) % room.player.length
         room.curr = room.player[nextIndex]
         room.chat = await this.reply(m.chat, `👍+${bonus}XP\nGiliran @${room.curr.split('@')[0]}\n*${room.filter(answerF).toUpperCase()}... ?*\nJawab dengan mengetik langsung!\n"nyerah" untuk menyerah`, m, { contextInfo: { mentionedJid: member } })
+        
+        // Reset timeout for next player
+        room.waktu = setTimeout(async () => {
+            if (this.skata[id] && this.skata[id].curr === room.curr) {
+                this.reply(m.chat, `Waktu jawab habis\n@${room.curr.split('@')[0]} tereliminasi`, room.chat, { contextInfo: { mentionedJid: room.player } }).then(_ => {
+                    room.eliminated.push(room.curr)
+                    let index = room.player.indexOf(room.curr)
+                    room.player.splice(index, 1)
+                    if (room.player.length == 1) {
+                        users[room.player[0]].exp += room.win_point
+                        this.reply(m.chat, `@${room.player[0].split('@')[0]} Menang\n+${room.win_point}XP`, room.chat, { contextInfo: { mentionedJid: room.player } })
+                        delete this.skata[id]
+                        return
+                    }
+                    room.curr = room.player[index % room.player.length]
+                    room.new = true
+                    this.reply(m.chat, `Ketik *nextkata* untuk lanjut ke @${room.curr.split('@')[0]}`, 0)
+                })
+            }
+        }, 45000)
     } else {
         if (room.status === 'play') {
             return m.reply(room.eliminated.includes(m.sender) ? `Kamu sudah tereliminasi!` : `_Bukan giliranmu!_`)
