@@ -10,8 +10,14 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner }) => {
         let q = m.quoted ? m.quoted : m;
         let mime = (q.msg || q).mimetype || q.mediaType || '';
         let txt = text ? text : typeof q.text == 'string' ? q.text : '';
-        let avatar = await conn.profilePictureUrl(q.sender, 'image').catch(_ => 'https://telegra.ph/file/320b066dc81928b782c7b.png');
-        avatar = /tele/.test(avatar) ? avatar : await uploadImage((await conn.getFile(avatar)).data);
+        let avatar;
+        try {
+            avatar = await conn.profilePictureUrl(q.sender, 'image').catch(_ => 'https://telegra.ph/file/320b066dc81928b782c7b.png');
+            if (!/tele/.test(avatar)) avatar = await uploadImage((await conn.getFile(avatar)).data);
+        } catch {
+            avatar = 'https://telegra.ph/file/320b066dc81928b782c7b.png';
+        }
+        if (!avatar) avatar = 'https://telegra.ph/file/320b066dc81928b782c7b.png';
 
         if (!/image\/(jpe?g|png|webp)/.test(mime)) {
             let req = await ___qctext(txt, q.name, avatar);
