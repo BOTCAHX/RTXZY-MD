@@ -26,16 +26,17 @@ node index.js
 
 ----  
 
-## Catatan Penting!  
-**Important:**  
+## Catatan Penting
 
-- Untuk menggunakan bot ini, kamu diwajibkan mengisi **`Apikey`** terlebih dahulu. Jika tidak, bot tidak akan berfungsi dengan baik.  
-- Script ini **tidak bisa dijalankan** di **Termux** atau **Panel** yang tidak memiliki kelengkapan seperti:  
-  - ffmpeg  
-  - imagemagick  
-  - webp  
+**Important:**
 
-> Atau panel yang tidak bisa menginstal module **express.js**.  
+- Sebelum menggunakan bot ini, Anda **wajib mengisi `Apikey`** terlebih dahulu. Tanpa Apikey, bot tidak akan berfungsi dengan baik.
+- Script ini **tidak mendukung** eksekusi di **Termux**.
+- Bot tidak akan berjalan lancar jika dijalankan di panel yang **tidak memiliki komponen berikut**:
+  - `ffmpeg`
+  - `imagemagick`
+  - `webp`
+    
 
 - Menggunakan **97% fitur** dari [`RestApi`](https://api.botcahx.eu.org)  
 
