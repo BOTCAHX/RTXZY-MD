@@ -38,9 +38,11 @@
         "url": "https://github.com/BOTCAHX/RTXZY-MD/issues"
     },
     "license": "MIT",
+    "engines": {
+        "node": ">=22.0.0"
+    },
     "dependencies": {
-        "@adiwajshing/baileys": "npm:baileys@7.0.0-rc10",
-        "@adiwajshing/keyed-db": "^0.2.4",
+        "@whiskeysockets/baileys": "7.0.0-rc13",
         "@vitalets/google-translate-api": "^9.0.0",
         "async": "^3.2.4",
         "awesome-phonenumber": "^2.64.0",

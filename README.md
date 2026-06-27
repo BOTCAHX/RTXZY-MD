@@ -3,7 +3,7 @@
 - ✅ **Update  Lid resolver**  Penanganan lid jadi terbaru
 - ✅ **Menggunakan Baileys Latest**  [Baileys](https://github.com/WhiskeySockets/Baileys)
 - ✅ **Delete QR Code** Jadi Alternatif Nya Memakai Pairing Code
-- ✅ **Wajib Menggunakan Node.js 20++**
+- ✅ **Wajib Menggunakan Node.js 22++**
 
 
 ### Contact Admin
@@ -101,7 +101,7 @@ apt update && apt upgrade -y
 apt install nodejs imagemagick ffmpeg -y
 node -v
 if the version is still under 17, use this step
-curl -s https://deb.nodesource.com/setup_21.x | sudo bash
+curl -s https://deb.nodesource.com/setup_22.x | sudo bash
 apt-get install -y nodejs
 ```
 
