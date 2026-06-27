@@ -10,6 +10,7 @@
         "plugins": "plugins"
     },
     "scripts": {
+        "preinstall": "node -e \"if(parseInt(process.versions.node)<22){console.error('\\x1b[31m❌ Node.js '+process.versions.node+' is not supported. Please use Node.js 22 or higher.\\x1b[0m');process.exit(1)}\"",
         "start": "node index.js --autocleartmp",
         "test": "node test.js",
         "test2": "nodemon index.js --server --autocleartmp"
