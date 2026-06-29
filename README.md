@@ -115,7 +115,7 @@ Bot bisa di-clone via `git clone` langsung dari terminal panel, atau diupload se
 >
 > **Catatan:** Pastikan Node.js egg yang digunakan versi 22+, jika tidak bot akan error.
 >
-> **Catatan:** Jika panel tidak memiliki akses Terminal, gunakan Opsi 1 atau Opsi 3 agar tidak perlu terminal.
+> **Catatan:** Pterodactyl pasti punya Terminal, tapi belum tentu bisa bash. Jika Terminal tidak bisa bash, gunakan Opsi 1 atau Opsi 3.
 ---
 
 ## Pengaturan API Key
