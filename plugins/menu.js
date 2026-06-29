@@ -147,7 +147,7 @@ let handler = async (m, { conn, usedPrefix: _p, args = [], command }) => {
 
             let text = menuList.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), 
                 (_, name) => '' + replace[name])
-            await conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg' }, caption: text, mentions: [m.sender] }, { quoted: m });
+            await conn.sendMessage(m.chat, { image: { url: global.thumb || "https://telegra.ph/file/3a34bfa58714bdef500d9.jpg" }, caption: text, mentions: [m.sender] }, { quoted: m });
             return
         }
 
@@ -204,7 +204,7 @@ let handler = async (m, { conn, usedPrefix: _p, args = [], command }) => {
         let text = menuCategory.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), 
             (_, name) => '' + replace[name])
 
-        await conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg' }, caption: text, mentions: [m.sender] }, { quoted: m });
+        await conn.sendMessage(m.chat, { image: { url: global.thumb || "https://telegra.ph/file/3a34bfa58714bdef500d9.jpg" }, caption: text, mentions: [m.sender] }, { quoted: m });
     } catch (e) {
         conn.reply(m.chat, 'Maaf, menu sedang error', m)
         console.error(e)
