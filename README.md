@@ -131,9 +131,6 @@ Set prefix
 
 Open the package.json file and fill in your mongodb url in the `mongodb: --db mongodb url` section!
 
-## `--server`
-* Used for [heroku](https://heroku.com/) or scan through website
-
 ## `--restrict`
 * Enables restricted plugins (which can lead your number to be **banned** if used too often)
 * Group Administration `add, kick`
