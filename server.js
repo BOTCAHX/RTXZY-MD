@@ -44,11 +44,7 @@ function pipeEmit(event, event2, prefix = '') {
 }
 
 function keepAlive() {
-  const url = `https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
-  if (/(\/\/|\.)undefined\./.test(url)) return
-  setInterval(()=> {
-    fetch(url).catch(console.error)
-  }, 5 * 1000 * 60)
+  // KeepAlive only works on Replit — no-op elsewhere
 }
 
 
