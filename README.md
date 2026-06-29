@@ -1,4 +1,4 @@
-### RTXZY-MD
+<h1 align="center">RTXZY-MD</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Node.js-22%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node">
@@ -79,11 +79,11 @@ npm install
 
 Untuk menjalankan di **Pterodactyl Panel** caranya tergantung letak file:
 
-**Jika file langsung di `/home/container` (bukan dalam folder):**
+**Opsi 1 — File langsung di `/home/container` (bukan dalam folder):**
 
 - Set startup ke: `node index.js` atau `npm start`
 
-**Jika file berada dalam folder (contoh: `/home/container/RTXZY-MD` atau nama folder custom):**
+**Opsi 2 — File berada dalam folder (contoh: `/home/container/RTXZY-MD` atau nama folder custom):**
 
 1. Pindahkan file **`run.js`** ke `/home/container` (luar folder bot)
 2. Set startup panel ke: `node run.js`
