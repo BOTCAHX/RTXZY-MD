@@ -265,12 +265,12 @@ let handler = async (m, {
         if (dataPlayer(sender, ww).isvote === true)
             return m.reply("Kamu sudah melakukan voting");
         let b = getPlayerById(chat, sender, parseInt(target), ww);
+        if (b === false)
+            return m.reply("Player tidak terdaftar!");
         if (b.db.isdead === true)
             return m.reply(`Player ${target} sudah mati.`);
         if (ww[chat].player.length < parseInt(target))
             return m.reply("Invalid");
-        if (getPlayerById(chat, sender, parseInt(target), ww) === false)
-            return m.reply("Player tidak terdaftar!");
         vote(chat, parseInt(target), sender, ww);
         conn.sendMessage(m.chat, {
             react: {

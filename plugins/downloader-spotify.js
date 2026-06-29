@@ -10,16 +10,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       const {
         thumbnail,
         title,
-        name,
+        artist,
         duration,
         url
       } = jsons.result.data;
-      const {
-        id,
-        type
-      } = jsons.result.data.artist;
-      let captionvid = ` ∘ Title: ${title}\n∘ Id: ${id}\n∘ Duration: ${duration}\n∘ Type: ${type}`;
-      let pesan = await conn.reply(m.chat, captionvid, m)
+      let captionvid = ` ∘ Title: ${title}\n∘ Artits: ${artist}\n\n∘ Duration: ${duration}\n`;
+      let pesan = await conn.sendFile(m.chat, thumbnail, "thumb.png", captionvid, m)
       await conn.sendMessage(m.chat, { audio: { url: url }, mimetype: 'audio/mpeg' }, { quoted: m });
     } catch (e) {
       throw `🚩 ${eror}`;

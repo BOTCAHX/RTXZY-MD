@@ -3,7 +3,7 @@
 - ✅ **Update  Lid resolver**  Penanganan lid jadi terbaru
 - ✅ **Menggunakan Baileys Latest**  [Baileys](https://github.com/WhiskeySockets/Baileys)
 - ✅ **Delete QR Code** Jadi Alternatif Nya Memakai Pairing Code
-- ✅ **Wajib Menggunakan Node.js 20++**
+- ✅ **Wajib Menggunakan Node.js 22++**
 
 
 ### Contact Admin
@@ -26,16 +26,17 @@ node index.js
 
 ----  
 
-## Catatan Penting!  
-**Important:**  
+## Catatan Penting
 
-- Untuk menggunakan bot ini, kamu diwajibkan mengisi **`Apikey`** terlebih dahulu. Jika tidak, bot tidak akan berfungsi dengan baik.  
-- Script ini **tidak bisa dijalankan** di **Termux** atau **Panel** yang tidak memiliki kelengkapan seperti:  
-  - ffmpeg  
-  - imagemagick  
-  - webp  
+**Important:**
 
-> Atau panel yang tidak bisa menginstal module **express.js**.  
+- Sebelum menggunakan bot ini, Anda **wajib mengisi `Apikey`** terlebih dahulu. Tanpa Apikey, bot tidak akan berfungsi dengan baik.
+- Script ini **tidak mendukung** eksekusi di **Termux**.
+- Bot tidak akan berjalan lancar jika dijalankan di panel yang **tidak memiliki komponen berikut**:
+  - `ffmpeg`
+  - `imagemagick`
+  - `webp`
+    
 
 - Menggunakan **97% fitur** dari [`RestApi`](https://api.botcahx.eu.org)  
 
@@ -100,7 +101,7 @@ apt update && apt upgrade -y
 apt install nodejs imagemagick ffmpeg -y
 node -v
 if the version is still under 17, use this step
-curl -s https://deb.nodesource.com/setup_21.x | sudo bash
+curl -s https://deb.nodesource.com/setup_22.x | sudo bash
 apt-get install -y nodejs
 ```
 

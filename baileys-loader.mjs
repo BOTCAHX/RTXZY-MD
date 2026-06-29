@@ -1,5 +1,5 @@
 export const loadBaileys = async () => {
-    const baileys = await import('@adiwajshing/baileys');
+    const baileys = await import('@whiskeysockets/baileys');
     return {
         useMultiFileAuthState: baileys.useMultiFileAuthState,
         DisconnectReason: baileys.DisconnectReason,

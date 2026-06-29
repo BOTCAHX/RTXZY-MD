@@ -6,6 +6,12 @@ const os = require('os');
 const express = require('express');
 const app = express();
 
+const nodeVersion = parseInt(process.versions.node.split('.')[0]);
+if (nodeVersion < 22) {
+  console.error(`\x1b[31m❌ Node.js ${nodeVersion} is not supported. Please use Node.js 22 or higher.\x1b[0m`);
+  process.exit(1);
+}
+
 // Express.js 
 const ports = [4000, 3000, 5000, 8000, 8080, 4444];
 let availablePortIndex = 0;
@@ -110,8 +116,8 @@ function start(file) {
     }
     console.log('\x1b[33m%s\x1b[0m', `🟡 Found ${files.length} plugins in folder ${pluginsFolder}`);
     try {
-      require.resolve('@adiwajshing/baileys');
-      console.log('\x1b[33m%s\x1b[0m', `🟡 Baileys library version ${require('@adiwajshing/baileys/package.json').version} is installed`);
+      require.resolve('@whiskeysockets/baileys');
+      console.log('\x1b[33m%s\x1b[0m', `🟡 Baileys library version ${require('@whiskeysockets/baileys/package.json').version} is installed`);
     } catch (e) {
       console.error('\x1b[31m%s\x1b[0m', `❌ Baileys library is not installed`);
     }

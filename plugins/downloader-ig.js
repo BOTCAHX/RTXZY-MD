@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-   if (!args[0]) throw `*Contoh:* ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`
+   if (!args[0]) throw `*Contoh:* ${usedPrefix}${command} https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==`
    
    if (!args[0].match(/instagram/gi)) {
        throw `URL Instagram Tidak Valid!`
