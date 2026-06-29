@@ -7,8 +7,7 @@
 
 
 ### Contact Admin
-Hubungi admin melalui WhatsApp untuk informasi lebih lanjut atau bantuan cepat.
-
+Hubungi admin melalui WhatsApp jika terjadi kesalahan saat instalasi script.
 <p align="center">
   <a href="https://wa.me/6282221792667">
     <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
