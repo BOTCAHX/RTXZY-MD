@@ -43,7 +43,7 @@
         "node": ">=22.0.0"
     },
     "dependencies": {
-        "@whiskeysockets/baileys": "7.0.0-rc13",
+        "@whiskeysockets/baileys": "^7.0.0-rc13",
         "@vitalets/google-translate-api": "^9.0.0",
         "async": "^3.2.4",
         "awesome-phonenumber": "^2.64.0",
