@@ -4,8 +4,7 @@ let uploader = require('../lib/uploadImage');
 let handler = m => m;
 
 handler.before = async function(m, { conn }) {
-    if (!global.antiporn) return;
-
+    if (!global.db.data.chats[m.chat]?.antiporn) return;
     let target = m;
     let mime = (m.msg || m).mimetype || '';
 
