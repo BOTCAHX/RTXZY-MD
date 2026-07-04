@@ -1,6 +1,6 @@
 {
     "name": "rtxzy",
-    "version": "8.0.4",
+    "version": "8.0.5",
     "description": "Lightweight WhatsApp Bot",
     "depecrated": false,
     "main": "index.js",
@@ -13,7 +13,7 @@
         "preinstall": "node -e \"if(parseInt(process.versions.node)<22){console.error('\\x1b[31m❌ Node.js '+process.versions.node+' is not supported. Please use Node.js 22 or higher.\\x1b[0m');process.exit(1)}\"",
         "start": "node index.js --autocleartmp",
         "test": "node test.js",
-        "test2": "nodemon index.js --server --autocleartmp"
+        "test2": "nodemon index.js --autocleartmp"
     },
     "keywords": [
         "whatsapp-bot-md",
@@ -43,7 +43,7 @@
         "node": ">=22.0.0"
     },
     "dependencies": {
-        "@whiskeysockets/baileys": "7.0.0-rc13",
+        "@whiskeysockets/baileys": "^7.0.0-rc13",
         "@vitalets/google-translate-api": "^9.0.0",
         "async": "^3.2.4",
         "awesome-phonenumber": "^2.64.0",
@@ -54,7 +54,6 @@
         "colors": "1.4.0",
         "crypto": "^1.0.1",
         "didyoumean": "^1.2.2",
-        "dotenv": "^17.3.1",
         "express": "^4.18.2",
         "file-type": "^16.5.3",
         "form-data": "^4.0.0",
@@ -65,7 +64,6 @@
         "link-preview-js": "^3.0.4",
         "lodash": "^4.17.21",
         "lowdb": "^2.1.0",
-        "lru-cache": "^11.2.4",
         "moment-timezone": "^0.5.37",
         "mongoose": "^6.0.14",
         "node-cache": "^5.1.2",
@@ -78,14 +76,11 @@
         "os": "^0.1.2",
         "perf_hooks": "^0.0.1",
         "qrcode": "^1.5.0",
-        "qrcode-terminal": "^0.12.0",
         "readline": "^1.3.0",
         "sharp": "^0.32.6",
         "similarity": "^1.2.1",
-        "socket.io": "^4.5.1",
         "syntax-error": "^1.4.0",
         "terminal-image": "^2.0.0",
-        "tiktokdl": "^0.0.5",
         "url": "^0.11.0",
         "url-regex": "^5.0.0",
         "url-regex-safe": "^2.1.0",

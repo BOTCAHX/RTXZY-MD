@@ -1,4 +1,3 @@
-process.env.TZ = 'Asia/Jakarta'
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')

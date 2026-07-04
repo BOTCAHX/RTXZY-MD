@@ -1,4 +1,4 @@
-FROM node:lts-buster
+FROM node:22-bookworm
 
 RUN apt-get update && \
   apt-get install -y \
@@ -10,7 +10,7 @@ RUN apt-get update && \
 
 COPY package.json .
 
-RUN npm install && npm install qrcode-terminal
+RUN npm install
 
 COPY . .
 

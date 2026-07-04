@@ -1,4 +1,5 @@
-require("dotenv").config();
+// Timezone
+process.env.TZ = 'Asia/Jakarta';
 
 global.owner = ["62895331520602"]; // wajib di isi tidak boleh kosong
 global.mods = ["62895331520602"]; // wajib di isi tidak boleh kosong
@@ -18,23 +19,16 @@ global.author = "Bot WhatsApp"; // watermark stikcker author
 global.maxwarn = "5"; // Peringatan maksimum Warn
 
 global.autobio = false; // Set true/false untuk mengaktifkan atau mematikan autobio (default: false)
-global.antiporn = false; // Set true/false untuk Auto delete pesan porno (bot harus admin) (default: false)
 global.spam = false; // Set true/false untuk anti spam (default: false)
 global.gcspam = false; // Set true/false untuk menutup grup ketika spam (default: false)
 
 // APIKEY INI WAJIB UNTUK DI ISI! //
 global.btc = "YOUR_APIKEY_HERE";
-// global.btc = process.env.API_KEY_BTC;
-// aktifkan akses .env di atas jika kamu ingin menaruh key api di .env
-// Daftar terlebih dahulu https://api.botcahx.eu.org
 
 
 
 // AKSESKEY INI DI ISI JIKA DIPERLUKAN JADI TIDAK WAJIB DI ISI! (e.g suno ai (ai music ) & fitur prem lainnya//
 global.aksesKey = "YOUR_AKSESKEY_HERE";
-// global.aksesKey = process.env.API_KEY_BTC_AKSESKEY;
-// aktifkan akses .env di atas jika kamu ingin menaruh key api di .env
-// Daftar terlebih dahulu https://api.botcahx.eu.org
 
 // Tidak boleh diganti atau di ubah
 global.APIs = {
