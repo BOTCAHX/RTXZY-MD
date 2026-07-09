@@ -29,6 +29,59 @@ async function getBaileys() {
     return baileysCache;
 }
 
+// ─── Perceptual hash (dHash) helpers ───────────────────────────
+
+let sharpCache;
+async function getSharp() {
+    if (!sharpCache) sharpCache = require('sharp');
+    return sharpCache;
+}
+
+/** Compute 64-bit difference hash from a WEBP sticker buffer. */
+async function computeDHash(buffer) {
+    const sharp = await getSharp();
+    const { data } = await sharp(buffer)
+        .greyscale()
+        .resize(9, 8, { fit: 'fill' })
+        .raw()
+        .toBuffer({ resolveWithObject: true });
+
+    let hash = 0n;
+    for (let y = 0; y < 8; y++) {
+        for (let x = 0; x < 8; x++) {
+            if (data[y * 9 + x] < data[y * 9 + x + 1]) {
+                hash |= (1n << BigInt(y * 8 + x));
+            }
+        }
+    }
+    return hash;
+}
+
+/** Hamming distance between two 64-bit dHashes. */
+function hammingDistance(a, b) {
+    let diff = a ^ b;
+    let count = 0;
+    while (diff) {
+        count += Number(diff & 1n);
+        diff >>= 1n;
+    }
+    return count;
+}
+
+/** Download a sticker's raw WEBP buffer. */
+async function downloadSticker(msg, downloadContentFromMessage) {
+    try {
+        const stream = await downloadContentFromMessage(msg.message, 'sticker');
+        const chunks = [];
+        for await (const chunk of stream) chunks.push(chunk);
+        return Buffer.concat(chunks);
+    } catch {
+        return null;
+    }
+}
+
+// ─── Core logic ────────────────────────────────────────────────
+
 module.exports = {
     async all(m, chatUpdate) {
         if (m.isBaileys) return;
@@ -40,40 +93,90 @@ module.exports = {
         if (!m.msg?.fileSha256) return;
 
         const hashHex = hashToHex(m.msg.fileSha256);
+        const stickerDB = global.db.data?.sticker;
+        if (!stickerDB) return;
 
-        if (!(hashHex in global.db.data?.sticker)) return;
+        // ── FAST PATH: fileSha256 match ──
+        if (hashHex in stickerDB) {
+            const cmdData = stickerDB[hashHex];
 
-        const cmdData = global.db.data.sticker[hashHex];
-        const { text, mentionedJid } = cmdData;
+            // Lazily populate dHash for known stickers (fire & forget)
+            if (!cmdData.dHash) {
+                getBaileys().then(({ downloadContentFromMessage }) =>
+                    downloadSticker(m, downloadContentFromMessage)
+                ).then(buffer => {
+                    if (buffer) computeDHash(buffer).then(dh => cmdData.dHash = dh);
+                }).catch(() => {});
+            }
 
-        const baileys = await getBaileys();
-        const { proto, generateWAMessage } = baileys;
+            return emitCommand.call(this, m, chatUpdate, cmdData.text, cmdData.mentionedJid);
+        }
 
+        // ── FALLBACK: perceptual hash matching for unknown stickers ──
         try {
-            const fakeMsg = await generateWAMessage(m.chat, {
-                text: text,
-                mentions: mentionedJid || [],
-            }, {
-                userJid: m.sender,
-            });
+            const { downloadContentFromMessage } = await getBaileys();
+            const buffer = await downloadSticker(m, downloadContentFromMessage);
+            if (!buffer) return;
 
-            fakeMsg.key = {
-                ...fakeMsg.key,
-                fromMe: false,
-                id: m.key.id,
-                participant: m.sender,
-            };
+            const dh = await computeDHash(buffer);
+            let bestMatch = null;
+            let bestDist = 10; // threshold: up to 10 differing bits out of 64
 
-            const upsertEvent = {
-                ...chatUpdate,
-                messages: [proto.WebMessageInfo.fromObject(fakeMsg)],
-                type: 'append'
-            };
+            for (const data of Object.values(stickerDB)) {
+                if (!data.dHash) continue;
+                const dist = hammingDistance(dh, data.dHash);
+                if (dist < bestDist) {
+                    bestDist = dist;
+                    bestMatch = data;
+                }
+            }
 
-            this.ev.emit('messages.upsert', upsertEvent);
-
+            if (bestMatch) {
+                // Auto-link: store this fileSha256 → same command
+                stickerDB[hashHex] = {
+                    text: bestMatch.text,
+                    mentionedJid: bestMatch.mentionedJid,
+                    creator: bestMatch.creator,
+                    at: Date.now(),
+                    locked: false,
+                    dHash: dh,
+                };
+                return emitCommand.call(this, m, chatUpdate, bestMatch.text, bestMatch.mentionedJid);
+            }
         } catch (e) {
-            console.error('Error Media:', e);
+            console.error('dHash fallback error:', e);
         }
     }
 };
+
+/** Fabricate a messages.upsert to trigger the command handler. */
+async function emitCommand(m, chatUpdate, text, mentionedJid) {
+    const baileys = await getBaileys();
+    const { proto, generateWAMessage } = baileys;
+
+    try {
+        const fakeMsg = await generateWAMessage(m.chat, {
+            text: text,
+            mentions: mentionedJid || [],
+        }, {
+            userJid: m.sender,
+        });
+
+        fakeMsg.key = {
+            ...fakeMsg.key,
+            fromMe: false,
+            id: m.key.id,
+            participant: m.sender,
+        };
+
+        const upsertEvent = {
+            ...chatUpdate,
+            messages: [proto.WebMessageInfo.fromObject(fakeMsg)],
+            type: 'append'
+        };
+
+        this.ev.emit('messages.upsert', upsertEvent);
+    } catch (e) {
+        console.error('Error Media:', e);
+    }
+}
