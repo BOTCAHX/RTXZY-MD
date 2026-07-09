@@ -47,13 +47,10 @@ async function extractPackId(buffer) {
     }
 }
 
-/** Download a sticker's raw WEBP buffer using baileys downloadContentFromMessage. */
-async function downloadSticker(msg, downloadContentFromMessage) {
+/** Download a sticker's raw WEBP buffer using the message's built-in download method. */
+async function downloadSticker(m) {
     try {
-        const stream = await downloadContentFromMessage(msg.message, 'sticker');
-        const chunks = [];
-        for await (const chunk of stream) chunks.push(chunk);
-        return Buffer.concat(chunks);
+        return await m.download();
     } catch {
         return null;
     }
@@ -81,9 +78,7 @@ module.exports = {
 
             // Lazily populate packId for known stickers (fire & forget)
             if (!cmdData.packId) {
-                getBaileys().then(({ downloadContentFromMessage }) =>
-                    downloadSticker(m, downloadContentFromMessage)
-                ).then(async buffer => {
+                downloadSticker(m).then(async buffer => {
                     if (buffer) {
                         const packId = await extractPackId(buffer);
                         if (packId) cmdData.packId = packId;
@@ -96,9 +91,7 @@ module.exports = {
 
         // ── FALLBACK: match by sticker-pack-id ──
         try {
-            const { downloadContentFromMessage } = await getBaileys();
-            const buffer = await downloadSticker(m, downloadContentFromMessage);
-            if (!buffer) return;
+            const buffer = await downloadSticker(m);
 
             const packId = await extractPackId(buffer);
             if (!packId) return;  // no EXIF, can't match
