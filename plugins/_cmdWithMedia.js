@@ -1,4 +1,5 @@
 const { loadBaileys } = require('../baileys-loader.mjs');
+const { Image } = require('node-webpmux');
 
 let baileysCache = null;
 
@@ -29,46 +30,24 @@ async function getBaileys() {
     return baileysCache;
 }
 
-// ─── Perceptual hash (dHash) helpers ───────────────────────────
+// ─── EXIF sticker-pack-id helpers ──────────────────────────
 
-let sharpCache;
-async function getSharp() {
-    if (!sharpCache) sharpCache = require('sharp');
-    return sharpCache;
-}
-
-/** Compute 64-bit difference hash from a WEBP sticker buffer. */
-async function computeDHash(buffer) {
-    const sharp = await getSharp();
-    const { data } = await sharp(buffer)
-        .greyscale()
-        .resize(9, 8, { fit: 'fill' })
-        .raw()
-        .toBuffer({ resolveWithObject: true });
-
-    let hash = 0n;
-    for (let y = 0; y < 8; y++) {
-        for (let x = 0; x < 8; x++) {
-            if (data[y * 9 + x] < data[y * 9 + x + 1]) {
-                hash |= (1n << BigInt(y * 8 + x));
-            }
-        }
+/** Extract sticker-pack-id from a WEBP sticker buffer.
+ *  Returns null if the sticker has no EXIF or no pack-id. */
+async function extractPackId(buffer) {
+    try {
+        const img = new Image();
+        await img.load(buffer);
+        if (!img.exif) return null;
+        // EXIF data starts at byte 22 (after the webp exif header)
+        const json = JSON.parse(img.exif.slice(22).toString());
+        return json['sticker-pack-id'] || null;
+    } catch {
+        return null;
     }
-    return hash;
 }
 
-/** Hamming distance between two 64-bit dHashes. */
-function hammingDistance(a, b) {
-    let diff = a ^ b;
-    let count = 0;
-    while (diff) {
-        count += Number(diff & 1n);
-        diff >>= 1n;
-    }
-    return count;
-}
-
-/** Download a sticker's raw WEBP buffer. */
+/** Download a sticker's raw WEBP buffer using baileys downloadContentFromMessage. */
 async function downloadSticker(msg, downloadContentFromMessage) {
     try {
         const stream = await downloadContentFromMessage(msg.message, 'sticker');
@@ -80,7 +59,7 @@ async function downloadSticker(msg, downloadContentFromMessage) {
     }
 }
 
-// ─── Core logic ────────────────────────────────────────────────
+// ─── Core logic ────────────────────────────────────────────
 
 module.exports = {
     async all(m, chatUpdate) {
@@ -100,51 +79,48 @@ module.exports = {
         if (hashHex in stickerDB) {
             const cmdData = stickerDB[hashHex];
 
-            // Lazily populate dHash for known stickers (fire & forget)
-            if (!cmdData.dHash) {
+            // Lazily populate packId for known stickers (fire & forget)
+            if (!cmdData.packId) {
                 getBaileys().then(({ downloadContentFromMessage }) =>
                     downloadSticker(m, downloadContentFromMessage)
-                ).then(buffer => {
-                    if (buffer) computeDHash(buffer).then(dh => cmdData.dHash = dh);
+                ).then(async buffer => {
+                    if (buffer) {
+                        const packId = await extractPackId(buffer);
+                        if (packId) cmdData.packId = packId;
+                    }
                 }).catch(() => {});
             }
 
             return emitCommand.call(this, m, chatUpdate, cmdData.text, cmdData.mentionedJid);
         }
 
-        // ── FALLBACK: perceptual hash matching for unknown stickers ──
+        // ── FALLBACK: match by sticker-pack-id ──
         try {
             const { downloadContentFromMessage } = await getBaileys();
             const buffer = await downloadSticker(m, downloadContentFromMessage);
             if (!buffer) return;
 
-            const dh = await computeDHash(buffer);
-            let bestMatch = null;
-            let bestDist = 10; // threshold: up to 10 differing bits out of 64
+            const packId = await extractPackId(buffer);
+            if (!packId) return;  // no EXIF, can't match
 
-            for (const data of Object.values(stickerDB)) {
-                if (!data.dHash) continue;
-                const dist = hammingDistance(dh, data.dHash);
-                if (dist < bestDist) {
-                    bestDist = dist;
-                    bestMatch = data;
+            // Search for a command with the same packId
+            for (const [key, data] of Object.entries(stickerDB)) {
+                if (!data.packId) continue;
+                if (data.packId === packId) {
+                    // Auto-link: store this fileSha256 → same command
+                    stickerDB[hashHex] = {
+                        text: data.text,
+                        mentionedJid: data.mentionedJid,
+                        creator: data.creator,
+                        at: Date.now(),
+                        locked: false,
+                        packId: packId,
+                    };
+                    return emitCommand.call(this, m, chatUpdate, data.text, data.mentionedJid);
                 }
             }
-
-            if (bestMatch) {
-                // Auto-link: store this fileSha256 → same command
-                stickerDB[hashHex] = {
-                    text: bestMatch.text,
-                    mentionedJid: bestMatch.mentionedJid,
-                    creator: bestMatch.creator,
-                    at: Date.now(),
-                    locked: false,
-                    dHash: dh,
-                };
-                return emitCommand.call(this, m, chatUpdate, bestMatch.text, bestMatch.mentionedJid);
-            }
         } catch (e) {
-            console.error('dHash fallback error:', e);
+            console.error('packId fallback error:', e);
         }
     }
 };
