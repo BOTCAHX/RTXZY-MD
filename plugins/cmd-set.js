@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Penggunaan:\n${usedPrefix + command} <teks>\n\nContoh:\n*${usedPrefix + command} ${usedPrefix}afk*`
 
     let sticker = db.data.sticker
-    let hash = m.quoted.fileSha256.toString('hex')
+    let hash = Buffer.from(m.quoted.fileSha256).toString('hex')
 
     if (sticker[hash] && sticker[hash].locked) 
         throw 'Kamu tidak memiliki izin untuk mengubah perintah stiker ini'

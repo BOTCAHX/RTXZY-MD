@@ -2,6 +2,26 @@ const { loadBaileys } = require('../baileys-loader.mjs');
 
 let baileysCache = null;
 
+/** Convert comma-separated decimal keys to hex keys (migration from old format).
+ *  Runs on every message — cheap after first pass since converted keys won't match. */
+function migrateStickerKeys() {
+    const sticker = global.db.data?.sticker;
+    if (!sticker) return;
+    const commaKey = /^\d+(,\d+){31}$/;  // 32 comma-sep decimals = old key format
+    for (const key of Object.keys(sticker)) {
+        if (!commaKey.test(key)) continue;
+        const hexKey = Buffer.from(key.split(',').map(Number)).toString('hex');
+        if (hexKey in sticker) continue;  // already exists, skip
+        sticker[hexKey] = sticker[key];
+        delete sticker[key];
+    }
+}
+
+/** Normalize fileSha256 to hex string regardless of input type */
+function hashToHex(fileSha256) {
+    return Buffer.from(fileSha256).toString('hex');
+}
+
 async function getBaileys() {
     if (!baileysCache) {
         baileysCache = await loadBaileys();
@@ -14,9 +34,12 @@ module.exports = {
         if (m.isBaileys) return;
         if (!m.message) return;
 
+        // Run migration — no guard so it also catches keys loaded after init
+        migrateStickerKeys();
+
         if (!m.msg?.fileSha256) return;
 
-        const hashHex = m.msg.fileSha256.toString('hex');
+        const hashHex = hashToHex(m.msg.fileSha256);
 
         if (!(hashHex in global.db.data?.sticker)) return;
 
@@ -24,25 +47,22 @@ module.exports = {
         const { text, mentionedJid } = cmdData;
 
         const baileys = await getBaileys();
-        const { proto, generateWAMessage, areJidsSameUser } = baileys;
+        const { proto, generateWAMessage } = baileys;
 
         try {
             const fakeMsg = await generateWAMessage(m.chat, {
                 text: text,
                 mentions: mentionedJid || [],
             }, {
-                userJid: this.user?.id,
-                quoted: m.quoted?.fakeObj || m.quoted || null,
+                userJid: m.sender,
             });
 
             fakeMsg.key = {
                 ...fakeMsg.key,
-                fromMe: areJidsSameUser(m.sender, this.user?.id),
+                fromMe: false,
                 id: m.key.id,
-                participant: m.isGroup ? m.sender : undefined,
+                participant: m.sender,
             };
-
-            fakeMsg.messageContextInfo = m.messageContextInfo;
 
             const upsertEvent = {
                 ...chatUpdate,
