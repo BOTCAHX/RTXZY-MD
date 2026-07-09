@@ -77,11 +77,13 @@ module.exports = {
             const cmdData = stickerDB[hashHex];
             // Populate packId for known stickers — await so fallback can
             // find it immediately if a re-encoded sticker arrives next.
-            if (!cmdData.packId) {
+            if (cmdData.packId === undefined) {
                 const buffer = await downloadSticker(m).catch(() => null);
                 if (buffer) {
                     const packId = await extractPackId(buffer);
-                    if (packId) cmdData.packId = packId;
+                    cmdData.packId = packId ?? null; // store null to skip re-download
+                } else {
+                    cmdData.packId = null; // download failed, don't retry
                 }
             }
             return emitCommand.call(this, m, chatUpdate, cmdData.text, cmdData.mentionedJid);
