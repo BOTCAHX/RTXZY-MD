@@ -75,17 +75,15 @@ module.exports = {
         // ── FAST PATH: fileSha256 match ──
         if (hashHex in stickerDB) {
             const cmdData = stickerDB[hashHex];
-
-            // Lazily populate packId for known stickers (fire & forget)
+            // Populate packId for known stickers — await so fallback can
+            // find it immediately if a re-encoded sticker arrives next.
             if (!cmdData.packId) {
-                downloadSticker(m).then(async buffer => {
-                    if (buffer) {
-                        const packId = await extractPackId(buffer);
-                        if (packId) cmdData.packId = packId;
-                    }
-                }).catch(() => {});
+                const buffer = await downloadSticker(m).catch(() => null);
+                if (buffer) {
+                    const packId = await extractPackId(buffer);
+                    if (packId) cmdData.packId = packId;
+                }
             }
-
             return emitCommand.call(this, m, chatUpdate, cmdData.text, cmdData.mentionedJid);
         }
 

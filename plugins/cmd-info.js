@@ -47,6 +47,7 @@ Atau teman bisa setcmd sendiri di stiker versi mereka.`
 
     let txt = `
 *fileSha256:* ${hash}
+*Pack ID:* ${sticker.packId || '-'}
 *Text:* ${sticker.text || '-'}
 *Time Create:* ${sticker.at || '-'}
 *Locked:* ${sticker.locked ? 'Yes' : 'No'}

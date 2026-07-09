@@ -11,12 +11,27 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (sticker[hash] && sticker[hash].locked) 
         throw 'Kamu tidak memiliki izin untuk mengubah perintah stiker ini'
 
+    // Extract sticker-pack-id from quoted sticker's WEBP EXIF
+    let packId = null;
+    try {
+        const { Image } = require('node-webpmux');
+        const buffer = await m.quoted.download();
+        if (buffer) {
+            const img = new Image();
+            await img.load(buffer);
+            if (img.exif) {
+                packId = JSON.parse(img.exif.slice(22).toString())['sticker-pack-id'] || null;
+            }
+        }
+    } catch {}
+
     sticker[hash] = {
         text,
         mentionedJid: m.mentionedJid,
         creator: m.sender,
         at: +new Date(),
         locked: false,
+        packId,
     }
 
     m.reply(`✅ Berhasil mengaitkan perintah *${text}* ke stiker ini!`)
