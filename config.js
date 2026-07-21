@@ -17,7 +17,7 @@ global.thumb = "https://telegra.ph/file/3a34bfa58714bdef500d9.jpg";
 global.packname = "Made With"; // watermark stikcker packname
 global.author = "Bot WhatsApp"; // watermark stikcker author
 global.maxwarn = "5"; // Peringatan maksimum Warn
-
+global.idchannel = ["123123412341234@newsletter"]; // channel untuk pengumuman bot max 3, tutorial https://youtu.be/O1CoP5bpssA?si=3H7Ly7jp2luTuHoQ
 global.autobio = false; // Set true/false untuk mengaktifkan atau mematikan autobio (default: false)
 global.spam = false; // Set true/false untuk anti spam (default: false)
 global.gcspam = false; // Set true/false untuk menutup grup ketika spam (default: false)
