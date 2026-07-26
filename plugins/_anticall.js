@@ -1,0 +1,15 @@
+let handler = m => m
+
+handler.before = async function (m) {
+  if (!this._anticall_registered) {
+    this._anticall_registered = true;
+    this.ev.on('call', async (call) => {
+        if (call[0].status == 'offer') {
+          await this.rejectCall(call[0].id, call[0].from);
+          //await this.updateBlockStatus(call[0].from, "block");
+        }
+    });
+  }
+}
+
+export default handler
