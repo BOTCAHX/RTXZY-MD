@@ -4,21 +4,14 @@ let handler = async (m, { conn }) => {
   try {
     let res = await fetch(`https://api.botcahx.eu.org/api/news/koransindo?apikey=${btc}`);
     let json = await res.json();
-    let newsdata = json.result.map(item => {
-      return {
-        text: `―KORANSINDO―\n\n*Judul*     : ${item.berita}\n*URL*       : ${item.berita_url}\n*Jenis*     : ${item.berita_jenis || 'Tidak diketahui'}`,
-        thumb: item.berita_thumb || ''
-      };
-    });
-    let choice = pickRandom(newsdata);
-    await conn.sendMessage(
-      m.chat,
-      {
-        image: { url: choice.thumb },
-        caption: choice.text
-      },
-      { quoted: m }
-    );
+    let items = json.result.filter(i => i.berita && i.berita_url);
+    let choice = pickRandom(items);
+    let text = `―KORANSINDO―\n\n*Judul*     : ${choice.berita}\n*URL*       : ${choice.berita_url}\n*Jenis*     : ${choice.berita_jenis || 'Tidak diketahui'}`;
+    if (choice.berita_thumb) {
+      await conn.sendMessage(m.chat, { image: { url: choice.berita_thumb }, caption: text }, { quoted: m });
+    } else {
+      conn.reply(m.chat, text, m);
+    }
   } catch (e) {
     throw eror
   }

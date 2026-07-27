@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn }) => {
   try {
-    let res = await fetch(`https://api.botcahx.eu.org/api/news/inewstv?apikey=${btc}`);
+    let res = await fetch(`https://api.botcahx.eu.org/api/news/inews?apikey=${btc}`);
     let json = await res.json();
     let items = json.result.filter(i => i.berita && i.berita_url);
     let choice = pickRandom(items);
