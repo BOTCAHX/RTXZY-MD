@@ -3,19 +3,18 @@ let handler = async (m, { conn }) => {
 try {
   let res = await fetch(`https://api.botcahx.eu.org/api/news/cnn?&apikey=${btc}`);
   let json = await res.json()
-  var news = [
-       `―CNNC―\n\nBerita: ${json.result[0].berita}\n\nBeritaUrl: ${json.result[0].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[1].berita}\n\nBeritaUrl: ${json.result[1].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[2].berita}\n\nBeritaUrl: ${json.result[2].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[3].berita}\n\nBeritaUrl: ${json.result[3].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[4].berita}\n\nBeritaUrl: ${json.result[4].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[5].berita}\n\nBeritaUrl: ${json.result[5].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[6].berita}\n\nBeritaUrl: ${json.result[6].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[7].berita}\n\nBeritaUrl: ${json.result[7].berita_url}`, 
-       `―CNNC―\n\nBerita: ${json.result[8].berita}\n\nBeritaUrl: ${json.result[8].berita_url}`, 
-    
-    ]
-conn.reply(m.chat,`${pickRandom(news)}`);;
+    let items = json.result.filter(item => item.berita && item.berita_url);
+    let choice = pickRandom(items);
+    let text = `―CNN―\n\n*Judul*     : ${choice.berita}\n*URL*       : ${choice.berita_url}\n*Jenis*     : ${choice.berita_jenis || 'Tidak diketahui'}\n*Di upload* : ${choice.berita_diupload || 'Tidak diketahui'}`;
+    if (choice.berita_thumb) {
+      try {
+        await conn.sendMessage(m.chat, { image: { url: choice.berita_thumb }, caption: text }, { quoted: m });
+      } catch (e) {
+        conn.reply(m.chat, text, m);
+      }
+    } else {
+      conn.reply(m.chat, text, m);
+    }
 } catch (e) {
 throw eror
   }

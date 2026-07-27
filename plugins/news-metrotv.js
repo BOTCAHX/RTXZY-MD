@@ -4,11 +4,15 @@ let handler = async (m, { conn }) => {
   try {
     let res = await fetch(`https://api.botcahx.eu.org/api/news/metrotv?apikey=${btc}`);
     let json = await res.json();
-    let items = json.result.filter(i => i.berita && i.berita_url);
+    let items = json.result.filter(item => item.berita && item.berita_url);
     let choice = pickRandom(items);
     let text = `―METROTV―\n\n*Judul*     : ${choice.berita}\n*URL*       : ${choice.berita_url}`;
     if (choice.berita_thumb) {
-      await conn.sendMessage(m.chat, { image: { url: choice.berita_thumb }, caption: text }, { quoted: m });
+      try {
+        await conn.sendMessage(m.chat, { image: { url: choice.berita_thumb }, caption: text }, { quoted: m });
+      } catch (e) {
+        conn.reply(m.chat, text, m);
+      }
     } else {
       conn.reply(m.chat, text, m);
     }
