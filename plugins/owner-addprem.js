@@ -44,7 +44,7 @@ ${nama} sekarang menjadi user *Premium* selama *${days} hari*
 Sisa premium: ${msToDate(global.db.data.users[who].premiumTime - now)}`
 
   conn.reply(m.chat, teks, m, { mentions: [who] })
-  conn.reply(who, `*KAMU JADI PREMIUM!*
+  conn.reply(m.chat, `*KAMU JADI PREMIUM!*
 
 Selamat! Akses premium kamu aktif selama *${days} hari*.
 
