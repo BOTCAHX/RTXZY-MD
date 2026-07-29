@@ -45,7 +45,7 @@
     },
     "dependencies": {
         "@vitalets/google-translate-api": "^9.0.0",
-        "@whiskeysockets/baileys": "^7.0.0-rc13",
+        "@whiskeysockets/baileys": "^7.0.0-rc14",
         "async": "^3.2.4",
         "awesome-phonenumber": "^2.64.0",
         "axios": "^0.27.2",
