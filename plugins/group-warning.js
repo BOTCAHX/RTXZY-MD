@@ -9,25 +9,37 @@ let handler = async (m, { conn, text, args, groupMetadata, usedPrefix, command }
         let warn = global.db.data.users[who].warn
         if (warn < war) {
             global.db.data.users[who].warn += 1
-            m.reply(`
+            await conn.sendMessage(m.chat, {
+                text: `
 ⚠️ *Pengguna yang Diperingatkan* ⚠️
 
 ▢ *Admin:* ${name}
 ▢ *Pengguna:* @${who.split`@`[0]}
 ▢ *Memperingatkan:* ${warn + 1}/${war}
-▢ *Alasan:* ${text}`, null, { mentions: [who] }) 
-            m.reply(`
+▢ *Alasan:* ${text}`,
+                mentions: [who]
+            })
+            await conn.sendMessage(m.chat, {
+                text: `
 ⚠️ *PERINGATAN* ⚠️
-Anda menerima peringatan dari admin
+@${who.split`@`[0]} menerima peringatan dari admin
 
 ▢ *Memperingatkan:* ${warn + 1}/${war} 
-Jika Anda menerima *${war}* Peringatan bahwa Anda akan dihapus secara otomatis dari grup`, who)
+Jika menerima *${war}* Peringatan maka akan dihapus otomatis dari grup`,
+                mentions: [who]
+            })
         } else if (warn == war) {
             global.db.data.users[who].warn = 0
-            m.reply(`⛔ Pengguna melebihi peringatan *${war}* karena itu akan dihapus`)
+            await conn.sendMessage(m.chat, {
+                text: `⛔ @${who.split`@`[0]} melebihi peringatan *${war}* karena itu akan dihapus`,
+                mentions: [who]
+            })
             await time(3000)
             await conn.groupParticipantsUpdate(m.chat, [who], 'remove')
-            m.reply(`♻️ Anda tersingkir dari grup *${groupMetadata.subject}* karena Anda telah diperingatkan *${war}* kali`, who)
+            await conn.sendMessage(m.chat, {
+                text: `♻️ @${who.split`@`[0]} tersingkir dari grup *${groupMetadata.subject}* karena telah diperingatkan *${war}* kali`,
+                mentions: [who]
+            })
         }
 }
 handler.help = ['warn @user']
