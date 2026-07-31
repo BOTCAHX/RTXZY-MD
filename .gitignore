@@ -1,4 +1,12 @@
-node_modules
-sessions 
+# Dependencies
+/node_modules/
+
+# Lock files
 package-lock.json
+
+# Local / Session data
+/sessions/
+*.log
+
+# Database
 database.json
