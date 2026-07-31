@@ -7,10 +7,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         await m.reply(wait);
         let response = await fetch(`https://api.botcahx.eu.org/api/search/wallpaper?text1=${encodeURIComponent(text)}&apikey=${btc}`);
         let data = await response.json();
-              
-        let randomIndex = Math.floor(Math.random() * data.result.length);
-        let wallpaper = data.result[randomIndex];
         
+        if (!data.result || data.result.length === 0) throw 'Tidak ada wallpaper ditemukan';
+        
+        let wallpaper = data.result[Math.floor(Math.random() * data.result.length)];
         let img = await (await fetch(wallpaper.image)).buffer();
         
         let caption = `🎨 HASIL PENCARIAN WALLPAPER\n\n` +
