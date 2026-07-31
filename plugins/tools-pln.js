@@ -12,19 +12,20 @@ let handler = async (m, {
         let content = `*T A G I H A N  P L N*\n\n`;
 
         if (res.status && res.result) {
-            content += `  ◦ *ID Pelanggan:* ${res.result.id_pelanggan}\n`;
-            content += `  ◦ *Nama:* ${res.result.nama_pelanggan}\n`;
-            content += `  ◦ *Jumlah Tagihan:* ${res.result.jumlah_tagihan}\n`;
-            content += `  ◦ *Periode:* ${res.result.periode}\n`;
-            content += `  ◦ *Stand Meter:* ${res.result.stand_meter}\n`;
-            content += `  ◦ *Tarif/Daya:* ${res.result.tarif_daya}\n`;
-            content += `  ◦ *Total Bulan:* ${res.result.total_bulan}\n`;
+            content += `  ◦ *ID Pelanggan:* ${res.result['Nomor ID Pelanggan']}\n`;
+            content += `  ◦ *Nama:* ${res.result['Nama Pelanggan']}\n`;
+            content += `  ◦ *Jumlah Tagihan:* ${res.result['Jumlah Tagihan']}\n`;
+            content += `  ◦ *Periode:* ${res.result['Periode']}\n`;
+            content += `  ◦ *Stand Meter:* ${res.result['Stand Meter']}\n`;
+            content += `  ◦ *Tarif/Daya:* ${res.result['Tarif / Daya']}\n`;
+            content += `  ◦ *Denda:* ${res.result['Denda']}\n`;
+            content += `  ◦ *Biaya Admin:* ${res.result['Biaya Admin']}\n`;
         } else {
             content += 'Data tagihan tidak ditemukan.';
         }
         await m.reply(content);
     } catch (error) {
-        throw eror;
+        throw eror; 
     }
 };
 
