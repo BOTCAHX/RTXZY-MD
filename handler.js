@@ -886,6 +886,7 @@ export default {
                 if (!("autodl" in chat)) chat.autodl = true;
                 if (!("autosticker" in chat)) chat.autosticker = false;
                 if (!("antiporn" in chat)) chat.antiporn = false;
+                if (!("autohd" in chat)) chat.autohd = false;
             } else global.db.data.chats[m.chat] = {
                 isBanned: false,
                 welcome: true,
@@ -926,6 +927,7 @@ export default {
                 autodl: true,
                 autosticker: false,
                 antiporn: false,
+                autohd: false,
             }
             let memgc = global.db.data.chats[m.chat]?.memgc?.[m.sender];
             if (typeof memgc !== 'object' || memgc === null) {
