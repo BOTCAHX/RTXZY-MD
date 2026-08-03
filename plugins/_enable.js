@@ -145,17 +145,12 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       isUser = true;
       user.autolevelup = isEnable;
       break;
-    case "mycontact":
-    case "mycontacts":
-    case "whitelistcontact":
-    case "whitelistcontacts":
-    case "whitelistmycontact":
-    case "whitelistmycontacts":
+    case "anticall":
       if (!isOwner) {
         global.dfail("owner", m, conn);
         throw false;
       }
-      conn.callWhitelistMode = isEnable;
+      conn.anticall = isEnable;
       break;
     case "restrict":
       isAll = true;
@@ -341,7 +336,7 @@ List option:
 | detect
 | viewonce
 | document
-| whitelistmycontacts
+| anticall
 | restrict
 | nyimak
 | autoread
