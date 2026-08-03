@@ -7,8 +7,8 @@ exports.before = async function (m) {
     if (!this.spam) this.spam = {};
     if (!this.groupStatus) this.groupStatus = {};
     
-    let user = db.data.users[m.sender] || {};
-    let chat = db.data.chats[m.chat] || {};
+    let user = global.db.data.users[m.sender] || {};
+    let chat = global.db.data.chats[m.chat] || {};
     
     // Aktif di private chat atau jika di grup dan antispam aktif
     if (m.isGroup && !chat.antispam) return;
