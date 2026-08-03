@@ -1,11 +1,15 @@
+let lastUpdate = 0;
+
 export default {
   before: async function all(m) {
     if (global.autobio) {
-      setInterval(async () => {
+      let now = Date.now();
+      if (now - lastUpdate > 60000) {
+        lastUpdate = now;
         let uptime = process.uptime() * 1000;
-        let bio = `🤖 Aktif Selama: ${clockString(uptime)} | 💌 by: ${wm}`;
+        let bio = `🤖 Aktif Selama: ${clockString(uptime)} | 💌 by: ${global.wm}`;
         await this.updateProfileStatus(bio).catch(_ => _);
-      }, 60000);
+      }
     }
   }
 }

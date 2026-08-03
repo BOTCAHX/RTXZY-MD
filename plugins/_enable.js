@@ -272,13 +272,12 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.autohd = isEnable;
       break;
     case "autobio":
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail("admin", m, conn);
-          return false;
-        }
-        chat.autobio = isEnable;
-      } else return global.dfail("group", m, conn);
+      isAll = true;
+      if (!isOwner) {
+        global.dfail("owner", m, conn);
+        throw false;
+      }
+      global.autobio = isEnable;
       break;
     case "rpg":
       if (m.isGroup) {
