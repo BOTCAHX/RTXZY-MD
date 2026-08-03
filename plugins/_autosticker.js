@@ -6,7 +6,7 @@ handler.all = async function(m, { isAdmin, isBotAdmin }) {
     let chat = db.data.chats[m.chat];
     let user = db.data.users[m.sender];
     
-    if (chat.stiker && !chat.isBanned && !user.banned && !m.isBaileys) {
+    if (chat.autosticker && !chat.isBanned && !user.banned && !m.isBaileys) {
         let q = m;
         let stiker = false;
         let mime = (q.msg || q).mimetype || '';
