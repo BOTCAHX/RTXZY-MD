@@ -24,7 +24,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
     const xiaohongshuRegex = /^(https?:\/\/)?(www\.)?(xiaohongshu\.com\/discovery\/item\/[a-zA-Z0-9]+|xhslink\.com\/[a-zA-Z0-9/]+)(\?.*)?$/i;
     const soundcloudRegex = /^(https?:\/\/)?(www\.|m\.)?soundcloud\.com\/[a-zA-Z0-9_-]+(\/[a-zA-Z0-9_-]+)*\/?(\?.*)?$/i;
     const cocofunRegex = /^(https?:\/\/)?(www\.)?icocofun\.com\/share\/post\/\d+(\?.*)?$/i;
-    const kuaishouRegex = /(?:https?:\/\/)?(?:www\.)?kuaishou\.com\/?.*/i;
+    const kuaishouRegex = /(?:https?:\/\/)?(?:www\.|v\.)?kuaishou\.com\/?.*/i;
     const sfileRegex = /(?:https?:\/\/)?(?:www\.)?sfile\.mobi\/?.*/i;
     if (text.match(tiktokRegex)) {
         conn.sendMessage(m.chat, {
