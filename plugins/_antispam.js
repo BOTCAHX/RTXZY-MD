@@ -1,7 +1,7 @@
 const exports = {};
 
 const SPAM_THRESHOLD = 5; // Total pesan yang dianggap spam
-const SPAM_WINDOW = 5000; // Jendela waktu (5 detik)
+const SPAM_WINDOW = 1000; // Jendela waktu (1 detik) - Sekejap mata!
 
 exports.before = async function (m) {
     if (!this.spam) this.spam = {};
