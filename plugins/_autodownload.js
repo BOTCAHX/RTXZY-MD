@@ -8,6 +8,7 @@ handler.before = async function (m, { conn, isPrems }) {
     if (m.text.startsWith("=>") || m.text.startsWith(">") || m.text.startsWith(".") || m.text.startsWith("#") || m.text.startsWith("!") || m.text.startsWith("/") || m.text.startsWith("\\")) return;
     if (chat.isBanned) return;
     if (!m.text.includes("http")) return;
+if (global.db.data.chats[m.chat].autodl === false) return true;
     let text = m.text.replace(/\n+/g, " ");
     const tiktokRegex = /^(?:https?:\/\/)?(?:www\.|vt\.|vm\.|t\.)?(?:tiktok\.com\/)(?:\S+)?$/i;
     const douyinRegex = /^(?:https?:\/\/)?(?:www\.|vt\.|vm\.|t\.|v\.)?(?:douyin\.com\/)(?:\S+)?$/i;
@@ -23,6 +24,8 @@ handler.before = async function (m, { conn, isPrems }) {
     const xiaohongshuRegex = /^(https?:\/\/)?(www\.)?(xiaohongshu\.com\/discovery\/item\/[a-zA-Z0-9]+|xhslink\.com\/[a-zA-Z0-9/]+)(\?.*)?$/i;
     const soundcloudRegex = /^(https?:\/\/)?(www\.|m\.)?soundcloud\.com\/[a-zA-Z0-9_-]+(\/[a-zA-Z0-9_-]+)*\/?(\?.*)?$/i;
     const cocofunRegex = /^(https?:\/\/)?(www\.)?icocofun\.com\/share\/post\/\d+(\?.*)?$/i;
+    const kuaishouRegex = /(?:https?:\/\/)?(?:www\.)?kuaishou\.com\/?.*/i;
+    const sfileRegex = /(?:https?:\/\/)?(?:www\.)?sfile\.mobi\/?.*/i;
     if (text.match(tiktokRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -135,7 +138,23 @@ handler.before = async function (m, { conn, isPrems }) {
         },
     });
     await _cocofun(text.match(cocofunRegex)[0], m);
-  } 
+  } else if (text.match(kuaishouRegex)) {
+        conn.sendMessage(m.chat, {
+            react: {
+                text: "🕒",
+                key: m.key,
+            },
+        });
+        await _kuaishou(text.match(kuaishouRegex)[0], m);
+    } else if (text.match(sfileRegex)) {
+        conn.sendMessage(m.chat, {
+            react: {
+                text: "🕒",
+                key: m.key,
+            },
+        });
+        await _sfile(text.match(sfileRegex)[0], m);
+    } 
     return true;
 };
 export default handler;
@@ -552,3 +571,62 @@ async function _cocofun(url, m) {
         console.log(e);
     }
 }
+
+async function _kuaishou(link, m) {
+    try {
+        if (global.db.data.users[m.sender].limit > 0) {
+            const response = await axios.get(`https://api.botcahx.eu.org/api/dowloader/kuaishou?url=${link}&apikey=${btc}`);
+            const res = response.data.result;
+            let capt = `乂 *K U A I S H O U*\n\n`;
+            capt += `◦ *Title* : ${res.title || 'Not available'}\n`;
+            capt += `◦ *Author* : ${res.author || 'Not available'}\n`;
+            capt += `◦ *Username* : ${res.username || 'Not available'}\n`;
+            capt += `◦ *Likes* : ${res.likeCount || 0}\n`;
+            capt += `◦ *Comments* : ${res.commentCount || 0}\n`;
+            capt += `◦ *Views* : ${res.viewCount || 0}\n`;
+            capt += `◦ *Duration* : ${res.duration ? res.duration / 1000 + ' seconds' : 'Not available'}\n`;
+            capt += `◦ *🍟 Fetching* : ${(new Date() - old) * 1} ms\n\n`;
+            if (res.videoUrl) {
+                await conn.sendFile(m.chat, res.videoUrl, null, capt, m);
+            } else {
+                throw 'Video not found';
+            }
+            global.db.data.users[m.sender].limit -= 1;
+        } else {
+            conn.reply(m.chat, "Limit kamu habis!", m);
+        }
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+async function _sfile(link, m) {
+    try {
+        if (global.db.data.users[m.sender].limit > 0) {
+            const json = await fetch(`https://api.botcahx.eu.org/api/dowloader/sfilemobi?url=${link}&apikey=${btc}`).then(res => res.json());
+            const res = json.result;
+            const downloadUrl = res.direct || res.result || res.cdnDirect;
+            const fileName = res.name || 'file';
+            const mimeType = res.mime || 'application/octet-stream';
+            let caption = `⦿  *S F I L E - D O W N L O A D E R*\n\n`;
+            caption += `\t◦  *Name* : ${res.name || 'N/A'}\n`;
+            caption += `\t◦  *User* : ${res.user || 'N/A'}\n`;
+            caption += `\t◦  *Date* : ${res.date || 'N/A'}\n`;
+            caption += `\t◦  *Size* : ${res.size || 'N/A'}\n`;
+            caption += `\t◦  *Downloads* : ${res.dlCount || '0'}\n`;
+            caption += `\t◦  *MIME* : ${res.mime || 'N/A'}\n\n`;
+            await conn.sendMessage(m.chat, {
+                document: { url: downloadUrl },
+                fileName: fileName,
+                mimetype: mimeType,
+                caption: caption
+            }, { quoted: m });
+            global.db.data.users[m.sender].limit -= 1;
+        } else {
+            conn.reply(m.chat, "Limit kamu habis!", m);
+        }
+    } catch (e) {
+        console.error(e);
+    }
+}
+
