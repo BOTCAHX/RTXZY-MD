@@ -21,8 +21,7 @@ global.author = "Bot WhatsApp"; // watermark stikcker author
 global.maxwarn = "5"; // Peringatan maksimum Warn
 
 
-global.spam = false; // Set true/false untuk anti spam (default: false)
-global.gcspam = false; // Set true/false untuk menutup grup ketika spam (default: false)
+
 
 // APIKEY INI WAJIB UNTUK DI ISI! //
 global.btc = "YOUR_APIKEY_HERE";

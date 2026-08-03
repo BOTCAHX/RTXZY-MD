@@ -13,10 +13,10 @@ exports.before = async function (m) {
     if (!this.spam) this.spam = {}
     if (!this.groupStatus) this.groupStatus = {}
     
-    if (!global.spam) return;
-    
     let user = db.data.users[m.sender] || {};
     let chat = db.data.chats[m.chat] || {};
+    
+    if (!chat.antispam) return;
     
     if ((m.chat.endsWith('broadcast') || m.fromMe) && !m.message && !chat.isBanned) return;
     
@@ -42,7 +42,7 @@ exports.before = async function (m) {
     if (user.banned) return;
 
     const processSpam = async () => {
-        if (!this.spam[m.sender] || !global.spam) return;
+        if (!this.spam[m.sender] || !chat.antispam) return;
         
         if (this.spam[m.sender].count >= SPAM_TOTALSPAM) {
             user.banned = true;
@@ -50,7 +50,7 @@ exports.before = async function (m) {
             const groupId = m.chat;
 
             try {
-                if (m.isGroup && global.gcspam) {
+                if (m.isGroup && chat.gcspam) {
                     if (!this.groupStatus[groupId]) {
                         this.groupStatus[groupId] = {
                             isClosing: false,
