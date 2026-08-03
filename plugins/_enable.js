@@ -340,7 +340,6 @@ List option:
 | pconly
 | gconly
 | swonly
-| autodatabase
 | nsfw
 Contoh:
 ${usedPrefix}enable welcome
