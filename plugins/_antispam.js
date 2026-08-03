@@ -49,6 +49,7 @@ exports.before = async function (m) {
             user.banned = true;
 
             const groupId = m.chat;
+            const banDuration = m.isGroup ? SPAM_BAN_DURATION : 30000;
 
             try {
                 if (m.isGroup) {
@@ -85,7 +86,7 @@ exports.before = async function (m) {
                             } catch {
                                 console.error('Error reopening group');
                             }
-                        }, SPAM_BAN_DURATION);
+                        }, banDuration);
                     }
                 } else {
                     await this.sendMessage(m.chat, { 
@@ -99,13 +100,13 @@ exports.before = async function (m) {
                             text: `✅ @${m.sender.split('@')[0]} telah di unban.`,
                             mentions: [m.sender]
                         });
-                    }, SPAM_BAN_DURATION);
+                    }, banDuration);
                 }
             } catch (e) {
                 console.error(e);
             }
 
-            user.lastBanned = now + SPAM_BAN_DURATION;
+            user.lastBanned = now + banDuration;
             delete this.spam[m.sender];
             return true;
         }
