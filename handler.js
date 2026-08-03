@@ -882,7 +882,6 @@ export default {
                 if (!('antilinkallnokick' in chat)) chat.antilinkallnokick = false
                 if (!('antilinktt' in chat)) chat.antilinktt = false
                 if (!('antilinkttnokick' in chat)) chat.antilinkttnokick = false
-                if (!('antibot' in chat)) chat.antibot = false
                 if (!("rpg" in chat)) chat.rpg = false;
                 if (!("nsfw" in chat)) chat.nsfw = false;
                 if (!("autodl" in chat)) chat.autodl = true;
@@ -924,7 +923,6 @@ export default {
                 antilinktelenokick: false, 
                 antilinktt: false, 
                 antilinkttnokick: false, 
-                antibot: false, 
                 rpg: false,
                 autodl: true,
                 autosticker: false,
