@@ -123,15 +123,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.gcspam = isEnable;
       break;
-    case "antibot":
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail("admin", m, conn);
-          throw false;
-        }
-      }
-      chat.antiBot = isEnable;
-      break;
     case "toxic":
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -340,7 +331,6 @@ List option:
 | antiporn
 | welcome
 | delete
-| antibot
 | public
 | autohd
 | antilink
