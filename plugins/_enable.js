@@ -114,15 +114,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antispam = isEnable;
       break;
-    case "gcspam":
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail("admin", m, conn);
-          throw false;
-        }
-      }
-      chat.gcspam = isEnable;
-      break;
     case "toxic":
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -344,7 +335,6 @@ List option:
 | gconly
 | swonly
 | antispam
-| gcspam
 | nsfw
 Contoh:
 ${usedPrefix}enable welcome

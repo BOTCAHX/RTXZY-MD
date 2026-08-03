@@ -860,7 +860,6 @@ export default {
                 if (!('antiLinknokick' in chat)) chat.antiLinknokick = false
                 if (!('antiSticker' in chat)) chat.antiSticker = false
                 if (!('antispam' in chat)) chat.antispam = false
-                if (!('gcspam' in chat)) chat.gcspam = false
                 if (!('antiStickernokick' in chat)) chat.antiStickernokick = false
                 if (!('viewonce' in chat)) chat.viewonce = false
                 if (!('antiToxic' in chat)) chat.antiToxic = false

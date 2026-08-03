@@ -44,7 +44,7 @@ exports.before = async function (m) {
             const groupId = m.chat;
 
             try {
-                if (m.isGroup && chat.gcspam) {
+                if (m.isGroup) {
                     if (!this.groupStatus[groupId]) {
                         this.groupStatus[groupId] = {
                             isClosing: false,
