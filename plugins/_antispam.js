@@ -20,13 +20,7 @@ exports.before = async function (m) {
     
     if ((m.chat.endsWith('broadcast') || m.fromMe) && !m.message && !chat.isBanned) return;
     
-    if (
-        !m.text?.startsWith('.') &&
-        !m.text?.startsWith('#') &&
-        !m.text?.startsWith('!') &&
-        !m.text?.startsWith('/') &&
-        !m.text?.startsWith('\\')
-    ) return;
+    if (!m.text) return;
 
     const now = Date.now();
 
@@ -109,7 +103,7 @@ exports.before = async function (m) {
         }
     };
 
-    const currentTime = Number(m.messageTimestamp) || Date.now();
+    const currentTime = Date.now();
 
     if (this.spam[m.sender]) {
         const timeSinceLast = currentTime - this.spam[m.sender].lastspam;
