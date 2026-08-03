@@ -6,7 +6,7 @@ const exports = {};
 
 const SPAM_TOTALSPAM = 5; // Total Spam 
 const SPAM_RESET_TIME = 30000; // Reset time di sesi spam
-const MAX_MESSAGE_DELAY = 2000; // delay maksimal pesan di terima oleh bot
+const MAX_MESSAGE_DELAY = 4000; // delay maksimal antar pesan dalam milidetik
 const SPAM_BAN_DURATION = 180000 // waktu ban user
 
 exports.before = async function (m) {
@@ -16,7 +16,8 @@ exports.before = async function (m) {
     let user = db.data.users[m.sender] || {};
     let chat = db.data.chats[m.chat] || {};
     
-    if (!chat.antispam) return;
+    // Di grup, harus di-enable dulu. Di private chat (japri), otomatis selalu ON.
+    if (m.isGroup && !chat.antispam) return;
     
     if ((m.chat.endsWith('broadcast') || m.fromMe) && !m.message && !chat.isBanned) return;
     
@@ -42,7 +43,7 @@ exports.before = async function (m) {
     if (user.banned) return true;
 
     const processSpam = async () => {
-        if (!this.spam[m.sender] || !chat.antispam) return;
+        if (m.isGroup && !chat.antispam) return;
         
         if (this.spam[m.sender].count >= SPAM_TOTALSPAM) {
             user.banned = true;
