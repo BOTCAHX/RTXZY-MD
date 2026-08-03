@@ -6,7 +6,7 @@ const exports = {};
 
 const SPAM_TOTALSPAM = 5; // Total Spam 
 const SPAM_RESET_TIME = 30000; // Reset time di sesi spam
-const MAX_MESSAGE_DELAY = 4000; // delay maksimal antar pesan dalam milidetik
+const MAX_MESSAGE_DELAY = 10000; // delay maksimal antar pesan dalam milidetik
 const SPAM_BAN_DURATION = 180000 // waktu ban user
 
 exports.before = async function (m) {
