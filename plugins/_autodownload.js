@@ -577,15 +577,7 @@ async function _kuaishou(link, m) {
         if (global.db.data.users[m.sender].limit > 0) {
             const response = await axios.get(`https://api.botcahx.eu.org/api/dowloader/kuaishou?url=${link}&apikey=${btc}`);
             const res = response.data.result;
-            let capt = `乂 *K U A I S H O U*\n\n`;
-            capt += `◦ *Title* : ${res.title || 'Not available'}\n`;
-            capt += `◦ *Author* : ${res.author || 'Not available'}\n`;
-            capt += `◦ *Username* : ${res.username || 'Not available'}\n`;
-            capt += `◦ *Likes* : ${res.likeCount || 0}\n`;
-            capt += `◦ *Comments* : ${res.commentCount || 0}\n`;
-            capt += `◦ *Views* : ${res.viewCount || 0}\n`;
-            capt += `◦ *Duration* : ${res.duration ? res.duration / 1000 + ' seconds' : 'Not available'}\n`;
-            capt += `◦ *🍟 Fetching* : ${(new Date() - old) * 1} ms\n\n`;
+            let capt = `🍟 *Fetching* : ${(new Date() - old) * 1} ms`;
             if (res.videoUrl) {
                 await conn.sendFile(m.chat, res.videoUrl, null, capt, m);
             } else {
@@ -608,13 +600,7 @@ async function _sfile(link, m) {
             const downloadUrl = res.direct || res.result || res.cdnDirect;
             const fileName = res.name || 'file';
             const mimeType = res.mime || 'application/octet-stream';
-            let caption = `⦿  *S F I L E - D O W N L O A D E R*\n\n`;
-            caption += `\t◦  *Name* : ${res.name || 'N/A'}\n`;
-            caption += `\t◦  *User* : ${res.user || 'N/A'}\n`;
-            caption += `\t◦  *Date* : ${res.date || 'N/A'}\n`;
-            caption += `\t◦  *Size* : ${res.size || 'N/A'}\n`;
-            caption += `\t◦  *Downloads* : ${res.dlCount || '0'}\n`;
-            caption += `\t◦  *MIME* : ${res.mime || 'N/A'}\n\n`;
+            let caption = `🍟 *Fetching* : ${(new Date() - old) * 1} ms`;
             await conn.sendMessage(m.chat, {
                 document: { url: downloadUrl },
                 fileName: fileName,
