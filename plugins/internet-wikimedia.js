@@ -32,7 +32,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.tags = ['internet'];
 handler.help = ['wikimedia <kata kunci>'];
-handler.command = /^(wikimedia|wiki)$/i;
+handler.command = /^(wikimedia)$/i;
 handler.limit = true;
 
 export default handler;
