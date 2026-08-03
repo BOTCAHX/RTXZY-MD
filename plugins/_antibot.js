@@ -5,7 +5,7 @@ handler.all = async function (m) {
     let chat = global.db.data.chats[m.chat]
     if (!chat || !chat.antibot) return
     
-    let isBotLain = (m.id.startsWith('3EB0') || m.id.startsWith('BAE5') || m.id.startsWith('B24E')) && (m.id.length === 22 || m.id.length === 16)
+    let isBotLain = m.id.startsWith('3EB0') && m.id.length === 22
     if (isBotLain) {
         if (!global.antibot_kick) global.antibot_kick = {}
         let id = m.sender
