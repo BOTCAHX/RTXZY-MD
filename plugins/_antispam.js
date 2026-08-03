@@ -20,7 +20,13 @@ exports.before = async function (m) {
     
     if ((m.chat.endsWith('broadcast') || m.fromMe) && !m.message && !chat.isBanned) return;
     
-    if (!m.text) return;
+    if (
+        !m.text?.startsWith('.') &&
+        !m.text?.startsWith('#') &&
+        !m.text?.startsWith('!') &&
+        !m.text?.startsWith('/') &&
+        !m.text?.startsWith('\\')
+    ) return;
 
     const now = Date.now();
 
@@ -33,7 +39,7 @@ exports.before = async function (m) {
             mentions: [m.sender]
         });
     }
-    if (user.banned) return;
+    if (user.banned) return true;
 
     const processSpam = async () => {
         if (!this.spam[m.sender] || !chat.antispam) return;
@@ -100,6 +106,7 @@ exports.before = async function (m) {
 
             user.lastBanned = now + SPAM_BAN_DURATION;
             delete this.spam[m.sender];
+            return true;
         }
     };
 
@@ -111,7 +118,7 @@ exports.before = async function (m) {
         if (timeSinceLast <= MAX_MESSAGE_DELAY) {
             this.spam[m.sender].count++;
             this.spam[m.sender].lastspam = currentTime;
-            await processSpam();
+            return await processSpam();
         } else {
             this.spam[m.sender] = {
                 jid: m.sender,
