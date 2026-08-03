@@ -884,6 +884,7 @@ export default {
                 if (!("rpg" in chat)) chat.rpg = false;
                 if (!("nsfw" in chat)) chat.nsfw = false;
                 if (!("autodl" in chat)) chat.autodl = true;
+                if (!("autosticker" in chat)) chat.autosticker = false;
             } else global.db.data.chats[m.chat] = {
                 isBanned: false,
                 welcome: true,
@@ -922,6 +923,7 @@ export default {
                 antibot: false, 
                 rpg: false,
                 autodl: true,
+                autosticker: false,
             }
             let memgc = global.db.data.chats[m.chat]?.memgc?.[m.sender];
             if (typeof memgc !== 'object' || memgc === null) {
