@@ -24,14 +24,14 @@ export default handler
 
 async function uploader(buffer) {
   let { ext } = await fromBuffer(buffer);
-  bodyForm = new FormData();
+  let bodyForm = new FormData(); 
   bodyForm.append("file", buffer, "file." + ext);
 
- let res = await fetch("https://file.botcahx.eu.org/api/upload.php", {
+  let res = await fetch("https://file.botcahx.eu.org/api/upload.php", {
     method: "post",
     body: bodyForm,
   });
 
- let data = await res.json()
+  let data = await res.json()
   return data.result.url || 'null'
 }
