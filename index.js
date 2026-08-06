@@ -63,7 +63,11 @@ function start(file) {
   if (isRunning) return;
   isRunning = true;
 
-  const args = [path.join(__dirname, file), ...process.argv.slice(2)];
+  const resolvedFile = path.resolve(__dirname, path.basename(file));
+  if (!resolvedFile.startsWith(path.resolve(__dirname) + path.sep)) {
+    throw new Error('Invalid file path');
+  }
+  const args = [resolvedFile, ...process.argv.slice(2)];
   const p = spawn(process.argv[0], args, {
     stdio: ["inherit", "inherit", "inherit", "ipc"],
   });
