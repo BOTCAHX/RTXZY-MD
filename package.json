@@ -15,7 +15,7 @@
         "start": "node index.js --autocleartmp",
         "test": "node test.js",
         "test2": "nodemon index.js --autocleartmp",
-        "lint": "eslint ."
+        "lint": "eslint . --cache"
     },
     "keywords": [
         "whatsapp-bot-md",

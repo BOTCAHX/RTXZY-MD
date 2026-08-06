@@ -10,3 +10,7 @@ package-lock.json
 
 # Database
 database.json
+
+# ESLint cache
+.eslintcache
+
