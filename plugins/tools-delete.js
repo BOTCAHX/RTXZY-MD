@@ -16,6 +16,7 @@ let handler = async (m, { conn, command }) => {
 };
 handler.help = ['del', 'delete'];
 handler.tags = ['tools'];
+handler.admin = true;
 handler.botaadmin = true;
 handler.command = ['del', 'delete', 'unsend'];
 
