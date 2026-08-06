@@ -16,6 +16,26 @@
         "eror": "readonly",
         "btc": "readonly",
         "lann": "readonly",
-        "globalThis": "readonly"
+        "globalThis": "readonly",
+        "db": "writable",
+        "wm": "readonly",
+        "packname": "readonly",
+        "author": "readonly",
+        "opts": "readonly",
+        "plugins": "readonly",
+        "Bgardenboxs": "writable",
+        "robot": "writable",
+        "usedPrefix": "readonly",
+        "owner": "readonly",
+        "numberowner": "readonly",
+        "stiker_wait": "readonly",
+        "aksesKey": "readonly",
+        "thumb": "readonly",
+        "ownernya": "readonly",
+        "MessageType": "readonly",
+        "DevMode": "readonly",
+        "dbPath": "readonly",
+        "options": "readonly",
+        "APIKeys": "readonly"
     }
 }
