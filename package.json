@@ -14,7 +14,8 @@
         "preinstall": "node script/node/check-version.js",
         "start": "node index.js --autocleartmp",
         "test": "node test.js",
-        "test2": "nodemon index.js --autocleartmp"
+        "test2": "nodemon index.js --autocleartmp",
+        "lint": "eslint plugins/**/*.js"
     },
     "keywords": [
         "whatsapp-bot-md",
@@ -94,5 +95,8 @@
     "overrides": {
         "jimp": "0.16.13",
         "node-fetch": "2.6.9"
+    },
+    "devDependencies": {
+        "eslint": "^8.57.1"
     }
 }
