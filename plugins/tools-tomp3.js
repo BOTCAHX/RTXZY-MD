@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (!media) throw 'Media tidak dapat diunduh'
     let audio = await toAudio(media, 'mp4')
     if (!audio.data) throw 'Gagal melakukan konversi.'
-    conn.sendMessage(m.chat, { audio: audio.data, mimetype: 'audio/mpeg' }, { quoted: m })
+    conn.sendMessage(m.chat, { audio: { url: audio.filename }, mimetype: 'audio/mpeg' }, { quoted: m })
 }
 handler.help = ['toaudio (reply)']
 handler.tags = ['tools']

@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-let handler = async (m, { text, usedPrefix, command }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) throw `Contoh:\n${usedPrefix + command} deaafrizal`
     await m.reply(wait)
     try {

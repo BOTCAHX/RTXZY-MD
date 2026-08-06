@@ -33,7 +33,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _tiktok(text.match(tiktokRegex)[0], m);
+        await _tiktok(text.match(tiktokRegex)[0], m, conn);
     } else if (text.match(douyinRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -41,7 +41,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _douyin(text.match(douyinRegex)[0], m);
+        await _douyin(text.match(douyinRegex)[0], m, conn);
     } else if (text.match(instagramRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -49,7 +49,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _instagram(text.match(instagramRegex)[0], m);
+        await _instagram(text.match(instagramRegex)[0], m, conn);
     } else if (text.match(facebookRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -57,7 +57,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _facebook(text.match(facebookRegex)[0], m);
+        await _facebook(text.match(facebookRegex)[0], m, conn);
     } else if (text.match(pinRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -65,7 +65,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _pindl(text.match(pinRegex)[0], m);
+        await _pindl(text.match(pinRegex)[0], m, conn);
     } else if (text.match(youtubeRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -73,7 +73,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _youtube(text.match(youtubeRegex)[0], m);
+        await _youtube(text.match(youtubeRegex)[0], m, conn);
     } else if (text.match(spotifyRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -81,7 +81,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _spotify(text.match(spotifyRegex)[0], m);
+        await _spotify(text.match(spotifyRegex)[0], m, conn);
     } else if (text.match(twitterRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -89,7 +89,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _twitter(text.match(twitterRegex)[0], m);
+        await _twitter(text.match(twitterRegex)[0], m, conn);
     } else if (text.match(threadsRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -97,7 +97,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _threads(text.match(threadsRegex)[0], m);
+        await _threads(text.match(threadsRegex)[0], m, conn);
     } else if (text.match(capcutRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -105,7 +105,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _capcut(text.match(capcutRegex)[0], m);
+        await _capcut(text.match(capcutRegex)[0], m, conn);
     } else if (text.match(snackvideoRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -113,7 +113,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _snackvideo(text.match(snackvideoRegex)[0], m);
+        await _snackvideo(text.match(snackvideoRegex)[0], m, conn);
     } else if (text.match(xiaohongshuRegex)) {
     conn.sendMessage(m.chat, {
         react: {
@@ -121,7 +121,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
             key: m.key,
         },
     });
-    await _xiaohongshu(text.match(xiaohongshuRegex)[0], m);
+    await _xiaohongshu(text.match(xiaohongshuRegex)[0], m, conn);
    } else if (text.match(soundcloudRegex)) {
     conn.sendMessage(m.chat, {
         react: {
@@ -129,7 +129,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
             key: m.key,
         },
     });
-    await _soundcloud(text.match(soundcloudRegex)[0], m);
+    await _soundcloud(text.match(soundcloudRegex)[0], m, conn);
   } else if (text.match(cocofunRegex)) {
     conn.sendMessage(m.chat, {
         react: {
@@ -137,7 +137,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
             key: m.key,
         },
     });
-    await _cocofun(text.match(cocofunRegex)[0], m);
+    await _cocofun(text.match(cocofunRegex)[0], m, conn);
   } else if (text.match(kuaishouRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -145,7 +145,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _kuaishou(text.match(kuaishouRegex)[0], m);
+        await _kuaishou(text.match(kuaishouRegex)[0], m, conn);
     } else if (text.match(sfileRegex)) {
         conn.sendMessage(m.chat, {
             react: {
@@ -153,7 +153,7 @@ if (global.db.data.chats[m.chat].autodl === false) return true;
                 key: m.key,
             },
         });
-        await _sfile(text.match(sfileRegex)[0], m);
+        await _sfile(text.match(sfileRegex)[0], m, conn);
     } 
     return true;
 };
@@ -161,7 +161,7 @@ export default handler;
 
 let old = new Date();
 const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-async function _tiktok(link, m) {
+async function _tiktok(link, m, conn) {
     try {
         if (global.db.data.users[m.sender].limit > 0) {
             const response = await fetch(`https://api.botcahx.eu.org/api/download/tiktok?url=${link}&apikey=${btc}`);
@@ -194,7 +194,7 @@ async function _tiktok(link, m) {
         console.error(error);
     }
 }
-async function _douyin(link, m) {
+async function _douyin(link, m, conn) {
     try {
         if (global.db.data.users[m.sender].limit > 0) {
             let response = await fetch(`https://api.botcahx.eu.org/api/download/douyin?url=${link}&apikey=${btc}`);
@@ -592,7 +592,7 @@ async function _kuaishou(link, m) {
     }
 }
 
-async function _sfile(link, m) {
+async function _sfile(link, m, conn) {
     try {
         if (global.db.data.users[m.sender].limit > 0) {
             const json = await fetch(`https://api.botcahx.eu.org/api/dowloader/sfilemobi?url=${link}&apikey=${btc}`).then(res => res.json());

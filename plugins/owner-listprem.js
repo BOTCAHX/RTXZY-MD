@@ -1,6 +1,6 @@
 let handler  = async (m, { conn, text, usedPrefix }) => {
   function msToDate(ms) {
-		temp = ms
+		let temp = ms, daysms, hoursms, minutes, minutesms, sec;
 		days = Math.floor(ms / (24*60*60*1000));
 		daysms = ms % (24*60*60*1000);
 		hours = Math.floor((daysms)/(60*60*1000));

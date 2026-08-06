@@ -24,7 +24,7 @@ let handler = async(m, {conn, command, usedPrefix, text}) => {
     }
   }
 
-  cdang = global.db.data.users[m.sender].catatan
+  let cdang = global.db.data.users[m.sender].catatan
   global.db.data.users[m.sender].catatan = tmp
 
 conn.reply(m.chat, `Berhasil menghapus catatan!`, m, false, {

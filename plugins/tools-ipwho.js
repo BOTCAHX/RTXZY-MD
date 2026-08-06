@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-let handler = async (m, { text, usedPrefix, command }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `*Example:* ${usedPrefix + command} 112.90.150.204`;
   try {
     await m.reply(wait);

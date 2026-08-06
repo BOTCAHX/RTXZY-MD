@@ -1,7 +1,7 @@
 let handler = async (m, { conn, participants, groupMetadata, text }) => {
 
     const getGroupAdmins = (participants) => {
-        admins = []
+        let admins = []
         for (let i of participants) {
             i.isAdmin ? admins.push(i.jid) : ''
         }
@@ -61,7 +61,7 @@ handler.group = true
 export default handler
 
 function msToDate(ms) {
-    temp = ms
+    let temp = ms, days, daysms, hours, hoursms, minutes, minutesms, sec;
     days = Math.floor(ms / (24 * 60 * 60 * 1000));
     daysms = ms % (24 * 60 * 60 * 1000);
     hours = Math.floor((daysms) / (60 * 60 * 1000));

@@ -1,4 +1,4 @@
-let handler = async (m, { args }) => {
+let handler = async (m, { conn, args }) => {
   if (args.length !== 1) {
     return conn.reply(m.chat, '• *Example :* .pointomoney 1000', m)
   }

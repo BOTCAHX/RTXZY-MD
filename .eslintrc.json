@@ -1,0 +1,21 @@
+{
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-undef": "error"
+    },
+    "globals": {
+        "global": "readonly",
+        "wait": "readonly",
+        "eror": "readonly",
+        "btc": "readonly",
+        "lann": "readonly",
+        "globalThis": "readonly"
+    }
+}

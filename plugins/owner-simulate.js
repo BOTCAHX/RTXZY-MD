@@ -24,7 +24,7 @@ let handler = async (m, { conn, args: [event], text }) => {
       action = "demote";
       break;
     case "delete":
-      deleted = m;
+      let deleted = m;
       break;
     default:
       throw `List Event: welcome, bye, delete, promote, demote`;

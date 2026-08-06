@@ -5,7 +5,7 @@ const limitprem = 400
 const moneyfree = 200000
 const moneyprem = 400000
 
-let handler = async (m, { isPrems }) => {
+let handler = async (m, { conn, isPrems }) => {
     let time = global.db.data.users[m.sender].lastyearly + 31536000000
   if (new Date - global.db.data.users[m.sender].lastyearly < 31536000000) throw `Anda sudah mengklaim, klaim tahunan ini\ntunggu selama ${msToTime(time - new Date())} lagi`
       // conn.reply(m.chat, `Anda sudah mengklaim dan mendapatkan :`, m)

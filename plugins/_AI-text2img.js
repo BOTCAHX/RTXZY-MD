@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-let handler = async (m, { text, usedPrefix, command }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `🚩 *Masukan detail gambar!* `;
   try {
     conn.reply(m.chat, wait, m)

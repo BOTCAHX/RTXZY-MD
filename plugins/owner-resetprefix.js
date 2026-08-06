@@ -1,4 +1,4 @@
-let handler = async(m, { conn }) => {
+let handler = async (m, { conn, }) => {
 
   global.prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
     await m.reply(`Prefix berhasil direset`)

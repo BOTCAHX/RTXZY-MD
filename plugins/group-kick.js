@@ -1,9 +1,9 @@
-let handler = async (m, { teks, conn, isOwner, isAdmin, args }) => {
+let handler = async (m, { conn, teks, isOwner, isAdmin, args }) => {
     if (m.isBaileys) return;
 	if (!(isAdmin || isOwner)) {
     global.dfail('admin', m, conn)
     throw false
-    l}
+    }
   let ownerGroup = m.chat.split`-`[0] + "@s.whatsapp.net";
   if(m.quoted){
   if(m.quoted.sender === ownerGroup || m.quoted.sender === conn.user.jid) return;
