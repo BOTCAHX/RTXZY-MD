@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         try {
             let media = await uploader(buffer);
             let json;
-            if (command === 'togif') {        
+            if (command === 'togif' || command === 'tomp4') {        
                 json = await (await fetch(`https://api.botcahx.eu.org/api/tools/webp2mp4?url=${media}&apikey=${btc}`)).json();
             } else if (command === 'toimg') {
                 json = await (await fetch(`https://api.botcahx.eu.org/api/tools/webp2png?url=${media}&apikey=${btc}`)).json();
@@ -28,9 +28,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     }
 }
 
-handler.help = ['toimg', 'togif'];
+handler.help = ['toimg', 'togif', 'tomp4'];
 handler.tags = ['tools'];
-handler.command = /^(toimg|togif)$/i;
+handler.command = /^(toimg|togif|tomp4)$/i;
 handler.limit = true;
 
 export default handler;
