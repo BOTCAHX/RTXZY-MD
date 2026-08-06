@@ -4,7 +4,7 @@
         "es2021": true
     },
     "parserOptions": {
-        "ecmaVersion": 12,
+        "ecmaVersion": 2022,
         "sourceType": "module"
     },
     "rules": {
@@ -36,6 +36,40 @@
         "DevMode": "readonly",
         "dbPath": "readonly",
         "options": "readonly",
-        "APIKeys": "readonly"
+        "APIKeys": "readonly",
+        "conn": "readonly",
+        "e": "readonly",
+        "fs": "readonly",
+        "admins": "readonly",
+        "days": "readonly",
+        "hours": "readonly",
+        "nameowner": "readonly",
+        "mail": "readonly",
+        "instagram": "readonly",
+        "gc": "readonly",
+        "st2": "readonly",
+        "fverif": "readonly",
+        "hrobo": "readonly",
+        "hrhinoceros": "readonly",
+        "hlion": "readonly",
+        "hkyubi": "readonly",
+        "hhorse": "readonly",
+        "hgriffin": "readonly",
+        "hdragon": "readonly",
+        "hcentaur": "readonly",
+        "m": "readonly",
+        "loadDatabase": "readonly",
+        "spins": "readonly",
+        "localStorage": "readonly",
+        "nullish": "readonly",
+        "messageType": "readonly",
+        "pase": "readonly",
+        "row3": "readonly",
+        "button3": "readonly",
+        "trueFileName": "readonly",
+        "axios": "readonly",
+        "fileTypeFromBuffer": "readonly",
+        "util": "readonly",
+        "cusor": "readonly"
     }
 }
