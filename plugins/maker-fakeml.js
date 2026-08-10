@@ -41,7 +41,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let link = await uploadImage(media);
     if (!link) throw 'Gagal mengunggah gambar ke server.';
 
-    let apiUrl = `https://api.botcahx.eu.org/api/maker/canvas-fakeMl?apikey=${btc}&avatar=${encodeURIComponent(link)}&border=${borderNum}&rank=${encodeURIComponent(rank.trim().toLowerCase())}&username=${encodeURIComponent(username.trim())}`;
+    let apiUrl = `https://api.botcahx.eu.org/api/maker/canvas-fakeMl?username=${encodeURIComponent(username.trim())}&border=${borderNum}&rank=${encodeURIComponent(rank.trim().toLowerCase())}&avatar=${encodeURIComponent(link)}&apikey=${btc}`;
 
     await conn.sendFile(m.chat, apiUrl, 'fakeml.jpg', 'Done!', m);
 }
