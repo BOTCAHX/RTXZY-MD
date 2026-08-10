@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
 function listenOnPort(port) {
   server.once('error', (e) => {
     if (e.code === 'EADDRINUSE' && port !== 0) {
-      console.warn(`Port ${port} iport sudah dipakai, mencoba port random lain`);
+      console.warn(`Port ${port} port sudah dipakai, mencoba port random lain`);
       listenOnPort(0);
       return;
     }
