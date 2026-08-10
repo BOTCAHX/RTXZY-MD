@@ -1,5 +1,5 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    let guide = `Format salah!\n\n*Cara penggunaan:*\n${usedPrefix + command} username|lobby\n\n*Pilihan Lobby:*\nAngka 1 sampai 30\n\n*Contoh:*\n${usedPrefix + command} ProPlayer123|6`;
+    let guide = `Format salah!\n\n*Cara penggunaan:*\n${usedPrefix + command} username|lobby\n\n*Pilihan Lobby:*\nAngka 1 sampai 45\n\n*Contoh:*\n${usedPrefix + command} ProPlayer123|6`;
 
     if (!text) throw guide;
     let [username, lobby] = text.split('|');
