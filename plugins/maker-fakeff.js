@@ -7,8 +7,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         throw guide;
     }
     let lobbyNum = parseInt(lobby.trim());
-    if (isNaN(lobbyNum) || lobbyNum < 1 || lobbyNum > 30) {
-        throw `*❌ Lobby tidak valid!*\n\nMasukkan angka dari 1 sampai 30.`;
+    if (isNaN(lobbyNum) || lobbyNum < 1 || lobbyNum > 45) {
+        throw `*❌ Lobby tidak valid!*\n\nMasukkan angka dari 1 sampai 45.`;
     }
     try {
         await m.reply('⏳ _Sedang memproses gambar..._');
