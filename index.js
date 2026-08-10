@@ -15,9 +15,6 @@ if (nodeVersion < 22) {
 }
 
 // HTTP Server
-const ports = [4000, 3000, 5000, 8000, 8080, 4444];
-let availablePortIndex = 0;
-
 const server = http.createServer((req, res) => {
   if (req.method === 'GET' && req.url === '/') {
     res.setHeader('Content-Type', 'application/json');
@@ -34,28 +31,25 @@ const server = http.createServer((req, res) => {
   }
 });
 
-function startServer() {
-  const port = ports[availablePortIndex];
-  server.listen(port, () => {
-    console.log('\x1b[33m%s\x1b[0m', `🌐 Port ${port} is open`);
+function listenOnPort(port) {
+  server.once('error', (e) => {
+    if (e.code === 'EADDRINUSE' && port !== 0) {
+      console.warn(`Port ${port} port sudah dipakai, mencoba port random lain`);
+      listenOnPort(0);
+      return;
+    }
+
+    console.error('gagal:', e);
+    process.exit(1);
   });
 
-  server.on('error', (e) => {
-    if (e.code === 'EADDRINUSE') {
-      console.log(`Port ${port} is already in use. Trying another port...`);
-      availablePortIndex++;
-      if (availablePortIndex >= ports.length) {
-        console.log('No more available ports. Exiting...');
-        process.exit(1);
-      }
-      server.listen(ports[availablePortIndex]);
-    } else {
-      console.error(e);
-    }
+  server.listen(port, '0.0.0.0', () => {
+    const actualPort = server.address().port;
+    console.log('\x1b[33m%s\x1b[0m', `Port ${actualPort} is open`);
   });
 }
 
-startServer();
+listenOnPort(Number(process.env.PORT) || 0);
 
 let isRunning = false;
 
