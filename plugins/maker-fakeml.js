@@ -4,28 +4,21 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     try {
         let q = m.quoted ? m.quoted : m;
         let mime = (q.msg || q).mimetype || "";
-        
-        let guide = `Kirim gambar (atau balas gambar) dengan caption:\n\n*${usedPrefix + command} username|rank|border*\n\n*Pilihan Rank:*\n- gm\n- epic\n- legend\n- mawi\n- honor\n- glory\n- imo\n\n*Pilihan Border:*\nAngka 1 sampai 16\n\n*Contoh:*\n${usedPrefix + command} MitoExe|gm|1`;
 
-        if (!text) throw `*❌ Teks tidak boleh kosong!*\n\n${guide}`;
-        if (!mime) throw `*❌ Media tidak ditemukan!*\n\n${guide}`;
-        if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`;
+        if (!text && !mime) throw `Kirim gambar (atau balas gambar) dengan caption:\n\n*${usedPrefix + command} username|rank|border*\n\n*Pilihan Rank:*\n- gm\n- epic\n- legend\n- mawi\n- honor\n- glory\n- imo\n\n*Pilihan Border:*\nAngka 1 sampai 16\n\n*Contoh:*\n${usedPrefix + command} MitoExe|gm|1`;
+        if (!text) throw `Teks tidak boleh kosong!\n\nContoh: ${usedPrefix + command} MitoExe|gm|1`;
+        if (!mime) throw `Media tidak ditemukan!\n\nKirim atau balas gambar dengan caption ${usedPrefix + command} username|rank|border`;
+        if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak didukung!`;
 
         let [username, rank, border] = text.split('|');
 
-        if (!username || !rank || !border) {
-            throw `*❌ Format salah atau ada data yang kurang!*\n\nPastikan memisahkan teks menggunakan tanda \`|\`.\n\n${guide}`;
-        }
+        if (!username || !rank || !border) throw `Format salah!\n\nGunakan format: ${usedPrefix + command} username|rank|border\nContoh: ${usedPrefix + command} MitoExe|gm|1`;
 
         let validRanks = ['gm', 'epic', 'legend', 'mawi', 'honor', 'glory', 'imo'];
-        if (!validRanks.includes(rank.trim().toLowerCase())) {
-            throw `*❌ Rank tidak valid!*\n\nPilih salah satu rank berikut:\n${validRanks.join(', ')}`;
-        }
+        if (!validRanks.includes(rank.trim().toLowerCase())) throw `Rank tidak valid!\n\nPilihan rank: ${validRanks.join(', ')}`;
 
         let borderNum = parseInt(border.trim());
-        if (isNaN(borderNum) || borderNum < 1 || borderNum > 16) {
-            throw `*❌ Border tidak valid!*\n\nMasukkan angka dari 1 sampai 16.`;
-        }
+        if (isNaN(borderNum) || borderNum < 1 || borderNum > 16) throw `Border tidak valid!\n\nMasukkan angka 1 sampai 16.`;
 
         await m.reply('⏳ _Sedang memproses gambar..._');
 
