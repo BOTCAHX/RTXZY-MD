@@ -1,0 +1,21 @@
+# Dependencies
+/node_modules/
+
+# Lock files
+package-lock.json
+
+# Local / Session data
+/sessions/
+*.log
+
+# Database
+/database/
+database.json
+database.sqlite*
+.auth/
+
+# ESLint cache
+.eslintcache
+
+# Temp media
+/tmp/
