@@ -6,64 +6,108 @@ let handler = async (m, {
   conn, 
   usedPrefix, 
   command, 
-  args 
+  args,
+  text
 }) => {
   var q = m.quoted ? m.quoted : m;
   var mime = (q.msg || q).mimetype || q.mediaType || '';
-  
+
+  let endpoint = '';
+  let isImgEdit = command === 'imgedit';
+  let promptText = isImgEdit ? (text || args.join(' ')) : '';
+
+  if (isImgEdit && !promptText) {
+    return m.reply(`Please provide text for editing the image.`);
+  }
+
+  switch (command) {
+    case 'todisney':
+      endpoint = 'jadidisney';
+      break;
+    case 'topixar':
+      endpoint = 'jadipixar';
+      break;
+    case 'tocartoon':
+      endpoint = 'jadicartoon';
+      break;
+    case 'tocyberpunk':
+      endpoint = 'jadicyberpunk';
+      break;
+    case 'tovangogh':
+      endpoint = 'jadivangogh';
+      break;
+    case 'topixelart':
+      endpoint = 'jadipixelart';
+      break;
+    case 'tocomicbook':
+      endpoint = 'jadicomicbook';
+      break;
+    case 'tohijab':
+      endpoint = 'jadihijab';
+      break;
+    case 'tohitam':
+    case 'hitamkan':
+    case 'hytamkan':
+      endpoint = 'jadihitam';
+      break;
+    case 'toputih':
+      endpoint = 'jadiputih';
+      break;
+    case 'toghibli':
+      endpoint = 'jadighibili';
+      break;
+    case 'imgedit':
+      endpoint = 'imgedit';
+      break;
+    default:
+      return m.reply(`Command *${command}* not recognized. Please use a valid one.`);
+  }
+
   if (/image/g.test(mime) && !/webp/g.test(mime)) {
     await conn.reply(m.chat, '🍟 *Processing...*', m);
     try {
       const img = await q.download?.();
       let out = await uploadImage(img);
       let old = new Date();
-      let apiUrl = '';
 
-      if (command === 'todisney') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadidisney?url=${out}&apikey=${btc}`;
-      } else if (command === 'topixar') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadipixar?url=${out}&apikey=${btc}`;
-      } else if (command === 'tocartoon') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadicartoon?url=${out}&apikey=${btc}`;
-      } else if (command === 'tocyberpunk') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadicyberpunk?url=${out}&apikey=${btc}`;
-      } else if (command === 'tovangogh') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadivangogh?url=${out}&apikey=${btc}`;
-      } else if (command === 'topixelart') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadipixelart?url=${out}&apikey=${btc}`;
-      } else if (command === 'tocomicbook') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadicomicbook?url=${out}&apikey=${btc}`;
-      } else if (command === 'tohijab') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadihijab?url=${out}&apikey=${btc}`;
-      } else if (command === 'tohitam' || command === 'hitamkan' || command === 'hytamkan') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadihitam?url=${out}&apikey=${btc}`;
-      } else if (command === 'toputih') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadiputih?url=${out}&apikey=${btc}`;
-      } else if (command === 'toghibli') {
-        apiUrl = `https://api.botcahx.eu.org/api/maker/jadighibili?url=${out}&apikey=${btc}`;
-      } else if (command === 'imgedit') {
-        const text = args.join(" "); 
-        if (!text) {
-          return m.reply(`Please provide text for editing the image.`);
-        }
+      // Step 1: submit job
+      let submitData;
 
-        let result = await imageedit(text, out);
-        let resultUrl = result.result;
-
-        await conn.sendMessage(m.chat, { 
-          image: { url: resultUrl },
-          caption: `🍟 *Fetching* : ${((new Date - old) * 1)} ms`
-        }, { quoted: m });
-        return;
+      if (isImgEdit) {
+        const { data } = await axios.post("https://api.botcahx.eu.org/api/maker/imgedit", {
+          text: promptText,
+          url: out,
+          apikey: btc
+        });
+        submitData = data;
       } else {
-        return m.reply(`Command *${command}* not recognized. Please use a valid one.`);
+        const { data } = await axios.get(`https://api.botcahx.eu.org/api/maker/${endpoint}`, {
+          params: { url: out, apikey: btc }
+        });
+        submitData = data;
       }
 
-      let buff = await fetch(apiUrl).then(res => res.buffer());
-      await conn.sendMessage(m.chat, { 
-        image: buff, 
-        caption: `🍟 *Fetching* : ${((new Date - old) * 1)} ms`
-      }, { quoted: m });
+      if (!submitData.status || !submitData.jobId) {
+        throw new Error(submitData.message || 'Gagal submit job.');
+      }
+
+      let jobId = submitData.jobId;
+      let jobType = submitData.type;
+
+      // Step 2: poll until done
+      let convert = await pollJobResult(jobType, jobId, { isJsonResult: isImgEdit });
+
+      if (isImgEdit) {
+        await conn.sendMessage(m.chat, {
+          image: convert,
+          caption: `🍟 *Fetching* : ${((new Date() - old) * 1)} ms\n📋 *Prompt*: ${promptText}`
+        }, { quoted: m });
+      } else {
+        await conn.sendMessage(m.chat, {
+          image: convert,
+          caption: `🍟 *Fetching* : ${((new Date() - old) * 1)} ms`
+        }, { quoted: m });
+      }
 
     } catch (e) {
       console.log(e);
@@ -83,25 +127,69 @@ handler.limit = 5;
 export default handler;
 
 /*
- * @ CJS Image Edit Ai Use BOTCAHX Api
- * @ Param {string} text - The text prompt for the image generation.
- * @ Param {string} url - The URL of the image to be edited.
- * @ Param {string} [apikey] - API key for authentication.
- * @ Returns {Object} - { creator: string, result: string (URL) }
- * @ Throws {Error} - If the image generation fails.
- * @ Example Usage:
+ * @ Poll job status until done/failed, or timeout.
+ * @ Param {string} type - job type (e.g. "imgedit", "jadidisney", "jadipixar", ...)
+ * @ Param {string} jobId - job id returned from submit call
+ * @ Param {object} [opts] - { intervalMs, timeoutMs, isJsonResult }
+ *   - isJsonResult: true jika saat status "pending" respon berupa JSON status,
+ *     dan saat selesai juga JSON berisi { result: "url" } (khusus imgedit).
+ *     false jika saat selesai responnya LANGSUNG buffer gambar (bukan JSON).
+ * @ Returns {Buffer} - the final image buffer
+ * @ Throws {Error} - on failure or timeout
  */
+async function pollJobResult(type, jobId, opts = {}) {
+  const intervalMs = opts.intervalMs || 3000;
+  const timeoutMs = opts.timeoutMs || 240000; // 2 minutes
+  const isJsonResult = !!opts.isJsonResult;
+  const startedAt = Date.now();
+  const statusUrl = 'https://api.botcahx.eu.org/api/maker/status/editing-image';
 
-async function imageedit(text, url) {
-  try {
-    const { data } = await axios.post("https://api.botcahx.eu.org/api/maker/imgedit", {
-      text: text,
-      url: url,
-      apikey: btc
+  while (true) {
+    if (Date.now() - startedAt > timeoutMs) {
+      throw new Error(`Timeout menunggu hasil job (${type}/${jobId}).`);
+    }
+
+    const res = await axios.get(statusUrl, {
+      params: { type, jobId },
+      responseType: 'arraybuffer',
+      validateStatus: () => true
     });
-    
-    return data;
-  } catch (error) {
-    throw null
-  };
-};
+
+    const contentType = (res.headers['content-type'] || '').toLowerCase();
+    const isJson = contentType.includes('application/json');
+
+    if (isJson) {
+      let data;
+      try {
+        data = JSON.parse(Buffer.from(res.data).toString('utf-8'));
+      } catch {
+        throw new Error(`Gagal parse response status job (${type}/${jobId}).`);
+      }
+
+      if (data.status === 'pending') {
+        await new Promise(r => setTimeout(r, intervalMs));
+        continue;
+      }
+
+      if (data.status === false) {
+        throw new Error(data.message || `Job ${type}/${jobId} gagal diproses.`);
+      }
+
+      const resultUrl = data.result || data.url || data.data?.result || data.data?.url;
+
+      if (isJsonResult) {
+        if (resultUrl) {
+          const imgRes = await axios.get(resultUrl, { responseType: 'arraybuffer' });
+          return Buffer.from(imgRes.data);
+        }
+        await new Promise(r => setTimeout(r, intervalMs));
+        continue;
+      }
+
+      await new Promise(r => setTimeout(r, intervalMs));
+      continue;
+    }
+
+    return Buffer.from(res.data);
+  }
+}
