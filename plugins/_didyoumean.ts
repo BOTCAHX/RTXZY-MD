@@ -1,0 +1,21 @@
+
+import didyoumean from 'didyoumean'
+import similarity from 'similarity'
+
+let handler: WaPlugin = m => m
+
+handler.before = function (m, { match, usedPrefix, text, args }) {
+	if ((usedPrefix = (match[0] || '')[0])) {
+		let noPrefix = m.text.replace(usedPrefix, '').trim()
+		let args = noPrefix.trim().split(' ').slice(1)
+		let alias = Object.values(global.plugins).filter(v => v.help && !v.disabled).map(v => v.help).flat(1)
+		if (alias.includes(noPrefix)) return
+		let mean = didyoumean(noPrefix, alias)
+		let sim = similarity(noPrefix, mean)
+		let som = sim * 100
+		let tio = `• Halo Kak @${m.sender.split('@')[0]} Apakah Anda sedang mencari ${usedPrefix + mean} ? \n\n ◦ Nama menu: *${usedPrefix + mean}* \n ◦ Kemiripan: *${parseInt(String(som))}%*`
+		if (mean) m.reply(tio)
+	}
+}
+
+export default handler

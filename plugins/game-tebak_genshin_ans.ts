@@ -1,0 +1,32 @@
+import similarity from 'similarity'
+const threshold = 0.72
+
+let handler: WaPlugin = m => m
+
+handler.before = async function (m) {
+    let id = m.chat
+    if (!m.quoted) return !0
+    this.tebakgenshin = this.tebakgenshin ? this.tebakgenshin : {}
+    if (!(id in this.tebakgenshin)) return !0
+    if (m.quoted.id !== this.tebakgenshin[id][0].key.id) return !0
+    let json = this.tebakgenshin[id][1]
+    let jawaban = json.jawaban.toLowerCase().trim()
+    let teksUser = (m.text || '').toLowerCase().trim()
+    if (!teksUser) return !0
+    if (teksUser === jawaban) {
+        global.db.data.users[m.sender].money += this.tebakgenshin[id][2];
+        m.reply(`*Benar!*\n+${this.tebakgenshin[id][2]} Kredit sosial`)
+        clearTimeout(this.tebakgenshin[id][3])
+        delete this.tebakgenshin[id]
+    } 
+    else if (similarity(teksUser, jawaban) >= threshold) {
+        m.reply(`*Dikit Lagi!*`)
+    } 
+    else {
+        m.reply(`*Salah!*`)
+    }
+    return !0
+}
+
+handler.exp = 0
+export default handler

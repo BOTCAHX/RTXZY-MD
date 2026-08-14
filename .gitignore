@@ -1,0 +1,25 @@
+# Dependencies
+/node_modules/
+
+# Lock files
+package-lock.json
+bun.lock
+pnpm-lock.yaml
+.pnp.*
+.yarn/install-state.gz
+
+# Local / Session data
+/sessions/
+*.log
+
+# Database
+/database/
+database.json
+database.sqlite*
+.auth/
+
+# ESLint cache
+.eslintcache
+
+# Temp media
+/tmp/

@@ -1,0 +1,21 @@
+packages: []
+confirmModulesPurge: false
+overrides:
+  jimp: 0.16.13
+  node-fetch: 2.6.9
+  sharp: 0.33.5
+hoistPattern:
+  - '*'
+publicHoistPattern:
+  - '*'
+allowBuilds:
+  better-sqlite3: true
+  re2: true
+  sharp: true
+  zapo-js: true
+# pnpm 10
+onlyBuiltDependencies:
+  - better-sqlite3
+  - re2
+  - sharp
+  - zapo-js

@@ -1,0 +1,5 @@
+# https://bun.com/docs/runtime/bunfig
+[install]
+# Layout node_modules hoisted
+linker = "hoisted"
+frozenLockfile = false

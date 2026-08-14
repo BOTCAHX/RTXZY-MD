@@ -1,0 +1,19 @@
+import { createHash } from 'crypto'
+
+
+let handler: WaPlugin = async function (m, { text, usedPrefix }) { 
+
+    let sn = createHash('md5').update(m.sender).digest('hex')
+    m.reply(`
+Serial Number kamu: 
+${sn}`.trim())
+}
+
+handler.help = ['nomorseri']
+handler.tags = ['xp', 'rpg']
+handler.command = ['nomorseri'] 
+handler.group = true
+handler.rpg = true
+
+
+export default handler

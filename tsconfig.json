@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "paths": {
+      "axios": ["./lib/axios.ts"]
+    },
+    "lib": ["ES2023"],
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "useDefineForClassFields": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "include": [
+    "index.ts",
+    "main.ts",
+    "config.ts",
+    "handler.ts",
+    "globals.d.ts",
+    "run.ts",
+    "types/**/*.d.ts",
+    "lib/**/*.ts",
+    "plugins/**/*.ts",
+    "script/**/*.ts"
+  ],
+  "exclude": ["node_modules", "tmp", "media", "sessions"]
+}

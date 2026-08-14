@@ -1,0 +1,13 @@
+let handler: WaPlugin = async (m, { conn }) => {
+    conn.tebakbendera2 = conn.tebakbendera2 ? conn.tebakbendera2 : {}
+    let id = m.chat
+    if (!(id in conn.tebakbendera2)) throw false
+    let json = conn.tebakbendera2[id][1]
+    let ans = json.nama
+    // If the clue shows unmasked letters, lowercase the answer so consonants get replaced with (_)
+    let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/g, '_')
+    m.reply('```' + clue + '```')
+}
+handler.command = /^teii/i
+handler.limit = true
+export default handler

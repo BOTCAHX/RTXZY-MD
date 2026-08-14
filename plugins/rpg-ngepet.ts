@@ -1,0 +1,56 @@
+let handler: WaPlugin = async (m, { conn, args, usedPrefix }) => {
+  try {
+    global.DATABASE.data.users[m.sender].lastngepet = global.db.data.users[m.sender].lastngepet || 0
+    let randomaku = `${Math.floor(Math.random() * 150)}`.trim()
+    let randomkamu = `${Math.floor(Math.random() * 20)}`.trim() // Increased chances of failure
+    let Aku = (+randomaku)
+    let Kamu = (+randomkamu)
+    let temout = 'https://telegra.ph/file/d9fdd23790ab42280ca30.jpg'
+    let kngepet = 'https://telegra.ph/file/eff11a638fed2a3260b8f.jpg'
+    let mngepet = 'https://telegra.ph/file/a1410ce010b59486bc122.jpg'
+    
+    let botol = global.wm
+    
+    let __timers = (Date.now() - global.db.data.users[m.sender].lastngepet)
+    let _timers = (18000000 - __timers) 
+    let timers = clockString(_timers)
+    let user = global.db.data.users[m.sender]
+    if (Date.now() - global.db.data.users[m.sender].lastngepet > 18000000) { // 5 hour cooldown
+      if (Aku > Kamu) {
+        conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c6c4a6946a354317fe970.jpg' }, caption: `Kamu lengah Saat Ngepet, Dan Kamu Mines -10 juta`, mentions: [m.sender] }, { quoted: m });
+        user.money -= 10000000 // Failed robbery penalty: -10 million
+        global.db.data.users[m.sender].lastngepet = Date.now()
+      } else if (Aku < Kamu) {
+        user.money += 5000000 // Successful robbery reward: +5 million
+        conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/6a6a440d7f123bed78263.jpg' }, caption: `Kamu berhasil Ngepet, Dan kamu mendapatkan 5 Juta rupiah`, mentions: [m.sender] }, { quoted: m });
+        global.db.data.users[m.sender].lastngepet = Date.now()
+      } else {
+        conn.sendMessage(m.chat, `Maaf kamu tidak mendapatkan *Duit* dan kamu tidak masuk Dunia Lain karna melarikan diri\n${botol}`, m)
+        global.db.data.users[m.sender].lastngepet = Date.now()
+      }
+    } else conn.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/295949ff5494f3038f48c.jpg' }, caption: `Kamu sudah melakukan *ngepet*\nDan kamu harus menunggu selama agar bisa ngepet kembali ${timers}`, mentions: [m.sender] }, { quoted: m });
+  } catch (e) {
+    throw `${e}`
+  }
+}
+
+handler.help = ['ngepet']
+handler.tags = ['rpg']
+handler.command = /^(ngepet|ngefet)$/i
+handler.premium = true
+handler.group = true
+handler.rpg = true
+handler.fail = null
+
+export default handler
+
+function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)]
+}
+function clockString(ms) {
+  let h = Math.floor(ms / 3600000)
+  let m = Math.floor(ms / 60000) % 60
+  let s = Math.floor(ms / 1000) % 60
+  console.log({ms,h,m,s})
+  return [h, m, s].map(v => v.toString().padStart(2, '0') ).join(':')
+}
