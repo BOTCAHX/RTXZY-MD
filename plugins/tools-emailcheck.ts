@@ -57,7 +57,7 @@ let handler: WaPlugin = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.help = ['emailcheck <email1, email2, ...>'];
 handler.tags = ['tools'];
-handler.command = /^(emailcheck|emailcek|cekmail)$/i;
+handler.command = /^(emailcheck|emailcek)$/i;
 handler.limit = true;
 
 export default handler;
