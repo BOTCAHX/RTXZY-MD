@@ -1,4 +1,5 @@
 import pkg from 'node-webpmux';
+import { parseExifJSON } from '../lib/exif.js';
 const { Image } = pkg;
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
@@ -22,7 +23,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             const img = new Image();
             await img.load(buffer);
             if (img.exif) {
-                packId = JSON.parse(img.exif.slice(22).toString())['sticker-pack-id'] || null;
+                const json = parseExifJSON(img.exif);
+                packId = json?.['sticker-pack-id'] || null;
             }
         }
     } catch {}

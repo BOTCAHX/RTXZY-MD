@@ -2,6 +2,7 @@ import * as zapo from '../lib/simple.js';
 const loadZapo = async () => zapo;
 
 import pkg from 'node-webpmux';
+import { parseExifJSON } from '../lib/exif.js';
 const { Image } = pkg;
 
 let zapoCache = null;
@@ -42,9 +43,9 @@ async function extractPackId(buffer) {
         const img = new Image();
         await img.load(buffer);
         if (!img.exif) return null;
-        // EXIF data starts at byte 22 (after the webp exif header)
-        const json = JSON.parse(img.exif.slice(22).toString());
-        return json['sticker-pack-id'] || null;
+        // EXIF may be padded/offset — parse by locating the JSON object
+        const json = parseExifJSON(img.exif);
+        return json?.['sticker-pack-id'] || null;
     } catch {
         return null;
     }

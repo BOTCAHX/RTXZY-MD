@@ -1,5 +1,6 @@
 import { format } from 'util';
 import pkg from 'node-webpmux';
+import { parseExifJSON } from '../lib/exif.js';
 const { Image } = pkg;
 
 var handler = async (m) => {
@@ -11,8 +12,9 @@ var handler = async (m) => {
 		try {
 			var gambar = new Image()
 			await gambar.load(await m.quoted.download())
-			if (!gambar.exif || gambar.exif.length <= 22) return m.reply('Stiker ini tidak memiliki EXIF.')
-			m.reply(format(JSON.parse(gambar.exif.slice(22).toString())))
+			const meta = parseExifJSON(gambar.exif)
+			if (!meta) return m.reply('Stiker ini tidak memiliki EXIF.')
+			m.reply(format(meta))
 		} catch (e) {
 			m.reply('Gagal membaca EXIF stiker: ' + (e.message || e))
 		}
