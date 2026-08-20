@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import Database from 'better-sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 
 /**
  * lowdb adapter backed by SQLite.
@@ -9,11 +9,11 @@ import Database from 'better-sqlite3';
  * If `jsonFile` is given and the table is empty, existing JSON data is imported once.
  */
 class SQLiteAdapter {
-	db: Database.Database;
+	db: DatabaseSync;
 
 	constructor(file: string, jsonFiles?: string | string[]) {
-		this.db = new Database(path.resolve(file));
-		this.db.pragma('journal_mode = WAL');
+		this.db = new DatabaseSync(path.resolve(file));
+		this.db.exec('PRAGMA journal_mode = WAL');
 		this.db.exec('CREATE TABLE IF NOT EXISTS kv (collection TEXT NOT NULL, key TEXT NOT NULL, value TEXT NOT NULL, PRIMARY KEY (collection, key))');
 		if (jsonFiles) this._autoMigrate(Array.isArray(jsonFiles) ? jsonFiles : [jsonFiles]);
 	}
@@ -39,7 +39,9 @@ class SQLiteAdapter {
 	}
 
 	private _writeAll(data: Record<string, unknown>) {
-		const tx = this.db.transaction((entries: [string, unknown][]) => {
+		const entries = Object.entries(data);
+		this.db.exec('BEGIN');
+		try {
 			this.db.prepare('DELETE FROM kv').run();
 			const ins = this.db.prepare('INSERT OR REPLACE INTO kv (collection, key, value) VALUES (?, ?, ?)');
 			for (const [collection, value] of entries) {
@@ -49,8 +51,11 @@ class SQLiteAdapter {
 					ins.run(collection, '', JSON.stringify(value));
 				}
 			}
-		});
-		tx(Object.entries(data));
+			this.db.exec('COMMIT');
+		} catch (e) {
+			this.db.exec('ROLLBACK');
+			throw e;
+		}
 	}
 
 	async read(): Promise<unknown> {
