@@ -53,9 +53,9 @@
   },
   "dependencies": {
     "@vitalets/google-translate-api": "^9.0.0",
-    "@zapo-js/mcp-server": "^1.1.0",
+    "@zapo-js/mcp-server": "^1.2.0",
     "@zapo-js/media-utils": "^1.0.0",
-    "@zapo-js/store-sqlite": "^1.1.0",
+    "@zapo-js/store-sqlite": "^1.2.0",
     "async": "^3.2.4",
     "awesome-phonenumber": "^2.64.0",
     "axios": "^0.27.2",
@@ -105,7 +105,7 @@
     "ws": "^8.17.0",
     "yargs": "^17.5.1",
     "yt-search": "^2.10.3",
-    "zapo-js": "^1.7.0"
+    "zapo-js": "^1.8.0"
   },
   "overrides": {
     "jimp": "0.16.13",

@@ -1374,7 +1374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zapo-js/mcp-server@npm:^1.1.0":
+"@zapo-js/mcp-server@npm:^1.2.0":
   version: 1.2.0
   resolution: "@zapo-js/mcp-server@npm:1.2.0"
   dependencies:
@@ -1412,6 +1412,16 @@ __metadata:
     better-sqlite3: ">=11.0.0"
     zapo-js: ^1.7.0
   checksum: 10c0/a9b85e015655e06a6150776503007fadf2430aa7639f783922c0e5b22c58c281744b7b62baac0ef843082b2ea86af71fb92d0b5e7d766103297a9538bb12236b
+  languageName: node
+  linkType: hard
+
+"@zapo-js/store-sqlite@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@zapo-js/store-sqlite@npm:1.2.0"
+  peerDependencies:
+    better-sqlite3: ">=11.0.0"
+    zapo-js: ^1.7.0
+  checksum: 10c0/007eaf75fbf55ceb60c46e930712ed5d1da7a0b7ea906aff1ccbe763534527e47d9a101d2896a79d4f5b8f3cc859e539b2e676a86c7fb9cb7497c9d37503a29a
   languageName: node
   linkType: hard
 
@@ -5864,15 +5874,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rtxzy@workspace:.":
+"rtxzy-zapo-ts@workspace:.":
   version: 0.0.0-use.local
-  resolution: "rtxzy@workspace:."
+  resolution: "rtxzy-zapo-ts@workspace:."
   dependencies:
     "@types/node": "npm:^26.2.0"
     "@vitalets/google-translate-api": "npm:^9.0.0"
-    "@zapo-js/mcp-server": "npm:^1.1.0"
+    "@zapo-js/mcp-server": "npm:^1.2.0"
     "@zapo-js/media-utils": "npm:^1.0.0"
-    "@zapo-js/store-sqlite": "npm:^1.1.0"
+    "@zapo-js/store-sqlite": "npm:^1.2.0"
     async: "npm:^3.2.4"
     awesome-phonenumber: "npm:^2.64.0"
     axios: "npm:^0.27.2"
@@ -5927,7 +5937,7 @@ __metadata:
     ws: "npm:^8.17.0"
     yargs: "npm:^17.5.1"
     yt-search: "npm:^2.10.3"
-    zapo-js: "npm:^1.7.0"
+    zapo-js: "npm:^1.8.0"
   languageName: unknown
   linkType: soft
 
@@ -7428,9 +7438,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zapo-js@npm:^1.7.0":
-  version: 1.7.1
-  resolution: "zapo-js@npm:1.7.1"
+"zapo-js@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "zapo-js@npm:1.8.0"
   peerDependencies:
     argo-codec: ^0.2.1
     pino: ^9.0.0
@@ -7445,7 +7455,7 @@ __metadata:
       optional: true
     ws:
       optional: true
-  checksum: 10c0/11f7385375c91a8043bfb906ce64618dfe8676f15b8c3bb5d64f75022809d9cc2b2dcfdd438b0eb4773d4d640f7736e7a86aa36fc763d5b732aaff35eb6e7a99
+  checksum: 10c0/4ca57b034d3cf0c2fff08d07a35e5b5d1d1766bf9a9efc58032cf01e10e2ab0f0f1cc61dd447bf536914b8d0dd1c9cddc9c75c844ee159eef398d8e1b206ae7d
   languageName: node
   linkType: hard
 
