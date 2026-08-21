@@ -31,7 +31,7 @@ let handler: WaPlugin = async (m, { conn, usedPrefix, command, text }) => {
       age: -1,
       regTime: -1,
       premium: false,
-      premiumDate: 0,
+      premiumTime: 0,
       level: 0,
       money: 0,
       pasangan: '',
@@ -41,7 +41,7 @@ let handler: WaPlugin = async (m, { conn, usedPrefix, command, text }) => {
   }
 
   let user = global.db.data.users[who]
-  let { name, limit, exp, money, lastclaim, premiumDate, premium, registered, regTime, age, level, pasangan } = user
+  let { name, limit, exp, money, lastclaim, premiumTime, premium, registered, regTime, age, level, pasangan } = user
 
   let about = ''
   try {
@@ -140,8 +140,8 @@ let handler: WaPlugin = async (m, { conn, usedPrefix, command, text }) => {
 
 ┌─⊷ *STATUS*
 ┃📌 • *Registered:* ${registered ? 'Yes' : 'No'}
-┃⭐ • *Premium:* ${premium ? 'Yes' : 'No'}
-┃⏳ • *Premium Expired:* ${premium && premiumDate ? msToDate(premiumDate - Date.now()) : '-'}
+┃⭐ • *Premium:* ${premium && premiumTime > Date.now() ? 'Yes' : 'No'}
+┃⏳ • *Premium Expired:* ${premium && premiumTime > Date.now() ? msToDate(premiumTime - Date.now()) : '-'}
 ┃🕐 • *Last Claim:* ${lastclaim > 0 ? new Date(lastclaim).toLocaleString('id-ID') : '-'}
 └──────────────
 `.trim()
