@@ -489,6 +489,7 @@ loadDatabase()
 //	 import './lib/cluster'.Cluster()
 // }
 global.conn = simple.attach(makeWASocketBase(connectionOptions))
+void global.conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
 
 if (!opts['test']) {
 	if (global.db) setInterval(async () => {
@@ -543,8 +544,14 @@ if(!global.isInit && sqliteSize === 0 && !global.conn.authState.creds.registered
     void global.conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
     global.isInit = true
 } else if (!global.isInit && sqliteSize > 0 && !global.conn.authState.creds.registered && !global.conn.authState.creds.me) {
-    console.log(chalk.yellow('-- state.sqlite exists but no valid credentials --'))
-    console.log(chalk.yellow('-- if pairing keeps failing, manually delete the sessions/ folder --'))
+    console.log(chalk.yellow('-- state.sqlite exists but no valid credentials, auto reset --'))
+    try { global.conn.ws.close() } catch { }
+    fs.rmSync(storeSqlitePath, { force: true })
+    fs.rmSync(storeSqlitePath + '-shm', { force: true })
+    fs.rmSync(storeSqlitePath + '-wal', { force: true })
+    global.conn = simple.attach(makeWASocketBase(connectionOptions))
+    void global.conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
+    global.isInit = true
 }
 
 if (!conn.authState.creds.registered && !conn.authState.creds.me) {
