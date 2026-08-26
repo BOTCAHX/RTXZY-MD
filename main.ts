@@ -90,20 +90,21 @@ export function makeWASocketBase(connectionOptions: WaConnectionOptions = {}) {
 		const storePath = path.join(authDir, 'state.sqlite');
 		const backend = createSqliteStore({ path: storePath });
 		connectionOptions.store = createStore({
-			backends: { sqlite: backend },				providers: {
-					auth: 'sqlite',
-					signal: 'sqlite',
-					preKey: 'sqlite',
-					session: 'sqlite',
-					identity: 'sqlite',
-					senderKey: 'sqlite',
-					appState: 'sqlite',
-					privacyToken: 'sqlite',
-					messages: 'sqlite',
-					threads: 'sqlite',
-					contacts: 'sqlite',
-				} as unknown as WaStoreOptions['providers'],
-			} as unknown as WaStoreOptions);
+			backends: { sqlite: backend } as unknown as WaStoreOptions['backends'],
+			providers: {
+				auth: 'sqlite',
+				signal: 'sqlite',
+				preKey: 'sqlite',
+				session: 'sqlite',
+				identity: 'sqlite',
+				senderKey: 'sqlite',
+				appState: 'sqlite',
+				privacyToken: 'sqlite',
+				messages: 'sqlite',
+				threads: 'sqlite',
+				contacts: 'sqlite',
+			} as unknown as WaStoreOptions['providers'],
+		} as unknown as WaStoreOptions);
 	}
 
 	const version = connectionOptions.version
@@ -294,7 +295,6 @@ export function makeWASocketBase(connectionOptions: WaConnectionOptions = {}) {
 
 	client.on('presence', (ev) => {
 		const id = ev.chatJid;
-		// attrs from raw stanza: `from` = sender jid, `type` = presence type
 		const attrs = ev.rawNode?.attrs || {};
 		const sender = attrs.from || id;
 		if (!id || !sender) return;
@@ -361,13 +361,29 @@ export function makeWASocketBase(connectionOptions: WaConnectionOptions = {}) {
 	conn.requestPairingCode = async (phoneNumber, customCode) => {
 		const state = client.getState ? client.getState() : { registered: false };
 		if (!state.registered && !client._zapoPairingReady) {
-			void client.connect().catch((e) => logger?.error?.(e));
+			try { await client.connect(); } catch (e) { logger?.error?.(e); }
 			await new Promise<void>((resolve) => {
 				client.once('auth_pairing_required', () => { client._zapoPairingReady = true; resolve(); });
 				setTimeout(resolve, 15000);
 			});
 		}
-		return client.auth.requestPairingCode(String(phoneNumber).replace(/\D/g, ''), false, sanitizePairingCode(customCode));
+		const phone = String(phoneNumber).replace(/\D/g, '');
+		const pairingCode = sanitizePairingCode(customCode);
+		let lastErr;
+		for (let attempt = 0; attempt < 15; attempt++) {
+			try {
+				return await client.auth.requestPairingCode(phone, false, pairingCode);
+			} catch (e) {
+				lastErr = e;
+				if (e.message?.includes('not connected')) {
+					logger?.warn?.(`client not connected yet (attempt ${attempt + 1}/15), retrying in 2s...`);
+					await new Promise(r => setTimeout(r, 2000));
+					continue;
+				}
+				throw e;
+			}
+		}
+		throw lastErr;
 	};
 
 	conn.connect = () => client.connect();
@@ -379,7 +395,6 @@ export function makeWASocketBase(connectionOptions: WaConnectionOptions = {}) {
 	conn._store = connectionOptions.store;
 	conn._sessionId = sessionId;
 
-	void client.connect().catch((e) => logger?.error?.(e));
 
 	return conn;
 }
@@ -525,17 +540,18 @@ if(!global.isInit && sqliteSize === 0 && !global.conn.authState.creds.registered
     fs.rmSync(storeSqlitePath + '-shm', { force: true })
     fs.rmSync(storeSqlitePath + '-wal', { force: true })
     global.conn = simple.attach(makeWASocketBase(connectionOptions))
+    void global.conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
     global.isInit = true
 } else if (!global.isInit && sqliteSize > 0 && !global.conn.authState.creds.registered && !global.conn.authState.creds.me) {
     console.log(chalk.yellow('-- state.sqlite exists but no valid credentials --'))
     console.log(chalk.yellow('-- if pairing keeps failing, manually delete the sessions/ folder --'))
 }
 
-// Always use pairing code if not registered
 if (!conn.authState.creds.registered && !conn.authState.creds.me) {
     if (process.argv.includes('--qr')) {
         global.useQR = true;
         console.log(chalk.blueBright('QR Mode is active. Please scan the QR code that will appear below.'));
+        void conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
         rl.close();
     } else {
         let phoneNumber;
@@ -549,16 +565,32 @@ if (!conn.authState.creds.registered && !conn.authState.creds.me) {
         } while (!/^\d+$/.test(phoneNumber) || phoneNumber.length < 10)
         
         rl.close() 
-        phoneNumber = phoneNumber.replace(/\D/g, '')    
-        console.log(chalk.bgWhite(chalk.blue('-- Please wait, generating code... --')))    
-        setTimeout(async () => {
-            let code = await conn.requestPairingCode(phoneNumber)      
-            code = code?.match(/.{1,4}/g)?.join('-') || code      
-            console.log(
-                chalk.black(chalk.bgGreen(`Your Pairing Code : `)), 
-                chalk.black(chalk.white(code))
-            )
-        }, 3000)
+        phoneNumber = phoneNumber.replace(/\D/g, '')
+
+        const CF = '123456789ABCDEFGHJKLMNPQRSTVWXYZ';
+        const randomCode = Array.from({ length: 8 }, () => CF[Math.floor(Math.random() * CF.length)]).join('');
+
+        const waitForServerReady = async (timeoutMs = 60000) => {
+            if (conn._client?.getState?.()?.registered || conn._client?.getCredentials?.()?.meJid) return;
+            return new Promise<void>((resolve) => {
+                const timer = setTimeout(() => { console.log(chalk.red('-- Timed out waiting for server --')); resolve(); }, timeoutMs);
+                const onReady = () => { clearTimeout(timer); resolve(); };
+                conn._client.once('auth_qr', onReady);
+                conn._client.once('auth_pairing_required', onReady);
+            });
+        };
+
+        void conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
+
+        await waitForServerReady();
+
+        try {
+            let code = await conn._client.auth.requestPairingCode(phoneNumber, true, randomCode);
+            code = code?.match(/.{1,4}/g)?.join('-') || code;
+            console.log(chalk.black(chalk.bgGreen(` Your Pairing Code : `)), chalk.black(chalk.white(code)));
+        } catch (e) {
+            console.log(chalk.red('[Pairing] Failed:'), e?.message || e);
+        }
     }
 }
 
@@ -580,6 +612,7 @@ global.reloadHandler = async function (restatConn) {
 	if (restatConn) {
 		try { oldConn.ws.close() } catch { }
 		global.conn = simple.attach(makeWASocketBase(connectionOptions))
+		void global.conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
 	}
 
 	if (!isInit && oldConn.ev) {
