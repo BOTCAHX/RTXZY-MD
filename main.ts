@@ -645,16 +645,22 @@ global.reloadHandler = async function (restatConn) {
 let pluginFolder = path.join(__dirname, 'plugins')
 let pluginFilter = filename => /\.ts$/.test(filename)
 global.plugins = {}
+const failedPlugins = []
 for (let filename of fs.readdirSync(pluginFolder).filter(pluginFilter)) {
 	try {
 		const module = await import(pathToFileURL(path.join(pluginFolder, filename)).href + '?update=' + Date.now())
 		global.plugins[filename] = module.default || module
 	} catch (e) {
-		conn.logger.error(e)
+		failedPlugins.push(filename)
 		delete global.plugins[filename]
 	}
 }
-console.log(Object.keys(global.plugins))
+const totalPlugins = Object.keys(global.plugins).length
+if (failedPlugins.length === 0) {
+	console.log(chalk.green(`✅ ${totalPlugins} plugins loaded`))
+} else {
+	console.log(chalk.green(`✅ ${totalPlugins} plugins loaded`) + chalk.yellow(` (${failedPlugins.length} failed: ${failedPlugins.join(', ')})`))
+}
 global.reload = async (_ev, filename) => {
 	if (pluginFilter(filename)) {
 		let dir = path.join(pluginFolder, filename)
