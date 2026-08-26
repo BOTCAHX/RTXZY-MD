@@ -578,22 +578,22 @@ if (!conn.authState.creds.registered && !conn.authState.creds.me) {
         const CF = '123456789ABCDEFGHJKLMNPQRSTVWXYZ';
         const randomCode = Array.from({ length: 8 }, () => CF[Math.floor(Math.random() * CF.length)]).join('');
 
-        const waitForServerReady = async (timeoutMs = 15000) => {
-            if (conn._client?.getState?.()?.registered || conn._client?.getCredentials?.()?.meJid || conn._client?._zapoPairingReady) return;
-            return new Promise<void>((resolve) => {
-                const timer = setTimeout(() => { console.log(chalk.red('-- Timed out waiting for server --')); resolve(); }, timeoutMs);
-                const onReady = () => { clearTimeout(timer); resolve(); };
-                conn._client.once('auth_qr', onReady);
-                conn._client.once('auth_pairing_required', onReady);
-            });
-        };
-
         void conn._client.connect().catch((e) => console.error('[WA] connect error:', e?.message || e));
 
-        await waitForServerReady();
-
+        let code;
         try {
-            let code = await conn._client.auth.requestPairingCode(phoneNumber, true, randomCode);
+            for (let attempt = 0; attempt < 30; attempt++) {
+                try {
+                    code = await conn._client.auth.requestPairingCode(phoneNumber, true, randomCode);
+                    break;
+                } catch (e) {
+                    if (e.message?.includes('not connected')) {
+                        await new Promise(r => setTimeout(r, 1000));
+                        continue;
+                    }
+                    throw e;
+                }
+            }
             code = code?.match(/.{1,4}/g)?.join('-') || code;
             console.log(chalk.black(chalk.bgGreen(` Your Pairing Code : `)), chalk.black(chalk.white(code)));
         } catch (e) {
