@@ -579,7 +579,7 @@ if (!conn.authState.creds.registered && !conn.authState.creds.me) {
         const randomCode = Array.from({ length: 8 }, () => CF[Math.floor(Math.random() * CF.length)]).join('');
 
         const waitForServerReady = async (timeoutMs = 15000) => {
-            if (conn._client?.getState?.()?.registered || conn._client?.getCredentials?.()?.meJid) return;
+            if (conn._client?.getState?.()?.registered || conn._client?.getCredentials?.()?.meJid || conn._client?._zapoPairingReady) return;
             return new Promise<void>((resolve) => {
                 const timer = setTimeout(() => { console.log(chalk.red('-- Timed out waiting for server --')); resolve(); }, timeoutMs);
                 const onReady = () => { clearTimeout(timer); resolve(); };
