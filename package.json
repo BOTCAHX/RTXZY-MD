@@ -60,7 +60,7 @@
     "awesome-phonenumber": "^2.64.0",
     "axios": "^0.27.2",
     "base64-to-image": "^1.0.2",
-    "better-sqlite3": "^12.6.2",
+    "better-sqlite3": "^13.0.3",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
     "colors": "1.4.0",
