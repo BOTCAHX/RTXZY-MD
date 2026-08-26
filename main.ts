@@ -518,7 +518,7 @@ async function connectionUpdate(update) {
 }
 
 
-const waitAuthLoaded = async (conn, timeoutMs = 12000) => {
+const waitAuthLoaded = async (conn, timeoutMs = 5000) => {
     const start = Date.now();
     while (Date.now() - start < timeoutMs) {
         if (conn._client?.getCredentials?.()) return true;
@@ -526,7 +526,8 @@ const waitAuthLoaded = async (conn, timeoutMs = 12000) => {
     }
     return false;
 };
-await waitAuthLoaded(global.conn);
+// skip auth wait when there is no session file (fresh start) so pairing is fast
+if (!global.isInit) await waitAuthLoaded(global.conn);
 
 if (global.conn.authState.creds.registered || global.conn.authState.creds.me) {
     console.log(chalk.green('-- session found, resuming without pairing --'))
@@ -577,7 +578,7 @@ if (!conn.authState.creds.registered && !conn.authState.creds.me) {
         const CF = '123456789ABCDEFGHJKLMNPQRSTVWXYZ';
         const randomCode = Array.from({ length: 8 }, () => CF[Math.floor(Math.random() * CF.length)]).join('');
 
-        const waitForServerReady = async (timeoutMs = 60000) => {
+        const waitForServerReady = async (timeoutMs = 15000) => {
             if (conn._client?.getState?.()?.registered || conn._client?.getCredentials?.()?.meJid) return;
             return new Promise<void>((resolve) => {
                 const timer = setTimeout(() => { console.log(chalk.red('-- Timed out waiting for server --')); resolve(); }, timeoutMs);
