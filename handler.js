@@ -1279,7 +1279,7 @@ export default {
              } catch (e) {
                  // console.log(m, m.quoted, e)
              }
-            if (opts['autoread'] && m.key?.id) await this.sendReadReceipt(m.chat, m.key.participant || m.sender, [m.key.id])
+            if (opts['autoread'] && m.key?.id) await this.sendReadReceipt(m.chat, m.isGroup ? (m.key.participant || m.sender) : null, [m.key.id])
         }
     },
 	
