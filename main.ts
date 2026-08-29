@@ -653,13 +653,13 @@ global.reloadHandler = async function (restatConn) {
 let pluginFolder = path.join(__dirname, 'plugins')
 let pluginFilter = filename => /\.ts$/.test(filename)
 global.plugins = {}
-const failedPlugins = []
+const failedPlugins: { name: string; error: any }[] = []
 for (let filename of fs.readdirSync(pluginFolder).filter(pluginFilter)) {
 	try {
 		const module = await import(pathToFileURL(path.join(pluginFolder, filename)).href + '?update=' + Date.now())
 		global.plugins[filename] = module.default || module
 	} catch (e) {
-		failedPlugins.push(filename)
+		failedPlugins.push({ name: filename, error: e })
 		delete global.plugins[filename]
 	}
 }
@@ -667,7 +667,12 @@ const totalPlugins = Object.keys(global.plugins).length
 if (failedPlugins.length === 0) {
 	console.log(chalk.green(`✅ ${totalPlugins} plugins loaded`))
 } else {
-	console.log(chalk.green(`✅ ${totalPlugins} plugins loaded`) + chalk.yellow(` (${failedPlugins.length} failed: ${failedPlugins.join(', ')})`))
+	console.log(chalk.green(`✅ ${totalPlugins} plugins loaded`) + chalk.yellow(` (${failedPlugins.length} failed)`))
+	for (const f of failedPlugins) {
+		console.log(chalk.red(`❌ ${f.name}:`))
+		if (f.error?.message) console.log(chalk.red(`   ${f.error.message}`))
+		if (f.error?.stack) console.log(chalk.gray(f.error.stack.split('\n').slice(1, 4).join('\n')))
+	}
 }
 global.reload = async (_ev, filename) => {
 	if (pluginFilter(filename)) {
@@ -682,7 +687,9 @@ global.reload = async (_ev, filename) => {
 			const module = await import(pathToFileURL(dir).href + '?update=' + Date.now())
 			global.plugins[filename] = module.default || module
 		} catch (e) {
-			conn.logger.error(e)
+			console.log(chalk.red(`❌ Plugin '${filename}' failed to reload:`))
+			if (e?.message) console.log(chalk.red(`   ${e.message}`))
+			if (e?.stack) console.log(chalk.gray(e.stack.split('\n').slice(1, 4).join('\n')))
 		} finally {
 			global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)))
 		}
