@@ -105,7 +105,7 @@
     "ws": "^8.17.0",
     "yargs": "^17.5.1",
     "yt-search": "^2.10.3",
-    "zapo-js": "1.8.2"
+    "zapo-js": "latest"
   },
   "overrides": {
     "jimp": "0.16.13",
