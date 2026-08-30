@@ -1330,6 +1330,7 @@ export default {
 },
     async delete({ remoteJid, fromMe, id, participant }) {
         if (fromMe) return
+        if (!remoteJid || remoteJid.endsWith('@broadcast')) return // skip story/status delete
         const _now = Date.now()
         this._delCache = this._delCache || new Map()
         if (id && this._delCache.get(id) > _now - 5000) return
