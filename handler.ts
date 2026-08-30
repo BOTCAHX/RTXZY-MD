@@ -1330,7 +1330,6 @@ export default {
 },
     async delete({ remoteJid, fromMe, id, participant }) {
         if (fromMe) return
-        if (!remoteJid || remoteJid.endsWith('@broadcast')) return // skip story/status delete
         const _now = Date.now()
         this._delCache = this._delCache || new Map()
         if (id && this._delCache.get(id) > _now - 5000) return
@@ -1362,21 +1361,15 @@ export default {
         const label = mentionSafe ? participantJid.split('@')[0] : 'user'
         const mentionList = mentionSafe ? [participantJid] : []
 
-        if (msg) {
-            await this.reply(remoteJid, `
+        if (!msg) return // skip if message not in cache (e.g. story/status delete)
+        await this.reply(remoteJid, `
 Terdeteksi @${label} telah menghapus pesan
 Untuk mematikan fitur ini, ketik
 *.disable delete*
 `.trim(), msg, {
-                mentions: mentionList
-            })
-            this.copyNForward(remoteJid, msg).catch(e => console.error(e, msg))
-        } else {
-            await this.sendMessage(remoteJid, {
-                text: `Terdeteksi @${label} telah menghapus pesan\n\nUntuk mematikan fitur ini, ketik\n*.disable delete*`,
-                mentions: mentionList
-            })
-        }
+            mentions: mentionList
+        })
+        this.copyNForward(remoteJid, msg).catch(e => console.error(e, msg))
     }
 }
 
