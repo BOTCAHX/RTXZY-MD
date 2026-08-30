@@ -21,7 +21,7 @@ export default {
             if (!m) return
             if (isNewsletterJid(m.chat)) return
             if (m.chat && m.isGroup && !global.db.data.chats[m.chat]) {
-                global.db.data.chats[m.chat] = { detect: true, delete: true };
+                global.db.data.chats[m.chat] = { detect: true, delete: false };
             }
             if (m.isGroup && !global.db.data._migratedDetect) {
                 global.db.data._migratedDetect = true;
@@ -867,7 +867,7 @@ export default {
                 if (!('sBye' in chat)) chat.sBye = 'Selamat tinggal @user!'
                 if (!('sPromote' in chat)) chat.sPromote = ''
                 if (!('sDemote' in chat)) chat.sDemote = ''
-                if (!('delete' in chat)) chat.delete = true
+                if (!('delete' in chat)) chat.delete = false
                 if (!('antiLink' in chat)) chat.antiLink = true
                 if (!('antiLinknokick' in chat)) chat.antiLinknokick = false
                 if (!('antiSticker' in chat)) chat.antiSticker = false
@@ -911,7 +911,7 @@ export default {
                 sBye: 'Selamat tinggal @user!',
                 sPromote: '',
                 sDemote: '',
-                delete: true, 
+                delete: false, 
                 antiLink: false,
                 antiLinknokick: false,
                 antiSticker: false, 
