@@ -254,6 +254,17 @@ exports.attach = (conn) => {
 	});
 
     conn._lidMiss = new Set();
+    conn.isOfflineResuming = false;
+
+    // Handle offline resume: skip processing queued messages from WhatsApp
+    conn._client?.on?.('offline_resume', (ev) => {
+        conn.isOfflineResuming = ev.status === 'resuming';
+        if (ev.status === 'resuming') {
+            conn.logger?.info?.(`⏳ Offline resume: ${ev.totalStanzas} pesan tertunda, skip semua pesan lama`);
+        } else {
+            conn.logger?.info?.('✅ Offline resume selesai, memproses pesan baru');
+        }
+    });
 
     const seedOwnLid = () => {
         try {
