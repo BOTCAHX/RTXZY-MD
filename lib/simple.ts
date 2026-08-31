@@ -279,7 +279,13 @@ exports.attach = (conn) => {
     seedOwnLid();
     conn.ev.on('connection.update', (update) => {
         if (update?.connection === 'open' || update?.connection === 'connecting') seedOwnLid();
-        if (update?.connection === 'open') conn.isOfflineResuming = false;
+        if (update?.connection === 'open') {
+            conn.isOfflineResuming = true;
+            setTimeout(() => {
+                conn.isOfflineResuming = false;
+                conn.logger?.info?.('✅ Grace period selesai, memproses pesan baru');
+            }, 10_000);
+        }
     });
 
     conn.rejectCall = async (callId, from) => {
