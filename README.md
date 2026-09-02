@@ -15,7 +15,7 @@
 - **Update Lid resolver** — Penanganan lid jadi terbaru
 - **Menggunakan zapo-js** — [`zapo-js`](https://zapo.to), dokumentasi & MCP di [`zapo.to/mcp`](https://zapo.to/mcp)
 - **Sesi lokal SQLite** — Kredensial disimpan di `sessions/state.sqlite` (pakai `@zapo-js/store-sqlite` + `better-sqlite3`)
-- **Database SQLite** — Database bot (`users`, `chats`, `stats`, dll) kini tersimpan di `database/database.sqlite` (WAL, atomic) menggantikan `database.json`; auto-migrasi dari JSON lama saat boot pertama
+- **Database SQLite** — Database bot (`users`, `chats`, `stats`, dll) kini tersimpan di `database/database.sqlite` (WAL, atomic) menggantikan `database.json`, auto-migrasi dari JSON lama saat boot pertama
 - **Koneksi Dual Mode** — Mendukung Pairing Code secara default, dan QR Code bisa diakses dengan argumen `--qr`
 - **Wajib Node.js 22++**
 
