@@ -284,7 +284,7 @@ exports.attach = (conn) => {
         if (update?.connection === 'open' || update?.connection === 'connecting') seedOwnLid();
         if (update?.connection === 'open') {
             conn._connectedAt = Math.floor(Date.now() / 1000);
-            conn.isOfflineResuming = true;
+            // conn.isOfflineResuming = true;
         }
     });
 
