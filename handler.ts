@@ -14,8 +14,7 @@ export default {
         if (!chatUpdate) return
         let m = chatUpdate.messages[chatUpdate.messages.length - 1]
         if (!m) return
-        // Skip all messages during offline resume (queued messages from WhatsApp)
-        if ((this as any).isOfflineResuming) return
+        if ((this as any).isOfflineResuming && m.messageTimestamp && (this as any)._connectedAt && m.messageTimestamp < (this as any)._connectedAt) return
         // Skip messages from channels/newsletters - bot only serves group & private chat
         if (isNewsletterJid(m.key?.remoteJid)) return
         try {
