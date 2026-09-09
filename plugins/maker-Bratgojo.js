@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     await conn.sendFile(m.chat, apiUrl, "bratgojo.jpg", "Done!", m);
   } catch (e) {
     console.log(e);
-    throw eror;
+    m.reply('❌ Terjadi kesalahan saat memproses.');
   }
 };
 
