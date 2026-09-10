@@ -54,6 +54,7 @@ handler.before = async (m, { conn }) => {
         }
     } catch (e) {
         console.log(e);
+        if (typeof e === 'string') return m.reply(e);
         m.reply('❌ Terjadi kesalahan saat memproses.');
     }
 };

@@ -1,20 +1,21 @@
 import uploadImage from '../lib/uploadImage.js';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
+    let q = m.quoted ? m.quoted : m;
+    let mime = (q.msg || q).mimetype || "";
+    
+    let guide = `Kirim gambar (atau balas gambar) dengan caption:\n\n*${usedPrefix + command} bio|nama|ponsel|username*\n\n*Contoh:*\n${usedPrefix + command} Just a dev|Budi Santoso|+6281234567890|budisantoso`;
+
+    if (!text && !mime) throw guide;
+    if (!text) throw `*❌ Teks isian tidak boleh kosong!*\n\n${guide}`;
+    if (!mime) throw `*❌ Media tidak ditemukan!*\n\n${guide}`;
+    if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`;
+    let [bio, nama, ponsel, username] = text.split('|');
+    if (!bio || !nama || !ponsel || !username) {
+        throw `*❌ Format salah atau ada data yang kurang!*\n\nPastikan memisahkan teks menggunakan tanda \`|\` tanpa terlewat.\n\n${guide}`;
+    }
+
     try {
-        let q = m.quoted ? m.quoted : m;
-        let mime = (q.msg || q).mimetype || "";
-        
-        let guide = `Kirim gambar (atau balas gambar) dengan caption:\n\n*${usedPrefix + command} bio|nama|ponsel|username*\n\n*Contoh:*\n${usedPrefix + command} Just a dev|Budi Santoso|+6281234567890|budisantoso`;
-
-        if (!text) throw `*❌ Teks isian tidak boleh kosong!*\n\n${guide}`;
-        if (!mime) throw `*❌ Media tidak ditemukan!*\n\n${guide}`;
-        if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`;
-        let [bio, nama, ponsel, username] = text.split('|');
-        if (!bio || !nama || !ponsel || !username) {
-            throw `*❌ Format salah atau ada data yang kurang!*\n\nPastikan memisahkan teks menggunakan tanda \`|\` tanpa terlewat.\n\n${guide}`;
-        }
-
         await m.reply('⏳ _Sedang mengunggah gambar dan membuat Fake Telegram..._');
 
         let media = await q.download?.();
@@ -29,6 +30,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     } catch (e) {
         console.log(e);
+        if (typeof e === 'string') return m.reply(e);
         m.reply('❌ Terjadi kesalahan saat memproses.');
     }
 }

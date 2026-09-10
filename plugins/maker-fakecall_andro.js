@@ -27,6 +27,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         await conn.sendFile(m.chat, apiUrl, 'fakecall.jpg', 'Done!', m);
     } catch (e) {
         console.log(e);
+        if (typeof e === 'string') return m.reply(e);
         m.reply('❌ Terjadi kesalahan saat memproses gambar.');
     }
 }
