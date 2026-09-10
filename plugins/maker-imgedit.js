@@ -67,6 +67,7 @@ let handler = async (m, {
 
     } catch (e) {
       console.log(e);
+        if (typeof e === 'string') return m.reply(e);
       m.reply(`[ ! ] Identifikasi Gagal.`)
     }
   } else {
