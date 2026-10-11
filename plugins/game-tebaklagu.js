@@ -29,7 +29,7 @@ Penyanyi: ${json.artis}
             delete conn.tebaklagu[id]
         }, timeout)
     ]
-    await conn.sendFile(m.chat, json.lagu, 'tebaklagu.mp3', '', conn.tebaklagu[id][0])
+    await conn.sendMessage(m.chat, { audio: { url: json.lagu }, mimetype: 'audio/mp4', ptt: true }, { quoted: conn.tebaklagu[id][0] })
    
 }
 handler.help = ['tebaklagu']
