@@ -257,4 +257,4 @@ https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 
 <a href="https://wa.me/6282221792667"><img src="https://img.shields.io/badge/Contact_Admin-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"></a>
 <a href="https://whatsapp.com/channel/0029VbAI9JCBKfi5qXq9yJ01"><img src="https://img.shields.io/badge/Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Channel"></a>
-<a href="https://qris.zone.id/qviqy41iq"><img src="https://img.shields.io/badge/Donate-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Donate"></a>
+<a href="https://sociabuzz.com/tioclkp02/give"><img src="https://img.shields.io/badge/Donate-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Donate"></a>
