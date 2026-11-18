@@ -2,7 +2,7 @@ import { canvas, clock, guard, optionalImageUrl, parts } from '../lib/canvasApi.
 
 let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
   const px = usedPrefix + command;
-  const guide = `Format salah!\n\n*Cara penggunaan:*\n${px} nama|waktu\n\n*Contoh:*\n${px} Budi|08:30\n\nWaktu opsional, default jam sekarang. Gambar opsional.`;
+  const guide = `Format salah!\n\n*Cara pakai:*\n${px} nama|waktu\n\n*Contoh:*\n${px} Budi|08:30\n\nWaktu opsional, default jam sekarang. Foto juga opsional: balas (reply) gambar kalau mau memakainya.`;
 
   if (!text) throw guide;
 

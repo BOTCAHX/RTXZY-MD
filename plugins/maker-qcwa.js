@@ -2,14 +2,14 @@ import { avatarUrl, canvas, guard, imageSource, imageUrl, parts } from '../lib/c
 
 let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
   const px = usedPrefix + command;
-  const guide = `Format salah!\n\n*Cara penggunaan:*\n${px} teks|nama|nomor|mode|tag\n\n*Contoh:*\n${px} Halo selamat pagi!|Budi|0896543443|dark|botcahx\n\nIsian setelah teks opsional: nama default nama kamu, nomor default nomor kamu, mode default dark, tag default botcahx. Kirim atau balas gambar bersamanya.`;
+  const guide = `Format salah!\n\n*Cara pakai:*\n1. Kirim gambar dengan caption command, atau balas (reply) sebuah gambar\n2. Ketik:\n${px} teks|nama|nomor|mode|tag\n\n*Contoh:*\n${px} Halo selamat pagi!|Budi|0896543443|dark|botcahx\n\nIsian setelah teks opsional: nama default nama kamu, nomor default nomor kamu, mode default dark, tag default botcahx.`;
 
   if (!text) throw guide;
 
   const [teks, nama, nomor, mode, tag] = parts(text);
 
   if (!teks) throw guide;
-  if (!imageSource(m)) throw `*❌ Media tidak ditemukan!*\n\n${guide}`;
+  if (!imageSource(m)) throw `*❌ Gambar tidak ditemukan!*\n\nBalas (reply) gambar dulu, atau kirim gambar dengan caption command.\n\n${guide}`;
 
   const imgUrl = await imageUrl(m);
 

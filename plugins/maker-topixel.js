@@ -8,9 +8,9 @@ const level = (value) => {
 
 let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
   const px = usedPrefix + command;
-  const guide = `Format salah!\n\n*Cara penggunaan:*\n${px} level\n\n*Contoh:*\n${px} 10\n\nLevel 1 sampai 100 (default 10). Kirim atau balas gambar bersamanya.`;
+  const guide = `Format salah!\n\n*Cara pakai:*\n1. Kirim gambar dengan caption command, atau balas (reply) sebuah gambar\n2. Ketik:\n${px} level\n\n*Contoh:*\n${px} 10\n\nLevel 1 sampai 100 (default 10).`;
 
-  if (!imageSource(m)) throw `*❌ Media tidak ditemukan!*\n\n${guide}`;
+  if (!imageSource(m)) throw `*❌ Gambar tidak ditemukan!*\n\nBalas (reply) gambar dulu, atau kirim gambar dengan caption command.\n\n${guide}`;
 
   const [angka] = parts(text);
   const inputPath = await imageUrl(m);

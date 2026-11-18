@@ -2,7 +2,7 @@ import { avatarUrl, canvas, guard, optionalImageUrl, parts } from '../lib/canvas
 
 let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
   const px = usedPrefix + command;
-  const guide = `Format salah!\n\n*Cara penggunaan:*\n${px} username|pesan\n\n*Contoh:*\n${px} botcahx|Mantap kali bos\n\nAvatar dari foto profil kamu, atau kirim/balas gambar untuk memakainya.`;
+  const guide = `Format salah!\n\n*Cara pakai:*\n${px} username|pesan\n\n*Contoh:*\n${px} botcahx|Mantap kali bos\n\nAvatar diambil dari foto profil kamu. Balas (reply) gambar kalau mau memakai foto lain.`;
 
   if (!text) throw guide;
 
