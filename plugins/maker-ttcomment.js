@@ -13,7 +13,7 @@ ${p + c} user1|komentar1|likes|user2|balasan|likes2
 *Contoh:*
 ${p + c} BOTCAHX|Mantap kali bos|12500|Supri|Setuju banget|15
 
-• likes boleh kosong (otomatis 0)
+• likes boleh kosong (otomatis 0), boleh juga ditulis 12.5K / 1,2rb
 • Semua avatar diambil dari 2 gambar yang kamu kirim`;
 
 const store = conn => (conn.ttc = conn.ttc && typeof conn.ttc === 'object' ? conn.ttc : {});
@@ -36,7 +36,17 @@ const arm = (conn, id, stage, ms, note) => {
     }, ms);
 };
 
-const digits = v => String(v ?? '').replace(/[^\d]/g, '').replace(/^0+(?=\d)/, '') || '0';
+const digits = v => {
+    let s = String(v ?? '').trim().toLowerCase().replace(/\s/g, '');
+    if (!s) return '0';
+    const suf = s.match(/(juta|ribu|jt|rb|k|m)$/)?.[0];
+    if (suf) s = s.slice(0, -suf.length).replace(',', '.');
+    else s = s.replace(/[.,]/g, '');
+    const n = parseFloat(s);
+    if (!Number.isFinite(n) || n < 0) return '0';
+    const mult = { k: 1e3, rb: 1e3, ribu: 1e3, m: 1e6, jt: 1e6, juta: 1e6 }[suf] || 1;
+    return String(Math.round(n * mult));
+};
 
 async function render(conn, m, session, field) {
     const [img1, img2] = session.images;
