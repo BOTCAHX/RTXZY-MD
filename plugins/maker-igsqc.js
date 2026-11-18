@@ -1,7 +1,7 @@
 import { canvas, guard } from '../lib/canvasApi.js';
 import { cleanup, imageCollector, start } from '../lib/canvasSession.js';
 
-const usage = (px) => `${px} username\n\n*Contoh:*\n${px} botcahx\n\nUsername opsional, default nama kamu.`;
+const usage = (px) => `*${px} username*\n\n*Contoh:*\n${px} botcahx\n\nUsername opsional, default nama kamu.`;
 
 let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
   const px = usedPrefix + command;

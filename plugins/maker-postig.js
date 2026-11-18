@@ -1,7 +1,7 @@
 import { canvas, guard, parts } from '../lib/canvasApi.js';
 import { cleanup, imageCollector, start } from '../lib/canvasSession.js';
 
-const usage = (px) => `${px} username|nama|like|komentar|repost|verified\n\n*Contoh:*\n${px} botcahx|tio|99999|999|999|true\n\nIsian setelah username opsional (default 999 atau false).`;
+const usage = (px) => `*${px} username|nama|like|komentar|repost|verified*\n\n*Contoh:*\n${px} botcahx|tio|99999|999|999|true\n\nIsian setelah username opsional (default 999 atau false).`;
 
 let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
   const px = usedPrefix + command;
@@ -19,7 +19,7 @@ let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
 
   const [username, nama, like, komentar, repost, verified] = parts(text);
 
-  if (!username) throw `Isian belum lengkap. Kirim:\n*${usage(px)}*`;
+  if (!username) throw `Isian belum lengkap. Kirim:\n\n${usage(px)}`;
 
   const [avatar, foto] = session.images.map((v) => v.url);
 
