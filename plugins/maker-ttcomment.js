@@ -16,16 +16,6 @@ ${p + c} BOTCAHX|Mantap kali bos|12500|Supri|Setuju banget|15
 • likes boleh kosong (otomatis 0)
 • Semua avatar diambil dari 2 gambar yang kamu kirim`;
 
-const prefixOf = conn => {
-    const p = conn.prefix || global.prefix;
-    if (typeof p === 'string' && p) return p;
-    if (Array.isArray(p)) {
-        const s = p.find(v => typeof v === 'string' && v);
-        if (s) return s;
-    }
-    return '.';
-};
-
 const store = conn => (conn.ttc = conn.ttc && typeof conn.ttc === 'object' ? conn.ttc : {});
 
 const cleanup = (conn, id) => {
@@ -91,7 +81,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const session = conn.ttc[id];
 
     if (!session) {
-        conn.ttc[id] = { stage: 'images', images: [] };
+        conn.ttc[id] = { stage: 'images', images: [], prefix: px };
         arm(conn, id, 'images', IMAGE_TIMEOUT, `⏱️ Sesi *${command}* dibatalkan (tidak ada gambar masuk).`);
         return m.reply(`🖼️ Kirim *2 gambar berbeda* sekarang (avatar komentator 1 & 2).\n_Waktu ${IMAGE_TIMEOUT / 1000} detik._\n\nSetelah itu kirim caption:\n*${px} user1|komentar1|likes|user2|balasan|likes2*`);
     }
@@ -145,7 +135,7 @@ handler.before = async (m, { conn }) => {
         }
 
         arm(conn, m.chat, 'text', TEXT_TIMEOUT, '⏱️ Sesi dibatalkan (caption tidak dikirim).');
-        const px = prefixOf(conn) + 'ttcomment';
+        const px = session.prefix;
         conn.reply(m.chat, `✅ 2 gambar diterima.\n\nSekarang kirim caption:\n*${px} user1|komentar1|likes|user2|balasan|likes2*\n\n*Contoh:*\n${px} BOTCAHX|Mantap kali bos|12500|Supri|Setuju banget|15`, m);
     } catch (e) {
         console.log(e);
