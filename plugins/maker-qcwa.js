@@ -1,34 +1,47 @@
-import { avatarUrl, canvas, guard, imageSource, imageUrl, parts } from '../lib/canvasApi.js';
+import { canvas, guard, parts } from '../lib/canvasApi.js';
+import { cleanup, imageCollector, start } from '../lib/canvasSession.js';
+
+const usage = (px) => `${px} teks|nama|nomor|mode|tag\n\n*Contoh:*\n${px} Halo selamat pagi!|Budi|082221792667|dark|botcahx\n\nNama, nomor, mode, dan tag opsional.`;
 
 let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
   const px = usedPrefix + command;
-  const guide = `Format salah!\n\n*Cara pakai:*\n1. Kirim gambar dengan caption command, atau balas (reply) sebuah gambar\n2. Ketik:\n${px} teks|nama|nomor|mode|tag\n\n*Contoh:*\n${px} Halo selamat pagi!|Budi|0896543443|dark|botcahx\n\nIsian setelah teks opsional: nama default nama kamu, nomor default nomor kamu, mode default dark, tag default botcahx.`;
+  const session = conn.cvs?.[m.chat];
 
-  if (!text) throw guide;
+  if (session && session.command !== command) cleanup(conn, m.chat);
+
+  if (!conn.cvs?.[m.chat]) {
+    return m.reply(start(conn, m, { command, usage: usage(px), labels: ['foto profil (avatar)', 'foto chat'] }));
+  }
+
+  if (session.stage !== 'text') {
+    return m.reply(`Baru *${session.images.length}/2* gambar diterima. Kirim gambar ke-${session.images.length + 1}.`);
+  }
 
   const [teks, nama, nomor, mode, tag] = parts(text);
 
-  if (!teks) throw guide;
-  if (!imageSource(m)) throw `*❌ Gambar tidak ditemukan!*\n\nBalas (reply) gambar dulu, atau kirim gambar dengan caption command.\n\n${guide}`;
+  if (!teks) throw `Isian belum lengkap. Kirim:\n*${usage(px)}*`;
 
-  const imgUrl = await imageUrl(m);
+  const [avatar, foto] = session.images.map((v) => v.url);
+  const phone =
+    String(nomor || '').replace(/[^0-9]/g, '') ||
+    String(m.sender || '').replace(/[^0-9]/g, '') ||
+    String(global.numberowner || '').replace(/[^0-9]/g, '');
 
   await m.reply(wait);
   const { buffer } = await canvas('canvas-qcwa', {
     username: nama || m.name || m.pushName || 'user',
     text: teks,
-    imgUrl,
+    imgUrl: foto,
     mode: mode || 'dark',
-    phone:
-      String(nomor || '').replace(/[^0-9]/g, '') ||
-      String(m.sender || '').replace(/[^0-9]/g, '') ||
-      String(global.numberowner || '').replace(/[^0-9]/g, ''),
-    ppUrl: await avatarUrl(conn, m.sender, imgUrl),
+    phone,
+    ppUrl: avatar,
     tag: tag || 'botcahx',
   });
+  cleanup(conn, m.chat);
   await conn.sendMessage(m.chat, { image: buffer }, { quoted: m });
 });
 
+handler.before = imageCollector;
 handler.help = ['qcwa <teks|nama|nomor|mode|tag>'];
 handler.tags = ['maker'];
 handler.command = /^(qcwa)$/i;
