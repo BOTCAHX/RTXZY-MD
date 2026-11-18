@@ -19,7 +19,10 @@ let handler = guard(async (m, { conn, text, usedPrefix, command }) => {
     text: teks,
     imgUrl,
     mode: mode || 'dark',
-    phone: nomor || String(m.sender || '').split('@')[0] || global.numberowner,
+    phone:
+      String(nomor || '').replace(/[^0-9]/g, '') ||
+      String(m.sender || '').replace(/[^0-9]/g, '') ||
+      String(global.numberowner || '').replace(/[^0-9]/g, ''),
     ppUrl: await avatarUrl(conn, m.sender, imgUrl),
     tag: tag || 'botcahx',
   });
