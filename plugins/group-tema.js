@@ -315,7 +315,7 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
   const parsed = bubbleOnly ? { bubble: normalizeBubble(bubbleOnly[1]) } : parseThemeInput(text)
 
   if (!parsed && !wantsImage) {
-    throw usage(usedPrefix, command)
+    return m.reply(usage(usedPrefix, command))
   }
 
   let payload = parsed
