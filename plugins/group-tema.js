@@ -19,7 +19,21 @@ const PRESETS = {
   tosca: '40e0d0'
 }
 
+const BUBBLES = [
+  'Default-Blue',
+  'Default-Blue@Tonal',
+  'Default-Blue@Minimal',
+  'Sky-Blue',
+  'Sky-Blue@Tonal',
+  'Royal-Blue',
+  'Royal-Blue@Tonal'
+]
+
 const THEME_TIMESTAMP = () => Date.now()
+
+function bubbleList() {
+  return BUBBLES.map(name => `• *${name}*`).join('\n')
+}
 
 function colorList() {
   return Object.entries(PRESETS)
@@ -31,12 +45,17 @@ function usage(prefix, command) {
   return [
     '*「 TEMA GRUP 」*',
     '',
-    '*Daftar warna:*',
+    '*Daftar warna wallpaper:*',
     colorList(),
+    '',
+    '*Warna bubble (colorSchemeId):*',
+    bubbleList(),
     '',
     '*Contoh pakai:*',
     `• ${prefix + command} pink`,
     `• ${prefix + command} #FF69B4`,
+    `• ${prefix + command} bubble Royal-Blue`,
+    `• ${prefix + command} pink | Royal-Blue`,
     `• ${prefix + command} reset`,
     `• Reply gambar + ${prefix + command}`,
     `• ${prefix + command} https://link-gambar.jpg`
@@ -47,33 +66,43 @@ function hexToArgb(hex) {
   return (0xff000000 | parseInt(hex, 16)) >>> 0
 }
 
+function normalizeBubble(value) {
+  const raw = String(value || '').trim()
+  if (!raw) return null
+  if (raw.includes('@')) return raw
+  return `${raw.replace(/\s+/g, '-')}@Tonal`
+}
+
 function parseThemeInput(text) {
-  const q = String(text || '').trim().toLowerCase()
+  const q = String(text || '').trim()
   if (!q) return null
-  if (/^(reset|hapus|clear|default|bawaan)$/.test(q)) return { clearTheme: true }
-  const preset = PRESETS[q]
-  if (preset) return { hex: preset }
-  const raw = q.replace(/^#/, '')
-  if (/^[0-9a-f]{6}$/.test(raw)) return { hex: raw }
-  return null
+  if (/^(reset|hapus|clear|default|bawaan)$/i.test(q)) return { clearTheme: true }
+  const [bg, bubblePart] = q.split('|').map(v => v.trim())
+  const lower = (bg || '').toLowerCase()
+  const payload = {}
+  const hex = PRESETS[lower] || (/^#?[0-9a-f]{6}$/i.test(bg || '') ? bg.replace(/^#/, '') : null)
+  if (hex) payload.hex = hex
+  else if (bubblePart === undefined && bg && lower !== 'bubble') payload.bubble = normalizeBubble(bg)
+  if (bubblePart) payload.bubble = normalizeBubble(bubblePart)
+  return payload.hex || payload.bubble ? payload : null
 }
 
 function buildThemeSetting(payload) {
   if (payload.clearTheme) {
     return { settingTimestampMs: THEME_TIMESTAMP(), clearTheme: true }
   }
+  const setting = { settingTimestampMs: THEME_TIMESTAMP() }
+  if (payload.bubble) setting.colorSchemeId = payload.bubble
   if (payload.hex) {
     const argb = hexToArgb(payload.hex)
-    return {
-      settingTimestampMs: THEME_TIMESTAMP(),
-      wallpaper: 'solidColor',
-      solidColor: {
-        backgroundLightArgb: argb,
-        backgroundDarkArgb: argb,
-        isDoodleEnabled: true
-      }
+    setting.wallpaper = 'solidColor'
+    setting.solidColor = {
+      backgroundLightArgb: argb,
+      backgroundDarkArgb: argb,
+      isDoodleEnabled: true
     }
   }
+  if (payload.bubble || payload.hex) return setting
   if (payload.image) {
     return {
       settingTimestampMs: THEME_TIMESTAMP(),
@@ -235,8 +264,9 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
   const raw = String(text || '').trim()
   if (/^(list|warna|daftar)$/i.test(raw)) return m.reply(usage(usedPrefix, command))
 
+  const bubbleOnly = raw.match(/^bubble\s+(.+)$/i)
   const wantsImage = /^https?:\/\/\S+$/i.test(raw) || !!findImageMedia(m.quoted) || !!findImageMedia(m)
-  const parsed = parseThemeInput(text)
+  const parsed = bubbleOnly ? { bubble: normalizeBubble(bubbleOnly[1]) } : parseThemeInput(text)
 
   if (!parsed && !wantsImage) {
     throw usage(usedPrefix, command)
@@ -251,12 +281,20 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
   }
 
   await sendChatTheme(conn, m.chat, buildThemeSetting(payload))
-  const label = payload.clearTheme
-    ? 'tema bawaan'
-    : payload.hex
-      ? `#${payload.hex.toUpperCase()}`
-      : 'wallpaper gambar'
-  m.reply(`Tema grup diubah: ${label}`)
+  const parts = []
+  if (payload.hex) parts.push(`#${payload.hex.toUpperCase()}`)
+  if (payload.bubble) parts.push(`bubble ${payload.bubble}`)
+  if (payload.image) parts.push('wallpaper gambar')
+  if (payload.clearTheme) parts.push('tema bawaan')
+  m.reply(`Tema grup diubah: ${parts.join(' + ') || 'ok'}`)
+}
+
+handler.before = m => {
+  const theme = m?.message?.protocolMessage?.chatThemeSetting
+  if (theme) {
+    console.log('[tema] chatThemeSetting masuk:', JSON.stringify(theme, (k, v) => (v?.type === 'Buffer' ? `base64:${Buffer.from(v.data).toString('base64')}` : v)))
+  }
+  return true
 }
 
 handler.help = ['tema <warna|reset>']
