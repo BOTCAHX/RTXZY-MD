@@ -75,36 +75,35 @@ const THEME_TIMESTAMP = () => Date.now()
 
 function bubbleList() {
   return Object.entries(SCHEMES)
-    .map(([key, id]) => `• *${key}* → ${id}`)
-    .join('\n')
+    .map(([key, id]) => `• *${key}* → ${id}
+`)
+    .join('')
 }
 
 function colorList() {
   return Object.entries(PRESETS)
-    .map(([name, hex]) => `• *${name}* #${hex.toUpperCase()}`)
-    .join('\n')
+    .map(([name, hex]) => `• *${name}* #${hex.toUpperCase()}
+`)
+    .join('')
 }
 
 function usage(prefix, command) {
-  return [
-    '*「 TEMA GRUP 」*',
-    '',
-    '*Daftar warna wallpaper:*',
-    colorList(),
-    '',
-    '*Skema bubble (colorSchemeId):*',
-    bubbleList(),
-    '',
-    '*Contoh pakai:*',
-    `• ${prefix + command} pink`,
-    `• ${prefix + command} #FF69B4`,
-    `• ${prefix + command} bubble royal-blue`,
-    `• ${prefix + command} bubble royal-blue-tonal`,
-    `• ${prefix + command} pink | royal-blue-tonal`,
-    `• ${prefix + command} reset`,
-    `• Reply gambar + ${prefix + command}`,
-    `• ${prefix + command} https://link-gambar.jpg`
-  ].join('\n')
+  const cmd = `${prefix}${command}`
+  return `*「 TEMA GRUP 」*
+
+*Daftar warna wallpaper:*
+${colorList()}
+*Skema bubble:*
+${bubbleList()}
+*Contoh:*
+• ${cmd} pink
+• ${cmd} #FF69B4
+• ${cmd} bubble royal-blue
+• ${cmd} bubble royal-blue-tonal
+• ${cmd} pink | royal-blue-tonal
+• ${cmd} reset
+• Reply gambar + ${cmd}
+• ${cmd} https://link-gambar.jpg`
 }
 
 function hexToArgb(hex) {
