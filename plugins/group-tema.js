@@ -294,7 +294,6 @@ handler.before = m => {
   if (theme) {
     console.log('[tema] chatThemeSetting masuk:', JSON.stringify(theme, (k, v) => (v?.type === 'Buffer' ? `base64:${Buffer.from(v.data).toString('base64')}` : v)))
   }
-  return true
 }
 
 handler.help = ['tema <warna|reset>']
