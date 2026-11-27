@@ -19,20 +19,64 @@ const PRESETS = {
   tosca: '40e0d0'
 }
 
-const BUBBLES = [
-  'Default-Blue',
-  'Default-Blue@Tonal',
-  'Default-Blue@Minimal',
-  'Sky-Blue',
-  'Sky-Blue@Tonal',
-  'Royal-Blue',
-  'Royal-Blue@Tonal'
-]
+const SCHEMES = {
+  default: 'Default',
+  'whatsapp-green': 'WhatsApp-Green',
+  'pearl-indigo': 'Pearl-Indigo',
+  'tyrian-purple': 'Tyrian-Purple',
+  'sunset-orange': 'Sunset-Orange',
+  'merino-teal': 'Merino-Teal',
+  'royal-blue': 'Royal-Blue',
+  'dark-cerulean': 'Dark-Cerulean',
+  'charcoal-green': 'Charcoal-Green',
+  'persian-plum': 'Persian-Plum',
+  'dune-mono': 'Dune-Mono',
+  'default-blue': 'Default-Blue',
+  'default-mono': 'Default-Mono',
+  'sky-blue': 'Sky-Blue',
+  brown: 'Brown',
+  cream: 'Cream',
+  emerald: 'Emerald',
+  lemon: 'Lemon',
+  lime: 'Lime',
+  pink: 'Pink',
+  red: 'Red',
+  'sunrise-orange': 'Sunrise-Orange',
+  'warm-yellow': 'Warm-Yellow',
+  'whatsapp-green-tonal': 'WhatsApp-Green@Tonal',
+  'pearl-indigo-tonal': 'Pearl-Indigo@Tonal',
+  'pearl-indigo-minimal': 'Pearl-Indigo@Minimal',
+  'tyrian-purple-tonal': 'Tyrian-Purple@Tonal',
+  'sunset-orange-tonal': 'Sunset-Orange@Tonal',
+  'merino-teal-tonal': 'Merino-Teal@Tonal',
+  'royal-blue-tonal': 'Royal-Blue@Tonal',
+  'dark-cerulean-tonal': 'Dark-Cerulean@Tonal',
+  'charcoal-green-tonal': 'Charcoal-Green@Tonal',
+  'persian-plum-tonal': 'Persian-Plum@Tonal',
+  'dune-mono-tonal': 'Dune-Mono@Tonal',
+  'default-blue-tonal': 'Default-Blue@Tonal',
+  'default-blue-minimal': 'Default-Blue@Minimal',
+  'default-mono-tonal': 'Default-Mono@Tonal',
+  'default-mono-minimal': 'Default-Mono@Minimal',
+  'sky-blue-tonal': 'Sky-Blue@Tonal',
+  'sky-blue-minimal': 'Sky-Blue@Minimal',
+  'brown-tonal': 'Brown@Tonal',
+  'cream-tonal': 'Cream@Tonal',
+  'emerald-tonal': 'Emerald@Tonal',
+  'lemon-tonal': 'Lemon@Tonal',
+  'lime-tonal': 'Lime@Tonal',
+  'pink-tonal': 'Pink@Tonal',
+  'red-tonal': 'Red@Tonal',
+  'sunrise-orange-tonal': 'Sunrise-Orange@Tonal',
+  'warm-yellow-tonal': 'Warm-Yellow@Tonal'
+}
 
 const THEME_TIMESTAMP = () => Date.now()
 
 function bubbleList() {
-  return BUBBLES.map(name => `• *${name}*`).join('\n')
+  return Object.entries(SCHEMES)
+    .map(([key, id]) => `• *${key}* → ${id}`)
+    .join('\n')
 }
 
 function colorList() {
@@ -48,14 +92,15 @@ function usage(prefix, command) {
     '*Daftar warna wallpaper:*',
     colorList(),
     '',
-    '*Warna bubble (colorSchemeId):*',
+    '*Skema bubble (colorSchemeId):*',
     bubbleList(),
     '',
     '*Contoh pakai:*',
     `• ${prefix + command} pink`,
     `• ${prefix + command} #FF69B4`,
-    `• ${prefix + command} bubble Royal-Blue`,
-    `• ${prefix + command} pink | Royal-Blue`,
+    `• ${prefix + command} bubble royal-blue`,
+    `• ${prefix + command} bubble royal-blue-tonal`,
+    `• ${prefix + command} pink | royal-blue-tonal`,
     `• ${prefix + command} reset`,
     `• Reply gambar + ${prefix + command}`,
     `• ${prefix + command} https://link-gambar.jpg`
@@ -70,7 +115,9 @@ function normalizeBubble(value) {
   const raw = String(value || '').trim()
   if (!raw) return null
   if (raw.includes('@')) return raw
-  return `${raw.replace(/\s+/g, '-')}@Tonal`
+  const key = raw.toLowerCase().replace(/[\s_]+/g, '-')
+  if (SCHEMES[key]) return SCHEMES[key]
+  return key.split('-').map(v => v.charAt(0).toUpperCase() + v.slice(1)).join('-')
 }
 
 function parseThemeInput(text) {
