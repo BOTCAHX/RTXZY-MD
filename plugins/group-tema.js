@@ -74,36 +74,33 @@ const SCHEMES = {
 const THEME_TIMESTAMP = () => Date.now()
 
 function bubbleList() {
-  return Object.entries(SCHEMES)
-    .map(([key, id]) => `• *${key}* → ${id}
-`)
-    .join('')
+  let list = ''
+  for (const [key, id] of Object.entries(SCHEMES)) list += `◦ *${key}* : ${id}\n`
+  return list
 }
 
 function colorList() {
-  return Object.entries(PRESETS)
-    .map(([name, hex]) => `• *${name}* #${hex.toUpperCase()}
-`)
-    .join('')
+  let list = ''
+  for (const [name, hex] of Object.entries(PRESETS)) list += `◦ *${name}* : #${hex.toUpperCase()}\n`
+  return list
 }
 
 function usage(prefix, command) {
   const cmd = `${prefix}${command}`
-  return `*「 TEMA GRUP 」*
-
-*Daftar warna wallpaper:*
-${colorList()}
-*Skema bubble:*
-${bubbleList()}
-*Contoh:*
-• ${cmd} pink
-• ${cmd} #FF69B4
-• ${cmd} bubble royal-blue
-• ${cmd} bubble royal-blue-tonal
-• ${cmd} pink | royal-blue-tonal
-• ${cmd} reset
-• Reply gambar + ${cmd}
-• ${cmd} https://link-gambar.jpg`
+  let capt = `乂 *T E M A  G R U P*\n\n`
+  capt += `*Warna wallpaper*\n`
+  capt += colorList()
+  capt += `\n*Skema bubble*\n`
+  capt += bubbleList()
+  capt += `\n*Contoh*\n`
+  capt += `◦ ${cmd} pink\n`
+  capt += `◦ ${cmd} #FF69B4\n`
+  capt += `◦ ${cmd} bubble royal-blue-tonal\n`
+  capt += `◦ ${cmd} pink | royal-blue-tonal\n`
+  capt += `◦ ${cmd} reset\n`
+  capt += `◦ Reply gambar + ${cmd}\n`
+  capt += `◦ ${cmd} https://link-gambar.jpg`
+  return capt
 }
 
 function hexToArgb(hex) {
