@@ -130,7 +130,7 @@ function usage(prefix, command) {
   capt += `◦ ${cmd} aurora | royal-blue-tonal\n`
   capt += `◦ ${cmd} reset\n`
   capt += `◦ Reply gambar + ${cmd}\n`
-  capt += `◦ ${cmd} https://link-gambar.jpg`
+  capt += `◦ ${cmd} https://link-gambar.jpg\n`
   capt += `◦ ${cmd} https://link-gambar.jpg | royal-blue-tonal`
   return capt
 }
