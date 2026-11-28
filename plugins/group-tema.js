@@ -143,8 +143,7 @@ function normalizeBubble(value) {
   if (!raw) return null
   if (raw.includes('@')) return raw
   const key = raw.toLowerCase().replace(/[\s_]+/g, '-')
-  if (SCHEMES[key]) return SCHEMES[key]
-  return key.split('-').map(v => v.charAt(0).toUpperCase() + v.slice(1)).join('-')
+  return SCHEMES[key] || null
 }
 
 function parseThemeInput(text) {
@@ -158,7 +157,10 @@ function parseThemeInput(text) {
   const anim = hex ? null : parseAnim(bg)
   if (hex) payload.hex = hex
   else if (anim) payload.anim = anim
-  else if (bubblePart === undefined && bg && lower !== 'bubble' && !/^animasi\b/i.test(bg)) payload.bubble = normalizeBubble(bg)
+  else if (bubblePart === undefined && bg && lower !== 'bubble' && !/^animasi\b/i.test(bg)) {
+    const scheme = normalizeBubble(bg)
+    if (scheme) payload.bubble = scheme
+  }
   if (bubblePart) payload.bubble = normalizeBubble(bubblePart)
   return payload.hex || payload.bubble || payload.anim ? payload : null
 }
@@ -347,7 +349,14 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 
   const bubbleOnly = raw.match(/^bubble\s+(.+)$/i)
   const wantsImage = /^https?:\/\/\S+$/i.test(raw) || !!findImageMedia(m.quoted) || !!findImageMedia(m)
-  const parsed = bubbleOnly ? { bubble: normalizeBubble(bubbleOnly[1]) } : parseThemeInput(text)
+  let parsed = null
+  if (bubbleOnly) {
+    const scheme = normalizeBubble(bubbleOnly[1])
+    if (!scheme) return m.reply(usage(usedPrefix, command))
+    parsed = { bubble: scheme }
+  } else {
+    parsed = parseThemeInput(text)
+  }
 
   if (!parsed && !wantsImage) {
     return m.reply(usage(usedPrefix, command))
