@@ -39,6 +39,10 @@ let handler = async (m, { conn }) => {
 
         await sleep(getRandomInt(60000, 300000)); // Jeda 1-5 menit
 
+        if (global.db.data.guilds[guildId] !== guild || global.db.data.guilds[attackedGuildId] !== attackedGuild) {
+            return conn.reply(m.chat, 'Penyerangan dibatalkan karena salah satu guild tidak lagi tersedia.', m);
+        }
+
         // Simulasi kerusakan dan pencurian
         let elixirStolen = Math.floor(attackedGuild.eliksir / 2); // Mengambil setengah dari eliksir lawan
         let treasureStolen = Math.floor(attackedGuild.harta / 2); // Mengambil setengah dari harta lawan
