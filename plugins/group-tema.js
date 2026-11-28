@@ -71,7 +71,27 @@ const SCHEMES = {
   'warm-yellow-tonal': 'Warm-Yellow@Tonal'
 }
 
+const ANIMS = {
+  gradient: 'gradient',
+  iridescent: 'iridescent',
+  aurora: 'aurora',
+  'lava-lamp': 'lavaLamp',
+  lavalamp: 'lavaLamp'
+}
+
+const ANIM_KEYS = ['gradient', 'iridescent', 'aurora', 'lava-lamp']
+
 const THEME_TIMESTAMP = () => Date.now()
+
+function parseAnim(text) {
+  const tokens = String(text || '').trim().split(/\s+/).filter(Boolean)
+  if (/^(animasi|animated)$/i.test(tokens[0] || '')) tokens.shift()
+  const id = ANIMS[(tokens.shift() || '').toLowerCase().replace(/[\s_]+/g, '-')]
+  if (!id) return null
+  if (!tokens.length) return { id, dim: null }
+  if (tokens.length > 1 || !/^\d+(\.\d+)?$/.test(tokens[0])) return null
+  return { id, dim: Number(tokens[0]) }
+}
 
 function bubbleList() {
   let list = ''
@@ -85,6 +105,12 @@ function colorList() {
   return list
 }
 
+function animList() {
+  let list = ''
+  for (const key of ANIM_KEYS) list += `◦ *${key}* : ${ANIMS[key]}\n`
+  return list
+}
+
 function usage(prefix, command) {
   const cmd = `${prefix}${command}`
   let capt = `乂 *T E M A  G R U P*\n\n`
@@ -92,11 +118,16 @@ function usage(prefix, command) {
   capt += colorList()
   capt += `\n*Skema bubble*\n`
   capt += bubbleList()
+  capt += `\n*Animasi wallpaper*\n`
+  capt += animList()
   capt += `\n*Contoh*\n`
   capt += `◦ ${cmd} pink\n`
   capt += `◦ ${cmd} #FF69B4\n`
   capt += `◦ ${cmd} bubble royal-blue-tonal\n`
   capt += `◦ ${cmd} pink | royal-blue-tonal\n`
+  capt += `◦ ${cmd} animasi aurora\n`
+  capt += `◦ ${cmd} animasi lava-lamp 0.2\n`
+  capt += `◦ ${cmd} aurora | royal-blue-tonal\n`
   capt += `◦ ${cmd} reset\n`
   capt += `◦ Reply gambar + ${cmd}\n`
   capt += `◦ ${cmd} https://link-gambar.jpg`
@@ -124,10 +155,12 @@ function parseThemeInput(text) {
   const lower = (bg || '').toLowerCase()
   const payload = {}
   const hex = PRESETS[lower] || (/^#?[0-9a-f]{6}$/i.test(bg || '') ? bg.replace(/^#/, '') : null)
+  const anim = hex ? null : parseAnim(bg)
   if (hex) payload.hex = hex
-  else if (bubblePart === undefined && bg && lower !== 'bubble') payload.bubble = normalizeBubble(bg)
+  else if (anim) payload.anim = anim
+  else if (bubblePart === undefined && bg && lower !== 'bubble' && !/^animasi\b/i.test(bg)) payload.bubble = normalizeBubble(bg)
   if (bubblePart) payload.bubble = normalizeBubble(bubblePart)
-  return payload.hex || payload.bubble ? payload : null
+  return payload.hex || payload.bubble || payload.anim ? payload : null
 }
 
 function buildThemeSetting(payload) {
@@ -145,7 +178,12 @@ function buildThemeSetting(payload) {
       isDoodleEnabled: true
     }
   }
-  if (payload.bubble || payload.hex) return setting
+  if (payload.anim) {
+    setting.wallpaper = 'animatedWallpaper'
+    setting.animatedWallpaper = { animatedWallpaperId: payload.anim.id }
+    if (payload.anim.dim !== null) setting.animatedWallpaper.dimLevel = payload.anim.dim
+  }
+  if (payload.bubble || payload.hex || payload.anim) return setting
   if (payload.image) {
     return {
       settingTimestampMs: THEME_TIMESTAMP(),
@@ -327,6 +365,7 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
   const parts = []
   if (payload.hex) parts.push(`#${payload.hex.toUpperCase()}`)
   if (payload.bubble) parts.push(`bubble ${payload.bubble}`)
+  if (payload.anim) parts.push(`animasi ${payload.anim.id}`)
   if (payload.image) parts.push('wallpaper gambar')
   if (payload.clearTheme) parts.push('tema bawaan')
   m.reply(`Tema grup diubah: ${parts.join(' + ') || 'ok'}`)
