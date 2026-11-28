@@ -131,6 +131,7 @@ function usage(prefix, command) {
   capt += `◦ ${cmd} reset\n`
   capt += `◦ Reply gambar + ${cmd}\n`
   capt += `◦ ${cmd} https://link-gambar.jpg`
+  capt += `◦ ${cmd} https://link-gambar.jpg | royal-blue-tonal`
   return capt
 }
 
@@ -179,20 +180,15 @@ function buildThemeSetting(payload) {
       backgroundDarkArgb: argb,
       isDoodleEnabled: true
     }
-  }
-  if (payload.anim) {
+  } else if (payload.anim) {
     setting.wallpaper = 'animatedWallpaper'
     setting.animatedWallpaper = { animatedWallpaperId: payload.anim.id }
     if (payload.anim.dim !== null) setting.animatedWallpaper.dimLevel = payload.anim.dim
+  } else if (payload.image) {
+    setting.wallpaper = 'customImage'
+    setting.customImage = { ...payload.image, dimLevel: 0 }
   }
-  if (payload.bubble || payload.hex || payload.anim) return setting
-  if (payload.image) {
-    return {
-      settingTimestampMs: THEME_TIMESTAMP(),
-      wallpaper: 'customImage',
-      customImage: { ...payload.image, dimLevel: 0 }
-    }
-  }
+  if (payload.bubble || payload.hex || payload.anim || payload.image) return setting
   throw new Error('Tema tidak dikenali')
 }
 
@@ -327,11 +323,10 @@ async function downloadImage(conn, found) {
   return Buffer.from(buffer)
 }
 
-async function getThemeImage(conn, m, text) {
+async function getThemeImage(conn, m, url) {
   const found = findImageMedia(m.quoted) || findImageMedia(m)
   if (found) return downloadImage(conn, found)
-  const url = String(text || '').trim().match(/^https?:\/\/\S+$/i)
-  if (url) return fetchUrlImage(url[0])
+  if (url) return fetchUrlImage(url)
   return null
 }
 
@@ -348,7 +343,9 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
   if (/^(list|warna|daftar)$/i.test(raw)) return m.reply(usage(usedPrefix, command))
 
   const bubbleOnly = raw.match(/^bubble\s+(.+)$/i)
-  const wantsImage = /^https?:\/\/\S+$/i.test(raw) || !!findImageMedia(m.quoted) || !!findImageMedia(m)
+  const bgPart = String(text || '').split('|')[0].trim()
+  const urlSource = /^https?:\/\/\S+$/i.test(bgPart) ? bgPart : null
+  const wantsImage = !!urlSource || !!findImageMedia(m.quoted) || !!findImageMedia(m)
   let parsed = null
   if (bubbleOnly) {
     const scheme = normalizeBubble(bubbleOnly[1])
@@ -363,11 +360,12 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
   }
 
   let payload = parsed
-  if (!payload && wantsImage) {
-    const buffer = await getThemeImage(conn, m, text)
+  const needImage = wantsImage && !payload?.hex && !payload?.anim
+  if (needImage) {
+    const buffer = await getThemeImage(conn, m, urlSource)
     if (!buffer?.length) throw 'Gambar tidak bisa dibaca'
     m.reply('Mengunggah wallpaper...')
-    payload = { image: await uploadWallpaper(conn._client, buffer) }
+    payload = { ...(payload || {}), image: await uploadWallpaper(conn._client, buffer) }
   }
 
   await sendChatTheme(conn, m.chat, buildThemeSetting(payload))
