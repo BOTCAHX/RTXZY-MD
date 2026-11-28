@@ -48,11 +48,10 @@ let handler = async (m, { conn, args }) => {
             conn.reply(m.chat, `Attack guild ${guild.name} telah ditingkatkan menjadi ${guild.attack}.`, m);
             break;
         default:
-            conn.reply(m.chat, 'Pilih jenis upgrade yang valid: level, eliksir, harta, guardian, attack.', m);
-            break;
+            return conn.reply(m.chat, 'Pilih jenis upgrade yang valid: level, eliksir, harta, guardian, attack.', m);
     }
 
-    fs.writeFileSync(dbPath, JSON.stringify(global.db.data, null, 2));
+    await global.db.write();
 };
 
 handler.help = ['guildupgrade <level/eliksir/harta/guardian/attack>'];

@@ -1,18 +1,13 @@
 let handler = async (m, { conn }) => {
     let userId = m.sender;
-    let user = global.db.data.users[userId];
-    
-    if (!user.guild) return conn.reply(m.chat, 'Kamu belum tergabung dalam guild.', m);
+    let guild = Object.values(global.db.data.guilds || {}).find(guild => guild.waitingRoom?.includes(userId));
 
-    let guildId = user.guild;
-    let guild = global.db.data.guilds[guildId];
-    if (!guild) return conn.reply(m.chat, 'Guild tidak ditemukan.', m);
-
-    if (guild.owner === userId) return conn.reply(m.chat, 'Pemilik guild tidak bisa menolak permintaan.', m);
+    if (!guild) return conn.reply(m.chat, 'Tidak ada undangan guild yang tertunda untuk ditolak.', m);
 
     guild.waitingRoom = guild.waitingRoom.filter(room => room !== userId);
+    await global.db.write();
 
-    conn.reply(m.chat, 'Permintaan kamu untuk bergabung dengan guild telah ditolak.', m);
+    conn.reply(m.chat, 'Undangan guild telah ditolak.', m);
 };
 
 handler.help = ['guilddecline'];

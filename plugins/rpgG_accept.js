@@ -1,25 +1,30 @@
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, args }) => {
     let user = global.db.data.users[m.sender];
+    if (!user?.guild) return conn.reply(m.chat, 'Kamu belum tergabung dalam guild.', m);
 
-    // Cek apakah pengguna adalah pemilik guild atau memiliki peran staff
-    if (!isGuildOwner(user) && !isGuildStaff(user)) {
+    let guildId = user.guild;
+    let guild = global.db.data.guilds?.[guildId];
+    if (!guild) return conn.reply(m.chat, 'Guild tidak ditemukan.', m);
+    if (guild.owner !== m.sender && !guild.staff?.includes(m.sender)) {
         return conn.reply(m.chat, 'Anda tidak memiliki izin untuk melakukan ini.', m);
     }
 
-    let target = m.mentionedJid[0];
+    let target = m.mentionedJid[0] || args[0];
     if (!target) return conn.reply(m.chat, 'Tag user yang ingin Anda terima di guild.', m);
 
     let targetUser = global.db.data.users[target];
-    if (!targetUser.guildRequest) return conn.reply(m.chat, 'Tidak ada permintaan bergabung yang tertunda dari pengguna ini.', m);
+    if (!targetUser) return conn.reply(m.chat, 'Pengguna tidak ditemukan di database.', m);
+    if (targetUser.guild) return conn.reply(m.chat, 'Pengguna sudah tergabung dalam guild.', m);
 
-    let guildName = targetUser.guildRequest;
-    let guild = global.db.data.guilds[guildName];
+    if (!guild.waitingRoom?.includes(target)) return conn.reply(m.chat, 'Tidak ada undangan tertunda dari pengguna ini.', m);
 
-    guild.members.push(target);
-    targetUser.guild = guildName;
-    delete targetUser.guildRequest;
+    if (!Array.isArray(guild.members)) guild.members = [];
+    if (!guild.members.includes(target)) guild.members.push(target);
+    targetUser.guild = guildId;
+    guild.waitingRoom = guild.waitingRoom.filter(member => member !== target);
 
-    conn.reply(m.chat, `Permintaan bergabung dari @${target.split('@')[0]} telah diterima.`, m);
+    await global.db.write();
+    conn.reply(m.chat, `Undangan untuk @${target.split('@')[0]} telah diterima.`, m, { mentions: [target] });
 };
 
 handler.help = ['guildaccept @user'];
@@ -27,16 +32,3 @@ handler.tags = ['rpgG'];
 handler.command = /^(guildaccept)$/i;
 handler.rpg = true;
 export default handler;
-
-
-// Fungsi untuk mengecek apakah pengguna adalah pemilik guild
-function isGuildOwner(user) {
-    // Implementasi logika untuk mengecek apakah user adalah pemilik guild
-    return user.role === 'owner'; // Misalnya, jika role 'owner' menunjukkan pemilik guild
-}
-
-// Fungsi untuk mengecek apakah pengguna memiliki peran staff di guild
-function isGuildStaff(user) {
-    // Implementasi logika untuk mengecek apakah user memiliki peran staff di guild
-    return user.role === 'staff'; // Misalnya, jika role 'staff' menunjukkan staff guild
-}
