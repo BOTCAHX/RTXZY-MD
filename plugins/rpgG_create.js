@@ -1,6 +1,3 @@
-import fs from 'fs';
-const dbPath = './database.json'; // Path ke database file
-
 let handler = async (m, { conn, args }) => {
     if (args.length < 1) return conn.reply(m.chat, 'Contoh penggunaan: .createguild <nama_guild>', m);
     
@@ -49,7 +46,7 @@ let handler = async (m, { conn, args }) => {
         };
         user.guild = guildId;
         user.money -= 20000000000; // Mengurangi money user setelah membuat guild
-        fs.writeFileSync(dbPath, JSON.stringify(global.db.data, null, 2));
+        await global.db.write();
         conn.reply(m.chat, `Guild ${guildName} berhasil dibuat.`, m);
     } else {
         conn.reply(m.chat, 'Terjadi kesalahan saat membuat guild. Coba lagi.', m);

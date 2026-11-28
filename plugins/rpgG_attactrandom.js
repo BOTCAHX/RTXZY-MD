@@ -1,6 +1,3 @@
-import fs from 'fs';
-const dbPath = './database.json';
-
 let handler = async (m, { conn }) => {
     let user = global.db.data.users[m.sender];
     let guildId = user.guild;
@@ -42,17 +39,23 @@ let handler = async (m, { conn }) => {
 
         await sleep(getRandomInt(60000, 300000)); // Jeda 1-5 menit
 
-        // Simulasi kerusakan dan pencurian
-        let elixirStolen = Math.floor(attackedGuild.elixir / 2); // Mengambil setengah dari eliksir lawan
-        let treasureStolen = Math.floor(attackedGuild.treasure / 2); // Mengambil setengah dari harta lawan
+        if (global.db.data.guilds[guildId] !== guild || global.db.data.guilds[attackedGuildId] !== attackedGuild) {
+            return conn.reply(m.chat, 'Penyerangan dibatalkan karena salah satu guild tidak lagi tersedia.', m);
+        }
 
-        attackedGuild.elixir -= elixirStolen;
-        attackedGuild.treasure -= treasureStolen;
+        // Simulasi kerusakan dan pencurian
+        let elixirStolen = Math.floor(attackedGuild.eliksir / 2); // Mengambil setengah dari eliksir lawan
+        let treasureStolen = Math.floor(attackedGuild.harta / 2); // Mengambil setengah dari harta lawan
+
+        attackedGuild.eliksir -= elixirStolen;
+        attackedGuild.harta -= treasureStolen;
+        guild.eliksir += elixirStolen;
+        guild.harta += treasureStolen;
 
         // Update basis data
-        fs.writeFileSync(dbPath, JSON.stringify(global.db.data, null, 2));
+        await global.db.write();
 
-        let result = guild.name === attackedGuild.name ? 'Draw' : (guild.elixir > attackedGuild.elixir ? `${guild.name} Win` : `${guild.name} Lose`);
+        let result = guild.eliksir > attackedGuild.eliksir ? `${guild.name} Win` : `${guild.name} Lose`;
 
         conn.reply(m.chat, `${result}:
 

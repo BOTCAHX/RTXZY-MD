@@ -1,13 +1,11 @@
-import fs from 'fs';
-const dbPath = './database.json'; // Path ke database file
-
 let handler = async (m, { conn, args }) => {
     let userId = m.sender;
     let user = global.db.data.users[userId];
 
     if (!user.guild) return conn.reply(m.chat, 'Kamu belum tergabung dalam guild mana pun.', m);
 
-    let guilds = Object.values(global.db.data.guilds);
+    let guildEntries = Object.entries(global.db.data.guilds || {});
+    let guilds = guildEntries.map(([, guild]) => guild);
 
     if (guilds.length === 0) return conn.reply(m.chat, 'Tidak ada guild yang tersedia untuk dihapus.', m);
 
@@ -22,12 +20,12 @@ let handler = async (m, { conn, args }) => {
         return conn.reply(m.chat, 'Nomor guild tidak valid.', m);
     }
 
-    let selectedGuild = guilds[guildIndex];
+    let [guildId, selectedGuild] = guildEntries[guildIndex];
 
     if (selectedGuild.owner !== userId) return conn.reply(m.chat, 'Hanya owner guild yang bisa menghapus guild.', m);
 
     // Hapus guild dari database
-    delete global.db.data.guilds[selectedGuild.name];
+    delete global.db.data.guilds[guildId];
 
     // Hapus referensi guild dari setiap anggota
     selectedGuild.members.forEach(memberId => {
@@ -36,7 +34,7 @@ let handler = async (m, { conn, args }) => {
         }
     });
 
-    fs.writeFileSync(dbPath, JSON.stringify(global.db.data, null, 2));
+    await global.db.write();
 
     conn.reply(m.chat, `Guild ${selectedGuild.name} berhasil dihapus.`, m);
 };

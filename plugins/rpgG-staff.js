@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 let handler = async (m, { conn, args }) => {
     let userId = m.sender;
     let user = global.db.data.users[userId];
@@ -11,6 +9,7 @@ let handler = async (m, { conn, args }) => {
     if (!guild) return conn.reply(m.chat, 'Guild tidak ditemukan.', m);
 
     if (guild.owner !== userId) return conn.reply(m.chat, 'Hanya pemilik guild yang bisa mengatur staff.', m);
+    if (!Array.isArray(guild.staff)) guild.staff = [];
 
     if (!args[0]) return conn.reply(m.chat, 'Format yang kamu masukkan salah. Contoh penggunaan: .guildstaff tambah/hapus @user', m);
 
@@ -30,10 +29,10 @@ let handler = async (m, { conn, args }) => {
         guild.staff = guild.staff.filter(staff => staff !== target);
         conn.reply(m.chat, `@${target.split('@')[0]} telah dihapus dari staff di guild ${guild.name}.`, m, { mentions: [target] });
     } else {
-        conn.reply(m.chat, 'Format yang kamu masukkan salah. Contoh penggunaan: .guildstaff tambah/hapus @user', m);
+        return conn.reply(m.chat, 'Format yang kamu masukkan salah. Contoh penggunaan: .guildstaff tambah/hapus @user', m);
     }
 
-    fs.writeFileSync(dbPath, JSON.stringify(global.db.data, null, 2));
+    await global.db.write();
 };
 
 handler.help = ['guildstaff <tambah/hapus> <@user>'];

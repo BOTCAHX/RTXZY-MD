@@ -13,10 +13,15 @@ let handler = async (m, { conn, args }) => {
 
     if (guild.owner !== userId) return conn.reply(m.chat, 'Hanya pemilik guild yang bisa mengundang.', m);
 
-    if (global.db.data.users[target].guild === guildId) return conn.reply(m.chat, 'User sudah tergabung dalam guild.', m);
+    let targetUser = global.db.data.users[target];
+    if (!targetUser) return conn.reply(m.chat, 'Pengguna tidak ditemukan di database.', m);
+    if (targetUser.guild) return conn.reply(m.chat, 'User sudah tergabung dalam guild.', m);
+    if (!Array.isArray(guild.waitingRoom)) guild.waitingRoom = [];
+    if (guild.waitingRoom.includes(target)) return conn.reply(m.chat, 'User sudah ada di dalam daftar undangan.', m);
 
     guild.waitingRoom.push(target);
-    
+
+    await global.db.write();
     conn.reply(m.chat, `@${target.split('@')[0]} kamu telah diundang ke guild ${guild.name}. Silakan tunggu konfirmasi dari pemilik guild.`, m, { mentions: [target] });
 };
 
